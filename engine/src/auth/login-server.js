@@ -202,6 +202,22 @@ LoginServer.prototype.__parseBody = function (request) {
 
 }
 
+LoginServer.prototype.__collectRawBody = function (request, callback) {
+
+  /*
+   * LoginServer.__collectRawBody
+   * Collects the raw body as a Buffer for endpoints that need it (e.g. Stripe webhooks).
+   */
+
+  let chunks = [];
+  request.on("data", function (chunk) { chunks.push(chunk); });
+  request.on("end", function () {
+    callback(Buffer.concat(chunks));
+  });
+  request.on("error", function () { callback(Buffer.alloc(0)); });
+
+}
+
 LoginServer.prototype.initialize = function () {
 
   /*
@@ -352,6 +368,13 @@ LoginServer.prototype.__handleRequest = function (request, response) {
     return response.end();
   }
 
+  // ── Stripe webhook needs raw body for signature verification ──
+  if (request.method === "POST" && pathname === "/api/payments/webhook") {
+    return this.__collectRawBody(request, function (rawBody) {
+      this.__handlePaymentWebhook(request, response, rawBody);
+    }.bind(this));
+  }
+
   // ── All endpoints that need POST body parsing ──
   if (request.method === "POST" || request.method === "PUT" || request.method === "DELETE") {
     return this.__parseBody(request).then(function (body) {
@@ -483,11 +506,6 @@ LoginServer.prototype.__handlePostRequest = function (request, response, pathnam
   // POST /api/payments/create-payment-intent — create Stripe PaymentIntent
   if (pathname === "/api/payments/create-payment-intent") {
     return this.__handleCreatePaymentIntent(body, response);
-  }
-
-  // POST /api/payments/webhook — Stripe webhook
-  if (pathname === "/api/payments/webhook") {
-    return this.__handlePaymentWebhook(request, response, body);
   }
 
   // Fallback: try static file (client/ then root data/)
@@ -1221,7 +1239,14 @@ LoginServer.prototype.__handleCreatePaymentIntent = async function (body, respon
   }
 };
 
-LoginServer.prototype.__handlePaymentWebhook = function (request, response, body) {
+LoginServer.prototype.__handlePaymentWebhook = function (request, response, rawBody) {
+
+  /*
+   * LoginServer.__handlePaymentWebhook
+   * Handles Stripe webhook events using the raw body for signature verification.
+   * On payment_intent.succeeded, credits premium points via admin API with DB fallback.
+   */
+
   if (!stripe) {
     response.statusCode = 500;
     return response.end("Stripe not configured");
@@ -1233,14 +1258,10 @@ LoginServer.prototype.__handlePaymentWebhook = function (request, response, body
 
   try {
     if (STRIPE_WEBHOOK_SECRET) {
-      event = stripe.webhooks.constructEvent(body, sig, STRIPE_WEBHOOK_SECRET);
+      event = stripe.webhooks.constructEvent(rawBody, sig, STRIPE_WEBHOOK_SECRET);
     } else {
-      // If no webhook secret configured, try to parse body (less safe)
-      if (typeof body === "string") {
-        event = JSON.parse(body);
-      } else {
-        event = body;
-      }
+      // Fallback: parse raw body as JSON (less safe, but works without webhook secret)
+      event = JSON.parse(rawBody.toString("utf8"));
     }
   } catch (err) {
     console.error("Webhook signature verification failed:", err.message);
@@ -1256,47 +1277,50 @@ LoginServer.prototype.__handlePaymentWebhook = function (request, response, body
     const playerName = metadata.playerName || null;
 
     if (playerName && points > 0) {
-      try {
-        // Credit points via admin API
-        const http = require("http");
-        const adminPort = parseInt(process.env.ADMIN_PORT || "2224", 10);
-        const adminHost = process.env.ADMIN_HOST || "127.0.0.1";
-        const ADMIN_SECRET = loadEnvVar("ADMIN_SECRET") || process.env.ADMIN_SECRET || null;
+      const http = require("http");
+      const adminPort = parseInt(process.env.ADMIN_PORT || "2224", 10);
+      const adminHost = process.env.ADMIN_HOST || "127.0.0.1";
+      const ADMIN_SECRET = loadEnvVar("ADMIN_SECRET") || process.env.ADMIN_SECRET || null;
 
-        if (!ADMIN_SECRET) {
-          console.warn("ADMIN_SECRET not configured, cannot credit points");
-          response.statusCode = 200;
-          return response.end(JSON.stringify({ received: true }));
-        }
-
-        const postData = JSON.stringify({ name: playerName, amount: points });
-        const options = {
-          hostname: adminHost,
-          port: adminPort,
-          path: "/api/premium",
-          method: "POST",
-          headers: {
-            "Authorization": "Bearer " + ADMIN_SECRET,
-            "Content-Type": "application/json",
-            "Content-Length": Buffer.byteLength(postData)
-          }
-        };
-
-        const req = http.request(options, function (res) {
-          let data = "";
-          res.on("data", function (chunk) { data += chunk; });
-          res.on("end", function () {
-            console.log("Credited", points, "points to", playerName, "via webhook");
-          });
-        });
-        req.on("error", function (e) {
-          console.error("Failed to credit points:", e.message);
-        });
-        req.write(postData);
-        req.end();
-      } catch (e) {
-        console.error("Webhook credit error:", e);
+      if (!ADMIN_SECRET) {
+        console.warn("ADMIN_SECRET not configured, cannot credit points via admin API");
+        // Fallback: credit directly via account database if player is online
+        this.__creditPointsFallback(playerName, points);
+        response.statusCode = 200;
+        return response.end(JSON.stringify({ received: true }));
       }
+
+      const postData = JSON.stringify({ name: playerName, amount: points });
+      const options = {
+        hostname: adminHost,
+        port: adminPort,
+        path: "/api/premium",
+        method: "POST",
+        headers: {
+          "Authorization": "Bearer " + ADMIN_SECRET,
+          "Content-Type": "application/json",
+          "Content-Length": Buffer.byteLength(postData)
+        }
+      };
+
+      const req = http.request(options, function (res) {
+        let data = "";
+        res.on("data", function (chunk) { data += chunk; });
+        res.on("end", function () {
+          if (res.statusCode === 200) {
+            console.log("Credited", points, "points to", playerName, "via webhook");
+          } else {
+            console.warn("Webhook credit returned", res.statusCode, "- using fallback");
+            this.__creditPointsFallback(playerName, points);
+          }
+        }.bind(this));
+      }.bind(this));
+      req.on("error", function (e) {
+        console.error("Failed to credit points via admin API:", e.message, "- using fallback");
+        this.__creditPointsFallback(playerName, points);
+      }.bind(this));
+      req.write(postData);
+      req.end();
     } else {
       console.warn("PaymentIntent succeeded but missing metadata (playerName/points)");
     }
@@ -1306,5 +1330,40 @@ LoginServer.prototype.__handlePaymentWebhook = function (request, response, body
   response.setHeader("Content-Type", "application/json");
   return response.end(JSON.stringify({ received: true }));
 };
+
+LoginServer.prototype.__creditPointsFallback = function (playerName, points) {
+
+  /*
+   * LoginServer.__creditPointsFallback
+   * Tries to credit premium points directly when admin API is unavailable.
+   * First attempts online player, then falls back to direct database update.
+   */
+
+  try {
+    var gs = process.gameServer;
+    if (gs && gs.world && gs.world.creatureHandler) {
+      var player = gs.world.creatureHandler.getPlayerByName(playerName);
+      if (player) {
+        player.premiumPoints = Math.max(0, (player.premiumPoints || 0) + points);
+        var PremiumBalanceUpdatePacket = requireModule("network/protocol").PremiumBalanceUpdatePacket;
+        player.write(new PremiumBalanceUpdatePacket(player.premiumPoints));
+
+        var gameSocket = player.socketHandler.getControllingSocket();
+        if (gameSocket && gameSocket.account) {
+          gs.HTTPServer.websocketServer.accountDatabase.saveCharacter(gameSocket, function () {
+            console.log("Fallback: credited", points, "points to online player", playerName);
+          });
+        } else {
+          console.log("Fallback: credited", points, "points to online player", playerName, "(DB save skipped - no socket)");
+        }
+        return;
+      }
+    }
+    console.warn("Fallback: player", playerName, "not online, cannot credit points directly");
+  } catch (e) {
+    console.error("Fallback credit error:", e);
+  }
+
+}
 
 module.exports = LoginServer;

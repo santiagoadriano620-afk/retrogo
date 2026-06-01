@@ -47,7 +47,12 @@ app.use(cors({
   origin: IS_PROD ? process.env.ADMIN_PANEL_ORIGIN || "http://localhost:3000" : true,
   credentials: true
 }));
-app.use(express.json({ limit: "1mb" }));
+app.use(express.json({
+  limit: "1mb",
+  verify: function (req, res, buf) {
+    req.rawBody = buf.toString();
+  }
+}));
 app.use(session({
   secret: SESSION_SECRET,
   resave: false,

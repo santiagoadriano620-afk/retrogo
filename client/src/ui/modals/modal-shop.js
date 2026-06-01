@@ -48,8 +48,19 @@ ShopModal.prototype.__hideConfirm = function () {
   this.__pendingItemId = null;
 };
 
+ShopModal.prototype.__initStripeButton = function () {
+  var self = this;
+  var btn = document.getElementById("shop-stripe-btn");
+  if (btn) {
+    btn.addEventListener("click", function () {
+      gameClient.interface.modalManager.open("payment-modal");
+    });
+  }
+};
+
 ShopModal.prototype.handleOpen = function () {
   this.__renderCategories();
+  this.__initStripeButton();
   if (SHOP_CATEGORIES.length > 0) {
     this.__selectCategory(SHOP_CATEGORIES[0].name);
   }

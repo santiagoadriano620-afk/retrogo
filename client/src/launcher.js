@@ -124,6 +124,7 @@ window.addEventListener("error", function(e) {
     "src/entities/tile.js",
     "src/ui/modals/modal.js",
     "src/ui/modals/modal-shop.js",
+    "src/ui/modals/modal-payment.js",
     "src/ui/modals/modal-create-account.js",
     "src/ui/modals/modal-spellbook.js",
     "src/ui/modals/modal-hotbar-text.js",

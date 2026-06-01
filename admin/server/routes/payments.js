@@ -68,16 +68,16 @@ router.post("/create-payment-intent", async (req, res) => {
 const gameBridge = require("../lib/game-bridge");
 const STRIPE_WEBHOOK_SECRET = loadEnvVar("STRIPE_WEBHOOK_SECRET") || process.env.STRIPE_WEBHOOK_SECRET || null;
 
-router.post('/webhook', express.raw({ type: 'application/json' }), async (req, res) => {
+router.post('/webhook', async (req, res) => {
   if (!stripe) return res.status(500).send('Stripe not configured');
   const sig = req.headers['stripe-signature'];
+  const rawBody = req.rawBody || (req.body ? JSON.stringify(req.body) : "");
   let event;
   try {
     if (STRIPE_WEBHOOK_SECRET) {
-      event = stripe.webhooks.constructEvent(req.body, sig, STRIPE_WEBHOOK_SECRET);
+      event = stripe.webhooks.constructEvent(rawBody, sig, STRIPE_WEBHOOK_SECRET);
     } else {
-      // If no webhook secret configured, try to parse body (unsafe)
-      event = JSON.parse(req.body.toString());
+      event = typeof req.body === "object" ? req.body : JSON.parse(rawBody);
     }
   } catch (err) {
     console.error('Webhook signature verification failed.', err.message);
@@ -91,10 +91,12 @@ router.post('/webhook', express.raw({ type: 'application/json' }), async (req, r
     const playerName = metadata.playerName || null;
     if (playerName && points > 0) {
       try {
-        // credit points via game bridge
         const amount = points;
         const result = await gameBridge.updatePremiumPoints(playerName, amount);
         console.log('Credited', amount, 'points to', playerName, 'result:', result);
+        if (!result || !result.success) {
+          console.warn('Game bridge credit returned non-success, points may not be credited');
+        }
       } catch (e) {
         console.error('Failed to credit points:', e);
       }

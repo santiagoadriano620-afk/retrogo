@@ -1675,8 +1675,54 @@
                   </div>
                 </div>
                 <hr>
-                <div class="modal-footer">
+                <div class="modal-footer" style="display:flex;align-items:center;">
+                  <div style="flex:1;text-align:center;">
+                    <button id="shop-stripe-btn" class="shop-stripe-btn">
+                      Recharge with <img src="images/game/ui/stripe.png" alt="Stripe" style="height:18px;vertical-align:middle;margin-left:4px;">
+                    </button>
+                  </div>
                   <button action="cancel" value="Cancel">Close</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stripe Payment Modal -->
+            <div id="payment-modal" class="modal" style="width:440px;display:none;">
+              <button class="close-button-transparent symbol-button" id="payment-modal-close">✕</button>
+              <div class="modal-header">Recharge Premium Points</div>
+              <div class="modal-body" style="padding:16px;">
+                <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:20px;" id="payment-amounts">
+                  <button class="payment-amount-btn" data-points="100">100 PP<br><span>€20</span></button>
+                  <button class="payment-amount-btn" data-points="250">250 PP<br><span>€50</span></button>
+                  <button class="payment-amount-btn" data-points="500" class="popular">500 PP<br><span>€100</span></button>
+                  <button class="payment-amount-btn" data-points="1000">1000 PP<br><span>€200</span></button>
+                </div>
+                <div id="payment-card-fields" style="margin-bottom:16px;">
+                  <div class="payment-field-row">
+                    <label class="payment-label">Card Number</label>
+                    <div class="payment-input-wrap" id="payment-card-number"></div>
+                  </div>
+                  <div style="display:flex;gap:12px;">
+                    <div class="payment-field-row" style="flex:1;">
+                      <label class="payment-label">Expiry</label>
+                      <div class="payment-input-wrap" id="payment-card-expiry"></div>
+                    </div>
+                    <div class="payment-field-row" style="flex:1;">
+                      <label class="payment-label">CVC</label>
+                      <div class="payment-input-wrap" id="payment-card-cvc"></div>
+                    </div>
+                  </div>
+                </div>
+                <div id="payment-error" style="display:none;"></div>
+                <div id="payment-loading" style="display:none;">Processing payment...</div>
+                <div style="display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:14px;font-size:12px;color:#aaa;">
+                  <span style="font-size:16px;">&#x1f6e1;</span>
+                  Pagamento 100% seguro e protegido por
+                  <img src="images/game/ui/stripe.png" alt="Stripe" style="height:16px;vertical-align:middle;">
+                </div>
+                <div style="display:flex;gap:8px;justify-content:flex-end;">
+                  <button id="payment-pay-btn" disabled>Pay</button>
+                  <button id="payment-cancel-btn">Cancel</button>
                 </div>
               </div>
             </div>
