@@ -1,0 +1,2003 @@
+<!DOCTYPE html>
+<html>
+
+<meta charset="utf-8" />
+
+<!-- Metadata -->
+<meta name="description" content="RetroGo">
+<meta name="keywords" content="HTML5, JavaScript, NodeJS, Open Tibia, Client, RetroGo">
+<meta name="author" content="RetroGo">
+
+<title>RetroGo</title>
+
+<!-- Style Icon -->
+<link rel="shortcut icon" type="image/png" href="/images/retrogo.png" />
+
+<!-- Google Material Icons -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href="css/mobile.css">
+<script>document.documentElement.dataset.layout = 'mobile';</script>
+
+<!-- Ambient Music -->
+<audio id="rain" src="sounds/rain.ogg" preload="auto" type="audio/ogg"></audio>
+<audio id="field" src="sounds/field.ogg" preload="auto" type="audio/ogg"></audio>
+<audio id="cave" src="sounds/cave.ogg" preload="auto" type="audio/ogg"></audio>
+<audio id="forest" src="sounds/forest.ogg" preload="auto" type="audio/ogg"></audio>
+<audio id="wind" src="sounds/wind.ogg" preload="auto" type="audio/ogg"></audio>
+
+<!-- Sound bits -->
+<audio id="thunder-1" src="sounds/thunder1.ogg" preload="auto" type="audio/ogg"></audio>
+<audio id="thunder-2" src="sounds/thunder2.ogg" preload="auto" type="audio/ogg"></audio>
+<audio id="thunder-3" src="sounds/thunder3.ogg" preload="auto" type="audio/ogg"></audio>
+<audio id="thunder-4" src="sounds/thunder4.ogg" preload="auto" type="audio/ogg"></audio>
+
+<!-- Sound bits -->
+<audio id="grass-1" src="sounds/grass1.ogg" preload="auto" type="audio/ogg"></audio>
+<audio id="grass-2" src="sounds/grass2.ogg" preload="auto" type="audio/ogg"></audio>
+<audio id="grass-3" src="sounds/grass3.ogg" preload="auto" type="audio/ogg"></audio>
+<audio id="grass-4" src="sounds/grass4.ogg" preload="auto" type="audio/ogg"></audio>
+<audio id="grass-5" src="sounds/grass5.ogg" preload="auto" type="audio/ogg"></audio>
+<audio id="grass-6" src="sounds/grass6.ogg" preload="auto" type="audio/ogg"></audio>
+<audio id="grass-7" src="sounds/grass7.ogg" preload="auto" type="audio/ogg"></audio>
+<audio id="grass-8" src="sounds/grass8.ogg" preload="auto" type="audio/ogg"></audio>
+
+<audio id="wood-2" src="sounds/wood2.ogg" preload="auto" type="audio/ogg"></audio>
+
+<body>
+
+  <!-- Hidden file selector for loading assets -->
+  <input id="load-save" type="file" style="display: none">
+
+  <!-- Debug overlay -->
+
+
+  <!-- Battle Window -->
+  <div id="battle-window-target" class="battle-window-target-wrapper">
+    <div class="battle-window-target-canvas">
+      <canvas id="battle-window-target-canvas"></canvas>
+    </div>
+    <div class="battle-window-target-stats">
+      <div class="battle-window-target-title"></div>
+      <div class="battle-window-bar-wrapper">
+        <div class="bar-holder">
+          <div class="battle-window-target-stats-bar health"></div>
+          <span class="bar-text">???</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="spellbook-wrapper-prototype" class="spellbook-wrapper">
+    <canvas></canvas>
+    <span></span>
+  </div>
+
+  <!-- The Context Menu's -->
+  <div class="contextmenu modal" id="screen-menu">
+    <button action="look">Look</button>
+    <button action="use">Use</button>
+    <button action="change-outfit" class="self-option" style="display:none">Change Outfit</button>
+    <button action="start-market" class="self-option" style="display:none">Start Market</button>
+    <button action="attack" class="creature-option" style="display:none">Attack</button>
+    <button action="party-invite" class="party-option" style="display:none">Invite to Party</button>
+    <button action="party-join" class="party-option" style="display:none">Join Party</button>
+    <button action="party-leave" class="party-option" style="display:none">Leave Party</button>
+    <button action="party-kick" class="party-option" style="display:none">Kick from Party</button>
+    <button action="party-pass" class="party-option" style="display:none">Transfer Party Leader</button>
+    <button action="trade" class="creature-option" style="display:none">Trade with...</button>
+    <button action="accept-trade" class="creature-option" style="display:none">Accept Trade</button>
+    <button action="browse-market" class="creature-option" style="display:none">Browse Market</button>
+</div>
+
+  <!-- Menu for chat header -->
+  <div class="contextmenu modal" id="chat-header-menu">
+    <div class="menu-header">Menu</div>
+    <button action="close">Close</button>
+  </div>
+
+  <!-- Menu for hotbar slot -->
+  <div class="contextmenu modal" id="hotbar-menu">
+    <div class="menu-header">Menu</div>
+    <button action="add">Add Spell</button>
+    <button action="add-text">Add Text</button>
+    <button action="remove">Remove</button>
+  </div>
+
+  <!-- Menu for chat entry -->
+  <div class="contextmenu modal" id="chat-entry-menu">
+    <div class="menu-header">Menu</div>
+    <button action="whisper">Whisper</button>
+  </div>
+
+  <!-- Menu for chat entry -->
+  <div class="contextmenu modal" id="chat-body-menu">
+    <div class="menu-header">Menu</div>
+    <button action="clear">Clear Chat</button>
+  </div>
+
+  <!-- Menu for VIP list entries -->
+  <div class="contextmenu modal" id="friend-list-menu">
+    <div class="menu-header">Menu</div>
+    <button action="message">Send Message</button>
+    <br><button action="remove">Remove VIP</button>
+  </div>
+
+  <!-- Menu for VIP window -->
+  <div class="contextmenu modal" id="friend-window-menu">
+    <div class="menu-header">Menu</div>
+    <button action="add">Add VIP</button>
+    <br><button action="hide-offline">Hide Offline</button>
+  </div>
+
+  <!-- Menu for container slots -->
+  <div class="contextmenu modal" id="container-menu">
+    <div class="menu-header">Menu</div>
+    <button action="look">Look</button>
+    <br><button action="use">Use</button>
+  </div>
+
+  <!-- Menu for minimap -->
+  <div class="contextmenu modal" id="minimap-menu">
+    <div class="menu-header">Minimap</div>
+    <button action="add-mark">Add Mark</button>
+  </div>
+
+  <!-- Menu for minimap markers -->
+  <div class="contextmenu modal" id="minimap-pin-menu">
+    <div class="menu-header">Marker</div>
+    <button action="edit-mark">Edit</button>
+    <br><button action="remove-mark">Remove</button>
+  </div>
+
+  <!-- The Slot Prototype -->
+  <div style="display: none;">
+    <div id="slot-prototype" class="slot">
+      <canvas width="32" height="32"></canvas>
+      <span class="count"></span>
+    </div>
+  </div>
+
+  <!-- The Floating Element Prototype -->
+  <div id="floating-element-prototype" class="prototype text-window">
+    <span></span>
+  </div>
+
+  <!-- The Message Element Prototype -->
+  <div id="message-element-prototype" class="prototype text-window text-bubble">
+    <span></span>
+    <br>
+    <span></span>
+  </div>
+
+  <!-- The Character Element Prototype -->
+  <div id="character-element-prototype" class="prototype text-window">
+    <span class="guild-name"></span>
+    <span class="player-name"></span>
+    <div class="character-element-bar">
+      <div class="value-health"></div>
+    </div>
+    <div class="character-element-bar">
+      <div class="value-mana"></div>
+    </div>
+  </div>
+
+  <!-- The Container Prototype -->
+  <div id="container-prototype" class="prototype window">
+    <div class="header">
+      <span class="window-icon bag"></span><span class="title"></span>
+      <button class="container-btn" action="back" title="Previous Container"></button>
+      <button class="container-btn" action="minimize" title="Minimize"></button>
+      <button class="container-btn" action="close" title="Close"></button>
+    </div>
+    <div class="body"></div>
+    <div class="footer"></div>
+  </div>
+
+  <!-- VIP List -->
+  <div id="friend-window" class="window">
+    <div class="header">
+      <span class="window-icon person"></span><span class="title">VIP List</span>
+      <button class="container-btn" action="minimize" title="Minimize"></button>
+      <button class="container-btn" action="close" title="Close"></button>
+    </div>
+    <div class="body"></div>
+    <div class="footer"></div>
+  </div>
+
+  <!-- Quest Tracker Window -->
+  <div id="quest-tracker-window" class="window">
+    <div class="header">
+      <span class="title">Quest Tracker</span>
+      <button class="container-btn" action="minimize" title="Minimize"></button>
+      <button class="container-btn" action="close" title="Close"></button>
+    </div>
+    <div class="body">
+      <div class="quest-tracker-content">
+        <div class="tracker-quest-name"></div>
+        <div class="tracker-mission-list"></div>
+        <div class="tracker-empty">No quest tracked.</div>
+      </div>
+    </div>
+    <div class="footer"></div>
+  </div>
+
+  <!-- Party Window Prototype -->
+  <div id="party-window-target" class="party-window-target-wrapper">
+    <div class="party-window-target-canvas">
+      <canvas></canvas>
+    </div>
+    <div class="party-window-target-stats">
+      <div class="party-window-target-title"></div>
+      <div class="party-window-bar-wrapper">
+        <div class="bar-holder">
+          <div class="party-window-target-stats-bar health"></div>
+          <span class="bar-text">???</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Party Window -->
+  <div id="party-window" class="window">
+    <div class="header">
+      <span class="title">Party</span>
+      <button class="container-btn" action="minimize" title="Minimize"></button>
+      <button class="container-btn" action="close" title="Close"></button>
+    </div>
+    <div class="body"></div>
+    <div class="footer"></div>
+  </div>
+
+  <!-- Battle Window -->
+  <div id="battle-window" class="window">
+    <div class="header">
+      <span class="window-icon swords"></span><span class="title">Battle</span>
+      <button class="container-btn" action="minimize" title="Minimize"></button>
+      <button class="container-btn" action="close" title="Close"></button>
+    </div>
+    <div class="body">
+      <div class="battle-filter">
+        <button class="battle-icon-btn" data-filter="players" title="Players" style="background-image: url('/images/game/battle/battle_players.png')"></button>
+        <button class="battle-icon-btn" data-filter="npcs" title="NPCs" style="background-image: url('/images/game/battle/battle_npcs.png')"></button>
+        <button class="battle-icon-btn" data-filter="monsters" title="Monsters" style="background-image: url('/images/game/battle/battle_monsters.png')"></button>
+        <button class="battle-icon-btn" data-filter="skulls" title="Skulled Players" style="background-image: url('/images/game/battle/battle_skulls.png')"></button>
+        <button class="battle-icon-btn" data-filter="party" title="Party Members" style="background-image: url('/images/game/battle/battle_party.png')"></button>
+      </div>
+    </div>
+    <div class="footer"></div>
+  </div>
+
+
+
+  <!-- Skill Window -->
+  <div id="skill-window" class="window">
+    <div class="header">
+      <span class="window-icon bow"></span><span class="title">Skills</span>
+      <button class="container-btn" action="minimize" title="Minimize"></button>
+      <button class="container-btn" action="close" title="Close"></button>
+    </div>
+    <div class="body">
+
+      <div class="outer-skill-wrapper" skill="level">
+        <div class="skill-wrapper">
+          <span>Level</span>
+          <span class="skill">255</span>
+        </div>
+      </div>
+
+      <div class="outer-skill-wrapper" skill="experience">
+        <div class="bar-wrapper">
+          <div class="skill-wrapper">
+            <span>Experience</span>
+            <span class="skill">25,520</span>
+          </div>
+          <div class="bar">
+            <div class="value"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="outer-skill-wrapper" skill="speed">
+        <div class="skill-wrapper">
+          <span>Speed</span>
+          <span class="skill"></span>
+        </div>
+      </div>
+
+      <div class="outer-skill-wrapper" skill="food">
+        <div class="skill-wrapper">
+          <span>Food</span>
+          <span class="skill">00:00</span>
+        </div>
+      </div>
+
+      <div class="skill-separator"></div>
+
+      <div class="outer-skill-wrapper" skill="magic">
+        <div class="bar-wrapper">
+          <div class="skill-wrapper">
+            <span>Magic</span>
+            <span class="skill"></span>
+          </div>
+          <div class="bar">
+            <div class="value"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="outer-skill-wrapper" skill="fist">
+        <div class="bar-wrapper">
+          <div class="skill-wrapper">
+            <span>Fist Fighting</span>
+            <span class="skill"></span>
+          </div>
+          <div class="bar">
+            <div class="value"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="outer-skill-wrapper" skill="club">
+        <div class="bar-wrapper">
+          <div class="skill-wrapper">
+            <span>Club Fighting</span>
+            <span class="skill"></span>
+          </div>
+          <div class="bar">
+            <div class="value"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="outer-skill-wrapper" skill="sword">
+        <div class="bar-wrapper">
+          <div class="skill-wrapper">
+            <span>Sword Fighting</span>
+            <span class="skill"></span>
+          </div>
+          <div class="bar">
+            <div class="value"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="outer-skill-wrapper" skill="axe">
+        <div class="bar-wrapper">
+          <div class="skill-wrapper">
+            <span>Axe Fighting</span>
+            <span class="skill"></span>
+          </div>
+          <div class="bar">
+            <div class="value"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="outer-skill-wrapper" skill="distance">
+        <div class="bar-wrapper">
+          <div class="skill-wrapper">
+            <span>Distance Fighting</span>
+            <span class="skill"></span>
+          </div>
+          <div class="bar">
+            <div class="value"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="outer-skill-wrapper" skill="shielding">
+        <div class="bar-wrapper">
+          <div class="skill-wrapper">
+            <span>Shielding</span>
+            <span class="skill"></span>
+          </div>
+          <div class="bar">
+            <div class="value"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="outer-skill-wrapper" skill="fishing">
+        <div class="bar-wrapper">
+          <div class="skill-wrapper">
+            <span>Fishing</span>
+            <span class="skill"></span>
+          </div>
+          <div class="bar">
+            <div class="value"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Wrapper for the login screen -->
+  <div id="login-wrapper">
+    <div id="login-inner">
+
+      <!-- Discord link -->
+      <div id="discord-container">
+        <a id="discord-link" href="#" target="_blank" title="Join our Discord">
+          <img src="/./images/discord.svg" alt="Discord">
+        </a>
+        <span id="discord-label">Join our Discord Server</span>
+      </div>
+
+      <div class="modal-wrapper">
+
+        <!-- Login Modal for Generic Text -->
+        <div id="floater-connecting" class="modal">
+          <div class="modal-header">Information</div>
+          <div class="modal-body">
+            <div style="text-align: center;"><span id="serve-feedback"></span></div>
+          </div>
+        </div>
+
+        <!-- Login Modal for Connection Settings -->
+        <div id="settings-box" class="modal">
+          <div class="modal-header">Connection Settings</div>
+          <div class="modal-body">
+            <p style="font-size: 11px; color: #ccc;">Login Server Address:
+              <br><input class="input-botao" style="text-align: center; width: 100%; margin-top: 4px;" id="host" value="127.0.0.1:1337" placeholder="127.0.0.1:1337">
+              <hr class="hr-botao">
+              <button class="btn-botao" id="clear-database" onclick="gameClient.database.clear()" style="height: 22px; font-size: 10px;">Reset Client</button>
+            <div class="modal-footer" style="margin-top: 8px;">
+              <button class="btn-botao" action="confirm" style="height: 22px; font-size: 10px;">Close</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Login Modal for Enter World -->
+        <div id="floater-enter" class="modal">
+          <div class="modal-header">Account Information</div>
+          <div class="modal-body">
+            <form>
+              <p style="font-size: 11px; color: #ccc; margin: 4px 0;">Username:
+                <br><input class="input-botao password-input" name='username' id="user-username" value="" type="text"
+                  placeholder="Account Name" style="width: 100%; margin-top: 4px;">
+              <p style="font-size: 11px; color: #ccc; margin: 4px 0;">Password:
+                <br><input class="input-botao password-input" name='password' id="user-password" value="" type="password"
+                  placeholder="Account Password" style="width: 100%; margin-top: 4px;">
+              <p style="font-size: 11px; color: #ccc; margin: 2px 0 4px 0;">
+                <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+                  <input type="checkbox" id="save-password" checked>
+                  <span style="font-size: 11px; color: #ccc;">Save Password</span>
+                </label>
+              </p>
+            </form>
+            <hr class="hr-botao">
+            <div class="modal-footer">
+              <button class="btn-botao" id="forgot-password" style="height: 22px; font-size: 10px;">Forgot Password?</button>
+              <button class="btn-botao" id="enter-game" disabled style="height: 22px; font-size: 10px;">Enter Gameworld</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Character Selection Modal -->
+        <div id="floater-characters" class="modal">
+          <div class="modal-header">Select Character</div>
+          <div class="modal-body" id="character-list" style="padding: 0;"></div>
+          <div id="character-confirm-area"></div>
+        </div>
+
+        <!-- Login Modal for Create Account -->
+        <div id="floater-create" class="modal">
+          <div class="modal-header">Create Account</div>
+          <div class="modal-body">
+            <p style="font-size: 11px; color: #ccc; margin: 4px 0;">Account Number:
+              <br><input class="input-botao password-input" id="create-username" type="password" placeholder="Account Number" style="width: 100%; margin-top: 4px;">
+            <p style="font-size: 11px; color: #ccc; margin: 4px 0;">Password:
+              <br><input class="input-botao password-input" id="create-password" type="password" placeholder="Account Password" style="width: 100%; margin-top: 4px;">
+            <p style="font-size: 11px; color: #ccc; margin: 4px 0;">Character Name:
+              <br><input class="input-botao password-input" id="create-name" placeholder="Character Name" style="width: 100%; margin-top: 4px;">
+            <hr class="hr-botao">
+            <p style="font-size: 11px; color: #ccc; margin: 8px 0; text-align: center;">
+              <label class="sex-radio"><input type="radio" name="create-sex" value="male" checked><span class="radio-circle"></span> Male</label>
+              <label class="sex-radio"><input type="radio" name="create-sex" value="female"><span class="radio-circle"></span> Female</label>
+            <hr class="hr-botao">
+            <div class="modal-footer">
+              <button class="btn-botao" action="confirm" id="create-account-close" style="height: 22px; font-size: 10px;">Create Account</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Highscore Modal -->
+        <div id="floater-highscore" class="modal" style="width: 520px;">
+          <div class="modal-header">Highscore</div>
+          <div class="modal-body">
+            <div id="highscore-filters" class="highscore-filters"></div>
+            <div id="highscore-list" class="highscore-list"></div>
+            <div class="modal-footer">
+              <div class="highscore-pagination">
+                <button class="btn-botao" id="highscore-page-first" style="height: 22px; font-size: 10px; padding: 2px 8px; box-sizing: border-box;">First</button>
+                <button class="btn-botao" id="highscore-page-last" style="height: 22px; font-size: 10px; padding: 2px 8px; box-sizing: border-box;">Last</button>
+              </div>
+              <div class="highscore-pagination">
+                <button class="btn-botao" id="highscore-page-prev" style="height: 22px; font-size: 10px; padding: 2px 8px; box-sizing: border-box;">Back</button>
+                <button class="btn-botao" id="highscore-page-next" style="height: 22px; font-size: 10px; padding: 2px 8px; box-sizing: border-box;">Next</button>
+                <button class="btn-botao" action="confirm" style="height: 22px; font-size: 10px; padding: 2px 8px; box-sizing: border-box;">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bans Modal -->
+        <div id="floater-bans" class="modal" style="width: 450px;">
+          <div class="modal-header">Bans</div>
+          <div class="modal-body">
+            <div id="bans-list" class="bans-list"></div>
+            <div class="modal-footer">
+              <div class="highscore-pagination">
+                <button class="btn-botao" id="bans-page-first" style="height: 22px; font-size: 10px; padding: 2px 8px; box-sizing: border-box;">First</button>
+                <button class="btn-botao" id="bans-page-last" style="height: 22px; font-size: 10px; padding: 2px 8px; box-sizing: border-box;">Last</button>
+              </div>
+              <div class="highscore-pagination">
+                <button class="btn-botao" id="bans-page-prev" style="height: 22px; font-size: 10px; padding: 2px 8px; box-sizing: border-box;">Back</button>
+                <button class="btn-botao" id="bans-page-next" style="height: 22px; font-size: 10px; padding: 2px 8px; box-sizing: border-box;">Next</button>
+                <button class="btn-botao" action="confirm" style="height: 22px; font-size: 10px; padding: 2px 8px; box-sizing: border-box;">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Deaths Modal -->
+        <div id="floater-deaths" class="modal" style="width: 240px;">
+          <div class="modal-header">Deaths</div>
+          <div class="modal-body">
+            <div id="deaths-list" class="deaths-list"></div>
+            <div class="modal-footer" style="justify-content: center; gap: 6px;">
+              <button class="btn-botao" id="deaths-page-prev" style="height: 22px; font-size: 10px; padding: 2px 8px; box-sizing: border-box;">Back</button>
+              <button class="btn-botao" id="deaths-page-next" style="height: 22px; font-size: 10px; padding: 2px 8px; box-sizing: border-box;">Next</button>
+              <button class="btn-botao" action="confirm" style="height: 22px; font-size: 10px; padding: 2px 8px; box-sizing: border-box;">Close</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Information at the top -->
+      <div class="login-version">
+        Client Version: <span id="client-version"></span>
+        <br>Sprites: <span id="sprites-loaded" style="color: red;">Missing</span>
+        <br>Objects: <span id="data-loaded" style="color: red;">Missing</span>
+        <br><span id="load-debug" style="color: yellow; font-size: 11px;"></span>
+      </div>
+
+      <!-- Main Background Image-->
+      <img src="/./images/background.png">
+
+      <!-- The Setting buttons at the bottom -->
+      <div class="login-settings">
+        <button class="btn-botao" id="login-info">Enter Game</button>
+        <button class="btn-botao" id="create-account">Create Account</button>
+      </div>
+
+      <!-- Right side menu -->
+      <div class="login-menu-right">
+        <button class="btn-botao" id="highscore-btn">Highscore</button>
+        <button class="btn-botao" id="bans-btn">Bans</button>
+        <button class="btn-botao" id="deaths-btn">Deaths</button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- The Game Interface -->
+  <div id="game-wrapper">
+
+    <!-- Mobile Status Bar (Top) -->
+    <div id="mobile-status-bar" class="mobile-only">
+      <div class="mobile-bar-container">
+        <div class="mobile-bar">
+          <div id="mobile-health-bar" class="mobile-bar-fill health" style="width: 100%;"></div>
+          <span class="mobile-bar-text" id="mobile-health-text">??? / ???</span>
+        </div>
+        <div class="mobile-bar">
+          <div id="mobile-mana-bar" class="mobile-bar-fill mana" style="width: 100%;"></div>
+          <span class="mobile-bar-text" id="mobile-mana-text">??? / ???</span>
+        </div>
+      </div>
+      <button id="mobile-menu-btn" class="mobile-action-btn" title="Menu">☰</button>
+    </div>
+
+    <!-- Mobile Action Bar (Bottom) -->
+    <div id="mobile-action-bar" class="mobile-only">
+      <!-- Virtual Joystick Zone -->
+      <div id="mobile-joystick-zone">
+        <div id="virtual-joystick">
+          <div id="joystick-knob"></div>
+        </div>
+      </div>
+
+      <!-- Mobile Hotbar - 4 skill slots -->
+      <div id="mobile-hotbar">
+        <div class="mobile-hotbar-slot" data-slot="0"><canvas></canvas><span class="mobile-slot-key">1</span></div>
+        <div class="mobile-hotbar-slot" data-slot="1"><canvas></canvas><span class="mobile-slot-key">2</span></div>
+        <div class="mobile-hotbar-slot" data-slot="2"><canvas></canvas><span class="mobile-slot-key">3</span></div>
+        <div class="mobile-hotbar-slot" data-slot="3"><canvas></canvas><span class="mobile-slot-key">4</span></div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div id="mobile-actions">
+        <button id="mobile-equipment-btn" class="mobile-action-btn equipment" title="Equipment">🛡</button>
+        <button id="mobile-inventory-btn" class="mobile-action-btn inventory" title="Inventory">🎒</button>
+        <button id="mobile-look-btn" class="mobile-action-btn look" title="Look">👁</button>
+        <button id="mobile-use-btn" class="mobile-action-btn use" title="Use">✋</button>
+        <button id="mobile-attack-btn" class="mobile-action-btn attack" title="Attack">⚔</button>
+        <button id="mobile-chat-btn" class="mobile-action-btn chat" title="Chat">💬</button>
+      </div>
+    </div>
+
+    <!-- Main body for the screen etc.. -->
+    <div class="main">
+
+      <div class="middle"></div>
+
+      <div class="upper">
+
+        <div id="canvas-id" class="canvas-wrapper">
+
+          <!-- Modals for the game screen -->
+          <div class="modal-wrapper">
+
+            <!-- Big Minimap Overlay -->
+            <div id="big-minimap-overlay" class="big-minimap-overlay" style="display: none;">
+              <div class="big-minimap-frame">
+                <div class="big-minimap-content">
+                  <canvas id="big-minimap-canvas" width="400" height="400"></canvas>
+                  <div class="big-minimap-controls">
+                    <button class="ctrl-btn ctrl-zoom-out" id="big-minimap-zoom-down" title="Zoom Out"></button>
+                    <button class="ctrl-btn ctrl-zoom-in" id="big-minimap-zoom-up" title="Zoom In"></button>
+                    <button class="ctrl-btn ctrl-floor-up" id="big-minimap-zoom-el" title="Floor Up"></button>
+                    <button class="ctrl-btn ctrl-floor-down" id="big-minimap-zoom-dl" title="Floor Down"></button>
+                    <div style="flex: 1;"></div>
+                    <button class="btn-botao" id="big-minimap-close" style="height: 20px; font-size: 9px; padding: 0 8px;">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mark Flag Modal -->
+            <div id="minimap-mark-modal" class="modal" style="width: 320px;">
+              <button class="close-button-transparent symbol-button" action="cancel" value="Cancel">✕</button>
+              <div class="modal-header">Map Mark</div>
+              <div class="modal-body">
+                <label style="color: #ccc; font-size: 11px; display: block; margin-bottom: 4px;">Choose a flag:</label>
+                <div class="flag-selector-grid" id="flag-selector-grid"></div>
+                <hr>
+                <div class="mark-description-wrapper">
+                  <label style="color: #ccc; font-size: 11px; display: block; margin-bottom: 4px;">Description:</label>
+                  <input type="text" id="mark-description" placeholder="Enter description..." maxlength="40" style="width: 100%; padding: 6px; box-sizing: border-box; background: #1a1a1a; border: 1px solid #444; color: #fff; font-size: 12px; outline: none;">
+                </div>
+                <hr>
+                <div class="modal-footer">
+                  <button action="cancel" value="Cancel">Cancel</button>
+                  <button id="confirm-mark-btn">Ok</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Open Chat Modal -->
+            <div id="map-modal" class="modal">
+              <button class="close-button-transparent symbol-button" action="cancel" value="Cancel">✕</button>
+              <div class="modal-header">World Map</div>
+              <div class="modal-body">
+                <div class="map-modal-wrapper">
+                  <span>Hey</span>
+                  <div class="vline"></div>
+                  <div class="hline"></div>
+                  <canvas id="map-modal-canvas" style="background-color: black;"></canvas>
+                </div>
+                <div class="modal-footer">
+                  <button action="cancel" value="Cancel">Close</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Open Chat Modal -->
+            <div id="chat-modal" class="modal">
+              <button class="close-button-transparent symbol-button" action="cancel" value="Cancel">✕</button>
+              <div class="modal-header">Chat Options</div>
+              <div class="modal-body">
+                Select a channel:
+                <br>
+                <select id="channel-select" class="channel-select" size="7">
+                  <option channelType="global" channelId="1">World</option>
+                  <option channelType="global" channelId="2">Trade</option>
+                  <option channelType="global" channelId="3">Help</option>
+                  <option channelType="global" channelId="4">Rookgaard</option>
+                  <option channelType="local" channelId="Console">Console</option>
+                </select>
+                <hr>
+                Open a private channel:
+                <br>
+                <input id="open-private-channel-input" type="text" onkeypress="return /[a-z]/i.test(event.key)">
+                <hr>
+                <div class="modal-footer">
+                  <button action="cancel" value="Cancel">Cancel</button>
+                  <button action="confirm" value="Ok">Confirm</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Settings Modal -->
+            <div id="settings-modal" class="modal">
+              <button class="close-button-transparent symbol-button" action="cancel" value="Cancel">✕</button>
+              <div class="modal-header">Settings</div>
+              <div class="modal-body">
+                <div class="checkboxes">
+                  <label class="checkbox-label" for="enable-weather">
+                    <input type="checkbox" id="enable-weather" autocomplete="off"> Enable Weather
+                  </label>
+                  <label class="checkbox-label" for="enable-sound">
+                    <input type="checkbox" id="enable-sound" autocomplete="off"> Enable Sound
+                  </label>
+                  <label class="checkbox-label" for="show-ping">
+                    <input type="checkbox" id="show-ping" autocomplete="off"> Show Ping
+                  </label>
+                  <label class="checkbox-label" for="anti-aliasing">
+                    <input type="checkbox" id="anti-aliasing" autocomplete="off" checked> Anti-Aliasing
+                  </label>
+                  <label class="checkbox-label" for="show-fps">
+                    <input type="checkbox" id="show-fps" autocomplete="off"> Show FPS
+                  </label>
+                </div>
+
+                <hr>
+
+                <div class="settings-row">
+                  <label>Volume:</label>
+                  <input type="range" id="volume-slider" min="0" max="100" value="100">
+                  <span id="volume-slider-value" style="width: 35px; display: inline-block;">100%</span>
+                </div>
+
+                <hr>
+
+                <div class="settings-row">
+                  <label>VSync:</label>
+                  <input type="checkbox" id="fps-vsync" autocomplete="off" checked>
+                </div>
+                <div class="settings-row" id="fps-limit-row">
+                  <label>FPS Limit:</label>
+                  <input type="range" id="fps-limit" min="10" max="180" value="60" step="10">
+                  <span id="fps-limit-value" style="width: 45px; display: inline-block; text-align: right;">60</span>
+                </div>
+
+                <hr>
+
+                <div class="settings-row settings-centered">
+                  <button class="btn-botao" id="fullscreen-button" style="height: 22px; font-size: 10px; width: 100%;">Toggle Fullscreen</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quest Log Modal -->
+            <div id="quest-log-modal" class="modal">
+              <div class="modal-header">Quest Log</div>
+              <div class="modal-body"></div>
+            </div>
+
+            <!-- Oracle Modal -->
+            <div id="oracle-modal" class="modal" style="width: 620px;">
+              <div class="modal-header">Choose Your Destiny</div>
+              <div class="modal-body">
+                <div class="oracle-subtitle">Choose your profession and the town you wish to inhabit:</div>
+                <div id="oracle-vocations" class="oracle-vocations"></div>
+                <div class="oracle-section-label">Destination</div>
+                <div id="oracle-towns" class="oracle-towns"></div>
+                <div class="modal-footer oracle-footer">
+                  <button class="btn-botao" action="cancel" value="Cancel">Cancel</button>
+                  <button class="btn-botao" action="confirm" value="Confirm">Confirm</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Readable Modal -->
+            <div id="readable-modal" class="modal">
+              <button class="close-button-transparent symbol-button" action="cancel" value="Cancel">✕</button>
+              <div class="modal-header">Title</div>
+              <div class="modal-body">
+                <div style="position: relative;">
+                  <textarea id="book-text-area"></textarea>
+                  <!-- Transparent pane above text-area: disabled elements do not register mouseup events.. -->
+                  <div
+                    style="background-color: none; width: 100%; height: 260px; position: absolute; top: 0px; pointer-events: none;">
+                  </div>
+                </div>
+                <hr>
+                <div class="modal-footer">
+                  <button id="book-save-button" action="confirm" value="Save" style="display: none;">Save</button>
+                  <button action="cancel" value="Cancel">Close</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Confirm Modal -->
+            <div id="confirm-modal" class="modal">
+              <button class="close-button-transparent symbol-button" action="cancel" value="Cancel">✕</button>
+              <div class="modal-header">Confirm?</div>
+              <div class="modal-body">
+                <div style="text-align: center;">Are you sure?</div>
+                <hr>
+                <!-- Buttons aligned to the right -->
+                <div class="modal-footer">
+                  <button action="cancel" value="Cancel">Cancel</button>
+                  <button action="confirm" value="Ok">Confirm</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Death Modal -->
+            <div id="death-modal" class="modal">
+              <div class="modal-header">You are dead.</div>
+              <div class="modal-body">
+                <div style="text-align: center;"><span id="death-message">You are dead.</span></div>
+                <hr>
+                <div class="modal-footer" style="display: flex; justify-content: space-between;">
+                  <button action="cancel" value="Logout">Logout</button>
+                  <button action="confirm" value="Respawn">Respawn at Temple</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Blessing Modal -->
+            <div id="blessing-modal" class="modal">
+              <div class="modal-header">Blessings</div>
+              <div class="modal-body">
+                <div class="blessing-slots" id="blessing-slots"></div>
+                <div class="blessing-summary" id="blessing-summary"></div>
+                <div class="modal-footer">
+                  <button class="btn-botao" action="confirm" value="Close">Close</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Guild Modal -->
+            <div id="guild-modal" class="modal">
+              <div class="modal-header">Guild</div>
+              <div class="modal-body">
+                <div class="guild-tabs" id="guild-tabs">
+                  <button class="guild-tab active" data-tab="info">Info</button>
+                  <button class="guild-tab" data-tab="members">Members</button>
+                  <button class="guild-tab" data-tab="bank">Bank</button>
+                  <button class="guild-tab" data-tab="manage">Manage</button>
+                  <button class="guild-tab" data-tab="wars">Wars</button>
+                </div>
+                <div class="guild-content" id="guild-content">
+                  <p class="guild-noguild">You are not in a guild.</p>
+                </div>
+                <div class="modal-footer">
+                  <button class="btn-botao" action="cancel" value="Cancel">Close</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Ban Control Modal -->
+            <div id="floater-ban-control" class="modal" style="width: 560px;">
+              <div class="modal-header">Ban Control</div>
+              <div class="modal-body">
+                <div class="ban-tabs">
+                  <button class="ban-tab active" data-tab="now">Ban Now</button>
+                  <button class="ban-tab" data-tab="list">Ban List</button>
+                  <button class="ban-tab" data-tab="history">Last Bans</button>
+                </div>
+                <div id="ban-tab-now" class="ban-tab-content active">
+                  <input type="text" id="ban-search-input" class="ban-search-input" placeholder="Search character...">
+                  <div id="ban-search-results" class="ban-search-results"></div>
+                  <div id="ban-detail" class="ban-detail" style="display:none;">
+                    <div class="ban-detail-header">
+                      <canvas id="ban-detail-outfit" width="48" height="48"></canvas>
+                      <div class="ban-detail-info">
+                        <span id="ban-detail-name" class="ban-detail-name"></span>
+                        <span id="ban-detail-level" class="ban-detail-level"></span>
+                        <span id="ban-detail-vocation" class="ban-detail-vocation"></span>
+                      </div>
+                    </div>
+                    <div class="ban-detail-fields">
+                      <label class="ban-label">Days (0 = permanent)</label>
+                      <input type="number" id="ban-days" class="ban-input" value="7" min="0">
+                      <label class="ban-label">Reason</label>
+                      <textarea id="ban-reason" class="ban-textarea" rows="3"></textarea>
+                    </div>
+                    <div class="ban-detail-actions">
+                      <button class="btn-botao" id="ban-execute-btn">Ban</button>
+                      <button class="btn-botao" id="ban-unban-btn">Unban</button>
+                    </div>
+                  </div>
+                </div>
+                <div id="ban-tab-list" class="ban-tab-content">
+                  <div id="ban-list-entries" class="ban-list-entries"></div>
+                  <div class="ban-pagination ban-list-pagination">
+                    <button class="btn-botao ban-page-btn" id="ban-list-first" style="height: 22px; font-size: 10px; padding: 2px 8px; box-sizing: border-box;">First</button>
+                    <button class="btn-botao ban-page-btn" id="ban-list-prev" style="height: 22px; font-size: 10px; padding: 2px 8px; box-sizing: border-box;">Back</button>
+                    <button class="btn-botao ban-page-btn" id="ban-list-next" style="height: 22px; font-size: 10px; padding: 2px 8px; box-sizing: border-box;">Next</button>
+                    <button class="btn-botao ban-page-btn" id="ban-list-last" style="height: 22px; font-size: 10px; padding: 2px 8px; box-sizing: border-box;">Last</button>
+                  </div>
+                </div>
+                <div id="ban-tab-history" class="ban-tab-content">
+                  <div id="ban-history-entries" class="ban-history-entries"></div>
+                  <div class="ban-pagination ban-history-pagination">
+                    <button class="btn-botao ban-page-btn" id="ban-history-first" style="height: 22px; font-size: 10px; padding: 2px 8px; box-sizing: border-box;">First</button>
+                    <button class="btn-botao ban-page-btn" id="ban-history-prev" style="height: 22px; font-size: 10px; padding: 2px 8px; box-sizing: border-box;">Back</button>
+                    <button class="btn-botao ban-page-btn" id="ban-history-next" style="height: 22px; font-size: 10px; padding: 2px 8px; box-sizing: border-box;">Next</button>
+                    <button class="btn-botao ban-page-btn" id="ban-history-last" style="height: 22px; font-size: 10px; padding: 2px 8px; box-sizing: border-box;">Last</button>
+                  </div>
+                </div>
+                <div id="ban-edit-popup" class="ban-edit-popup" style="display:none;">
+                  <div class="ban-edit-title">Edit Ban for <span id="ban-edit-name"></span></div>
+                  <label class="ban-label">Days</label>
+                  <input type="number" id="ban-edit-days" class="ban-input" min="0">
+                  <label class="ban-label">Reason</label>
+                  <textarea id="ban-edit-reason" class="ban-textarea" rows="3"></textarea>
+                  <div class="ban-edit-actions">
+                    <button class="btn-botao" id="ban-edit-save-btn">Save</button>
+                    <button class="btn-botao" id="ban-edit-cancel-btn">Cancel</button>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button class="btn-botao" action="confirm" style="height: 22px; font-size: 10px; padding: 2px 8px; box-sizing: border-box;">Close</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bot Control Modal -->
+            <div id="floater-bot-control" class="modal" style="width: 500px;">
+              <div class="modal-header">Anti-Cheat Control</div>
+              <div class="modal-body">
+                <div class="bot-tabs">
+                  <button class="bot-tab active" data-tab="suspects">Suspects</button>
+                  <button class="bot-tab" data-tab="cheaters">Active Cheaters</button>
+                </div>
+                <div id="bot-tab-suspects" class="bot-tab-content active">
+                  <div id="bot-suspect-entries" class="bot-suspect-entries">
+                    <div class="highscore-empty">No suspects detected.</div>
+                  </div>
+                </div>
+                <div id="bot-tab-cheaters" class="bot-tab-content">
+                  <div id="bot-cheater-entries" class="bot-cheater-entries">
+                    <div class="highscore-empty">No active cheaters.</div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button class="btn-botao" action="confirm" style="height: 22px; font-size: 10px; padding: 2px 8px; box-sizing: border-box;">Close</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- House Purchase Modal -->
+            <div id="house-modal" class="modal">
+              <button class="close-button-transparent symbol-button" action="cancel" value="Cancel">✕</button>
+              <div class="modal-header">House</div>
+              <div class="modal-body">
+                <div class="house-name-display" id="house-name-display"></div>
+                <div class="house-badge" id="house-badge"></div>
+                <div class="house-columns">
+                  <div class="house-column house-column-rent">
+                    <div class="house-column-title">Rent</div>
+                    <div class="house-col-body">
+                      <div class="house-detail-row">
+                        <span class="house-detail-label">Weekly Rent</span>
+                        <span class="house-detail-value house-price-gold" id="house-weekly-rent"></span>
+                      </div>
+                      <div class="house-detail-row">
+                        <span class="house-detail-label">Rent Period</span>
+                        <span class="house-detail-value" id="house-rent-period"></span>
+                      </div>
+                    </div>
+                    <button class="btn-botao house-col-btn" id="house-rent-btn">Rent Now</button>
+                  </div>
+                  <div class="house-column house-column-buy">
+                    <div class="house-column-title">Purchase</div>
+                    <div class="house-col-body">
+                      <div class="house-detail-row">
+                        <span class="house-detail-label">Price</span>
+                        <span class="house-detail-value house-price-gold" id="house-buy-price"></span>
+                      </div>
+                      <div class="house-detail-row">
+                        <span class="house-detail-label">Status</span>
+                        <span class="house-detail-value" id="house-buy-status">No rent ever</span>
+                      </div>
+                    </div>
+                    <button class="btn-botao house-col-btn" id="house-buy-outright-btn" style="display:none">Buy Now</button>
+                  </div>
+                </div>
+                <div class="house-shared-info">
+                  <div class="house-shared-item">
+                    <span class="house-shared-label">Size</span>
+                    <span class="house-shared-value" id="house-sqm"></span>
+                  </div>
+                  <div class="house-shared-item">
+                    <span class="house-shared-label">Price per sqm</span>
+                    <span class="house-shared-value" id="house-price-per-sqm"></span>
+                  </div>
+                  <div class="house-shared-item">
+                    <span class="house-shared-label">Beds</span>
+                    <span class="house-shared-value" id="house-beds"></span>
+                  </div>
+                </div>
+                <div class="house-reason" id="house-reason" style="display:none"></div>
+                <div class="house-footer">
+                  <button class="btn-botao" action="cancel" value="Cancel">Cancel</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Trade Modal -->
+            <div id="trade-modal" class="modal" style="width: 620px;">
+              <button class="close-button-transparent symbol-button" action="cancel" value="Cancel">✕</button>
+              <div class="modal-header">Trade Window</div>
+              <div class="modal-body">
+                <div class="trade-container">
+                  <div class="trade-side">
+                    <div class="trade-side-header" id="trade-your-name">You</div>
+                    <div class="trade-slots" id="trade-your-slots"></div>
+                    <div class="trade-gold-row">
+                      <span class="trade-gold-label">Gold:</span>
+                      <input type="number" class="input-botao trade-gold-input" id="trade-your-gold" value="0" min="0">
+                    </div>
+                    <div class="trade-total-row">
+                      <span>Total items: <span id="trade-your-count">0</span>/20</span>
+                      <span style="margin-left:8px;color:#aaa;">Your gold: <span id="trade-your-total-gold" style="color:#ffd700;">0</span></span>
+                    </div>
+                  </div>
+                  <div class="trade-status-column">
+                    <div class="trade-vs">VS</div>
+                    <div id="trade-status-a" class="trade-status-dot"></div>
+                    <div id="trade-status-b" class="trade-status-dot"></div>
+                    <div class="trade-arrow">⇄</div>
+                  </div>
+                  <div class="trade-side trade-opponent-side">
+                    <div class="trade-side-header" id="trade-opponent-name">Opponent</div>
+                    <div class="trade-slots" id="trade-opponent-slots"></div>
+                    <div class="trade-gold-row">
+                      <span class="trade-gold-label">Gold:</span>
+                      <span id="trade-opponent-gold" class="trade-gold-display">0</span>
+                    </div>
+                    <div class="trade-total-row">
+                      <span>Total items: <span id="trade-opponent-count">0</span>/20</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button class="btn-botao" action="confirm" id="trade-accept-btn">Accept</button>
+                  <button class="btn-botao" action="cancel">Cancel</button>
+                </div>
+                <div id="trade-count-overlay" class="trade-count-overlay" style="display:none;">
+                  <div class="trade-count-card">
+                    <canvas id="trade-count-sprite" width="32" height="32"></canvas>
+                    <div class="trade-count-label">How many?</div>
+                    <input type="range" id="trade-count-slider" min="1" max="100" value="1">
+                    <div class="trade-count-value" id="trade-count-value">1</div>
+                    <div class="trade-count-buttons">
+                      <button class="btn-botao" id="trade-count-confirm">Accept</button>
+                      <button class="btn-botao" id="trade-count-cancel">Cancel</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Market Modal -->
+            <div id="market-modal" class="modal" style="width: 300px;">
+              <button class="close-button-transparent symbol-button" action="cancel" value="Cancel">✕</button>
+              <div class="modal-header" id="market-header">Market</div>
+              <div class="modal-body">
+                <div id="market-shop-name" class="market-shop-name" style="display:none;"></div>
+                <div id="market-owner-info" class="market-owner-info" style="display:none;">
+                  <span>Earnings: <span id="market-earnings-gold" class="market-earnings-gold">0</span>g</span>
+                  <span style="margin-left:12px;">Retro: <span id="market-earnings-retro" class="market-earnings-retro">0</span>rg</span>
+                </div>
+                <div id="market-setup" class="market-setup" style="display:none;">
+                  <div class="market-setup-row">
+                    <input type="text" id="market-setup-name" class="input-botao" maxlength="32" placeholder="Shop name...">
+                  </div>
+                  <div class="market-setup-hint">Drag items from your backpack here.</div>
+                  <div class="market-setup-grid" id="market-setup-slots">
+                    <div class="market-empty">No items added.</div>
+                  </div>
+
+                  <button class="btn-botao" id="market-setup-confirm" disabled style="margin-top:6px;">Open Market</button>
+                </div>
+                <div id="market-item-list" class="market-item-list"></div>
+                <div class="modal-footer">
+                  <button class="btn-botao" id="market-action-btn" style="display:none;">Close Market</button>
+                </div>
+                <div id="market-buy-overlay" class="market-buy-overlay" style="display:none;">
+                  <div class="market-buy-card">
+                    <div class="market-buy-title">Quantity to buy:</div>
+                    <div style="text-align:center;margin-bottom:8px;">
+                      <span id="market-buy-count-display" style="font-size:18px;font-weight:bold;">1</span>
+                    </div>
+                    <input type="range" id="market-buy-count-slider" min="1" max="100" value="1" style="width:100%;">
+                    <div class="market-buy-buttons" style="margin-top:12px;">
+                      <button class="btn-botao" id="market-buy-confirm">Buy</button>
+                      <button class="btn-botao" id="market-buy-cancel">Cancel</button>
+                    </div>
+                  </div>
+                </div>
+                <div id="market-count-overlay" class="market-count-overlay" style="display:none;">
+                  <div class="market-count-card">
+                    <div class="market-count-title">Quantity to add:</div>
+                    <div style="text-align:center;margin-bottom:8px;">
+                      <span id="market-count-display" style="font-size:18px;font-weight:bold;">1</span>
+                    </div>
+                    <input type="range" id="market-count-slider" min="1" max="100" value="1" style="width:100%;">
+                    <div class="market-count-buttons">
+                      <button class="btn-botao" id="market-count-confirm">Add</button>
+                      <button class="btn-botao" id="market-count-cancel">Cancel</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- House Management Modal -->
+            <div id="house-manage-modal" class="modal" style="width: 600px;">
+              <button class="close-button-transparent symbol-button" action="cancel" value="Cancel">✕</button>
+              <div class="modal-header">House Management</div>
+              <div class="modal-body">
+                <div class="hm-info-section">
+                  <canvas id="hm-avatar" width="64" height="64" class="hm-avatar"></canvas>
+                  <div class="hm-info-text">
+                    <div id="hm-player-name" class="hm-player-name"></div>
+                    <div id="hm-house-name" class="hm-house-name"></div>
+                    <div id="hm-house-sqm" class="hm-house-sqm"></div>
+                    <span id="hm-badge" class="hm-badge"></span>
+                    <div class="hm-status-row">
+                      <span id="hm-tenure-badge" class="hm-tenure-badge"></span>
+                    </div>
+                  </div>
+                </div>
+                <hr class="hm-separator">
+                <div class="hm-section" id="hm-section-rented-info" style="display:none">
+                  <div class="hm-section-title">Rented To</div>
+                  <div class="hm-rented-info-text" id="hm-rented-info-text"></div>
+                </div>
+                <hr class="hm-separator" id="hm-sep-rented" style="display:none">
+                <div class="hm-section">
+                  <div class="hm-section-title">Invited Guests</div>
+                  <div id="hm-guest-list" class="hm-guest-list"></div>
+                  <div class="hm-invite-row">
+                    <input id="hm-invite-input" class="hm-input" type="text" placeholder="Player name...">
+                    <button id="hm-invite-btn" class="btn-botao">Invite</button>
+                  </div>
+                </div>
+                <hr class="hm-separator">
+                <div class="hm-section" id="hm-section-sell">
+                  <div class="hm-section-title">Sell To Player</div>
+                  <div class="hm-invite-row">
+                    <input id="hm-sell-input" class="hm-input" type="text" placeholder="Buyer name...">
+                    <button id="hm-sell-btn" class="btn-botao">Sell</button>
+                  </div>
+                </div>
+                <hr class="hm-separator" id="hm-sep-sell">
+                <div class="hm-section" id="hm-section-rent">
+                  <div class="hm-section-title">Set Rent Price</div>
+                  <div class="hm-invite-row">
+                    <input id="hm-rent-input" class="hm-input" type="number" placeholder="Price in gold..." min="0">
+                    <button id="hm-rent-btn" class="btn-botao">Set</button>
+                    <span id="hm-rent-status" class="hm-status"></span>
+                  </div>
+                </div>
+                <hr class="hm-separator" id="hm-sep-rent">
+                <div class="hm-section" id="hm-section-listing">
+                  <div class="hm-section-title">Set Sell Price</div>
+                  <div class="hm-invite-row">
+                    <input id="hm-listing-input" class="hm-input" type="number" placeholder="Sell price..." min="0">
+                    <button id="hm-listing-btn" class="btn-botao">Set</button>
+                    <span id="hm-listing-status" class="hm-status"></span>
+                  </div>
+                </div>
+                <hr class="hm-separator" id="hm-sep-listing">
+                <div class="hm-close-row">
+                  <button class="btn-botao" action="cancel" value="Cancel">Close</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Spellbook Modal -->
+            <div id="spellbook-modal" class="modal">
+              <button class="close-button-transparent symbol-button" action="cancel" value="Cancel">✕</button>
+              <div class="modal-header">Spellbook</div>
+              <div class="modal-body">
+                Click on a spell icon to add it to the hotbar.
+                <div id="spellbook-list"></div>
+                <hr>
+                <!-- Buttons aligned to the right -->
+                <div class="modal-footer">
+                  <button action="cancel" value="Cancel">Close</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hotbar Text Modal -->
+            <div id="hotbar-text-modal" class="modal">
+              <button class="close-button-transparent symbol-button" action="cancel" value="Cancel">✕</button>
+              <div class="modal-header">Add Custom Text</div>
+              <div class="modal-body">
+                Enter the text to send when this hotkey is pressed:
+                <input id="hotbar-text-input" type="text" placeholder="e.g., exura, Hi!, etc."
+                  style="width: 100%; margin-top: 8px; padding: 8px; font-size: 14px;">
+                <hr>
+                <!-- Buttons aligned to the right -->
+                <div class="modal-footer">
+                  <button action="cancel" value="Cancel">Cancel</button>
+                  <button action="confirm-text" value="Ok">Confirm</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hotkey Modal -->
+            <div id="hotkey-modal" class="modal">
+              <div class="modal-header">Hotkey Options</div>
+              <div class="modal-body">
+                <div class="hotkey-config-field">
+                  <select id="hotkey-config-selector"></select>
+                </div>
+
+                <div class="hotkey-list-field">
+                  <div class="hotkey-list-wrapper">
+                    <div id="hotkey-list" class="hotkey-list"></div>
+                    <div class="hotkey-scrollbar" id="hotkey-scrollbar">
+                      <div class="hotkey-scrollbar-thumb" id="hotkey-scrollbar-thumb"></div>
+                    </div>
+                  </div>
+
+                  <div class="hotkey-action-row">
+                    <button id="hotkey-reset-btn">Reset All</button>
+                    <button id="hotkey-add-btn">Add</button>
+                    <button id="hotkey-remove-btn" disabled>Remove</button>
+                  </div>
+
+                  <hr>
+
+                  <label id="hotkey-text-label" class="hotkey-edit-label">Edit hotkey text:</label>
+                  <input type="text" id="hotkey-text-input" placeholder="exura, exura vita, ..." disabled>
+
+                  <div class="hotkey-check-row">
+                    <label class="checkbox-label">
+                      <input type="checkbox" id="hotkey-send-auto" disabled> Send automatically
+                    </label>
+                  </div>
+                </div>
+
+                <hr>
+
+                <div class="modal-footer">
+                  <button action="confirm" value="Ok">Ok</button>
+                  <button action="cancel" value="Cancel">Cancel</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Key Capture Modal -->
+            <div id="hotkey-capture-modal" class="modal" style="width: 360px;">
+              <div class="modal-header">Button Assign</div>
+              <div class="modal-body">
+                <p>Please, press the key you wish to add onto your hotkeys manager</p>
+                <p id="hotkey-capture-preview">Current hotkey to add: none</p>
+                <hr>
+                <div class="modal-footer">
+                  <button id="hotkey-capture-add-btn" disabled>Add</button>
+                  <button id="hotkey-capture-cancel-btn">Cancel</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Enter Name Modal -->
+            <div id="enter-name-modal" class="modal">
+              <button class="close-button-transparent symbol-button" action="cancel" value="Cancel">✕</button>
+              <div class="modal-header">Enter Name</div>
+              <div class="modal-body">
+                <input id="enter-name" type="text" onkeypress="return /[a-z]/i.test(event.key)">
+                <hr>
+                <!-- Buttons aligned to the right -->
+                <div class="modal-footer">
+                  <button action="cancel" value="Cancel">Cancel</button>
+                  <button action="confirm" value="Ok">Confirm</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Ignore List Modal -->
+            <div id="ignore-list-modal" class="modal">
+              <button class="close-button-transparent symbol-button" action="cancel" value="Cancel">✕</button>
+              <div class="modal-header">Ignore List</div>
+              <div class="modal-body">
+                <button id="ignore-list-add-btn" class="modal-action-btn">Add Player</button>
+                <div id="ignore-list-container" class="ignore-list-container"></div>
+                <hr>
+                <div class="modal-footer">
+                  <button action="cancel" value="Cancel">Close</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Move Item Modal -->
+            <div id="move-item-modal" class="modal">
+              <button class="close-button-transparent symbol-button" action="cancel" value="Cancel">✕</button>
+              <div class="modal-header">Move Item</div>
+              <div class="modal-body">
+                <div class="move-item-wrapper">
+                  <div class="slot">
+                    <canvas id="move-count-sprite" width="32" height="32"></canvas>
+                    <span class="count" id="item-count"></span>
+                  </div>
+                  <div class="move-item-wrapper-inner">
+                    <div class="move-item-wrapper-inner-row">
+                      <input type="range" class="slider" id="item-amount" min="1">
+                    </div>
+                    <div class="move-item-wrapper-inner-row">
+                      <button action="cancel" value="Cancel">Cancel</button>
+                      <button action="confirm" value="Ok">Confirm</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Offer Item Modal -->
+            <div id="offer-modal" class="modal" style="width: 650px;">
+              <div class="modal-header">NPC Trade</div>
+              <div class="modal-body">
+                <div class="trade-top">
+                  <div class="trade-search">
+                    <label class="trade-search-label">Search:</label>
+                    <input type="text" class="trade-search-input" id="trade-search" maxlength="255">
+                  </div>
+                  <div class="trade-tabs">
+                    <span class="trade-tabs-label">Choose offer:</span>
+                    <div class="trade-tabs-buttons">
+<button class="btn-botao selected" id="set-buy">Buy</button>
+<button class="btn-botao" id="set-sell">Sell</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="trade-middle">
+                  <div class="trade-npc-area">
+                    <canvas id="trade-npc-canvas" width="48" height="48"></canvas>
+                    <span class="trade-npc-name" id="trade-npc-name"></span>
+                  </div>
+                  <div class="trade-items-panel">
+                    <div class="trade-items-grid" id="offers"></div>
+                  </div>
+                </div>
+                <div class="trade-footer">
+                  <div class="trade-footer-row">
+                    <div class="trade-footer-left">
+                      <span class="trade-info-key">Your Money:</span>
+                      <span class="trade-info-val" id="money">-</span>
+                      <span class="trade-info-key" style="margin-left:12px;">Your Capacity:</span>
+                      <span class="trade-info-val" id="capacity">-</span>
+                      <span class="trade-selected-info" id="trade-selected-info"></span>
+                    </div>
+                    <div class="trade-footer-right">
+                      <button class="btn-botao" action="confirm" value="Ok">Confirm</button>
+                      <button class="btn-botao" action="cancel" value="Cancel">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="trade-qty-overlay" class="trade-qty-overlay" style="display:none;">
+                <div class="trade-qty-card">
+                  <canvas id="trade-qty-icon" width="32" height="32"></canvas>
+                  <div id="trade-qty-name" class="trade-qty-name"></div>
+                  <div class="trade-qty-controls">
+                    <button id="trade-qty-minus" class="qty-btn">-</button>
+                    <span id="trade-qty-value" class="qty-value">1</span>
+                    <button id="trade-qty-plus" class="qty-btn">+</button>
+                  </div>
+                  <div class="trade-qty-max" id="trade-qty-max"></div>
+                  <div class="trade-qty-buttons">
+                    <button id="trade-qty-confirm" class="btn-botao">Confirm</button>
+                    <button id="trade-qty-cancel" class="btn-botao">Cancel</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Spellbook Modal -->
+            <div id="spellbook-modal" class="modal">
+              <button class="close-button-transparent symbol-button" action="cancel" value="Cancel">✕</button>
+              <div class="modal-header">Select Spell</div>
+              <div class="modal-body">
+                <div id="spellbook-list" style="max-height: 300px; overflow-y: auto;"></div>
+                <hr>
+                <!-- Buttons aligned to the right -->
+                <div class="modal-footer">
+                  <button action="cancel" value="Cancel">Cancel</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Spellbook Entry Prototype (hidden) -->
+            <div id="spellbook-wrapper-prototype" class="spellbook-entry"
+              style="display: none; align-items: center; padding: 5px; cursor: default; border-bottom: 1px solid #333;">
+              <canvas width="32" height="32" style="margin-right: 10px;"></canvas>
+              <div class="spell-info" style="flex: 1;"></div>
+            </div>
+
+            <!-- Move Item Modal -->
+            <div id="outfit-modal" class="modal" style="width: 420px;">
+              <div class="modal-header">Select Outfit</div>
+              <div class="modal-body">
+                <div class="outfit-layout">
+                  <div class="outfit-left">
+                    <canvas id="outfit-example" width="64" height="64"></canvas>
+                    <span id="outfit-name" class="outfit-name-label"></span>
+                    <button id="next-outfit" class="btn-botao outfit-next-btn">Next</button>
+                  </div>
+                  <div class="outfit-right">
+                    <div class="outfit-section-buttons">
+                      <button id="outfit-head" class="outfit-face-picker on">Head</button>
+                      <button id="outfit-body" class="outfit-face-picker">Body</button>
+                      <button id="outfit-legs" class="outfit-face-picker">Legs</button>
+                      <button id="outfit-feet" class="outfit-face-picker">Feet</button>
+                    </div>
+                    <div class="outfit-color-picker">
+                      <div class="outfit-color-picker-row">
+                        <button style="background-color: rgb(255, 255, 255);" index="0"></button><button
+                          style="background-color: rgb(255, 212, 191);" index="1"></button><button
+                          style="background-color: rgb(255, 233, 191);" index="2"></button><button
+                          style="background-color: rgb(255, 255, 191);" index="3"></button><button
+                          style="background-color: rgb(233, 255, 191);" index="4"></button><button
+                          style="background-color: rgb(212, 255, 191);" index="5"></button><button
+                          style="background-color: rgb(191, 255, 191);" index="6"></button><button
+                          style="background-color: rgb(191, 255, 212);" index="7"></button><button
+                          style="background-color: rgb(191, 255, 233);" index="8"></button><button
+                          style="background-color: rgb(191, 255, 255);" index="9"></button><button
+                          style="background-color: rgb(191, 233, 255);" index="10"></button><button
+                          style="background-color: rgb(191, 212, 255);" index="11"></button><button
+                          style="background-color: rgb(191, 191, 255);" index="12"></button><button
+                          style="background-color: rgb(212, 191, 255);" index="13"></button><button
+                          style="background-color: rgb(233, 191, 255);" index="14"></button><button
+                          style="background-color: rgb(255, 191, 255);" index="15"></button><button
+                          style="background-color: rgb(255, 191, 233);" index="16"></button><button
+                          style="background-color: rgb(255, 191, 212);" index="17"></button><button
+                          style="background-color: rgb(255, 191, 191);" index="18"></button>
+                      </div>
+                      <div class="outfit-color-picker-row">
+                        <button style="background-color: rgb(218, 218, 218);" index="19"></button><button
+                          style="background-color: rgb(191, 159, 143);" index="20"></button><button
+                          style="background-color: rgb(191, 175, 143);" index="21"></button><button
+                          style="background-color: rgb(191, 191, 143);" index="22"></button><button
+                          style="background-color: rgb(175, 191, 143);" index="23"></button><button
+                          style="background-color: rgb(159, 191, 143);" index="24"></button><button
+                          style="background-color: rgb(143, 191, 143);" index="25"></button><button
+                          style="background-color: rgb(143, 191, 159);" index="26"></button><button
+                          style="background-color: rgb(143, 191, 175);" index="27"></button><button
+                          style="background-color: rgb(143, 191, 191);" index="28"></button><button
+                          style="background-color: rgb(143, 175, 191);" index="29"></button><button
+                          style="background-color: rgb(143, 159, 191);" index="30"></button><button
+                          style="background-color: rgb(143, 143, 191);" index="31"></button><button
+                          style="background-color: rgb(159, 143, 191);" index="32"></button><button
+                          style="background-color: rgb(175, 143, 191);" index="33"></button><button
+                          style="background-color: rgb(191, 143, 191);" index="34"></button><button
+                          style="background-color: rgb(191, 143, 175);" index="35"></button><button
+                          style="background-color: rgb(191, 143, 159);" index="36"></button><button
+                          style="background-color: rgb(191, 143, 143);" index="37"></button>
+                      </div>
+                      <div class="outfit-color-picker-row">
+                        <button style="background-color: rgb(182, 182, 182);" index="38"></button><button
+                          style="background-color: rgb(191, 127, 95);" index="39"></button><button
+                          style="background-color: rgb(191, 175, 143);" index="40"></button><button
+                          style="background-color: rgb(191, 191, 95);" index="41"></button><button
+                          style="background-color: rgb(159, 191, 95);" index="42"></button><button
+                          style="background-color: rgb(127, 191, 95);" index="43"></button><button
+                          style="background-color: rgb(95, 191, 95);" index="44"></button><button
+                          style="background-color: rgb(95, 191, 127);" index="45"></button><button
+                          style="background-color: rgb(95, 191, 159);" index="46"></button><button
+                          style="background-color: rgb(95, 191, 191);" index="47"></button><button
+                          style="background-color: rgb(95, 159, 191);" index="48"></button><button
+                          style="background-color: rgb(95, 127, 191);" index="49"></button><button
+                          style="background-color: rgb(95, 95, 191);" index="50"></button><button
+                          style="background-color: rgb(127, 95, 191);" index="51"></button><button
+                          style="background-color: rgb(159, 95, 191);" index="52"></button><button
+                          style="background-color: rgb(191, 95, 191);" index="53"></button><button
+                          style="background-color: rgb(191, 95, 159);" index="54"></button><button
+                          style="background-color: rgb(191, 95, 127);" index="55"></button><button
+                          style="background-color: rgb(191, 95, 95);" index="56"></button>
+                      </div>
+                      <div class="outfit-color-picker-row">
+                        <button style="background-color: rgb(145, 145, 145);" index="57"></button><button
+                          style="background-color: rgb(191, 106, 63);" index="58"></button><button
+                          style="background-color: rgb(191, 148, 63);" index="59"></button><button
+                          style="background-color: rgb(191, 191, 63);" index="60"></button><button
+                          style="background-color: rgb(148, 191, 63);" index="61"></button><button
+                          style="background-color: rgb(106, 191, 63);" index="62"></button><button
+                          style="background-color: rgb(63, 191, 63);" index="63"></button><button
+                          style="background-color: rgb(63, 191, 106);" index="64"></button><button
+                          style="background-color: rgb(63, 191, 148);" index="65"></button><button
+                          style="background-color: rgb(63, 191, 191);" index="66"></button><button
+                          style="background-color: rgb(63, 148, 191);" index="67"></button><button
+                          style="background-color: rgb(63, 106, 191);" index="68"></button><button
+                          style="background-color: rgb(63, 63, 191);" index="69"></button><button
+                          style="background-color: rgb(106, 63, 191);" index="70"></button><button
+                          style="background-color: rgb(148, 63, 191);" index="71"></button><button
+                          style="background-color: rgb(191, 63, 191);" index="72"></button><button
+                          style="background-color: rgb(191, 63, 148);" index="73"></button><button
+                          style="background-color: rgb(191, 63, 106);" index="74"></button><button
+                          style="background-color: rgb(191, 63, 63);" index="75"></button>
+                      </div>
+                      <div class="outfit-color-picker-row">
+                        <button style="background-color: rgb(109, 109, 109);" index="76"></button><button
+                          style="background-color: rgb(255, 85, 0);" index="77"></button><button
+                          style="background-color: rgb(255, 170, 0);" index="78"></button><button
+                          style="background-color: rgb(255, 255, 0);" index="79"></button><button
+                          style="background-color: rgb(170, 255, 0);" index="80"></button><button
+                          style="background-color: rgb(84, 255, 0);" index="81"></button><button
+                          style="background-color: rgb(0, 255, 0);" index="82"></button><button
+                          style="background-color: rgb(0, 255, 84);" index="83"></button><button
+                          style="background-color: rgb(0, 255, 170);" index="84"></button><button
+                          style="background-color: rgb(0, 255, 255);" index="85"></button><button
+                          style="background-color: rgb(0, 169, 255);" index="86"></button><button
+                          style="background-color: rgb(0, 85, 255);" index="87"></button><button
+                          style="background-color: rgb(0, 0, 255);" index="88"></button><button
+                          style="background-color: rgb(85, 0, 255);" index="89"></button><button
+                          style="background-color: rgb(169, 0, 255);" index="90"></button><button
+                          style="background-color: rgb(254, 0, 255);" index="91"></button><button
+                          style="background-color: rgb(255, 0, 170);" index="92"></button><button
+                          style="background-color: rgb(255, 0, 85);" index="93"></button><button
+                          style="background-color: rgb(255, 0, 0);" index="94"></button>
+                      </div>
+                      <div class="outfit-color-picker-row">
+                        <button style="background-color: rgb(72, 72, 72);" index="95"></button><button
+                          style="background-color: rgb(191, 63, 0);" index="96"></button><button
+                          style="background-color: rgb(191, 127, 0);" index="97"></button><button
+                          style="background-color: rgb(191, 191, 0);" index="98"></button><button
+                          style="background-color: rgb(127, 191, 0);" index="99"></button><button
+                          style="background-color: rgb(63, 191, 0);" index="100"></button><button
+                          style="background-color: rgb(0, 191, 0);" index="101"></button><button
+                          style="background-color: rgb(0, 191, 63);" index="102"></button><button
+                          style="background-color: rgb(0, 191, 127);" index="103"></button><button
+                          style="background-color: rgb(0, 191, 191);" index="104"></button><button
+                          style="background-color: rgb(0, 127, 191);" index="105"></button><button
+                          style="background-color: rgb(0, 63, 191);" index="106"></button><button
+                          style="background-color: rgb(0, 0, 191);" index="107"></button><button
+                          style="background-color: rgb(63, 0, 191);" index="108"></button><button
+                          style="background-color: rgb(127, 0, 191);" index="109"></button><button
+                          style="background-color: rgb(191, 0, 191);" index="110"></button><button
+                          style="background-color: rgb(191, 0, 127);" index="111"></button><button
+                          style="background-color: rgb(191, 0, 63);" index="112"></button><button
+                          style="background-color: rgb(191, 0, 0);" index="113"></button>
+                      </div>
+                      <div class="outfit-color-picker-row">
+                        <button style="background-color: rgb(36, 36, 36);" index="114"></button><button
+                          style="background-color: rgb(127, 42, 0);" index="115"></button><button
+                          style="background-color: rgb(127, 85, 0);" index="116"></button><button
+                          style="background-color: rgb(127, 127, 0);" index="117"></button><button
+                          style="background-color: rgb(85, 127, 0);" index="118"></button><button
+                          style="background-color: rgb(42, 127, 0);" index="119"></button><button
+                          style="background-color: rgb(0, 127, 0);" index="120"></button><button
+                          style="background-color: rgb(0, 127, 42);" index="121"></button><button
+                          style="background-color: rgb(0, 127, 85);" index="122"></button><button
+                          style="background-color: rgb(0, 127, 127);" index="123"></button><button
+                          style="background-color: rgb(0, 84, 127);" index="124"></button><button
+                          style="background-color: rgb(0, 42, 127);" index="125"></button><button
+                          style="background-color: rgb(0, 0, 127);" index="126"></button><button
+                          style="background-color: rgb(42, 0, 127);" index="127"></button><button
+                          style="background-color: rgb(84, 0, 127);" index="128"></button><button
+                          style="background-color: rgb(127, 0, 127);" index="129"></button><button
+                          style="background-color: rgb(127, 0, 85);" index="130"></button><button
+                          style="background-color: rgb(127, 0, 42);" index="131"></button><button
+                          style="background-color: rgb(127, 0, 0);" index="132"></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="outfit-description">Choose an outfit and determine the colours of the various parts of your character's body.</div>
+                <hr class="outfit-hr">
+                <div class="outfit-footer">
+                  <button class="btn-botao" action="confirm" value="Ok">Ok</button>
+                  <button class="btn-botao" action="cancel" value="Cancel">Cancel</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Premium Shop Modal -->
+            <div id="shop-modal" class="modal" style="width: 520px;">
+              <button class="close-button-transparent symbol-button" action="cancel" value="Cancel">✕</button>
+              <div class="modal-header">Premium Shop</div>
+              <div class="modal-body">
+                <div class="shop-balance">Premium Points: <span id="shop-balance-value">0</span></div>
+                <div class="shop-layout">
+                  <div class="shop-categories" id="shop-categories"></div>
+                  <div class="shop-items-wrap">
+                    <div class="shop-items" id="shop-items"></div>
+                    <div class="shop-scrollbar" id="shop-scrollbar">
+                      <div class="shop-scrollbar-thumb" id="shop-scrollbar-thumb"></div>
+                    </div>
+                  </div>
+                </div>
+                <div id="shop-confirm-area" style="display:none; text-align:center; padding:8px 0; border-top:1px solid #3a3a3a; margin-top:8px;">
+                  <div style="margin-bottom:8px;font-size:13px;" id="shop-confirm-text"></div>
+                  <div style="display:flex;gap:8px;justify-content:center;">
+                    <button id="shop-confirm-yes" style="min-width:80px;padding:6px 16px;cursor:pointer;background:#2a5a2a;border:1px solid #4a8a4a;color:#fff;border-radius:3px;font-size:13px;">Buy</button>
+                    <button id="shop-confirm-no" style="min-width:80px;padding:6px 16px;cursor:pointer;background:#5a2a2a;border:1px solid #8a4a4a;color:#fff;border-radius:3px;font-size:13px;">Cancel</button>
+                  </div>
+                </div>
+                <hr>
+                <div class="modal-footer" style="display:flex;align-items:center;">
+                  <div style="flex:1;text-align:center;">
+                    <button id="shop-stripe-btn" class="shop-stripe-btn">
+                      Recharge with <img src="images/game/ui/stripe.png" alt="Stripe" style="height:18px;vertical-align:middle;margin-left:4px;">
+                    </button>
+                  </div>
+                  <button action="cancel" value="Cancel">Close</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Stripe Payment Modal -->
+            <div id="payment-modal" class="modal" style="width:440px;display:none;">
+              <button class="close-button-transparent symbol-button" id="payment-modal-close">✕</button>
+              <div class="modal-header">Recharge Premium Points</div>
+              <div class="modal-body" style="padding:16px;">
+                <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:20px;" id="payment-amounts">
+                  <button class="payment-amount-btn" data-points="100">100 PP<br><span>€20</span></button>
+                  <button class="payment-amount-btn" data-points="250">250 PP<br><span>€50</span></button>
+                  <button class="payment-amount-btn" data-points="500" class="popular">500 PP<br><span>€100</span></button>
+                  <button class="payment-amount-btn" data-points="1000">1000 PP<br><span>€200</span></button>
+                </div>
+                <div id="payment-card-fields" style="margin-bottom:16px;">
+                  <div class="payment-field-row">
+                    <label class="payment-label">Card Number</label>
+                    <div class="payment-input-wrap" id="payment-card-number"></div>
+                  </div>
+                  <div style="display:flex;gap:12px;">
+                    <div class="payment-field-row" style="flex:1;">
+                      <label class="payment-label">Expiry</label>
+                      <div class="payment-input-wrap" id="payment-card-expiry"></div>
+                    </div>
+                    <div class="payment-field-row" style="flex:1;">
+                      <label class="payment-label">CVC</label>
+                      <div class="payment-input-wrap" id="payment-card-cvc"></div>
+                    </div>
+                  </div>
+                </div>
+                <div id="payment-error" style="display:none;"></div>
+                <div id="payment-loading" style="display:none;">Processing payment...</div>
+                <div style="display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:14px;font-size:12px;color:#aaa;">
+                  <span style="font-size:16px;">&#x1f6e1;</span>
+                  Pagamento 100% seguro e protegido por
+                  <img src="images/game/ui/stripe.png" alt="Stripe" style="height:16px;vertical-align:middle;">
+                </div>
+                <div style="display:flex;gap:8px;justify-content:flex-end;">
+                  <button id="payment-pay-btn" disabled>Pay</button>
+                  <button id="payment-cancel-btn">Cancel</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- The Actual Gamescreen -->
+          <canvas id="screen" width="680" height="402"></canvas>
+
+          <!-- Wrapper for elements on top of the gamescreen (overlay on canvas) -->
+          <div id="text-wrapper" class="no-select">
+            <span id="server-message"></span>
+            <span id="zone-message"></span>
+            <!-- Global Boost display -->
+            <div id="boost-panel" class="boost-panel hidden">
+              <div id="boost-exp" class="boost-entry hidden">
+                <span class="boost-label">+10% Exp</span>
+                <span class="boost-timer" id="boost-exp-timer"></span>
+              </div>
+              <div id="boost-loot" class="boost-entry hidden">
+                <span class="boost-label">+20% Loot</span>
+                <span class="boost-timer" id="boost-loot-timer"></span>
+              </div>
+              <div id="boost-skills" class="boost-entry hidden">
+                <span class="boost-label">+10% Skills</span>
+                <span class="boost-timer" id="boost-skills-timer"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Notifications etc.. -->
+          <div id="notification" class="canvas-notification"></div>
+
+          <div id="achievement" class="canvas-notification hidden"></div>
+        </div>
+      </div>
+
+      <div class="middle mobile-only">
+        <div class="hotbar">
+          <div class="hotbar-item"><canvas></canvas><span class="hotbar-text"></span><span class="hotbar-key">F1</span>
+          </div>
+          <div class="hotbar-item"><canvas></canvas><span class="hotbar-text"></span><span class="hotbar-key">F2</span>
+          </div>
+          <div class="hotbar-item"><canvas></canvas><span class="hotbar-text"></span><span class="hotbar-key">F3</span>
+          </div>
+          <div class="hotbar-item"><canvas></canvas><span class="hotbar-text"></span><span class="hotbar-key">F4</span>
+          </div>
+          <div class="hotbar-item"><canvas></canvas><span class="hotbar-text"></span><span class="hotbar-key">F5</span>
+          </div>
+          <div class="hotbar-item"><canvas></canvas><span class="hotbar-text"></span><span class="hotbar-key">F6</span>
+          </div>
+          <div class="hotbar-item"><canvas></canvas><span class="hotbar-text"></span><span class="hotbar-key">F7</span>
+          </div>
+          <div class="hotbar-item"><canvas></canvas><span class="hotbar-text"></span><span class="hotbar-key">F8</span>
+          </div>
+          <div class="hotbar-item"><canvas></canvas><span class="hotbar-text"></span><span class="hotbar-key">F9</span>
+          </div>
+          <div class="hotbar-item"><canvas></canvas><span class="hotbar-text"></span><span class="hotbar-key">F10</span>
+          </div>
+          <div class="hotbar-item"><canvas></canvas><span class="hotbar-text"></span><span class="hotbar-key">F11</span>
+          </div>
+          <div class="hotbar-item"><canvas></canvas><span class="hotbar-text"></span><span class="hotbar-key">F12</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Extra container column (right of canvas) -->
+      <div id="extra-column-wrapper">
+        <div class="column" id="extra-column"></div>
+      </div>
+
+    </div>
+
+      <!-- Chat module (positioned absolute, full width) -->
+      <div class="lower">
+
+        <div class="chatbox-wrapper">
+
+          <!-- Console Tab Bar (OT style) -->
+          <div id="console-tabbar" class="console-tabbar">
+            <div class="console-tabbar-arrows">
+              <img src="/images/game/console/uparrow.png" width="11" height="6">
+              <img src="/images/game/console/downarrow.png" width="11" height="6">
+            </div>
+            <button id="prev-channel-button" class="console-tabbar-btn" title="Previous Channel">
+              <img src="/images/game/console/leftarrow.png" width="16" height="16">
+            </button>
+            <div id="cheader" class="channel-tabs-container"></div>
+            <button id="next-channel-button" class="console-tabbar-btn" title="Next Channel">
+              <img src="/images/game/console/rightarrow.png" width="16" height="16">
+            </button>
+            <div class="console-tabbar-actions">
+              <button id="ignore-button" class="console-icon-btn" title="Ignore List">
+                <img src="/images/game/console/ignore.png" width="16" height="16">
+              </button>
+              <button id="channels-button" class="console-icon-btn" title="Channels">
+                <img src="/images/game/console/channels.png" width="16" height="16">
+              </button>
+              <button id="close-channel-button" class="console-icon-btn" title="Close Channel">
+                <img src="/images/game/console/closechannel.png" width="16" height="16">
+              </button>
+            </div>
+          </div>
+
+          <!-- Chat message area (consoleContentPanel) -->
+          <div id="chat-text">
+            <div id="chat-text-area" class="chat-body"></div>
+          </div>
+
+          <!-- Parent panel (input area) -->
+          <div class="parent-panel">
+            <button id="chat-say-loudness" class="say-mode-btn" title="Toggle microphone">
+              <img id="say-mode-icon" src="/images/game/console/mic-off.svg" width="16" height="16">
+            </button>
+            <button id="trade-buy-btn" class="trade-btn trade-btn-buy" title="Insert BUY" style="display:none">BUY</button>
+            <button id="trade-sell-btn" class="trade-btn trade-btn-sell" title="Insert SELL" style="display:none">SELL</button>
+            <input id="chat-input" type="text" placeholder="">
+            <button id="toggle-chat-btn" class="toggle-chat-btn" title="Toggle Chat Mode">
+              <span class="toggle-chat-checkbox"></span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    <!-- Right column -->
+    <div class="oogwrap">
+
+      <div class="oogwrap2">
+
+        <!-- The minimap -->
+        <div class="minimap-container">
+          <div class="minimap-wrapper">
+
+            <div class="minimap-main">
+              <canvas id="minimap" width="160" height="160"></canvas>
+              <img class="crosshair" src="/images/game/minimap/cross.png" width="16" height="16" />
+              <span id="clock-time">00:00</span>
+            </div>
+
+            <div class="minimap-controls">
+
+              <div class="nav-circle">
+                <div class="nav-circle-bg"></div>
+                <button class="nav-dir nav-up"></button>
+                <button class="nav-dir nav-right"></button>
+                <button class="nav-dir nav-down"></button>
+                <button class="nav-dir nav-left"></button>
+                <button class="nav-dir nav-center"></button>
+              </div>
+
+              <div class="ctrl-grid">
+                <button class="ctrl-btn ctrl-zoom-out" id="minimap-zoom-down" title="Zoom Out"></button>
+                <button class="ctrl-btn ctrl-floor-up" id="minimap-zoom-el" title="Floor Up"></button>
+                <button class="ctrl-btn ctrl-zoom-in" id="minimap-zoom-up" title="Zoom In"></button>
+                <button class="ctrl-btn ctrl-floor-down" id="minimap-zoom-dl" title="Floor Down"></button>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Character Status (health & mana) -->
+        <div class="character-status">
+
+          <div class="bar-row">
+            <span class="bar-icon bar-icon-health"></span>
+            <div id="health-bar" class="bar">
+              <div class="character-health"></div>
+            </div>
+            <span class="bar-value" id="health-value">0</span>
+          </div>
+
+          <div class="bar-row">
+            <span class="bar-icon bar-icon-mana"></span>
+            <div id="mana-bar" class="bar">
+              <div class="character-mana"></div>
+            </div>
+            <span class="bar-value" id="mana-value">0</span>
+          </div>
+
+        </div> <!-- close character-status -->
+
+        <!-- Character Equipment -->
+        <div class="equipment-options-wrapper">
+
+          <div class="first-wrapper">
+
+            <button id="equipment-toggle-btn" class="equipment-toggle-btn" title="Minimizar Inventário"></button>
+            <button id="blessing-btn" class="blessing-btn" title="Blessings"></button>
+            <button id="guild-btn" class="guild-btn" title="Guild"></button>
+
+            <div class="equipment wrapper" containerIndex="0">
+
+              <div class="equipment-slots-area">
+
+                <div class="equipment-slots-row">
+                  <div class="equipment-column align-end">
+
+                    <div id="shoulder-slot" class="slot" slotIndex="7">
+                      <canvas width="32" height="32"></canvas>
+                      <span class="count"></span>
+                    </div>
+
+                    <div id="left-slot" class="slot" slotIndex="5">
+                      <canvas width="32" height="32"></canvas>
+                      <span class="count"></span>
+                    </div>
+
+                    <div id="ring-slot" class="slot" slotIndex="8">
+                      <canvas width="32" height="32"></canvas>
+                      <span class="count"></span>
+                    </div>
+
+                    <div id="conditions-display"></div>
+
+                  </div>
+
+                  <div class="equipment-column">
+                    <div id="head-slot" class="slot" slotIndex="0">
+                      <canvas width="32" height="32"></canvas>
+                      <span class="count"></span>
+                    </div>
+
+                    <div id="armor-slot" class="slot" slotIndex="1">
+                      <canvas width="32" height="32"></canvas>
+                      <span class="count"></span>
+                    </div>
+
+                    <div id="legs-slot" class="slot" slotIndex="2">
+                      <canvas width="32" height="32"></canvas>
+                      <span class="count"></span>
+                    </div>
+
+                    <div id="boots-slot" class="slot" slotIndex="3">
+                      <canvas width="32" height="32"></canvas>
+                      <span class="count"></span>
+                    </div>
+                  </div>
+
+                  <div class="equipment-column align-end">
+                    <div class="shop-gift-btn" id="shop-gift-button">
+                      <span class="sg-left" id="shop-button">&#x1F6D2;</span><span class="sg-right" id="gift-button">G</span>
+                    </div>
+                    <div id="backpack-slot" class="slot" slotIndex="6">
+                      <canvas width="32" height="32"></canvas>
+                      <span class="count"></span>
+                    </div>
+
+                    <div id="right-slot" class="slot" slotIndex="4">
+                      <canvas width="32" height="32"></canvas>
+                      <span class="count"></span>
+                    </div>
+
+                    <div id="quiver-slot" class="slot" slotIndex="9">
+                      <canvas width="32" height="32"></canvas>
+                      <span class="count"></span>
+                    </div>
+
+                    <div class="capacity-display">Cap:<br>0</div>
+
+                  </div>
+                </div>
+
+                <div class="equipment-inline-buttons">
+                  <button id="openSkills">Skills</button>
+                  <button id="openBattle">Battle</button>
+                  <button id="openVipList">VIP</button>
+                </div>
+
+              </div>
+
+              <!-- Fight Mode Selector (Vertical Column) -->
+              <div class="equipment-right">
+                <div class="equipment-column fight-mode-column">
+                  <div id="fight-mode-selector" class="fight-mode-selector">
+                    <div class="fight-modes-group">
+                      <button data-mode="offensive" title="Full Attack" class="img-btn fight-mode-btn"
+                        style="background-image: url('/images/game/combatmodes/fightoffensive.png')"></button>
+                      <button data-mode="balanced" title="Balanced" class="img-btn fight-mode-btn active"
+                        style="background-image: url('/images/game/combatmodes/fightbalanced.png')"></button>
+                      <button data-mode="defensive" title="Full Defense" class="img-btn fight-mode-btn"
+                        style="background-image: url('/images/game/combatmodes/fightdefensive.png')"></button>
+                    </div>
+                    <div class="chase-modes-group">
+                      <button data-chase="stand" title="Stand (Don't Follow)" class="img-btn chase-mode-btn active"
+                        style="background-image: url('/images/game/combatmodes/standmode.png')"></button>
+                      <button data-chase="chase" title="Chase (Follow Target)" class="img-btn chase-mode-btn"
+                        style="background-image: url('/images/game/combatmodes/chasemode.png')"></button>
+                      <button data-mode="safefight" title="Safe Fight" class="img-btn chase-mode-btn"
+                        style="background-image: url('/images/game/combatmodes/safefight.png')"></button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="equipment-buttons">
+                  <button id="openQuests">Quests</button>
+                  <button id="openHotkey">Hotkey</button>
+                  <button id="openSettings">Options</button>
+                  <button id="logout-button">Logout</button>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+      <div class="column"></div>
+
+    </div>
+
+  </div>
+
+  <!-- Game Client -->
+  <script src="src/launcher.js"></script>
+
+  <!-- Custom SVG filter for post-processing -->
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="0" width="0" style="display: block;">
+    <filter id="matrix">
+      <feComponentTransfer color-interpolation-filters="sRGB">
+        <feFuncR type="discrete" tableValues="0" />
+        <feFuncG type="discrete" tableValues="0 1" />
+        <feFuncB type="discrete" tableValues="0" />
+      </feComponentTransfer>
+    </filter>
+  </svg>
+
+</body>
+
+</html>

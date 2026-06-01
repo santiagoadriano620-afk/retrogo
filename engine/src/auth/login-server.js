@@ -429,7 +429,14 @@ LoginServer.prototype.__handleRequest = function (request, response) {
   // Static file serving: try client/ first, then root data/
   let clientDir = path.join(__dirname, "..", "..", "..", "client");
   let dataDir = path.join(__dirname, "..", "..", "..", "data");
-  let filePath = path.join(clientDir, pathname === "/" ? "index.html" : pathname);
+  let defaultDoc = "index.html";
+  if (pathname === "/") {
+    var ua = (request.headers["user-agent"] || "").toLowerCase();
+    if (/mobi|android|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(ua)) {
+      defaultDoc = "mobile.html";
+    }
+  }
+  let filePath = path.join(clientDir, pathname === "/" ? defaultDoc : pathname);
 
   if (filePath.startsWith(clientDir)) {
     try {
@@ -511,7 +518,14 @@ LoginServer.prototype.__handlePostRequest = function (request, response, pathnam
   // Fallback: try static file (client/ then root data/)
   let clientDir = path.join(__dirname, "..", "..", "..", "client");
   let dataDir = path.join(__dirname, "..", "..", "..", "data");
-  let filePath = path.join(clientDir, pathname === "/" ? "index.html" : pathname);
+  let defaultDoc = "index.html";
+  if (pathname === "/") {
+    var ua = (request.headers["user-agent"] || "").toLowerCase();
+    if (/mobi|android|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(ua)) {
+      defaultDoc = "mobile.html";
+    }
+  }
+  let filePath = path.join(clientDir, pathname === "/" ? defaultDoc : pathname);
 
   if (filePath.startsWith(clientDir)) {
     try {
