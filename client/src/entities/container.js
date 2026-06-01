@@ -36,8 +36,9 @@ Container.prototype.createDOM = function (title, items, itemId) {
   let extraWrapper = extraStack ? extraStack.parentElement : null;
 
   let ROWS = Math.ceil(this.size / 4);
-  let MIN = 56;
+  let MIN = 91;
   let FULL = 56 + ROWS * 34;
+  element.style.minHeight = Math.min(91, FULL);
 
   // Helper: sum FULL heights of existing containers in a stack
   let totalFullInStack = function (stack) {
@@ -198,7 +199,6 @@ Container.prototype.createElement = function (index) {
   element.style.display = "flex";
   element.style.width = "148px";
   element.setAttribute("containerIndex", index);
-  element.style.minHeight = 56;
 
   // Mobile: Position containers at the bottom of the screen
   if (gameClient.touch && gameClient.touch.isMobileMode) {
@@ -426,7 +426,7 @@ Container.squeezeFromBottom = function (stack) {
   if (!stack) return;
 
   let ROW = 34;
-  let MIN = 56;
+  let MIN = 91;
   let FIXED = 56;
 
   let elements = Array.from(stack.children).filter(function (el) {
@@ -466,7 +466,7 @@ Container.squeezeFromBottom = function (stack) {
 
   for (let i = infos.length - 1; i >= 0; i--) {
     if (overflow <= 0) break;
-    let squeezeable = infos[i].full - MIN;
+    let squeezeable = Math.max(0, infos[i].full - MIN);
     let squeeze = Math.min(squeezeable, overflow);
     if (squeeze > 0) {
       let targetTotal = infos[i].full - squeeze;
