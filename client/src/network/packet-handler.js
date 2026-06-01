@@ -997,8 +997,10 @@ PacketHandler.prototype.handleCharacterInformation = function (packet) {
     case 8: vocationName = "Elder Druid"; break;
   }
 
-  // Format: "You see Name (Level X). He is a Vocation."
-  let message = "You see %s (Level %s). %s is a %s.".format(packet.name, packet.level, gender, vocationName);
+  // Format: "You see Name (Level X). He is a Vocation." — NPCs omit level/vocation
+  let message = packet.level > 0
+    ? "You see %s (Level %s). %s is a %s.".format(packet.name, packet.level, gender, vocationName)
+    : "You see %s.".format(packet.name);
 
   // Show a server message
   gameClient.interface.notificationManager.setServerMessage(
