@@ -1,0 +1,13 @@
+{
+    "name": "galantes",
+    "leader": "God",
+    "members": [
+        {
+            "name": "God",
+            "rank": "leader",
+            "title": "Leader",
+            "joinedAt": 1779375828238
+        }
+    ],
+    "createdAt": 1779375828238
+}

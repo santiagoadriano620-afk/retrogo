@@ -1,0 +1,316 @@
+#house-modal {
+  width: 580px;
+}
+
+#house-modal .modal-body {
+  padding: 6px 12px 8px;
+}
+
+#house-modal .modal-header {
+  text-align: center;
+  font-size: 13px;
+  padding: 4px 12px;
+  color: #d3d3d3;
+}
+
+.house-name-display {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #d3d3d3;
+  padding: 10px 12px 2px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.house-badge {
+  display: block;
+  text-align: center;
+  margin: 4px auto 10px;
+  padding: 2px 14px;
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  width: auto;
+}
+
+.house-badge[data-type="house"] {
+  color: #aaa;
+  border: 1px solid #555;
+  background: #222;
+  display: inline-block;
+}
+
+.house-badge[data-type="guildhall"] {
+  color: #aaa;
+  border: 1px solid #555;
+  background: #222;
+  display: inline-block;
+}
+
+.house-columns {
+  display: flex;
+  gap: 10px;
+  margin: 0 4px 8px;
+}
+
+.house-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #444;
+  background: #1e1e1e;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.house-column-title {
+  text-align: center;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 6px;
+  color: #aaa;
+  background: #252525;
+  border-bottom: 1px solid #444;
+}
+
+.house-col-body {
+  flex: 1;
+}
+
+.house-detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+.house-detail-row + .house-detail-row {
+  border-top: 1px solid #2a2a2a;
+}
+
+.house-detail-label {
+  color: #aaa;
+  font-weight: bold;
+}
+
+.house-detail-value {
+  color: #ddd;
+  font-weight: bold;
+}
+
+.house-price-gold {
+  color: #d3d3d3;
+  font-size: 14px;
+}
+
+.house-col-btn {
+  margin: 6px;
+  padding: 4px 12px !important;
+  font-size: 12px !important;
+  height: auto !important;
+}
+
+.house-reason {
+  color: #ff8a4a;
+  text-align: center;
+  padding: 8px 12px;
+  margin: 0 4px 8px;
+  font-size: 11px;
+  background: #2a1a10;
+  border: 1px solid #5a3a20;
+}
+
+.house-footer {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  padding: 4px 0 2px;
+}
+
+.house-footer .btn-botao {
+  padding: 3px 12px;
+  font-size: 11px;
+  height: 22px;
+}
+
+#house-buy-status {
+  color: #aaa;
+  font-size: 11px;
+}
+
+.house-shared-info {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 4px 8px;
+  padding: 6px 12px;
+  background: #1e1e1e;
+  border: 1px solid #444;
+  border-radius: 3px;
+}
+
+.house-shared-item {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.house-shared-label {
+  color: #888;
+  font-size: 11px;
+}
+
+.house-shared-value {
+  color: #ddd;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* House Management Modal */
+.hm-content {
+  padding: 12px;
+  font-family: 'Roboto', sans-serif;
+  color: #ccc;
+  max-height: 500px;
+  overflow-y: auto;
+}
+.hm-info-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  background: rgba(0,0,0,0.3);
+  border-radius: 4px;
+  margin-bottom: 4px;
+}
+.hm-avatar {
+  border: 2px solid #5c4128;
+  border-radius: 4px;
+  background: rgba(0,0,0,0.5);
+  image-rendering: pixelated;
+}
+.hm-info-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.hm-player-name {
+  font-size: 15px;
+  font-weight: bold;
+  color: #ffdb7a;
+}
+.hm-house-name {
+  font-size: 12px;
+  color: #d3d3d3;
+}
+.hm-house-sqm {
+  font-size: 12px;
+  color: #999;
+}
+.hm-badge {
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.hm-separator {
+  border: none;
+  border-top: 1px solid #3d2e1e;
+  margin: 4px 0;
+}
+.hm-section {
+  padding: 2px 0;
+}
+.hm-section-title {
+  font-size: 13px;
+  font-weight: bold;
+  color: #ffdb7a;
+  margin-bottom: 3px;
+}
+.hm-guest-list {
+  max-height: 90px;
+  overflow-y: auto;
+  margin-bottom: 3px;
+}
+.hm-guest-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 6px;
+  background: rgba(0,0,0,0.2);
+  margin-bottom: 1px;
+  border-radius: 3px;
+}
+.hm-guest-empty {
+  color: #666;
+  font-style: italic;
+  font-size: 12px;
+  padding: 4px;
+}
+.hm-remove-btn {
+  font-size: 11px !important;
+  padding: 2px 8px !important;
+}
+.hm-invite-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.hm-input {
+  flex: 1;
+  background: rgba(0,0,0,0.5);
+  border: 1px solid #5c4128;
+  color: #d3d3d3;
+  padding: 5px 8px;
+  border-radius: 3px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  outline: none;
+}
+.hm-input:focus {
+  border-color: #ffdb7a;
+}
+.hm-status {
+  font-size: 11px;
+  color: #888;
+  margin-left: 8px;
+}
+.hm-close-row {
+  text-align: center;
+  padding-top: 4px;
+}
+
+.hm-status-row {
+  margin-top: 2px;
+}
+
+.hm-tenure-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 1px 8px;
+  border-radius: 3px;
+}
+
+.hm-tenure-purchased {
+  color: #4caf50;
+  border: 1px solid #4caf50;
+  background: rgba(76, 175, 80, 0.1);
+}
+
+.hm-tenure-rented {
+  color: #ff9800;
+  border: 1px solid #ff9800;
+  background: rgba(255, 152, 0, 0.1);
+}
+
+.hm-rented-info-text {
+  color: #ccc;
+  font-size: 12px;
+  padding: 4px 6px;
+}

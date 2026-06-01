@@ -1,0 +1,279 @@
+.minimap-container {
+  display: flex;
+  margin: 4px 4px 4px 0;
+  justify-content: flex-end;
+}
+
+.minimap-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.minimap-main {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.minimap-main canvas {
+  display: block;
+  background-color: #0a0a0a;
+  border: 1px solid #555;
+  border-radius: 0;
+  box-shadow: none;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  -webkit-optimize-contrast: crisp-edges;
+}
+
+.minimap-main .crosshair {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 5;
+}
+
+#clock-time {
+  position: absolute;
+  top: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: #d3d3d3;
+  padding: 1px 6px;
+  border-radius: 0;
+  font-size: 9px;
+  font-weight: bold;
+  z-index: 15;
+  border: none;
+  white-space: nowrap;
+}
+
+.minimap-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.nav-circle {
+  position: relative;
+  width: 43px;
+  height: 43px;
+  flex: 0 0 auto;
+}
+
+.nav-circle-bg {
+  width: 43px;
+  height: 43px;
+  background-image: url("/images/game/minimap/circle.png");
+}
+
+.nav-dir {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  opacity: 0;
+  cursor: default;
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-up {
+  top: 0;
+  left: 14px;
+}
+
+.nav-down {
+  bottom: 0;
+  left: 14px;
+}
+
+.nav-left {
+  top: 14px;
+  left: 0;
+}
+
+.nav-right {
+  top: 14px;
+  right: 0;
+}
+
+.nav-center {
+  top: 14px;
+  left: 14px;
+}
+
+.ctrl-grid {
+  display: grid;
+  grid-template-columns: 20px 20px;
+  grid-template-rows: 20px 20px;
+  gap: 3px;
+  margin-top: 4px;
+}
+
+.ctrl-btn {
+  width: 20px;
+  height: 20px;
+  background-size: 20px 40px;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: default;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+}
+
+.ctrl-btn:active {
+  background-position: 0 -20px;
+  filter: none;
+}
+
+.ctrl-zoom-out {
+  background-image: url("/images/game/minimap/zoom-out.png");
+  background-position: 0 0;
+}
+
+.ctrl-zoom-in {
+  background-image: url("/images/game/minimap/zoom-in.png");
+  background-position: 0 0;
+}
+
+.ctrl-floor-up {
+  background-image: url("/images/game/minimap/floor_up.png");
+  background-position: 0 0;
+}
+
+.ctrl-floor-down {
+  background-image: url("/images/game/minimap/floor_down.png");
+  background-position: 0 0;
+}
+
+.centre-btn {
+  width: 43px;
+  height: 20px;
+  margin-top: 4px;
+  font-size: 9px;
+  font-weight: bold;
+  color: #d3d3d3;
+  background-image: url("/images/game/ui/background.png");
+  border: 1px solid #555;
+  border-radius: 0;
+  cursor: default;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.centre-btn:active {
+  background-image: url("/images/game/ui/background.png");
+}
+
+.flag-selector-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 4px;
+  padding: 4px;
+  max-height: 210px;
+  overflow-y: auto;
+}
+
+.flag-selector-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4px;
+  cursor: default;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  transition: background 0.15s;
+}
+
+.flag-selector-item.selected {
+  border-color: #ffcc00;
+  background: rgba(255, 204, 0, 0.2);
+}
+
+.flag-selector-item img {
+  width: 32px;
+  height: 32px;
+  image-rendering: pixelated;
+}
+
+.flag-label {
+  font-size: 9px;
+  color: #d3d3d3;
+  margin-top: 2px;
+}
+
+.mark-description-wrapper {
+  margin: 4px 0;
+}
+
+#mark-description {
+  width: 100%;
+  padding: 6px;
+  box-sizing: border-box;
+  background: #1a1a1a;
+  border: 1px solid #444;
+  color: #d3d3d3;
+  font-size: 12px;
+  outline: none;
+}
+
+#mark-description:focus {
+  border-color: #888;
+}
+
+/* Big Minimap Overlay */
+.big-minimap-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.big-minimap-frame {
+  border-width: 22px 6px 4px 6px;
+  border-style: solid;
+  border-color: transparent;
+  border-image-source: url("/images/game/ui/window.png");
+  border-image-slice: 22 6 4 6 fill;
+  border-image-repeat: stretch;
+  background: transparent;
+  box-shadow: 0px 0px 10px 0px black;
+}
+
+#big-minimap-canvas {
+  display: block;
+  background-color: #0a0a0a;
+  image-rendering: pixelated;
+  cursor: grab;
+}
+
+#big-minimap-canvas:active {
+  cursor: grabbing;
+}
+
+.big-minimap-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.big-minimap-controls {
+  display: flex;
+  gap: 4px;
+  margin-top: -3px;
+}
+

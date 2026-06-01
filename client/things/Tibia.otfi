@@ -1,0 +1,11 @@
+DatSpr
+  extended: false
+  transparency: false
+  frame-durations: false
+  frame-groups: false
+  metadata-controller: default
+  attribute-server: tfs1.4
+  metadata-file: Tibia.dat
+  sprites-file: Tibia.spr
+  sprite-size: 32
+  sprite-data-size: 4096

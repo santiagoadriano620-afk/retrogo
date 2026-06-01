@@ -1,0 +1,508 @@
+.equipment-options-wrapper {
+  display: flex;
+  margin: 4px 2px 4px 0;
+  align-self: flex-end;
+  position: relative;
+  left: -2px;
+  top: 0px;
+}
+
+.first-wrapper {
+  position: relative;
+}
+
+.equipment-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  left: 0px;
+  top: 4px;
+}
+
+.equipment-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4px;
+  gap: 1px;
+}
+
+.equipment-buttons button {
+  flex: 0 1 auto;
+  margin: 0;
+  height: 18px;
+  font-size: 10px;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 0;
+  color: #d3d3d3;
+  border: 1px solid #444;
+  background-image: url("/images/game/ui/background.png");
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.4);
+  outline: none;
+}
+
+.equipment-buttons button:focus,
+.equipment-buttons button:focus-visible,
+.equipment-buttons button:active {
+  outline: none !important;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.4) !important;
+}
+
+.equipment-inline-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+  margin-top: 4px;
+  margin-left: -7px;
+  justify-content: flex-start;
+  padding-top: 7px;
+  background-image: url("/images/game/ui/horizontal_line_dark.png");
+  background-repeat: repeat-x;
+  background-position: left 15px top 3px;
+}
+
+.equipment-inline-buttons button {
+  flex: 0 1 auto;
+  margin: 0;
+  height: 18px;
+  font-size: 10px;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 0;
+  color: #d3d3d3;
+  border: 1px solid #444;
+  background-image: url("/images/game/ui/background.png");
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.4);
+  outline: none;
+}
+
+.equipment-inline-buttons button:focus,
+.equipment-inline-buttons button:focus-visible,
+.equipment-inline-buttons button:active {
+  outline: none !important;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.4) !important;
+}
+
+.character-status {
+  margin: 4px 25px 4px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.bar-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 1px 0;
+  margin-right: -15px;
+}
+
+.bar {
+  width: 94px;
+  height: 11px;
+  margin: 1px 0;
+  position: relative;
+  cursor: default;
+  background-image: url("/images/game/healthmana/hitpoints_manapoints_bar_border.png");
+  background-repeat: no-repeat;
+}
+
+.bar-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 1px 0;
+}
+
+.bar-icon {
+  width: 12px;
+  height: 11px;
+  flex: 0 0 auto;
+  margin: 2px 0 0 -2px;
+  background-repeat: no-repeat;
+}
+
+.bar-icon-health {
+  background-image: url("/images/game/healthmana/hitpoints_symbol.png");
+}
+
+.bar-icon-mana {
+  background-image: url("/images/game/healthmana/mana_symbol.png");
+}
+
+.bar-value {
+  margin-left: 4px;
+  font-size: 9px;
+  color: #d3d3d3;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  white-space: nowrap;
+  width: 28px;
+}
+
+.character-health {
+  background-image: url("/images/game/healthmana/hitpoints_bar_filled.png");
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.character-mana {
+  background-image: url("/images/game/healthmana/mana_bar_filled.png");
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.equipment-slots-area {
+  display: flex;
+  flex-direction: column;
+}
+
+.equipment-slots-row {
+  display: flex;
+  flex-direction: row;
+  gap: 3px;
+  margin-left: -5px;
+}
+
+.equipment.wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.equipment-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3px;
+}
+
+.equipment-column.align-end {
+  justify-content: flex-end;
+}
+
+
+#head-slot {
+  background-image: url("/images/game/inventory/head.png");
+}
+
+#armor-slot {
+  background-image: url("/images/game/inventory/body.png");
+}
+
+#legs-slot {
+  background-image: url("/images/game/inventory/legs.png");
+}
+
+#backpack-slot {
+  background-image: url("/images/game/inventory/back.png");
+}
+
+#boots-slot {
+  background-image: url("/images/game/inventory/feet.png");
+}
+
+#left-slot {
+  background-image: url("/images/game/inventory/left-hand.png");
+}
+
+#right-slot {
+  background-image: url("/images/game/inventory/right-hand.png");
+}
+
+#quiver-slot {
+  background-image: url("/images/game/inventory/ammo.png");
+}
+
+#shoulder-slot {
+  background-image: url("/images/game/inventory/neck.png");
+}
+
+#ring-slot {
+  background-image: url("/images/game/inventory/finger.png");
+}
+
+.equipment-padding {
+  text-align: center;
+  font-size: 10px;
+}
+
+.capacity-display {
+  width: 32px;
+  height: 16px;
+  background-image: url("/images/game/ui/item.png");
+  border: 1px solid #111;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  color: #d3d3d3;
+  font-size: 7px;
+}
+
+#conditions-display {
+  width: 32px;
+  min-height: 16px;
+  border: 1px solid #111;
+  background-image: url("/images/game/inventory/containerslot.png");
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  gap: 1px;
+}
+
+#conditions-display img {
+  width: 9px;
+  height: 9px;
+  image-rendering: pixelated;
+}
+
+.equipment-toggle-btn {
+  position: absolute;
+  top: 0px;
+  left: -8px;
+  z-index: 10;
+  width: 12px;
+  height: 14px;
+  border: 1px solid #444;
+  background-color: transparent;
+  background-image: url("/images/game/ui/miniwindow/min-button-small-up.png");
+  background-size: 12px 12px;
+  background-repeat: no-repeat;
+  background-position: center 1px;
+  cursor: pointer;
+  image-rendering: pixelated;
+  outline: none;
+}
+
+.equipment-toggle-btn:focus,
+.equipment-toggle-btn:focus-visible,
+.equipment-toggle-btn:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.equipment-toggle-btn.minimized {
+  background-image: url("/images/game/ui/miniwindow/min-button-small-down.png");
+  left: -48px;
+}
+
+.equipment-toggle-btn.minimized + .blessing-btn {
+  left: -34px;
+}
+
+.equipment-toggle-btn.minimized + .blessing-btn + .guild-btn {
+  left: -20px;
+}
+
+.equipment.wrapper.minimized {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 40px;
+}
+
+.equipment.wrapper.minimized .equipment-slots-area {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.equipment.wrapper.minimized .equipment-slots-row {
+  gap: 4px;
+  justify-content: center;
+  margin-left: 0;
+  align-items: center;
+  transform: translateX(-25px);
+}
+
+.equipment.wrapper.minimized .equipment-column:not(.align-end) {
+  display: none;
+}
+
+.equipment.wrapper.minimized .equipment-column.align-end {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.equipment.wrapper.minimized .slot:not(#quiver-slot),
+.equipment.wrapper.minimized #shoulder-slot,
+.equipment.wrapper.minimized #left-slot,
+.equipment.wrapper.minimized #ring-slot,
+.equipment.wrapper.minimized #head-slot,
+.equipment.wrapper.minimized #armor-slot,
+.equipment.wrapper.minimized #legs-slot,
+.equipment.wrapper.minimized #boots-slot,
+.equipment.wrapper.minimized #backpack-slot,
+.equipment.wrapper.minimized #right-slot {
+  display: none;
+}
+
+.equipment.wrapper.minimized .equipment-inline-buttons {
+  display: none;
+}
+
+.equipment.wrapper.minimized .equipment-right {
+  display: none;
+}
+
+.equipment.wrapper.minimized #conditions-display {
+  display: flex;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #444;
+  background-image: url("/images/game/inventory/containerslot.png");
+  background-size: 32px 32px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  gap: 1px;
+  margin: 0;
+}
+
+.equipment.wrapper.minimized #quiver-slot {
+  display: flex;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #444;
+  background-size: 32px 32px;
+  background-position: center;
+  position: relative;
+}
+
+.equipment.wrapper.minimized #quiver-slot canvas {
+  width: 32px;
+  height: 32px;
+}
+
+.equipment.wrapper.minimized #quiver-slot .count {
+  font-size: 10px;
+  bottom: 2px;
+  right: 4px;
+}
+
+.equipment.wrapper.minimized .capacity-display {
+  display: flex;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #444;
+  background: #3a3a3a;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  line-height: 1;
+  color: #d3d3d3;
+  margin: 0;
+}
+
+.equipment.wrapper.minimized .capacity-display br {
+  display: block;
+}
+
+/* Botao-style buttons: Skills, Battle, VIP, Quests, Hotkey, Options, Logout */
+#openSkills, #openBattle, #openVipList,
+#openQuests, #openHotkey, #openSettings, #logout-button {
+  background: none;
+  background-color: #4a4a4a;
+  border: 1px solid #333;
+  border-radius: 0;
+  color: #d3d3d3;
+  font-size: 9px;
+  margin: 1px;
+  padding: 2px 4px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+}
+
+#openSkills, #openBattle, #openVipList {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  width: 34px;
+  height: 20px;
+}
+
+#openQuests, #openHotkey, #openSettings, #logout-button {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  width: 37px;
+  height: 20px;
+  font-size: 8px;
+}
+
+#openVipList {
+  margin-left: auto;
+  padding-right: 14px;
+}
+
+#openQuests, #openHotkey, #openSettings, #logout-button {
+  margin: 1px 1px 1px;
+}
+
+#logout-button {
+  margin-top: 4px;
+}
+
+/* Shop & Gift button above backpack slot */
+#shop-gift-button {
+  display: flex;
+  width: 32px;
+  height: 16px;
+  background: none;
+  background-color: #4a4a4a;
+  border: 1px solid #333;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+  cursor: pointer;
+  user-select: none;
+}
+
+#shop-gift-button .sg-left,
+#shop-gift-button .sg-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: bold;
+  color: #d3d3d3;
+  height: 100%;
+}
+
+#shop-gift-button .sg-left {
+  border-right: 1px solid #333;
+}
+
+#shop-gift-button .sg-left:hover {
+  background-color: #5a5a5a;
+}
+
+#shop-gift-button .sg-right:hover {
+  background-color: #5a5a5a;
+}
+
+#shop-gift-button .sg-left:active {
+  background-color: #333;
+}
+
+#shop-gift-button .sg-right:active {
+  background-color: #333;
+}
+

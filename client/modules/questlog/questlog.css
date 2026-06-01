@@ -1,0 +1,228 @@
+/* Quest Log - uses standard modal frame */
+
+#quest-log-modal .modal-body {
+  padding: 0;
+}
+
+/* Main Window Layout */
+.quest-log-window {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: 380px;
+    font-size: 12px;
+    color: #e0e0e0;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Section Headers */
+.quest-log-window .section-header {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #d3d3d3;
+    margin-bottom: 6px;
+    font-weight: 600;
+    padding-left: 4px;
+}
+
+/* Panels (Lists) */
+.quest-list-container,
+.quest-details-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.quest-list-container {
+    margin-right: 12px;
+    max-width: 240px;
+}
+
+/* List Backgrounds */
+.quest-log-window .quest-list,
+.quest-log-window .quest-details {
+    flex: 1;
+    overflow-y: auto;
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    padding: 4px;
+}
+
+/* Quest Entries */
+.quest-log-window .quest-entry {
+    padding: 6px 8px;
+    cursor: default;
+    color: #d3d3d3;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 1px;
+}
+
+.quest-log-window .quest-entry.selected {
+    background-color: #3e5f8a;
+    color: #d3d3d3;
+}
+
+.quest-log-window .quest-entry .quest-name {
+    font-weight: 500;
+}
+
+/* Status Indicators */
+.quest-log-window .quest-entry .quest-check {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #444;
+}
+
+.quest-log-window .quest-entry.completed .quest-check {
+    background-color: #4caf50;
+}
+
+/* Mission Entries */
+.quest-log-window .mission-entry {
+    margin-bottom: 8px;
+    background: #333;
+    padding: 8px;
+    border-left: 3px solid #555;
+}
+
+.quest-log-window .mission-name {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #d3d3d3;
+    font-weight: 600;
+    margin-bottom: 2px;
+    font-size: 12px;
+}
+
+.quest-log-window .mission-name .mission-check {
+    color: #4caf50;
+    font-size: 13px;
+}
+
+.quest-log-window .mission-description {
+    color: #bbb;
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+/* Footer Area */
+.footer-panel {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #444;
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+}
+
+.footer-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+    min-width: 140px;
+}
+
+/* Inputs & Selects */
+.tibia-input,
+.tibia-select {
+    background: #2a2a2a;
+    border: 1px solid #444;
+    color: #ddd;
+    padding: 4px 8px;
+    font-size: 11px;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.tibia-input:focus,
+.tibia-select:focus {
+    border-color: #5d87bf;
+}
+
+/* Custom Checkbox */
+.tibia-checkbox-group {
+    display: flex;
+    gap: 12px;
+}
+
+.tibia-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #d3d3d3;
+    font-size: 11px;
+    cursor: default;
+    user-select: none;
+}
+
+.tibia-checkbox input {
+    accent-color: #3e5f8a;
+}
+
+/* Botao-style buttons */
+.tibia-btn-group {
+    display: flex;
+    gap: 4px;
+}
+
+.tibia-button {
+    background: none;
+    background-color: #4a4a4a;
+    border: 1px solid #333;
+    border-radius: 0;
+    color: #d3d3d3;
+    font-size: 9px;
+    padding: 2px 8px;
+    height: 18px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+}
+
+.tibia-button:active {
+    background-color: #6a6a6a;
+    border-color: #666;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.4);
+    color: #d3d3d3;
+}
+
+.tibia-button[action="close"] {
+    background-color: #4a4a4a;
+}
+
+/* Scrollbars */
+.quest-log-window ::-webkit-scrollbar {
+    width: 6px;
+}
+
+.quest-log-window ::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.quest-log-window ::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 3px;
+}
+
+/* Empty State */
+.empty-state {
+    color: #d3d3d3;
+    text-align: center;
+    margin-top: 30%;
+    font-style: italic;
+    opacity: 0.7;
+}

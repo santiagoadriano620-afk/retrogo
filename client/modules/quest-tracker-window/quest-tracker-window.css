@@ -1,0 +1,47 @@
+#quest-tracker-window .quest-tracker-content {
+  padding: 6px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 11px;
+  color: #d3d3d3;
+}
+
+#quest-tracker-window .tracker-quest-name {
+  color: #5d87bf;
+  font-weight: 600;
+  font-size: 12px;
+  margin-bottom: 4px;
+  display: none;
+}
+
+#quest-tracker-window .tracker-mission-list {
+  display: none;
+  flex-direction: column;
+  gap: 3px;
+}
+
+#quest-tracker-window .tracker-mission {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 2px 0;
+}
+
+#quest-tracker-window .tracker-mission .mission-name {
+  color: #ddd;
+  font-weight: 500;
+}
+
+#quest-tracker-window .tracker-mission .mission-desc {
+  font-size: 10px;
+  color: #d3d3d3;
+}
+
+#quest-tracker-window .tracker-empty {
+  display: block;
+  color: #d3d3d3;
+  font-style: italic;
+  padding: 8px 0;
+  text-align: center;
+}
