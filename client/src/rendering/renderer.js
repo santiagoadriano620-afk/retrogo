@@ -332,7 +332,6 @@ Renderer.prototype.__renderContainers = function () {
 // ─────────────────────────────────────────────────────────────────────────────
 
 Renderer.prototype.__isBoundaryItem = function (item, ids) {
-  if (ids.has(item.id) && gameClient.player && gameClient.player.isMoving()) return false;
   if (ids.has(item.id)) return true;
   let def = gameClient.itemDefinitions[item.id];
   if (def && def.properties && def.properties.floorchange) return false;

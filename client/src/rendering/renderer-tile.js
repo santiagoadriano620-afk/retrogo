@@ -56,11 +56,15 @@ Renderer.prototype.__renderTileObjects = function (tile, sx, sy, skipLight) {
 
     let isBnd = false;
     if (!isOvr && !isCov) {
-      isBnd = this.__isBoundaryItem(item, BND);
-      if (isBnd) {
-        hasBoundaryItem = true;
-      } else {
+      if (item.id === 1385 && this.__isPlayerOnTile(tile)) {
         L[getLayer(item)].push(i);
+      } else {
+        isBnd = this.__isBoundaryItem(item, BND);
+        if (isBnd) {
+          hasBoundaryItem = true;
+        } else {
+          L[getLayer(item)].push(i);
+        }
       }
     }
 
@@ -140,6 +144,7 @@ Renderer.prototype.__renderTileObjects = function (tile, sx, sy, skipLight) {
 
   for (let i = 0; i < itemsLength; i++) {
     let item = items[i];
+    if (item.id === 1385 && this.__isPlayerOnTile(tile)) continue;
     if (!OVR.has(item.id) && !this.__isBoundaryItem(item, BND) && !COV.has(item.id)) continue;
     let isOnTop = item.hasFlag(PropBitFlag.prototype.flags.DatFlagOnTop);
     if (isOnTop) {
@@ -189,3 +194,25 @@ Renderer.prototype.__flushCreatureBatch = function () {
   this.__batchingCreatures = true;
 
 }
+
+Renderer.prototype.__isPlayerOnTile = function (tile) {
+  let player = gameClient.player;
+  if (!player) return false;
+  let pp = player.getPosition();
+  let tp = tile.getPosition();
+  if (pp.x === tp.x && pp.y === tp.y && pp.z === tp.z) return true;
+  if (player.isMoving()) {
+    let dir = player.getLookDirection();
+    let dx = 0, dy = 0;
+    switch (dir) {
+      case CONST.DIRECTION.NORTH: dy = -1; break;
+      case CONST.DIRECTION.SOUTH: dy = 1; break;
+      case CONST.DIRECTION.EAST: dx = 1; break;
+      case CONST.DIRECTION.WEST: dx = -1; break;
+      default: return false;
+    }
+    let destX = pp.x + dx, destY = pp.y + dy, destZ = pp.z;
+    if (destX === tp.x && destY === tp.y && destZ === tp.z) return true;
+  }
+  return false;
+};

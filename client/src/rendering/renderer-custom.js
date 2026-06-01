@@ -65,8 +65,6 @@ Renderer.prototype.__adjustItemPosThirdPass = function (item) {
 
 Renderer.prototype.__isBoundaryItem = function (item, ids) {
 
-  // If the player is currently moving (climbing), skip boundary treatment for stairs
-  if (ids.has(item.id) && gameClient.player && gameClient.player.isMoving()) return false;
   if (ids.has(item.id)) return true;
   let def = gameClient.itemDefinitions[item.id];
   if (def && def.properties && def.properties.floorchange) return false;
