@@ -56,7 +56,7 @@
 .equipment-toggle-btn.minimized + .blessing-btn { left: -34px; }
 .equipment-toggle-btn.minimized + .blessing-btn + .guild-btn { left: -20px; }
 
-.equipment.wrapper.minimized { flex-direction: row; justify-content: center; align-items: center; min-height: 40px; }
+.equipment.wrapper.minimized { display: flex; flex-direction: row; justify-content: center; align-items: center; min-height: 40px; }
 .equipment.wrapper.minimized .equipment-slots-area { flex-direction: row; align-items: center; justify-content: center; }
 .equipment.wrapper.minimized .equipment-slots-row { gap: 4px; justify-content: center; margin-left: 0; align-items: center; transform: translateX(-25px); }
 .equipment.wrapper.minimized .equipment-column:not(.align-end) { display: none; }
@@ -79,7 +79,6 @@
 #openQuests, #openHotkey, #openSettings, #logout-button { padding-top: 2px; padding-bottom: 2px; width: 37px; height: 20px; font-size: 8px; }
 #openVipList { margin-left: auto; padding-right: 14px; }
 #openQuests, #openHotkey, #openSettings, #logout-button { margin: 1px 1px 1px; }
-#logout-button { margin-top: 4px; }
 
 .fight-mode-selector { display: flex; flex-direction: column; gap: 8px; align-items: center; padding: 4px; }
 .fight-modes-group, .chase-modes-group { display: flex; flex-direction: column; gap: 4px; align-items: center; }
