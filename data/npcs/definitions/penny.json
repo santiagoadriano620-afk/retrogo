@@ -1,0 +1,90 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Penny",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  119,
+                                              "details":  {
+                                                              "head":  96,
+                                                              "body":  79,
+                                                              "legs":  95,
+                                                              "feet":  96
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  2,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "name":  "I am miss Penny, your secretary.",
+                                          "job":  "I\u0027m your secretary. I\u0027m organizing all those criminal records and your mail.",
+                                          "criminal":  "\u003cSigh\u003e It\u0027s an evil world, isn\u0027t it?",
+                                          "record":  "\u003cSigh\u003e It\u0027s an evil world, isn\u0027t it?",
+                                          "mail":  "You can get a letter from me.",
+                                          "letter":  "Here you are."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Welcome home, Sir .",
+                                                       "Welcome home, Lady .",
+                                                       "I\u0027m your secretary. I\u0027m organizing all those criminal records and your mail."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Welcome home, Sir %N.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Welcome home, Lady %N.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ]
+                     }
+}

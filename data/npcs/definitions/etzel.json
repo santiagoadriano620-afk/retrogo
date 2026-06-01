@@ -1,0 +1,736 @@
+{
+    "creatureStatistics": {
+        "name": "Etzel",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 66,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 3,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "job": "I am der dwarfish mastermage. I am keeper of the secrets of magic.",
+            "name": "My name is Etzel Fireworker, <cough> son of fire, of the Molten Rocks.",
+            "time": "It's precisely  now.",
+            "wisdom": "Wisdom is not aquired cheeply.",
+            "sorcerer": "Sorcery is not for the lazy or the impatient.",
+            "power": "Great power brings great responsibility, young one.",
+            "arcane": "Great power brings great responsibility, young one.",
+            "responsibility": "Great power brings great responsibility, young one.",
+            "vocation": "Being sorcerer is belonging to a vocation of great arcane power and responsibility.",
+            "rune": "Sorry, I don't sell these anymore. <cough> I'm old and have to focus on more important things. Please ask my brother Sigurd next door. <cough>",
+            "life": "Sorry, I don't sell these anymore. <cough> I'm old and have to focus on more important things. Please ask my brother Sigurd next door. <cough>",
+            "fluid": "Sorry, I don't sell these anymore. <cough> I'm old and have to focus on more important things. Please ask my brother Sigurd next door. <cough>",
+            "mana": "Sorry, I don't sell these anymore. <cough> I'm old and have to focus on more important things. Please ask my brother Sigurd next door. <cough>",
+            "blank": "Sorry, I don't sell these anymore. <cough> I'm old and have to focus on more important things. Please ask my brother Sigurd next door. <cough>",
+            "spellbook": "Sorry, I don't sell these anymore. <cough> I'm old and have to focus on more important things. Please ask my brother Sigurd next door. <cough>",
+            "spell": "Sorry, I only sell spells to Sorcerers.",
+            "deposit": "I will pay you 5 gold for every empty vial. Ok?",
+            "vial": "I will pay you 5 gold for every empty vial. Ok?",
+            "flask": "I will pay you 5 gold for every empty vial. Ok?"
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "Hiho <cough> and welcome back, !",
+                "Hiho, . <cough>",
+                "I am der dwarfish mastermage. I am keeper of the secrets of magic."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Hiho <cough> and welcome back, %N!",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hiho$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Hiho, %N. <cough>",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ],
+        "topics": {
+            "2": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "rune",
+                            "spell"
+                        ],
+                        "response": "I sell attack rune spells and support rune spells. Which of these interests you most?",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "instant",
+                            "spell"
+                        ],
+                        "response": "I sell attack spells, healing spells, support spells and summon spells. Which of these interests you most?",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "level"
+                        ],
+                        "response": "For which magic level would you like to learn a spell?",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "bye"
+                        ],
+                        "response": "Take care out there, young one. <cough>",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true
+                    },
+                    {
+                        "keywords": [
+                            "0$"
+                        ],
+                        "response": "For magic level 0 I have 'Find Person' and 'Light'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "1$"
+                        ],
+                        "response": "For magic level 1 I have 'Light Healing' and 'Light Magic Missile'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "2$"
+                        ],
+                        "response": "For magic level 2 I have 'Antidote', 'Poison Field' and 'Intense Healing'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "3$"
+                        ],
+                        "response": "For magic level 3 I have 'Great Light', 'Heavy Magic Missile' and 'Fire Field'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "4$"
+                        ],
+                        "response": "For magic level 4 I have 'Magic Shield'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "5$"
+                        ],
+                        "response": "For magic level 5 I have 'Fireball', 'Energy Field' and 'Destroy Field'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "6$"
+                        ],
+                        "response": "For magic level 6 I have 'Destroy Field'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "7$"
+                        ],
+                        "response": "For magic level 7 I have 'Fire Wave'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "8$"
+                        ],
+                        "response": "For magic level 8 I have 'Ultimate Healing'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "9$"
+                        ],
+                        "response": "For magic level 9 I have 'Great Fireball', 'Firebomb' and 'Poison Wall'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "10$"
+                        ],
+                        "response": "For magic level 10 I have 'Energy Beam' and 'Creature Illusion'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "12$"
+                        ],
+                        "response": "For magic level 12 I have 'Explosion'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "13$"
+                        ],
+                        "response": "For magic level 13 I have 'Fire Wall'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "14$"
+                        ],
+                        "response": "For magic level 14 I have 'Great Energy Beam'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "15$"
+                        ],
+                        "response": "For magic level 15 I have 'Invisible'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "16$"
+                        ],
+                        "response": "For magic level 16 I have 'Summon Creature'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "18$"
+                        ],
+                        "response": "For magic level 18 I have 'Energy Wall'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "20$"
+                        ],
+                        "response": "For magic level 20 I have 'Energy Wave'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "25$"
+                        ],
+                        "response": "For magic level 25 I have 'Sudden Death'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Hmm, I have no spells for this magic level, but for many levels from 8 to 45.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "3": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "<cough> Come on, young one, you already know this spell.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You have to be magic level %A to learn this spell.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You need some more money.",
+                        "conditions": [
+                            {
+                                "type": "gold",
+                                "max": -1
+                            }
+                        ],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "IT BE! <cough> <cough> Now look into your spellbook for the words of this spell.",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "deleteMoney",
+                                "amount": -1
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "As you wish.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "4": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Here, young one.",
+                        "conditions": [
+                            {
+                                "type": "gold",
+                                "min": -1
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "deleteMoney",
+                                "amount": -1
+                            },
+                            {
+                                "type": "createItem",
+                                "id": -1
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Not enough money.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "As you wish.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "5": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Here you are. There is a deposit of 5 gold on the vial.",
+                        "conditions": [
+                            {
+                                "type": "gold",
+                                "min": -1
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "deleteMoney",
+                                "amount": -1
+                            },
+                            {
+                                "type": "createItem",
+                                "id": -1
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Come back, when you have enough money.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Hmm, but next time.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "6": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Here you are.",
+                        "conditions": [
+                            {
+                                "type": "gold",
+                                "min": -1
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "deleteMoney",
+                                "amount": -1
+                            },
+                            {
+                                "type": "createItem",
+                                "id": -1
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Come back, when you have enough money.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Hmm, but next time.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "7": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Here you are ... %P gold.",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "deleteItem",
+                                "id": 2006
+                            },
+                            {
+                                "type": "createMoney"
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You don't have any empty vials.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Hmm, but please keep Tibia litter free.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            }
+        },
+        "keywordNextTopics": {
+            "spell": 2,
+            "deposit": 7,
+            "vial": 7,
+            "flask": 7,
+            "find person": 3,
+            "light": 3,
+            "light healing": 3,
+            "light magic missile": 3,
+            "antidote": 3,
+            "poison field": 3,
+            "intense healing": 3,
+            "great light": 3,
+            "heavy magic missile": 3,
+            "fire field": 3,
+            "magic shield": 3,
+            "fireball": 3,
+            "energy field": 3,
+            "destroy field": 3,
+            "fire wave": 3,
+            "ultimate healing": 3,
+            "great fireball": 3,
+            "firebomb": 3,
+            "poison wall": 3,
+            "energy beam": 3,
+            "creature illusion": 3,
+            "explosion": 3,
+            "fire wall": 3,
+            "great energy beam": 3,
+            "invisible": 3,
+            "summon creature": 3,
+            "energy wall": 3,
+            "energy wave": 3,
+            "sudden death": 3
+        },
+        "keywordTopicSpellIds": {
+            "find person": 30,
+            "light": 5,
+            "light healing": 2,
+            "light magic missile": 43,
+            "antidote": 12,
+            "poison field": 62,
+            "intense healing": 10,
+            "great light": 19,
+            "heavy magic missile": 46,
+            "fire field": 59,
+            "magic shield": 18,
+            "fireball": 44,
+            "energy field": 56,
+            "destroy field": 68,
+            "fire wave": 15,
+            "ultimate healing": 11,
+            "great fireball": 45,
+            "firebomb": 58,
+            "poison wall": 63,
+            "energy beam": 16,
+            "creature illusion": 4,
+            "explosion": 1,
+            "fire wall": 60,
+            "great energy beam": 23,
+            "invisible": 3,
+            "summon creature": 32,
+            "energy wall": 57,
+            "energy wave": 21,
+            "sudden death": 47
+        },
+        "keywordTopicMagicLevels": {
+            "find person": 0,
+            "light": 0,
+            "light healing": 0,
+            "light magic missile": 0,
+            "antidote": 0,
+            "poison field": 0,
+            "intense healing": 0,
+            "great light": 0,
+            "heavy magic missile": 0,
+            "fire field": 0,
+            "magic shield": 0,
+            "fireball": 0,
+            "energy field": 0,
+            "destroy field": 0,
+            "fire wave": 0,
+            "ultimate healing": 0,
+            "great fireball": 0,
+            "firebomb": 0,
+            "poison wall": 0,
+            "energy beam": 0,
+            "creature illusion": 0,
+            "explosion": 0,
+            "fire wall": 0,
+            "great energy beam": 0,
+            "invisible": 0,
+            "summon creature": 0,
+            "energy wall": 0,
+            "energy wave": 0,
+            "sudden death": 0
+        },
+        "script": "etzel.js",
+        "keywordTopicPrices": {
+            "find person": 200,
+            "light": 200,
+            "light healing": 200,
+            "light magic missile": 200,
+            "antidote": 400,
+            "poison field": 400,
+            "intense healing": 400,
+            "great light": 600,
+            "heavy magic missile": 600,
+            "fire field": 600,
+            "magic shield": 800,
+            "fireball": 1000,
+            "energy field": 1000,
+            "destroy field": 1200,
+            "fire wave": 1400,
+            "ultimate healing": 1600,
+            "great fireball": 1800,
+            "firebomb": 1800,
+            "poison wall": 1800,
+            "energy beam": 2000,
+            "creature illusion": 2000,
+            "explosion": 2400,
+            "fire wall": 2600,
+            "great energy beam": 2800,
+            "invisible": 3000,
+            "summon creature": 3200,
+            "energy wall": 3600,
+            "energy wave": 4000,
+            "sudden death": 5000
+        }
+    }
+}

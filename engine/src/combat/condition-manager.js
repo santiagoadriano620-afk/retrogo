@@ -1,0 +1,251 @@
+"use strict";
+
+const Condition = require("../combat/condition");
+const { ToggleConditionPacket } = requireModule("network/protocol");
+
+const ConditionManager = function (creature) {
+
+  /*
+   * Class ConditionManager
+   * Container for conditions that are applied the creature
+   */
+
+  // Reference the creature
+  this.__creature = creature;
+
+  // Reference for the conditions
+  this.__conditions = new Map();
+
+}
+
+ConditionManager.prototype.extendCondition = function (id, ticks) {
+
+  let condition = this.__conditions.get(id);
+  condition.numberTicks += ticks;
+
+}
+
+ConditionManager.prototype.isDrunk = function () {
+
+  /*
+   * Function Creature.isDrunk
+   * Returns true if the creature has the drunk condition
+   */
+
+  return this.__conditions.has(CONST.CONDITION.DRUNK) && !this.__conditions.has(CONST.CONDITION.SUPPRESS_DRUNK);
+
+}
+
+ConditionManager.prototype.replace = function (condition, properties) {
+
+  /*
+   * Function ConditionManager.replace
+   * Attempts to replace a condition with a new condition
+   */
+
+  let current = this.__conditions.get(condition.id)
+
+  // Current status is permanent: ignore this request
+  if (current.isPermanent()) {
+    if (this.__creature.isPlayer()) {
+      this.__creature.sendCancelMessage("You are under influence of a more powerful condition.");
+      return false;
+    }
+  }
+
+  // Calculate the total and remainig durations of the respective conditions
+  let remaining = current.getRemainigDuration();
+  let total = condition.getTotalDuration();
+
+  // Only replace if the new one is longer than the old one: or the new one is permanent
+  if (total > remaining || condition.isPermanent()) {
+    this.remove(condition.id);
+    this.add(condition, properties);
+  }
+
+  return true;
+
+}
+
+ConditionManager.prototype.forEach = function (callback) {
+
+  /*
+   * Function ConditionManager.forEach
+   * Applies a callback over all conditions
+   */
+
+  this.__conditions.forEach(callback);
+
+}
+
+ConditionManager.prototype.has = function (id) {
+
+  /*
+   * Function ConditionManager.has
+   * Returns true is the condition already exists
+   */
+
+  return this.__conditions.has(id);
+
+}
+
+ConditionManager.prototype.remove = function (id) {
+
+  /*
+   * Function ConditionManager.remove
+   * Removes a condition from the player 
+   */
+
+  // Doesn't have
+  if (!this.has(id)) {
+    return;
+  }
+
+  // Cancel the scheduled event and expire it
+  let condition = this.__conditions.get(id);
+
+  this.__remove(condition);
+
+}
+
+ConditionManager.prototype.cleanup = function () {
+
+  this.__conditions.forEach((condition, id) => this.__remove(condition));
+
+}
+
+ConditionManager.prototype.cancelAll = function () {
+
+  /*
+   * Function Creature.cancelAll
+   * Cancels all the scheduled conditions (e.g., when logging out)
+   */
+
+  this.__conditions.forEach((condition, id) => condition.cancel());
+
+}
+
+ConditionManager.prototype.add = function (condition, properties) {
+
+  /*
+   * Function Creature.add
+   * Adds a condition to the creature
+   */
+
+
+  let conditionDef = process.gameServer.database.getCondition(condition.id);
+
+  if (conditionDef === null) {
+    return;
+  }
+
+  let { onStart, onTick, onExpire } = conditionDef;
+
+  // IMPORTANT: Add condition to map BEFORE calling onStart
+  // so that getSpeed() and similar functions can detect the condition
+  this.__conditions.set(condition.id, condition);
+
+  onStart.call(condition, this.__creature, properties);
+
+  // Schedule the first tick (don't fire immediately — avoids burst+tick stacking)
+  if (condition.numberTicks !== -1) {
+    condition.numberTicks--;
+    condition.__applyEvent = gameServer.world.eventQueue.addEventMs(
+      this.__tickCondition.bind(this, condition), condition.tickDuration
+    );
+  }
+
+  // Players need to be informed
+  if (this.__creature.isPlayer()) {
+    let sendTicks = condition.numberTicks < 0 ? 0 : condition.numberTicks;
+    let packetDuration = (properties && properties.intensity != null) ? properties.intensity : sendTicks;
+    this.__creature.write(new ToggleConditionPacket(true, this.__creature.getId(), condition.id, packetDuration));
+    this.__creature.broadcast(new ToggleConditionPacket(true, this.__creature.getId(), condition.id, packetDuration));
+  }
+
+
+}
+
+ConditionManager.prototype.__tickCondition = function (condition) {
+
+  let { onStart, onTick, onExpire } = process.gameServer.database.getCondition(condition.id);
+
+  // No more ticks left: expire
+  if (condition.numberTicks <= 0) {
+    return this.__expireCondition(condition);
+  }
+
+  // Decrement and fire the tick
+  condition.numberTicks--;
+  onTick.call(condition, this.__creature);
+
+  // May have been expired during the tick (e.g., the creature has died)
+  if (!this.__conditions.has(condition.id)) {
+    return;
+  }
+
+  // Schedule next tick or expire
+  if (condition.numberTicks > 0) {
+    condition.__applyEvent = gameServer.world.eventQueue.addEventMs(
+      this.__tickCondition.bind(this, condition), condition.tickDuration
+    );
+  } else {
+    this.__expireCondition(condition);
+  }
+
+}
+
+ConditionManager.prototype.__remove = function (condition) {
+
+  this.__expireCondition(condition);
+
+  // Cancel scheduled tick
+  condition.cancel();
+
+}
+
+ConditionManager.prototype.__expireCondition = function (condition) {
+
+  /*
+   * Function Condition.__expireCondition
+   * Called when the condition has expired
+   */
+
+  let { onStart, onTick, onExpire } = process.gameServer.database.getCondition(condition.id);
+
+  // IMPORTANT: Delete from the map BEFORE calling onExpire
+  // so that getSpeed() and similar functions return the correct value without the condition
+  this.__conditions.delete(condition.id);
+
+  onExpire.call(condition, this.__creature);
+
+  // Players need to be informed
+  if (this.__creature.isPlayer()) {
+    this.__creature.write(new ToggleConditionPacket(false, this.__creature.getId(), condition.id));
+    this.__creature.broadcast(new ToggleConditionPacket(false, this.__creature.getId(), condition.id));
+  }
+
+}
+
+ConditionManager.prototype.addCondition = function (id, ticks, duration, properties) {
+
+  /*
+   * Function Creature.addCondition
+   * Adds a condition to the creature
+   */
+
+  let condition = new Condition(id, ticks, duration);
+
+  // The condition is already applied: remove it first
+  if (this.has(condition.id)) {
+    return this.replace(condition, properties);
+  }
+
+  // Add the condition
+  this.add(condition, properties);
+
+  return true;
+
+}
+
+module.exports = ConditionManager;

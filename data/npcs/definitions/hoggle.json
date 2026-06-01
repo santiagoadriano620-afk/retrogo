@@ -1,0 +1,86 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Hoggle",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  111,
+                                              "details":  {
+                                                              "head":  20,
+                                                              "body":  46,
+                                                              "legs":  88,
+                                                              "feet":  94
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  3,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "I am just a poor fisherman.",
+                                          "name":  "Once there was a magician who named all his creatures like their species read backward.",
+                                          "time":  "No, this is not the time to go fishing.",
+                                          "mountain":  "Yes, there is a mountain to the north, but it\u0027s of no interest. There isn\u0027t any fish on it.",
+                                          "food":  "If you are hungry you can go downstairs, perhaps you will find some fish. You can also take some shoes if you want.",
+                                          "map":  "If you go north-west you will find Lubo and his adventurer shop. I think he sells maps.",
+                                          "fisherman":  "It\u0027s a very hard job, cause without a boat I have to swim and fish at the same time!",
+                                          "boat":  "My boat sunk. I thought it would be more aerodynamic with holes in it.",
+                                          "fish":  "I think they can talk, but they are wise enough to be silent. Once I saw a mermaid.",
+                                          "mermaid":  "I saw one! She had the body of a fish, and also the head of a fish. Amazing!",
+                                          "stupid":  "My mom always said, stupid is who stupid does.",
+                                          "secret":  "Can you keep a secret? I think fish can\u0027t breath on land!",
+                                          "thais":  "I know this city. Sometimes I sell fish to Frodo.",
+                                          "frodo":  "He buys my fish.",
+                                          "finger":  "No, fish don\u0027t have fingers.",
+                                          "pet":  "Once there was a magician who named all his creatures like their species read backward.",
+                                          "carlin":  "There are stories about a city behind the mountain, but why should I go there? There is enough fish here."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Welcome to my humble home!",
+                                                       "I am just a poor fisherman."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Welcome to my humble home!",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ]
+                     }
+}

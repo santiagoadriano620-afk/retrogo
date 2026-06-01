@@ -1,0 +1,20 @@
+{
+  "actionId": 3099,
+  "type": "seal",
+  "conditions": [
+    { "type": "storage", "key": 4, "value": -1 },
+    { "type": "itemAtPosition", "itemId": 2016, "pos": {"x": 32243, "y": 31892, "z": 14} }
+  ],
+  "effects": [
+    { "type": "removeItem", "pos": {"x": 32243, "y": 31892, "z": 14}, "itemId": 2016 },
+    { "type": "magicEffect", "pos": {"x": 32243, "y": 31892, "z": 14}, "effectId": 14 },
+    { "type": "storage", "key": 4, "value": 1 },
+    { "type": "relocate", "from": {"x": 0, "y": 0, "z": 0}, "to": {"x": 32261, "y": 31849, "z": 15} },
+    { "type": "magicEffect", "pos": {"x": 32261, "y": 31849, "z": 15}, "effectId": 14 }
+  ],
+  "effectsAlt": [
+    { "type": "relocate", "from": {"x": 0, "y": 0, "z": 0}, "to": {"x": 32249, "y": 31892, "z": 14} },
+    { "type": "magicEffect", "pos": {"x": 32249, "y": 31892, "z": 14}, "effectId": 1 },
+    { "type": "damage", "target": 0, "combat": "COMBAT_FIREDAMAGE", "min": -55, "max": -55 }
+  ]
+}

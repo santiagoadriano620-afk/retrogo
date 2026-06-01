@@ -1,0 +1,323 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Timur",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  111,
+                                              "details":  {
+                                                              "head":  0,
+                                                              "body":  116,
+                                                              "legs":  102,
+                                                              "feet":  95
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  2,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "I am selling equipment. Do you want something?",
+                                          "name":  "I am Timur. Sorry, I have not much equipment for sale. The business is running low.",
+                                          "timur":  "I am Timur. Sorry, I have not much equipment for sale. The business is running low.",
+                                          "time":  "I am sorry, I have no watch.",
+                                          "fibula":  "It\u0027s a very nice isle. But we don\u0027t have enough weapons to defeat the many wolves.",
+                                          "wolf":  "They are everywhere around the village.",
+                                          "wolves":  "They are everywhere around the village.",
+                                          "helmet":  "I can sell you a viking helmet in a very good quality.",
+                                          "food":  "If you are looking for food, buy a rod and go fishing.",
+                                          "weapon":  "At the moment I have no weapons to offer. Weapons are very rare on this isle, so I have to buy a few.",
+                                          "bow":  "We have too few bows on this isle for our hunters.",
+                                          "crossbow":  "We have too few crossbows on this isle for our hunters.",
+                                          "fluid":  "The magic shops have a monopole on fluids now... argl!",
+                                          "magic":  "The magic shops have a monopole on fluids now... argl!",
+                                          "equipment":  "I sell torches, scrolls, documents, parchments, ropes, fishing rods, arrows, bolts, and a nice helmet.",
+                                          "goods":  "I sell torches, scrolls, documents, parchments, ropes, fishing rods, arrows, bolts, and a nice helmet.",
+                                          "do":  "I sell torches, scrolls, documents, parchments, ropes, fishing rods, arrows, bolts, and a nice helmet.",
+                                          "you":  "I sell torches, scrolls, documents, parchments, ropes, fishing rods, arrows, bolts, and a nice helmet.",
+                                          "sell":  "I sell torches, scrolls, documents, parchments, ropes, fishing rods, arrows, bolts, and a nice helmet.",
+                                          "have":  "I sell torches, scrolls, documents, parchments, ropes, fishing rods, arrows, bolts, and a nice helmet.",
+                                          "offer":  "I sell torches, scrolls, documents, parchments, ropes, fishing rods, arrows, bolts, and a nice helmet.",
+                                          "ammo":  "I have arrows and bolts in this shop.",
+                                          "ammunition":  "I have arrows and bolts in this shop."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Hello, . Come in and buy.",
+                                                       "Welcome to my little shop, adventurer! First read my blackboards.",
+                                                       "I am selling equipment. Do you want something?"
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$",
+                                                                       "timur"
+                                                                   ],
+                                                      "response":  "Hello, %N. Come in and buy.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$",
+                                                                       "timur"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Welcome to my little shop, adventurer! First read my blackboards.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Thank you. Nice to do business with you.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You\u0027ve not enough money.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Hmm, maybe next time.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "2":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Ok. Here is your money.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "createMoney"
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Hey, you do not have one.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Sorry, you do not have so many.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Maybe next time.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Torch",
+                                                         "price":  3,
+                                                         "id":  2050,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Scroll",
+                                                         "price":  10,
+                                                         "id":  1949,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Document",
+                                                         "price":  12,
+                                                         "id":  1968,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Written Parchment",
+                                                         "price":  8,
+                                                         "id":  1969,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Rope",
+                                                         "price":  65,
+                                                         "id":  2120,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Fishing Rod",
+                                                         "price":  170,
+                                                         "id":  2580,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Arrow",
+                                                         "price":  3,
+                                                         "id":  2544,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Bolt",
+                                                         "price":  4,
+                                                         "id":  2543,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Viking Helmet",
+                                                         "price":  265,
+                                                         "id":  2473,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Bow",
+                                                         "price":  130,
+                                                         "id":  2456,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Crossbow",
+                                                         "price":  160,
+                                                         "id":  2455,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Viking Helmet",
+                                                         "price":  66,
+                                                         "id":  2473,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Mace",
+                                                         "price":  30,
+                                                         "id":  2398,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Hatchet",
+                                                         "price":  25,
+                                                         "id":  2388,
+                                                         "type":  "buy"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "timur.js"
+                     }
+}

@@ -1,0 +1,716 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "A Prisoner",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  113,
+                                              "details":  {
+                                                              "head":  81,
+                                                              "body":  40,
+                                                              "legs":  55,
+                                                              "feet":  94
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  2,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "Job? JOB? Hey man - I am in prison! But you know - once upon a time - I was a powerful mage! A mage ... come to think of it .., what is that - a mage?",
+                                          "name":  "My name is - uhm - hang on? I knew it yesterday, didn\u0027t I? Doesn\u0027t matter!",
+                                          "time":  "Better save time than comitting a crime. I am a poet and I know it!",
+                                          "sorcerer":  "I am the mightiest sorcerer from here to there! Yeah!",
+                                          "power":  "Power. Hmmm. Once while we were crossing the mountains together a man named Aureus said to me that parcels are equal to power. Any idea what that meant?",
+                                          "books":  "I have many books in my home. But only powerful people can read them. I bet you will only see three dots after the headline! Hehehe! Hahaha! Excellent!",
+                                          "mad":  "Hey! That\u0027s me! You got it! Thanks mate - now I remember my name!",
+                                          "mage":  "Hey! That\u0027s me! You got it! Thanks mate - now I remember my name!",
+                                          "riddle":  "Great riddle, isn\u0027t it? If you can tell me the correct answer, I will give you something. Hehehe!",
+                                          "something":  "No! I won\u0027t tell you. Shame coz it would be useful for you - hehehe.",
+                                          "escape":  "How could I escape? They only give me rotten food here. I can\u0027t regain my powers because I have no mana!",
+                                          "key":  "Sure I have the key! Hehehe! Perhaps I will give it to you. IF you can solve my riddle.",
+                                          "mino":  "They are trying to capture me! Or hang on! Haven\u0027t they already captured me? Hmmm - I will have to think about this.",
+                                          "markwin":  "He is the worst of them all! He is the king of the minos! May he burn in hell!",
+                                          "labyrinth":  "It\u0027s easy to find your way through it! Just follow the pools of mud. Hehe - useful hint, isn\u0027t it?",
+                                          "way":  "It\u0027s easy to find your way through it! Just follow the pools of mud. Hehe - useful hint, isn\u0027t it?",
+                                          "palkar":  "He is the leader of the outcasts. I hope he will never conquer the city of Mintwallin. That would be the end of me!",
+                                          "karl":  "Tataah!",
+                                          "demon":  "The only monster I cannot conjure. But soon I will be powerful enough!",
+                                          "monster":  "Yeah! There are many monsters guarding my home. Only the bravest hero will be able to slay them!",
+                                          "conjure":  "Yeah! There are many monsters guarding my home. Only the bravest hero will be able to slay them!",
+                                          "home":  "Yeah! There are many monsters guarding my home. Only the bravest hero will be able to slay them!",
+                                          "number":  "You already know the secrets of mathemagics! Now go and use them to learn.",
+                                          "math":  "You already know the secrets of mathemagics! Now go and use them to learn.",
+                                          "1+1$":  "You already know the secrets of mathemagics! Now go and use them to learn.",
+                                          "1$":  "You already know the secrets of mathemagics! Now go and use them to learn.",
+                                          "+$":  "You already know the secrets of mathemagics! Now go and use them to learn.",
+                                          "plus":  "You already know the secrets of mathemagics! Now go and use them to learn.",
+                                          "one":  "You already know the secrets of mathemagics! Now go and use them to learn."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Huh? What? I can see! Wow! A non-mino. Did they capture you as well?",
+                                                       "Job? JOB? Hey man - I am in prison! But you know - once upon a time - I was a powerful mage! A mage ... come to think of it .., what is that - a mage?"
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Huh? What? I can see! Wow! A non-mino. Did they capture you as well?",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Mnjam. Excellent! Thanks, man!",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Do you want to trick me? You don\u0027t have one lousy apple!",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Ooooooooooo.\u003csniff\u003e",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "2":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Ok. Take my money. I can summon new money anytime - hehehe.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "createMoney"
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You do not have one.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Hmmmmm.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "3":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Mnjam - excellent apples. Now - about that key. You are sure want it?",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  4,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Get some more apples first!",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Then go away!",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "4":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Really, really?",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  5,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Then go away!",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "5":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Really, really, really, really?",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  6,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Then go away!",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "6":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Then take it and get happy - or die, hehe.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "setAmount",
+                                                                                          "amount":  1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  2088
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Then go away!",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "7":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "But first tell me your favourite colour please!",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  8,
+                                                                      "idle":  false
+                                                                  }
+                                                              ]
+                                              },
+                                        "8":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "red"
+                                                                                   ],
+                                                                      "response":  "Very interesting. So are you ready to proceed in you lesson in mathemagics?",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "questValue",
+                                                                                             "questId":  2,
+                                                                                             "value":  1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  9,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "blue"
+                                                                                   ],
+                                                                      "response":  null,
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "questValue",
+                                                                                             "questId":  2,
+                                                                                             "value":  2
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "black"
+                                                                                   ],
+                                                                      "response":  null,
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "questValue",
+                                                                                             "questId":  2,
+                                                                                             "value":  3
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "white"
+                                                                                   ],
+                                                                      "response":  null,
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "questValue",
+                                                                                             "questId":  2,
+                                                                                             "value":  4
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "orange"
+                                                                                   ],
+                                                                      "response":  null,
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "questValue",
+                                                                                             "questId":  2,
+                                                                                             "value":  5
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "green"
+                                                                                   ],
+                                                                      "response":  null,
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "questValue",
+                                                                                             "questId":  2,
+                                                                                             "value":  6
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yellow"
+                                                                                   ],
+                                                                      "response":  null,
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "questValue",
+                                                                                             "questId":  2,
+                                                                                             "value":  7
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "brown"
+                                                                                   ],
+                                                                      "response":  null,
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "questValue",
+                                                                                             "questId":  2,
+                                                                                             "value":  8
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "violet"
+                                                                                   ],
+                                                                      "response":  null,
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "questValue",
+                                                                                             "questId":  2,
+                                                                                             "value":  9
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "pink"
+                                                                                   ],
+                                                                      "response":  null,
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "questValue",
+                                                                                             "questId":  2,
+                                                                                             "value":  10
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "silver"
+                                                                                   ],
+                                                                      "response":  null,
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "questValue",
+                                                                                             "questId":  2,
+                                                                                             "value":  11
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "gold"
+                                                                                   ],
+                                                                      "response":  null,
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "questValue",
+                                                                                             "questId":  2,
+                                                                                             "value":  12
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "grey"
+                                                                                   ],
+                                                                      "response":  null,
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "questValue",
+                                                                                             "questId":  2,
+                                                                                             "value":  13
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "I think you are not in touch with yourself, come back if you have tuned in on your own feelings.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false,
+                                                                      "isCatchAll":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "9":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "So know that everthing is based on the simple fact that 1 + 1 = 49!",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "setQuest",
+                                                                                          "questId":  1,
+                                                                                          "value":  1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "So know that everthing is based on the simple fact that 1 + 1 = 94!",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "setQuest",
+                                                                                          "questId":  1,
+                                                                                          "value":  2
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "So know that everthing is based on the simple fact that 1 + 1 = 13!",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "setQuest",
+                                                                                          "questId":  1,
+                                                                                          "value":  3
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "So know that everthing is based on the simple fact that 1 + 1 = 1!",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "setQuest",
+                                                                                          "questId":  1,
+                                                                                          "value":  4
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+                                                   "number":  7,
+                                                   "math":  7,
+                                                   "1+1$":  7,
+                                                   "1$":  7,
+                                                   "+$":  7,
+                                                   "plus":  7,
+                                                   "one":  7
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Blank Rune",
+                                                         "price":  10,
+                                                         "id":  2260,
+                                                         "type":  "buy"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "a_prisoner.js"
+                     }
+}

@@ -1,0 +1,154 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Angelina",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  118,
+                                              "details":  {
+                                                              "head":  57,
+                                                              "body":  79,
+                                                              "legs":  98,
+                                                              "feet":  95
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  1,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "I am a priestess and I travelled here to learn about that order of the humble path I heard about. ...",
+                                          "prisoner":  "I think Lorbas liked the idea to \u0027convert\u0027 me to their twisted cult and saw it as a test for their leaders. Now that the magic symbols are turned off, I will gather my strength within some hours and teleport to safety.",
+                                          "humble":  "There are no records about the foundation of this order, and it is unknown where its \u0027monks\u0027 come from. Yet, travellers told us that they are living near the remains of the dark cathedral.",
+                                          "path":  "There are no records about the foundation of this order, and it is unknown where its \u0027monks\u0027 come from. Yet, travellers told us that they are living near the remains of the dark cathedral.",
+                                          "monk":  "The dark monks are the teachers and seducers of this cult. They work covertly in the cities and train thieves and assassins in the underground base here.",
+                                          "cult":  "The cult is secretly looking for the unsatisfied, disgrunteled and poor. Its members promise such sad individuals wealth, revenge and a cause. ...",
+                                          "power":  "I have no idea who is the mastermind behind all this, but it seems too big and too well organised to be the work of only a handful of false monks.",
+                                          "cathedral":  "The cathedral was meant to be a centre of piety and believe. A prayer to the gods that had become solid. ...",
+                                          "king":  "The king is a wise ruler but his realm is large and we all need to work hard to make the world a better place.",
+                                          "venore":  "Sadly the trade barons care more about wealth than the gods.",
+                                          "thais":  "Many see Thais as a fallen city but it is only the loudness of an ugly minority that gives people this impression.",
+                                          "carlin":  "The druids have their own way to interpret the gods\u0027 will and this has to be respected.",
+                                          "edron":  "The downfall of some of the most noble knights there should serve us as a warning to stay on guard for the evil that wants to lure us on the wrong path.",
+                                          "gods":  "I would love to discuss the teachings of the gods with you but this is neither the time nor the place.",
+                                          "tibia":  "We all have to help to make this world a better place.",
+                                          "kazordoon":  "The dwarves carry bitterness and pain in their souls. But it is them that have forgotten about the gods and not the other way around.",
+                                          "dwarves":  "The dwarves carry bitterness and pain in their souls. But it is them that have forgotten about the gods and not the other way around.",
+                                          "dwarfs":  "The dwarves carry bitterness and pain in their souls. But it is them that have forgotten about the gods and not the other way around.",
+                                          "ab\u0027dendriel":  "The elves have lost their balance and identity. In this unstable state they can easily be misled or might draw the wrong conclusions.",
+                                          "elves":  "The elves have lost their balance and identity. In this unstable state they can easily be misled or might draw the wrong conclusions.",
+                                          "elfs":  "The elves have lost their balance and identity. In this unstable state they can easily be misled or might draw the wrong conclusions.",
+                                          "darama":  "A far away continent that will widen our view of the wonders the gods provide us with.",
+                                          "darashia":  "I know only little about the teachings of Daraman but as far as I heard they concentrate too much on the single individual instead on the world as a whole.",
+                                          "ankrahmun":  "This city is the best example where godless philosophies might lead to.",
+                                          "ferumbras":  "He is only one of the many servants of the evil. Eventually he will fall but there will be others to take his place.",
+                                          "excalibug":  "One day this weapon will be unearthed and then it will be wielded against the servants of the evil.",
+                                          "assassin":  "The assassins are the eyes and the long arm of this damnable cult. They eliminate the enemies and those who found out too much about their plans. Be aware of that and always watch your back.",
+                                          "dark":  "The dark monks are the teachers and seducers of this cult. They work covertly in the cities and train thieves and assassins in the underground base here.",
+                                          "teleport":  "I am still gathering my strength for a teleport home, but some power already has returned. Do you wish to be teleported out of this cell?",
+                                          "safety":  "I am still gathering my strength for a teleport home, but some power already has returned. Do you wish to be teleported out of this cell?",
+                                          "help":  "I am still gathering my strength for a teleport home, but some power already has returned. Do you wish to be teleported out of this cell?",
+                                          "escape":  "I am still gathering my strength for a teleport home, but some power already has returned. Do you wish to be teleported out of this cell?",
+                                          "out":  "I am still gathering my strength for a teleport home, but some power already has returned. Do you wish to be teleported out of this cell?",
+                                          "door":  "I am still gathering my strength for a teleport home, but some power already has returned. Do you wish to be teleported out of this cell?"
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "The gods must be praised that I am finally saved.",
+                                                       "I am a priestess and I travelled here to learn about that order of the humble path I heard about. ..."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "The gods must be praised that I am finally saved.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hiho$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "So be it!",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "teleport",
+                                                                                          "x":  32626,
+                                                                                          "y":  32402,
+                                                                                          "z":  10
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "As you wish.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+
+                                               },
+                         "script":  "angelina.js"
+                     }
+}

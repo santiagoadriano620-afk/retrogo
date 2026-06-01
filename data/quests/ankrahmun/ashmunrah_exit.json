@@ -1,0 +1,26 @@
+﻿{
+  "actionId": 3068,
+  "type": "moveEvent",
+  "events": ["onStepIn", "onAddItem"],
+  "conditions": [
+    { "type": "itemAtPosition", "itemId": 1946, "pos": { "x": 33176, "y": 32880, "z": 11 } },
+    { "type": "itemAtPosition", "itemId": 1946, "pos": { "x": 33175, "y": 32884, "z": 11 } },
+    { "type": "itemAtPosition", "itemId": 1946, "pos": { "x": 33176, "y": 32889, "z": 11 } },
+    { "type": "itemAtPosition", "itemId": 1946, "pos": { "x": 33182, "y": 32880, "z": 11 } },
+    { "type": "itemAtPosition", "itemId": 1946, "pos": { "x": 33183, "y": 32884, "z": 11 } },
+    { "type": "itemAtPosition", "itemId": 1946, "pos": { "x": 33181, "y": 32889, "z": 11 } }
+  ],
+  "teleport": { "to": { "x": 33198, "y": 32885, "z": 11 } },
+  "magicEffect": 11,
+  "effects": [
+    { "type": "transformItemInPosition", "pos": { "x": 33176, "y": 32880, "z": 11 }, "from": 1946, "to": 1945 },
+    { "type": "transformItemInPosition", "pos": { "x": 33175, "y": 32884, "z": 11 }, "from": 1946, "to": 1945 },
+    { "type": "transformItemInPosition", "pos": { "x": 33176, "y": 32889, "z": 11 }, "from": 1946, "to": 1945 },
+    { "type": "transformItemInPosition", "pos": { "x": 33182, "y": 32880, "z": 11 }, "from": 1946, "to": 1945 },
+    { "type": "transformItemInPosition", "pos": { "x": 33183, "y": 32884, "z": 11 }, "from": 1946, "to": 1945 },
+    { "type": "transformItemInPosition", "pos": { "x": 33181, "y": 32889, "z": 11 }, "from": 1946, "to": 1945 }
+  ],
+  "effectsAlt": [
+    { "type": "relocate", "to": { "x": 33179, "y": 32889, "z": 11 } }
+  ]
+}

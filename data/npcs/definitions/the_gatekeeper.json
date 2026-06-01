@@ -1,0 +1,328 @@
+{
+    "creatureStatistics": {
+        "name": "The Gatekeeper",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 1448,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 0,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "yes": "YOU ARE NOT WORTHY!"
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                ", ARE YOU PREPARED TO FACE YOUR DESTINY?",
+                "CHILD! COME BACK WHEN YOU HAVE GROWN UP!"
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "%N, ARE YOU PREPARED TO FACE YOUR DESTINY?",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "greet"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "CHILD! COME BACK WHEN YOU HAVE GROWN UP!",
+                "idle": true
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "greet"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ],
+        "topics": {
+            "1": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "Ab'Dendriel"
+                        ],
+                        "response": "IN AB'DENDRIEL! AND WHAT PROFESSION HAVE YOU CHOSEN: KNIGHT, PALADIN, SORCERER, OR DRUID?",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "kazordoon"
+                        ],
+                        "response": "IN KAZORDOON! AND WHAT PROFESSION HAVE YOU CHOSEN: KNIGHT, PALADIN, SORCERER, OR DRUID?",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "darashia"
+                        ],
+                        "response": "IN DARASHIA! AND WHAT PROFESSION HAVE YOU CHOSEN: KNIGHT, PALADIN, SORCERER, OR DRUID?",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "ankrahmun"
+                        ],
+                        "response": "IN ANKRAHMUN! AND WHAT PROFESSION HAVE YOU CHOSEN: KNIGHT, PALADIN, SORCERER, OR DRUID?",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "port",
+                            "hope"
+                        ],
+                        "response": "IN PORT HOPE! AND WHAT PROFESSION HAVE YOU CHOSEN: KNIGHT, PALADIN, SORCERER, OR DRUID?",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "AB'DENDRIEL, KAZORDOON, ANKRAHMUN, PORT HOPE OR DARASHIA?",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 1,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "2": {
+                "entries": [
+                    {
+                        "keywords": [],
+                        "response": "A KNIGHT! ARE YOU SURE? THIS DECISION IS IRREVERSIBLE!",
+                        "conditions": [
+                            {
+                                "type": "vocation",
+                                "vocations": [
+                                    "knight"
+                                ]
+                            }
+                        ],
+                        "actions": [],
+                        "nextTopic": 3,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "A PALADIN! ARE YOU SURE? THIS DECISION IS IRREVERSIBLE!",
+                        "conditions": [
+                            {
+                                "type": "vocation",
+                                "vocations": [
+                                    "paladin"
+                                ]
+                            }
+                        ],
+                        "actions": [],
+                        "nextTopic": 3,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "A SORCERER! ARE YOU SURE? THIS DECISION IS IRREVERSIBLE!",
+                        "conditions": [
+                            {
+                                "type": "vocation",
+                                "vocations": [
+                                    "sorcerer"
+                                ]
+                            }
+                        ],
+                        "actions": [],
+                        "nextTopic": 3,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "A DRUID! ARE YOU SURE? THIS DECISION IS IRREVERSIBLE!",
+                        "conditions": [
+                            {
+                                "type": "vocation",
+                                "vocations": [
+                                    "druid"
+                                ]
+                            }
+                        ],
+                        "actions": [],
+                        "nextTopic": 3,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "KNIGHT, PALADIN, SORCERER, OR DRUID?",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "3": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "SO BE IT!",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "teleport",
+                                "x": 32732,
+                                "y": 31634,
+                                "z": 7
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": true
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "SO BE IT!",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "teleport",
+                                "x": 32649,
+                                "y": 31925,
+                                "z": 11
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": true
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "SO BE IT!",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "teleport",
+                                "x": 33213,
+                                "y": 32454,
+                                "z": 1
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": true
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "SO BE IT!",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "teleport",
+                                "x": 33194,
+                                "y": 32853,
+                                "z": 8
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": true
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "SO BE IT!",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "teleport",
+                                "x": 32595,
+                                "y": 32744,
+                                "z": 6
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": true
+                    }
+                ]
+            }
+        },
+        "keywordNextTopics": {
+            "yes": 1
+        },
+        "script": "the_gatekeeper.js"
+    }
+}

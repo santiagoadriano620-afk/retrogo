@@ -1,0 +1,212 @@
+{
+    "creatureStatistics": {
+        "name": "Basilisk",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 28,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 2,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {},
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "Hello there!"
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "a"
+                ],
+                "response": null,
+                "idle": true
+            },
+            {
+                "keywords": [
+                    "b"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "c"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "d"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "e"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "f"
+                ],
+                "response": null,
+                "idle": true
+            },
+            {
+                "keywords": [
+                    "g"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "h"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "i"
+                ],
+                "response": null,
+                "idle": true
+            },
+            {
+                "keywords": [
+                    "j"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "k"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "l"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "m"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "n"
+                ],
+                "response": null,
+                "idle": true
+            },
+            {
+                "keywords": [
+                    "o"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "p"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "r"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "s"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "t"
+                ],
+                "response": null,
+                "idle": true
+            },
+            {
+                "keywords": [
+                    "u"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "v"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "w"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "y"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ]
+    }
+}

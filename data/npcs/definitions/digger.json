@@ -1,0 +1,189 @@
+{
+    "creatureStatistics": {
+        "name": "Digger",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 9,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 1,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "name": "They call me Digger, that fine with me.",
+            "frans": "I think the FRANS is bugged.",
+            "digger": "So what?",
+            "job": "I am selling some potions.",
+            "sorcerer": "The way of the magicwielder is the only way to true power.",
+            "druid": "The way of the magicwielder is the only way to true power.",
+            "magic": "This is the magic market. Just have a look around.",
+            "market": "This is the magic market. Just have a look around.",
+            "vladruc": "Better don't cross the master!",
+            "urghain": "Better don't cross the master!",
+            "ferumbras": "An upstart of minor skills and great ambitions.",
+            "excalibug": "Just a knights' legend.",
+            "offer": "You may be interested in my life and mana fluids.",
+            "goods": "You may be interested in my life and mana fluids.",
+            "do": "You may be interested in my life and mana fluids.",
+            "you": "You may be interested in my life and mana fluids.",
+            "sell": "You may be interested in my life and mana fluids.",
+            "have": "You may be interested in my life and mana fluids.",
+            "potion": "You may be interested in my life and mana fluids.",
+            "deposit": "I will pay you 5 gold for every empty vial. Ok?",
+            "vial": "I will pay you 5 gold for every empty vial. Ok?",
+            "flask": "I will pay you 5 gold for every empty vial. Ok?"
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "Oh, is that you? You look inconveniently healthy.",
+                "I am selling some potions."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Oh, %N is that you? You look inconveniently healthy.",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ],
+        "topics": {
+            "2": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Here you are. There is a deposit of 5 gold on the vial.",
+                        "conditions": [
+                            {
+                                "type": "gold",
+                                "min": -1
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "deleteMoney",
+                                "amount": -1
+                            },
+                            {
+                                "type": "createItem",
+                                "id": -1
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Don't overestimate my patience.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "3": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Here you are ... %P gold.",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "deleteItem",
+                                "id": 2006
+                            },
+                            {
+                                "type": "createMoney"
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Don't overestimate my patience.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            }
+        },
+        "keywordNextTopics": {
+            "deposit": 3,
+            "vial": 3,
+            "flask": 3
+        },
+        "trade": {
+            "items": [
+                {
+                    "name": "Vial",
+                    "price": 60,
+                    "id": 2006,
+                    "type": "sell"
+                },
+                {
+                    "name": "Mana Fluid",
+                    "price": 55,
+                    "id": 2006,
+                    "type": "sell",
+                    "count": 10
+                },
+                {
+                    "name": "Life Fluid",
+                    "price": 60,
+                    "id": 2006,
+                    "type": "sell",
+                    "count": 11
+                }
+            ]
+        },
+        "script": "digger.js"
+    }
+}

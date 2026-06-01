@@ -1,0 +1,249 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Pydar",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  69,
+                                              "details":  {
+                                                              "head":  95,
+                                                              "body":  94,
+                                                              "legs":  132,
+                                                              "feet":  118
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  2,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "scent":  "The phoenix seems to be fond of you! If you had a real phoenix egg on you, I could provide you the blessing of the spark of the phoenix more easy and cheaper!",
+                                          "phoenix":  "The spark of the phoenix is given by me and by the great geomancer of the local earthtemple. Do you wish to receive my part of blessing of the phoenix for 10.000 gold?",
+                                          "egg":  "The phoenix seems to be fond of you! If you had a real phoenix egg on you, I could provide you the blessing of the spark of the phoenix more easy and cheaper!",
+                                          "suns":  "The lifeforce of this world is wannig. There are no more blessings avaliable on this world.",
+                                          "job":  "I am the head pyromancer of Kazordoon.",
+                                          "name":  "My name is Pydar Firefist, Son of Fire, from the Savage Axes.",
+                                          "tibia":  "That is our world.",
+                                          "kazordoon":  "Our city was founded in ancient times. Abandoned by the gods we once fought for, we created a secure haven for our people.",
+                                          "big":  "This mountain is said to be the oldest in the world. It is the place where fire and earth meet and separate at the same time.",
+                                          "old":  "This mountain is said to be the oldest in the world. It is the place where fire and earth meet and separate at the same time.",
+                                          "elves":  "Stupid race. They have no understanding of the ways of the world.",
+                                          "humans":  "They took the place dwarves once held in the world. They don\u0027t see that they are destined to fall just like we did.",
+                                          "orcs":  "The arch enemy. We could have destroyed them long ago, but this would have meant doing a favour to the gods which betrayed us.",
+                                          "minotaurs":  "Another pawn the gods do not care for any longer. A discarded toy like all of the elder races.",
+                                          "pyromancer":  "We are the keepers and shepherds of the elemental force of fire.",
+                                          "god":  "The ways of the gods are imprehensible to mortals. On the other hand, the elements are raw forces and can be understood and tamed.",
+                                          "keeper":  "The ways of the gods are imprehensible to mortals. On the other hand, the elements are raw forces and can be understood and tamed.",
+                                          "shepherd":  "The ways of the gods are imprehensible to mortals. On the other hand, the elements are raw forces and can be understood and tamed.",
+                                          "fire":  "The lifeforce of this world is wannig. There are no more blessings avaliable on this world.",
+                                          "flame":  "Unlike the gods, the elements don\u0027t use mortals as toys, A skilled mind can understand and even control them to some extent.",
+                                          "durin":  "Though we are through with the so-called gods, Durin, the first dwarf to aquire divine powers of his own, is considered a protector of our race.",
+                                          "life":  "Life feeds on fire and ultimately fire will feed on life.",
+                                          "plant":  "I don\u0027t care much about plants.",
+                                          "citizen":  "Many brave people are citizens of our town.",
+                                          "kroox":  "He is a smith. If you are looking for exquisite weapons and armour just talk to him.",
+                                          "jimbin":  "He and his wife are running the Jolly Axeman tavern.",
+                                          "maryza":  "She and her husband are running the Jolly Axeman tavern.",
+                                          "bezil":  "Bezil and Nezil are buying and selling equipment of all kinds.",
+                                          "nezil":  "Bezil and Nezil are buying and selling equipment of all kinds.",
+                                          "uzgod":  "Uzgod is a weaponsmith just like those in the old legends.",
+                                          "etzel":  "Etzel is a true master of the elements. He is a role-model for our youngsters, jawoll.",
+                                          "gregor":  "The leader of the Thaian Knights\u0027 guild is a man of few words.",
+                                          "duria":  "She is the first knight of Kazordoon. She is responsible for teaching our young warriors how to handle an axe.",
+                                          "emperor":  "Our emperor has his halls in the upper caves.",
+                                          "kruzak":  "Our emperor has his halls in the upper caves.",
+                                          "geomancer":  "They are followers of the path of earth.",
+                                          "technomancer":  "Those heretics believe they have discovered a new elemental force they can control easily. These fools, they\u0027ll bring doom on us all!",
+                                          "motos":  "He is the fiercest axefighter of our times and a fine strategist.",
+                                          "general":  "He is the fiercest axefighter of our times and a fine strategist.",
+                                          "army":  "Our armies can defend Kazordoon against any threat by means of its strong  fortifications.",
+                                          "ferumbras":  "If he ever dares enter Kazordoon I will gladly dump him into the lava. Tthe sacred flame shall bring justice upon him.",
+                                          "excalibug":  "A weapon too powerful to be wielded by mortals. It has to be returned to the fire which gave birth to it.",
+                                          "news":  "I am a busy man. I have no time for idle chitchat.",
+                                          "monster":  "May the great flame devour them all!",
+                                          "devil":  "They mock the great flame by their existence. BLAST THEM ALL! Jawoll!",
+                                          "help":  "I an not here to help; you have to help yourself.",
+                                          "quest":  "Ask around. There\u0027s a lot to do, jawoll.",
+                                          "task":  "Ask around. There\u0027s a lot to do, jawoll.",
+                                          "what":  "Ask around. There\u0027s a lot to do, jawoll.",
+                                          "do":  "Ask around. There\u0027s a lot to do, jawoll.",
+                                          "gold":  "Gold has been given birth to by the great flame. So it is wise to give some back to the fire now and then.",
+                                          "money":  "Gold has been given birth to by the great flame. So it is wise to give some back to the fire now and then.",
+                                          "equipment":  "Bezil and Nezil are runing a shop where you can buy all the stuff you need.",
+                                          "fight":  "You should fight like fire, fearless and without mercy.",
+                                          "heal$":  "You aren\u0027t looking that bad. Sorry, I can\u0027t help you. But if you are looking for additional protection you should go on the pilgrimage of ashes.",
+                                          "blessing":  "There are five different blessings available in five sacred places. These blessings  are: the spiritual shielding, the spark of the phoenix, the embrace of tibia, the fire of the suns and the wisdom of solitude.",
+                                          "pilgrimage":  "Whenever you receive a lethal wound your lifeforce is damaged. With every single of the five blessings you have this damage will be reduced.",
+                                          "ashes":  "Whenever you receive a lethal wound your lifeforce is damaged. With every single of the five blessings you have this damage will be reduced.",
+                                          "spiritual":  "You can receive the spiritual shielding in the whiteflowertemple south of thais.",
+                                          "shielding":  "You can receive the spiritual shielding in the whiteflowertemple south of thais.",
+                                          "sacred":  "Just ask in which of the five blessings you are interested in.",
+                                          "places":  "Just ask in which of the five blessings you are interested in.",
+                                          "spark":  "The spark of the phoenix is given by me and by the great geomancer of the local earthtemple. Do you wish to receive my part of the blessing of the phoenix for %d gold?",
+                                          "embrace":  "The druids north of Carlin will provide you with the embrace of tibia.",
+                                          "wisdom":  "Talk to the hermit Eremo on the isle of Cormaya about this blessing.",
+                                          "solitude":  "Talk to the hermit Eremo on the isle of Cormaya about this blessing.",
+                                          "time":  "It\u0027s the fourth age of the yellow flame.",
+                                          "blessings":  "I can sell you the Spark of the Phoenix for %d gold. Are you interested?"
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Be greeted ! I can smell the scent of a phoenix on you!",
+                                                       "Welcome, pilgrim ! May the flame guide you!",
+                                                       "I am the head pyromancer of Kazordoon."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+                                             "heal$":  {
+                                                           "damage":  40,
+                                                           "effectSelf":  null,
+                                                           "effectTarget":  13
+                                                       }
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Be greeted %N! I can smell the scent of a phoenix on you!",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Welcome, pilgrim %N! May the flame guide you!",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "8":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "The Spark of the Phoenix is yours. May it protect you in your darkest hour.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         },
+                                                                                         {
+                                                                                             "type":  "blessing",
+                                                                                             "index":  1,
+                                                                                             "state":  false
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "buyBlessing",
+                                                                                          "blessingIndex":  1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "I am sorry, but you do not have enough gold.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "blessing",
+                                                                                             "index":  1,
+                                                                                             "state":  false
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You already carry this blessing.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Maybe later.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+                                                   "spark":  8,
+                                                   "blessings":  8,
+                                                   "phoenix":  8
+                                               },
+                         "keywordTopicPrices":  {
+                                                    "spark":  0,
+                                                    "blessings":  0,
+                                                    "phoenix":  0
+                                                },
+                         "script":  "pydar.js"
+                     }
+}

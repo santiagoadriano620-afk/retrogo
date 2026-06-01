@@ -1,0 +1,249 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Imbul",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  111,
+                                              "details":  {
+                                                              "head":  95,
+                                                              "body":  2,
+                                                              "legs":  63,
+                                                              "feet":  115
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  0,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "I\u0027m a ferryman. If you want me to transport you to the other end of the city, feel free to ask me for a passage.",
+                                          "name":  "My name is Imbul.",
+                                          "time":  "Sorry, I don\u0027t own a watch.",
+                                          "king":  "It must be fun to be a king.",
+                                          "venore":  "Here are many people from Venore. I used to live there but I lost my job and took the chance to come here.",
+                                          "thais":  "It\u0027s where the king lives. The roads there must be made of gold or marble at least.",
+                                          "carlin":  "It\u0027s a city, I know that.",
+                                          "edron":  "Edron is some isle where the richest knights and sorcerers live. There they are not annoyed of the constant begging of poor people.",
+                                          "jungle":  "We already lost many settlers to the jungle. No one knows who is next.",
+                                          "tibia":  "That is our world, yes.",
+                                          "kazordoon":  "I think those dwarves came from Kazordoon.",
+                                          "dwarves":  "The dwarves that live here are searching for gold.",
+                                          "dwarfs":  "The dwarves that live here are searching for gold.",
+                                          "ab\u0027dendriel":  "What is that?",
+                                          "elves":  "The elven queen is the most beautiful woman in Tibia.",
+                                          "elfs":  "The elven queen is the most beautiful woman in Tibia.",
+                                          "darama":  "Many came here to make their fortune. But it might take a while to become rich.",
+                                          "darashia":  "That\u0027s somewhere behind that mountain.",
+                                          "ankrahmun":  "I heard it\u0027s a ghost town or something like that.",
+                                          "ferumbras":  "Why have some magicians to become evil?",
+                                          "excalibug":  "I never heard about that.",
+                                          "apes":  "They stole my paddle once.",
+                                          "lizard":  "If you follow the river far enough upcountry, you might see a lizardman. But be careful, they\u0027ll attack you as soon as they catch sight of you.",
+                                          "dworcs":  "They are all murderers and cannibals.",
+                                          "trip":  "I can bring you either to the east end of Port Hope or to the centre of the town, where would you like to go?",
+                                          "route":  "I can bring you either to the east end of Port Hope or to the centre of the town, where would you like to go?",
+                                          "passage":  "I can bring you either to the east end of Port Hope or to the centre of the town, where would you like to go?",
+                                          "destination":  "I can bring you either to the east end of Port Hope or to the centre of the town, where would you like to go?",
+                                          "sail":  "I can bring you either to the east end of Port Hope or to the centre of the town, where would you like to go?",
+                                          "go":  "I can bring you either to the east end of Port Hope or to the centre of the town, where would you like to go?",
+                                          "east":  "Do you seek a passage to the east end of Port Hope for 7 gold?",
+                                          "cent":  "Do you seek a passage to the centre of Port Hope for 7 gold?"
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Hi, .",
+                                                       "I\u0027m a ferryman. If you want me to transport you to the other end of the city, feel free to ask me for a passage."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Hi, %N.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hiho$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here we go!",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         },
+                                                                                         {
+                                                                                             "type":  "premium"
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "teleport",
+                                                                                          "x":  32679,
+                                                                                          "y":  32777,
+                                                                                          "z":  7
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Sorry, you do not have enough gold.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "max":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Maybe another time.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "2":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here we go!",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         },
+                                                                                         {
+                                                                                             "type":  "premium"
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "teleport",
+                                                                                          "x":  32628,
+                                                                                          "y":  32771,
+                                                                                          "z":  7
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Sorry, you do not have enough gold.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "max":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Maybe another time.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+                                                   "east":  1,
+                                                   "cent":  2
+                                               },
+                         "keywordTopicPrices":  {
+                                                    "east":  7,
+                                                    "cent":  7
+                                                },
+                         "script":  "imbul.js"
+                     }
+}

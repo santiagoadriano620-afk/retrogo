@@ -1,0 +1,557 @@
+{
+    "creatureStatistics": {
+        "name": "Memech",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 131,
+            "details": {
+                "head": 21,
+                "body": 21,
+                "legs": 40,
+                "feet": 116
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 2,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "job": "I sell weapons and armor to protect your mortal shell.",
+            "name": "I am the mourned Memech.",
+            "time": "Time is only a burden to the flesh.",
+            "temple": "You will find the temple in the northeastern part of the town.",
+            "pharaoh": "The pharaoh is a living god and his power is rising with every day.",
+            "oldpharaoh": "Praised be our pharaoh who gave his father all the time in the world for contemplation and ascension.",
+            "scarab": "The scarabs are wise as far as I know. They test each warrior's strength.",
+            "tibia": "This world is but a dying spark of a once great fire.",
+            "carlin": "The lost cities of the Tibian continent are caught in their false gods' jaws.",
+            "thais": "The lost cities of the Tibian continent are caught in their false gods' jaws.",
+            "edron": "The lost cities of the Tibian continent are caught in their false gods' jaws.",
+            "venore": "The lost cities of the Tibian continent are caught in their false gods' jaws.",
+            "kazordoon": "I have been told the dwarves are worthy fighters. It is a shame their Rah will perish upon death.",
+            "dwarves": "I have been told the dwarves are worthy fighters. It is a shame their Rah will perish upon death.",
+            "dwarfes": "I have been told the dwarves are worthy fighters. It is a shame their Rah will perish upon death.",
+            "ab'dendriel": "Elves are a rare sight on this continent. I know little about this race and their ways.",
+            "elves": "Elves are a rare sight on this continent. I know little about this race and their ways.",
+            "elfes": "Elves are a rare sight on this continent. I know little about this race and their ways.",
+            "darama": "The continent's name was changed to Darama after Daraman spread his teachings here. I don't know its old name, I'm afraid.",
+            "daraman": "Daraman is acknowledged as a prophet, though it is said he was misguided. I think you should better ask somebody in the temple about such issues.",
+            "ankrahmun": "Our home is blessed and protected by the power of our pharaoh.",
+            "false": "Well, the temple teaches us that the false gods want to steal our Rah.",
+            "gods": "Well, the temple teaches us that the false gods want to steal our Rah.",
+            "ascension": "This is nothing I understand. I am but a simple man.",
+            "Akh'rah": "Thats religious stuff, and I don't know much about it. It's about the union and the separation of Akh, Rah and Uthun.",
+            "Uthun": "Thats religious stuff, and I don't know much about it. It's about the union and the separation of Akh, Rah and Uthun.",
+            "Akh": "Well, that is the mortal body. It is full of needs and thus sinful.",
+            "undead": "Undeath must be great. No need to eat, to sleep or to do other things like that, you know.",
+            "undeath": "Undeath must be great. No need to eat, to sleep or to do other things like that, you know.",
+            "Rah": "The Rah is what people from other religions call the soul.",
+            "uthun": "That's what we learn and remember. It is who we are because of our memories. At least that's what I understand.",
+            "mourn": "Mortality is a bad thing. The dead mourn us for that. Quite nice of them. We should mourn ourselves as well, if I understand the priests correctly.",
+            "arena": "The arena is a fun place to visit. You should go there to try out our quality equipment.",
+            "palace": "That's where our pharaohs resides. The palace is to the east.",
+            "offer": "My offers are weapons, armors, helmets, legs, and shields.",
+            "do": "My offers are weapons, armors, helmets, legs, and shields.",
+            "you": "My offers are weapons, armors, helmets, legs, and shields.",
+            "sell": "My offers are weapons, armors, helmets, legs, and shields.",
+            "have": "My offers are weapons, armors, helmets, legs, and shields.",
+            "weapon": "I have hand axes, axes, spears, maces, battle hammers, swords, rapiers, daggers, and sabres. What's your choice?",
+            "helmet": "I am selling leather helmets and chain helmets. What do you want?",
+            "armor": "I am selling leather, chain, and brass armor. What do you need?",
+            "shield": "I am selling wooden shields and steel shields. What do you want?",
+            "trousers": "I am selling chain legs. Do you want to buy any?",
+            "legs": "I am selling chain legs. Do you want to buy any?"
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "Be mourned pilgrim in flesh.",
+                "I sell weapons and armor to protect your mortal shell."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Be mourned pilgrim in flesh.",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": "Be mourned pilgrim in flesh.",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "be",
+                    "mourned",
+                    "pilgrim",
+                    "flesh"
+                ],
+                "response": "Be mourned pilgrim in flesh.",
+                "idle": false
+            }
+        ],
+        "topics": {
+            "1": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Thank you. Here it is.",
+                        "conditions": [
+                            {
+                                "type": "gold",
+                                "min": -1
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "deleteMoney",
+                                "amount": -1
+                            },
+                            {
+                                "type": "createItem",
+                                "id": -1
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Sorry, you do not have enough gold.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Maybe you will buy it another time.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "2": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Ok. Here is your money.",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "createMoney"
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Sorry, you do not have one.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Sorry, you do not have so much.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Maybe next time.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "3": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Oh, unbelievable! I would pay %P gold for this wonderful piece of armor. Are you still interested?",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "setPrice",
+                                "amount": 6400
+                            },
+                            {
+                                "type": "setAmount",
+                                "amount": 1
+                            }
+                        ],
+                        "nextTopic": 4,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Hmmm, what a pity! I have been looking for such an armor since a long time.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "4": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Finally it is mine! Here is your money. Can I be of any further help?",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "createMoney"
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Argl! You do not have one! Trying to tease me? Get lost or I call the guards!",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Maybe my offer is too low? Unfortunately I can not bring up more money, I am just a smith.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            }
+        },
+        "keywordNextTopics": {},
+        "trade": {
+            "items": [
+                {
+                    "name": "Dagger",
+                    "price": 5,
+                    "id": 2379,
+                    "type": "sell"
+                },
+                {
+                    "name": "Hand Axe",
+                    "price": 8,
+                    "id": 2380,
+                    "type": "sell"
+                },
+                {
+                    "name": "Spear",
+                    "price": 10,
+                    "id": 2389,
+                    "type": "sell"
+                },
+                {
+                    "name": "Rapier",
+                    "price": 15,
+                    "id": 2384,
+                    "type": "sell"
+                },
+                {
+                    "name": "Axe",
+                    "price": 20,
+                    "id": 2386,
+                    "type": "sell"
+                },
+                {
+                    "name": "Sabre",
+                    "price": 35,
+                    "id": 2385,
+                    "type": "sell"
+                },
+                {
+                    "name": "Sword",
+                    "price": 85,
+                    "id": 2376,
+                    "type": "sell"
+                },
+                {
+                    "name": "Mace",
+                    "price": 90,
+                    "id": 2398,
+                    "type": "sell"
+                },
+                {
+                    "name": "Battle Hammer",
+                    "price": 350,
+                    "id": 2417,
+                    "type": "sell"
+                },
+                {
+                    "name": "Throwing Star",
+                    "price": 50,
+                    "id": 2399,
+                    "type": "sell"
+                },
+                {
+                    "name": "Chain Armor",
+                    "price": 200,
+                    "id": 2464,
+                    "type": "sell"
+                },
+                {
+                    "name": "Brass Armor",
+                    "price": 450,
+                    "id": 2465,
+                    "type": "sell"
+                },
+                {
+                    "name": "Leather Armor",
+                    "price": 35,
+                    "id": 2467,
+                    "type": "sell"
+                },
+                {
+                    "name": "Chain Helmet",
+                    "price": 52,
+                    "id": 2458,
+                    "type": "sell"
+                },
+                {
+                    "name": "Leather Helmet",
+                    "price": 12,
+                    "id": 2461,
+                    "type": "sell"
+                },
+                {
+                    "name": "Steel Shield",
+                    "price": 240,
+                    "id": 2509,
+                    "type": "sell"
+                },
+                {
+                    "name": "Wooden Shield",
+                    "price": 15,
+                    "id": 2512,
+                    "type": "sell"
+                },
+                {
+                    "name": "Chain Legs",
+                    "price": 80,
+                    "id": 2648,
+                    "type": "sell"
+                },
+                {
+                    "name": "Two Handed Sword",
+                    "price": 450,
+                    "id": 2377,
+                    "type": "buy"
+                },
+                {
+                    "name": "Battle Axe",
+                    "price": 80,
+                    "id": 2378,
+                    "type": "buy"
+                },
+                {
+                    "name": "Dagger",
+                    "price": 2,
+                    "id": 2379,
+                    "type": "buy"
+                },
+                {
+                    "name": "Hand Axe",
+                    "price": 4,
+                    "id": 2380,
+                    "type": "buy"
+                },
+                {
+                    "name": "Halberd",
+                    "price": 400,
+                    "id": 2381,
+                    "type": "buy"
+                },
+                {
+                    "name": "Club",
+                    "price": 1,
+                    "id": 2382,
+                    "type": "buy"
+                },
+                {
+                    "name": "Rapier",
+                    "price": 5,
+                    "id": 2384,
+                    "type": "buy"
+                },
+                {
+                    "name": "Sabre",
+                    "price": 12,
+                    "id": 2385,
+                    "type": "buy"
+                },
+                {
+                    "name": "Axe",
+                    "price": 7,
+                    "id": 2386,
+                    "type": "buy"
+                },
+                {
+                    "name": "Spear",
+                    "price": 3,
+                    "id": 2389,
+                    "type": "buy"
+                },
+                {
+                    "name": "Morning Star",
+                    "price": 90,
+                    "id": 2394,
+                    "type": "buy"
+                },
+                {
+                    "name": "Mace",
+                    "price": 30,
+                    "id": 2398,
+                    "type": "buy"
+                },
+                {
+                    "name": "Short Sword",
+                    "price": 10,
+                    "id": 2406,
+                    "type": "buy"
+                },
+                {
+                    "name": "Battle Hammer",
+                    "price": 120,
+                    "id": 2417,
+                    "type": "buy"
+                },
+                {
+                    "name": "Sword",
+                    "price": 25,
+                    "id": 2376,
+                    "type": "buy"
+                },
+                {
+                    "name": "Leather Armor",
+                    "price": 12,
+                    "id": 2467,
+                    "type": "buy"
+                },
+                {
+                    "name": "Chain Armor",
+                    "price": 70,
+                    "id": 2464,
+                    "type": "buy"
+                },
+                {
+                    "name": "Brass Armor",
+                    "price": 150,
+                    "id": 2465,
+                    "type": "buy"
+                },
+                {
+                    "name": "Plate Armor",
+                    "price": 400,
+                    "id": 2463,
+                    "type": "buy"
+                },
+                {
+                    "name": "Chain Legs",
+                    "price": 25,
+                    "id": 2648,
+                    "type": "buy"
+                },
+                {
+                    "name": "Leather Helmet",
+                    "price": 4,
+                    "id": 2461,
+                    "type": "buy"
+                },
+                {
+                    "name": "Chain Helmet",
+                    "price": 17,
+                    "id": 2458,
+                    "type": "buy"
+                },
+                {
+                    "name": "Steel Helmet",
+                    "price": 190,
+                    "id": 2457,
+                    "type": "buy"
+                },
+                {
+                    "name": "Wooden Shield",
+                    "price": 5,
+                    "id": 2512,
+                    "type": "buy"
+                },
+                {
+                    "name": "Battle Shield",
+                    "price": 95,
+                    "id": 2513,
+                    "type": "buy"
+                },
+                {
+                    "name": "Steel Shield",
+                    "price": 80,
+                    "id": 2509,
+                    "type": "buy"
+                }
+            ]
+        },
+        "script": "memech.js"
+    }
+}

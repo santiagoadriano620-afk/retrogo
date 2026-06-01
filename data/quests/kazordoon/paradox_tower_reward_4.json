@@ -1,0 +1,11 @@
+{
+  "actionId": 3039,
+  "type": "reward",
+  "itemIds": [],
+  "conditions": [],
+  "effects": [
+    { "type": "storage", "key": 41, "value": 1 },
+    { "type": "magicEffect", "pos": {"x": 32477, "y": 31900, "z": 1}, "effectId": 7 }
+  ],
+  "effectsAlt": []
+}

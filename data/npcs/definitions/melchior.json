@@ -1,0 +1,218 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Melchior",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  113,
+                                              "details":  {
+                                                              "head":  0,
+                                                              "body":  25,
+                                                              "legs":  59,
+                                                              "feet":  115
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  60,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "name":  "My late father, may he rest in peace, chose to call me Melchior.",
+                                          "melchior":  "That is my name.",
+                                          "job":  "I am a poor beggar. I try to make a meagre living here since a cruel fate has left me a blind man.",
+                                          "blind":  "Yes, I am. I was not born that way, but a cruel fate caused me to lose my eyesight.",
+                                          "fate":  "Fate played a cruel trick on old Melchior. If you want me to, I can tell you my story - talking about one\u0027s grievances does help to ease the pain. So - would you like to hear my story?",
+                                          "story":  "Fate played a cruel trick on old Melchior. If you want me to, I can tell you my story - talking about one\u0027s grievances does help to ease the pain. So - would you like to hear my story?",
+                                          "djinn":  "The djinns are a wondrous race. Swift and strong they are and larger, much larger than any man. ...",
+                                          "greeting":  "The djinns have an ancient code of honour. This code includes a special concept of hospitality. Anybody who utters the word of greeting must not be attacked even if he is an enemy. Well, at least that is what the code says. ...",
+                                          "word":  "The djinns have an ancient code of honour. This code includes a special concept of hospitality. Anybody who utters the word of greeting must not be attacked even if he is an enemy. Well, at least that is what the code says. ...",
+                                          "djanni\u0027hah":  "You know the traditional djinn word of greeting DJANNI\u0027HAH. Use it wisely!",
+                                          "efreet":  "Beware the Efreet, stranger! They hate all humans, and if they had their way all of us would be killed. If you meet one be sure to say the word of greeting immediately because otherwise you will be killed in a heartbeat. ...",
+                                          "marid":  "The Marid are gentle, kind-hearted djinn, or at least that is how they act towards humans. However, they are quite reclusive, too. They will not talk to human unless he says the word of greeting first. ...",
+                                          "kha\u0027zeel":  "That is the name of the huge mountain range to the west of the great desert, the Kha\u0027labal. That\u0027s where you will find the djinns\u0027 fortresses Ashta\u0027daramai and Mal\u0027ouquah. ...",
+                                          "kha\u0027labal":  "Aaaah... The great desert. Legend has it that in ancient times it was a beautiful garden. I don\u0027t know if that is true, but I must admit I love it just the way it is. ...",
+                                          "mal\u0027ouquah":  "That is the Efreet\u0027s gloomy fortress, home of Malor, hidden high up in the Kha\u0027zeel mountains. I used to go there often. Don\u0027t make the same mistake, stranger! I would love to think there is somebody who profited from the lesson I had to learn!",
+                                          "ashta\u0027daramai":  "Aah yes - the Marids\u0027 fortress. Perched high on the Kha\u0027zeel, it is a marvel to behold. They say Gabel built it on the ruins of his original palace.",
+                                          "gabel":  "He is the leader of the Marid! I have never met him myself, but everybody was full of praise for him back at Ashta\u0027daramai. The legend has it that it was him who introduced the djinns to wise Daraman\u0027s teachings.",
+                                          "malor":  "Malor is the Efreets\u0027 leader. He is perhaps not the strongest of all efreet, but his treachery and cruelty are certainly unrivalled. He was defeated a long, long time ago, but he was not killed. ...",
+                                          "scarab":  "Those damn scavengers! I detest them. When I was stumbling through the desert, all blind and desperate, they followed me around. ...",
+                                          "alesar":  "I know that name. He is a Marid. This djinn is one of the best smiths ever to live. You should see the scimitars he makes - hard as titanium yet light as a desert breeze. ...",
+                                          "fa\u0027hradin":  "I know that name. He is a Marid, right? I have met him once. He seemed pretty important.",
+                                          "baa\u0027leal":  "Cursed be that djinn! It was him who blinded me, and I bet casting me out into the Kha\u0027labal was his idea, too. Believe me, I would try to kill him if only I could.",
+                                          "haroun":  "A Marid trader. I have often had dealings with him. He drove me mad because he never accepted any haggling, but then he never ever tried to trick me. He was not really a trader at heart, I suppose. He was more of a monk or maybe a preacher.",
+                                          "bas\u0027saam":  "Yes, I know him. He is an Efreet trader. I met him often during my travels, and even though there was no real sympathy we had a certain mutual respect for each other. But all that changed when he found out I had dealings with the Marid.",
+                                          "bo\u0027ques":  "He is a cook - a djinn cook. A weird guy. Always used to ask me to procure some strange kind of ingredient or other for him. ...",
+                                          "tibia":  "Tibia is such a beautiful place. I would give it all if I could see it again.",
+                                          "daraman":  "Daraman was a holy man, a true prophet. He showed us how we can master grief and affliction through dignity and brotherliness. It is a shame I only came to fully appreciate his teachings when fate had cast me into darkness.",
+                                          "darashia":  "\u003cSighs\u003e Aah yes... Darashia. I would give anything if I could see it again.",
+                                          "edron":  "I have never been to cities on other continents. And I suppose now I never will. I would be glad enough to leave this place.",
+                                          "thais":  "I have never been to cities on other continents. And I suppose now I never will. I would be glad enough to leave this place.",
+                                          "venore":  "I have never been to cities on other continents. And I suppose now I never will. I would be glad enough to leave this place.",
+                                          "kazordoon":  "I have never been to cities on other continents. And I suppose now I never will. I would be glad enough to leave this place.",
+                                          "carlin":  "I have never been to cities on other continents. And I suppose now I never will. I would be glad enough to leave this place.",
+                                          "ab\u0027dendriel":  "I have never been to cities on other continents. And I suppose now I never will. I would be glad enough to leave this place.",
+                                          "ankrahmun":  "I hate this city. Period. I would never have come here, but I haven\u0027t had much of a choice. The caravan that picked me up in the Kha\u0027zeel was headed for this place, and I was glad enough they brought me here. ...",
+                                          "pharaoh":  "The old pharaoh? I keep on hearing rumours about him, but I do not know if they are true.",
+                                          "ruler":  "The pharaoh? He is always in the palace, so I have heard only rumors about him. But I know one thing for sure - he is mad. End of story.",
+                                          "old":  "The old pharaoh? I keep on hearing rumours about him, but I do not know if they are true.",
+                                          "palace":  "The palace lies to the south of the arena and to the west of the temple. Better stay clear of that place. If but half the things I have heard about it are true this palace is not a place for the living anymore.",
+                                          "arena":  "Ah yes, the arena. I do not really know what\u0027s going on there, because I have never seen it myself. However, I often hear strange noises from there, cheers and jeers and sometimes pityful screams.",
+                                          "temple":  "That temple is very old, and for centuries it used to be a place of worship and of contemplation. Now that the priests there are fanatic followers of the pharaoh this is no longer a holy place.",
+                                          "ascension":  "The concept of ascension is central to the pharaoh\u0027s creed. I am not sure I really understand it, but apparently it has to do with transformation to undeath. Nice, isn\u0027t it?",
+                                          "rah":  "Ah yes - I recognise that. According to the pharaoh that is a living being\u0027s soul.",
+                                          "uthun":  "According to the pharaoh\u0027s teachings this is the total of a living being\u0027s memories and personal experiences.",
+                                          "akh":  "In the pharaoh\u0027s creed, this is what the physical body is called.",
+                                          "mourn":  "Spare me that inane twaddle, will you? I am glad enough to be alive, thank you."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Greetings, . I do not see your face, but I can read a thousand things in your voice!",
+                                                       "Welcome, ! The lovely sound of your voice shines like a beam of light through my solitary darkness!",
+                                                       "I am a poor beggar. I try to make a meagre living here since a cruel fate has left me a blind man."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Greetings, %N. I do not see your face, but I can read a thousand things in your voice!",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "greetings$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Welcome, %N! The lovely sound of your voice shines like a beam of light through my solitary darkness!",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "greetings$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "While my eyes were still of use to me I worked as a trader. I was not too successful, so I started looking for alternatives. Remembering some old nomad legends I went to explore the Kha\u0027zeel. If only I\u0027d never done that! ...",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "As you wish, stranger.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "2":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "rumour"
+                                                                                   ],
+                                                                      "response":  "\u003cwhispers\u003e It is said his son, the present pharaoh, killed him and turned him into some ghastly undead!",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "rumor"
+                                                                                   ],
+                                                                      "response":  null,
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+                                                   "fate":  1,
+                                                   "story":  1,
+                                                   "old":  2,
+                                                   "pharaoh":  2
+                                               },
+                         "script":  "melchior.js"
+                     }
+}

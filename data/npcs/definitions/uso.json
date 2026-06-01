@@ -1,0 +1,333 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Uso",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  69,
+                                              "details":  {
+                                                              "head":  79,
+                                                              "body":  39,
+                                                              "legs":  77,
+                                                              "feet":  115
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  2,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "I am the head of a little mining operation here and I train knights in my spare time to prevent my old body from rusting.",
+                                          "name":  "I am called Uso Oredigger, son of the flame from the dragoneater fellowship.",
+                                          "time":  "Time is of little importance at this forsaken place.",
+                                          "temple":  "There is a somewhat provisional temple of the humans here.",
+                                          "king":  "Human kings are not of my concern.",
+                                          "venore":  "To me one human is like the other. I don\u0027t care what city they are from.",
+                                          "thais":  "To me one human is like the other. I don\u0027t care what city they are from.",
+                                          "carlin":  "To me one human is like the other. I don\u0027t care what city they are from.",
+                                          "edron":  "To me one human is like the other. I don\u0027t care what city they are from.",
+                                          "jungle":  "All those trees and the heat are horrible. If it wasn\u0027t for the gold, we wouldn\u0027t be here, jawoll.",
+                                          "gold":  "There IS gold out there. And a lot of it. I can feel it in my old bones.",
+                                          "tibia":  "The world is big but the random places where gold and treasures can be found are the ones that are of importance, jawoll.",
+                                          "kazordoon":  "We dwarves call it our home since the dawn of time. I miss Kazordoon a lot, but gold is of more importance. After I have made a fortune here I will return home and might settle down.",
+                                          "dwarves":  "We are a proud race. Dwarves are strong and fearless. Even in this forsaken jungle we can survive, jawoll.",
+                                          "dwarfs":  "We are a proud race. Dwarves are strong and fearless. Even in this forsaken jungle we can survive, jawoll.",
+                                          "ab\u0027dendriel":  "That is no city but just a bunch of trees.",
+                                          "elves":  "I wonder why we see so few elves over here. Those tree people should love this cursed jungle. But even they stay away from here. It makes me wonder why.",
+                                          "elfs":  "I wonder why we see so few elves over here. Those tree people should love this cursed jungle. But even they stay away from here. It makes me wonder why.",
+                                          "darama":  "I wonder which part of Darama is worst, that jungle or that desert. This whole continent is a dwarf\u0027s nightmare.",
+                                          "ankrahmun":  "Another monument of the madness of the human race. Worship of death or undeath or whatever ... I wonder how often I must be slammed on my head to think of such a crazy idea.",
+                                          "ferumbras":  "He would be at least a diversion from all those crawling and flying insects.",
+                                          "excalibug":  "If it ever had been in this area, it surely would be rusted through by now.",
+                                          "apes":  "It wouldn\u0027t surprise me if they were only elves disguised with furs.",
+                                          "lizard":  "They say the lizards had a lot of gold in their ancient cities. Perhaps one day we will go there and look for it.",
+                                          "dworcs":  "I recently broke the nose of a guy who dared to claim that those headhunters are related to dwarves.",
+                                          "spell":  "Sorry, I only sell spells to knights."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Hiho.",
+                                                       "I am the head of a little mining operation here and I train knights in my spare time to prevent my old body from rusting."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Hiho.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hiho$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "2":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "healing",
+                                                                                       "spell"
+                                                                                   ],
+                                                                      "response":  "In this category I have \u0027Light Healing\u0027 and \u0027Antidote\u0027.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "support",
+                                                                                       "spell"
+                                                                                   ],
+                                                                      "response":  "In this category I have \u0027Light\u0027, \u0027Find Person\u0027 and \u0027Great Light\u0027.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "bye"
+                                                                                   ],
+                                                                      "response":  "So long.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "0$"
+                                                                                   ],
+                                                                      "response":  "For magic level 0 I have \u0027Find Person\u0027 and \u0027Light\u0027.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "1$"
+                                                                                   ],
+                                                                      "response":  "For magic level 1 I have \u0027Light Healing\u0027.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "2$"
+                                                                                   ],
+                                                                      "response":  "For magic level 2 I have \u0027Antidote\u0027.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "3$"
+                                                                                   ],
+                                                                      "response":  "For magic level 3 I have \u0027Great Light\u0027.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Sorry, I have only spells for magic level 0, 1, 2 and 3.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "3":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You already know how to cast this spell.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You have to be magic level %A to learn this spell.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Return when you have enough gold.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "max":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here you are. Look in your spellbook for the pronunciation of this spell.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Maybe next time.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+                                                   "antidote":  3,
+                                                   "find person":  3,
+                                                   "great light":  3,
+                                                   "light":  3,
+                                                   "light healing":  3
+                                               },
+                         "keywordTopicSpellIds":  {
+                                                      "antidote":  12,
+                                                      "find person":  30,
+                                                      "great light":  19,
+                                                      "light":  5,
+                                                      "light healing":  2
+                                                  },
+                         "keywordTopicMagicLevels":  {
+                                                         "antidote":  0,
+                                                         "find person":  0,
+                                                         "great light":  0,
+                                                         "light":  0,
+                                                         "light healing":  0
+                                                     },
+                         "script":  "uso.js",
+                         "keywordTopicPrices":  {
+                                                    "antidote":  400,
+                                                    "find person":  200,
+                                                    "great light":  600,
+                                                    "light":  200,
+                                                    "light healing":  200
+                                                }
+                     }
+}

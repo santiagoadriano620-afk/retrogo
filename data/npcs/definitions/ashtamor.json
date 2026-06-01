@@ -1,0 +1,239 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Ashtamor",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  113,
+                                              "details":  {
+                                                              "head":  19,
+                                                              "body":  114,
+                                                              "legs":  76,
+                                                              "feet":  114
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  1,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "I consider myself as a guide, a guardian over the souls who transcend the border to another world.",
+                                          "crematory":  "Such an ugly word for this wonderful place. It is a door, a portal to a better world than this one is.",
+                                          "name":  "What is a name worth in your eyes? And more important: Does the choice of your name decide your further fate? Perhaps we will never know.",
+                                          "time":  "It\u0027s  now, but the true question is: How much time is left?",
+                                          "fire":  "The purging force of the fire ... after having been purified, the freed souls will depart with the smoke.",
+                                          "soul":  "The essence of life. Source of your very self. While the body is in space and time, the soul exists in time only.",
+                                          "body":  "Is the mind an emination of body, or the body an invention by the mind?",
+                                          "death":  "What else does it mean than the loss of your weak physical shell? And isn\u0027t the true power in the universe rather mental than physical?",
+                                          "venore":  "You come to this world naked, and leave it this way, so there\u0027s no need to hold back your money, especially not in a place like Venore.",
+                                          "king":  "Kings, queens ... I\u0027ve seen them come and go. Everything fades, even the glory and wealth of the richest.",
+                                          "monster":  "Oh yes, monsters can grant you a passage to the afterlife also, but it\u0027s not a comfortable trip. \u003cchuckles\u003e",
+                                          "thanks":  "\u0027Thank you\u0027 ... Words I rarely here these days. Tell me when I might be of service again, .",
+                                          "thank":  "\u0027Thank you\u0027 ... Words I rarely here these days. Tell me when I might be of service again, .",
+                                          "you":  "I am offering vases and amphoras, the perfect vessel for dusty remains of whatever sort.",
+                                          "help":  "What help might I offer you except guidance? Would you like me to help you transcend the border to the afterlife?",
+                                          "buy":  "I am offering vases and amphoras, the perfect vessel for dusty remains of whatever sort.",
+                                          "do":  "I am offering vases and amphoras, the perfect vessel for dusty remains of whatever sort.",
+                                          "sell":  "I am offering vases and amphoras, the perfect vessel for dusty remains of whatever sort.",
+                                          "have":  "I am offering vases and amphoras, the perfect vessel for dusty remains of whatever sort.",
+                                          "offer":  "I am offering vases and amphoras, the perfect vessel for dusty remains of whatever sort."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Welcome, , wanderer between the worlds.",
+                                                       "I consider myself as a guide, a guardian over the souls who transcend the border to another world."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Welcome, %N, wanderer between the worlds.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "greetings$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Are you sure? You might not be able to come back, consider that.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "no"
+                                                                                   ],
+                                                                      "response":  "Come to me when you have changed your mind, wanderer.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  }
+                                                              ]
+                                              },
+                                        "2":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Hmm... seems you are not ready yet to let go.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "no"
+                                                                                   ],
+                                                                      "response":  "Come to me when you have changed your mind, wanderer.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  }
+                                                              ]
+                                              },
+                                        "3":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "May it be of good use to you. ",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Sorry, that\u0027s not even enough for a shard of my quality wares.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Do you really want to leave the choice of your future vessel to chance?",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+                                                   "help":  1
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Vase",
+                                                         "price":  3,
+                                                         "id":  2008,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Amphora",
+                                                         "price":  4,
+                                                         "id":  2023,
+                                                         "type":  "sell"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "ashtamor.js"
+                     }
+}

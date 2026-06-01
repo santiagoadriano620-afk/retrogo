@@ -1,0 +1,213 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Nelliem",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  69,
+                                              "details":  {
+                                                              "head":  115,
+                                                              "body":  100,
+                                                              "legs":  105,
+                                                              "feet":  76
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  2,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "To keep my thumbs green and to sell our garden equipment, as you can see on that shelves.",
+                                          "crunor":  "May he bless all plants.",
+                                          "name":  "I am Nelliem.",
+                                          "time":  "It\u0027s a good time to sow some seeds.",
+                                          "equipment":  "I sell shovels, picks, scythes, machetes, ropes, pitchforks, rakes, hoes, brooms, fishing rods and brandnew crowbars from Kazordoon.",
+                                          "goods":  "I sell shovels, picks, scythes, machetes, ropes, pitchforks, rakes, hoes, brooms, fishing rods and brandnew crowbars from Kazordoon.",
+                                          "do":  "I sell shovels, picks, scythes, machetes, ropes, pitchforks, rakes, hoes, brooms, fishing rods and brandnew crowbars from Kazordoon.",
+                                          "you":  "I sell shovels, picks, scythes, machetes, ropes, pitchforks, rakes, hoes, brooms, fishing rods and brandnew crowbars from Kazordoon.",
+                                          "sell":  "I sell shovels, picks, scythes, machetes, ropes, pitchforks, rakes, hoes, brooms, fishing rods and brandnew crowbars from Kazordoon.",
+                                          "have":  "I sell shovels, picks, scythes, machetes, ropes, pitchforks, rakes, hoes, brooms, fishing rods and brandnew crowbars from Kazordoon.",
+                                          "offer":  "I sell shovels, picks, scythes, machetes, ropes, pitchforks, rakes, hoes, brooms, fishing rods and brandnew crowbars from Kazordoon."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Greetings, , traveller from afar...",
+                                                       "To keep my thumbs green and to sell our garden equipment, as you can see on that shelves."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Greetings, %N, traveller from afar...",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here!",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "No money, no deal!",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Then not.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Shovel",
+                                                         "price":  20,
+                                                         "id":  2554,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Scythe",
+                                                         "price":  25,
+                                                         "id":  2550,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Pick",
+                                                         "price":  50,
+                                                         "id":  2553,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Rope",
+                                                         "price":  50,
+                                                         "id":  2120,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Fishing Rod",
+                                                         "price":  150,
+                                                         "id":  2580,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Crowbar",
+                                                         "price":  260,
+                                                         "id":  2416,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Machete",
+                                                         "price":  35,
+                                                         "id":  2420,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Pitch Fork",
+                                                         "price":  25,
+                                                         "id":  2548,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Rake",
+                                                         "price":  20,
+                                                         "id":  2549,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Hoe",
+                                                         "price":  15,
+                                                         "id":  2552,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Broom",
+                                                         "price":  12,
+                                                         "id":  2551,
+                                                         "type":  "sell"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "nelliem.js"
+                     }
+}

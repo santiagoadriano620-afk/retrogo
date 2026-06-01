@@ -1,0 +1,24 @@
+{
+  "actionId": 3023,
+  "type": "wall",
+  "events": ["onStepIn", "onStepOut"],
+  "tileItem": false,
+  "conditions": [
+    {"type": "isPlayer"},
+    {"type": "itemInPosition", "pos": {"x": 33210, "y": 31630, "z": 13}, "itemId": 1050}
+  ],
+  "effects": [
+    {"type": "removeItem", "pos": {"x": 33210, "y": 31630, "z": 13}, "itemId": 1050},
+    {"type": "removeItem", "pos": {"x": 33211, "y": 31630, "z": 13}, "itemId": 1050},
+    {"type": "removeItem", "pos": {"x": 33212, "y": 31630, "z": 13}, "itemId": 1050}
+  ],
+  "effectsAlt": [
+    {"type": "relocate", "from": {"x": 33210, "y": 31630, "z": 13}, "to": {"x": 33210, "y": 31631, "z": 13}},
+    {"type": "relocate", "from": {"x": 33211, "y": 31630, "z": 13}, "to": {"x": 33211, "y": 31631, "z": 13}},
+    {"type": "relocate", "from": {"x": 33212, "y": 31630, "z": 13}, "to": {"x": 33212, "y": 31631, "z": 13}},
+    {"type": "createItem", "itemId": 1050, "count": 1, "pos": {"x": 33210, "y": 31630, "z": 13}},
+    {"type": "createItem", "itemId": 1050, "count": 1, "pos": {"x": 33211, "y": 31630, "z": 13}},
+    {"type": "createItem", "itemId": 1050, "count": 1, "pos": {"x": 33212, "y": 31630, "z": 13}}
+  ],
+  "checkTile": {"x": 33191, "y": 31629, "z": 13}
+}

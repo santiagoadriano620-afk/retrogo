@@ -1,0 +1,189 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "James",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  111,
+                                              "details":  {
+                                                              "head":  115,
+                                                              "body":  41,
+                                                              "legs":  45,
+                                                              "feet":  118
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  2,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "how":  "Fine, thanks.",
+                                          "are":  "Fine, thanks.",
+                                          "you":  "Fine, thanks.",
+                                          "sell":  "I sell some food.",
+                                          "job":  "I am a humble farmer.",
+                                          "name":  "James.",
+                                          "time":  "I am too poor to afford a watch.",
+                                          "help":  "Sorry, can\u0027t offer you any help.",
+                                          "monster":  "There are dangerous monsters and renegade knights in the northwest behind the river and the mountain.",
+                                          "dungeon":  "I stay away from dungeons as far as I can.",
+                                          "god":  "May Crunor bless our harvests.",
+                                          "king":  "I never saw him in person.",
+                                          "daniel":  "A brave warrior as far as a farmer like me can tell.",
+                                          "avar$":  "He scares me a little.",
+                                          "academy":  "The mages and druids have quite an appetite. They buy much from me and summon even more food.",
+                                          "magic":  "I am nothing but a humble farmer and know nothing about that.",
+                                          "weapon":  "I am nothing but a humble farmer and know nothing about that.",
+                                          "spell":  "I am nothing but a humble farmer and know nothing about that.",
+                                          "tibia":  "If I were you, I would stay here.",
+                                          "thais":  "I was born in Thais, but my family moved to Edron among the first settlers.",
+                                          "edron":  "I was born in Thais, but my family moved to Edron among the first settlers.",
+                                          "buy":  "I can offer you bread, cheese, ham, meat, and apples.",
+                                          "food":  "Are you looking for food? I have bread, cheese, ham, meat, and apples."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Hi there .",
+                                                       "I am a humble farmer."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Hi there %N.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here it is.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "I am sorry, but you do not have enough gold.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Maybe later.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Bread",
+                                                         "price":  3,
+                                                         "id":  2689,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Cheese",
+                                                         "price":  5,
+                                                         "id":  2696,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Meat",
+                                                         "price":  5,
+                                                         "id":  2666,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Ham",
+                                                         "price":  8,
+                                                         "id":  2671,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Red Apple",
+                                                         "price":  3,
+                                                         "id":  2674,
+                                                         "type":  "sell"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "james.js"
+                     }
+}

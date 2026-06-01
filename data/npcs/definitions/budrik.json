@@ -1,0 +1,89 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Budrik",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  69,
+                                              "details":  {
+                                                              "head":  94,
+                                                              "body":  76,
+                                                              "legs":  58,
+                                                              "feet":  95
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  4,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "I am the foreman of this mine.",
+                                          "shop":  "I am the foreman of this mine.",
+                                          "name":  "My name is Budrik Deepdigger, son of Earth, from the Molten Rock.",
+                                          "time":  "Precisely , young one.",
+                                          "help":  "I am a miner, ask someone else.",
+                                          "dwarfs":  "We understand the ways of the earth like nobody else does.",
+                                          "monster":  "In the deeper mines we discover some nasty beasts now and then.",
+                                          "dungeon":  "This is no funhouse. Leave the miners and their drilling-worms alone and get out! We have already enough trouble without you.",
+                                          "mines":  "This is no funhouse. Leave the miners and their drilling-worms alone and get out! We have already enough trouble without you.",
+                                          "trouble":  "The Horned Fox is leading his bandits in sneak attacks and raids on us.",
+                                          "horned":  "A minotaur they threw out at Mintwallin. He must have some kind of hideout nearby.",
+                                          "fox":  "A minotaur they threw out at Mintwallin. He must have some kind of hideout nearby.",
+                                          "hideout":  "The hideout of the Horned Fox is probably a dangerous if not lethal place for the unexperienced ones."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Hiho, Hiho .",
+                                                       "I am the foreman of this mine."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Hiho, Hiho %N.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hiho$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ]
+                     }
+}

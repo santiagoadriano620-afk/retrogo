@@ -1,0 +1,170 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Karl",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  111,
+                                              "details":  {
+                                                              "head":  58,
+                                                              "body":  68,
+                                                              "legs":  109,
+                                                              "feet":  131
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  3,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "I am the responsible for our ... uhm ... resistance.",
+                                          "saloon":  "I am the responsible for our ... uhm ... resistance.",
+                                          "resistance":  "We fight the opression of the males and male needs by the women. This is our secret headquarters.",
+                                          "headquarters":  "Well its more a hidden tavern, so to say.",
+                                          "tavern":  "Our offers are limited but here a man can buy what a man needs.",
+                                          "name":  "I won\u0027t tell you my name.",
+                                          "karl":  "Who told you that???",
+                                          "queen":  "Well, shes not that bad ... but some of her laws are.",
+                                          "eloise":  "Well, shes not that bad ... but some of her laws are.",
+                                          "laws":  "Those crazy women forbid us alcohol in the city! Imagine that!",
+                                          "needs":  "Those crazy women forbid us alcohol in the city! Imagine that!",
+                                          "opression":  "Those crazy women forbid us alcohol in the city! Imagine that!",
+                                          "alcohol":  "Those crazy women forbid us alcohol in the city! Imagine that!",
+                                          "army":  "They are the tools of opression. Hunting down every alcohol smuggler they can get.",
+                                          "smuggler":  "We collected money and hired one of the best smuggler in the whole land. His name is Todd.",
+                                          "Todd":  "A true fighter for malehood. He will bring us all the hard stuff from Thais and even contact the king there to support us.",
+                                          "king":  "I\u0027m sure if the king learns about our tragedy, he will support us with alcohol.",
+                                          "hard":  "Todd took all the money we could gather to buy us the best stuff on the whole continent.",
+                                          "stuff":  "Todd took all the money we could gather to buy us the best stuff on the whole continent.",
+                                          "hugo":  "I think Todd mentioned a Hugo once.",
+                                          "news":  "Some travelers from Edron told about a great treasure guarded by cruel demons in the dungeons there.",
+                                          "rumors":  "Some travelers from Edron told about a great treasure guarded by cruel demons in the dungeons there.",
+                                          "buy":  "I can offer you beer. For wine and realy hard stuff we have to wait for Todd.",
+                                          "offers":  "I can offer you beer. For wine and realy hard stuff we have to wait for Todd.",
+                                          "do":  "I can offer you beer. For wine and realy hard stuff we have to wait for Todd.",
+                                          "you":  "I can offer you beer. For wine and realy hard stuff we have to wait for Todd.",
+                                          "sell":  "I can offer you beer. For wine and realy hard stuff we have to wait for Todd.",
+                                          "have":  "I can offer you beer. For wine and realy hard stuff we have to wait for Todd."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Pshhhht! Not that loud ... but welcome.",
+                                                       "I am the responsible for our ... uhm ... resistance."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Pshhhht! Not that loud ... but welcome.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here. Don\u0027t take it into the city though.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Sorry, come back with more gold.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Maybe later.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Mug",
+                                                         "price":  20,
+                                                         "id":  2012,
+                                                         "type":  "sell"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "karl.js"
+                     }
+}

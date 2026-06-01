@@ -1,0 +1,11 @@
+{
+  "actionId": 3105,
+  "type": "home",
+  "events": ["onStepIn", "onAddItem"],
+  "tileItem": true,
+  "teleport": {"to": {"x": 33213, "y": 32454, "z": 1}},
+  "magicEffect": 13,
+  "town": "Darashia",
+  "onAddItemTeleport": {"to": {"x": 33212, "y": 32455, "z": 2}},
+  "onAddItemEffect": 14
+}

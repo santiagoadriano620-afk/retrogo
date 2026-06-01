@@ -1,0 +1,294 @@
+{
+    "creatureStatistics": {
+        "name": "Ormuhn",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 18,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 2,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "job": "I am the arena master. I supervise all challenges that take place in this arena and train true fighters.",
+            "name": "I am called Ormuhn.",
+            "time": "Time only matters to you while you are mortal. Another instrument in the hands of the false gods to fool us all.",
+            "temple": "The temple takes care of your Uthun. In this arena we challenge your Akh.",
+            "pharaoh": "The pharaoh, our mighty leader, is an unliving god.",
+            "oldpharaoh": "The pharaoh will know why he granted him a chance to ascend.",
+            "scarab": "Scarabs might be sacred, but they are also a challenge. If you are able to overcome one of them, its spirit will forgive you. The everlasting sand will grant him rebirth anyway.",
+            "chosen": "I am one of the chosen. To become like me you have to serve the pharaoh and his temple faithfully.",
+            "tibia": "Tibia is a place kept in the thrall of the greedy false gods. One day though our pharaoh will free Tibia and guide all of its people to ascension.",
+            "carlin": "These cities are nests of corruption and lies. For those who know the treason of the false gods is almost tangible there.",
+            "thais": "These cities are nests of corruption and lies. For those who know the treason of the false gods is almost tangible there.",
+            "edron": "These cities are nests of corruption and lies. For those who know the treason of the false gods is almost tangible there.",
+            "venore": "These cities are nests of corruption and lies. For those who know the treason of the false gods is almost tangible there.",
+            "kazordoon": "Dwarves are worthy warriors. Still their mortal Akh makes them prey to true death and so their lives are wasted.",
+            "dwarves": "Dwarves are worthy warriors. Still their mortal Akh makes them prey to true death and so their lives are wasted.",
+            "dwarfes": "Dwarves are worthy warriors. Still their mortal Akh makes them prey to true death and so their lives are wasted.",
+            "ab'dendriel": "Elves are nothing but feeble treehuggers.",
+            "elves": "Elves are nothing but feeble treehuggers.",
+            "elfes": "Elves are nothing but feeble treehuggers.",
+            "darama": "This continent will be the first to prosper under the guidance of our pharaoh.",
+            "darashia": "The people there are not totally lost to the false gods yet. Who knows? They may be saved yet.",
+            "daraman": "A mere mortal prophet. As was to be expected, his mortality blurred his visions of ascension.",
+            "ankrahmun": "This is the shelter of the mortal flock who listens to the teachings of our pharaoh.",
+            "mortality": "Your curse of mortality can be lifted if you only prove youself worthy in the eyes of our pharaoh.",
+            "false": "These greedy reapers of souls are the true scourge of poor mortals like you. Your living Akh makes you vulnerable for their attacks. Withstand them and you will get a chance to be raised to the exalted state of undeath.",
+            "gods": "These greedy reapers of souls are the true scourge of poor mortals like you. Your living Akh makes you vulnerable for their attacks. Withstand them and you will get a chance to be raised to the exalted state of undeath.",
+            "ascension": "Ascension is achieved in many steps. The first and most important step is unquestioning loyal service to our pharaoh.",
+            "Akh'rah": "You should discuss such topics with our priests. I don't care too much for these matters.",
+            "Uthun": "You should discuss such topics with our priests. I don't care too much for these matters.",
+            "Akh": "As far as I know this is what you would call your body. Ask a priest for further information.",
+            "undead": "We are the chosen ones.",
+            "undeath": "We are the chosen ones.",
+            "Rah": "That is your so-called soul. Ask a priest for further information.",
+            "uthun": "All the things you remember form your uthun. Ask a priest for further information.",
+            "mourn": "Living flesh is so ... pathetic.",
+            "arena": "If you wish to test your mortal Akh you are at the right place.",
+            "palace": "The palace is guarded by the elite forces of the chosen.",
+            "spell": "Sorry, I only sell spells to knights."
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "Be mourned pilgrim in flesh.",
+                "I am the arena master. I supervise all challenges that take place in this arena and train true fighters."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Be mourned pilgrim in flesh.",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": "Be mourned pilgrim in flesh.",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "be",
+                    "mourned",
+                    "pilgrim",
+                    "flesh"
+                ],
+                "response": "Be mourned pilgrim in flesh.",
+                "idle": false
+            }
+        ],
+        "topics": {
+            "2": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "healing",
+                            "spell"
+                        ],
+                        "response": "In this category I have 'Light Healing' and 'Antidote'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "support",
+                            "spell"
+                        ],
+                        "response": "In this category I have 'Light', 'Find Person' and 'Great Light'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "bye"
+                        ],
+                        "response": "May enlightenment be your path.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true
+                    },
+                    {
+                        "keywords": [
+                            "0$"
+                        ],
+                        "response": "For level 8 I have 'Find Person' and 'Light'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "1$"
+                        ],
+                        "response": "For level 9 I have 'Light Healing'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "2$"
+                        ],
+                        "response": "For level 10 I have 'Antidote'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "3$"
+                        ],
+                        "response": "For level 13 I have 'Great Light'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Sorry, I have only spells for magic level 0, 1, 2 and 3.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "3": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You already know how to cast this spell.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You have to be magic level %A to learn this spell.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Return when you have enough gold.",
+                        "conditions": [
+                            {
+                                "type": "gold",
+                                "max": -1
+                            }
+                        ],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Here you are. Look in your spellbook for the pronunciation of this spell.",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "deleteMoney",
+                                "amount": -1
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Maybe next time.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            }
+        },
+        "keywordNextTopics": {
+            "antidote": 3,
+            "find person": 3,
+            "great light": 3,
+            "light": 3,
+            "light healing": 3
+        },
+        "keywordTopicSpellIds": {
+            "antidote": 12,
+            "find person": 30,
+            "great light": 19,
+            "light": 5,
+            "light healing": 2
+        },
+        "keywordTopicMagicLevels": {
+            "antidote": 0,
+            "find person": 0,
+            "great light": 0,
+            "light": 0,
+            "light healing": 0
+        },
+        "keywordTopicPrices": {
+            "antidote": 2000,
+            "find person": 1600,
+            "great light": 2600,
+            "light": 1600,
+            "light healing": 1800
+        },
+        "script": "ormuhn.js"
+    }
+}

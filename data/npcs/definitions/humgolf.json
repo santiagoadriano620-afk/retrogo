@@ -1,0 +1,210 @@
+{
+    "creatureStatistics": {
+        "name": "Humgolf",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 69,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 2,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "job": "I am chief rotwormtamer of Kazordoon. I sell rotworms and buy meat and tasty, fresh rats for my worms.",
+            "name": "I am Humgolf Molesight, Son of Earth, from the Molten Rock.",
+            "tibia": "More nice beneath this noisy green surface.",
+            "kazordoon": "I like the mines best.",
+            "big": "The mountain seems tasty as far as my worms are concerned.",
+            "old": "The mountain seems tasty as far as my worms are concerned.",
+            "worms": "They are so cute and so intelligent.",
+            "humans": "They are not cute and not intelligent.",
+            "orcs": "They are even more stupid and ugly than minotaurs.",
+            "minotaurs": "They are stupid and ugly.",
+            "elves": "They are not worth to be mentioned.",
+            "geomancer": "They have an understanding of worms.",
+            "god": "The worm does not care about gods, why should I?",
+            "earth": "Home of the worms, home of my people, too.",
+            "fire": "Where earth is giving, fire is taking. That's the way of the elements.",
+            "buy": "Do you want to buy a rotworm?",
+            "rotworm": "Do you want to buy a rotworm?",
+            "drilling": "I am not allowed to sell worms to people without a formular 007 licence to drill or a 0815 artist licence.",
+            "licence": "It's a special licence for artists. It was only used once as I sold a white worm to Frietsiek and Yor.",
+            "007": "I am not allowed to sell worms to people without a formular 007 licence to drill or a 0815 artist licence.",
+            "0815": "It's a special licence for artists. It was only used once as I sold a white worm to Frietsiek and Yor.",
+            "artist": "It's a special licence for artists. It was only used once as I sold a white worm to Frietsiek and Yor.",
+            "life": "Can't say I like it much.",
+            "plant": "Only a rotting plant is a good plant.",
+            "citizen": "Many noisy pepole down here are scaring my worms.",
+            "kroox": "Poor guy, has lost his drilling licence for drinking.",
+            "jimbin": "His tavern is too crowded and too bright for a dwarf with taste like me.",
+            "maryza": "Don't like the way she looks at my worms.",
+            "bezil": "Always chatting. How can someone talk that much?",
+            "nezil": "Always chatting. How can someone talk that much?",
+            "uzgod": "We are trading now and then. Fine dwarf he is.",
+            "etzel": "Does a worm need spells to work his kind of magic? I do neither.",
+            "motos": "That guy is a monster! I despise rotwormkillers.",
+            "general": "That guy is a monster! I despise rotwormkillers.",
+            "durin": "If he'd live today he'd be a rotwormtamer like me.",
+            "duria": "Thinks she's to good to talk to rotwormtamers.",
+            "emperor": "The emperor should spend more money on rotworm husbandry.",
+            "kruzak": "The emperor should spend more money on rotworm husbandry.",
+            "pyromancer": "Hotheads.",
+            "technomancer": "GO AWAY! I heard they think of replacing worms with machines. That is an OUTRAGE!",
+            "army": "They should remember old dwarfish rotworm tactics. Think like a worm and the battle is almost won.",
+            "colossus": "Never was up there to look at it.",
+            "ferumbras": "A true enemy of the worms.",
+            "excalibug": "Silly fairy tale.",
+            "news": "Who needs news if the old things are still good enough?",
+            "monster": "Unwormish creatures they are.",
+            "stone": "Too hard to be gnawed away by even the finest worm.",
+            "golem": "Too hard to be gnawed away by even the finest worm.",
+            "help": "I am here to help the worms, not the fools.",
+            "quest": "What by the worm are you talking about?",
+            "task": "What by the worm are you talking about?",
+            "what": "What by the worm are you talking about?",
+            "do": "What by the worm are you talking about?",
+            "gold": "Gold is one of the things my worms can unearth.",
+            "money": "Gold is one of the things my worms can unearth.",
+            "equipment": "If you own a good worm you need nothing else.",
+            "time": "Time does not matter to a dwarf who understands the ways of the worm."
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                ", good day .. or night, whatever.",
+                "I am chief rotwormtamer of Kazordoon. I sell rotworms and buy meat and tasty, fresh rats for my worms."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "%N, good day .. or night, whatever.",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ],
+        "topics": {
+            "1": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Hey, you don't own a drilling licence. No deal!",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "You will regret that.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "2": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Here you are.",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "createMoney"
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You don't have one.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "no"
+                        ],
+                        "response": "Then not.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    }
+                ]
+            }
+        },
+        "trade": {
+            "items": [
+                {
+                    "name": "Meat",
+                    "price": 2,
+                    "id": 2666,
+                    "type": "buy"
+                },
+                {
+                    "name": "Ham",
+                    "price": 4,
+                    "id": 2671,
+                    "type": "buy"
+                },
+                {
+                    "name": "Dead Rat",
+                    "price": 2,
+                    "id": 2813,
+                    "type": "buy"
+                }
+            ]
+        },
+        "script": "humgolf.js"
+    }
+}

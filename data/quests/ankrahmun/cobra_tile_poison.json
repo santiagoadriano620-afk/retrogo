@@ -1,0 +1,10 @@
+﻿{
+  "actionId": 3015,
+  "type": "moveEvent",
+  "events": ["onStepIn"],
+  "effects": [
+    { "type": "magicEffect", "pos": { "x": 33362, "y": 32811, "z": 14 }, "effectId": 9 },
+    { "type": "storage", "key": 270, "value": 1 },
+    { "type": "condition", "name": "poison" }
+  ]
+}

@@ -1,0 +1,99 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Robin",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  112,
+                                              "details":  {
+                                                              "head":  77,
+                                                              "body":  118,
+                                                              "legs":  118,
+                                                              "feet":  115
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  3,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "I am the Chief Huntsman of Thais.",
+                                          "name":  "I am Robin. Some call me Rob, others Woody.",
+                                          "time":  "Time... it\u0027s running that fast when you are as old as me.",
+                                          "king":  "I am his Master of the Hunt as I was his father\u0027s Master of the Hunt.",
+                                          "tibianus":  "I am his Master of the Hunt as I was his father\u0027s Master of the Hunt.",
+                                          "quentin":  "My buddy Quentin is getting old, too. Things were different in our youth.",
+                                          "lynda":  "So young and so beautiful! She makes even an old man as me... uhm... feel a bit younger again.",
+                                          "harkath":  "Another one of a few friends of my youth who\u0027s still left.",
+                                          "army":  "These kids call themselves an army... In the old times we had a REAL army, I tell ya...",
+                                          "general":  "These kids call themselves an army... In the old times we had a REAL army, I tell ya...",
+                                          "ferumbras":  "A misguided follower of evil.",
+                                          "sam":  "I have not much use for heavy armor.",
+                                          "gorn":  "Sells a lot of useful stuff that guy. I rember the days when we were so poor that we could not afford anything the former owner offered.",
+                                          "frodo":  "Ah, I love that hut. I liked it as it was Iwan\u0027s hut, I loved it as it was Pridence\u0027s hut, and I think I will never stop to love this place.",
+                                          "elane":  "A master, or better mistress, of the bow. But with her big feet she just chases all game away.",
+                                          "muriel":  "These mages still give me shivers. I remember the first time this Ferumbras guy showed his ugly face here.",
+                                          "sorcerer":  "These mages still give me shivers. I remember the first time this Ferumbras guy showed his ugly face here.",
+                                          "gregor":  "Can you imagine this youngster handles a guild? Ah, come on.",
+                                          "marvik":  "Druids have their ways with nature, but they would rather cuddle a bear than hunting it.",
+                                          "druid":  "Druids have their ways with nature, but they would rather cuddle a bear than hunting it.",
+                                          "bozo":  "Such guys don\u0027t live long. The grandfather of our king had a new jester every season.",
+                                          "baxter":  "I hardly know him.",
+                                          "oswald":  "Oh, what a charming young man. He\u0027s often here asking me about my youth and the people I met in my life.",
+                                          "sherry":  "The farmers are fine fellows.",
+                                          "donald":  "The farmers are fine fellows.",
+                                          "mcronald":  "The farmers are fine fellows.",
+                                          "crunor":  "Crunor gives and takes. That is his way. As long as we don\u0027t hunt more then we need we are at balance with Crunor.",
+                                          "lugri":  "Can you imagine his father was such a fine guy? A shame what his son has become.",
+                                          "excalibug":  "I don\u0027t like swords in general.",
+                                          "news":  "News? In the woods I learn nothing of importance to the world."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Ah, a visitor. Greetings !",
+                                                       "I am the Chief Huntsman of Thais."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Ah, a visitor. Greetings %N!",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ]
+                     }
+}

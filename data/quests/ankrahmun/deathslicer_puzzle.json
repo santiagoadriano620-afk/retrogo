@@ -1,0 +1,29 @@
+﻿{
+  "actionId": 3065,
+  "type": "moveEvent",
+  "events": ["onStepIn", "onAddItem"],
+  "conditions": [
+    { "type": "storage", "key": 271, "value": 1, "comparison": ">" },
+    { "type": "storage", "key": 272, "value": 1, "comparison": ">" },
+    { "type": "storage", "key": 273, "value": 1, "comparison": ">" },
+    { "type": "storage", "key": 274, "value": 1, "comparison": ">" },
+    { "type": "storage", "key": 275, "value": 1, "comparison": ">" },
+    { "type": "storage", "key": 276, "value": 1, "comparison": ">" },
+    { "type": "storage", "key": 277, "value": 1, "comparison": ">" }
+  ],
+  "effects": [
+    { "type": "relocate", "to": { "x": 33164, "y": 32694, "z": 14 } },
+    { "type": "magicEffect", "pos": { "x": 33164, "y": 32694, "z": 14 }, "effectId": 11 },
+    { "type": "storage", "key": 271, "value": 0 },
+    { "type": "storage", "key": 272, "value": 0 },
+    { "type": "storage", "key": 273, "value": 0 },
+    { "type": "storage", "key": 274, "value": 0 },
+    { "type": "storage", "key": 275, "value": 0 },
+    { "type": "storage", "key": 276, "value": 0 },
+    { "type": "storage", "key": 277, "value": 0 }
+  ],
+  "effectsAlt": [
+    { "type": "relocate", "to": { "x": 33259, "y": 32707, "z": 13 } },
+    { "type": "magicEffect", "pos": { "x": 33259, "y": 32707, "z": 13 }, "effectId": 11 }
+  ]
+}

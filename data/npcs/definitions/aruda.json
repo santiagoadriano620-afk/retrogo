@@ -1,0 +1,338 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Aruda",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  118,
+                                              "details":  {
+                                                              "head":  75,
+                                                              "body":  40,
+                                                              "legs":  48,
+                                                              "feet":  95
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  99,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "how":  "Thank you very much. How kind of you to care about me. I am fine, thank you.",
+                                          "are":  "Thank you very much. How kind of you to care about me. I am fine, thank you.",
+                                          "you":  "Thank you very much. How kind of you to care about me. I am fine, thank you.",
+                                          "sell":  "Sorry, I have nothing to sell.",
+                                          "job":  "I do some work now and then. Nothing unusual, though.",
+                                          "news":  "You should ask Oswald about news. He loves them.",
+                                          "name":  "I am Aruda.",
+                                          "aruda":  "Yes, that\u0027s me!",
+                                          "help":  "I am deeply sorry, I can\u0027t help you.",
+                                          "monster":  "UH! What a terrifying topic. Please let us speak about something more pleasant, I am a weak and small woman after all.",
+                                          "dungeon":  "UH! What a terrifying topic. Please let us speak about something more pleasant, I am a weak and small woman after all.",
+                                          "sewer":  "What gives you the impression, I am the kind of women, you find in sewers?",
+                                          "god":  "You should ask about that in one of the temples.",
+                                          "king":  "The king, that lives in this fascinating castle? I think he does look kind of cute in his luxurious robes, doesn\u0027t he?",
+                                          "sam":  "He is soooo strong! What muscles! What a body! Did you ask him for a date?",
+                                          "benjamin":  "He is a little simple minded but always nice and well dressed.",
+                                          "gorn":  "He should really sell some stylish gowns or something like that. We Tibians never get some clothing of the latest fashion. It\u0027s a shame.",
+                                          "quentin":  "I don\u0027t understand this lonely monks. I love company too much to become one. He, he, he!",
+                                          "bozo":  "Oh, isn\u0027t he funny? I could listen to him the whole day.",
+                                          "oswald":  "As far as I know, he is working in the castle.",
+                                          "rumour":  "I am a little shy and so don\u0027t hear many rumors",
+                                          "rumor":  "I am a little shy and so don\u0027t hear many rumors",
+                                          "gossip":  "I am a little shy and so don\u0027t hear many rumors",
+                                          "fuck":  "Uhm, let us change the subject, please.",
+                                          "kiss":  "Oh, you little devil, stop talking like that! \u003cblush\u003e",
+                                          "weapon":  "I know so little about weapons, so tell me something about weapons, please.",
+                                          "magic":  "I believe that love is stronger then all magic, don\u0027t you agree?",
+                                          "thief":  "Oh, sorry, I have to hurry, bye!",
+                                          "theft":  "Oh, sorry, I have to hurry, bye!",
+                                          "tibia":  "I would like to visit the beach more often, but I guess it\u0027s too dangerous.",
+                                          "castle":  "I love this castle! It\u0027s so beautiful.",
+                                          "muriel":  "Powerful sorcerers frighten me a little.",
+                                          "elane":  "I personally think it\u0027s inappropriate for a woman to become a warrior, what do you think about that?",
+                                          "marvik":  "Druids seldom visit a town, what do you know about druids?",
+                                          "gregor":  "I like brave fighters like him.",
+                                          "noodles":  "Oh, he is sooooo cute!",
+                                          "dog":  "I like dogs, the little ones at least. Do you like dogs, too?",
+                                          "poodle":  "I like dogs, the little ones at least. Do you like dogs, too?",
+                                          "excalibug":  "Oh, I am just a girl and know nothing about magic swords and such things.",
+                                          "partos":  "I ... don\u0027t know someone named like that.",
+                                          "yenny":  "Yenny? I know no Yenny, nor have I ever used that name! You have mistook me with someone else."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Oh, hello, handsome! It\u0027s a pleasure to meet you .",
+                                                       "Oh, hello , your hair looks great! Who did it for you?",
+                                                       "I do some work now and then. Nothing unusual, though."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Oh, hello, handsome! It\u0027s a pleasure to meet you %N.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Oh, hello %N, your hair looks great! Who did it for you?",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "I would never have guessed that.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "2":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Oh, sorry, I was distracted, what did you say?",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Oh, I just remember I have some work to do, sorry. Bye!",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "max":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "3":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Take some time to talk to me!",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "4":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "spouse"
+                                                                                   ],
+                                                                      "response":  "Well ... I  might have known him a little .. but there was nothing serious.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  5,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "girlfriend"
+                                                                                   ],
+                                                                      "response":  null,
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  }
+                                                              ]
+                                              },
+                                        "5":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "fruit"
+                                                                                   ],
+                                                                      "response":  "I remember that grapes were his favourites. He was almost addicted to them.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+                                                   "how":  2,
+                                                   "are":  2,
+                                                   "you":  2,
+                                                   "sell":  2,
+                                                   "job":  2,
+                                                   "name":  2,
+                                                   "aruda":  2,
+                                                   "help":  2,
+                                                   "monster":  2,
+                                                   "dungeon":  2,
+                                                   "sewer":  2,
+                                                   "god":  2,
+                                                   "king":  2,
+                                                   "sam":  2,
+                                                   "benjamin":  2,
+                                                   "gorn":  2,
+                                                   "quentin":  2,
+                                                   "bozo":  2,
+                                                   "rumour":  2,
+                                                   "rumor":  2,
+                                                   "gossip":  2,
+                                                   "fuck":  2,
+                                                   "kiss":  2,
+                                                   "weapon":  2,
+                                                   "magic":  2,
+                                                   "tibia":  2,
+                                                   "castle":  2,
+                                                   "muriel":  2,
+                                                   "elane":  2,
+                                                   "marvik":  2,
+                                                   "gregor":  2,
+                                                   "noodles":  2,
+                                                   "dog":  2,
+                                                   "poodle":  2,
+                                                   "excalibug":  2
+                                               },
+                         "keywordTopicPrices":  {
+                                                    "how":  5,
+                                                    "are":  5,
+                                                    "you":  5,
+                                                    "sell":  5,
+                                                    "job":  5,
+                                                    "name":  5,
+                                                    "aruda":  5,
+                                                    "help":  5,
+                                                    "monster":  5,
+                                                    "dungeon":  5,
+                                                    "sewer":  5,
+                                                    "god":  5,
+                                                    "king":  10,
+                                                    "sam":  5,
+                                                    "benjamin":  5,
+                                                    "gorn":  5,
+                                                    "quentin":  5,
+                                                    "bozo":  5,
+                                                    "rumour":  5,
+                                                    "rumor":  5,
+                                                    "gossip":  5,
+                                                    "fuck":  20,
+                                                    "kiss":  20,
+                                                    "weapon":  5,
+                                                    "magic":  5,
+                                                    "tibia":  5,
+                                                    "castle":  5,
+                                                    "muriel":  5,
+                                                    "elane":  5,
+                                                    "marvik":  5,
+                                                    "gregor":  5,
+                                                    "noodles":  5,
+                                                    "dog":  5,
+                                                    "poodle":  5,
+                                                    "excalibug":  10
+                                                },
+                         "trade":  {
+                                       "items":  [
+
+                                                 ]
+                                   },
+                         "script":  "aruda.js"
+                     }
+}

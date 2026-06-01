@@ -1,0 +1,15 @@
+{
+  "actionId": 3002,
+  "type": "moveEvent",
+  "events": ["onStepIn"],
+  "conditions": [
+    { "type": "itemAtPosition", "itemId": 2781, "pos": {"x": 32592, "y": 31787, "z": 4} },
+    { "type": "storage", "key": 45, "value": 0, "comparison": "<" }
+  ],
+  "effects": [
+    { "type": "removeItem", "pos": {"x": 32592, "y": 31787, "z": 4}, "itemId": 2781 },
+    { "type": "magicEffect", "pos": {"x": 32592, "y": 31787, "z": 4}, "effectId": 15 },
+    { "type": "relocate", "from": {"x": 32592, "y": 31787, "z": 4}, "to": {"x": 32593, "y": 31787, "z": 4} },
+    { "type": "createItem", "itemId": 2782, "count": 1, "pos": {"x": 32592, "y": 31787, "z": 4} }
+  ]
+}

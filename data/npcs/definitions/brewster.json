@@ -1,0 +1,128 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Brewster",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  116,
+                                              "details":  {
+                                                              "head":  57,
+                                                              "body":  115,
+                                                              "legs":  115,
+                                                              "feet":  95
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  2,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "I am a priest. \u003chicks\u003e The worldly representative of the gods so to speak. \u003chicks\u003e Not that I would say such a thing of course. \u003chicks\u003e This would be vanity after all.",
+                                          "name":  "I am ... ah, yes, Brewster. That\u0027s me, my name I mean \u003chicks\u003e.",
+                                          "time":  "Uhm ... Uh ... No idea, sorry.",
+                                          "temple":  "Hehe! \u003chicks\u003e Well if you call this hut a temple you are not a devoted churchgoer I guess. But never mind, I won\u0027t tell anyone and the gods know it anyway ... if they care.",
+                                          "king":  "Ah the king, how lucky he must be - being the ruler of this lovely little piece of dirt here. Hehe.",
+                                          "venore":  "Venore, Venore, city of splendour. Hm, the best thing about that city is its brewery.",
+                                          "thais":  "Thais!! My beloved hometown! Oh how I miss my good, old Thais.",
+                                          "carlin":  "Ha! That\u0027s probably even worse than this dump of a jungle here that they call a colony.",
+                                          "edron":  "They would never appoint a priest of such a low rank like me to Edron.",
+                                          "jungle":  "This jungle must be the way of the gods to give us mortals a taste of hell \u003chicks\u003e.",
+                                          "gods":  "Oh come on, just leave me alone. \u003chicks\u003e Read a book to find out more.",
+                                          "tibia":  "If Tibia is a fallen god, make your guess what bodypart you are on now. \u003chicks\u003e I have my assumptions ... but I won\u0027t tell. Hehe.",
+                                          "kazordoon":  "The dwarves I met can\u0027t stop to praise the dwarven beer. That wakes the urge in me to ... uhm spread the word of our gods in that city of Kazordoon.",
+                                          "dwarves":  "The dwarves I met can\u0027t stop to praise the dwarven beer. That wakes the urge in me to ... uhm spread the word of our gods in that city of Kazordoon.",
+                                          "dwarfs":  "The dwarves I met can\u0027t stop to praise the dwarven beer. That wakes the urge in me to ... uhm spread the word of our gods in that city of Kazordoon.",
+                                          "ab\u0027dendriel":  "Was never there \u003chicks\u003e For all what I have heard it\u0027s not that much different from this ugly little settlement.",
+                                          "elves":  "After being in that jungle for a while, I can\u0027t trust people that love trees anymore.",
+                                          "elfs":  "After being in that jungle for a while, I can\u0027t trust people that love trees anymore.",
+                                          "darama":  "The teachings of our temple counts little on this continent. I think it\u0027s a sign from the gods to abandon it. But why should anyone listen to poor old Brewster?",
+                                          "ankrahmun":  "Just to think about this cursed town and its inhabitants makes me shiver. I better take a quick drink to forget about it.",
+                                          "ferumbras":  "\u003chicks\u003e Oh well, he is just that what I\u0027d expect next in all my misery.",
+                                          "excalibug":  "Who knows if it is real or just some myth? \u003chicks\u003e And who cares at all?",
+                                          "apes":  "They don\u0027t believe me but I have seen them. There are pink apes! They come when I am sleeping and try to steal my beer and wine \u003chicks\u003e.",
+                                          "lizard":  "They usually stay away from here so who cares?",
+                                          "dworcs":  "Heard enough of them to dislike them.",
+                                          "cough":  "The only person who might have some cough syrup is this druid Ustan. You find him in the tavern. Hmmm the tavern ... \u003chicks\u003e",
+                                          "syrup":  "The only person who might have some cough syrup is this druid Ustan. You find him in the tavern. Hmmm the tavern ... \u003chicks\u003e",
+                                          "help":  "You are burning my child. I will help you.",
+                                          "heal$":  "You aren\u0027t looking that bad. Sorry, I can\u0027t help you. But if you are looking for additional protection you should go on the pilgrimage of ashes.",
+                                          "blessing":  "There are five different blessings available in five sacred places. These blessings are: the spiritual shielding, the spark of the phoenix, the embrace of Tibia, the fire of the suns and the wisdom of solitude.",
+                                          "pilgrimage":  "Whenever you receive a lethal wound your vital force is damaged. Each one of the five blessings will reduce this damage.",
+                                          "ashes":  "Whenever you receive a lethal wound your vital force is damaged. Each one of the five blessings will reduce this damage.",
+                                          "spiritual":  "You can receive the spiritual shielding in the whiteflower temple south of Thais.",
+                                          "shielding":  "You can receive the spiritual shielding in the whiteflower temple south of Thais.",
+                                          "sacred":  "Just tell me in which of the five blessings you are interested.",
+                                          "places":  "Just tell me in which of the five blessings you are interested.",
+                                          "spark":  "The spark of the phoenix is given by the dwarven priests of earth and fire in Kazordoon.",
+                                          "phoenix":  "The spark of the phoenix is given by the dwarven priests of earth and fire in Kazordoon.",
+                                          "embrace":  "The druids north of Carlin can provide you with the embrace of Tibia.",
+                                          "fire":  "Ask for the blessing of the two suns in the suntower near Ab\u0027Dendriel .",
+                                          "suns":  "Ask for the blessing of the two suns in the suntower near Ab\u0027Dendriel .",
+                                          "wisdom":  "Talk to the hermit Eremo on the isle of Cormaya about this blessing.",
+                                          "solitude":  "Talk to the hermit Eremo on the isle of Cormaya about this blessing."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "G...greetings \u003chicks\u003e.",
+                                                       "I am a priest. \u003chicks\u003e The worldly representative of the gods so to speak. \u003chicks\u003e Not that I would say such a thing of course. \u003chicks\u003e This would be vanity after all."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+                                             "help":  {
+                                                          "damage":  0,
+                                                          "effectSelf":  null,
+                                                          "effectTarget":  15
+                                                      },
+                                             "heal$":  {
+                                                           "damage":  40,
+                                                           "effectSelf":  null,
+                                                           "effectTarget":  13
+                                                       }
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "G...greetings \u003chicks\u003e.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hiho$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ]
+                     }
+}

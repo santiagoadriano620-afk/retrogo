@@ -1,0 +1,192 @@
+{
+  "creatureStatistics": {
+    "name": "Elder Beholder",
+    "health": 500,
+    "maxHealth": 500,
+    "mana": 0,
+    "maxMana": 0,
+    "speed": 45,
+    "attack": 16,
+    "attackSpeed": 2000,
+    "defense": 26,
+    "outfit": {
+      "id": 108
+    },
+    "armor": 13
+  },
+  "experience": 280,
+  "corpse": 3052,
+  "fluidType": 1,
+  "behaviour": {
+    "type": 2,
+    "fleeHealth": 0,
+    "openDoors": false,
+    "senseInvisible": true
+  },
+  "attacks": [
+    {
+      "name": "melee",
+      "interval": 2000,
+      "chance": 1,
+      "min": 0,
+      "max": 16
+    },
+    {
+      "name": "speed",
+      "interval": 4000,
+      "chance": 0.1,
+      "speedChange": -90,
+      "duration": 20000,
+      "range": 7,
+      "areaEffect": "redshimmer"
+    },
+    {
+      "name": "manadrain",
+      "interval": 4000,
+      "chance": 0.1,
+      "min": 20,
+      "max": 40,
+      "range": 7,
+      "areaEffect": "redshimmer"
+    },
+    {
+      "name": "lifedrain",
+      "interval": 4000,
+      "chance": 0.15,
+      "min": 75,
+      "max": 85,
+      "range": 7,
+      "areaEffect": "redshimmer"
+    },
+    {
+      "name": "earth",
+      "interval": 4000,
+      "chance": 0.1,
+      "min": 30,
+      "max": 70,
+      "range": 7,
+      "shootEffect": "poison"
+    },
+    {
+      "name": "physical",
+      "interval": 4000,
+      "chance": 0.1,
+      "min": 70,
+      "max": 90,
+      "range": 7,
+      "shootEffect": "death",
+      "areaEffect": "mortarea"
+    },
+    {
+      "name": "fire",
+      "interval": 4000,
+      "chance": 0.1,
+      "min": 60,
+      "max": 80,
+      "range": 7,
+      "shootEffect": "fire"
+    },
+    {
+      "name": "energy",
+      "interval": 4000,
+      "chance": 0.1,
+      "min": 45,
+      "max": 75,
+      "range": 7,
+      "shootEffect": "energy"
+    }
+  ],
+  "immunities": {
+    "earth": true,
+    "lifedrain": true,
+    "invisible": true
+  },
+  "summons": [
+    {
+      "name": "Crypt Shambler",
+      "interval": 9000,
+      "chance": 0.1,
+      "maxSummons": 6
+    },
+    {
+      "name": "Gazer",
+      "interval": 8000,
+      "chance": 0.1,
+      "maxSummons": 6
+    }
+  ],
+  "sayings": {
+    "texts": [
+      "653768764!",
+      "Let me take a look at you!",
+      "Inferior creatures, bow before my power!",
+      "659978 54764!"
+    ],
+    "slowness": 5,
+    "chance": 0.1
+  },
+  "loot": [
+    {
+      "id": 2148,
+      "probability": 0.9,
+      "name": "gold coin",
+      "min": 1,
+      "max": 24
+    },
+    {
+      "id": 2148,
+      "probability": 0.8,
+      "name": "gold coin",
+      "min": 1,
+      "max": 32
+    },
+    {
+      "id": 2148,
+      "probability": 0.7,
+      "name": "gold coin",
+      "min": 1,
+      "max": 35
+    },
+    {
+      "id": 2397,
+      "probability": 0.12,
+      "name": "longsword"
+    },
+    {
+      "id": 2394,
+      "probability": 0.1,
+      "name": "morning star"
+    },
+    {
+      "id": 2377,
+      "probability": 0.06,
+      "name": "two handed sword"
+    },
+    {
+      "id": 2509,
+      "probability": 0.06,
+      "name": "steel shield"
+    },
+    {
+      "id": 2175,
+      "probability": 0.01,
+      "name": "spellbook"
+    },
+    {
+      "id": 2518,
+      "probability": 0.001,
+      "name": "beholder shield"
+    }
+  ],
+  "flags": {
+    "summonable": false,
+    "attackable": true,
+    "convinceable": false,
+    "pushable": false,
+    "canPushItems": true,
+    "canPushCreatures": false,
+    "illusionable": true,
+    "targetDistance": 4,
+    "runonhealth": 0
+  }
+}

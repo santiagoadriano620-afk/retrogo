@@ -1,0 +1,184 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Rodney",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  111,
+                                              "details":  {
+                                                              "head":  95,
+                                                              "body":  100,
+                                                              "legs":  116,
+                                                              "feet":  76
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  1,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "name":  "My name is Rodney.",
+                                          "job":  "I sell some local fruits.",
+                                          "time":  "It is  right now.",
+                                          "king":  "King Tibianus! May the gods bless him!",
+                                          "tibianus":  "King Tibianus! May the gods bless him!",
+                                          "army":  "I am glad that the Thaian garrison is here to protect us.",
+                                          "ferumbras":  "Sounds like the name of a foreign soup to me.",
+                                          "excalibug":  "What is that? Is it tasty?",
+                                          "thais":  "The Thaian protectorate serves our beloved Venore well.",
+                                          "tibia":  "I have seen only little of it.",
+                                          "carlin":  "We have little contact with far Carlin, but I heared some renegade Amazons are terrorizing the area.",
+                                          "edron":  "Our climate is quite rough, so we can only grow wheat here, but no fruits.",
+                                          "news":  "Rumour goes that some amazons, who where banished from Carlin, took refuge near the swamps.",
+                                          "rumour":  "Rumour goes that some amazons, who where banished from Carlin, took refuge near the swamps.",
+                                          "rumor":  "Rumour goes that some amazons, who where banished from Carlin, took refuge near the swamps.",
+                                          "amazon":  "Rumour goes that some amazons, who where banished from Carlin, took refuge near the swamps.",
+                                          "buy":  "I can offer some of the local fruits.",
+                                          "do":  "I can offer some of the local fruits.",
+                                          "you":  "I can offer some of the local fruits.",
+                                          "sell":  "I can offer some of the local fruits.",
+                                          "have":  "I can offer some of the local fruits.",
+                                          "offer":  "I can offer some of the local fruits.",
+                                          "food":  "I can offer some of the local fruits.",
+                                          "fruit":  "I have apples, cherries, grapes, and pears. What would you like?"
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Greetings, . Can I help you?",
+                                                       "I sell some local fruits."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Greetings, %N. Can I help you?",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "I\u0027m sorry, you are out of funds.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Too bad.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Grapes",
+                                                         "price":  3,
+                                                         "id":  2681,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Cherry",
+                                                         "price":  1,
+                                                         "id":  2679,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Red Apple",
+                                                         "price":  3,
+                                                         "id":  2674,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Pear",
+                                                         "price":  4,
+                                                         "id":  2673,
+                                                         "type":  "sell"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "rodney.js"
+                     }
+}

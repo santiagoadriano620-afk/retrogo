@@ -1,0 +1,21 @@
+{
+  "actionId": 3084,
+  "type": "teleport",
+  "events": ["onStepIn"],
+  "tileItem": false,
+  "conditions": [
+    {"type": "isPlayer"}
+  ],
+  "branches": [
+    {
+      "condition": {"type": "storage", "key": 293, "value": 17, "operator": ">="},
+      "teleport": {"to": {"x": 32748, "y": 32537, "z": 10}},
+      "magicEffect": 21
+    },
+    {
+      "condition": {"type": "storage", "key": 293, "value": 17, "operator": "<"},
+      "teleport": {"to": {"x": 32839, "y": 32532, "z": 9}},
+      "magicEffect": 21
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+    "creatureStatistics": {
+        "name": "A Wrinkled Beholder",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 17,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 10,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "469": "The language of my kind. Superior to any other language and only to be spoken by entities with enough eyes to blink it.",
+            "job": "I am the great librarian.",
+            "name": "I am 486486 and NOT 'Blinky' as some people called me ... before they died.",
+            "blinky": "How interesting you are that stupid. Let me apply this on you and see how long you last",
+            "tibia": "It's 1, not 'Tibia', silly.",
+            "ab'dendriel": "I heard that elves moved in upstairs.",
+            "elves": "These fools and their superstitious life cult don't understand anything of importance.",
+            "humans": "Good tools to work with ... After their death, that is.",
+            "orcs": "Noisy pests.",
+            "minotaurs": "Their mages are so close to the truth. Closer then they know and closer then it's good for them.",
+            "god": "They will mourn the day they abandoned us.",
+            "death": "Yes, yes, I will kill you soon enough, now let me continue my investigation on you.",
+            "numbers": "Numbers are essential. They are the secret behind the scenes. If you are a master of mathematics you are a master over life and death.",
+            "library": "It's a fine library, isn't it?",
+            "books": "Our books are written in 469, of course you can't understand them.",
+            "cyclops": "Uglyness incarnate. One eye! Imagine that! Horrible!",
+            "excalibug": "Only inferior species need weapons."
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "What is this? An optically challenged entity called . How fascinating!",
+                "I am the great librarian."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {
+            "blinky": {
+                "damage": 0,
+                "effectSelf": 8,
+                "effectTarget": 5
+            }
+        },
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "What is this? An optically challenged entity called %N. How fascinating!",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ]
+    }
+}

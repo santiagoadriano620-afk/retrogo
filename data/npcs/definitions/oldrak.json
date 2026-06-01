@@ -1,0 +1,95 @@
+{
+    "creatureStatistics": {
+        "name": "Oldrak",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 57,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 2,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "job": "I guard this humble temple as a monument for the order of the nightmare knights.",
+            "name": "My name is Oldrak.",
+            "monster": "These plains are not safe for ordinary travellers. It will take heroes to survive here.",
+            "help": "I can't help you, sorry!",
+            "goshnar": "The greatest necromant who ever cursed our land with the steps of his feet. He was defeated by the nightmare knights.",
+            "nightmare": "This ancient order was created by a circle of wise humans who were called 'the dreamers'. The order became extinct a long time ago.",
+            "knights": "This ancient order was created by a circle of wise humans who were called 'the dreamers'. The order became extinct a long time ago.",
+            "extinct": "Many perished in their battles against evil, some went mad, not able to stand their nightmares any longer. Others were seduced by the darkness.",
+            "dreamers": "They learned the ancient art of dreamwalking from some elves they befriended.",
+            "dreamwalking": "While the dreamwalkers of the elves experienenced the brightest dreams of pleasure, the humans strangely had dreams of dark omen.",
+            "dark": "Using this knowledge they formed an order to thwart these plans, and because they battled their nightmares as brave as knights, they named their order accordingly.",
+            "omen": "They dreamed of doom, destruction, talked to dead, tormented souls, and gained unwanted insight into the schemes of darkness.",
+            "schemes": "They figured out how to interpret their dark dreams and so could foresee the plans of the dark gods and their minions.",
+            "darkness": "They figured out how to interpret their dark dreams and so could foresee the plans of the dark gods and their minions.",
+            "plan": "Using this knowledge they formed an order to thwart these plans, and because they battled their nightmares as brave as knights, they named their order accordingly.",
+            "necromant": "It is rumoured to open the entrance to the pits of inferno, also called the nightmare pits. Even if I knew about this secret I wouldn't tell you.",
+            "nectar": "It is rumoured to open the entrance to the pits of inferno, also called the nightmare pits. Even if I knew about this secret I wouldn't tell you.",
+            "plains": "Before the battles raged across them, they were called the fair plains.",
+            "havok": "Before the battles raged across them, they were called the fair plains.",
+            "time": "Now, it is .",
+            "tibia": "That's where we are. The world of Tibia.",
+            "god": "They created Tibia and all life on it ... and unlife, too.",
+            "unlife": "Beware the foul undead!",
+            "undead": "Beware the foul undead!",
+            "excalibug": "A weapon of myth and legend. It was lost in ancient times ... perhaps lost forever.",
+            "hugo": "Ah, the bane of the Plains of Havoc, the hidden beast, the unbeatable foe. I live here for years and I am sure it's only a myth.",
+            "myth": "There are many tales about the fearsome Hugo. It's said it is an abomination, accidently created by Yenny the Gentle. It's halve demon, halve something else and people say it's still alive after dozens of years.",
+            "yenny": "Yenny, known as the Gentle, was one of most powerfull magicwielders in ancient times and known throughout the world for her mercy and kindness."
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "Welcome ! Rarely I can welcome visitors in these days.",
+                "I guard this humble temple as a monument for the order of the nightmare knights."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Welcome %N! Rarely I can welcome visitors in these days.",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ]
+    }
+}

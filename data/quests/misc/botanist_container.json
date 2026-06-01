@@ -1,0 +1,36 @@
+{
+  "itemId": 4869,
+  "type": "questItem",
+  "branches": [
+    {
+      "conditions": [
+        { "type": "targetItem", "itemId": 4138 },
+        { "type": "storage", "key": 305, "value": 1 }
+      ],
+      "effects": [
+        { "type": "transformItem", "from": 4869, "to": 4870 },
+        { "type": "magicEffect", "effectId": 10 }
+      ]
+    },
+    {
+      "conditions": [
+        { "type": "targetItem", "itemId": 4149 },
+        { "type": "storage", "key": 305, "value": 3 }
+      ],
+      "effects": [
+        { "type": "transformItem", "from": 4869, "to": 4872 },
+        { "type": "magicEffect", "effectId": 10 }
+      ]
+    },
+    {
+      "conditions": [
+        { "type": "targetItem", "itemId": 4142 },
+        { "type": "storage", "key": 305, "value": 5 }
+      ],
+      "effects": [
+        { "type": "transformItem", "from": 4869, "to": 4871 },
+        { "type": "magicEffect", "effectId": 10 }
+      ]
+    }
+  ]
+}

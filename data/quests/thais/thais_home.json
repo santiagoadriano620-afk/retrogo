@@ -1,0 +1,11 @@
+{
+  "actionId": 3112,
+  "type": "home",
+  "events": ["onStepIn", "onAddItem"],
+  "tileItem": true,
+  "teleport": { "to": { "x": 32369, "y": 32241, "z": 7 } },
+  "teleportAddItem": { "to": { "x": 32369, "y": 32242, "z": 6 } },
+  "magicEffect": 13,
+  "magicEffectAddItem": 14,
+  "town": "Thais"
+}

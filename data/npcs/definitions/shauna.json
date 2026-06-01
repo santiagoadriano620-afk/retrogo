@@ -1,0 +1,199 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Shauna",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  121,
+                                              "details":  {
+                                                              "head":  78,
+                                                              "body":  95,
+                                                              "legs":  38,
+                                                              "feet":  58
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  2,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "news":  "No news are good news.",
+                                          "queen":  "HAIL TO QUEEN ELOISE!",
+                                          "leader":  "HAIL TO QUEEN ELOISE!",
+                                          "job":  "What do you think? I am the sheriff of Carlin.",
+                                          "how":  "Just fine.",
+                                          "are":  "Just fine.",
+                                          "you":  "Just fine.",
+                                          "sell":  "Would you like to buy the general key to the town?",
+                                          "army":  "If they make trouble, I\u0027ll put them behind bars like all others.",
+                                          "guard":  "If they make trouble, I\u0027ll put them behind bars like all others.",
+                                          "general":  "The Bonecrusher family is ideally suited for military jobs.",
+                                          "bonecrusher":  "The Bonecrusher family is ideally suited for military jobs.",
+                                          "enemies":  "If you have a crime to report and clues, then do it, but dont waste my time.",
+                                          "enemy":  "If you have a crime to report and clues, then do it, but dont waste my time.",
+                                          "criminal":  "If you have a crime to report and clues, then do it, but dont waste my time.",
+                                          "murderer":  "If you have a crime to report and clues, then do it, but dont waste my time.",
+                                          "castle":  "The castle is one of the safest places in Carlin.",
+                                          "subject":  "Our people are fine and peaceful.",
+                                          "tbi$":  "I bet they spy on us... not my business, however.",
+                                          "todd$":  "I scared this bigmouth so much that he left the town by night. HO, HO, HO!",
+                                          "city":  "The city is is a peacful place, and it\u0027s up to me to keep it this way.",
+                                          "hain$":  "He is the guy responsible to keep the sewers working. Someone has to do such kind of jobs. I can\u0027t handle all the garbage of the city myself.",
+                                          "rowenna$":  "Rowenna is one of our local smiths. When you look for weapons, look for Rowenna.",
+                                          "weapon":  "Rowenna is one of our local smiths. When you look for weapons, look for Rowenna.",
+                                          "Cornelia":  "Cornelia is one of our local smiths. When you look for armor, look for Rowenna.",
+                                          "armor":  "Cornelia is one of our local smiths. When you look for armor, look for Rowenna.",
+                                          "legola":  "She has the sharpest eye in the region, I\u0027d say.",
+                                          "padreia":  "Her peacefulness is sometimes near stupidity.",
+                                          "god":  "I worship Banor of course.",
+                                          "banor":  "For me, he\u0027s the god of justice.",
+                                          "zathroth":  "His cult is forbidden in our town.",
+                                          "brog":  "Wouldn\u0027t wonder if some males worship him secretly. HO, HO, HO!",
+                                          "monster":  "I deal more with the human mosters, you know? HO, HO, HO!",
+                                          "excalibug":  "Would certainly make a good butterknife. HO, HO, HO!",
+                                          "rebellion":  "The only thing that rebels here now and then is the stomach of a male after trying to make illegal alcohol. HO, HO, HO!",
+                                          "alcohol":  "For obvious reasons it\u0027s forbidden in our city.",
+                                          "waterpipe":  "Oh, there\u0027s a waterpipe in one of my cells? ...",
+                                          "pipe":  "Oh, there\u0027s a waterpipe in one of my cells? ...",
+                                          "prisoner":  "My last prisoner? Hmm. ...",
+                                          "fuck":  "Take this!",
+                                          "idiot":  "Take this!",
+                                          "asshole":  "Take this!",
+                                          "ass$":  "Take this!",
+                                          "fag$":  "Take this!",
+                                          "stupid":  "Take this!",
+                                          "tyrant":  "Take this!",
+                                          "shit":  "Take this!",
+                                          "lunatic":  "Take this!"
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Howdy!",
+                                                       "What do you think? I am the sheriff of Carlin."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+                                             "fuck":  {
+                                                          "damage":  0,
+                                                          "effectSelf":  8,
+                                                          "effectTarget":  5
+                                                      },
+                                             "idiot":  {
+                                                           "damage":  0,
+                                                           "effectSelf":  8,
+                                                           "effectTarget":  5
+                                                       },
+                                             "asshole":  {
+                                                             "damage":  0,
+                                                             "effectSelf":  8,
+                                                             "effectTarget":  5
+                                                         },
+                                             "ass$":  {
+                                                          "damage":  0,
+                                                          "effectSelf":  8,
+                                                          "effectTarget":  5
+                                                      },
+                                             "fag$":  {
+                                                          "damage":  0,
+                                                          "effectSelf":  8,
+                                                          "effectTarget":  5
+                                                      },
+                                             "stupid":  {
+                                                            "damage":  0,
+                                                            "effectSelf":  8,
+                                                            "effectTarget":  5
+                                                        },
+                                             "tyrant":  {
+                                                            "damage":  0,
+                                                            "effectSelf":  8,
+                                                            "effectTarget":  5
+                                                        },
+                                             "shit":  {
+                                                          "damage":  0,
+                                                          "effectSelf":  8,
+                                                          "effectTarget":  5
+                                                      },
+                                             "lunatic":  {
+                                                             "damage":  0,
+                                                             "effectSelf":  8,
+                                                             "effectTarget":  5
+                                                         }
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hail$"
+                                                                   ],
+                                                      "response":  "Howdy!",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "salutations$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Yeah, I bet you\u0027d like to do that! HO, HO, HO!",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+                                                   "sell":  1
+                                               },
+                         "script":  "shauna.js"
+                     }
+}

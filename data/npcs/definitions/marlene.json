@@ -1,0 +1,80 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Marlene",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  118,
+                                              "details":  {
+                                                              "head":  96,
+                                                              "body":  111,
+                                                              "legs":  16,
+                                                              "feet":  96
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  3,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "name":  "My name is Marlene.",
+                                          "job":  "I\u0027m Bruno\u0027s wife. Besides: Have you already heard the latest news about the seamonster, Aneus, or the rumours in this area?",
+                                          "bruno":  "Bruno is a wonderful husband. But he is seldom at home. *looks a little bit sad*",
+                                          "graubart":  "Ah, old Graubart. A very nice person. But he is strange. He always is busy when I want to talk to him. *lost in thoughts*",
+                                          "aneus":  "A very nice person. He has a great story to tell with big fights and much magic. Just ask him for his story. ...",
+                                          "yes":  "Yes, maybe one day. *sigh*",
+                                          "maybe":  "Yes, maybe one day. *sigh*",
+                                          "seamonster":  "Only some days ago I was at the docks late in the night and was looking for my husband\u0027s ship when suddenly a known noise appeared near the docks. ...",
+                                          "rumour":  "Well, I heard about evil beings living in a dungeon below us. So once I tried to find them and went down the hole far to the southwest. ...",
+                                          "thank":  "My pleasure, I always enjoy sharing interesting stories.",
+                                          "you":  "My pleasure, I always enjoy sharing interesting stories."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Ahhh, welcome ! Say, have you already heard the latest news about the seamonster, Aneus, or the rumours in this area?",
+                                                       "I\u0027m Bruno\u0027s wife. Besides: Have you already heard the latest news about the seamonster, Aneus, or the rumours in this area?"
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Ahhh, welcome %N! Say, have you already heard the latest news about the seamonster, Aneus, or the rumours in this area?",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ]
+                     }
+}

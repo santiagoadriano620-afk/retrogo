@@ -1,0 +1,14 @@
+{
+  "actionId": 3024,
+  "type": "entrance",
+  "events": ["onStepIn", "onAddItem"],
+  "tileItem": true,
+  "conditions": [
+    { "type": "itemAtPosition", "itemId": 1945, "pos": {"x": 32266, "y": 31861, "z": 11}, "invert": true }
+  ],
+  "effects": [
+    { "type": "transformItemInPosition", "pos": {"x": 32266, "y": 31861, "z": 11}, "from": 1946, "to": 1945 },
+    { "type": "transformItemInPosition", "pos": {"x": 32266, "y": 31860, "z": 11}, "from": 408, "to": 407 },
+    { "type": "createItem", "itemId": 1498, "count": 1, "pos": {"x": 32266, "y": 31860, "z": 11} }
+  ]
+}

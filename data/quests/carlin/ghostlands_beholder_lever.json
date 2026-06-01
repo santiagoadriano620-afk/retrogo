@@ -1,0 +1,18 @@
+{
+  "actionId": 2026,
+  "type": "lever",
+  "itemIds": [1945, 1946],
+  "conditions": [
+    { "type": "itemAtPosition", "itemId": 1498, "pos": {"x": 32259, "y": 31890, "z": 10} }
+  ],
+  "effects": [
+    { "type": "transformItem", "from": 1945, "to": 1946, "decay": true },
+    { "type": "removeItem", "pos": {"x": 32259, "y": 31890, "z": 10}, "itemId": 1498 }
+  ],
+  "effectsAlt": [
+    { "type": "transformItem", "from": 1945, "to": 1946, "decay": true },
+    { "type": "transformItem", "from": 1946, "to": 1945, "decay": true },
+    { "type": "relocate", "from": {"x": 32259, "y": 31890, "z": 10}, "to": {"x": 32259, "y": 31889, "z": 10} },
+    { "type": "createItem", "itemId": 1498, "count": 1, "pos": {"x": 32259, "y": 31890, "z": 10} }
+  ]
+}

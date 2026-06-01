@@ -1,0 +1,1053 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "H.L.",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  114,
+                                              "details":  {
+                                                              "head":  12,
+                                                              "body":  76,
+                                                              "legs":  0,
+                                                              "feet":  95
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  2,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "I buy all kinds of armory and weapons.",
+                                          "name":  "Won\u0027t tell you.",
+                                          "h.l.":  "That\u0027s me.",
+                                          "snake":  "Boss of the tavern. He\u0027s alright.",
+                                          "eye":  "Boss of the tavern. He\u0027s alright.",
+                                          "boss":  "Snake Eye isn\u0027t my boss.",
+                                          "tavern":  "Drink and eat there. What else do you do in a tavern!",
+                                          "brat":  "Bah. Women are not good for fighting. I don\u0027t need them. And I don\u0027t like them.",
+                                          "women":  "Bah. Women are not good for fighting. I don\u0027t need them. And I don\u0027t like them.",
+                                          "woman":  "Bah. Women are not good for fighting. I don\u0027t need them. And I don\u0027t like them.",
+                                          "god":  "Forget the gods",
+                                          "gods":  "Forget the gods",
+                                          "durin":  "Forget Durin. He\u0027s the worst anyway.",
+                                          "steve":  "Forget Steve.",
+                                          "guido":  "Forget Guido.",
+                                          "stephan":  "Forget Stephan.",
+                                          "cip":  "Forget about Cip.",
+                                          "tibia":  "Tibia. At least there\u0027s one good place in Tibia. Here!",
+                                          "thais":  "Ha! Thais. I lived there. You know, I was in the royal army. But it\u0027s all wrong. I deserted.",
+                                          "royal":  "Good fighter training. But for the wrong cause.",
+                                          "army":  "Good fighter training. But for the wrong cause.",
+                                          "training":  "Yes. Good training.",
+                                          "cause":  "Don\u0027t want to talk about it.",
+                                          "talk":  "I said, I do not want to talk about it",
+                                          "kazordoon":  "Dwarfs are good people. I like them.",
+                                          "dwarfs":  "I like them.",
+                                          "ab\u0027dendriel":  "Elves. Hate them.",
+                                          "edron":  "Might be a good place to live. But I\u0027m afraid that the people are Thais friendly.",
+                                          "king":  "The king should be dead.",
+                                          "ruler":  "Tibia doesn\u0027t need a ruler.",
+                                          "tibianus":  "Hang him.",
+                                          "wild":  "Yeah. I\u0027m a wild warrior. Well, to be honest, I left them. They became too aggressive. Attacking everyone is not good.",
+                                          "warrior":  "Yeah. I\u0027m a wild warrior. Well, to be honest, I left them. They became too aggressive. Attacking everyone is not good.",
+                                          "camp":  "Most people in the camp are no wild warriors.",
+                                          "hid":  "Wild warriors have always something to hide.",
+                                          "key":  "Oh. that\u0027s a new key. Hmmm. Must be for the new hideout.",
+                                          "hideout":  "I left the wild warriors, while we - well - they planned a new hideout.",
+                                          "new":  "It\u0027s somewhere in the woods, of course. I don\u0027t know where.",
+                                          "woods":  "The woods are good to hide.",
+                                          "building":  "You mean our old building in the southwest?",
+                                          "mechanics":  "Yes. Security doors driven by POWERFUL machines. But I have no idea how it works.",
+                                          "machines":  "Yes. Security doors driven by POWERFUL machines. But I have no idea how it works.",
+                                          "traps":  "Be careful out there.",
+                                          "collapsed":  "Yes. That\u0027s why we - well - they planned a new hideout. But I think they left the vault in the old hideout.",
+                                          "vault":  "Good stuff in there, I think.",
+                                          "stuff":  "Ahm. I don\u0027t know what it is. Sorry.",
+                                          "sell":  "I buy nearly everything. Just ask."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Hmmm. I buy weapons, armor, and other stuff. What do you want, ?",
+                                                       "I don\u0027t serve brats. Sod off!",
+                                                       "I buy all kinds of armory and weapons."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Hmmm. I buy weapons, armor, and other stuff. What do you want, %N?",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "I don\u0027t serve brats. Sod off!",
+                                                      "idle":  true
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "talk"
+                                                                                   ],
+                                                                      "response":  "Ok. Get lost!",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "2":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "That\u0027s the old hideout. It\u0027s interesting down there. Lots of security mechanics and traps. But it collapsed partly.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "no"
+                                                                                   ],
+                                                                      "response":  "Sorry.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  }
+                                                              ]
+                                              },
+                                        "6":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Ok. Your money.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "createMoney"
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Sorry, you don\u0027t have one.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Sorry, you do not have so many.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Ok, then not.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "7":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "broken"
+                                                                                   ],
+                                                                      "response":  "Hmmm. Let me think. I think, you need something big. And steel reinforced. A barrel, maybe.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "damaged"
+                                                                                   ],
+                                                                      "response":  null,
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "repair"
+                                                                                   ],
+                                                                      "response":  null,
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+                                                   "talk":  1,
+                                                   "building":  2,
+                                                   "mechanics":  7,
+                                                   "machines":  7
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Sword",
+                                                         "price":  7,
+                                                         "id":  2376,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Two Handed Sword",
+                                                         "price":  60,
+                                                         "id":  2377,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Battle Axe",
+                                                         "price":  40,
+                                                         "id":  2378,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Dagger",
+                                                         "price":  1,
+                                                         "id":  2379,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Hand Axe",
+                                                         "price":  5,
+                                                         "id":  2380,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Halberd",
+                                                         "price":  50,
+                                                         "id":  2381,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Club",
+                                                         "price":  1,
+                                                         "id":  2382,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Spike Sword",
+                                                         "price":  25,
+                                                         "id":  2383,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Rapier",
+                                                         "price":  5,
+                                                         "id":  2384,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Sabre",
+                                                         "price":  6,
+                                                         "id":  2385,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Axe",
+                                                         "price":  6,
+                                                         "id":  2386,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Double Axe",
+                                                         "price":  70,
+                                                         "id":  2387,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Hatchet",
+                                                         "price":  7,
+                                                         "id":  2388,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Spear",
+                                                         "price":  2,
+                                                         "id":  2389,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Magic Longsword",
+                                                         "price":  460,
+                                                         "id":  2390,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "War Hammer",
+                                                         "price":  90,
+                                                         "id":  2391,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Fire Sword",
+                                                         "price":  335,
+                                                         "id":  2392,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Giant Sword",
+                                                         "price":  100,
+                                                         "id":  2393,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Morning Star",
+                                                         "price":  50,
+                                                         "id":  2394,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Carlin Sword",
+                                                         "price":  5,
+                                                         "id":  2395,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Ice Rapier",
+                                                         "price":  250,
+                                                         "id":  2396,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Longsword",
+                                                         "price":  8,
+                                                         "id":  2397,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Mace",
+                                                         "price":  8,
+                                                         "id":  2398,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Throwing Star",
+                                                         "price":  2,
+                                                         "id":  2399,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Magic Sword",
+                                                         "price":  350,
+                                                         "id":  2400,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Staff",
+                                                         "price":  1,
+                                                         "id":  2401,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Silver Dagger",
+                                                         "price":  1,
+                                                         "id":  2402,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Knife",
+                                                         "price":  1,
+                                                         "id":  2403,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Combat Knife",
+                                                         "price":  1,
+                                                         "id":  2404,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Sickle",
+                                                         "price":  1,
+                                                         "id":  2405,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Short Sword",
+                                                         "price":  3,
+                                                         "id":  2406,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Bright Sword",
+                                                         "price":  280,
+                                                         "id":  2407,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Warlord Sword",
+                                                         "price":  360,
+                                                         "id":  2408,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Serpent Sword",
+                                                         "price":  15,
+                                                         "id":  2409,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Throwing Knife",
+                                                         "price":  2,
+                                                         "id":  2410,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Poison Dagger",
+                                                         "price":  5,
+                                                         "id":  2411,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Katana",
+                                                         "price":  8,
+                                                         "id":  2412,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Broad Sword",
+                                                         "price":  10,
+                                                         "id":  2413,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Dragon Lance",
+                                                         "price":  90,
+                                                         "id":  2414,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Great Axe",
+                                                         "price":  300,
+                                                         "id":  2415,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Crowbar",
+                                                         "price":  1,
+                                                         "id":  2416,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Battle Hammer",
+                                                         "price":  40,
+                                                         "id":  2417,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Golden Sickle",
+                                                         "price":  10,
+                                                         "id":  2418,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Scimitar",
+                                                         "price":  10,
+                                                         "id":  2419,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Machete",
+                                                         "price":  6,
+                                                         "id":  2420,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Thunder Hammer",
+                                                         "price":  450,
+                                                         "id":  2421,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Iron Hammer",
+                                                         "price":  9,
+                                                         "id":  2422,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Clerical Mace",
+                                                         "price":  30,
+                                                         "id":  2423,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Silver Mace",
+                                                         "price":  270,
+                                                         "id":  2424,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Obsidian Lance",
+                                                         "price":  50,
+                                                         "id":  2425,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Naginata",
+                                                         "price":  80,
+                                                         "id":  2426,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Guardian Halberd",
+                                                         "price":  120,
+                                                         "id":  2427,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Orcish Axe",
+                                                         "price":  12,
+                                                         "id":  2428,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Barbarian Axe",
+                                                         "price":  30,
+                                                         "id":  2429,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Knight Axe",
+                                                         "price":  50,
+                                                         "id":  2430,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Stonecutter Axe",
+                                                         "price":  320,
+                                                         "id":  2431,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Fire Axe",
+                                                         "price":  280,
+                                                         "id":  2432,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Crossbow",
+                                                         "price":  20,
+                                                         "id":  2455,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Bow",
+                                                         "price":  15,
+                                                         "id":  2456,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Steel Helmet",
+                                                         "price":  60,
+                                                         "id":  2457,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Chain Helmet",
+                                                         "price":  4,
+                                                         "id":  2458,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Iron Helmet",
+                                                         "price":  30,
+                                                         "id":  2459,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Brass Helmet",
+                                                         "price":  8,
+                                                         "id":  2460,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Leather Helmet",
+                                                         "price":  1,
+                                                         "id":  2461,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Devil Helmet",
+                                                         "price":  80,
+                                                         "id":  2462,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Plate Armor",
+                                                         "price":  110,
+                                                         "id":  2463,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Chain Armor",
+                                                         "price":  30,
+                                                         "id":  2464,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Brass Armor",
+                                                         "price":  50,
+                                                         "id":  2465,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Golden Armor",
+                                                         "price":  580,
+                                                         "id":  2466,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Leather Armor",
+                                                         "price":  2,
+                                                         "id":  2467,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Studded Legs",
+                                                         "price":  15,
+                                                         "id":  2468,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Dragon Scale Legs",
+                                                         "price":  180,
+                                                         "id":  2469,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Golden Legs",
+                                                         "price":  120,
+                                                         "id":  2470,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Golden Helmet",
+                                                         "price":  420,
+                                                         "id":  2471,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Magic Plate Armor",
+                                                         "price":  720,
+                                                         "id":  2472,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Viking Helmet",
+                                                         "price":  12,
+                                                         "id":  2473,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Winged Helmet",
+                                                         "price":  320,
+                                                         "id":  2474,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Warrior Helmet",
+                                                         "price":  75,
+                                                         "id":  2475,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Knight Armor",
+                                                         "price":  140,
+                                                         "id":  2476,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Knight Legs",
+                                                         "price":  130,
+                                                         "id":  2477,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Brass Legs",
+                                                         "price":  15,
+                                                         "id":  2478,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Strange Helmet",
+                                                         "price":  55,
+                                                         "id":  2479,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Legion Helmet",
+                                                         "price":  8,
+                                                         "id":  2480,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Soldier Helmet",
+                                                         "price":  16,
+                                                         "id":  2481,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Studded Helmet",
+                                                         "price":  2,
+                                                         "id":  2482,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Scale Armor",
+                                                         "price":  75,
+                                                         "id":  2483,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Studded Armor",
+                                                         "price":  18,
+                                                         "id":  2484,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Doublet",
+                                                         "price":  1,
+                                                         "id":  2485,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Noble Armor",
+                                                         "price":  140,
+                                                         "id":  2486,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Crown Armor",
+                                                         "price":  210,
+                                                         "id":  2487,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Crown Legs",
+                                                         "price":  60,
+                                                         "id":  2488,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Dark Armor",
+                                                         "price":  130,
+                                                         "id":  2489,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Dark Helmet",
+                                                         "price":  40,
+                                                         "id":  2490,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Crown Helmet",
+                                                         "price":  70,
+                                                         "id":  2491,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Dragon Scale Mail",
+                                                         "price":  280,
+                                                         "id":  2492,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Demon Helmet",
+                                                         "price":  95,
+                                                         "id":  2493,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Demon Armor",
+                                                         "price":  195,
+                                                         "id":  2494,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Demon Legs",
+                                                         "price":  84,
+                                                         "id":  2495,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Horned Helmet",
+                                                         "price":  155,
+                                                         "id":  2496,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Steel Shield",
+                                                         "price":  30,
+                                                         "id":  2509,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Plate Shield",
+                                                         "price":  25,
+                                                         "id":  2510,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Brass Shield",
+                                                         "price":  15,
+                                                         "id":  2511,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Wooden Shield",
+                                                         "price":  1,
+                                                         "id":  2512,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Battle Shield",
+                                                         "price":  50,
+                                                         "id":  2513,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Mastermind Shield",
+                                                         "price":  550,
+                                                         "id":  2514,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Guardian Shield",
+                                                         "price":  150,
+                                                         "id":  2515,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Dragon Shield",
+                                                         "price":  115,
+                                                         "id":  2516,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Shield Of Honour",
+                                                         "price":  520,
+                                                         "id":  2517,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Beholder Shield",
+                                                         "price":  79,
+                                                         "id":  2518,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Crown Shield",
+                                                         "price":  109,
+                                                         "id":  2519,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Demon Shield",
+                                                         "price":  130,
+                                                         "id":  2520,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Dark Shield",
+                                                         "price":  60,
+                                                         "id":  2521,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Great Shield",
+                                                         "price":  480,
+                                                         "id":  2522,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Blessed Shield",
+                                                         "price":  650,
+                                                         "id":  2523,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Ornamented Shield",
+                                                         "price":  45,
+                                                         "id":  2524,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Dwarven Shield",
+                                                         "price":  55,
+                                                         "id":  2525,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Studded Shield",
+                                                         "price":  2,
+                                                         "id":  2526,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Rose Shield",
+                                                         "price":  49,
+                                                         "id":  2527,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Tower Shield",
+                                                         "price":  90,
+                                                         "id":  2528,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Black Shield",
+                                                         "price":  5,
+                                                         "id":  2529,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Copper Shield",
+                                                         "price":  10,
+                                                         "id":  2530,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Viking Shield",
+                                                         "price":  35,
+                                                         "id":  2531,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Ancient Shield",
+                                                         "price":  49,
+                                                         "id":  2532,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Griffin Shield",
+                                                         "price":  59,
+                                                         "id":  2533,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Vampire Shield",
+                                                         "price":  119,
+                                                         "id":  2534,
+                                                         "type":  "buy"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "hl.js"
+                     }
+}

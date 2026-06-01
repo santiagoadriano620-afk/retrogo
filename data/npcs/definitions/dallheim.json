@@ -1,0 +1,97 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Dallheim",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  114,
+                                              "details":  {
+                                                              "head":  76,
+                                                              "body":  38,
+                                                              "legs":  76,
+                                                              "feet":  95
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  1,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "how":  "Fine.",
+                                          "are":  "Fine.",
+                                          "you":  "Fine.",
+                                          "sell":  "I sell nothing.",
+                                          "advice":  "Be careful out there.",
+                                          "job":  "I am the bridgeguard. I defend Rookgaard against the beasts from the wilderness and the dungeons!",
+                                          "name":  "Dallheim.",
+                                          "time":  "No idea.",
+                                          "help":  "I have to stay here, sorry, but I can heal you if you are wounded.",
+                                          "monster":  "I will crush all monsters who dare to attack our base.",
+                                          "dungeon":  "Dungeons are dangerous, be prepared.",
+                                          "wilderness":  "There are wolves, bears, snakes, deers, and spiders. You can find some dungeon entrances there, too.",
+                                          "sewer":  "In the sewers there are some rats, fine targets for young heroes.",
+                                          "god":  "I am a follower of Banor.",
+                                          "banor":  "The great one! Read books to learn about him.",
+                                          "king":  "HAIL TO THE KING!",
+                                          "seymour":  "Leave me alone with this whimp.",
+                                          "willie":  "A fine cook and farmer he is.",
+                                          "amber":  "I don\u0027t trust her.",
+                                          "hyacinth":  "Strange Fellow, hides somewhere in the mountains of the isle.",
+                                          "weapon":  "With my spikesword I slice even a cyclops in pieces.",
+                                          "magic":  "Not interested in such party tricks.",
+                                          "tibia":  "A nice place for a hero, but nothing for whelps.",
+                                          "heal$":  "You aren\u0027t looking really bad. Sorry, I can\u0027t help you."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "\u003cnods silently\u003e",
+                                                       "I am the bridgeguard. I defend Rookgaard against the beasts from the wilderness and the dungeons!"
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+                                             "heal$":  {
+                                                           "damage":  65,
+                                                           "effectSelf":  null,
+                                                           "effectTarget":  13
+                                                       }
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "\u003cnods silently\u003e",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ]
+                     }
+}

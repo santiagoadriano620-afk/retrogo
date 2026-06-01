@@ -1,0 +1,137 @@
+{
+  "creatureStatistics": {
+    "name": "Orc Shaman",
+    "health": 115,
+    "maxHealth": 115,
+    "mana": 0,
+    "maxMana": 0,
+    "speed": 70,
+    "attack": 15,
+    "attackSpeed": 2000,
+    "defense": 8,
+    "outfit": {
+      "id": 6
+    },
+    "armor": 8
+  },
+  "experience": 110,
+  "corpse": 2860,
+  "fluidType": 1,
+  "behaviour": {
+    "type": 2,
+    "fleeHealth": 15,
+    "openDoors": false,
+    "senseInvisible": true
+  },
+  "defenseSpells": [
+    {
+      "name": "healing",
+      "interval": 2000,
+      "chance": 0.6,
+      "min": 27,
+      "max": 43,
+      "areaEffect": "blueshimmer"
+    }
+  ],
+  "attacks": [
+    {
+      "name": "melee",
+      "interval": 2000,
+      "chance": 1,
+      "min": 0,
+      "max": 15
+    },
+    {
+      "name": "energy",
+      "interval": 2000,
+      "chance": 0.15,
+      "min": 20,
+      "max": 35,
+      "range": 7,
+      "shootEffect": "energyball"
+    },
+    {
+      "name": "fire",
+      "interval": 2000,
+      "chance": 0.05,
+      "min": 5,
+      "max": 45,
+      "range": 7,
+      "radius": 1,
+      "target": true,
+      "shootEffect": "fire"
+    }
+  ],
+  "elements": {
+    "energy": 50,
+    "holy": 10,
+    "earth": -10,
+    "death": -5
+  },
+  "immunities": {
+    "invisible": true
+  },
+  "summons": [
+    {
+      "name": "Snake",
+      "interval": 2000,
+      "chance": 0.2,
+      "maxSummons": 4
+    }
+  ],
+  "sayings": {
+    "texts": [
+      "Huumans stinkk!",
+      "Grak brrretz gulu."
+    ],
+    "slowness": 5,
+    "chance": 0.1
+  },
+  "loot": [
+    {
+      "id": 2148,
+      "probability": 0.8975,
+      "name": "gold coin",
+      "min": 1,
+      "max": 5
+    },
+    {
+      "id": 2686,
+      "probability": 0.10877,
+      "name": "corncob",
+      "min": 1,
+      "max": 2
+    },
+    {
+      "id": 2464,
+      "probability": 0.08658,
+      "name": "chain armor"
+    },
+    {
+      "id": 2389,
+      "probability": 0.0517,
+      "name": "spear"
+    },
+    {
+      "id": 2188,
+      "probability": 0.00966,
+      "name": "wand of decay"
+    },
+    {
+      "id": 1958,
+      "probability": 0.00465,
+      "name": "book (grey)"
+    }
+  ],
+  "flags": {
+    "summonable": false,
+    "attackable": true,
+    "convinceable": false,
+    "pushable": false,
+    "canPushItems": false,
+    "canPushCreatures": false,
+    "illusionable": true,
+    "targetDistance": 4,
+    "runonhealth": 15
+  }
+}

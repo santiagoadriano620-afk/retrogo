@@ -1,0 +1,34 @@
+[
+  {
+    "actionId": 3103,
+    "type": "exit",
+    "itemIds": [],
+    "conditions": [
+      { "type": "isItemInPosition", "pos": { "x": 32816, "y": 31601, "z": 9 }, "itemId": 2319 },
+      { "type": "isPlayer" }
+    ],
+    "effects": [
+      { "type": "relocate", "from": null, "to": { "x": 32701, "y": 31639, "z": 6 } },
+      { "type": "removeItem", "pos": { "x": 32816, "y": 31601, "z": 9 }, "itemId": 2319 },
+      { "type": "magicEffect", "pos": { "x": 32701, "y": 31639, "z": 6 }, "effectId": 11 },
+      { "type": "magicEffect", "pos": { "x": 32816, "y": 31601, "z": 9 }, "effectId": 14 },
+      { "type": "storage", "key": 65, "value": 0 },
+      { "type": "storage", "key": 66, "value": 0 }
+    ],
+    "effectsAlt": [
+      { "type": "relocate", "from": null, "to": { "x": 32818, "y": 31599, "z": 9 } },
+      { "type": "magicEffect", "pos": { "x": 32818, "y": 31599, "z": 9 }, "effectId": 11 }
+    ]
+  },
+  {
+    "actionId": 3103,
+    "type": "exit",
+    "itemIds": [],
+    "conditions": [],
+    "effects": [
+      { "type": "relocate", "from": null, "to": { "x": 32818, "y": 31599, "z": 9 } },
+      { "type": "magicEffect", "pos": { "x": 32818, "y": 31599, "z": 9 }, "effectId": 11 }
+    ],
+    "effectsAlt": []
+  }
+]

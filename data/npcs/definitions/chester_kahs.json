@@ -1,0 +1,318 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Chester Kahs",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  114,
+                                              "details":  {
+                                                              "head":  10,
+                                                              "body":  28,
+                                                              "legs":  47,
+                                                              "feet":  95
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  2,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "news":  "Sorry, almost news that are a little interesting are confidential.",
+                                          "how":  "I am troubled by all the mysteries out there.",
+                                          "are":  "I am troubled by all the mysteries out there.",
+                                          "you":  "I am troubled by all the mysteries out there.",
+                                          "sell":  "I am no tradesman, sorry.",
+                                          "king":  "King Tibianus III is our leader and my direct superior.",
+                                          "superior":  "I report directly to the king himself.",
+                                          "report":  "My reports are confidential and for the ears and eyes of the king only.",
+                                          "job":  "I am the head of the TBI.",
+                                          "tbi$":  "The Tibian Bureau of Investigation, the secret service of His Royal Highness.",
+                                          "investigation":  "We collect information about people and incidents.",
+                                          "bureau":  "We collect information about people and incidents.",
+                                          "people":  "We know much about the citizens and some other people.",
+                                          "citizen":  "I only can give you some official information about our citizens. About whom do you wish to talk?",
+                                          "incident":  "There are things that must be kept secret.",
+                                          "secret":  "Are you joking? What\u0027s secret in Tibia at all?",
+                                          "army":  "Our army might be infested with spies already.",
+                                          "spies":  "Polymorphed Minotaurs, shapechanging demons, possessed innocents ... who can tell for sure.",
+                                          "guard":  "The king\u0027s best. But is the best good enough to fight what stalks the nights?",
+                                          "trust":  "Too many possibilities to become a servant of darkness to trust ANYONE!",
+                                          "castle":  "The castle isn\u0027t safe! I warned them of the entrance to the dungeons, but no one is litstening. How many people have to die before they do something about that?",
+                                          "dogs":  "Even they can\u0027t stop a handful of demons.",
+                                          "of":  "Even they can\u0027t stop a handful of demons.",
+                                          "war":  "Even they can\u0027t stop a handful of demons.",
+                                          "red":  "They are at my command now and then ... but it\u0027s a mistake to rely on anyone except yourself.",
+                                          "police":  "Are you joking? What\u0027s secret in Tibia at all?",
+                                          "silver":  "The king\u0027s best. But is the best good enough to fight what stalks the nights?",
+                                          "city":  "The city is open to almost everyone. That literally opens doors for all kinds of criminals and fiends.",
+                                          "criminal":  "There are so many murderers and thiefs out there that I wonder if there is some greater force of evil subtly encouraging that.",
+                                          "fiend":  "Not everything that walks our streets is human ... or even living.",
+                                          "stutch":  "He is one of the few people I can trust.",
+                                          "harsky":  "He is one of the few people I can trust.",
+                                          "bozo":  "He isn\u0027t the fool he pretends to be. So to what is he up to?",
+                                          "sam":  "I say it was a mistake to rely on a single person for such vital services but having those venoreans here is even worse.",
+                                          "gorn":  "A man too concerned about profit to be trustworthy. This kind of man sells his soul to the highest bidder. It\u0027s just a question if he has done it already or will do it soon.",
+                                          "frodo":  "Have you noticed how easy it would be to poison his supplies and kill a great deal of people with ease?",
+                                          "benjamin":  "Something happened to him that snapped his mind. Can we be sure what more might have happened to him unnoticed?",
+                                          "lugri":  "At least you KNOW that you have to expect only evilness from this guy and that\u0027s the best one can say about him.",
+                                          "gods":  "We are just the pawns of the gods. The best we can expect is that our play amuses them enough to keep their interest in us so we might live a day or two longer.",
+                                          "lynda":  "She puts her trust in the help of beings she can\u0027t comprehend. Think by yourself if that\u0027s clever.",
+                                          "quentin":  "A peaceful man. But in our days peace is just an illusion. We are surrounded by enemies and dangers.",
+                                          "enemy":  "The people of the northern city, the minotaurs, the followers of Zathroth, the demons, and countless others!",
+                                          "enemies":  "The people of the northern city, the minotaurs, the followers of Zathroth, the demons, and countless others!",
+                                          "danger":  "Danger is common like day and night for a Tibian, who keeps his eyes open.",
+                                          "dungeon":  "Monsters lurk in each corner of the dungeons, which spread beneath us, breeding in the shadows and plotting to destroy us all.",
+                                          "ferumbras":  "Yes, thats what I figured out, too. Just one of his disguises.",
+                                          "demon":  "They say there are just two of them in the underground ruins! These damned fools! There are dozens of them! And the two they already saw are only some of the weakest of demonkind!",
+                                          "underground":  "We have no clue what happened to the civilization that once dwelled underground, but their complete extinction should be a warning for us!",
+                                          "ruin":  "We have no clue what happened to the civilization that once dwelled underground, but their complete extinction should be a warning for us!",
+                                          "mcronald":  "Have you ever wondered what these caves under their farm are good for? And have you noticed how many adventurers go down there and never return? Well, think about it!",
+                                          "sorcerer":  "I don\u0027t know where they got their secret spells in the first place, nor did most of them know ... If I were a sorcerer that would be a fact to give me nightmares.",
+                                          "knight":  "It\u0027s too easy to become a knight. They take almost everyone. And if you look in the streets you can see what happens if you give training and a flashy title to almost everyone.",
+                                          "paladin":  "They should be noble warriors, but does it take bravery to shoot someone from a certain distance? The former paladins were virtuous heroes, the ones you meet today are just simple treasure hunters.",
+                                          "druid":  "It is said that druids are preservers of life and good aligned, but let me ask you if it\u0027s so \u0027good\u0027 to sell runes to the highest bidder, no matter who that might be? I think you get the point!",
+                                          "truth":  "The dungeons are full of hideous monsters, unnamed terrors, unsolved riddles ... and maybe some answers. Believe me! The truth is down there ... somewhere!",
+                                          "ruthless":  "We know little about them. But even that gives me nightmares! But it\u0027s your lucky day, since this information is confidential, and so it can\u0027t bother you.",
+                                          "seven":  "We know little about them. But even that gives me nightmares! But it\u0027s your lucky day, since this information is confidential, and so it can\u0027t bother you.",
+                                          "aruda":  "This woman is a clever thief, so watch out when you are talking to her.",
+                                          "partos":  "This criminal was wanted for many crimes. At last he got caught and put to jail.",
+                                          "excalibug":  "We are surrounded by myths, living and dead. How can someone doubt that there IS something like Excalibug somewhere?",
+                                          "necromant":  "Followers of evil are investigating about that, though I guess even they don\u0027t know what it\u0027s good for. Perhaps just a myth of evil.",
+                                          "nectar":  "Followers of evil are investigating about that, though I guess even they don\u0027t know what it\u0027s good for. Perhaps just a myth of evil.",
+                                          "rebellion":  "I have far too few information about the rebellion, but we suspect the followers of Zathroth behind it.",
+                                          "berfasmur":  "Strange name, isn\u0027t it? Play around with the letters and you are in for a surprise.",
+                                          "is":  "Yes, thats what I figured out, too. Just one of his disguises.",
+                                          "gamel":  "Are you saying that Gamel is a member of the rebellion?",
+                                          "rebel":  "Are you saying that Gamel is a member of the rebellion?"
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Salutations, stranger.",
+                                                       "I am the head of the TBI."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Salutations, stranger.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "no"
+                                                                                   ],
+                                                                      "response":  "Then don\u0027t bother me with that. I am a busy man.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Do you know what his plans are about?",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  false
+                                                                  }
+                                                              ]
+                                              },
+                                        "2":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "magic",
+                                                                                       "crystal",
+                                                                                       "lugri",
+                                                                                       "deathcurse"
+                                                                                   ],
+                                                                      "response":  "That is terrible! Will you give me the crystal?",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "setAmount",
+                                                                                          "amount":  1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  3,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Tell me precisely what he asked you to do! What, to whom, and what for! It\u0027s important!",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "3":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "no"
+                                                                                   ],
+                                                                      "response":  "Traitor!",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Thank you! Take this ring. If you ever need a healing, come, bring the scroll, and ask me to \u0027heal\u0027.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "setAmount",
+                                                                                          "amount":  1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  2168
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Sorry, you have none.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  }
+                                                              ]
+                                              },
+                                        "4":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "no"
+                                                                                   ],
+                                                                      "response":  "As you whish.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "So be healed!",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Sorry, you are not worthy!",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+                                                   "gamel":  1,
+                                                   "rebel":  1
+                                               },
+                         "trade":  {
+                                       "items":  [
+
+                                                 ]
+                                   },
+                         "script":  "chester_kahs.js"
+                     }
+}

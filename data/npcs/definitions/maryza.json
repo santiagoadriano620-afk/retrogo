@@ -1,0 +1,287 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Maryza",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  69,
+                                              "details":  {
+                                                              "head":  60,
+                                                              "body":  110,
+                                                              "legs":  58,
+                                                              "feet":  76
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  3,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "jimbin":  "I am so proud of him. In drinking, he\u0027s second only to our mighty general.",
+                                          "job":  "I\u0027m the cook of the Jolly Axeman.",
+                                          "tavern":  "I\u0027m the cook of the Jolly Axeman.",
+                                          "name":  "I am Maryza Firehand, daughter of Earth, from the Molten Rock.",
+                                          "time":  "To busy, ask my husband.",
+                                          "king":  "Don\u0027t like these upper cave guys.",
+                                          "army":  "We could better feed some dragons instead of these fools.",
+                                          "ferumbras":  "Heard that\u0027s what the humans call one of their boggiemen.",
+                                          "general":  "A fine drinker and strategist. Wastes his skill with these idiots of the army. What a shame.",
+                                          "excalibug":  "Would slice a dragon or two for steaks if i\u0027d get it.",
+                                          "tark":  "He loved my dragonsteaks. Heard he died by a cave in while fighting drags in the Plains of Havoc.",
+                                          "thais":  "Puny town for puny guys.",
+                                          "tibia":  "We don\u0027t care much about outsiders anymore.",
+                                          "carlin":  "Don\u0027t like it, has an elfish touch, ye know?",
+                                          "news":  "The boys of the Savage Axe at the bridge are running wild in these days.",
+                                          "rumors":  "The boys of the Savage Axe at the bridge are running wild in these days.",
+                                          "buy":  "I can offer you some food if ye like.",
+                                          "do":  "I can offer you some food if ye like.",
+                                          "you":  "I can offer you some food if ye like.",
+                                          "sell":  "I can offer you some food if ye like.",
+                                          "have":  "I can offer you some food if ye like.",
+                                          "food":  "I sell normal and brown bread, meat, ham, cookies, rolls, and cheese made of mushrooms.",
+                                          "cookbook":  "I\u0027m sorry but I sell only one copy to each customer. Otherwise they would have been sold out a long time ago.",
+                                          "book":  "I\u0027m sorry but I sell only one copy to each customer. Otherwise they would have been sold out a long time ago."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Welcome to the Jolly Axeman, . Have a good time!",
+                                                       "Talking to me?",
+                                                       "I\u0027m the cook of the Jolly Axeman."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$",
+                                                                       "maryza"
+                                                                   ],
+                                                      "response":  "Welcome to the Jolly Axeman, %N. Have a good time!",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$",
+                                                                       "maryza"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Talking to me?",
+                                                      "idle":  true
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here it is.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "No gold, no sale, that\u0027s it.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "You \u0026/$#@!",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "2":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here you are. Happy cooking!",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "setQuest",
+                                                                                          "questId":  279,
+                                                                                          "value":  1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "No gold, no sale, that\u0027s it.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "I have but a few copies, anyway.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Cookbook",
+                                                         "price":  150,
+                                                         "id":  2347,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Bread",
+                                                         "price":  4,
+                                                         "id":  2689,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Cheese",
+                                                         "price":  6,
+                                                         "id":  2696,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Meat",
+                                                         "price":  5,
+                                                         "id":  2666,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Ham",
+                                                         "price":  8,
+                                                         "id":  2671,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Cookie",
+                                                         "price":  2,
+                                                         "id":  2687,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Roll",
+                                                         "price":  2,
+                                                         "id":  2690,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Brown Bread",
+                                                         "price":  3,
+                                                         "id":  2691,
+                                                         "type":  "sell"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "maryza.js"
+                     }
+}

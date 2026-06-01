@@ -1,0 +1,520 @@
+{
+    "creatureStatistics": {
+        "name": "Chatterbone",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 18,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 2,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "job": "... Selling Spells",
+            "name": "... Chatterbone",
+            "time": "... Time?... Not important... anymore.",
+            "king": "...",
+            "tibianus": "...",
+            "vladruc": "... Maaaaassssterrrrr",
+            "urghain": "... Maaaaassssterrrrr",
+            "ferumbras": "... un...important",
+            "market": "... You buy?",
+            "excalibug": "... we hid it... so long ago... so long...",
+            "news": "... they build a new city... Carlin shall be its name...",
+            "flaming": "... we conquered them... held them so long... long ago...",
+            "pit": "... we conquered them... held them so long... long ago...",
+            "pits": "... we conquered them... held them so long... long ago...",
+            "inferno": "... we conquered them... held them so long... long ago...",
+            "nightmare": "... we conquered them... held them so long... long ago...",
+            "sorcerer": "... You... buy spells?",
+            "power": "... You... buy spells?",
+            "druid": "... Ask Smiley...",
+            "spellbook": "... You buy book... store spells... other counter...",
+            "rune": "... Runes... mighty stones... other counter...",
+            "spell": "... Only sorcerers..."
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "... Greeeeeetiiiingssss",
+                "... Selling Spells"
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "... Greeeeeetiiiingssss",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ],
+        "topics": {
+            "2": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "rune",
+                            "spell"
+                        ],
+                        "response": "... Attack rune spells ...  support rune spells ... Which...?",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "instant",
+                            "spell"
+                        ],
+                        "response": "... Attack spells ... healing spells ... supply spells ... support spells ... summon spells. Which...?",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "level"
+                        ],
+                        "response": "Which level...?",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "bye"
+                        ],
+                        "response": "... Good... Bye",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true
+                    },
+                    {
+                        "keywords": [
+                            "0$"
+                        ],
+                        "response": "... For magic level 0 ... 'Find Person' and 'Light'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "1$"
+                        ],
+                        "response": "... For magic level 1 ... 'Light Healing' and 'Light Magic Missile'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "2$"
+                        ],
+                        "response": "... For magic level 2 ... 'Antidote', 'Poison Field' and 'Intense Healing'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "3$"
+                        ],
+                        "response": "... For magic level 3 ... 'Great Light', 'Heavy Magic Missile' and 'Fire Field'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "4$"
+                        ],
+                        "response": "... For magic level 4 ... 'Magic Shield'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "5$"
+                        ],
+                        "response": "... For magic level 5 ... 'Fireball', 'Firebomb' and 'Energy Field'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "7$"
+                        ],
+                        "response": "... For magic level 7 ... 'Fire Wave'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "8$"
+                        ],
+                        "response": "... For magic level 8 ... 'Ultimate Healing'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "9$"
+                        ],
+                        "response": "... For magic level 9 ... 'Great Fireball'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "10$"
+                        ],
+                        "response": "... For magic level 10 ... 'Energy Beam' and 'Creature Illusion'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "11$"
+                        ],
+                        "response": "... For magic level 11 ... 'Poison Wall'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "12$"
+                        ],
+                        "response": "... For magic level 12 ... 'Explosion'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "13$"
+                        ],
+                        "response": "... For magic level 13 ... 'Fire Wall'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "14$"
+                        ],
+                        "response": "... For magic level 14 ... 'Great Energy Beam'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "15$"
+                        ],
+                        "response": "... For magic level 15 ... 'Invisible'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "16$"
+                        ],
+                        "response": "... For magic level 16 ... 'Summon Creature'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "18$"
+                        ],
+                        "response": "... For magic level 18 ... 'Energy Wall'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "20$"
+                        ],
+                        "response": "... For magic level 20 ... 'Energy Wave'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "25$"
+                        ],
+                        "response": "... For magic level 25 ... 'Sudden Death'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "... No spells for this magic level ... but for many ... from 0 to 25.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "3": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "... You already know...",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "... not magic level %A...",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "... More money.",
+                        "conditions": [
+                            {
+                                "type": "gold",
+                                "max": -1
+                            }
+                        ],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "... Here...",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "deleteMoney",
+                                "amount": -1
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "... Then not.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            }
+        },
+        "keywordNextTopics": {
+            "find person": 3,
+            "light": 3,
+            "light healing": 3,
+            "light magic missile": 3,
+            "antidote": 3,
+            "poison field": 3,
+            "intense healing": 3,
+            "great light": 3,
+            "heavy magic missile": 3,
+            "fire field": 3,
+            "magic shield": 3,
+            "fireball": 3,
+            "firebomb": 3,
+            "energy field": 3,
+            "fire wave": 3,
+            "ultimate healing": 3,
+            "great fireball": 3,
+            "energy beam": 3,
+            "creature illusion": 3,
+            "poison wall": 3,
+            "explosion": 3,
+            "fire wall": 3,
+            "great energy beam": 3,
+            "invisible": 3,
+            "summon creature": 3,
+            "energy wall": 3,
+            "energy wave": 3,
+            "sudden death": 3
+        },
+        "keywordTopicSpellIds": {
+            "find person": 30,
+            "light": 5,
+            "light healing": 2,
+            "light magic missile": 43,
+            "antidote": 12,
+            "poison field": 62,
+            "intense healing": 10,
+            "great light": 19,
+            "heavy magic missile": 46,
+            "fire field": 59,
+            "magic shield": 18,
+            "fireball": 44,
+            "firebomb": 58,
+            "energy field": 56,
+            "fire wave": 15,
+            "ultimate healing": 11,
+            "great fireball": 45,
+            "energy beam": 16,
+            "creature illusion": 4,
+            "poison wall": 63,
+            "explosion": 1,
+            "fire wall": 60,
+            "great energy beam": 23,
+            "invisible": 3,
+            "summon creature": 32,
+            "energy wall": 57,
+            "energy wave": 21,
+            "sudden death": 47
+        },
+        "keywordTopicMagicLevels": {
+            "find person": 0,
+            "light": 0,
+            "light healing": 0,
+            "light magic missile": 0,
+            "antidote": 0,
+            "poison field": 0,
+            "intense healing": 0,
+            "great light": 0,
+            "heavy magic missile": 0,
+            "fire field": 0,
+            "magic shield": 0,
+            "fireball": 0,
+            "firebomb": 0,
+            "energy field": 0,
+            "fire wave": 0,
+            "ultimate healing": 0,
+            "great fireball": 0,
+            "energy beam": 0,
+            "creature illusion": 0,
+            "poison wall": 0,
+            "explosion": 0,
+            "fire wall": 0,
+            "great energy beam": 0,
+            "invisible": 0,
+            "summon creature": 0,
+            "energy wall": 0,
+            "energy wave": 0,
+            "sudden death": 0
+        },
+        "script": "chatterbone.js",
+        "keywordTopicPrices": {
+            "find person": 200,
+            "light": 200,
+            "light healing": 200,
+            "light magic missile": 200,
+            "antidote": 400,
+            "poison field": 400,
+            "intense healing": 400,
+            "great light": 600,
+            "heavy magic missile": 600,
+            "fire field": 600,
+            "magic shield": 800,
+            "fireball": 1000,
+            "firebomb": 1000,
+            "energy field": 1000,
+            "fire wave": 1400,
+            "ultimate healing": 1600,
+            "great fireball": 1800,
+            "energy beam": 2000,
+            "creature illusion": 2000,
+            "poison wall": 2200,
+            "explosion": 2400,
+            "fire wall": 2600,
+            "great energy beam": 2800,
+            "invisible": 3000,
+            "summon creature": 3200,
+            "energy wall": 3600,
+            "energy wave": 4000,
+            "sudden death": 5000
+        }
+    }
+}

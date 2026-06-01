@@ -1,0 +1,244 @@
+{
+    "creatureStatistics": {
+        "name": "Mehkesh",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 130,
+            "details": {
+                "head": 19,
+                "body": 92,
+                "legs": 113,
+                "feet": 40
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 2,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "job": "I am a trader. I sell potions brewed by the foremost alchemists of the land.",
+            "name": "I am the mourned Mehkesh.",
+            "time": "Time is but one of the hardships our mortal flesh has to endure.",
+            "temple": "The temple spreads the word of our wise pharaoh.",
+            "pharaoh": "The pharaoh alone has achieved godhood. But in his infinite mercy he chose to stay with his people to offer them guidance.",
+            "arkhothep": "The pharaoh alone has achieved godhood. But in his infinite mercy he chose to stay with his people to offer them guidance.",
+            "ashmunrah": "Even though his merciful son offered him undeath I doubt the old pharaoh will ever find his way to ascension.",
+            "scarab": "The scarabs are more then just enormous insects. They are keepers of ancient secrets.",
+            "chosen": "If we serve the pharaoh during our life time he might allow us to serve him in undeath. Only then can truly start our search for ascension.",
+            "tibia": "One day our world will be freed from the false gods and accept the guidance of our pharaoh.",
+            "carlin": "Those citys are only pawns of the false gods and their misguided priests.",
+            "thais": "Those citys are only pawns of the false gods and their misguided priests.",
+            "edron": "Those citys are only pawns of the false gods and their misguided priests.",
+            "venore": "Those citys are only pawns of the false gods and their misguided priests.",
+            "kazordoon": "The dwarves should know better then to praise the mortal essence of the elements.",
+            "dwarves": "The dwarves should know better then to praise the mortal essence of the elements.",
+            "dwarfes": "The dwarves should know better then to praise the mortal essence of the elements.",
+            "ab'dendriel": "Elves are foolish and their obsession with life damns them to eternal death.",
+            "elves": "Elves are foolish and their obsession with life damns them to eternal death.",
+            "elfes": "Elves are foolish and their obsession with life damns them to eternal death.",
+            "darama": "These are the lands of old secrets where the mortals will be shown the true revelations.",
+            "darashia": "A city of misguided fools.",
+            "daraman": "The prophet caught a glimpse of ascension, but he did not understand it.",
+            "ankrahmun": "This city will remain as an eternal testament of our immortal pharaoh's power.",
+            "mortality": "Only if we leave our mortality behind can we achieve salvation and ascension.",
+            "false": "The false gods use our mortal flesh to enslave us.",
+            "gods": "The false gods use our mortal flesh to enslave us.",
+            "ascension": "Ascension is a difficult process. As long as we are mortal we are too distracted to even think about it.",
+            "Akh'rah": "The Akh'rah Uthun is the union of that which once was separate.",
+            "Uthun": "The Akh'rah Uthun is the union of that which once was separate.",
+            "Akh": "Our Akh is our mortal flesh until it is replaced with something better - with an undead body.",
+            "undead": "Undeath is the victory over the weaknesses of mortal flesh.",
+            "undeath": "Undeath is the victory over the weaknesses of mortal flesh.",
+            "Rah": "The Rah is our essence. The divine part in all of us.",
+            "uthun": "The Uthun is the knowledge we gather in the course of time.",
+            "mourn": "We are so pathetic in our mortality.",
+            "arena": "The arena is a challenge for every skilled fighter.",
+            "palace": "You can find the palace to the east of this market hall.",
+            "offer": "I'm selling life and mana fluids.",
+            "goods": "I'm selling life and mana fluids.",
+            "do": "I'm selling life and mana fluids.",
+            "you": "I'm selling life and mana fluids.",
+            "sell": "I'm selling life and mana fluids.",
+            "have": "I'm selling life and mana fluids.",
+            "deposit": "I will pay you 5 gold for every empty vial. Ok?",
+            "vial": "I will pay you 5 gold for every empty vial. Ok?",
+            "flask": "I will pay you 5 gold for every empty vial. Ok?"
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "Be mourned pilgrim in flesh.",
+                "I am a trader. I sell potions brewed by the foremost alchemists of the land."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Be mourned pilgrim in flesh.",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": "Be mourned pilgrim in flesh.",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "be",
+                    "mourned",
+                    "pilgrim",
+                    "flesh"
+                ],
+                "response": "Be mourned pilgrim in flesh.",
+                "idle": false
+            }
+        ],
+        "topics": {
+            "2": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Here you are. There is a deposit of 5 gold on the vial.",
+                        "conditions": [
+                            {
+                                "type": "gold",
+                                "min": -1
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "deleteMoney",
+                                "amount": -1
+                            },
+                            {
+                                "type": "createItem",
+                                "id": -1
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Come back, when you have enough money.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Hmm, but next time.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "3": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Here you are ... %P gold.",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "deleteItem",
+                                "id": 2006
+                            },
+                            {
+                                "type": "createMoney"
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You don't have any empty vials.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Hmm, but please keep Tibia litter free.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            }
+        },
+        "keywordNextTopics": {
+            "deposit": 3,
+            "vial": 3,
+            "flask": 3
+        },
+        "trade": {
+            "items": [
+                {
+                    "name": "Vial",
+                    "price": 60,
+                    "id": 2006,
+                    "type": "sell"
+                },
+                {
+                    "name": "Mana Fluid",
+                    "price": 55,
+                    "id": 2006,
+                    "type": "sell",
+                    "count": 10
+                },
+                {
+                    "name": "Life Fluid",
+                    "price": 60,
+                    "id": 2006,
+                    "type": "sell",
+                    "count": 11
+                }
+            ]
+        },
+        "script": "mehkesh.js"
+    }
+}

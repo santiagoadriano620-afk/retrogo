@@ -1,0 +1,92 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Leeland",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  113,
+                                              "details":  {
+                                                              "head":  19,
+                                                              "body":  36,
+                                                              "legs":  96,
+                                                              "feet":  76
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  1,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "name":  "My name is Slim, Leeland Slim.",
+                                          "job":  "I am the owner of the Useful Things Warehouse.",
+                                          "warehouse":  "I offer many things. Actually I am sure you will find something you have desired for a long time.",
+                                          "time":  "So it is a watch you need? Make sure to buy one downstairs.",
+                                          "king":  "Do I hear envy in your voice? Is it that you realy want? To be ... king? Well, one never knows ... perhaps you find something royal in my warehouse.",
+                                          "tibianus":  "Do I hear envy in your voice? Is it that you realy want? To be ... king? Well, one never knows ... perhaps you find something royal in my warehouse.",
+                                          "army":  "Your question suggests you are interested in military? I am sure you will find something interesting in my warehouse.",
+                                          "ferumbras":  "Ah, Ferumbras. I remember selling him torches for his first adventures as if it was yesterday.",
+                                          "excalibug":  "That\u0027s one of the few things even I can\u0027t aquire for you.",
+                                          "thais":  "Perhaps one day I will settle in thais again. I love the city\u0027s potential.",
+                                          "tibia":  "I have seen most of it. And I like it. \u003cchuckles\u003e",
+                                          "carlin":  "I was there some time ago. I exchanged ideas with some important people there and even could sell them something that furthered their cause.",
+                                          "news":  "I would love to have the time to chat and exchange gossip, but sadly business always comes first, you know?",
+                                          "tax":  "Taxes are a necessary evil, people say. I like that.",
+                                          "privilege":  "Privileges have to be paid for. The one way ... or the other.",
+                                          "gambling":  "I just love bets and gambling. It inspires people doing such interesting things."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Greetings, !",
+                                                       "I am the owner of the Useful Things Warehouse."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Greetings, %N!",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hail$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ]
+                     }
+}

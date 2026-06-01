@@ -1,0 +1,148 @@
+{
+    "creatureStatistics": {
+        "name": "The Orc King",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 19,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 3,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "name": "I am Charkahn the Slayer! The immortal father of the orcs and master of this hive.",
+            "job": "I am Charkahn the Slayer! The immortal father of the orcs and master of this hive.",
+            "hive": "I can sense the presence and the feelings of my underlings and minions. I embrace the rage of the horde.",
+            "minion": "The orcish horde of this hive is under my control. I sense their emotions and their needs and provide them with the leadership they need to focus their hate and rage.",
+            "underling": "The orcish horde of this hive is under my control. I sense their emotions and their needs and provide them with the leadership they need to focus their hate and rage.",
+            "horde": "The orcish horde of this hive is under my control. I sense their emotions and their needs and provide them with the leadership they need to focus their hate and rage.",
+            "hate": "Hate and rage are the true blessings of Blog, since they are powerful weapons. They give the hive strength. I provide them with direction and focus.",
+            "rage": "Hate and rage are the true blessings of Blog, since they are powerful weapons. They give the hive strength. I provide them with direction and focus.",
+            "direction": "To conquer, to destroy and to dominate. Orcs are born to rule the world.",
+            "focus": "To conquer, to destroy and to dominate. Orcs are born to rule the world.",
+            "blog": "The Raging One blessed us with his burning hate. We are truly his children and therefore divine.",
+            "divine": "The orcs are the bearers of Blogs rage. This makes us the ultimate fighters and the most powerful of all races.",
+            "orc": "The orcs are the bearers of Blogs rage. This makes us the ultimate fighters and the most powerful of all races.",
+            "slime": "Pah! Don't mock me, mortal! This shape is a curse which the evil djinn bestowed upon me!",
+            "djinn": "I will not share anything more about that topic with you paleskins.",
+            "malor": "This cursed djinn king! I set him free from an enchanted lamp, and he cheated me!",
+            "cheat": "Because I freed him he granted me three wishes. He was true to his word in the first two wishes.",
+            "wish": "He built this fortress over Uldrek's grave within a single night. Also, he granted me my second wish and gave me immortality. Test it and try to kill me if you want. Har Har!",
+            "third": "I wished to father more healthy and fertile children as any orc has ever done. But the djinn cheated me and made me a slime! Then he laughed at me and left for his abandoned fortress in the Deathwish Mountains.",
+            "deathwish": "His ancient fortress on Darama was deserted as the evil Djinn fled this world after his imprisonment. Now the time has come for the evil Djinns to return to their master although this will certainly awaken the good Djinn too.",
+            "abandoned": "His ancient fortress on Darama was deserted as the evil Djinn fled this world after his imprisonment. Now the time has come for the evil Djinns to return to their master although this will certainly awaken the good Djinn too.",
+            "good": "I will not share anything more about that topic with you paleskins.",
+            "awaken": "I will not share anything more about that topic with you paleskins.",
+            "paleskins": "You are as ugly as maggots, although not quite as as tasty.",
+            "lamp": "I can sense your evil intentions to imprison a djinn! You are longing for the lamp, which I still possess. ..."
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "Arrrrgh! A dirty paleskin! To me my children! Kill them my guards!",
+                "Harrrrk! You think you are strong now? You shall never escape my wrath! I am immortal!",
+                "I am Charkahn the Slayer! The immortal father of the orcs and master of this hive."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Arrrrgh! A dirty paleskin! To me my children! Kill them my guards!",
+                "idle": true
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Harrrrk! You think you are strong now? You shall never escape my wrath! I am immortal!",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ],
+        "topics": {
+            "1": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "malor"
+                        ],
+                        "response": "I was waiting for this day! Take the lamp and let Malor feel my wrath!",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "setAmount",
+                                "amount": 1
+                            },
+                            {
+                                "type": "createItem",
+                                "id": 2344
+                            },
+                            {
+                                "type": "setQuest",
+                                "questId": 284,
+                                "value": 1
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "I don't know your enemy, paleskin! Begone!",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            }
+        },
+        "keywordNextTopics": {},
+        "script": "the_orc_king.js"
+    }
+}

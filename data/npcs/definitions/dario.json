@@ -1,0 +1,489 @@
+{
+    "creatureStatistics": {
+        "name": "Dario",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 144,
+            "details": {
+                "head": 3,
+                "body": 58,
+                "legs": 41,
+                "feet": 115
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 1,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "job": "I am the master archer of the arena. I train distance fighters and sell them equipment.",
+            "name": "I am Dario of Ab'Dendriel.",
+            "time": "Time is unimportant to me.",
+            "temple": "The temple is somewhere south at the coast.",
+            "arkhothep": "The pharaoh seems to be mighty beyond imagination.",
+            "ashmunrah": "There was some fighting long ago. The old pharaoh lost his power to his son Arkhothep.",
+            "scarab": "Scarabs are dangerous. They are quick, resistant to poison and theis shells are hard as steel.",
+            "tibia": "I travel a lot to see everything. For now I settle here for some time.",
+            "carlin": "I was there some time ago. It was lovely and reminded me of my home Ab'Dendriel.",
+            "thais": "Thais is too crowded for my taste.",
+            "edron": "I think Edron is quite typical for a human settlement.",
+            "venore": "I did not like the greedy attitude of the people there.",
+            "kazordoon": "The small people are too hectic and greedy. They don't understand the harmony of nature.",
+            "dwarves": "The small people are too hectic and greedy. They don't understand the harmony of nature.",
+            "dwarfes": "The small people are too hectic and greedy. They don't understand the harmony of nature.",
+            "ab'dendriel": "Sometimes I miss my brethren and sisters. But for now I want to see the world and travel around.",
+            "elves": "Sometimes I miss my brethren and sisters. But for now I want to see the world and travel around.",
+            "elfes": "Sometimes I miss my brethren and sisters. But for now I want to see the world and travel around.",
+            "darama": "This continent is hard and challenging. I like challenges.",
+            "darashia": "The city seemed a bit dull and peacefull to me, so I left for Ankrahmun.",
+            "daraman": "You should ask about him in Darashia. People there talked a lot about him.",
+            "ankrahmun": "Ankrahmun is unlike any other city I've seen. Sometimes it gives me shivers ... on the other hand it makes me stay on guard and feel alive, despite the undeath cult.",
+            "ascension": "I don't care for this human concepts.",
+            "Akh'rah": "I don't care for this human concepts.",
+            "Uthun": "I don't care for this human concepts.",
+            "Akh": "I don't care for this human concepts.",
+            "Rah": "I don't care for this human concepts.",
+            "uthun": "I don't care for this human concepts.",
+            "undead": "I don't understand this cult yet. Just ask around and people will tell you.",
+            "undeath": "I don't understand this cult yet. Just ask around and people will tell you.",
+            "arena": "People who fight here do it on their own choice. So I don't care.",
+            "palace": "Under the palace are crypts, full of minor undead and creatures that have failed the pharaoh. He allows everyone to slay them as they see it fit.",
+            "spell": "Sorry, I only sell spells to paladins.",
+            "buy": "I am selling bows, crossbows, and ammunition. Do you need anything?",
+            "do": "I am selling bows, crossbows, and ammunition. Do you need anything?",
+            "you": "I am selling bows, crossbows, and ammunition. Do you need anything?",
+            "sell": "I am selling bows, crossbows, and ammunition. Do you need anything?",
+            "have": "I am selling bows, crossbows, and ammunition. Do you need anything?",
+            "offer": "I am selling bows, crossbows, and ammunition. Do you need anything?",
+            "goods": "I am selling bows, crossbows, and ammunition. Do you need anything?",
+            "ammo": "Do you need arrows for a bow, or bolts for a crossbow?",
+            "ammunition": "Do you need arrows for a bow, or bolts for a crossbow?"
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "Ashari .",
+                "I am the master archer of the arena. I train distance fighters and sell them equipment."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Ashari %N.",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "ashari$"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ],
+        "topics": {
+            "2": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "rune",
+                            "spell"
+                        ],
+                        "response": "I sell 'Light Magic Missile', 'Heavy Magic Missile', 'Fireball' and 'Destroy Field'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "instant",
+                            "spell"
+                        ],
+                        "response": "I sell healing spells, supply spells and support spells. Which of these interests you most?",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "level"
+                        ],
+                        "response": "For which magic level would you like to learn a spell?",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "bye"
+                        ],
+                        "response": "Asha Thrazi.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true
+                    },
+                    {
+                        "keywords": [
+                            "0$"
+                        ],
+                        "response": "For magic level 0 I have 'Food', 'Find Person' and 'Light'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "1$"
+                        ],
+                        "response": "For magic level 1 I have 'Light Healing' and 'Light Magic Missile'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "2$"
+                        ],
+                        "response": "For magic level 2 I have 'Antidote', 'Conjure Arrow' and 'Intense Healing'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "3$"
+                        ],
+                        "response": "For magic level 3 I have 'Great Light' and 'Heavy Magic Missile'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "4$"
+                        ],
+                        "response": "For magic level 4 I have 'Magic Shield'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "5$"
+                        ],
+                        "response": "For magic level 5 I have 'Poisoned Arrow', 'Fireball'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "6$"
+                        ],
+                        "response": "For magic level 6 I have 'Destroy Field'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "8$"
+                        ],
+                        "response": "For magic level 8 I have 'Ultimate Healing'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "10$"
+                        ],
+                        "response": "For magic level 10 I have 'Explosive Arrow'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "15$"
+                        ],
+                        "response": "For magic level 15 I have 'Invisible'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Sorry, I have only spells for magic level 0 to 6 and 8 to 10 as well as for level 15.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "3": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You already know how to cast this spell.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You have to have magic level %A to learn this spell.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Return when you have enough gold.",
+                        "conditions": [
+                            {
+                                "type": "gold",
+                                "max": -1
+                            }
+                        ],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Here you are. Look in your spellbook for the pronunciation of this spell.",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "deleteMoney",
+                                "amount": -1
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Maybe next time.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "4": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Here you are.",
+                        "conditions": [
+                            {
+                                "type": "gold",
+                                "min": -1
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "deleteMoney",
+                                "amount": -1
+                            },
+                            {
+                                "type": "createItem",
+                                "id": -1
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Come back, when you have enough money.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Hmm, but next time.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            }
+        },
+        "keywordNextTopics": {
+            "antidote": 3,
+            "conjure arrow": 3,
+            "destroy field": 3,
+            "explosive arrow": 3,
+            "find person": 3,
+            "fireball": 3,
+            "food": 3,
+            "great light": 3,
+            "heavy magic missile": 3,
+            "intense healing": 3,
+            "invisible": 3,
+            "light": 3,
+            "light healing": 3,
+            "light magic missile": 3,
+            "magic shield": 3,
+            "poisoned arrow": 3,
+            "spell": 2,
+            "ultimate healing": 3
+        },
+        "keywordTopicSpellIds": {
+            "antidote": 12,
+            "conjure arrow": 36,
+            "destroy field": 68,
+            "explosive arrow": 40,
+            "find person": 30,
+            "fireball": 44,
+            "food": 41,
+            "great light": 19,
+            "heavy magic missile": 46,
+            "intense healing": 10,
+            "invisible": 3,
+            "light": 5,
+            "light healing": 2,
+            "light magic missile": 43,
+            "magic shield": 18,
+            "poisoned arrow": 42,
+            "ultimate healing": 11
+        },
+        "keywordTopicMagicLevels": {
+            "antidote": 0,
+            "conjure arrow": 0,
+            "destroy field": 0,
+            "explosive arrow": 0,
+            "find person": 0,
+            "fireball": 0,
+            "food": 0,
+            "great light": 0,
+            "heavy magic missile": 0,
+            "intense healing": 0,
+            "invisible": 0,
+            "light": 0,
+            "light healing": 0,
+            "light magic missile": 0,
+            "magic shield": 0,
+            "poisoned arrow": 0,
+            "ultimate healing": 0
+        },
+        "keywordTopicPrices": {
+            "antidote": 400,
+            "conjure arrow": 400,
+            "destroy field": 1200,
+            "explosive arrow": 2000,
+            "find person": 200,
+            "fireball": 1000,
+            "food": 200,
+            "great light": 600,
+            "heavy magic missile": 600,
+            "intense healing": 400,
+            "invisible": 3000,
+            "light": 200,
+            "light healing": 200,
+            "light magic missile": 200,
+            "magic shield": 800,
+            "poisoned arrow": 1000,
+            "ultimate healing": 1600
+        },
+        "trade": {
+            "items": [
+                {
+                    "name": "Bow",
+                    "price": 400,
+                    "id": 2456,
+                    "type": "sell"
+                },
+                {
+                    "name": "Crossbow",
+                    "price": 500,
+                    "id": 2455,
+                    "type": "sell"
+                },
+                {
+                    "name": "Arrow",
+                    "price": 2,
+                    "id": 2544,
+                    "type": "sell"
+                },
+                {
+                    "name": "Bolt",
+                    "price": 3,
+                    "id": 2543,
+                    "type": "sell"
+                }
+            ]
+        },
+        "script": "dario.js"
+    }
+}

@@ -1,0 +1,118 @@
+{
+    "creatureStatistics": {
+        "name": "The Blind Prophet",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 117,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 4,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "name": "Me put name away name long ago. Now only blind prophet of ape people are.",
+            "job": "Me prophet and guardian is.",
+            "prophet": "Me is who in dreams speak to holy banana. Me divine the will of banana.",
+            "guardian": "Me guard the forbidden land behind the great palisade. If any want to enter, he must ask me for transport.",
+            "forbidden": "Me guard the forbidden land behind the great palisade. If any want to enter, he must ask me for transport.",
+            "transport": "No!",
+            "yes": "Take care!",
+            "no": "Wise decision maybe.",
+            "Hairycles": "Good ape he is. Has to work hard to make other apes listen but you helped a lot.",
+            "excalibug": "Me not know. Me seldom have visions of not banana related objects.",
+            "bong": "Our holy ancestor he is. Big as mountain. Lizards say they built palisade to keep him but we not believe ...",
+            "ape": "Our people a lot to learn have. One day we might live in peace with you hairless apes, who knows.",
+            "port": "Hairless apes strange people are.",
+            "hope": "Hairless apes strange people are.",
+            "lizard": "The lizards evil and vengeful are. Ape people on guard must be.",
+            "hair": "Me visions show hair in the far north west of forbidden land. Near coast look for signs of Bongs presence."
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "Be greeted, friend of the apes.",
+                "You not should be here! You go! You go!",
+                "Me prophet and guardian is."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {
+            "yes": {
+                "damage": 0,
+                "effectSelf": null,
+                "effectTarget": 11
+            }
+        },
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Be greeted, friend of the apes.",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "You not should be here! You go! You go!",
+                "idle": true
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Be greeted, friend of the apes.",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ]
+    }
+}

@@ -1,0 +1,216 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Pino",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  111,
+                                              "details":  {
+                                                              "head":  115,
+                                                              "body":  0,
+                                                              "legs":  67,
+                                                              "feet":  114
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  1,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "name":  "Pino at your service.",
+                                          "job":  "I am a carpetpilot. I can fly you to the Femor Hills or Darashia.",
+                                          "service":  "I am a carpetpilot. I can fly you to the Femor Hills or Darashia.",
+                                          "time":  "It\u0027s  right now.",
+                                          "tibia":  "What a wonderful world. Especially if you look down on it.",
+                                          "passage":  "I can fly you to Darashia on Darama or to the Femor Hills if you like. Where do you want to go?",
+                                          "transport":  "I can fly you to Darashia on Darama or to the Femor Hills if you like. Where do you want to go?",
+                                          "ride":  "I can fly you to Darashia on Darama or to the Femor Hills if you like. Where do you want to go?",
+                                          "trip":  "I can fly you to Darashia on Darama or to the Femor Hills if you like. Where do you want to go?",
+                                          "darashia":  "Do you want to get a ride to Darashia on Darama for 30 gold?",
+                                          "darama":  "Do you want to get a ride to Darashia on Darama for 30 gold?",
+                                          "hill":  "Do you want to get a ride to the Femor Hills for 50 gold?",
+                                          "femor":  "Do you want to get a ride to the Femor Hills for 50 gold?",
+                                          "femur":  "You are probably talking about the FEMOR hills."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Greetings, traveller .",
+                                                       "I am a carpetpilot. I can fly you to the Femor Hills or Darashia."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Greetings, traveller %N.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Hold on!",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "teleport",
+                                                                                          "x":  33269,
+                                                                                          "y":  32441,
+                                                                                          "z":  6
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You don\u0027t have enough money.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "You shouldn\u0027t miss the experience.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "2":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Hold on!",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "teleport",
+                                                                                          "x":  32535,
+                                                                                          "y":  31837,
+                                                                                          "z":  4
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You don\u0027t have enough money.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "You shouldn\u0027t miss the experience.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+                                                   "darashia":  1,
+                                                   "darama":  1,
+                                                   "hill":  2,
+                                                   "femor":  2
+                                               },
+                         "keywordTopicPrices":  {
+                                                    "darashia":  30,
+                                                    "darama":  30,
+                                                    "hill":  50,
+                                                    "femor":  50
+                                                },
+                         "script":  "pino.js"
+                     }
+}

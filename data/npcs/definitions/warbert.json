@@ -1,0 +1,152 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Warbert",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  114,
+                                              "details":  {
+                                                              "head":  113,
+                                                              "body":  113,
+                                                              "legs":  113,
+                                                              "feet":  115
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  10,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "news":  "Look for the Hard Rock Tavern to learn the latest news.",
+                                          "how":  "That\u0027s classified information!",
+                                          "are":  "That\u0027s classified information!",
+                                          "you":  "That\u0027s classified information!",
+                                          "sell":  "Ask the merchants of the city. There are more then enough.",
+                                          "buy":  "Ask the merchants of the city. There are more then enough.",
+                                          "tibianus":  "Tibianus III is our beloved king!",
+                                          "king":  "Tibianus III is our beloved king!",
+                                          "leader":  "Tibianus III is our beloved king!",
+                                          "job":  "I am a protector of the people of Venore.",
+                                          "army":  "All guards are members of the army.",
+                                          "guard":  "Only the best of the best serve as silver guards.",
+                                          "battlegroups":  "I doubt you have the security clearance to ask that.",
+                                          "castle":  "The castle is in Thais, the crown of the kingdom.",
+                                          "dogs":  "They are our rolemodells.",
+                                          "of":  "Every guard dreams of becoming one of them one day.",
+                                          "war":  "They are our rolemodells.",
+                                          "knights":  "Every guard dreams of becoming one of them one day.",
+                                          "noodles":  "Every guard dreams of becoming one of them one day.",
+                                          "red":  "We of the red guard are the special forces and town guards.",
+                                          "secret":  "This information is confidential.",
+                                          "police":  "This information is confidential.",
+                                          "silver":  "Only the best of the best serve as silver guards.",
+                                          "city":  "This city, a member of the Thaian kingdom, is under the protection of the Thaian army.",
+                                          "venore":  "The harbour is to the north, the weapon market in the south, the general market to the west, and the bank to the east. You will find other shops and the Hard Rock Tavern in the center.",
+                                          "swampel":  "Those elves hide in the swamps and are trying to kill all humans in this area.",
+                                          "amazon":  "They are the best example for the results of the Carlin madness.",
+                                          "swamptroll":  "This hideous creatures are even more ugly than the normal trolls. They are treacherous and use several poisons.",
+                                          "swamp":  "The swamp is a dangerous place and full of monsters, not to mention all those swampelves living at shadowthorn, amazons, and swamptrolls.",
+                                          "monsters":  "The swamp is full of nasty snakes and there\u0027s a dragon breeding ground somewhere in the swamps.",
+                                          "fuck":  "Take this!",
+                                          "idiot":  "Take this!",
+                                          "asshole":  "Take this!",
+                                          "ass$":  "Take this!",
+                                          "fag$":  "Take this!",
+                                          "stupid":  "Take this!",
+                                          "tyrant":  "Take this!",
+                                          "shit":  "Take this!",
+                                          "lunatic":  "Take this!"
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "LONG LIVE THE KING!",
+                                                       "I am a protector of the people of Venore."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+                                             "fuck":  {
+                                                          "damage":  0,
+                                                          "effectSelf":  8,
+                                                          "effectTarget":  5
+                                                      },
+                                             "idiot":  {
+                                                           "damage":  0,
+                                                           "effectSelf":  8,
+                                                           "effectTarget":  5
+                                                       },
+                                             "asshole":  {
+                                                             "damage":  0,
+                                                             "effectSelf":  8,
+                                                             "effectTarget":  5
+                                                         },
+                                             "ass$":  {
+                                                          "damage":  0,
+                                                          "effectSelf":  8,
+                                                          "effectTarget":  5
+                                                      },
+                                             "fag$":  {
+                                                          "damage":  0,
+                                                          "effectSelf":  8,
+                                                          "effectTarget":  5
+                                                      },
+                                             "stupid":  {
+                                                            "damage":  0,
+                                                            "effectSelf":  8,
+                                                            "effectTarget":  5
+                                                        },
+                                             "tyrant":  {
+                                                            "damage":  0,
+                                                            "effectSelf":  8,
+                                                            "effectTarget":  5
+                                                        },
+                                             "shit":  {
+                                                          "damage":  0,
+                                                          "effectSelf":  8,
+                                                          "effectTarget":  5
+                                                      },
+                                             "lunatic":  {
+                                                             "damage":  0,
+                                                             "effectSelf":  8,
+                                                             "effectTarget":  5
+                                                         }
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "LONG LIVE THE KING!",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ]
+                     }
+}

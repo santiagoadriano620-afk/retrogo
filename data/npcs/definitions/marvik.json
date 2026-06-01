@@ -1,0 +1,635 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Marvik",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  113,
+                                              "details":  {
+                                                              "head":  0,
+                                                              "body":  101,
+                                                              "legs":  121,
+                                                              "feet":  95
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  4,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "I am the chief druid. I am responsible for all members.",
+                                          "name":  "I am Marvik. Probably you heard from me.",
+                                          "time":  "Eh, I haven\u0027t seen daylight for a long time. So, don\u0027t ask me, what time it is.",
+                                          "king":  "Kings come and go.",
+                                          "tibianus":  "Kings come and go.",
+                                          "quentin":  "He is a great healer.",
+                                          "lynda":  "Though she focuses not only on Crunor, she is an enlightened person.",
+                                          "harkath":  "I understand, he\u0027s a warrior of some kind.",
+                                          "army":  "I don\u0027t care about armies.",
+                                          "general":  "I don\u0027t care about armies.",
+                                          "ferumbras":  "A misguided follower of evil.",
+                                          "sam":  "An armourer.",
+                                          "gorn":  "A shopkeeper.",
+                                          "frodo":  "A little more seriousity would suite him well.",
+                                          "elane":  "Paladins are quite proud of their magic but lack the understandig of the powers they wield.",
+                                          "muriel":  "So much power and so little philosophy ... a dangerous combination indeed.",
+                                          "gregor":  "Warriors are the main recipients of our healing powers.",
+                                          "marvik":  "Marvik is my name, so what?",
+                                          "bozo":  "I don\u0027t like his kind of humour.",
+                                          "baxter":  "I don\u0027t know him.",
+                                          "oswald":  "He saws the seeds of evil through spreading rumours.",
+                                          "sherry":  "The McRonalds are true believers.",
+                                          "donald":  "The McRonalds are true believers.",
+                                          "mcronald":  "The McRonalds are true believers.",
+                                          "crunor":  "It was a small order of druids in the past. Their followers wanted the druids to become more involved with daily affairs of men.",
+                                          "lugri":  "A misguided soul who lost the path in the darkness.",
+                                          "excalibug":  "Even in my visions, I couldn\u0027t get any enlightenment about the whereabouts of this weapon of legend.",
+                                          "news":  "Why are you so concerned with news, if you haven\u0027t even understood the old things you know?",
+                                          "caress":  "It was a small order of druids in the past. Their followers wanted the druids to become more involved with daily affairs of men.",
+                                          "member":  "Our members use their magic power to protect their life and the life of other creatures.",
+                                          "magic":  "Everyone who joins the Druids has the opportunity to learn many magic spells.",
+                                          "power":  "Everyone who joins the Druids has the opportunity to learn many magic spells.",
+                                          "druid":  "I am a druid. Druids concentrate their magic on defence, healing, and nature.",
+                                          "sorcerer":  "Sorcerers are very aggressive. They use their power for fighting and killing.",
+                                          "vocation":  "Your vocation is your profession. There are four vocations in Tibia: Druids, paladins, knights, and sorcerers.",
+                                          "spellbook":  "In a spellbook, your spells are listed. There you will find the pronunciation of each spell. If you want to buy one, visit Muriel, the sorcerer.",
+                                          "spell":  "Sorry, I only sell spells to druids."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Nice to see you again, !",
+                                                       "Welcome to my cave, . How may I help you?",
+                                                       "I am the chief druid. I am responsible for all members."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Nice to see you again, %N!",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Welcome to my cave, %N. How may I help you?",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "2":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "rune",
+                                                                                       "spell"
+                                                                                   ],
+                                                                      "response":  "I sell attack rune spells, healing rune spells, support rune spells and summon rune spells. Which of these interests you most?",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "instant",
+                                                                                       "spell"
+                                                                                   ],
+                                                                      "response":  "I sell healing spells, supply spells, support spells and summon spells. Which of these interests you most?",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "level"
+                                                                                   ],
+                                                                      "response":  "For which magic level would you like to learn a spell?",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "bye"
+                                                                                   ],
+                                                                      "response":  "Farewell.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "0$"
+                                                                                   ],
+                                                                      "response":  "For level 0 I have \u0027Food\u0027, \u0027Find Person\u0027 and \u0027Light\u0027.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "1$"
+                                                                                   ],
+                                                                      "response":  "For level 1 I have \u0027Light Healing\u0027 and \u0027Light Magic Missile\u0027.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "2$"
+                                                                                   ],
+                                                                      "response":  "For level 2 I have \u0027Antidote\u0027, \u0027Poison Field\u0027 and \u0027Intense Healing\u0027.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "3$"
+                                                                                   ],
+                                                                      "response":  "For level 3 I have \u0027Great Light\u0027 and \u0027Fire Field\u0027 and \u0027Heavy Magic Missile\u0027.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "4$"
+                                                                                   ],
+                                                                      "response":  "For level 4 I have \u0027Magic Shield\u0027 and \u0027Intense Healing Rune\u0027.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "5$"
+                                                                                   ],
+                                                                      "response":  "For level 5 I have \u0027Antidote Rune\u0027, \u0027Energy Field\u0027 and \u0027Fireball\u0027.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "6$"
+                                                                                   ],
+                                                                      "response":  "For level 6 I have \u0027Destroy Field\u0027.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "8$"
+                                                                                   ],
+                                                                      "response":  "For level 8 I have \u0027Ultimate Healing\u0027.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "9$"
+                                                                                   ],
+                                                                      "response":  "For level 9 I have \u0027Great Fireball\u0027 and \u0027Firebomb\u0027.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "10$"
+                                                                                   ],
+                                                                      "response":  "For level 10 I have \u0027Convince Creature\u0027 and \u0027Creature Illusion\u0027.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "11$"
+                                                                                   ],
+                                                                      "response":  "For level 11 I have \u0027Ultimate Healing Rune\u0027, \u0027Poison Wall\u0027 and \u0027Chameleon\u0027.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "12$"
+                                                                                   ],
+                                                                      "response":  "For level 12 I have \u0027Explosion\u0027.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "13$"
+                                                                                   ],
+                                                                      "response":  "For level 13 I have \u0027Fire Wall\u0027.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "15$"
+                                                                                   ],
+                                                                      "response":  "For level 15 I have \u0027Invisible\u0027.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "16$"
+                                                                                   ],
+                                                                      "response":  "For level 16 I have \u0027Summon Creature\u0027.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "18$"
+                                                                                   ],
+                                                                      "response":  "For level 18 I have \u0027Energy Wall\u0027.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Sorry, I have only spells for level 0 to 6, 8 to 13, and 15 to 18.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "3":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You already know how to cast this spell.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You have to be magic level %A to learn this spell.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Sorry, you do not have enough gold.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "max":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here you are. Look in your spellbook for the pronunciation of this spell.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Maybe next time.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+                                                   "spell":  2,
+                                                   "food":  3,
+                                                   "find person":  3,
+                                                   "light":  3,
+                                                   "light healing":  3,
+                                                   "light magic missile":  3,
+                                                   "antidote":  3,
+                                                   "poison field":  3,
+                                                   "intense healing":  3,
+                                                   "great light":  3,
+                                                   "fire field":  3,
+                                                   "heavy magic missile":  3,
+                                                   "magic shield":  3,
+                                                   "intense healing rune":  3,
+                                                   "antidote rune":  3,
+                                                   "energy field":  3,
+                                                   "fireball":  3,
+                                                   "destroy field":  3,
+                                                   "ultimate healing":  3,
+                                                   "great fireball":  3,
+                                                   "firebomb":  3,
+                                                   "convince creature":  3,
+                                                   "creature illusion":  3,
+                                                   "ultimate healing rune":  3,
+                                                   "poison wall":  3,
+                                                   "chameleon":  3,
+                                                   "explosion":  3,
+                                                   "fire wall":  3,
+                                                   "invisible":  3,
+                                                   "summon creature":  3,
+                                                   "energy wall":  3
+                                               },
+                         "keywordTopicSpellIds":  {
+                                                      "food":  41,
+                                                      "find person":  30,
+                                                      "light":  5,
+                                                      "light healing":  2,
+                                                      "light magic missile":  43,
+                                                      "antidote":  12,
+                                                      "poison field":  62,
+                                                      "intense healing":  10,
+                                                      "great light":  19,
+                                                      "fire field":  59,
+                                                      "heavy magic missile":  46,
+                                                      "magic shield":  18,
+                                                      "intense healing rune":  10,
+                                                      "antidote rune":  12,
+                                                      "energy field":  56,
+                                                      "fireball":  44,
+                                                      "destroy field":  68,
+                                                      "ultimate healing":  11,
+                                                      "great fireball":  45,
+                                                      "firebomb":  58,
+                                                      "convince creature":  67,
+                                                      "creature illusion":  4,
+                                                      "ultimate healing rune":  49,
+                                                      "poison wall":  63,
+                                                      "chameleon":  65,
+                                                      "explosion":  1,
+                                                      "fire wall":  60,
+                                                      "invisible":  3,
+                                                      "summon creature":  32,
+                                                      "energy wall":  57
+                                                  },
+                         "keywordTopicMagicLevels":  {
+                                                         "food":  0,
+                                                         "find person":  0,
+                                                         "light":  0,
+                                                         "light healing":  0,
+                                                         "light magic missile":  0,
+                                                         "antidote":  0,
+                                                         "poison field":  0,
+                                                         "intense healing":  0,
+                                                         "great light":  0,
+                                                         "fire field":  0,
+                                                         "heavy magic missile":  0,
+                                                         "magic shield":  0,
+                                                         "intense healing rune":  0,
+                                                         "antidote rune":  0,
+                                                         "energy field":  0,
+                                                         "fireball":  0,
+                                                         "destroy field":  0,
+                                                         "ultimate healing":  0,
+                                                         "great fireball":  0,
+                                                         "firebomb":  0,
+                                                         "convince creature":  0,
+                                                         "creature illusion":  0,
+                                                         "ultimate healing rune":  0,
+                                                         "poison wall":  0,
+                                                         "chameleon":  0,
+                                                         "explosion":  0,
+                                                         "fire wall":  0,
+                                                         "invisible":  0,
+                                                         "summon creature":  0,
+                                                         "energy wall":  0
+                                                     },
+                         "script":  "marvik.js",
+                         "keywordTopicPrices":  {
+                                                    "food":  200,
+                                                    "find person":  200,
+                                                    "light":  200,
+                                                    "light healing":  200,
+                                                    "light magic missile":  200,
+                                                    "antidote":  400,
+                                                    "poison field":  400,
+                                                    "intense healing":  400,
+                                                    "great light":  600,
+                                                    "fire field":  600,
+                                                    "heavy magic missile":  600,
+                                                    "magic shield":  800,
+                                                    "intense healing rune":  800,
+                                                    "antidote rune":  1000,
+                                                    "energy field":  1000,
+                                                    "fireball":  1000,
+                                                    "destroy field":  1200,
+                                                    "ultimate healing":  1600,
+                                                    "great fireball":  1800,
+                                                    "firebomb":  1800,
+                                                    "convince creature":  2000,
+                                                    "creature illusion":  2000,
+                                                    "ultimate healing rune":  2200,
+                                                    "poison wall":  2200,
+                                                    "chameleon":  2200,
+                                                    "explosion":  2400,
+                                                    "fire wall":  2600,
+                                                    "invisible":  3000,
+                                                    "summon creature":  3200,
+                                                    "energy wall":  3600
+                                                }
+                     }
+}

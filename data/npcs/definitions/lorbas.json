@@ -1,0 +1,104 @@
+{
+    "creatureStatistics": {
+        "name": "Lorbas",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 57,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 2,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "job": "I am just a humble monk and responsible to maintain this little outpost that is leftover from our grand order.",
+            "monk": "I know nothing about that topic. If you would excuse me, I have things to attend.",
+            "order": "Our order was once the greatest and richest in the whole known world. Kings, traders and knights of various orders were our supporters and the gods smiled upon us ... or at least that's what we thought until the day of doom.",
+            "time": "I own no watch and only a small number of other worldly possessions.",
+            "day": "On the day of doom, our dream of building the greatest and most opulent cathedral was shattered.",
+            "doom": "On the day of doom, our dream of building the greatest and most opulent cathedral was shattered.",
+            "shattered": "The cathedral was already high and impressive, the order had started to move in although there was still much left to be done. Then the great earthquake came.",
+            "earthquake": "Some say it was just the unstable ground or volcanic activity, some even claim it was the work of demons, but we know it was the will of the gods to punish our vanity.",
+            "vanity": "In our vanity we thought that we could impress the gods with our money and show piety by building them a monument. ...",
+            "cathedral": "What was once planned as the most impressive cathedral of all times, lies now in ruins. ...",
+            "king": "The king is a worldly ruler, and we don't burden ourselves with worldly concerns anymore.",
+            "venore": "The gracious tradesmen from Venore send us provisions from time to time.",
+            "thais": "Thais is far and we have little contact with the kingdom's capital.",
+            "carlin": "We have no relations with that town.",
+            "edron": "I hope the knightly order there fares better than our own.",
+            "gods": "I am not worthy to speak about the gods.",
+            "tibia": "The world is in the hand of the gods.",
+            "kazordoon": "The dwarves are far from being humble. At least this ancient folk knows that there is nothing to gain in the cathedral's ruins and their treasure hunters stay away from there.",
+            "dwarves": "The dwarves are far from being humble. At least this ancient folk knows that there is nothing to gain in the cathedral's ruins and their treasure hunters stay away from there.",
+            "dwarfs": "The dwarves are far from being humble. At least this ancient folk knows that there is nothing to gain in the cathedral's ruins and their treasure hunters stay away from there.",
+            "ab'dendriel": "They will have to learn on their own.",
+            "elves": "They will have to learn on their own.",
+            "elfs": "They will have to learn on their own.",
+            "darama": "Another continent that has to be seen as a present of the gods to us.",
+            "darashia": "I will not judge those people.",
+            "ankrahmun": "I am not the right person to discuss this subject.",
+            "ferumbras": "He will discover where his path will lead him to. But no matter how ruthless he is, even he stays away from the ruins of the cathedral.",
+            "excalibug": "It is rumoured to be hidden somewhere beneath Edron.",
+            "assassin": "I know nothing about that topic. If you would excuse me, I have things to attend.",
+            "dark": "I know nothing about that topic. If you would excuse me, I have things to attend."
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "Be greeted, dear traveller.",
+                "I am just a humble monk and responsible to maintain this little outpost that is leftover from our grand order."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Be greeted, dear traveller.",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hiho$"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ]
+    }
+}

@@ -1,0 +1,17 @@
+{
+  "actionId": 3034,
+  "type": "moveEvent",
+  "events": ["onStepIn", "onStepOut"],
+  "effects": [
+    { "type": "transformItem", "from": 425, "to": 426, "decay": true },
+    { "type": "magicEffect", "pos": { "x": 32468, "y": 32119, "z": 14 }, "effectId": 15 },
+    { "type": "magicEffect", "pos": { "x": 32482, "y": 32170, "z": 14 }, "effectId": 15 },
+    { "type": "createItem", "itemId": 430, "count": 1, "pos": { "x": 32482, "y": 32170, "z": 14 } }
+  ],
+  "effectsAlt": [
+    { "type": "transformItem", "from": 426, "to": 425, "decay": true },
+    { "type": "magicEffect", "pos": { "x": 32468, "y": 32119, "z": 14 }, "effectId": 14 },
+    { "type": "magicEffect", "pos": { "x": 32482, "y": 32170, "z": 14 }, "effectId": 14 },
+    { "type": "removeItem", "pos": { "x": 32482, "y": 32170, "z": 14 }, "itemId": 430 }
+  ]
+}

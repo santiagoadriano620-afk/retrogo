@@ -1,0 +1,8 @@
+{
+  "actionId": 3006,
+  "type": "moveEvent",
+  "events": ["onStepIn"],
+  "effects": [
+    { "type": "relocate", "from": {"x": 0, "y": 0, "z": 0}, "to": {"x": 0, "y": 31911, "z": 12} }
+  ]
+}

@@ -1,0 +1,144 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Oswald",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  111,
+                                              "details":  {
+                                                              "head":  115,
+                                                              "body":  0,
+                                                              "legs":  67,
+                                                              "feet":  114
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  2,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "how":  "If there weren\u0027t so many people harassing me, life could be great.",
+                                          "are":  "If there weren\u0027t so many people harassing me, life could be great.",
+                                          "you":  "You are... uhm... welcome. Are you finished already?",
+                                          "sell":  "Hey, I am not a shopkeeper, I am an important man!",
+                                          "harassing":  "You need not ask me about that, you are perfect in that.",
+                                          "job":  "I am honored to be the assistant of the great, the illustrious, the magnificent Durin!",
+                                          "durin":  "Just between you and me, he can be quite a tyrant.",
+                                          "important":  "I am honored to be the assistant of the great, the illustrious, the magnificent Durin!",
+                                          "name":  "My name is Oswald, but let\u0027s proceed, I am a very busy man.",
+                                          "time":  "It is nearly tea time, so please hurry!",
+                                          "help":  "I inform higher officials of your need... sometimes.",
+                                          "monster":  "AHHHH!!! WHERE??? WHERE???",
+                                          "dungeon":  "If you want to see dungeons just don\u0027t pay your taxes.",
+                                          "sewer":  "Our sewer system is very modern, but crowded with rats and wannabe heroes.",
+                                          "assistant":  "I have a job of great responsibility, mostly I keep annoying persons away from my boss.",
+                                          "annoying":  "You better don\u0027t ask, you wouldn\u0027t like the answer.",
+                                          "thank":  "You are... uhm... welcome. Are you finished already?",
+                                          "god":  "I think the gods are too busy to care about us mortals, hmm... that makes me feel godlike, too.",
+                                          "king":  "Ah, yes, yes, hail to King Tibianus! Long live the king and so on...",
+                                          "sam":  "A simple shopkeeper with minor intelligence.",
+                                          "benjamin":  "What do you expect from ex-soldiers? He is nuts! Hacked on the head far too often.",
+                                          "gorn":  "He sells his scrolls far too expensive.",
+                                          "quentin":  "I heard he was a ladies\u0027 man in younger days. In our days he is rumoured to wear women clothes now and then.",
+                                          "bozo":  "Isn\u0027t he the artist formerly known as the prince?",
+                                          "rumour":  "You know a rumour? TELL ME! TELL ME! TELL ME!",
+                                          "gossip":  "You know a rumour? TELL ME! TELL ME! TELL ME!",
+                                          "news":  "You know a rumour? TELL ME! TELL ME! TELL ME!",
+                                          "mud":  "I heared Sam dated a female mud-wrestler once.",
+                                          "weapon":  "It\u0027s rumoured that Sam does not forge all weapons himself, but buys them from his cousin, who is married to a cyclops.",
+                                          "magic":  "I overheard a conversation of officials, that magic will be forbidden soon.",
+                                          "power":  "There are people who talk about a rebellion against King Tibianus.",
+                                          "rebellion":  "There are people who talk about a rebellion against King Tibianus.",
+                                          "spell":  "I was told sometimes that sorcerers are toasted by misfired spells of their own.",
+                                          "muriel":  "He is rumoured to summon kinky demons to... well you know.",
+                                          "elane":  "They say she killed over a dozen husbands already.",
+                                          "marvik":  "Who knows what this old man is up to in his hideout when no one is watching?",
+                                          "gregor":  "I was told he lost a body part or two in duels... if you know what I mean.",
+                                          "lugri":  "Some say he is Ferumbras in disguise.",
+                                          "excalibug":  "It\u0027s beyond all doubt that certain sinister elements in our city have certain knowledge about this myth.",
+                                          "chester":  "I never found any rumour concerning him, isn\u0027t that odd?",
+                                          "ardua":  "She\u0027s a bitch, trust me. She was the girlfriend of the evil Partos some time ago.",
+                                          "partos":  "What a shame. He claimed to be the king of thiefs and was caught stealing some fruit.",
+                                          "gamel":  "This man lives in the darkness like a rat and is also as handsome as one of them. He surely is up to no good and often consorts with sinister strangers.",
+                                          "sinister":  "Just last week a one eyed man, who had a room at Frodo\u0027s, met him in the middle of the night.",
+                                          "strangers":  "Just last week a one eyed man, who had a room at Frodo\u0027s, met him in the middle of the night.",
+                                          "goshnar":  "They say he isn\u0027t truly dead. He was... or is a necromant after all.",
+                                          "necromant":  "You are not the first one to ask about that. Am I the only one that preferes wine to such disgusting stuff?",
+                                          "nectar":  "You are not the first one to ask about that. Am I the only one that preferes wine to such disgusting stuff?"
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Oh, hello . What is it?",
+                                                       "I am honored to be the assistant of the great, the illustrious, the magnificent Durin!"
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  "Oh, hello %N. What is it?",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "3":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Fascinating! Absolutely fascinating!",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+                                                   "rumour":  3,
+                                                   "gossip":  3,
+                                                   "news":  3
+                                               },
+                         "script":  "oswald.js"
+                     }
+}

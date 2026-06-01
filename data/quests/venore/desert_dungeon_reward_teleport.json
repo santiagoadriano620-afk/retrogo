@@ -1,0 +1,12 @@
+{
+  "actionId": 3070,
+  "type": "portal",
+  "events": ["onStepIn"],
+  "conditions": [
+    {"type": "flagActive", "key": "desert_dungeon_3070"}
+  ],
+  "effects": [
+    {"type": "relocate", "to": {"x": 32671, "y": 32069, "z": 8}},
+    {"type": "magicEffect", "effectId": 10}
+  ]
+}

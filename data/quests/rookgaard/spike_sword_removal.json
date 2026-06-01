@@ -1,0 +1,23 @@
+{
+  "actionId": 3012,
+  "type": "moveEvent",
+  "events": ["onStepIn"],
+  "tileItem": false,
+  "conditions": [
+    {"type": "isPlayer"},
+    {"type": "itemInPosition", "pos": {"x": 32104, "y": 32082, "z": 7}, "itemId": 4612},
+    {"type": "itemInPosition", "pos": {"x": 32102, "y": 32084, "z": 7}, "itemId": 1492}
+  ],
+  "effects": [
+    {"type": "removeItem", "pos": {"x": 32101, "y": 32085, "z": 7}, "itemId": 2383},
+    {"type": "magicEffect", "pos": {"x": 32101, "y": 32085, "z": 7}, "effectId": 14},
+    {"type": "transformItemInPosition", "pos": {"x": 32100, "y": 32084, "z": 7}, "from": 1492, "to": 1494},
+    {"type": "transformItemInPosition", "pos": {"x": 32101, "y": 32084, "z": 7}, "from": 1492, "to": 1494},
+    {"type": "transformItemInPosition", "pos": {"x": 32102, "y": 32084, "z": 7}, "from": 1492, "to": 1494},
+    {"type": "transformItemInPosition", "pos": {"x": 32100, "y": 32085, "z": 7}, "from": 1492, "to": 1494},
+    {"type": "transformItemInPosition", "pos": {"x": 32102, "y": 32085, "z": 7}, "from": 1492, "to": 1494},
+    {"type": "transformItemInPosition", "pos": {"x": 32100, "y": 32086, "z": 7}, "from": 1492, "to": 1494},
+    {"type": "transformItemInPosition", "pos": {"x": 32101, "y": 32086, "z": 7}, "from": 1492, "to": 1494},
+    {"type": "transformItemInPosition", "pos": {"x": 32102, "y": 32086, "z": 7}, "from": 1492, "to": 1494}
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "creatureStatistics": {
+    "name": "Gamemaster",
+    "health": 8200,
+    "maxHealth": 8200,
+    "mana": 0,
+    "maxMana": 0,
+    "speed": 498,
+    "attack": 299,
+    "attackSpeed": 2000,
+    "defense": 199,
+    "outfit": {
+      "id": 75
+    },
+    "armor": 199
+  },
+  "experience": 0,
+  "corpse": 3058,
+  "fluidType": 1,
+  "behaviour": {
+    "type": 2,
+    "fleeHealth": 20,
+    "openDoors": true,
+    "senseInvisible": true
+  },
+  "defenseSpells": [
+    {
+      "name": "healing",
+      "interval": 1000,
+      "chance": 0.3,
+      "min": 4500,
+      "max": 7500,
+      "areaEffect": "blueshimmer"
+    }
+  ],
+  "attacks": [
+    {
+      "name": "melee",
+      "interval": 2000,
+      "chance": 1,
+      "min": 0,
+      "max": 299
+    },
+    {
+      "name": "energy",
+      "interval": 2000,
+      "chance": 0.2,
+      "min": 1750,
+      "max": 2250,
+      "length": 1,
+      "spread": 0,
+      "areaEffect": "energyarea"
+    },
+    {
+      "name": "manadrain",
+      "interval": 1000,
+      "chance": 0.2,
+      "min": 969,
+      "max": 1029,
+      "range": 7
+    },
+    {
+      "name": "lifedrain",
+      "interval": 1000,
+      "chance": 0.3,
+      "min": 1850,
+      "max": 2150,
+      "range": 1
+    }
+  ],
+  "immunities": {
+    "fire": true,
+    "energy": true,
+    "earth": true,
+    "physical": true,
+    "outfit": true,
+    "lifedrain": true,
+    "invisible": true
+  },
+  "elements": {
+    "earth": 20,
+    "holy": 20,
+    "ice": -10,
+    "death": -10
+  },
+  "sayings": {
+    "texts": [
+      "Watch the rules!",
+      "Hey, you! I've seen that!",
+      "Are you AFK or what?",
+      "Does your mother know what you are doing?"
+    ],
+    "slowness": 5,
+    "chance": 0.1
+  },
+  "flags": {
+    "attackable": true,
+    "summonable": false,
+    "illusionable": false,
+    "pushable": false,
+    "convinceable": false,
+    "canPushItems": true,
+    "canPushCreatures": true,
+    "targetDistance": 1,
+    "runonhealth": 20
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "actionId": 2078,
+  "type": "teleport",
+  "itemIds": [],
+  "conditions": [],
+  "effects": [
+    { "type": "relocate", "to": { "x": 32354, "y": 32131, "z": 9 } }
+  ],
+  "effectsAlt": []
+}

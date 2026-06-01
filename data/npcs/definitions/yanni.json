@@ -1,0 +1,340 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Yanni",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  114,
+                                              "details":  {
+                                                              "head":  22,
+                                                              "body":  22,
+                                                              "legs":  22,
+                                                              "feet":  57
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  2,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "I work for Abran Ironeye in the armor department.",
+                                          "shop":  "This shop belongs to Abran Ironeye.",
+                                          "market":  "This shop belongs to Abran Ironeye.",
+                                          "ironhouse":  "This shop belongs to Abran Ironeye.",
+                                          "name":  "My name is Yanni.",
+                                          "time":  "It is .",
+                                          "Abran":  "A very hard boss, but if you ever talk to him, tell him I said he\u0027s a great man.",
+                                          "Ironeye":  "A very hard boss, but if you ever talk to him, tell him I said he\u0027s a great man.",
+                                          "excalibug":  "I don\u0027t believe in the excalibug myth.",
+                                          "news":  "Don\u0027t buy from Xed. He is a thief. He steals my business all the time!",
+                                          "help":  "If you\u0027d like to help, then buy something, because I\u0027m paid on a commisioned basis.",
+                                          "commision":  "Commison is when you get paid only when you sell something. If I don\u0027t make some sales soon, my kids will get hungry!",
+                                          "monster":  "Monsters? Where! I\u0027m horrified of monsters.",
+                                          "thanks":  "You\u0027re welcome.",
+                                          "thank":  "You\u0027re welcome.",
+                                          "you":  "I sell armor, legs, helmets, and shields.",
+                                          "offer":  "I sell armor, legs, helmets, and shields.",
+                                          "do":  "I sell armor, legs, helmets, and shields.",
+                                          "sell":  "I sell armor, legs, helmets, and shields.",
+                                          "have":  "I sell armor, legs, helmets, and shields.",
+                                          "helmet":  "I am selling chain helmets. Do you want to buy any?",
+                                          "armor":  "I am selling chain and brass armor. What do you need?",
+                                          "shield":  "I am selling wooden shields and steel shields. What do you want?",
+                                          "trousers":  "I am selling chain legs. Do you want to buy any?",
+                                          "legs":  "I am selling chain legs. Do you want to buy any?"
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Salutations, . Welcome to the Ironhouse, warehouse of Abran Ironeye.",
+                                                       "I work for Abran Ironeye in the armor department."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Salutations, %N. Welcome to the Ironhouse, warehouse of Abran Ironeye.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Thank you. Here it is.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Sorry, you do not have enough gold.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Maybe you will buy it another time.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "2":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Ok. Here is your money.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "createMoney"
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Sorry, you do not have one.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Sorry, you do not have so much.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Maybe next time.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Chain Armor",
+                                                         "price":  200,
+                                                         "id":  2464,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Brass Armor",
+                                                         "price":  450,
+                                                         "id":  2465,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Chain Helmet",
+                                                         "price":  52,
+                                                         "id":  2458,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Steel Shield",
+                                                         "price":  240,
+                                                         "id":  2509,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Wooden Shield",
+                                                         "price":  15,
+                                                         "id":  2512,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Chain Legs",
+                                                         "price":  80,
+                                                         "id":  2648,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Leather Armor",
+                                                         "price":  12,
+                                                         "id":  2467,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Chain Armor",
+                                                         "price":  70,
+                                                         "id":  2464,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Brass Armor",
+                                                         "price":  150,
+                                                         "id":  2465,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Plate Armor",
+                                                         "price":  400,
+                                                         "id":  2463,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Chain Legs",
+                                                         "price":  25,
+                                                         "id":  2648,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Leather Helmet",
+                                                         "price":  4,
+                                                         "id":  2461,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Chain Helmet",
+                                                         "price":  17,
+                                                         "id":  2458,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Steel Helmet",
+                                                         "price":  190,
+                                                         "id":  2457,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Wooden Shield",
+                                                         "price":  5,
+                                                         "id":  2512,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Battle Shield",
+                                                         "price":  95,
+                                                         "id":  2513,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Steel Shield",
+                                                         "price":  80,
+                                                         "id":  2509,
+                                                         "type":  "buy"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "yanni.js"
+                     }
+}

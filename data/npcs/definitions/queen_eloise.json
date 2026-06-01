@@ -1,0 +1,250 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Queen Eloise",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  120,
+                                              "details":  {
+                                                              "head":  96,
+                                                              "body":  94,
+                                                              "legs":  79,
+                                                              "feet":  115
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  2,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "uniform":  "The uniforms of our guards and soldiers are of unparraleled quality of course.",
+                                          "job":  "I am Queen Eloise. It is my duty to reign over this marvellous city and the lands of the north.",
+                                          "justice":  "We women try to bring justice and wisdom to all, even to males.",
+                                          "name":  "I am Queen Eloise. For you it\u0027s \u0027My Queen\u0027 or \u0027Your Majesty\u0027, of course.",
+                                          "news":  "I don\u0027t care about gossip like a simpleminded male would do.",
+                                          "tibia":  "Soon the whole land will be ruled by women at last!",
+                                          "land":  "Soon the whole land will be ruled by women at last!",
+                                          "how":  "Thank you, I\u0027m fine.",
+                                          "are":  "Thank you, I\u0027m fine.",
+                                          "you":  "Thank you, I\u0027m fine.",
+                                          "castle":  "It\u0027s my humble domain.",
+                                          "god":  "We honor the gods of good in our fair city, especially Crunor, of course.",
+                                          "citizen":  "All citizens of Carlin are my subjects. I see them more as my childs, though, epecially the male population.",
+                                          "noodles":  "This beast scared my cat away on my last diplomatic mission in this filthy town.",
+                                          "ferumbras":  "He is the scourge of the whole continent!",
+                                          "treasure":  "The royal treasure is hidden beyond the grasps of any thieves by magical means.",
+                                          "monster":  "Go and hunt them! For queen and country!",
+                                          "help":  "Visit the church or the townguards for help.",
+                                          "quest":  "I will call for heroes as soon as the need arises again.",
+                                          "mission":  "I will call for heroes as soon as the need arises again.",
+                                          "gold":  "Our city is rich and prospering.",
+                                          "money":  "Our city is rich and prospering.",
+                                          "tax":  "The taxes in Carlin are not high, more a symbol than a sacrifice.",
+                                          "sewer":  "I don\u0027t want to talk about \u0027sewers\u0027.",
+                                          "dungeon":  "Dungeons are places where males crawl around and look for trouble.",
+                                          "equipment":  "Feel free to visit our town\u0027s magnificent shops.",
+                                          "food":  "Feel free to visit our town\u0027s magnificent shops.",
+                                          "time":  "Don\u0027t worry about time in the presence of your Queen.",
+                                          "hero":  "We need the assistance of heroes now and then. Even males prove useful now and then.",
+                                          "adventurer":  "We need the assistance of heroes now and then. Even males prove useful now and then.",
+                                          "collector":  "The taxes in Carlin are not high, more a symbol than a sacrifice.",
+                                          "queen":  "I am the Queen, the only rightful ruler on the continent!",
+                                          "army":  "Ask one of the soldiers about that.",
+                                          "enemy":  "Our enemies are numerous. We have to fight vile monsters and have to watch this silly king in the south carefully.",
+                                          "enemies":  "Our enemies are numerous. We have to fight vile monsters and have to watch this silly king in the south carefully.",
+                                          "thais":  "They dare to reject my reign over them!",
+                                          "city":  "Isn\u0027t our city marvellous? Have you noticed the lovely gardens on the roofs?",
+                                          "south":  "They dare to reject my reign over them!",
+                                          "carlin":  "Isn\u0027t our city marvellous? Have you noticed the lovely gardens on the roofs?",
+                                          "shop":  "My subjects maintain many fine shops. Go and have a look at their wares.",
+                                          "merchant":  "Ask around about them.",
+                                          "craftsmen":  "Ask around about them.",
+                                          "guild":  "The four major guilds are the Knights, the Paladins, the Druids, and the Sorcerers.",
+                                          "minotaur":  "They havn\u0027t troubled our city lately. I guess, they fear the wrath of our druids.",
+                                          "paladin":  "The paladins are great hunters.",
+                                          "legola":  "The paladins are great hunters.",
+                                          "elane":  "It\u0027s a shame that the High Paladin does not reside in Carlin.",
+                                          "knight":  "The knights of Carlin are the bravest.",
+                                          "trisha":  "The knights of Carlin are the bravest.",
+                                          "sorceror":  "The sorcerers have a small isle for their guild. So if they blow something up it does not burn the whole city to ruins.",
+                                          "lea$":  "The sorcerers have a small isle for their guild. So if they blow something up it does not burn the whole city to ruins.",
+                                          "druid":  "The druids of Carlin are our protectors and advisors. Their powers provide us with wealth and food.",
+                                          "padreia":  "The druids of Carlin are our protectors and advisors. Their powers provide us with wealth and food.",
+                                          "good":  "Carlin is a center of the forces of good, of course.",
+                                          "evil":  "The forces of evil have a firm grip on this puny city to the south.",
+                                          "order":  "The order, Crunor gives the world, is essential for survival.",
+                                          "chaos":  "Chaos is common in the southern regions, where they allow a man to reign over a realm.",
+                                          "excalibug":  "A mans tale ... that means \u0027nonsense\u0027, of course.",
+                                          "reward":  "If you want a reward, go and bring me something this silly King Tibianus wants dearly!",
+                                          "tbi":  "A dusgusting organisation, which could be only created by men.",
+                                          "promot":  "Do you want to be promoted in your vocation for 20000 gold?",
+                                          "eremo":  "It is said that he lives on a small island near Edron. Maybe the people there know more about him."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "I greet thee, my loyal subject.",
+                                                       "I am Queen Eloise. It is my duty to reign over this marvellous city and the lands of the north."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello",
+                                                                       "queen"
+                                                                   ],
+                                                      "response":  "I greet thee, my loyal subject.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hail",
+                                                                       "queen"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "salutations",
+                                                                       "queen"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "4":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You are already promoted.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You need to be at least level 20 in order to be promoted.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "level",
+                                                                                             "max":  20
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You do not have enough money.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "max":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Congratulations! You are now promoted. Visit the sage Eremo for new spells.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "premium"
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You need a premium account in order to promote.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Ok, then not.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+                                                   "promot":  4
+                                               },
+                         "keywordTopicPrices":  {
+                                                    "promot":  20000
+                                                },
+                         "script":  "queen_eloise.js"
+                     }
+}

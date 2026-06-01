@@ -1,0 +1,294 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Odemara",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  120,
+                                              "details":  {
+                                                              "head":  22,
+                                                              "body":  99,
+                                                              "legs":  5,
+                                                              "feet":  76
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  1,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "I am responsible for buying and selling gems, pearls, and the like.",
+                                          "name":  "I am Odemara Taleris, it\u0027s a pleasure to meet you.",
+                                          "time":  "It\u0027s .",
+                                          "offer":  "We offer a great assortment of gems and pearls.",
+                                          "goods":  "We offer a great assortment of gems and pearls.",
+                                          "do":  "We offer a great assortment of gems and pearls.",
+                                          "you":  "We offer a great assortment of gems and pearls.",
+                                          "sell":  "We offer a great assortment of gems and pearls.",
+                                          "have":  "We offer a great assortment of gems and pearls.",
+                                          "gem":  "We trade small diamonds, sapphires, rubies, emeralds, and amethysts.",
+                                          "pearl":  "We trade white and black pearls."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Be greeted, dear . Have a look at our offers.",
+                                                       "I am responsible for buying and selling gems, pearls, and the like."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Be greeted, dear %N. Have a look at our offers.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here you are.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "I am sorry, but you don\u0027t have enough money.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Too bad, perhaps we can trade on the next occasion you visit us.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "2":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Excellent. Here is your money.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "createMoney"
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "I am sorry, but you do not have one.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Sorry, you do not have so many.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Too bad, perhaps we can trade on the next occasion you visit us.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "White Pearl",
+                                                         "price":  320,
+                                                         "id":  2143,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Black Pearl",
+                                                         "price":  560,
+                                                         "id":  2144,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Small Diamond",
+                                                         "price":  600,
+                                                         "id":  2145,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Small Sapphire",
+                                                         "price":  500,
+                                                         "id":  2146,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Small Ruby",
+                                                         "price":  500,
+                                                         "id":  2147,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Small Emerald",
+                                                         "price":  500,
+                                                         "id":  2149,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Small Amethyst",
+                                                         "price":  400,
+                                                         "id":  2150,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "White Pearl",
+                                                         "price":  160,
+                                                         "id":  2143,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Black Pearl",
+                                                         "price":  280,
+                                                         "id":  2144,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Small Diamond",
+                                                         "price":  300,
+                                                         "id":  2145,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Small Sapphire",
+                                                         "price":  250,
+                                                         "id":  2146,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Small Ruby",
+                                                         "price":  250,
+                                                         "id":  2147,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Small Emerald",
+                                                         "price":  250,
+                                                         "id":  2149,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Small Amethyst",
+                                                         "price":  200,
+                                                         "id":  2150,
+                                                         "type":  "buy"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "odemara.js"
+                     }
+}

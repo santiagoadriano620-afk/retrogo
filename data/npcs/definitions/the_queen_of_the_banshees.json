@@ -1,0 +1,91 @@
+{
+    "creatureStatistics": {
+        "name": "The Queen of the Banshees",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 78,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 6,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "name": "It hurts me to even think about my mortal past. Its long lost and forgotten. So don't ask me about it!",
+            "job": "It is my curse to be the eternal guardian of this ancient place.",
+            "place": "It served as a temple, a source of power and ... as a sender for an ancient race in time long gone by and forgotten.",
+            "race": "The race that built this edifice came to this place from the stars. They ran from an enemy even more horrible than even themselves. But they carried the seed of their own destruction in them.",
+            "seed": "This ancient race was annihilated by its own doings, that's all I know. Aeons have passed since then, but the sheer presence of this complex is still defiling and desecrating this area.",
+            "destruction": "This ancient race was annihilated by its own doings, that's all I know. Aeons have passed since then, but the sheer presence of this complex is still defiling and desecrating this area.",
+            "complex": "Its constructors were too strange for you or even me to understand. We cannot know what this ... thing they have built was supposed to be good for. All I can feel is a constant twisting and binding of souls, though that is probably only a side-effect.",
+            "ghostlands": "The place you know as the Ghostlands had a different name once ... and many names thereafter. Too many for me to remember them all.",
+            "banshee": "They are my maidens. They give me comfort in my eternal vigil over the last seal.",
+            "seal": "I am the guardian of the SEVENTH and final seal. The seal to open the last door before ... but perhaps it is better you see it with your own eyes.",
+            "guardian": "I am the guardian of the SEVENTH and final seal. The seal to open the last door before ... but perhaps it is better you see it with your own eyes.",
+            "seventh": "If you have passed the first six seals and entered the blue fires that lead to the chamber of the seal you might receive my kiss ... It will open the last seal. Do you think you are ready?",
+            "last": "If you have passed the first six seals and entered the blue fires that lead to the chamber of the seal you might receive my kiss ... It will open the last seal. Do you think you are ready?",
+            "kiss": "To receive my kiss you have to pass all other seals first.",
+            "yes": "You have not found your true path yet. Return to meh when you are better prepared.",
+            "no": "Then try to be better prepared next time we meet.",
+            "spectral": "Your wish for a spectral dress is silly. Allthough I will grant you the permission to take one. My maidens left one in a box in a room, directly south of here.",
+            "dress": "Your wish for a spectral dress is silly. Allthough I will grant you the permission to take one. My maidens left one in a box in a room, directly south of here."
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "Be greeted, dear visitor. Come and stay ... a while.",
+                "It is my curse to be the eternal guardian of this ancient place."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {
+            "yes": {
+                "damage": 0,
+                "effectSelf": null,
+                "effectTarget": 14
+            }
+        },
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Be greeted, dear visitor. Come and stay ... a while.",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ]
+    }
+}

@@ -1,0 +1,558 @@
+{
+    "creatureStatistics": {
+        "name": "Rahkem",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 130,
+            "details": {
+                "head": 0,
+                "body": 77,
+                "legs": 87,
+                "feet": 116
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 2,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "job": "I am a humble preacher of the true revelation in the temple of the mourned flesh. I heal and teach magic spells to those who are spiritual enough.",
+            "name": "I am the mourned Rahkem.",
+            "time": "Time is a tool in the hands of the false gods, but it also serves to free us from our mortal prisons.",
+            "temple": "Here we mourn our mortal existence. Our flesh is our weakness and our curse, the bait for all the trials and tribulations the false gods let loose on the world.",
+            "pharaoh": "The pharaoh, praised may he be, was the first to learn the truth about mortality, ascension and the false goods.",
+            "ashmunrah": "The foolish old pharaoh withheld knowledge and power from his son, knowing that he would surpass him in every aspect. But in his infinite mercy his son granted him the chance to ascend.",
+            "scarab": "The eternal burrowers are the keepers of all the secrets their kind has unearthed in countless aeons.",
+            "uman": "The beings Uman and Zathroth merged forever in the blaze that followed when the last of the true gods perished.",
+            "zathroth": "The beings Uman and Zathroth merged forever in the blaze that followed when the last of the true gods perished.",
+            "banor": "Banor was the most devout minion of the false gods. Their lickspittle lapdog. Seeing they needed additional strength they granted him some of their powers, and he became a lesser false god himself.",
+            "tibia": "It is likely that our world is a part of one of the dead true gods or one of his manifestations that somehow escaped destruction. We must assume this is all that is left of the original universe.",
+            "carlin": "The cities that bow to the false gods will be afflicted with plague and fear until they embrace the wisdom of the pharaoh.",
+            "thais": "The cities that bow to the false gods will be afflicted with plague and fear until they embrace the wisdom of the pharaoh.",
+            "edron": "The cities that bow to the false gods will be afflicted with plague and fear until they embrace the wisdom of the pharaoh.",
+            "venore": "The cities that bow to the false gods will be afflicted with plague and fear until they embrace the wisdom of the pharaoh.",
+            "kazordoon": "The dwarves suffered, but they have drawn wrong conclusions. If they do not listen to the revelations of our immortal pharaoh, pain and grief will prove to be better teachers this time.",
+            "dwarves": "The dwarves suffered, but they have drawn wrong conclusions. If they do not listen to the revelations of our immortal pharaoh, pain and grief will prove to be better teachers this time.",
+            "dwarfs": "The dwarves suffered, but they have drawn wrong conclusions. If they do not listen to the revelations of our immortal pharaoh, pain and grief will prove to be better teachers this time.",
+            "ab'dendriel": "The foolish elves hold on to life too hard to see the way to salvation. However, if we teach them to remove the shackles of flesh through pain and suffering, they might begin to see their mistake.",
+            "elves": "The foolish elves hold on to life too hard to see the way to salvation. However, if we teach them to remove the shackles of flesh through pain and suffering, they might begin to see their mistake.",
+            "elfes": "The foolish elves hold on to life too hard to see the way to salvation. However, if we teach them to remove the shackles of flesh through pain and suffering, they might begin to see their mistake.",
+            "darama": "The continent was named after Daraman, the prophet during the reign of Ashmunrah. The new pharaoh acknowledged the power that is in names and did not change the name when he acceded to the throne.",
+            "darashia": "The followers of Daraman suffer the curse of the flesh. They can't reach ascension because they never really take the all-important initial step - they only pretend to do so.",
+            "initial": "In his preachings Daraman taught that you can conquer the tempations of the flesh through denial. However, the truth is that this constant struggle between temptation and the will blurs your vision, so no follower of Daraman can focus on ascension.",
+            "step": "In his preachings Daraman taught that you can conquer the tempations of the flesh through denial. However, the truth is that this constant struggle between temptation and the will blurs your vision, so no follower of Daraman can focus on ascension.",
+            "daraman": "We call Daraman the one-eyed prophet, for he clearly saw that ascension is possible, but he was blind to the fact that mortality itself and not mere temptation is the first obstacle that must be overcome.",
+            "Ankrahmun": "This city is a marvel of old. Our forefathers built it here on the ruins of an even older civilisation.",
+            "mortality": "Mortality is our prison. It makes us vulnerable for the temptations of the false gods.",
+            "false": "The so-called gods are just the weakest of their kind. They are pitiful remnants from the terrible godswar between the elder gods which tore the universe appart.",
+            "gods": "The so-called gods are just the weakest of their kind. They are pitiful remnants from the terrible godswar between the elder gods which tore the universe appart.",
+            "godswar": "In ancient times the elder gods waged war upon each other. Those that call themselves gods today were the lowest of their minions. When the last of the true gods died the great suffering begun.",
+            "great": "The universe is dying. Death placed his mark on everything. Only the pharaoh can grant us freedom from mortality and open up the path of true ascension to us.",
+            "suffering": "The universe is dying. Death placed his mark on everything. Only the pharaoh can grant us freedom from mortality and open up the path of true ascension to us.",
+            "ascension": "The sentient beings are all that is left of the essence of the elder gods. We can awake the dormant powers that slumber in us all. But ascension is a thorny path to follow.",
+            "thorny": "Our mortal shells make us vulnerable to the temptations of the false gods. Only by leaving our mortality behind, we can study the true path of ascension. The balance of Akh'rah Uthun has to be changed to our favour.",
+            "path": "Our mortal shells make us vulnerable to the temptations of the false gods. Only by leaving our mortality behind, we can study the true path of ascension. The balance of Akh'rah Uthun has to be changed to our favour.",
+            "Akh'rah": "The Akh'rah Uthun is the unity of the Akh, our body, the Rah, our soul and the Uthun, our memories and experiences.",
+            "Uthun": "The Akh'rah Uthun is the unity of the Akh, our body, the Rah, our soul and the Uthun, our memories and experiences.",
+            "balance": "As long as it is mortal the body breeds temptations and distractions. Its needs make it easy for the false gods to lead us from the path of enlightenment and to ultimately steal our souls.",
+            "steal": "When a mortal is bound to one of the false gods by his faith this god will harvest his Rah on his death and strip away his Uthun, casting it into the void.",
+            "souls": "When a mortal is bound to one of the false gods by his faith this god will harvest his Rah on his death and strip away his Uthun, casting it into the void.",
+            "Akh": "Your flesh is traitorous and weak. The pharaoh grants the power to conquer death to those who serve him well. Once they have entered this state of being neither dead nor alive they are ready to enter the path of ascension.",
+            "undead": "Undeath is freedom from mortal needs. It is the first obvious step to divinity.",
+            "undeath": "Undeath is freedom from mortal needs. It is the first obvious step to divinity.",
+            "Rah": "The Rah is the ultimate treasure. The false gods need the stolen Rah to sustain their usurped powers.",
+            "uthun": "The memory is what makes our personality. It is what defines us ... and its utterly worthless to the gods. For this reason destroy it to harvest our Rah.",
+            "mourn": "We mortals are all to be mourned for our prison of flesh. Only through loyal servitude to the pharaoh, praised be his existence, may we escape this prison and find our true destiny.",
+            "arena": "The arena is a fitting place to test your mortal shell and to feed the power of the Rah and the Uthun.",
+            "palace": "The residence of our immortal king is a temple in its own right because it is the home of a true god.",
+            "heal$": "You aren't looking that bad. Sorry, I can't help you. But if you are looking for additional protection you should go on the pilgrimage of ashes.",
+            "blessing": "There are five different blessings available in five sacred places. These blessings are: the spiritual shielding, the spark of the phoenix, the embrace of tibia, the fire of the suns and the wisdom of solitude.",
+            "pilgrimage": "Whenever you receive a lethal wound your lifeforce is damaged. With every single of the five blessings you have this damage will be reduced.",
+            "ashes": "Whenever you receive a lethal wound your lifeforce is damaged. With every single of the five blessings you have this damage will be reduced.",
+            "spiritual": "You can receive the spiritual shielding in the whiteflower temple south of Thais.",
+            "shielding": "You can receive the spiritual shielding in the whiteflower temple south of Thais.",
+            "sacred": "Just ask in which of the five blessings you are interested in.",
+            "places": "Just ask in which of the five blessings you are interested in.",
+            "spark": "The spark of the phoenix is given by the dwarven priests of earth and fire in Kazordoon.",
+            "phoenix": "The spark of the phoenix is given by the dwarven priests of earth and fire in Kazordoon.",
+            "embrace": "The druids north of Carlin can provide you with the embrace of tibia.",
+            "fire": "Ask for the blessing of the two suns in the suntower near Ab'Dendriel .",
+            "suns": "Ask for the blessing of the two suns in the suntower near Ab'Dendriel .",
+            "wisdom": "Talk to the hermit Eremo on the isle of Cormaya about this blessing.",
+            "solitude": "Talk to the hermit Eremo on the isle of Cormaya about this blessing.",
+            "spell": "Sorry, I only sell spells to druids."
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "Be mourned pilgrim in flesh.",
+                "I am a humble preacher of the true revelation in the temple of the mourned flesh. I heal and teach magic spells to those who are spiritual enough."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {
+            "heal$": {
+                "damage": 40,
+                "effectSelf": null,
+                "effectTarget": 13
+            }
+        },
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Be mourned pilgrim in flesh.",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": "Be mourned pilgrim in flesh.",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "be",
+                    "mourned",
+                    "pilgrim",
+                    "flesh"
+                ],
+                "response": "Be mourned pilgrim in flesh.",
+                "idle": false
+            }
+        ],
+        "topics": {
+            "2": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "rune",
+                            "spell"
+                        ],
+                        "response": "I sell attack rune spells, healing rune spells, support rune spells and summon rune spells. Which of these interests you most?",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "instant",
+                            "spell"
+                        ],
+                        "response": "I sell healing spells, supply spells, support spells and summon spells. Which of these interests you most?",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "level"
+                        ],
+                        "response": "For which level would you like to learn a spell?",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "bye"
+                        ],
+                        "response": "May enlightenment be your path.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true
+                    },
+                    {
+                        "keywords": [
+                            "0$"
+                        ],
+                        "response": "For level 0 I have 'Food', 'Find Person' and 'Light'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "1$"
+                        ],
+                        "response": "For level 1 I have 'Light Healing' and 'Light Magic Missile'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "2$"
+                        ],
+                        "response": "For level 2 I have 'Antidote', 'Poison Field' and 'Intense Healing'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "3$"
+                        ],
+                        "response": "For level 3 I have 'Great Light', 'Heavy Magic Missile' and 'Fire Field'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "4$"
+                        ],
+                        "response": "For level 4 I have 'Magic Shield' and 'Intense Healing Rune'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "5$"
+                        ],
+                        "response": "For level 5 I have 'Antidote Rune', 'Energy Field' and 'Fireball'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "6$"
+                        ],
+                        "response": "For level 6 I have 'Destroy Field'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "8$"
+                        ],
+                        "response": "For level 8 I have 'Ultimate Healing'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "9$"
+                        ],
+                        "response": "For level 9 I have 'Great Fireball' and 'Firebomb'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "10$"
+                        ],
+                        "response": "For level 10 I have 'Convince Creature' and 'Creature Illusion'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "11$"
+                        ],
+                        "response": "For level 11 I have 'Ultimate Healing Rune', 'Poison Wall' and 'Chameleon'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "12$"
+                        ],
+                        "response": "For level 12 I have 'Explosion'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "13$"
+                        ],
+                        "response": "For level 13 I have 'Fire Wall'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "15$"
+                        ],
+                        "response": "For level 15 I have 'Invisible'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "16$"
+                        ],
+                        "response": "For level 16 I have 'Summon Creature'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "18$"
+                        ],
+                        "response": "For level 18 I have 'Energy Wall'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Sorry, I have only spells for level 0 to 6, 8 to 13, 15, 16 and 18.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "3": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You already know how to cast this spell.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You have to be magic level %A to learn this spell.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Sorry, you do not have enough gold.",
+                        "conditions": [
+                            {
+                                "type": "gold",
+                                "max": -1
+                            }
+                        ],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Here you are. Look in your spellbook for the pronunciation of this spell.",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "deleteMoney",
+                                "amount": -1
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Maybe next time.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            }
+        },
+        "keywordNextTopics": {
+            "spell": 2,
+            "food": 3,
+            "find person": 3,
+            "light": 3,
+            "light healing": 3,
+            "light magic missile": 3,
+            "antidote": 3,
+            "poison field": 3,
+            "intense healing": 3,
+            "great light": 3,
+            "heavy magic missile": 3,
+            "fire field": 3,
+            "magic shield": 3,
+            "intense healing rune": 3,
+            "antidote rune": 3,
+            "energy field": 3,
+            "fireball": 3,
+            "destroy field": 3,
+            "ultimate healing": 3,
+            "great fireball": 3,
+            "firebomb": 3,
+            "convince creature": 3,
+            "creature illusion": 3,
+            "ultimate healing rune": 3,
+            "poison wall": 3,
+            "chameleon": 3,
+            "explosion": 3,
+            "fire wall": 3,
+            "invisible": 3,
+            "summon creature": 3,
+            "energy wall": 3
+        },
+        "keywordTopicSpellIds": {
+            "food": 41,
+            "find person": 30,
+            "light": 5,
+            "light healing": 2,
+            "light magic missile": 43,
+            "antidote": 12,
+            "poison field": 62,
+            "intense healing": 10,
+            "great light": 19,
+            "heavy magic missile": 46,
+            "fire field": 59,
+            "magic shield": 18,
+            "intense healing rune": 10,
+            "antidote rune": 12,
+            "energy field": 56,
+            "fireball": 44,
+            "destroy field": 68,
+            "ultimate healing": 11,
+            "great fireball": 45,
+            "firebomb": 58,
+            "convince creature": 67,
+            "creature illusion": 4,
+            "ultimate healing rune": 49,
+            "poison wall": 63,
+            "chameleon": 65,
+            "explosion": 1,
+            "fire wall": 60,
+            "invisible": 3,
+            "summon creature": 32,
+            "energy wall": 57
+        },
+        "keywordTopicMagicLevels": {
+            "food": 0,
+            "find person": 0,
+            "light": 0,
+            "light healing": 0,
+            "light magic missile": 0,
+            "antidote": 0,
+            "poison field": 0,
+            "intense healing": 0,
+            "great light": 0,
+            "heavy magic missile": 0,
+            "fire field": 0,
+            "magic shield": 0,
+            "intense healing rune": 0,
+            "antidote rune": 0,
+            "energy field": 0,
+            "fireball": 0,
+            "destroy field": 0,
+            "ultimate healing": 0,
+            "great fireball": 0,
+            "firebomb": 0,
+            "convince creature": 0,
+            "creature illusion": 0,
+            "ultimate healing rune": 0,
+            "poison wall": 0,
+            "chameleon": 0,
+            "explosion": 0,
+            "fire wall": 0,
+            "invisible": 0,
+            "summon creature": 0,
+            "energy wall": 0
+        },
+        "script": "rahkem.js",
+        "keywordTopicPrices": {
+            "food": 200,
+            "find person": 200,
+            "light": 200,
+            "light healing": 200,
+            "light magic missile": 200,
+            "antidote": 400,
+            "poison field": 400,
+            "intense healing": 400,
+            "great light": 600,
+            "heavy magic missile": 600,
+            "fire field": 600,
+            "magic shield": 800,
+            "intense healing rune": 800,
+            "antidote rune": 1000,
+            "energy field": 1000,
+            "fireball": 1000,
+            "destroy field": 1200,
+            "ultimate healing": 1600,
+            "great fireball": 1800,
+            "firebomb": 1800,
+            "convince creature": 2000,
+            "creature illusion": 2000,
+            "ultimate healing rune": 2200,
+            "poison wall": 2200,
+            "chameleon": 2200,
+            "explosion": 2400,
+            "fire wall": 2600,
+            "invisible": 3000,
+            "summon creature": 3200,
+            "energy wall": 3600
+        }
+    }
+}

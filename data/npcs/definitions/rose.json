@@ -1,0 +1,201 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Rose",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  118,
+                                              "details":  {
+                                                              "head":  79,
+                                                              "body":  77,
+                                                              "legs":  112,
+                                                              "feet":  116
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  2,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "name":  "My name is Rose, nice to meet you, .",
+                                          "rose":  "That\u0027s me. I am not for sale. \u003cgiggles\u003e",
+                                          "job":  "Here you may buy some of the most beautiful flowers.",
+                                          "time":  "Sorry, I have no watch on me.",
+                                          "news":  "You mean my specials, don\u0027t you?",
+                                          "offer":  "I am selling beautiful flowers here.",
+                                          "goods":  "I am selling beautiful flowers here.",
+                                          "do":  "I am selling beautiful flowers here.",
+                                          "you":  "I am selling beautiful flowers here.",
+                                          "sell":  "I am selling beautiful flowers here.",
+                                          "have":  "I am selling beautiful flowers here.",
+                                          "furniture":  "I am selling beautiful flowers here.",
+                                          "equipment":  "I am selling beautiful flowers here.",
+                                          "flower":  "I offer indoor plants, flower bowls, god flowers, honey flowers and potted flowers. What do you need?",
+                                          "plant":  "I offer indoor plants, flower bowls, god flowers, honey flowers and potted flowers. What do you need?"
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Welcome to Crunor\u0027s Finest Warehouse, .",
+                                                       "Here you may buy some of the most beautiful flowers."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Welcome to Crunor\u0027s Finest Warehouse, %N.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "81":  {
+                                                   "entries":  [
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "Here you are.",
+                                                                       "conditions":  [
+                                                                                          {
+                                                                                              "type":  "gold",
+                                                                                              "min":  -1
+                                                                                          },
+                                                                                          {
+                                                                                              "type":  "premium"
+                                                                                          }
+                                                                                      ],
+                                                                       "actions":  [
+                                                                                       {
+                                                                                           "type":  "deleteMoney",
+                                                                                           "amount":  -1
+                                                                                       },
+                                                                                       {
+                                                                                           "type":  "createItem",
+                                                                                           "id":  -1
+                                                                                       }
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "I\u0027m sorry, but you need a premium account if you want to buy furniture.",
+                                                                       "conditions":  [
+                                                                                          {
+                                                                                              "type":  "gold",
+                                                                                              "min":  -1
+                                                                                          }
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "Come back, when you have enough money.",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+
+                                                                                    ],
+                                                                       "response":  "Hmm, but I\u0027m sure, it would fit nicely into your house.",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  true,
+                                                                       "isDefault":  true
+                                                                   }
+                                                               ]
+                                               }
+                                    },
+                         "keywordNextTopics":  {
+
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "God Flowers",
+                                                         "price":  5,
+                                                         "id":  2100,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Indoor Plant",
+                                                         "price":  8,
+                                                         "id":  2101,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Flower Bowl",
+                                                         "price":  6,
+                                                         "id":  2102,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Honey Flower",
+                                                         "price":  5,
+                                                         "id":  2103,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Potted Flower",
+                                                         "price":  5,
+                                                         "id":  2104,
+                                                         "type":  "sell"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "rose.js"
+                     }
+}

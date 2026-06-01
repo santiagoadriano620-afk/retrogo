@@ -1,0 +1,89 @@
+{
+    "creatureStatistics": {
+        "name": "Noodles",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 32,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 2,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "how": "Wooooof! <wiggle> <wiggle> <wiggle>",
+            "are": "Wooooof! <wiggle> <wiggle> <wiggle>",
+            "you": "Wooooof! <wiggle> <wiggle> <wiggle>",
+            "king": "Wooooof! <wiggle> <wiggle> <wiggle>",
+            "tibianus": "Wooooof! <wiggle> <wiggle> <wiggle>",
+            "cat$": "GRRRRRRR! WOOOOOOF! WOOOOOF! WOOOOOF!",
+            "queen": "GRRRRRRR! WOOOOOOF! WOOOOOF! WOOOOOF!",
+            "eloise": "GRRRRRRR! WOOOOOOF! WOOOOOF! WOOOOOF!",
+            "pork": "Woof! Woof! <wiggle> <drool> <sniff> <gnaw>",
+            "sniff": "Woof!",
+            "banana": "Woof!",
+            "fur": "Woof!",
+            "cheese": "Woof!",
+            "ferumbras": "Meeep! Meeep!",
+            "th": "<sniff>",
+            "ar": "Woof!",
+            "bo": "<wiggle>",
+            "an": "Grrrr!",
+            "go": "Woof! Woof!"
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "<sniff> Woof! <sniff>"
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "<sniff> Woof! <sniff>",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ],
+        "trade": {
+            "items": []
+        },
+        "script": "noodles.js"
+    }
+}

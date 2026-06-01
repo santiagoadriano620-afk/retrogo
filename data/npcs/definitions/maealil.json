@@ -1,0 +1,210 @@
+{
+    "creatureStatistics": {
+        "name": "Maealil",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 63,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 3,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "job": "I am a mystic.",
+            "name": "I am known as Maealil.",
+            "time": "I don't own one of those little machines.",
+            "mystic": "I am a philosopher and healer.",
+            "elves": "We are an ancient race, abandoned by the gods and doomed to find our way alone.",
+            "dwarfs": "They cultivate earth but don't understand it.",
+            "humans": "They are somewhat orcish in their nature.",
+            "troll": "I don't think it's a good idea to keep servants.",
+            "cenath": "My parents were Deraisim but joined the Cenath caste before my birth.",
+            "kuridai": "I hope they don't do something foolish one day.",
+            "deraisim": "Unfortunately they are to busy to care for the finer things in life.",
+            "abdaisim": "They should join our town for their and our own safety.",
+            "teshial": "I would love to learn more about the Teshial.",
+            "dream": "I would love to learn more about the Teshial.",
+            "ferumbras": "Only another servant of evil.",
+            "crunor": "The great tree is the beginning for all things living and Priyla helps us to understand that.",
+            "priyla": "The daughter of the stars gives us knowledge and teaches us magic.",
+            "excalibug": "Is that a new kind of bug the Deraisim found?",
+            "news": "I don't know anything of importance.",
+            "magic": "I can heal you or even teach you some spells of healing.",
+            "druid": "Druids are great healers.",
+            "sorcerer": "They understand so few...",
+            "spellbook": "I have none here.",
+            "spell": "I teach the spells 'Light Healing', 'Antidote', 'Antidote Rune', 'Intense Healing', 'Intense Healing Rune, 'Ultimate Healing', and 'Ultimate Healing Rune'.",
+            "light": "I'm sorry, but this spell is only for druids and paladins.",
+            "healing": "I'm sorry, but this spell is only for druids.",
+            "antidote": "I'm sorry, but this spell is only for druids.",
+            "intense": "I'm sorry, but this spell is only for druids.",
+            "ultimate": "I'm sorry, but this spell is only for druids.",
+            "rune": "I'm sorry, but this spell is only for druids.",
+            "heal$": "You are looking really bad. Let me heal your wounds.",
+            "blessing": "There are five different blessings available in five sacred places. These blessings are: the spiritual shielding, the spark of the phoenix, the embrace of tibia, the fire of the suns and the wisdom of solitude.",
+            "pilgrimage": "Whenever you receive a lethal wound your lifeforce is damaged. With every single of the five blessings you have this damage will be reduced.",
+            "ashes": "Whenever you receive a lethal wound your lifeforce is damaged. With every single of the five blessings you have this damage will be reduced.",
+            "spiritual": "You can receive the spiritual shielding in the whiteflower temple south of Thais.",
+            "shielding": "You can receive the spiritual shielding in the whiteflower temple south of Thais.",
+            "sacred": "Just ask in which of the five blessings you are interested in.",
+            "places": "Just ask in which of the five blessings you are interested in.",
+            "spark": "The spark of the phoenix is given by the dwarven priests of earth and fire in Kazordoon.",
+            "phoenix": "The spark of the phoenix is given by the dwarven priests of earth and fire in Kazordoon.",
+            "embrace": "The druids north of Carlin can provide you with the embrace of tibia.",
+            "fire": "Ask for the blessing of the two suns in the suntower near Ab'Dendriel .",
+            "suns": "Ask for the blessing of the two suns in the suntower near Ab'Dendriel .",
+            "wisdom": "Talk to the hermit Eremo on the isle of Cormaya about this blessing.",
+            "solitude": "Talk to the hermit Eremo on the isle of Cormaya about this blessing."
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "Ashari, .",
+                "I am a mystic."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {
+            "heal$": {
+                "damage": 40,
+                "effectSelf": null,
+                "effectTarget": 13
+            }
+        },
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Ashari, %N.",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "ashari$"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ],
+        "topics": {
+            "3": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You already know that spell.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You need to advance to magic level %A to learn this spell.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You do not have enough gold to pay my services.",
+                        "conditions": [
+                            {
+                                "type": "gold",
+                                "max": -1
+                            }
+                        ],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "From now on you can cast this spell.",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "deleteMoney",
+                                "amount": -1
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "As you wish.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            }
+        },
+        "keywordNextTopics": {},
+        "keywordTopicSpellIds": {
+            "light": 2,
+            "antidote": 12,
+            "intense": 10,
+            "ultimate": 11
+        },
+        "keywordTopicMagicLevels": {
+            "light": 0,
+            "antidote": 0,
+            "intense": 0,
+            "ultimate": 0
+        },
+        "keywordTopicPrices": {
+            "light": 200,
+            "antidote": 400,
+            "intense": 400,
+            "ultimate": 1600
+        },
+        "script": "maealil.js"
+    }
+}

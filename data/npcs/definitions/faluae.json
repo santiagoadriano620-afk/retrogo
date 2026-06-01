@@ -1,0 +1,196 @@
+{
+    "creatureStatistics": {
+        "name": "Faluae",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 62,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 5,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "job": "I am the spokesperson of the Deraisim caste.",
+            "name": "I am known as Faluae Ethrathil.",
+            "time": "Sorry, I don't know.",
+            "carlin": "For a human city Carlin is not that bad. Its still a scar in the natural enviroment of course.",
+            "thais": "Thais is fa away and that is a good thing.",
+            "venore": "I don't appreciate that my people buy that much human wares but there is little I can do about it.",
+            "roderick": "He is the thaian ambassador.",
+            "olrik": "He is the assistant of the thaian ambassador.",
+            "king": "I know nothing about kings.",
+            "elves": "The elves are split in three castes: the Deraisim, the Kuridai, and the Cenath.",
+            "dwarfs": "Funny little people sometimes. But their tunnels are harmful to the enviroment.",
+            "humans": "I don't like their stone cities and their stench.",
+            "troll": "I still can't stand the thought of the Kuridai keeping these disgusting creatures in our settlement.",
+            "army": "I don't understand what you mean.",
+            "cenath": "They think they are so wise but they lost the ability to adore the simple things.",
+            "kuridai": "They are paranoid, what makes them so aggressive.",
+            "deraisim": "We only stay here to keep our people together. We hunt for them, provide them with food, and scout the area.",
+            "abdaisim": "Our lost brothers and sisters. Oh, we miss them so much.",
+            "teshial": "I can only hope they will return one day.",
+            "ferumbras": "I hope this fallen servant of evil will never find us.",
+            "crunor": "I praise the Great Tree and Mother Earth, who gave birth to all life, and Nera, the celestial paladin.",
+            "nera": "The lady of spring, helper of Crunor and Earth itself.",
+            "excalibug": "What is that?",
+            "news": "Sorry, the only news I have concern the growth of plants and the coming and going of animal herds.",
+            "magic": "I learned a little about some minor spells.",
+            "druid": "Druids are very close to Crunor.",
+            "sorcerer": "They are so ... destructive.",
+            "spellbook": "Sorry, I have none on me.",
+            "spell": "I could teach you the spells of 'Light', 'Great Light', 'Food', and 'Find Person'.",
+            "find": "I'm sorry, but this spell is only for druids and paladins.",
+            "person": "I'm sorry, but this spell is only for druids and paladins.",
+            "light": "I'm sorry, but this spell is only for druids and paladins.",
+            "food": "I'm sorry, but this spell is only for druids and paladins.",
+            "great": "I'm sorry, but this spell is only for druids and paladins."
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "Greetings, traveller.",
+                "I am the spokesperson of the Deraisim caste."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Greetings, traveller.",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "ashari$"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ],
+        "topics": {
+            "3": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You already know that spell.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You need to advance to magic level %A to learn this spell.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You do not have enough gold to pay my services.",
+                        "conditions": [
+                            {
+                                "type": "gold",
+                                "max": -1
+                            }
+                        ],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "From now on you can cast this spell.",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "deleteMoney",
+                                "amount": -1
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "I thought so.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            }
+        },
+        "keywordNextTopics": {},
+        "keywordTopicSpellIds": {
+            "find": 30,
+            "person": 30,
+            "light": 5,
+            "food": 41,
+            "great": 19
+        },
+        "keywordTopicMagicLevels": {
+            "find": 0,
+            "person": 0,
+            "light": 0,
+            "food": 0,
+            "great": 0
+        },
+        "keywordTopicPrices": {
+            "find": 200,
+            "person": 200,
+            "light": 200,
+            "food": 200,
+            "great": 600
+        },
+        "script": "faluae.js"
+    }
+}

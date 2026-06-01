@@ -1,0 +1,9 @@
+﻿{
+  "actionId": 2074,
+  "type": "instrument",
+  "itemIds": [],
+  "effects": [
+    { "type": "magicEffect", "effectId": 19 },
+    { "type": "storage", "key": 259, "value": 0 }
+  ]
+}

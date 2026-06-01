@@ -1,0 +1,174 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Perac",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  112,
+                                              "details":  {
+                                                              "head":  78,
+                                                              "body":  52,
+                                                              "legs":  68,
+                                                              "feet":  114
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  1,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "I am the fletcher of Carlin. I am selling bows, crossbows, and ammunition. Do you need anything?",
+                                          "name":  "I am Perac, fletcher and marksman extraordinaire.",
+                                          "marksman":  "I am a paladin and the best marksman in the land.",
+                                          "time":  "Don\u0027t bother me. Go and buy a watch.",
+                                          "ghostlands":  "I was there ... once. I got out before the illusions drove me mad. Better stay out of that area!",
+                                          "buy":  "I am selling bows, crossbows, and ammunition. Do you need anything?",
+                                          "do":  "I am selling bows, crossbows, and ammunition. Do you need anything?",
+                                          "you":  "I am selling bows, crossbows, and ammunition. Do you need anything?",
+                                          "sell":  "I am selling bows, crossbows, and ammunition. Do you need anything?",
+                                          "have":  "I am selling bows, crossbows, and ammunition. Do you need anything?",
+                                          "offer":  "I am selling bows, crossbows, and ammunition. Do you need anything?",
+                                          "goods":  "I am selling bows, crossbows, and ammunition. Do you need anything?",
+                                          "ammo":  "Do you need arrows for a bow or bolts for a crossbow?",
+                                          "ammunition":  "Do you need arrows for a bow or bolts for a crossbow?"
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Oh, please come in. What do you need?",
+                                                       "I am the fletcher of Carlin. I am selling bows, crossbows, and ammunition. Do you need anything?"
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Oh, please come in. What do you need?",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here you are.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Come back, when you have enough money.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Hmm, but next time.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Bow",
+                                                         "price":  400,
+                                                         "id":  2456,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Crossbow",
+                                                         "price":  500,
+                                                         "id":  2455,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Arrow",
+                                                         "price":  2,
+                                                         "id":  2544,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Bolt",
+                                                         "price":  3,
+                                                         "id":  2543,
+                                                         "type":  "sell"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "perac.js"
+                     }
+}

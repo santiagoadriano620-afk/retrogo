@@ -1,0 +1,195 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Yulas",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  111,
+                                              "details":  {
+                                                              "head":  58,
+                                                              "body":  43,
+                                                              "legs":  38,
+                                                              "feet":  76
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  1,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "name":  "I am Yulas. I will be your salesperson today.",
+                                          "job":  "We are into home improvement.",
+                                          "time":  "It\u0027s , my lady.",
+                                          "news":  "Sorry, we are not allowed to chat.",
+                                          "allen":  "To think just because he is around here to watch what we do, he want to be considered one of us...",
+                                          "richardson":  "To think just because he is around here to watch what we do, he want to be considered one of us...",
+                                          "offer":  "We sell furniture and equipment. At this counter you can buy tables.",
+                                          "goods":  "We sell furniture and equipment. At this counter you can buy tables.",
+                                          "do":  "We sell furniture and equipment. At this counter you can buy tables.",
+                                          "you":  "We sell furniture and equipment. At this counter you can buy tables.",
+                                          "sell":  "We sell furniture and equipment. At this counter you can buy tables.",
+                                          "have":  "We sell furniture and equipment. At this counter you can buy tables.",
+                                          "furniture":  "We sell furniture and equipment. At this counter you can buy tables.",
+                                          "equipment":  "We sell furniture and equipment. At this counter you can buy tables.",
+                                          "table":  "Do you want to buy a small table, a round table, a square table or a big table?"
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Welcome to the Plank and Treasurechest Market, !",
+                                                       "We are into home improvement."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Welcome to the Plank and Treasurechest Market, %N!",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "81":  {
+                                                   "entries":  [
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "Here you are.",
+                                                                       "conditions":  [
+                                                                                          {
+                                                                                              "type":  "gold",
+                                                                                              "min":  -1
+                                                                                          },
+                                                                                          {
+                                                                                              "type":  "premium"
+                                                                                          }
+                                                                                      ],
+                                                                       "actions":  [
+                                                                                       {
+                                                                                           "type":  "deleteMoney",
+                                                                                           "amount":  -1
+                                                                                       },
+                                                                                       {
+                                                                                           "type":  "createItem",
+                                                                                           "id":  -1
+                                                                                       }
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "I\u0027m sorry, but you need a premium account if you want to buy furniture.",
+                                                                       "conditions":  [
+                                                                                          {
+                                                                                              "type":  "gold",
+                                                                                              "min":  -1
+                                                                                          }
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "Come back, when you have enough money.",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+
+                                                                                    ],
+                                                                       "response":  "Hmm, but I\u0027m sure, it would fit nicely into your house.",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  true,
+                                                                       "isDefault":  true
+                                                                   }
+                                                               ]
+                                               }
+                                    },
+                         "keywordNextTopics":  {
+
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Small Table",
+                                                         "price":  20,
+                                                         "id":  1619,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Small Round Table",
+                                                         "price":  25,
+                                                         "id":  1616,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Square Table",
+                                                         "price":  25,
+                                                         "id":  1615,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Big Table",
+                                                         "price":  30,
+                                                         "id":  1614,
+                                                         "type":  "sell"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "yulas.js"
+                     }
+}

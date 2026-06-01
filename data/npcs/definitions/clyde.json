@@ -1,0 +1,205 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Clyde",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  111,
+                                              "details":  {
+                                                              "head":  98,
+                                                              "body":  40,
+                                                              "legs":  48,
+                                                              "feet":  95
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  2,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "I am your host. I run this tavern.",
+                                          "name":  "I am Clyde, your host.",
+                                          "time":  "Don\u0027t worry about the time. Take a seat, have a drink. Time runs differently in Port Hope.",
+                                          "king":  "I wish the king would be a bit more concerned about this colony. I am convinced with a few more resources, we could improve Port Hope a lot.",
+                                          "venore":  "It\u0027s not always easy to deal with those Venoran tradesmen. I must admit they don\u0027t show any interest in my area of business. Just between you and me, my friend, sometimes they give me shivers.",
+                                          "thais":  "Sadly, Thais is far away and you will notice that in many places. You\u0027ll find out about this yourself, so lets talk about something else please.",
+                                          "carlin":  "I know only little about Carlin and here nobody cares about it for sure.",
+                                          "edron":  "As I started business here, I was hoping for a second Edron. I have not abandoned my hope though. Afer all, this place is called Port Hope, isn\u0027t it?",
+                                          "jungle":  "This forest is not an ordinary forest. It\u0027s more like a force of nature, like a river or even a storm.",
+                                          "tibia":  "I have seen only little of this world. Probably it should be you telling me about the world, and not the other way around.",
+                                          "kazordoon":  "If you want to learn something about Kazordoon you should talk to our local dwarves.",
+                                          "dwarves":  "There was a handful of dwarves that came here when the colony was founded. They were looking for treasures and gold as far as I know. After some argument a bunch of them left, they headed into the jungle and were never seen again.",
+                                          "dwarfs":  "There was a handful of dwarves that came here when the colony was founded. They were looking for treasures and gold as far as I know. After some argument a bunch of them left, they headed into the jungle and were never seen again.",
+                                          "ab\u0027dendriel":  "Sadly it is next to nothing that I know about the elves and their city.",
+                                          "elves":  "Sadly it is next to nothing that I know about the elves and their city.",
+                                          "elfs":  "Sadly it is next to nothing that I know about the elves and their city.",
+                                          "darama":  "It\u0027s a continent full of extremes. The jungle in the humid east, the desert in the dry west.",
+                                          "darashia":  "I was there quite often, using the flying carpet. It\u0027s quite different from the other towns I have seen, but surely worth a trip.",
+                                          "ankrahmun":  "If I were you I\u0027d stay as far away from this town as I could. It is ruled by an undead abomination and its inhabitants worship death.",
+                                          "ferumbras":  "This incarnation of evil seems to concentrate his efforts on Thais and its surroundings, but who knows what comes next into the mind of this madman?",
+                                          "excalibug":  "The rumours I overheard did not mention this continent as one of its hiding places.",
+                                          "apes":  "They seem to live in the depth of the jungle in ruins that show the markings of the lizard folk. I wonder if they now try to conquer our city too.",
+                                          "lizard":  "The lizards are hostile to us. They probably see no big difference between us and the ape people.",
+                                          "dworcs":  "The dworcs live in the south in an underground network consisting of caves. They use poisoned weapons and love to build all kind of traps. You don\u0027t want to know the fate of those that have been trapped, believe me.",
+                                          "buy":  "I can offer you bread, cheese, ham, or meat as well as several drinks.",
+                                          "offer":  "I can offer you bread, cheese, ham, or meat as well as several drinks.",
+                                          "do":  "I can offer you bread, cheese, ham, or meat as well as several drinks.",
+                                          "you":  "I can offer you bread, cheese, ham, or meat as well as several drinks.",
+                                          "sell":  "I can offer you bread, cheese, ham, or meat as well as several drinks.",
+                                          "have":  "I can offer you bread, cheese, ham, or meat as well as several drinks.",
+                                          "food":  "Are you looking for food? I have bread, cheese, ham, and meat.",
+                                          "drink":  "I can offer you beer, wine, lemonade, and water."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Greetings, dear customer.",
+                                                       "I am your host. I run this tavern."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Greetings, dear customer.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hiho$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here it is.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "I am sorry, but you do not have enough gold.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Maybe later.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Bread",
+                                                         "price":  4,
+                                                         "id":  2689,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Cheese",
+                                                         "price":  6,
+                                                         "id":  2696,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Meat",
+                                                         "price":  5,
+                                                         "id":  2666,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Ham",
+                                                         "price":  8,
+                                                         "id":  2671,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Mug",
+                                                         "price":  2,
+                                                         "id":  2012,
+                                                         "type":  "sell"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "clyde.js"
+                     }
+}

@@ -1,0 +1,18 @@
+{
+  "actionId": 3116,
+  "type": "portal",
+  "events": ["onStepIn", "onAddItem"],
+  "tileItem": true,
+  "vocationIds": [2, 6],
+  "teleport": {"to": {"x": 32851, "y": 32339, "z": 6}},
+  "teleportAlt": {"to": {"x": 32836, "y": 32294, "z": 7}},
+  "effects": [
+    { "type": "relocate", "from": {}, "to": {"x": 32851, "y": 32339, "z": 6} }
+  ],
+  "effectsAlt": [
+    { "type": "relocate", "from": {}, "to": {"x": 32836, "y": 32294, "z": 7} }
+  ],
+  "effectsAddItem": [
+    { "type": "relocate", "from": {}, "to": {"x": 32836, "y": 32294, "z": 7} }
+  ]
+}

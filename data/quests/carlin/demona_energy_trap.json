@@ -1,0 +1,21 @@
+{
+  "actionId": 2017,
+  "type": "lever",
+  "itemIds": [1945],
+  "effects": [
+    { "type": "createItem", "itemId": 1495, "count": 1, "pos": {"x": 32487, "y": 31628, "z": 13} },
+    { "type": "createItem", "itemId": 1495, "count": 1, "pos": {"x": 32487, "y": 31629, "z": 13} },
+    { "type": "createItem", "itemId": 1495, "count": 1, "pos": {"x": 32488, "y": 31629, "z": 13} },
+    { "type": "createItem", "itemId": 1495, "count": 1, "pos": {"x": 32487, "y": 31627, "z": 13} },
+    { "type": "createItem", "itemId": 1495, "count": 1, "pos": {"x": 32486, "y": 31627, "z": 13} },
+    { "type": "createItem", "itemId": 1495, "count": 1, "pos": {"x": 32486, "y": 31628, "z": 13} },
+    { "type": "createItem", "itemId": 1495, "count": 1, "pos": {"x": 32486, "y": 31629, "z": 13} },
+    { "type": "createItem", "itemId": 1495, "count": 1, "pos": {"x": 32486, "y": 31630, "z": 13} },
+    { "type": "createItem", "itemId": 1495, "count": 1, "pos": {"x": 32487, "y": 31630, "z": 13} },
+    { "type": "createItem", "itemId": 1495, "count": 1, "pos": {"x": 32488, "y": 31630, "z": 13} },
+    { "type": "createItem", "itemId": 1495, "count": 1, "pos": {"x": 32486, "y": 31626, "z": 13} },
+    { "type": "createItem", "itemId": 1495, "count": 1, "pos": {"x": 32487, "y": 31626, "z": 13} },
+    { "type": "createItem", "itemId": 1495, "count": 1, "pos": {"x": 32488, "y": 31626, "z": 13} },
+    { "type": "magicEffect", "pos": {"x": 32488, "y": 31628, "z": 13}, "effectId": 3 }
+  ]
+}

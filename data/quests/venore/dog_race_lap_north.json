@@ -1,0 +1,14 @@
+{
+  "actionId": 3119,
+  "type": "moveEvent",
+  "events": ["onStepIn", "onStepOut"],
+  "transformOnStep": {"from": 426, "to": 425},
+  "effects": [
+    { "type": "transformItem", "from": 426, "to": 425, "decay": true },
+    { "type": "transformItemInPosition", "pos": {"x": 32915, "y": 32078, "z": 5}, "from": 1485, "to": 1484 }
+  ],
+  "effectsOnStepOut": [
+    { "type": "transformItem", "from": 425, "to": 426, "decay": true },
+    { "type": "transformItemInPosition", "pos": {"x": 32915, "y": 32078, "z": 5}, "from": 1484, "to": 1485 }
+  ]
+}

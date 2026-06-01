@@ -1,0 +1,93 @@
+{
+    "creatureStatistics": {
+        "name": "Loui",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 57,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 2,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "job": "I am a monk, collecting healing herbs.",
+            "name": "My name is Loui.",
+            "monk": "I am a humble servant of the gods.",
+            "tibia": "Everything around us, that is Tibia.",
+            "rookgaard": "This is the place where everything starts.",
+            "god": "They created Tibia and all lifeforms. Talk to other monks and priests to learn more about them.",
+            "life": "The gods blessed Tibia with abundant forms of life.",
+            "herb": "I was looking for some herbs as I foolishly entered this unholy hole.",
+            "obi": "He owns a shop in the town.",
+            "al": "He owns a shop in the town.",
+            "dee": "He owns a shop in the town.",
+            "seymour": "Seymour is the headmaster of the local academy.",
+            "academy": "Most adventurers take their first steps there.",
+            "willie": "The gods may protect me from his foul language.",
+            "monster": "There must be an army of them, just down this hole.",
+            "rabbit": "So it must have been some magic wielding beasts using creature illusion. Good thing you escaped.",
+            "quest": "I have no quests but to stay away from that hole and I'd recomend you to do the same.",
+            "task": "I have no quests but to stay away from that hole and I'd recomend you to do the same.",
+            "gold": "I am pennyless and poor as it is fit for a humble monk like me.",
+            "money": "I am pennyless and poor as it is fit for a humble monk like me.",
+            "rat": "The good thing is, those horrible rats stay in the town mostly. The bad thing is, they do so because outside the bigger Monsters devour them.",
+            "hole": "While looking for herbs I found that hole. I went down though I had no torch. And then I heard THEM! There must be dozens!",
+            "story": "While looking for herbs I found that hole. I went down though I had no torch. And then I heard THEM! There must be dozens!",
+            "them": "They were so many, EVERYWHERE! I could barely escape alive. I have no clue what THEY were but one more second down there and I'd be dead!",
+            "heal": "Sorry I am out of mana and ingredients, please visit Cipfried in the town.",
+            "time": "Now, it is , my child."
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "BEWARE! Beware of that hole!",
+                "I am a monk, collecting healing herbs."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "BEWARE! Beware of that hole!",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ]
+    }
+}

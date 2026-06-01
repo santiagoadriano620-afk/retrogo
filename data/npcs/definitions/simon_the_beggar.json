@@ -1,0 +1,339 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Simon the Beggar",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  111,
+                                              "details":  {
+                                                              "head":  116,
+                                                              "body":  123,
+                                                              "legs":  32,
+                                                              "feet":  40
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  4,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "I have no job. I am a beggar.",
+                                          "beggar":  "I have no gold and no job, so I am a beggar.",
+                                          "gold":  "I need gold. I love gold. I need help.",
+                                          "name":  "My name is Simon. I am a very poor man.",
+                                          "simon":  "I am Simon. The poorest human all over the continent.",
+                                          "help":  "I need gold. Can you spend me 100 gold pieces?",
+                                          "dermot":  "The magistrate of the village. I heard he is selling something for the Fibula Dungeon.",
+                                          "village":  "To the north is the village Fibula. A very small village.",
+                                          "key":  "Key? There are a lot of keys. Please change the topic.",
+                                          "dungeon":  "I heard a lot about the Fibula Dungeon. But I never was there.",
+                                          "fibula":  "I hate Fibula. Too many wolves are here.",
+                                          "timur":  "I hate Timur. He is too expensive. But sometimes I find maces and hatchets. Timur is buying these items.",
+                                          "wolf":  "Please kill them ... ALL.",
+                                          "flute":  "Har, har. The stupid Dermot lost his flute. I know that some minotaurs have it in their treasure room.",
+                                          "minotaurs":  "Very rich monsters. But they are too strong for me. However, there are even stronger monsters.",
+                                          "minos":  "Very rich monsters. But they are too strong for me. However, there are even stronger monsters.",
+                                          "treasure":  "I know there are two rooms. And I know you can pass only the first door. The second door can\u0027t be opened.",
+                                          "giant":  "I know that terrible monster. It killed the fishers on the isle to the north.",
+                                          "spider":  "I know that terrible monster. It killed the fishers on the isle to the north.",
+                                          "monster":  "The strongest monster I know is the giant spider.",
+                                          "jetty":  "I hate this jetty. I have never seen a ship here.",
+                                          "ship":  "There is a large sea-monster outside. I think there is no gritty captain to sail in this quarter.",
+                                          "tibia":  "Hehe, do you have a shovel? I can sell you a shovel if you want to return to Tibia."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Hello . I am a poor man. Please help me.",
+                                                       "I have no job. I am a beggar."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Hello %N. I am a poor man. Please help me.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Thank you very much. Can you spend me %P more gold pieces? I will give you a nice hint.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "setPrice",
+                                                                                          "amount":  500
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  500
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You\u0027ve not enough money for me.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Hmm, maybe next time.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "2":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "That\u0027s great! I have stolen something from Dermot. You can buy it for %P gold. Do you want to buy it?",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "setPrice",
+                                                                                          "amount":  200
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  200
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  3,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Sorry, that\u0027s not enough.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "It was your decision.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "3":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Now you own the hot key.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  2087
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Pah! I said 200 gold. You don\u0027t have so much.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Ok. No problem. I\u0027ll find another buyer.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "4":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here you are.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Come back, when you have enough money.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Hmm, but next time.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+                                                   "help":  1
+                                               },
+                         "keywordTopicPrices":  {
+                                                    "help":  100
+                                                },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Shovel",
+                                                         "price":  50,
+                                                         "id":  2554,
+                                                         "type":  "sell"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "simon_the_beggar.js"
+                     }
+}

@@ -1,0 +1,85 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Ebenizer",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  111,
+                                              "details":  {
+                                                              "head":  59,
+                                                              "body":  95,
+                                                              "legs":  87,
+                                                              "feet":  76
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  1,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "bank":  true,
+                         "keywords":  {
+                                          "name":  "My name? Ebenizer!",
+                                          "job":  "I am running this Bank",
+                                          "time":  "It is , precisely.",
+                                          "king":  "Hail to the king!",
+                                          "tibianus":  "Hail to the king!",
+                                          "army":  "Soldiers have not that much money that I would care about.",
+                                          "ferumbras":  "A true threat to wealth and trade.",
+                                          "excalibug":  "This weapon, if real, might be worth a lot.",
+                                          "thais":  "We are in constant contact with the city of Thais.",
+                                          "tibia":  "There are countless ways of profit in this world.",
+                                          "carlin":  "It\u0027s underdeveloped and economically insignificant.",
+                                          "edron":  "The riches of our isle are its mineral resources.",
+                                          "news":  "I only care about financial news.",
+                                          "rumors":  "I only care about financial news."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Yes? What may I do for you, ?",
+                                                       "I am running this Bank"
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Yes? What may I do for you, %N?",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "script":  "ebenizer.js"
+                     }
+}

@@ -1,0 +1,194 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Ulrik",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  114,
+                                              "details":  {
+                                                              "head":  60,
+                                                              "body":  70,
+                                                              "legs":  97,
+                                                              "feet":  95
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  2,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "I am a smith. Do you need anything I make?",
+                                          "shop":  "I am a smith. Do you need anything I make?",
+                                          "name":  "My name is Ulrik.",
+                                          "time":  "It is .",
+                                          "king":  "What can a simple man as me say about a king?",
+                                          "tibianus":  "What can a simple man as me say about a king?",
+                                          "ferumbras":  "Oh, I only heard frigthening tales about him.",
+                                          "excalibug":  "Every now and then an adventurer like you comes here looking for it.",
+                                          "news":  "We live too far away from Thais to hear anything that truly is \u0027new\u0027.",
+                                          "help":  "Sorry, I have no clue how to help you.",
+                                          "monster":  "Most monsters live far away, so you can feel safe here in Greenshore.",
+                                          "dungeon":  "They say north of Thais is a deep dungeon.",
+                                          "thanks":  "You are welcome.",
+                                          "thank":  "You are welcome.",
+                                          "you":  "What do you need? I sell weapons and armor.",
+                                          "buy":  "What do you need? I sell weapons and armor.",
+                                          "do":  "What do you need? I sell weapons and armor.",
+                                          "sell":  "I\u0027m sorry, but I don\u0027t buy used equipment.",
+                                          "have":  "What do you need? I sell weapons and armor.",
+                                          "offer":  "My offers are weapons and armor.",
+                                          "weapon":  "I have longswords, battle hammers, and battle axes. What do you want?",
+                                          "armor":  "I have scale armor, soldier helmets, and steel shields. What do you want?"
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Hello . What can I do for you?",
+                                                       "I am a smith. Do you need anything I make?"
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Hello %N. What can I do for you?",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Thank you. Here it is.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Sorry, you do not have enough gold.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Maybe you will buy it another time.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Longsword",
+                                                         "price":  160,
+                                                         "id":  2397,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Battle Hammer",
+                                                         "price":  350,
+                                                         "id":  2417,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Battle Axe",
+                                                         "price":  235,
+                                                         "id":  2378,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Scale Armor",
+                                                         "price":  260,
+                                                         "id":  2483,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Soldier Helmet",
+                                                         "price":  110,
+                                                         "id":  2481,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Steel Shield",
+                                                         "price":  240,
+                                                         "id":  2509,
+                                                         "type":  "sell"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "ulrik.js"
+                     }
+}

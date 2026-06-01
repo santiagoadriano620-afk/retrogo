@@ -1,0 +1,199 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Zebron",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  111,
+                                              "details":  {
+                                                              "head":  95,
+                                                              "body":  15,
+                                                              "legs":  109,
+                                                              "feet":  76
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  2,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "Oh, I am just sitting around here and gamble now and then.",
+                                          "tavern":  "It\u0027s a fine place to be around, isn\u0027t it?",
+                                          "name":  "I am known as Zebron.",
+                                          "time":  "It is exactly .",
+                                          "king":  "Ah, our beloved king! Bless him for the gambling licence of Venore.",
+                                          "tibianus":  "Ah, our beloved king! Bless him for the gambling licence of Venore.",
+                                          "licence":  "I don\u0027t care much for that law stuff, but as far as I know those Venore merchants got a royal gambling licence for the city.",
+                                          "venore":  "Aaaah, Venore, Venore, what a wonderful town. Especially for someone with love for gambling like me.",
+                                          "army":  "Hehe, they spent a good part of their salary here in the tavern.",
+                                          "excalibug":  "I would not bet that anyone will ever find it.",
+                                          "thais":  "Thais is a bit too conservative for me.",
+                                          "tibia":  "What would I need more than that what I can get right here?",
+                                          "carlin":  "Carlin, the beerless ... what a shame.",
+                                          "hugo":  "I had a cousin named hugo, why do you ask?",
+                                          "news":  "Bah, always the same chitchat. Swampelves this and amazons that ... blah blah.",
+                                          "rumors":  "Bah, always the same chitchat. Swampelves this and amazons that ... blah blah.",
+                                          "swamp":  "Bah, always the same chitchat. Swampelves this and amazons that ... blah blah.",
+                                          "amazon":  "Bah, always the same chitchat. Swampelves this and amazons that ... blah blah.",
+                                          "gambl":  "So you care for a civilized game of dice?",
+                                          "game":  "So you care for a civilized game of dice?",
+                                          "dice":  "So you care for a civilized game of dice?"
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Greetings, high roller. So you care for a game, ?",
+                                                       "Oh, I am just sitting around here and gamble now and then."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Greetings, high roller. So you care for a game, %N?",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "I will roll a dice. If it shows 6, you will get five times your bet. How much do you want to bet?",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "no"
+                                                                                   ],
+                                                                      "response":  "Oh come on, don\u0027t be a child.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  }
+                                                              ]
+                                              },
+                                        "2":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Ok, here we go ... 6! You have won %P, congratulations. One more game?",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "createMoney"
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  1,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Ok, here we go ... %A! You have lost. Bad luck. One more game?",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  1,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "I am sorry, but you don\u0027t have so much money. How much do you want to bet?",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "I am sorry, but I accept only bets between 1 and 99 gold. I don\u0027t want to ruin you after all. How much do you want to bet?",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+                                                   "gambl":  1,
+                                                   "game":  1,
+                                                   "dice":  1
+                                               },
+                         "script":  "zebron.js"
+                     }
+}

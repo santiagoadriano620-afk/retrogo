@@ -1,0 +1,26 @@
+{
+  "itemId": 2553,
+  "type": "questItem",
+  "branches": [
+    {
+      "conditions": [
+        {"type": "actionId", "value": 4003},
+        {"type": "tilePos", "x": 32302, "y": 32257, "z": 8}
+      ],
+      "effects": [
+        {"type": "createTile", "effectId": 383, "pos": {"x": 32302, "y": 32257, "z": 8}},
+        {"type": "magicEffect", "effectId": 3}
+      ]
+    },
+    {
+      "conditions": [
+        {"type": "actionId", "value": 4003},
+        {"type": "tilePos", "x": 32149, "y": 32110, "z": 11}
+      ],
+      "effects": [
+        {"type": "createTile", "effectId": 383, "pos": {"x": 32149, "y": 32110, "z": 11}},
+        {"type": "magicEffect", "effectId": 3}
+      ]
+    }
+  ]
+}

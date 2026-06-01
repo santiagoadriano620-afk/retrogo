@@ -1,0 +1,16 @@
+{
+  "actionId": 2016,
+  "type": "lever",
+  "itemIds": [1945, 1946],
+  "conditions": [
+    { "type": "itemAtPosition", "itemId": 383, "pos": {"x": 32483, "y": 31633, "z": 9} }
+  ],
+  "effects": [
+    { "type": "transformItem", "from": 1945, "to": 1946, "decay": true }
+  ],
+  "effectsAlt": [
+    { "type": "transformItem", "from": 1945, "to": 1946, "decay": true },
+    { "type": "transformItemInPosition", "pos": {"x": 32483, "y": 31633, "z": 9}, "from": 355, "to": 383 },
+    { "type": "transformItem", "from": 1946, "to": 1945, "decay": true }
+  ]
+}

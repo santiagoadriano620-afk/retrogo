@@ -1,0 +1,127 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Djema",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  118,
+                                              "details":  {
+                                                              "head":  77,
+                                                              "body":  9,
+                                                              "legs":  86,
+                                                              "feet":  131
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  2,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "name":  "My name is Djema. Daddy says it means \u0027Moonflower\u0027 in the old language.",
+                                          "djem":  "That is my name. I do not like it much, though. Everybody around here calls me Djem.",
+                                          "job":  "I am the librarian in this place. I don\u0027t like the work too much because we do not really have that many books, and most of them are written by people who have died thousands of years ago. ...",
+                                          "librarian":  "Yes. I administrate the library. You know - registering new books, sorting them in alphabetical order etc. ...",
+                                          "gabel":  "Gabel is my father. He runs this place. Of course, he is not my real daddy. But he adopted me, you know. Or rather, all the Marid adopted me.",
+                                          "father":  "Gabel is my father. He runs this place. Of course, he is not my real daddy. But he adopted me, you know. Or rather, all the Marid adopted me.",
+                                          "dad":  "Gabel is my father. He runs this place. Of course, he is not my real daddy. But he adopted me, you know. Or rather, all the Marid adopted me.",
+                                          "parents":  "I can\u0027t remember them. I... They have both died a long time. At least that is what I have been told. Listen, can we talk about something else?",
+                                          "marid":  "The djinn you have met call themselves the Marid. They are generally very nice. Nice, but boring.",
+                                          "djinn":  "The djinn are a curious race. They are nice, but they are always so serious. Oh, don\u0027t get me wrong, there is not a single djinn around here I do not like, but, you know, they are not much fun. ...",
+                                          "daraman":  "Daraman was a human, but he must have been something very special - he was a holy man. To this day daddy and all the other djinn around here look up to Daraman as a true prophet.",
+                                          "king":  "Officially there is no king of the djinn. Daddy used to hold the title, but he has chosen to put if off. Of course, he is still the undisputed leader of the Marid. He simply dislikes the title.",
+                                          "efreet":  "Apparently the greenskins are different from the Marid who have raised me. I don\u0027t know. Perhaps the Efreet would be more fun than the djinn around here, but then daddy says they are really evil.",
+                                          "malor":  "Malor is the leader of the Efreet. I have never seen him, but they say he is really nasty. Daddy always gets upset when this name is pronounced.",
+                                          "mal\u0027ouquah":  "Oh, that place. They say it is pure evil. But I don\u0027t think it looks that evil. I have seen the dark fortress once, you know?!",
+                                          "dark":  "One night I went there. I wanted to see it for myself. Don\u0027t tell daddy, though. He would freak out if he heard I was there.",
+                                          "fortress":  "One night I went there. I wanted to see it for myself. Don\u0027t tell daddy, though. He would freak out if he heard I was there.",
+                                          "ashta\u0027daramai":  "That\u0027s what this place is called. Sure, it is beautiful, but it is as also boring and sometimes downright depressing. Sometimes I feel like I am bound to this place by golden chains.",
+                                          "human":  "I have lived here for as long as I can remember, but I know I don\u0027t belong here. I belong to them! I am a human! One day I will leave this place, and I will never come back.",
+                                          "zathroth":  "Yes, I have heard his name before. Let\u0027s see... Yes, I have read his name in a book! It was a book about gods and creation. Pretty weird stuff.",
+                                          "tibia":  "Daddy has often told me about how huge and mysterious this world is. \u003cSighs\u003e How much I would like to see it all. But he won\u0027t let me go. ...",
+                                          "darashia":  "Darashia is a beautiful city to the north. I have been there! One day Daddy disguised himself, and he took me there. It was awesome. ...",
+                                          "edron":  "I have read all about the northern cities. It is almost as if I had been there myself.",
+                                          "thais":  "I have read all about the northern cities. It is almost as if I had been there myself.",
+                                          "venore":  "I have read all about the northern cities. It is almost as if I had been there myself.",
+                                          "kazordoon":  "I have read all about the northern cities. It is almost as if I had been there myself.",
+                                          "carlin":  "I have read all about the northern cities. It is almost as if I had been there myself.",
+                                          "ab\u0027dendriel":  "I have read all about the northern cities. It is almost as if I had been there myself.",
+                                          "ankrahmun":  "If there is one city I don\u0027t want to see it is Ankrahmun. I have heard all kinds of stories about the pharaoh and his cult of weirdos!",
+                                          "scarab":  "Ah, those nasty critters. They give me the creeps!",
+                                          "pharaoh":  "Apparently he is an undead! Yuk - how disgusting!",
+                                          "palace":  "I do not care just how beautiful the pharaoh\u0027s palace is. I will never go there. The minute I would see some undead pile of flesh I would dash for the door screaming.",
+                                          "ascension":  "I have heard that term before. Has to do with the pharaoh\u0027s cult, I think, but I do not know for sure, and I\u0027m not particularly eager to learn more about it.",
+                                          "akh\u0027rah":  "Hm. No - doesn\u0027t ring a bell.",
+                                          "uthun":  "Hm. No - doesn\u0027t ring a bell.",
+                                          "akh":  "Hm. No - doesn\u0027t ring a bell.",
+                                          "kha\u0027zeel":  "I don\u0027t know whether I should hate or love these mountains. I mean, they are so beautiful. If only you saw those peaks in the evening, when the sun is setting. It is like a thousand fires that set the horizon aglow. ...",
+                                          "kha\u0027labal":  "That is the huge desert to the east. You can see it from here if you look in the direction of the rising sun. It seems huge... endless... It makes my heart sink whenever I watch it.",
+                                          "war":  "Daddy and all the other djinn around here are so restive lately. I know they try not to show it, but I can sense that they are tense and perhaps even a bit afraid. ...",
+                                          "melchior":  "Hm. I think I have heard that name before. A human, wasn\u0027t it? I think he used to drop quite often when I was much younger, but I have no clear memory of him. ...",
+                                          "alesar":  "I have never known this djinn, but apparently there is some sad story behind this. Daddy is very sad that Alesar left us. Of course, he tries not to show, but as usual he does a bad job about it.",
+                                          "lamp":  "I have heard many a story about this artifact. It was used to trap that Malor guy. Clever idea of good old uncle Fa\u0027hradin.",
+                                          "fa\u0027hradin":  "I have heard many a story about this artifact. It was used to trap that Malor guy. Clever idea of good old uncle Fa\u0027hradin.",
+                                          "book":  "The books around here are not exactly what I would call a riveting read. Most of them are technical documents written by uncle Fad at some point or other. Now and then he turns up and brings new files. Not that anybody would ever read them. ..."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Wow! A human? Here? Hey? Where do you come from, ? Oh, I\u0027m so excited!",
+                                                       "I am the librarian in this place. I don\u0027t like the work too much because we do not really have that many books, and most of them are written by people who have died thousands of years ago. ..."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Wow! A human? Here? Hey? Where do you come from, %N? Oh, I\u0027m so excited!",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "greetings$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "djanni\u0027hah$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ]
+                     }
+}

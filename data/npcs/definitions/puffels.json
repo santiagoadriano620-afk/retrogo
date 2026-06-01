@@ -1,0 +1,204 @@
+{
+    "creatureStatistics": {
+        "name": "Puffels",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 21,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 4,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "job": "I have to teach the spells of least importance to some fools.",
+            "name": "I am Magister Puffels, any problem with that?",
+            "time": "Where might I hide a watch, you fool?",
+            "king": "I give nothing for kings, queens... or other people at all.",
+            "tibianus": "I give nothing for kings, queens... or other people at all.",
+            "army": "Fine army that is. Half of them have already deserted.",
+            "ferumbras": "The day will come even he makes a fatal casting mistake... I know what I am talking about.",
+            "excalibug": "I have no use for such stuff.",
+            "thais": "I was there once, almost died. The fools there mistook me for an ordinary rat, can you believe that!?",
+            "tibia": "Bah, the whole Tibia can &#&$*# my #$&*!",
+            "carlin": "I don't care about some remote cities.",
+            "edron": "Sciences are thriving on this isle.",
+            "news": "I heard in Thais the new brand of cheese was... uhm...",
+            "rumors": "I heard in Thais the new brand of cheese was... uhm...",
+            "hugo": "Hugo? I heared it was an accident that created this beast.",
+            "beast": "I don't know more about it.",
+            "spellbook": "Ask a shop owner for that.",
+            "spell": "I have 'Magic Rope', 'Levitate', 'Haste', 'Berserk', 'Force Strike', 'Energy Strike', and 'Flame Strike'.",
+            "magic": "Magic Rope",
+            "rope": "Magic Rope",
+            "levitate": "Levitate",
+            "haste": "Haste",
+            "berserk": "This spell is only for knights.",
+            "force": "This spell is only for sorcerers and druids.",
+            "strike": "This spell is only for sorcerers and druids.",
+            "energy": "This spell is only for sorcerers and druids.",
+            "flame": "This spell is only for sorcerers and druids."
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "Yeah, another fool disturbing me, what a joy.",
+                "I have to teach the spells of least importance to some fools."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Yeah, another fool disturbing me, what a joy.",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ],
+        "topics": {
+            "1": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You already know this spell.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You must have magic level %A to learn this spell.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You do not have enough gold to pay my services.",
+                        "conditions": [
+                            {
+                                "type": "gold",
+                                "max": -1
+                            }
+                        ],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "From now on you can cast this spell.",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "deleteMoney",
+                                "amount": -1
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "I thought so.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            }
+        },
+        "keywordNextTopics": {
+            "magic": 1,
+            "rope": 1,
+            "levitate": 1,
+            "haste": 1,
+            "berserk": 1,
+            "force": 1,
+            "strike": 1,
+            "energy": 1,
+            "flame": 1
+        },
+        "keywordTopicPrices": {
+            "magic": 200,
+            "rope": 200,
+            "levitate": 500,
+            "haste": 600,
+            "berserk": 2500,
+            "force": 600,
+            "strike": 800,
+            "energy": 800,
+            "flame": 800
+        },
+        "keywordTopicSpellIds": {
+            "magic": 31,
+            "rope": 31,
+            "levitate": 9,
+            "haste": 8,
+            "berserk": 20,
+            "force": 22,
+            "strike": 13,
+            "energy": 13,
+            "flame": 14
+        },
+        "keywordTopicMagicLevels": {
+            "magic": 0,
+            "rope": 0,
+            "levitate": 0,
+            "haste": 0,
+            "berserk": 0,
+            "force": 0,
+            "strike": 0,
+            "energy": 0,
+            "flame": 0
+        },
+        "script": "puffels.js"
+    }
+}

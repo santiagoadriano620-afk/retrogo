@@ -1,0 +1,180 @@
+{
+    "creatureStatistics": {
+        "name": "Bo'ques",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 80,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 2,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "name": "My name is Bo'ques. Perhaps you know my name from a restaurant guide.",
+            "bo'ques": "You want Bo'ques? Well, you have found him, I'd say.",
+            "job": "I'm preparing the food for all djinn in Ashta'daramai. ...",
+            "cook": "I'm preparing the food for all djinn in Ashta'daramai. ...",
+            "chef": "Chef sounds nice, doesn't it? Well... I must admit I do not really know what it means, but it certainly sounds classy.",
+            "food": "I know many recipes for preparing the finest food on Darama and maybe even whole Tibia!",
+            "king": "Gabel used to be king, you know. I must confess I miss those days a bit because I was allowed to carry the title of his royal majesty's personal cook. Ah, those were the days.",
+            "gabel": "He is my boss. A most loyal customer and a real con... conni... well, a man of taste, at any rate. His favourite dish is Scarabée au Vin served with onions and rice.",
+            "connoisseur": "Yes! That's it! I have always trouble with pronouncing that damn word. A conno... conni... ah, hang it all!",
+            "djinn": "That is our race. It has seen better days, you know. ...",
+            "efreet": "A bunch of ignorants and primitives, that's what they are. You should see the things they eat! ...",
+            "marid": "That is us - the loyalists who have have remained faithful to Gabel and to good cooking.",
+            "malor": "That accursed traitor! I think there will never be peace until he is completely vanquished. If only he would allow me to cook for him. I would fix him a dinner he would never forget.",
+            "mal'ouquah": "Ah yes. The efreets' notorious fortress. I have never been there. That is no place for an artist such as myself.",
+            "ashta'daramai": "That is our little fortress - our home. Nice, isn't it? I find it inspirational, although I find the culinary facilities could do with some improvements.",
+            "human": "I totally agree with Gabel that djinn and humans can learn from each other. ...",
+            "zathroth": "That is a sad story, and like most djinn I dislike talking about it. Let's put it this way. Once there was a great cook who worked hard to prepare the finest meal of his life. ...",
+            "tibia": "It may be that this world is wide and full of adventure, but to be honest I am not at all keen to see it myself. A comfortable lamp to sleep in and a well equipped kitchen is all I need.",
+            "daraman": "Ah yes. That human WAS special, believe me. Did you know I talked to him myself, back in those days? In fact, I even had an argument with him because he dared to insult my work! He drove me mad when he called me a self-indulgent glutton. ...",
+            "darashia": "I have heard good things about this place. I understand the Caliph is a true gourmet. People who eat good food can't be bad, that's what I say.",
+            "scarab": "Ah yes. I like them well. Especially with a good sauce or in a stew. But they have to be young! Have you tried ancient scarab? Their meat is impossible to chew unless you have teeth made of titanium.",
+            "edron": "Ah, the northern cities. One day I will start an extensive culinary expedition there. I have this dream of writing some sort of culinary guide, you know. Isn't that a great idea?",
+            "thais": "Ah, the northern cities. One day I will start an extensive culinary expedition there. I have this dream of writing some sort of culinary guide, you know. Isn't that a great idea?",
+            "venore": "Ah, the northern cities. One day I will start an extensive culinary expedition there. I have this dream of writing some sort of culinary guide, you know. Isn't that a great idea?",
+            "kazordoon": "Ah, the northern cities. One day I will start an extensive culinary expedition there. I have this dream of writing some sort of culinary guide, you know. Isn't that a great idea?",
+            "carlin": "Ah, the northern cities. One day I will start an extensive culinary expedition there. I have this dream of writing some sort of culinary guide, you know. Isn't that a great idea?",
+            "ab'dendriel": "Ah, the northern cities. One day I will start an extensive culinary expedition there. I have this dream of writing some sort of culinary guide, you know. Isn't that a great idea?",
+            "ankrahmun": "No djinn who is in his right state of mind would want to go there? What for? The land is ruled by an undead nut case, and from what I have heard his subjects are no better.",
+            "pharaoh": "Apparently he is an undead! And what's worse, he actually chose that fate for himself! Undead! Imagine that! Never sleep, never laugh, and worst of all: Never eat! What a crackpot!",
+            "palace": "Who would like to live in a palace if there is never the delicious smell of freshly prepared food! I would not want to live there. Not for love nor for money.",
+            "ascension": "As far as I know that is one of the pharaoh's crazy ideas. Just a load of baloney.",
+            "rah": "Hm. Is that some exotic spice? Hang on, I know! It is a kind of lizard stew - right?",
+            "uthun": "Hm. Is that some exotic spice? Hang on, I know! It is a kind of lizard stew - right?",
+            "akh": "Hm. Is that some exotic spice? Hang on, I know! It is a kind of lizard stew - right?",
+            "kha'zeel": "These mountains are a nice place to live in, but food-wise they are pretty lousy. We basically import everything we eat from the lowlands, trading them for magic trinkets and for gold. ...",
+            "kha'labal": "Such a shame about that land. It wasn't always a desert, you know. That land was garden, a veritable paradise. Just the thought of the fruit that used to grow there makes my mouth water <sighs>. Well, guess who messed it up.",
+            "war": "I have never been much of a warrior, but I will storm into battle swinging my meat cleaver if necessary. We simply must win this war!",
+            "melchior": "Ah yes, the trader - right? I remember him. He used to travel the mountains with his mule. A tough haggler and a real skinflint, he was. I thought he had fallen down a cliff with all his money.",
+            "alesar": "Ah - that guy. You probably don't know it, but nobody around here likes to hear that name. It brings back painful memories, you know. His betrayal was such a heavy blow to us. I think I will never understand what made him do it? It is a mystery.",
+            "lamp": "You would not believe it, but those lamps are actually quite comfy. And on top of that they are immensely practical! Did you ever try to stash one of your beds into your pocket?",
+            "fa'hradin": "That djinn is so engrossed in his work! I constantly have to remind him to eat because if I didn't he would simply forget. Forgetting to eat! Can you imagine that?",
+            "djema": "Djema is a nice girl, but she eats so little. It's frustrating, really. Humans and their little stomachs!",
+            "recipe": "My collection of recipes is almost complete. There are only but a few that are missing. ...",
+            "mission": "My collection of recipes is almost complete. There are only but a few that are missing. ...",
+            "book": "Thanks again, for bringing me that book!",
+            "cookbook": "Thanks again, for bringing me that book!"
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "Hey! A human! What are you doing in my kitchen, ?",
+                "I'm preparing the food for all djinn in Ashta'daramai. ..."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Hey! A human! What are you doing in my kitchen, %N?",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "greetings$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "djanni'hah$"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ],
+        "topics": {
+            "1": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "The book! You have it! Let me see! <browses the book> ...",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Too bad. I must have this book.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "2": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Fine! Even though I know so many recipes, I'm looking for the description of some dwarven meals. ...",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Well, too bad.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            }
+        },
+        "keywordNextTopics": {
+            "book": 1,
+            "cookbook": 1
+        },
+        "script": "bo_ques.js"
+    }
+}

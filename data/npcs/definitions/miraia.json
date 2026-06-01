@@ -1,0 +1,186 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Miraia",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  118,
+                                              "details":  {
+                                                              "head":  95,
+                                                              "body":  0,
+                                                              "legs":  7,
+                                                              "feet":  115
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  1,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "I am the owner of this tavern, this oasis for the thirst, home of shadow and relaxation.",
+                                          "tavern":  "I am the owner of this tavern, this oasis for the thirst, home of shadow and relaxation.",
+                                          "frodo":  "He\u0027s my cousin and lives in Thais.",
+                                          "name":  "My name is Miraia.",
+                                          "time":  "Don\u0027t worry about time right now.",
+                                          "caliph":  "Sadly the caliph does not visit this humble place.",
+                                          "kazzan":  "Sadly the caliph does not visit this humble place.",
+                                          "ferumbras":  "Travellers talked to me about his evilness. Thrice damned be his name.",
+                                          "excalibug":  "Some foolish adventurers seek for it in the haunted ruins of Drefia.",
+                                          "thais":  "Thais is a place of evil and corruption.",
+                                          "tibia":  "Here we are far away from the temptations of the world.",
+                                          "carlin":  "At least they shun alcohol over there.",
+                                          "news":  "Oh, just listen to the tales told by the other visitors.",
+                                          "rumour":  "Oh, just listen to the tales told by the other visitors.",
+                                          "rumor":  "Oh, just listen to the tales told by the other visitors.",
+                                          "buy":  "I can offer you food and drinks.",
+                                          "do":  "I can offer you food and drinks.",
+                                          "you":  "I can offer you food and drinks.",
+                                          "sell":  "I can offer you food and drinks.",
+                                          "have":  "I can offer you food and drinks.",
+                                          "offer":  "I can offer you food and drinks.",
+                                          "food":  "Are you looking for food? I have bread, cheese, ham, and meat.",
+                                          "drink":  "I can offer you lemonade, milk, and water."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Daraman\u0027s blessings, . Welcome to the Enlightened Oasis.",
+                                                       "I am the owner of this tavern, this oasis for the thirst, home of shadow and relaxation."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Daraman\u0027s blessings, %N. Welcome to the Enlightened Oasis.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here it is.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "I am sorry, but you do not have enough gold.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Maybe later.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Bread",
+                                                         "price":  4,
+                                                         "id":  2689,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Cheese",
+                                                         "price":  6,
+                                                         "id":  2696,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Meat",
+                                                         "price":  5,
+                                                         "id":  2666,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Ham",
+                                                         "price":  8,
+                                                         "id":  2671,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Mug",
+                                                         "price":  3,
+                                                         "id":  2012,
+                                                         "type":  "sell"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "miraia.js"
+                     }
+}

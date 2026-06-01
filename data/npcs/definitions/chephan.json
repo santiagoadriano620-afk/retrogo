@@ -1,0 +1,261 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Chephan",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  111,
+                                              "details":  {
+                                                              "head":  2,
+                                                              "body":  26,
+                                                              "legs":  115,
+                                                              "feet":  76
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  1,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "name":  "I am Chephan, at your service.",
+                                          "job":  "I sell all the cooking gear you can dream of.",
+                                          "warehouse":  "Here you can by so many things you will need one day or another. Just have a look.",
+                                          "time":  "Watches are sold in the south east part of this warehouse.",
+                                          "king":  "Even a king needs a fork now and then. To scratch his back or to poke servants for example.",
+                                          "tibianus":  "Even a king needs a fork now and then. To scratch his back or to poke servants for example.",
+                                          "army":  "They brought most of their cooking gear from thais.",
+                                          "ferumbras":  "See this fork? Now imagine what a hero like you could do to an evil sorcerer with that fork! Care to buy one?",
+                                          "excalibug":  "Just an oversized kitchenknife. Better buy the real thing.",
+                                          "thais":  "Thaian cooking gear is of inferior quality. Make sure to upgrade yours here as soon as you can.",
+                                          "tibia":  "The world is flat as this plate. You should buy one as a symbol for Tibia.",
+                                          "carlin":  "So many women and so little intrest in cooking, horrible.",
+                                          "news":  "My recipies are family secrets, sorry.",
+                                          "tax":  "Those taxes are killing me. And they are getting worse each year!",
+                                          "privilege":  "I don\u0027t feel that privileged. In fact our beloved city is bleeding for the profit of Thais.",
+                                          "gambling":  "Thanks to that taxes I have not enough spare money to gamble much.",
+                                          "offer":  "That would be: Buckets, bottles, mugs, cups, jugs, plates, baking trays, pots, pans, forks, spoons, knifes, wooden spoons, cleavers, spatulas, and rolling pins.",
+                                          "goods":  "That would be: Buckets, bottles, mugs, cups, jugs, plates, baking trays, pots, pans, forks, spoons, knifes, wooden spoons, cleavers, spatulas, and rolling pins.",
+                                          "do":  "That would be: Buckets, bottles, mugs, cups, jugs, plates, baking trays, pots, pans, forks, spoons, knifes, wooden spoons, cleavers, spatulas, and rolling pins.",
+                                          "you":  "That would be: Buckets, bottles, mugs, cups, jugs, plates, baking trays, pots, pans, forks, spoons, knifes, wooden spoons, cleavers, spatulas, and rolling pins.",
+                                          "sell":  "That would be: Buckets, bottles, mugs, cups, jugs, plates, baking trays, pots, pans, forks, spoons, knifes, wooden spoons, cleavers, spatulas, and rolling pins.",
+                                          "have":  "That would be: Buckets, bottles, mugs, cups, jugs, plates, baking trays, pots, pans, forks, spoons, knifes, wooden spoons, cleavers, spatulas, and rolling pins."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Ah, looking for some cooking gear today, ?",
+                                                       "I sell all the cooking gear you can dream of."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Ah, looking for some cooking gear today, %N?",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hail$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here you are.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Please come back with more money.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "I hope next time.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Bucket",
+                                                         "price":  4,
+                                                         "id":  2005,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Blue Bottle",
+                                                         "price":  3,
+                                                         "id":  2007,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Mug",
+                                                         "price":  4,
+                                                         "id":  2012,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Cup",
+                                                         "price":  2,
+                                                         "id":  2013,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Jug",
+                                                         "price":  10,
+                                                         "id":  2014,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Plate",
+                                                         "price":  6,
+                                                         "id":  2035,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Baking Tray",
+                                                         "price":  20,
+                                                         "id":  2561,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Pot",
+                                                         "price":  30,
+                                                         "id":  2562,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Pan",
+                                                         "price":  20,
+                                                         "id":  2563,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Fork",
+                                                         "price":  10,
+                                                         "id":  2564,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Spoon",
+                                                         "price":  10,
+                                                         "id":  2565,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Knife",
+                                                         "price":  10,
+                                                         "id":  2566,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Wooden Spoon",
+                                                         "price":  5,
+                                                         "id":  2567,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Cleaver",
+                                                         "price":  15,
+                                                         "id":  2568,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Oven Spatula",
+                                                         "price":  12,
+                                                         "id":  2569,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Rolling Pin",
+                                                         "price":  12,
+                                                         "id":  2570,
+                                                         "type":  "sell"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "chephan.js"
+                     }
+}

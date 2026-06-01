@@ -1,0 +1,14 @@
+[
+  {
+    "actionId": 3062,
+    "type": "altar",
+    "itemIds": [],
+    "conditions": [],
+    "effects": [
+      { "type": "relocate", "from": null, "to": { "x": 32800, "y": 31605, "z": 7 } },
+      { "type": "magicEffect", "pos": { "x": 32800, "y": 31605, "z": 7 }, "effectId": 13 },
+      { "type": "magicEffect", "pos": { "x": 32701, "y": 31638, "z": 6 }, "effectId": 11 }
+    ],
+    "effectsAlt": []
+  }
+]

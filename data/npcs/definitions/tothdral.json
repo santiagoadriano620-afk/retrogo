@@ -1,0 +1,568 @@
+{
+    "creatureStatistics": {
+        "name": "Tothdral",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 65,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 2,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "job": "I am the foremost astrologer and supreme magus of this city.",
+            "name": "My name is Tothdral. They call me 'The Seeker Beyond the Grave'.",
+            "time": "Time is your problem. It is no longer mine.",
+            "temple": "Our temple is a centre of spirituality and learning. The temple and the serpentine tower work hand in hand for the good of all people, whether they are alive or undead.",
+            "pharaoh": "The pharaoh was the first to take the ultimate step. He braved death and claimed the godhood that was rightfully his.",
+            "oldpharaoh": "He has been given a chance to ascend. I am sure he will feel nothing but thankfulness for this divine son, our revered pharaoh.",
+            "scarab": "If you know how to listen to them they will reveal ancient secrets to you.",
+            "tibia": "This world is only a shadow of the worlds that have been. That was long ago, before the true gods fought each other in the godwars and the false gods rose to claim their heritage.",
+            "carlin": "Those cities that bow to the false gods will fall prey to their treacherous greed sooner or later.",
+            "thais": "Those cities that bow to the false gods will fall prey to their treacherous greed sooner or later.",
+            "edron": "Those cities that bow to the false gods will fall prey to their treacherous greed sooner or later.",
+            "venore": "Those cities that bow to the false gods will fall prey to their treacherous greed sooner or later.",
+            "kazordoon": "The dwarves should have learned their lessons, but these boneheaded fools still don't see there is only one way to escape the false gods' grasp.",
+            "dwarves": "The dwarves should have learned their lessons, but these boneheaded fools still don't see there is only one way to escape the false gods' grasp.",
+            "dwarfes": "The dwarves should have learned their lessons, but these boneheaded fools still don't see there is only one way to escape the false gods' grasp.",
+            "ab'dendriel": "Elves are nothing but idle riff-raff. They embrace the vain amusements of physical pleasure. Eternal damnation will be their lot.",
+            "elves": "Elves are nothing but idle riff-raff. They embrace the vain amusements of physical pleasure. Eternal damnation will be their lot.",
+            "elfes": "Elves are nothing but idle riff-raff. They embrace the vain amusements of physical pleasure. Eternal damnation will be their lot.",
+            "darama": "This continent is mostly free from the servants of the false gods. Those who live here may hope to become worthy one day of the first steps towards ascension.",
+            "darashia": "Their foolishness is great, but perhaps they still can be saved. If only they listened and accepted the next step to ascension.",
+            "next": "Undeath alone will rid you of the temptations that blur your vision of the true path.",
+            "step": "Undeath alone will rid you of the temptations that blur your vision of the true path.",
+            "daraman": "He was so close. ... and still he failed to draw the right conclusions.",
+            "ankrahmun": "This city is as old as the sands that surround it, and it is built on previous settlements that date back even further in time. Perhaps only the wise scarabs know the full story of this place.",
+            "mortality": "Mortality is your curse. When you are worthy the burden of mortality will be taken from your shoulders.",
+            "false": "The self-styled gods were nothing but minor servants of the true gods. They steal the soul of any mortal foolish enough to believe in them. They plan to use the stolen souls to ascend to true godhood.",
+            "gods": "The self-styled gods were nothing but minor servants of the true gods. They steal the soul of any mortal foolish enough to believe in them. They plan to use the stolen souls to ascend to true godhood.",
+            "godswar": "This war brought about the end of the true universe. That which is left now is but a shadow of former glories, a bleak remainder of what once was. The true gods perished and their essence was dispersed throughout the remaining universe.",
+            "great": "The great suffering is a phase of steady decline that will end eventually in void and emptiness unless some divine power such as our pharaoh will reverse it. Mend your ways and follow him! Perhaps you will be chosen to join him in his noble struggle.",
+            "suffering": "The great suffering is a phase of steady decline that will end eventually in void and emptiness unless some divine power such as our pharaoh will reverse it. Mend your ways and follow him! Perhaps you will be chosen to join him in his noble struggle.",
+            "ascension": "The essence of the true gods is omnipresent in the universe. We all share this divine heritage, for every single one of us carries the divine spark inside him. This is the reason we all have a chance to ascend to godhood, too.",
+            "Akh'rah": "The Akh'rah Uthun is the trinity of existence, the three that are one. The Akh, the shell, the Rah, the source of power, and the Uthun, our consciousness, form this union.",
+            "Uthun": "The Akh'rah Uthun is the trinity of existence, the three that are one. The Akh, the shell, the Rah, the source of power, and the Uthun, our consciousness, form this union.",
+            "steal": "The false gods harvest the souls of the dead to secure their stolen powers and status.",
+            "souls": "The false gods harvest the souls of the dead to secure their stolen powers and status.",
+            "Akh": "The Akh is a tool. As long as it is alive it is a burden and source of weakness, but if you ascend to undeath it becomes a useful tool that can be used to work towards greater ends.",
+            "undead": "Undeath is an improvement. It is the gateway to goals that are nobler than eating, drinking or other fulfilments of trivial physical needs..",
+            "undeath": "Undeath is an improvement. It is the gateway to goals that are nobler than eating, drinking or other fulfilments of trivial physical needs..",
+            "Rah": "The Rah is what the ignorant might call the soul. But it's more than that. It is the divine spark in all of us, the source of energy that keeps us alive.",
+            "uthun": "The Uthun is the part of the trinity that is easiest to form. It consists of our recollections of the past and of our thoughts. It is that which determines who we are in this world and it gives us guidance throughout our existence.",
+            "mourn": "The dead mourn the living because they are weak and excluded from ascension.",
+            "arena": "The arena is a suitable distraction for the Uthun of the mortals. It might even serve as a place for them to prove their worth. If they pass the test they may be freed of their mortal shells.",
+            "palace": "The residence of the pharaoh should be worshipped just as the pharaoh is worshipped. Don't enter until you have business there.",
+            "spell": "Sorry, I only sell spells to Sorcerers."
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "Be mourned, pilgrim in flesh.",
+                "Be mourned pilgrim in flesh.",
+                "I am the foremost astrologer and supreme magus of this city."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Be mourned, pilgrim in flesh.",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": "Be mourned, pilgrim in flesh.",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "be",
+                    "mourned",
+                    "pilgrim",
+                    "flesh"
+                ],
+                "response": "Be mourned pilgrim in flesh.",
+                "idle": false
+            }
+        ],
+        "topics": {
+            "2": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "rune",
+                            "spell"
+                        ],
+                        "response": "I sell attack rune spells and support rune spells. Which of these interests you most?",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "instant",
+                            "spell"
+                        ],
+                        "response": "I sell attack spells, healing spells, support spells and summon spells. Which of these interests you most?",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "level"
+                        ],
+                        "response": "For which level would you like to learn a spell?",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "bye"
+                        ],
+                        "response": "Strive for enlightenment, mourned mortal.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true
+                    },
+                    {
+                        "keywords": [
+                            "0$"
+                        ],
+                        "response": "For magic level 0 I have 'Find Person' and 'Light'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "1$"
+                        ],
+                        "response": "For magic level 1 I have 'Light Healing' and 'Light Magic Missile'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "2$"
+                        ],
+                        "response": "For magic level 2 I have 'Antidote', 'Poison Field' and 'Intense Healing'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "3$"
+                        ],
+                        "response": "For magic level 3 I have 'Great Light', 'Heavy Magic Missile' and 'Fire Field'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "4$"
+                        ],
+                        "response": "For magic level 4 I have 'Magic Shield'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "5$"
+                        ],
+                        "response": "For magic level 5 I have 'Fireball' and 'Energy Field'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "6$"
+                        ],
+                        "response": "For magic level 6 I have 'Destroy Field'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "7$"
+                        ],
+                        "response": "For magic level 7 I have 'Fire Wave'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "8$"
+                        ],
+                        "response": "For magic level 8 I have 'Ultimate Healing'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "9$"
+                        ],
+                        "response": "For magic level 9 I have 'Great Fireball' and 'Firebomb'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "10$"
+                        ],
+                        "response": "For magic level 10 I have 'Energy Beam' and 'Creature Illusion'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "11$"
+                        ],
+                        "response": "For magic level 11 I have 'Poison Wall'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "12$"
+                        ],
+                        "response": "For magic level 12 I have 'Explosion'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "13$"
+                        ],
+                        "response": "For magic level 13 I have 'Fire Wall'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "14$"
+                        ],
+                        "response": "For magic level 14 I have 'Great Energy Beam'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "15$"
+                        ],
+                        "response": "For magic level 15 I have 'Invisible'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "16$"
+                        ],
+                        "response": "For magic level 16 I have 'Summon Creature'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "18$"
+                        ],
+                        "response": "For magic level 18 I have 'Energy Wall'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "20$"
+                        ],
+                        "response": "For magic level 20 I have 'Energy Wave'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "25$"
+                        ],
+                        "response": "For magic level 25 I have 'Sudden Death'.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Hmm, I have no spells for this level, but for many levels from 0 to 25.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "3": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You already know how to cast this spell.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You have to be magic level %A to learn this spell.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You need more money.",
+                        "conditions": [
+                            {
+                                "type": "gold",
+                                "max": -1
+                            }
+                        ],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Here you are. Look in your spellbook for the pronunciation of this spell.",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "deleteMoney",
+                                "amount": -1
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Then not.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            }
+        },
+        "keywordNextTopics": {
+            "spell": 2,
+            "find person": 3,
+            "light": 3,
+            "light healing": 3,
+            "light magic missile": 3,
+            "antidote": 3,
+            "poison field": 3,
+            "intense healing": 3,
+            "great light": 3,
+            "heavy magic missile": 3,
+            "fire field": 3,
+            "magic shield": 3,
+            "fireball": 3,
+            "energy field": 3,
+            "destroy field": 3,
+            "fire wave": 3,
+            "ultimate healing": 3,
+            "great fireball": 3,
+            "firebomb": 3,
+            "energy beam": 3,
+            "creature illusion": 3,
+            "poison wall": 3,
+            "explosion": 3,
+            "fire wall": 3,
+            "great energy beam": 3,
+            "invisible": 3,
+            "summon creature": 3,
+            "energy wall": 3,
+            "energy wave": 3,
+            "sudden death": 3
+        },
+        "keywordTopicSpellIds": {
+            "find person": 30,
+            "light": 5,
+            "light healing": 2,
+            "light magic missile": 43,
+            "antidote": 12,
+            "poison field": 62,
+            "intense healing": 10,
+            "great light": 19,
+            "heavy magic missile": 46,
+            "fire field": 59,
+            "magic shield": 18,
+            "fireball": 44,
+            "energy field": 56,
+            "destroy field": 68,
+            "fire wave": 15,
+            "ultimate healing": 11,
+            "great fireball": 45,
+            "firebomb": 58,
+            "energy beam": 16,
+            "creature illusion": 4,
+            "poison wall": 63,
+            "explosion": 1,
+            "fire wall": 60,
+            "great energy beam": 23,
+            "invisible": 3,
+            "summon creature": 32,
+            "energy wall": 57,
+            "energy wave": 21,
+            "sudden death": 47
+        },
+        "keywordTopicMagicLevels": {
+            "find person": 0,
+            "light": 0,
+            "light healing": 0,
+            "light magic missile": 0,
+            "antidote": 0,
+            "poison field": 0,
+            "intense healing": 0,
+            "great light": 0,
+            "heavy magic missile": 0,
+            "fire field": 0,
+            "magic shield": 0,
+            "fireball": 0,
+            "energy field": 0,
+            "destroy field": 0,
+            "fire wave": 0,
+            "ultimate healing": 0,
+            "great fireball": 0,
+            "firebomb": 0,
+            "energy beam": 0,
+            "creature illusion": 0,
+            "poison wall": 0,
+            "explosion": 0,
+            "fire wall": 0,
+            "great energy beam": 0,
+            "invisible": 0,
+            "summon creature": 0,
+            "energy wall": 0,
+            "energy wave": 0,
+            "sudden death": 0
+        },
+        "script": "tothdral.js",
+        "keywordTopicPrices": {
+            "find person": 200,
+            "light": 200,
+            "light healing": 200,
+            "light magic missile": 200,
+            "antidote": 400,
+            "poison field": 400,
+            "intense healing": 400,
+            "great light": 600,
+            "heavy magic missile": 600,
+            "fire field": 600,
+            "magic shield": 800,
+            "fireball": 1000,
+            "energy field": 1000,
+            "destroy field": 1200,
+            "fire wave": 1400,
+            "ultimate healing": 1600,
+            "great fireball": 1800,
+            "firebomb": 1800,
+            "energy beam": 2000,
+            "creature illusion": 2000,
+            "poison wall": 2200,
+            "explosion": 2400,
+            "fire wall": 2600,
+            "great energy beam": 2800,
+            "invisible": 3000,
+            "summon creature": 3200,
+            "energy wall": 3600,
+            "energy wave": 4000,
+            "sudden death": 5000
+        }
+    }
+}

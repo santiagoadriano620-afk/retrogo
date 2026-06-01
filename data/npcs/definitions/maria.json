@@ -1,0 +1,215 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Maria",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  118,
+                                              "details":  {
+                                                              "head":  77,
+                                                              "body":  79,
+                                                              "legs":  61,
+                                                              "feet":  131
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  1,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "I am running this upper part of the Hard Rock Tavern.",
+                                          "tavern":  "I am running this upper part of the Hard Rock Tavern.",
+                                          "strange":  "I don\u0027t know him. He seems very nervous and hes always fumbling around with this suspicious hat.",
+                                          "fellow":  "I don\u0027t know him. He seems very nervous and hes always fumbling around with this suspicious hat.",
+                                          "david":  "I am sorry but I don\u0027t know him personaly. I heared he entertained people here long before I moved to Venore.",
+                                          "brassacres":  "I am sorry but I don\u0027t know him personaly. I heared he entertained people here long before I moved to Venore.",
+                                          "upper":  "Yes, that\u0027s here. Below is the Pit Tavern for those fighters that use the pits.",
+                                          "part":  "Yes, that\u0027s here. Below is the Pit Tavern for those fighters that use the pits.",
+                                          "pits":  "Well, they do a lot of fighting down there.",
+                                          "name":  "I am Maria.",
+                                          "maria":  "Yes, I am Maria, Maria Corona.",
+                                          "time":  "Don\u0027t be that hasty.",
+                                          "king":  "In Venore, everyone is a king ... until he runs out of luck or money.",
+                                          "tibianus":  "In Venore, everyone is a king ... until he runs out of luck or money.",
+                                          "army":  "Good fighters need good entertainment. That\u0027s what they get here.",
+                                          "ferumbras":  "I think he\u0027s more a Thaian problem.",
+                                          "excalibug":  "I\u0027d rather have a stainless steel cooking pan than such a knife.",
+                                          "thais":  "It\u0027s a shame that this lousy city is the heart of the kingdom.",
+                                          "tibia":  "In the long run it\u0027s money that rules everything in Tibia.",
+                                          "carlin":  "As far as the merchants say it\u0027s economically unimportant.",
+                                          "amazon":  "I can only hope those wild women don\u0027t scare away more customers than come here in order to fight against them.",
+                                          "news":  "Bah, only the usual swampelves stories.",
+                                          "rumors":  "Bah, only the usual swampelves stories.",
+                                          "swampelves":  "Well there\u0027s a hidden city called Shadowthorn of those warlike elves in the swamps. They are not amused of civilisation at their doorsteps and have been plotting against Venore for years.",
+                                          "buy":  "Food and drinks as much as you can pay for.",
+                                          "do":  "Food and drinks as much as you can pay for.",
+                                          "you":  "Food and drinks as much as you can pay for.",
+                                          "sell":  "Food and drinks as much as you can pay for.",
+                                          "have":  "Food and drinks as much as you can pay for.",
+                                          "food":  "We offer cookies, bread, cheese, ham, and meat, as well as eggs and tomatoes.",
+                                          "drink":  "Do you want beer, wine, lemonade, or water?"
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "The Hard Rock Tavern greets you, .",
+                                                       "I am running this upper part of the Hard Rock Tavern."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "The Hard Rock Tavern greets you, %N.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "And here is what you ordered.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You penniless beggar! Get out of here!",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Hrmpf!",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Bread",
+                                                         "price":  4,
+                                                         "id":  2689,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Cheese",
+                                                         "price":  6,
+                                                         "id":  2696,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Meat",
+                                                         "price":  5,
+                                                         "id":  2666,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Ham",
+                                                         "price":  8,
+                                                         "id":  2671,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Cookie",
+                                                         "price":  5,
+                                                         "id":  2687,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Egg",
+                                                         "price":  2,
+                                                         "id":  2695,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Tomato",
+                                                         "price":  5,
+                                                         "id":  2685,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Mug",
+                                                         "price":  2,
+                                                         "id":  2012,
+                                                         "type":  "sell"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "maria.js"
+                     }
+}

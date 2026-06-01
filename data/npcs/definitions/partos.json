@@ -1,0 +1,103 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Partos",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  111,
+                                              "details":  {
+                                                              "head":  116,
+                                                              "body":  56,
+                                                              "legs":  95,
+                                                              "feet":  122
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  1,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "Guess it! I give you a hint: I am not in this cell to clean it up! ...",
+                                          "news":  "I hardly hear any news down here.",
+                                          "name":  "My name is Partos, but you can call me Party.",
+                                          "party":  "Yeah! Come in and let\u0027s have a party.",
+                                          "thais":  "I love the city. I just wish I could see some other part of it now and then.",
+                                          "city":  "I love the city. I just wish I could see some other part of it now and then.",
+                                          "tibia":  "I love this world. I just wish I could see some other part of it now and then.",
+                                          "how":  "I am great! Free food, free room, and now and then someone coming down here to ask me silly questions. Wouldn\u0027t you love that, too?",
+                                          "are":  "I am great! Free food, free room, and now and then someone coming down here to ask me silly questions. Wouldn\u0027t you love that, too?",
+                                          "you":  "I am great! Free food, free room, and now and then someone coming down here to ask me silly questions. Wouldn\u0027t you love that, too?",
+                                          "sell":  "I would like to sell you a secret, but I\u0027m out of business for too long.",
+                                          "jail":  "You mean that\u0027s a JAIL? They told me it\u0027s the finest hotel in town! THAT explains the lousy roomservice!",
+                                          "prison":  "You mean that\u0027s a JAIL? They told me it\u0027s the finest hotel in town! THAT explains the lousy roomservice!",
+                                          "crime":  "Bah, I did nothing serious. I just had a little fun. In Ankrahmun nobody would have cared about these kind of things...",
+                                          "criminal":  "Bah, I did nothing serious. I just had a little fun. In Ankrahmun nobody would have cared about these kind of things...",
+                                          "god$":  "The gods seldom show up down here, so don\u0027t ask me.",
+                                          "gods$":  "The gods seldom show up down here, so don\u0027t ask me.",
+                                          "citizen":  "Rich enough to spare a little, don\u0027t you agree? Well, they didn\u0027t agree.",
+                                          "king":  "Yeah, a king is a man that can rob people by law, and not by night like me.",
+                                          "monster":  "At least I am safe from them down here.",
+                                          "gold":  "Gold got me in here.",
+                                          "money":  "Gold got me in here.",
+                                          "fight":  "Hey, most people I killed were even worse than me.",
+                                          "slay":  "Hey, most people I killed were even worse than me.",
+                                          "noodles":  "I bet one could get some fine ransom, if he dognappes this furball.",
+                                          "quentin":  "By the gods, he visits us \u0027criminals\u0027 now and then to \u0027save\u0027 us. Who is going to save me from this boredom on two legs?",
+                                          "army":  "Bah, the king\u0027s pawns. I spit on them.",
+                                          "time":  "Geee, someone stole my watch. Bad company down here.",
+                                          "ankrahmun":  "Yes, I\u0027ve lived in Ankrahmun for quite some time. Ahh, good old times! ...",
+                                          "waterpipe":  "My waterpipe? I lost it. But it doesn\u0027t matter. I quit smoking anyway.",
+                                          "djinn":  "I won\u0027t talk about that.",
+                                          "baa\u0027leal":  "I won\u0027t talk about that.",
+                                          "supplies":  "I won\u0027t talk about that.",
+                                          "mal\u0027ouquah":  "I won\u0027t talk about that."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Welcome to my little kingdom, .",
+                                                       "Guess it! I give you a hint: I am not in this cell to clean it up! ..."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Welcome to my little kingdom, %N.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ]
+                     }
+}

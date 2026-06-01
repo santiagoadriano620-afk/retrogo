@@ -1,0 +1,137 @@
+{
+    "creatureStatistics": {
+        "name": "A Sweaty Cyclops",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 22,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 2,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "job": "I am smith.",
+            "name": "I called Bencthyclthrtrprr by me people. Lil' ones me call Big Ben.",
+            "tibia": "One day I'll go and look.",
+            "ab'dendriel": "Me parents live here before town was. Me not care about lil' ones.",
+            "big": "Mountain in south. Lil' lil' ones living there.",
+            "old": "Mountain in south. Lil' lil' ones living there.",
+            "elves": "Me not fight them, they not fight me.",
+            "humans": "Always asking me for stuff they can't afford.",
+            "orcs": "Silly ones. Not talk much. Always screaming and hitting.",
+            "minotaurs": "They were friend with me parents. Long before elves here, they often made visit. No longer come here.",
+            "dwarfs": "Lil' lil' ones are so fun. We often chat.",
+            "lil": "Lil' lil' ones are so fun. We often chat.",
+            "god": "You shut up. Me not want to hear.",
+            "smith": "Working steel is my profession.",
+            "steel": "Manny kinds of. Like Mesh Kaha Rogh, Za'Kalortith, Uth'Byth, Uth'Morc, Uth'Amon, Uth'Maer, Uth'Doon, and Zatragil",
+            "Mesh": "Steel that is singing when forged. No one knows where find today.",
+            "Kaha": "Steel that is singing when forged. No one knows where find today.",
+            "Rogh": "Steel that is singing when forged. No one knows where find today.",
+            "Za'Kalortith": "It's evil. Demon iron is. No good cyclops goes where you can find and need evil flame to melt.",
+            "Uth'Byth": "Not good to make stuff off. Bad steel it is. But eating magic, so useful is.",
+            "Uth'Morc": "Lil' ones it thieves' steel call sometimes. It's dark and making not much noise.",
+            "Uth'Amon": "Brigthsteel is. Much art made with it. Sorcerers to lazy and afraid to enchant much.",
+            "Uth'Maer": "Heartiron from heart of big old mountain, found very deep. Lil' lil ones fiercely defend. Not wanting to have it used for stuff but holy stuff.",
+            "Uth'Doon": "It's high steel called. Only lil' lil' ones know how make.",
+            "Zatragil": "Most ancients use dream silver for different stuff. Now ancients most gone. Most not know about.",
+            "Teshial": "Is one of elven family or such thing. Me not understand lil' ones and their busisness.",
+            "Deraisim": "Is one of elven family or such thing. Me not understand lil' ones and their busisness.",
+            "Cenath": "Is one of elven family or such thing. Me not understand lil' ones and their busisness.",
+            "Kuridai": "Is one of elven family or such thing. Me not understand lil' ones and their busisness.",
+            "cyclops": "Me people not live here much. Most are far away.",
+            "excalibug": "Me wish I could make weapon like it.",
+            "fire": "Do lil' one want to trade a fire sword?",
+            "sword": "Do lil' one want to trade a serpent sword?",
+            "bright": "Do lil' one want to trade a bright sword?",
+            "word": "Do lil' one want to trade a bright sword?",
+            "warlord": "Do lil' one want to trade a warlord sword?",
+            "of": "Do lil' one want to trade a sword of valor?",
+            "valor": "Do lil' one want to trade a sword of valor?",
+            "serpent": "Do lil' one want to trade a serpent sword?",
+            "enchanted": "Do lil' one want to trade an enchanted plate armor?",
+            "plate": "Do lil' one want to trade an enchanted plate armor?",
+            "dragon": "Do lil' one want to trade a dragon shield?",
+            "shield": "Do lil' one want to trade a dragon shield?"
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "Hum Humm! Welcume lil' .",
+                "I am smith."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Hum Humm! Welcume lil' %N.",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ],
+        "topics": {
+            "1": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You not have stuff me want for.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Silly lil' one you are.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            }
+        },
+        "keywordNextTopics": {},
+        "script": "a_sweaty_cyclops.js"
+    }
+}

@@ -1,0 +1,479 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Helor",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  117,
+                                              "details":  {
+                                                              "head":  57,
+                                                              "body":  79,
+                                                              "legs":  95,
+                                                              "feet":  98
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  0,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "I am a paladin and a teacher.",
+                                          "name":  "My name is Helor.",
+                                          "time":  "It is  right now.",
+                                          "king":  "Our king will learn about the things happening here and he will be not amused.",
+                                          "venore":  "Those tradesmen would gladly sell their souls. And they would sell them cheap.",
+                                          "thais":  "Thais has its mistakes but it\u0027s a town\u0027s people that form a society and it\u0027s its people that have to be blamed for a society\u0027s failure.",
+                                          "carlin":  "In their own way they are still following the word of the gods.",
+                                          "edron":  "There are certain problems in Edron for sure and the defection of some of the knights was a great loss and caused much shame. But we are growing on the obstacles we have to overcome.",
+                                          "jungle":  "The jungle is a challenge and even here in this city you can feel its corruptive influence. It\u0027s always lurking to crush the ones that are weak in body or mind.",
+                                          "tibia":  "The face of the world was sculpted by conflicts of the gods and the mortals.",
+                                          "kazordoon":  "Dwarves abandoned the gods because they are shortsighted. They are lost people.",
+                                          "dwarves":  "Dwarves abandoned the gods because they are shortsighted. They are lost people.",
+                                          "dwarfs":  "Dwarves abandoned the gods because they are shortsighted. They are lost people.",
+                                          "ab\u0027dendriel":  "The believes of the elves are just a pack of lies to comfort their vanity. Only the gods have the power to elevate us beyond the restrictions of our mortal form. The elves\u0027 vanity will lead them to nothing.",
+                                          "elves":  "The believes of the elves are just a pack of lies to comfort their vanity. Only the gods have the power to elevate us beyond the restrictions of our mortal form. The elves\u0027 vanity will lead them to nothing.",
+                                          "elfs":  "The believes of the elves are just a pack of lies to comfort their vanity. Only the gods have the power to elevate us beyond the restrictions of our mortal form. The elves\u0027 vanity will lead them to nothing.",
+                                          "darama":  "It\u0027s up to us to fulfil the will of the gods even here at this remote continent.",
+                                          "darashia":  "The people there are not evil, they just follow a terribly wrong philosophy.",
+                                          "ankrahmun":  "An abnormality leading an abnormal cult. The day will come where our forces are strong enough to cleanse the city and the minds of the people.",
+                                          "ferumbras":  "Evil has many faces. He is only one of them.",
+                                          "excalibug":  "A weapon that should be used to slay evil wherever it shows its ugly face.",
+                                          "apes":  "They are intelligent enough to raid Port Hope in order to steal tools, so unlike other animals they are responsible for their wrongdoing and should be punished.",
+                                          "lizard":  "The lizards are aggressive enemies. It\u0027s obvious they never heard about our gods and their ideals.",
+                                          "dworcs":  "They are just another breed of orcs and they will be treated like them.",
+                                          "spell":  "Sorry, I only sell spells to paladins."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Be greeted in the name of the gods, traveller.",
+                                                       "I am a paladin and a teacher."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Be greeted in the name of the gods, traveller.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hiho$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "2":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "rune",
+                                                                                       "spell"
+                                                                                   ],
+                                                                      "response":  "I sell \u0027Light Magic Missile\u0027, \u0027Heavy Magic Missile\u0027, \u0027Fireball\u0027 and \u0027Destroy Field\u0027.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "instant",
+                                                                                       "spell"
+                                                                                   ],
+                                                                      "response":  "I sell healing spells, supply spells and support spells. Which of these interests you most?",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "level"
+                                                                                   ],
+                                                                      "response":  "For which level would you like to learn a spell?",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "bye"
+                                                                                   ],
+                                                                      "response":  "May the gods watch you.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "0$"
+                                                                                   ],
+                                                                      "response":  "For magic level 0 I have \u0027Food\u0027, \u0027Find Person\u0027 and \u0027Light\u0027.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "1$"
+                                                                                   ],
+                                                                      "response":  "For magic level 1 I have \u0027Light Healing\u0027 and \u0027Light Magic Missile\u0027.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "2$"
+                                                                                   ],
+                                                                      "response":  "For magic level 2 I have \u0027Antidote\u0027, \u0027Conjure Arrow\u0027 and \u0027Intense Healing\u0027.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "3$"
+                                                                                   ],
+                                                                      "response":  "For magic level 3 I have \u0027Great Light\u0027 and \u0027Heavy Magic Missile\u0027.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "4$"
+                                                                                   ],
+                                                                      "response":  "For magic level 4 I have \u0027Magic Shield\u0027.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "5$"
+                                                                                   ],
+                                                                      "response":  "For magic level 5 I have \u0027Poisoned Arrow\u0027 and \u0027Fireball\u0027.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "6$"
+                                                                                   ],
+                                                                      "response":  "For magic level 6 I have \u0027Destroy Field\u0027.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "8$"
+                                                                                   ],
+                                                                      "response":  "For magic level 8 I have \u0027Ultimate Healing\u0027.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "10$"
+                                                                                   ],
+                                                                      "response":  "For magic level 10 I have \u0027Explosive Arrow\u0027.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "15$"
+                                                                                   ],
+                                                                      "response":  "For magic level 15 I have \u0027Invisible\u0027.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Sorry, I have only spells for level 0 to 6 as well as for level 8, 10 and 15.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "3":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You already know how to cast this spell.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You must be magic level %A to learn this spell.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Oh. You do not have enough money.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "max":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here you are. Look in your spellbook for the pronunciation of this spell.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Ok. Then not.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+                                                   "spell":  2,
+                                                   "antidote":  3,
+                                                   "conjure arrow":  3,
+                                                   "destroy field":  3,
+                                                   "explosive arrow":  3,
+                                                   "find person":  3,
+                                                   "fireball":  3,
+                                                   "food":  3,
+                                                   "great light":  3,
+                                                   "heavy magic missile":  3,
+                                                   "intense healing":  3,
+                                                   "invisible":  3,
+                                                   "light":  3,
+                                                   "light healing":  3,
+                                                   "light magic missile":  3,
+                                                   "magic shield":  3,
+                                                   "poisoned arrow":  3,
+                                                   "ultimate healing":  3
+                                               },
+                         "keywordTopicSpellIds":  {
+                                                      "antidote":  12,
+                                                      "conjure arrow":  36,
+                                                      "destroy field":  68,
+                                                      "explosive arrow":  40,
+                                                      "find person":  30,
+                                                      "fireball":  44,
+                                                      "food":  41,
+                                                      "great light":  19,
+                                                      "heavy magic missile":  46,
+                                                      "intense healing":  10,
+                                                      "invisible":  3,
+                                                      "light":  5,
+                                                      "light healing":  2,
+                                                      "light magic missile":  43,
+                                                      "magic shield":  18,
+                                                      "poisoned arrow":  42,
+                                                      "ultimate healing":  11
+                                                  },
+                         "keywordTopicMagicLevels":  {
+                                                         "antidote":  0,
+                                                         "conjure arrow":  0,
+                                                         "destroy field":  0,
+                                                         "explosive arrow":  0,
+                                                         "find person":  0,
+                                                         "fireball":  0,
+                                                         "food":  0,
+                                                         "great light":  0,
+                                                         "heavy magic missile":  0,
+                                                         "intense healing":  0,
+                                                         "invisible":  0,
+                                                         "light":  0,
+                                                         "light healing":  0,
+                                                         "light magic missile":  0,
+                                                         "magic shield":  0,
+                                                         "poisoned arrow":  0,
+                                                         "ultimate healing":  0
+                                                     },
+                         "script":  "helor.js",
+                         "keywordTopicPrices":  {
+                                                    "antidote":  400,
+                                                    "conjure arrow":  400,
+                                                    "destroy field":  1200,
+                                                    "explosive arrow":  2000,
+                                                    "find person":  200,
+                                                    "fireball":  1000,
+                                                    "food":  200,
+                                                    "great light":  600,
+                                                    "heavy magic missile":  600,
+                                                    "intense healing":  400,
+                                                    "invisible":  3000,
+                                                    "light":  200,
+                                                    "light healing":  200,
+                                                    "light magic missile":  200,
+                                                    "magic shield":  800,
+                                                    "poisoned arrow":  1000,
+                                                    "ultimate healing":  1600
+                                                }
+                     }
+}

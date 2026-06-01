@@ -1,0 +1,102 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Clark",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  112,
+                                              "details":  {
+                                                              "head":  19,
+                                                              "body":  79,
+                                                              "legs":  98,
+                                                              "feet":  95
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  2,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "I am the captain of the guards and responsible for upholding law and order in the colony.",
+                                          "name":  "I am called Clark.",
+                                          "guards":  "The guards of Port Hope are led by Lord Seamus, a nobleman from Thais.",
+                                          "seamus":  "He is ill and I am responsible for upholding the law now.",
+                                          "time":  "It is  right now.",
+                                          "king":  "Our king can be proud of this colony.",
+                                          "venore":  "The Venorans are fine and generous people. It\u0027s a good thing that they put all this effort into this colony. I don\u0027t know what we would do if it weren\u0027t for them.",
+                                          "thais":  "Thais is a big city but if we do well enough here, Port Hope might one day rival its size.",
+                                          "carlin":  "It\u0027s a shame those women still get away with their independence. Friends told me that too many of Thais\u0027s resources are wasted in useless projects and the army is too weak to claim back what is ours.",
+                                          "edron":  "The knights of Edron are somewhat arrogant. They use the resources of the isle only for themselves instead of sharing it.",
+                                          "jungle":  "The jungle is our first and foremost enemy.",
+                                          "tibia":  "I would guess a good part of the world is under Thaian rule.",
+                                          "kazordoon":  "As long as the dwarves stay there and don\u0027t expand, I think it\u0027s ok to let them have this ugly piece of rock.",
+                                          "dwarves":  "Dwarves are impressive fighters. The Venorans talked about hiring some of them as mercenaries to help us out.",
+                                          "dwarfs":  "Dwarves are impressive fighters. The Venorans talked about hiring some of them as mercenaries to help us out.",
+                                          "ab\u0027dendriel":  "My guess is that those elves are secretly allied with Carlin. I would not trust an elf if I would meet one.",
+                                          "elves":  "My guess is that those elves are secretly allied with Carlin. I would not trust an elf if I would meet one.",
+                                          "elfs":  "My guess is that those elves are secretly allied with Carlin. I would not trust an elf if I would meet one.",
+                                          "darama":  "This continent will be ours one day.",
+                                          "darashia":  "A village of harmless cultists. They pose no real threat and could easily been integrated into the Thaian realm.",
+                                          "ankrahmun":  "This city is a threat to Thais\u0027s domination of Darama. Yet, we are too weak to handle this threat.",
+                                          "ferumbras":  "He is the enemy number one to the kingdom and all good people.",
+                                          "excalibug":  "I heard the knights of Edron hide it somewhere instead of using it for the good of the country.",
+                                          "apes":  "Rest assured, we will handle that problem.",
+                                          "lizard":  "They pose no real threat to us.",
+                                          "dworcs":  "They fear our power and hide in some caves."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Hello.",
+                                                       "I am the captain of the guards and responsible for upholding law and order in the colony."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Hello.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hiho$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ]
+                     }
+}

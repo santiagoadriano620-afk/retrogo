@@ -1,0 +1,9 @@
+﻿{
+  "actionId": 3078,
+  "type": "moveEvent",
+  "events": ["onStepIn"],
+  "effects": [
+    { "type": "storage", "key": 272, "value": 1 },
+    { "type": "magicEffect", "effectId": 13 }
+  ]
+}

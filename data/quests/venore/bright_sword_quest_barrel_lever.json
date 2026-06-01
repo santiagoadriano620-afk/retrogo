@@ -1,0 +1,47 @@
+{
+  "actionId": 2044,
+  "type": "lever",
+  "itemIds": [1945, 1946],
+  "conditions": [
+    { "type": "itemAtPosition", "itemId": 1774, "pos": {"x": 32614, "y": 32209, "z": 10} }
+  ],
+  "effects": [
+    { "type": "removeItem", "pos": {"x": 32614, "y": 32209, "z": 10}, "itemId": 1774 },
+    { "type": "removeItem", "pos": {"x": 32614, "y": 32208, "z": 10}, "itemId": 1025 },
+    { "type": "relocate", "from": {"x": 32614, "y": 32209, "z": 10}, "to": {"x": 32614, "y": 32208, "z": 10} },
+    { "type": "createItem", "itemId": 1774, "count": 1, "pos": {"x": 32614, "y": 32208, "z": 10} },
+    { "type": "createItem", "itemId": 1025, "count": 1, "pos": {"x": 32614, "y": 32209, "z": 10} },
+    { "type": "removeItem", "pos": {"x": 32614, "y": 32206, "z": 10}, "itemId": 1304 },
+    { "type": "removeItem", "pos": {"x": 32614, "y": 32205, "z": 10}, "itemId": 1025 },
+    { "type": "createItem", "itemId": 1323, "count": 1, "pos": {"x": 32614, "y": 32204, "z": 10} },
+    { "type": "removeItem", "pos": {"x": 32614, "y": 32221, "z": 10}, "itemId": 1025 },
+    { "type": "removeItem", "pos": {"x": 32615, "y": 32223, "z": 10}, "itemId": 1384 },
+    { "type": "createItem", "itemId": 1309, "count": 1, "pos": {"x": 32615, "y": 32223, "z": 10} },
+    { "type": "createItem", "itemId": 1492, "count": 1, "pos": {"x": 32615, "y": 32221, "z": 10} },
+    { "type": "createItem", "itemId": 1493, "count": 1, "pos": {"x": 32615, "y": 32223, "z": 10} },
+    { "type": "createItem", "itemId": 1492, "count": 1, "pos": {"x": 32613, "y": 32220, "z": 10} },
+    { "type": "magicEffect", "pos": {"x": 32613, "y": 32220, "z": 10}, "effectId": 9 },
+    { "type": "transformItem", "from": 1945, "to": 1946, "decay": true },
+    { "type": "removeItem", "pos": {"x": 32613, "y": 32220, "z": 10}, "itemId": 2166 },
+    { "type": "createItem", "itemId": 1336, "count": 1, "pos": {"x": 32614, "y": 32205, "z": 10} },
+    { "type": "createItem", "itemId": 1025, "count": 1, "pos": {"x": 32614, "y": 32206, "z": 10} },
+    { "type": "magicEffect", "pos": {"x": 32615, "y": 32224, "z": 10}, "effectId": 16 },
+    { "type": "magicEffect", "pos": {"x": 32614, "y": 32224, "z": 10}, "effectId": 16 }
+  ],
+  "effectsNoCondition": [
+    { "type": "relocate", "from": {"x": 32614, "y": 32209, "z": 10}, "to": {"x": 32613, "y": 32209, "z": 10} },
+    { "type": "removeItem", "pos": {"x": 32614, "y": 32221, "z": 10}, "itemId": 1025 },
+    { "type": "removeItem", "pos": {"x": 32615, "y": 32223, "z": 10}, "itemId": 1384 },
+    { "type": "createItem", "itemId": 1309, "count": 1, "pos": {"x": 32615, "y": 32223, "z": 10} },
+    { "type": "createItem", "itemId": 1492, "count": 1, "pos": {"x": 32615, "y": 32221, "z": 10} },
+    { "type": "createItem", "itemId": 1493, "count": 1, "pos": {"x": 32615, "y": 32223, "z": 10} },
+    { "type": "createItem", "itemId": 1492, "count": 1, "pos": {"x": 32613, "y": 32220, "z": 10} },
+    { "type": "magicEffect", "pos": {"x": 32613, "y": 32220, "z": 10}, "effectId": 9 },
+    { "type": "createItem", "itemId": 1025, "count": 1, "pos": {"x": 32614, "y": 32209, "z": 10} },
+    { "type": "transformItem", "from": 1945, "to": 1946, "decay": true },
+    { "type": "removeItem", "pos": {"x": 32613, "y": 32220, "z": 10}, "itemId": 2166 }
+  ],
+  "effectsAlt": [
+    { "type": "magicEffect", "pos": {"x": 32616, "y": 32222, "z": 10}, "effectId": 3 }
+  ]
+}

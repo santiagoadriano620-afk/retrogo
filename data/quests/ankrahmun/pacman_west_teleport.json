@@ -1,0 +1,7 @@
+﻿{
+  "actionId": 3017,
+  "type": "moveEvent",
+  "events": ["onStepIn", "onAddItem"],
+  "teleport": { "to": { "x": 33225, "y": 32699, "z": 14 } },
+  "magicEffect": 11
+}

@@ -1,0 +1,394 @@
+{
+    "creatureStatistics": {
+        "name": "Haroun",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 80,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 1,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "name": "My name is Haroun. At your service.",
+            "haroun": "That is the name my honourable father chose for me.",
+            "job": "I am a merchant. Though I have not chosen this position for myself I have accepted the task with humility and devotion. ...",
+            "permission": "I am not allowed to trade with you unless Gabel gave you the permission to trade with us.",
+            "trade": "It is my mission to trade items on behalf of our community. ...",
+            "merchant": "It is my mission to trade items on behalf of our community. ...",
+            "gabel": "He is our leader. Not because he desires power or distinction, of course, but because the community needs a guide in spiritual and in worldly matters. ...",
+            "king": "We do not have kings. Of the members of our community, Gabel is closest to being what you would consider a leader, but he would resent being called by that presumptuous title.",
+            "djinn": "That is my race. I like to compare it to iron. It has the potential to be forged into the finest steel, but it does need a lot of work and devotion. ...",
+            "efreet": "Daraman has taught us restraint. But I am sure one day those apostates will pay dearly for their sinful rebellion!",
+            "marid": "We are the chosen ones. Those who walk the path to enlightenment with serenity and humility.",
+            "malor": "That filthy heretic! To me he is the very embodiment of all the evilness and the baseness we djinn must leave behind.",
+            "mal'ouquah": "That is the name of the Efreets' hideout. It certainly is one filthy hotbed of vice and degeneration.",
+            "ashta'daramai": "This is the name of the humble abode you are currently visiting. After Daraman had shown him the true way Gabel decided to tear down his former palace and to erect the present structure. ...",
+            "human": "Back in the dark days we used to be enemies, the humans and us. But then a human came and radically changed the way we see things. ...",
+            "zathroth": "An evil, evil god. He was the creator of my race, but he rejected us because we were not evil enough and far too independent to his taste. For this reason the djinn do not worship him anymore, not even those depraved efreet. ...",
+            "tibia": "Despite all the evil that stalks this world it is still a source of endless marvel and joy to me. Like the master said: ...",
+            "daraman": "How could my unworthy tongue ever find words to praise the enlightened one the way he deserves to be praised? Daraman took the veil from our eyes. He made us realise the extent of our misery. ...",
+            "darashia": "I understand the humans living there are self-indulgent and decadent. I am sure Daraman would disapprove of their ways.",
+            "scarab": "The scarab is an ancient species. It's chitinous shell can be turned into excellent armour.",
+            "edron": "They say the humans have founded impressive communities to the north. I hope their spiritual integrity matches their entrepreneurial spirit.",
+            "thais": "They say the humans have founded impressive communities to the north. I hope their spiritual integrity matches their entrepreneurial spirit.",
+            "venore": "They say the humans have founded impressive communities to the north. I hope their spiritual integrity matches their entrepreneurial spirit.",
+            "kazordoon": "They say the humans have founded impressive communities to the north. I hope their spiritual integrity matches their entrepreneurial spirit.",
+            "carlin": "They say the humans have founded impressive communities to the north. I hope their spiritual integrity matches their entrepreneurial spirit.",
+            "ab'dendriel": "They say the humans have founded impressive communities to the north. I hope their spiritual integrity matches their entrepreneurial spirit.",
+            "ankrahmun": "Ankrahmun has a venerable tradition, but now that heretic fool has acceeded to the throne it has degenerated into a breeding place for wicked heresy.",
+            "pharaoh": "I have heard many a gruesome stories about this presumptuous fool, who calls himself a pharaoh. Such hubris! Daraman himself, who was certainly the most divine mortal that ever walked Tibia, would never have dared to call himself a god.",
+            "palace": "I am a peaceful djinn, but with all those stories I have heard I really feel like visiting the palace and to cleanse this place from all the evil and the misbelief infesting that place.",
+            "ascension": "I have heard this is what the pharaoh has promised his followers. It is sad to see this wicked sinner is still allowed to spread his heresy!",
+            "rah": "Another one of the pharaoh's confused ideas.",
+            "uthun": "Another one of the pharaoh's confused ideas.",
+            "akh": "Another one of the pharaoh's confused ideas.",
+            "kha'zeel": "The Kha'zeel mountains have been created by the gods as a vantage point from where they could watch their creation. ...",
+            "kha'labal": "Kha'labal. It makes me sad just to hear that name. Long, long time ago this used to be a garden, you know? ...",
+            "melchior": "I remember Malchior. I used to meet him regularly, but strictly in matters of business. He was not really a likeable fellow then. ...",
+            "alesar": "Who? Yes, I... I have never... I mean, I don't know who that is.",
+            "fa'hradin": "Fa'hradin is a learned man, and this alone is enough to make me respect him. However, I sometimes can't help the feeling that he is lacking spiritual strength.",
+            "bo'ques": "Bo'ques is a cook. Cooking! What a useless craft. If I were Gabel I would have little use for a cook such as him, but perhaps not all djinns are as spiritual as Daraman would have them be.",
+            "lamp": "The lamp is a djinn's resting place of choice.",
+            "weapon": "I'm afraid I do not trade with weapons or armour. Nah'bob only deals with magical equipment.",
+            "armor": "I'm afraid I do not trade with weapons or armour. Nah'bob only deals with magical equipment.",
+            "armour": "I'm afraid I do not trade with weapons or armour. Nah'bob only deals with magical equipment.",
+            "wares": "I only deal with magical equipment. Our range of goods include amulets, rings and some special items.",
+            "offer": "I only deal with magical equipment. Our range of goods include amulets, rings and some special items.",
+            "goods": "I only deal with magical equipment. Our range of goods include amulets, rings and some special items.",
+            "equipment": "I only deal with magical equipment. Our range of goods include amulets, rings and some special items.",
+            "magical": "I only deal with magical equipment. Our range of goods include amulets, rings and some special items.",
+            "do": "I only deal with magical equipment. Our range of goods include amulets, rings and some special items.",
+            "you": "I only deal with magical equipment. Our range of goods include amulets, rings and some special items.",
+            "sell": "I only deal with magical equipment. Our range of goods include amulets, rings and some special items.",
+            "have": "I only deal with magical equipment. Our range of goods include amulets, rings and some special items.",
+            "amulets": "I'm selling and buying bronze amulets, stone skin amulets, elven amulets and garlic necklaces.",
+            "rings": "I'm selling and buying stealth rings, power rings, sword rings, axe rings, and club rings.",
+            "special": "I'm selling and buying magic light wands. I'm currently also looking for mind stones, life crystals and orbs."
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "Be greeted, human . How can a humble djinn be of service?",
+                "I am a merchant. Though I have not chosen this position for myself I have accepted the task with humility and devotion. ..."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Be greeted, human %N. How can a humble djinn be of service?",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "greetings$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "djanni'hah$"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ],
+        "topics": {
+            "10": {
+                "entries": [
+                    {
+                        "keywords": [],
+                        "response": "I'm sorry, human. But you need Gabel's permission to trade with me.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Thank you. May it bring you luck!",
+                        "conditions": [
+                            {
+                                "type": "gold",
+                                "min": -1
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "deleteMoney",
+                                "amount": -1
+                            },
+                            {
+                                "type": "createItem",
+                                "id": -1
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "I hate to disappoint you, but it seems you do not have enough gold.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "I understand. Perhaps another time then.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "11": {
+                "entries": [
+                    {
+                        "keywords": [],
+                        "response": "I'm sorry, human. But you need Gabel's permission to trade with me.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Thank you. Here is your money.",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "createMoney"
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You do not have one.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You do not have that many.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "I understand. Perhaps another time then.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            }
+        },
+        "keywordNextTopics": {},
+        "trade": {
+            "items": [
+                {
+                    "name": "Magic Lightwand",
+                    "price": 120,
+                    "id": 2162,
+                    "type": "sell"
+                },
+                {
+                    "name": "Sword Ring",
+                    "price": 500,
+                    "id": 2207,
+                    "type": "sell"
+                },
+                {
+                    "name": "Axe Ring",
+                    "price": 500,
+                    "id": 2208,
+                    "type": "sell"
+                },
+                {
+                    "name": "Club Ring",
+                    "price": 500,
+                    "id": 2209,
+                    "type": "sell"
+                },
+                {
+                    "name": "Stone Skin Amulet",
+                    "price": 5000,
+                    "id": 2197,
+                    "type": "sell"
+                },
+                {
+                    "name": "Elven Amulet",
+                    "price": 500,
+                    "id": 2198,
+                    "type": "sell"
+                },
+                {
+                    "name": "Garlic Necklace",
+                    "price": 100,
+                    "id": 2199,
+                    "type": "sell"
+                },
+                {
+                    "name": "Bronze Amulet",
+                    "price": 100,
+                    "id": 2172,
+                    "type": "sell"
+                },
+                {
+                    "name": "Stealth Ring",
+                    "price": 5000,
+                    "id": 2165,
+                    "type": "sell"
+                },
+                {
+                    "name": "Power Ring",
+                    "price": 100,
+                    "id": 2166,
+                    "type": "sell"
+                },
+                {
+                    "name": "Magic Lightwand",
+                    "price": 35,
+                    "id": 2162,
+                    "type": "buy"
+                },
+                {
+                    "name": "Sword Ring",
+                    "price": 100,
+                    "id": 2207,
+                    "type": "buy"
+                },
+                {
+                    "name": "Axe Ring",
+                    "price": 100,
+                    "id": 2208,
+                    "type": "buy"
+                },
+                {
+                    "name": "Club Ring",
+                    "price": 100,
+                    "id": 2209,
+                    "type": "buy"
+                },
+                {
+                    "name": "Stone Skin Amulet",
+                    "price": 500,
+                    "id": 2197,
+                    "type": "buy"
+                },
+                {
+                    "name": "Elven Amulet",
+                    "price": 100,
+                    "id": 2198,
+                    "type": "buy"
+                },
+                {
+                    "name": "Garlic Necklace",
+                    "price": 50,
+                    "id": 2199,
+                    "type": "buy"
+                },
+                {
+                    "name": "Bronze Amulet",
+                    "price": 50,
+                    "id": 2172,
+                    "type": "buy"
+                },
+                {
+                    "name": "Stealth Ring",
+                    "price": 200,
+                    "id": 2165,
+                    "type": "buy"
+                },
+                {
+                    "name": "Power Ring",
+                    "price": 50,
+                    "id": 2166,
+                    "type": "buy"
+                },
+                {
+                    "name": "Mind Stone",
+                    "price": 100,
+                    "id": 2178,
+                    "type": "buy"
+                },
+                {
+                    "name": "Life Crystal",
+                    "price": 50,
+                    "id": 2177,
+                    "type": "buy"
+                },
+                {
+                    "name": "Orb",
+                    "price": 750,
+                    "id": 2176,
+                    "type": "buy"
+                }
+            ]
+        },
+        "script": "haroun.js"
+    }
+}

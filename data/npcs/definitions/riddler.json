@@ -1,0 +1,913 @@
+{
+    "creatureStatistics": {
+        "name": "Riddler",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 48,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 5,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "name": "I am known as the riddler. That is all you need to know.",
+            "job": "I am the guardian of the paradox tower.",
+            "time": "It is the age of the talon.",
+            "tower": "This tower, of course, silly one. It holds my master's treasure.",
+            "paradox": "This tower, of course, silly one. It holds my master's treasure.",
+            "master": "His name is none of your business.",
+            "guard": "I am guarding the treasures of the tower. Only those who pass the test of the three sigils may pass.",
+            "treasure": "I am guarding the treasures of the tower. Only those who pass the test of the three sigils may pass.",
+            "test": "Death awaits those who fail the test of the three seals! Do you really want me to test you?",
+            "sigil": "Death awaits those who fail the test of the three seals! Do you really want me to test you?",
+            "key": "The key of this tower! You will never find it! A malicious plant spirit is guarding it!",
+            "door": "The key of this tower! You will never find it! A malicious plant spirit is guarding it!"
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "! HEHEHEHE! Another fool! Excellent!",
+                "I am the guardian of the paradox tower."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "%N! HEHEHEHE! Another fool! Excellent!",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ],
+        "topics": {
+            "1": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "FOOL! Now you're doomed! But well ... So be it! Let's start out with the Seal of Knowledge and the first question: What name did the necromant king choose for himself?",
+                        "conditions": [
+                            {
+                                "type": "questValue",
+                                "questId": 212,
+                                "value": 0
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "setQuest",
+                                "questId": 212,
+                                "value": 1
+                            }
+                        ],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "So you think you're smart! But well ... So be it! Let's start out with the Seal of Knowledge and the first question: What do I have in my pocket?",
+                        "conditions": [
+                            {
+                                "type": "questValue",
+                                "questId": 212,
+                                "value": 1
+                            }
+                        ],
+                        "actions": [],
+                        "nextTopic": 14,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "no"
+                        ],
+                        "response": "HEHEHE! I knew you wouldn't have the stomach.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true
+                    }
+                ]
+            },
+            "2": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "goshnar"
+                        ],
+                        "response": "HOHO! You have learned your lesson well. Question number two then: Who or what is the feared Hugo?",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 3,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "WRONG!",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "setQuest",
+                                "questId": 212,
+                                "value": 0
+                            },
+                            {
+                                "type": "teleport",
+                                "x": 32725,
+                                "y": 31589,
+                                "z": 12
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isCatchAll": true
+                    }
+                ]
+            },
+            "3": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "demonbunny"
+                        ],
+                        "response": "HOHO! Right again. All right. The final question of the first seal: Who was the first warrior to follow the path of the Mooh'Tah?",
+                        "conditions": [
+                            {
+                                "type": "questValue",
+                                "questId": 211,
+                                "value": 4
+                            }
+                        ],
+                        "actions": [],
+                        "nextTopic": 4,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "demonbunny"
+                        ],
+                        "response": "Hmmm, so you think cheating will get you through that test? Then your final question of the first seal is: What is the meaning of life?",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 13,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "demonrabbit"
+                        ],
+                        "response": "HOHO! Right again. All right. The final question of the first seal: Who was the first warrior to follow the path of the Mooh'Tah?",
+                        "conditions": [
+                            {
+                                "type": "questValue",
+                                "questId": 211,
+                                "value": 4
+                            }
+                        ],
+                        "actions": [],
+                        "nextTopic": 4,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "demonrabbit"
+                        ],
+                        "response": "Hmmm, so you think cheating will get you through that test? Then your final question of the first seal is: What is the meaning of life?",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 13,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "WRONG!",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "setQuest",
+                                "questId": 212,
+                                "value": 0
+                            },
+                            {
+                                "type": "teleport",
+                                "x": 32725,
+                                "y": 31589,
+                                "z": 12
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isCatchAll": true
+                    }
+                ]
+            },
+            "4": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "Tha'kull"
+                        ],
+                        "response": "HOHO! Lucky you. You have passed the first seal! So ... would you like to continue with the Seal of the Mind?",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 5,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "WRONG!",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "setQuest",
+                                "questId": 212,
+                                "value": 0
+                            },
+                            {
+                                "type": "teleport",
+                                "x": 32725,
+                                "y": 31589,
+                                "z": 12
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isCatchAll": true
+                    }
+                ]
+            },
+            "5": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "As you wish, foolish one! Here is my first question: Its lighter then a feather but no living creature can hold it for ten minutes?",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 6,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "HEHEHE! I knew you don't have the stomach.",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "setQuest",
+                                "questId": 212,
+                                "value": 0
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "6": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "breath"
+                        ],
+                        "response": "That was an easy one. Let's try the second: If you name it, you break it.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 7,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "WRONG!",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "setQuest",
+                                "questId": 212,
+                                "value": 0
+                            },
+                            {
+                                "type": "teleport",
+                                "x": 32725,
+                                "y": 31589,
+                                "z": 12
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isCatchAll": true
+                    }
+                ]
+            },
+            "7": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "silence"
+                        ],
+                        "response": "Hm. I bet you think you're smart. All right. How about this: What does everybody want to become but nobody to be?",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 8,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "WRONG!",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "setQuest",
+                                "questId": 212,
+                                "value": 0
+                            },
+                            {
+                                "type": "teleport",
+                                "x": 32725,
+                                "y": 31589,
+                                "z": 12
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isCatchAll": true
+                    }
+                ]
+            },
+            "8": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "old"
+                        ],
+                        "response": "ARGH! You did it again! Well all right. Do you wish to break the Seal of Madness?",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 9,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "WRONG!",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "setQuest",
+                                "questId": 212,
+                                "value": 0
+                            },
+                            {
+                                "type": "teleport",
+                                "x": 32725,
+                                "y": 31589,
+                                "z": 12
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isCatchAll": true
+                    }
+                ]
+            },
+            "9": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "GOOD! So I will get you at last. Answer this: What is your favourite colour?",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 10,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "HEHEHE! I knew you don't have the stomach.",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "setQuest",
+                                "questId": 212,
+                                "value": 0
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "10": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "red"
+                        ],
+                        "response": "UHM UH OH ... How could you guess that? Are you mad??? All right. Question number two: What is the opposite?",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "setQuest",
+                                "questId": 2,
+                                "value": 1
+                            }
+                        ],
+                        "nextTopic": 11,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "blue"
+                        ],
+                        "response": "UHM UH OH ... How could you guess that? Are you mad??? All right. Question number two: What is the opposite?",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "setQuest",
+                                "questId": 2,
+                                "value": 2
+                            }
+                        ],
+                        "nextTopic": 11,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "black"
+                        ],
+                        "response": "UHM UH OH ... How could you guess that? Are you mad??? All right. Question number two: What is the opposite?",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "setQuest",
+                                "questId": 2,
+                                "value": 3
+                            }
+                        ],
+                        "nextTopic": 11,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "white"
+                        ],
+                        "response": "UHM UH OH ... How could you guess that? Are you mad??? All right. Question number two: What is the opposite?",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "setQuest",
+                                "questId": 2,
+                                "value": 4
+                            }
+                        ],
+                        "nextTopic": 11,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "orange"
+                        ],
+                        "response": "UHM UH OH ... How could you guess that? Are you mad??? All right. Question number two: What is the opposite?",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "setQuest",
+                                "questId": 2,
+                                "value": 5
+                            }
+                        ],
+                        "nextTopic": 11,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "green"
+                        ],
+                        "response": "UHM UH OH ... How could you guess that? Are you mad??? All right. Question number two: What is the opposite?",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "setQuest",
+                                "questId": 2,
+                                "value": 6
+                            }
+                        ],
+                        "nextTopic": 11,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yellow"
+                        ],
+                        "response": "UHM UH OH ... How could you guess that? Are you mad??? All right. Question number two: What is the opposite?",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "setQuest",
+                                "questId": 2,
+                                "value": 7
+                            }
+                        ],
+                        "nextTopic": 11,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "brown"
+                        ],
+                        "response": "UHM UH OH ... How could you guess that? Are you mad??? All right. Question number two: What is the opposite?",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "setQuest",
+                                "questId": 2,
+                                "value": 8
+                            }
+                        ],
+                        "nextTopic": 11,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "violet"
+                        ],
+                        "response": "UHM UH OH ... How could you guess that? Are you mad??? All right. Question number two: What is the opposite?",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "setQuest",
+                                "questId": 2,
+                                "value": 9
+                            }
+                        ],
+                        "nextTopic": 11,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "pink"
+                        ],
+                        "response": "UHM UH OH ... How could you guess that? Are you mad??? All right. Question number two: What is the opposite?",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "setQuest",
+                                "questId": 2,
+                                "value": 10
+                            }
+                        ],
+                        "nextTopic": 11,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "silver"
+                        ],
+                        "response": "UHM UH OH ... How could you guess that? Are you mad??? All right. Question number two: What is the opposite?",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "setQuest",
+                                "questId": 2,
+                                "value": 11
+                            }
+                        ],
+                        "nextTopic": 11,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "gold"
+                        ],
+                        "response": "UHM UH OH ... How could you guess that? Are you mad??? All right. Question number two: What is the opposite?",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "setQuest",
+                                "questId": 2,
+                                "value": 12
+                            }
+                        ],
+                        "nextTopic": 11,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "grey"
+                        ],
+                        "response": "UHM UH OH ... How could you guess that? Are you mad??? All right. Question number two: What is the opposite?",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "setQuest",
+                                "questId": 2,
+                                "value": 13
+                            }
+                        ],
+                        "nextTopic": 11,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "WRONG!",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "setQuest",
+                                "questId": 212,
+                                "value": 0
+                            },
+                            {
+                                "type": "teleport",
+                                "x": 32725,
+                                "y": 31589,
+                                "z": 12
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isCatchAll": true
+                    }
+                ]
+            },
+            "11": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "nothing"
+                        ],
+                        "response": "NO! NO! NO! That can't be true. You're not only mad, you are a complete idiot! Ah well. Here is the last question: What is 1 plus 1?",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 12,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "none"
+                        ],
+                        "response": null,
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "SORRY I AM NOT ALLOWD TO HELP HEHEHE!",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "setQuest",
+                                "questId": 212,
+                                "value": 0
+                            },
+                            {
+                                "type": "teleport",
+                                "x": 32725,
+                                "y": 31589,
+                                "z": 12
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isCatchAll": true
+                    }
+                ]
+            },
+            "12": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "49$"
+                        ],
+                        "response": "DAMN YOUUUUUUUUUUUUUUUUUUUUUU!",
+                        "conditions": [
+                            {
+                                "type": "questValue",
+                                "questId": 1,
+                                "value": 1
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "setQuest",
+                                "questId": 212,
+                                "value": 0
+                            },
+                            {
+                                "type": "teleport",
+                                "x": 32478,
+                                "y": 31905,
+                                "z": 1
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": true
+                    },
+                    {
+                        "keywords": [
+                            "94$"
+                        ],
+                        "response": "DAMN YOUUUUUUUUUUUUUUUUUUUUUU!",
+                        "conditions": [
+                            {
+                                "type": "questValue",
+                                "questId": 1,
+                                "value": 2
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "setQuest",
+                                "questId": 212,
+                                "value": 0
+                            },
+                            {
+                                "type": "teleport",
+                                "x": 32478,
+                                "y": 31905,
+                                "z": 1
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": true
+                    },
+                    {
+                        "keywords": [
+                            "13$"
+                        ],
+                        "response": "DAMN YOUUUUUUUUUUUUUUUUUUUUUU!",
+                        "conditions": [
+                            {
+                                "type": "questValue",
+                                "questId": 1,
+                                "value": 3
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "setQuest",
+                                "questId": 212,
+                                "value": 0
+                            },
+                            {
+                                "type": "teleport",
+                                "x": 32478,
+                                "y": 31905,
+                                "z": 1
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": true
+                    },
+                    {
+                        "keywords": [
+                            "1$"
+                        ],
+                        "response": "DAMN YOUUUUUUUUUUUUUUUUUUUUUU!",
+                        "conditions": [
+                            {
+                                "type": "questValue",
+                                "questId": 1,
+                                "value": 4
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "setQuest",
+                                "questId": 212,
+                                "value": 0
+                            },
+                            {
+                                "type": "teleport",
+                                "x": 32478,
+                                "y": 31905,
+                                "z": 1
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": true
+                    },
+                    {
+                        "keywords": [],
+                        "response": "WRONG!",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "setQuest",
+                                "questId": 212,
+                                "value": 0
+                            },
+                            {
+                                "type": "teleport",
+                                "x": 32725,
+                                "y": 31589,
+                                "z": 12
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isCatchAll": true
+                    }
+                ]
+            },
+            "13": {
+                "entries": [
+                    {
+                        "keywords": [],
+                        "response": "WRONG! Next time get your own answers. To hell with thee, cheater!",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "setQuest",
+                                "questId": 212,
+                                "value": 0
+                            },
+                            {
+                                "type": "teleport",
+                                "x": 32725,
+                                "y": 31589,
+                                "z": 12
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isCatchAll": true
+                    }
+                ]
+            },
+            "14": {
+                "entries": [
+                    {
+                        "keywords": [],
+                        "response": "WRONG!",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "setQuest",
+                                "questId": 212,
+                                "value": 0
+                            },
+                            {
+                                "type": "teleport",
+                                "x": 32725,
+                                "y": 31589,
+                                "z": 12
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isCatchAll": true
+                    }
+                ]
+            }
+        },
+        "keywordNextTopics": {
+            "test": 1,
+            "sigil": 1
+        },
+        "script": "riddler.js"
+    }
+}

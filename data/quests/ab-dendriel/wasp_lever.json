@@ -1,0 +1,29 @@
+[
+  {
+    "actionId": 2001,
+    "type": "lever",
+    "itemIds": [1945, 1946],
+    "conditions": [
+      { "type": "isItemInPosition", "pos": { "x": 32627, "y": 31699, "z": 10 }, "itemId": 1284 }
+    ],
+    "effects": [
+      { "type": "transformItem", "from": 1945, "to": 1946, "decay": true },
+      { "type": "relocate", "from": { "x": 32627, "y": 31699, "z": 10 }, "to": { "x": 32626, "y": 31699, "z": 10 } },
+      { "type": "relocate", "from": { "x": 32628, "y": 31699, "z": 10 }, "to": { "x": 32626, "y": 31699, "z": 10 } },
+      { "type": "relocate", "from": { "x": 32629, "y": 31699, "z": 10 }, "to": { "x": 32626, "y": 31699, "z": 10 } },
+      { "type": "transformItemInPosition", "pos": { "x": 32627, "y": 31699, "z": 10 }, "from": 1284, "to": 493 },
+      { "type": "createItem", "itemId": 4799, "count": 1, "pos": { "x": 32627, "y": 31699, "z": 10 } },
+      { "type": "transformItemInPosition", "pos": { "x": 32628, "y": 31699, "z": 10 }, "from": 1284, "to": 493 },
+      { "type": "transformItemInPosition", "pos": { "x": 32629, "y": 31699, "z": 10 }, "from": 1284, "to": 493 },
+      { "type": "createItem", "itemId": 4797, "count": 1, "pos": { "x": 32629, "y": 31699, "z": 10 } }
+    ],
+    "effectsAlt": [
+      { "type": "transformItem", "from": 1946, "to": 1945, "decay": true },
+      { "type": "transformItemInPosition", "pos": { "x": 32627, "y": 31699, "z": 10 }, "from": 493, "to": 1284 },
+      { "type": "transformItemInPosition", "pos": { "x": 32628, "y": 31699, "z": 10 }, "from": 493, "to": 1284 },
+      { "type": "transformItemInPosition", "pos": { "x": 32629, "y": 31699, "z": 10 }, "from": 493, "to": 1284 },
+      { "type": "removeItem", "pos": { "x": 32627, "y": 31699, "z": 10 }, "itemId": 4799 },
+      { "type": "removeItem", "pos": { "x": 32629, "y": 31699, "z": 10 }, "itemId": 4797 }
+    ]
+  }
+]

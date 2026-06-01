@@ -1,0 +1,258 @@
+{
+    "creatureStatistics": {
+        "name": "Lugri",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 9,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 4,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "job": "I am a priest of Zathroth, the bringer of dark secrets.",
+            "name": "My name is Lugri.",
+            "news": "You will soon see the 'news' with your own eyes. <chuckle>",
+            "tibia": "The world of Tibia is to be taken by the strongest.",
+            "how": "I feel the power of evil rising and enjoy that.",
+            "are": "I feel the power of evil rising and enjoy that.",
+            "you": "I feel the power of evil rising and enjoy that.",
+            "sell": "I am in the death business. You wouldn't like what I have to offer.",
+            "god$": "The gods of darkness give us the chance to reach our whole potentials, the gods of good want to capture us in eternal stasis!",
+            "gods$": "The gods of darkness give us the chance to reach our whole potentials, the gods of good want to capture us in eternal stasis!",
+            "life": "Life is war. It's about survival of the fittest.",
+            "citizen": "The people of Tibia are sheep, so be smart and strong enough to become their wolf.",
+            "people": "The people of Tibia are sheep, so be smart and strong enough to become their wolf.",
+            "king": "This puny king is no threat for our master's plans.",
+            "monster": "They are a challenge to sift the chaff from the wheat.",
+            "quest": "Aren't we all on a quest for survival and supremacy?",
+            "mission": "Aren't we all on a quest for survival and supremacy?",
+            "survival": "Aren't we all on a quest for survival and supremacy?",
+            "supermacy": "Aren't we all on a quest for survival and supremacy?",
+            "gold": "Do you want to make a donation?",
+            "money": "Do you want to make a donation?",
+            "donation": "Do you want to make a donation?",
+            "fight": "Life is an eternal fight!",
+            "slay": "The weak have to be slain by the strong!",
+            "heal": "Your wounds are your problem, not mine.",
+            "help": "If you cant help yourself you are not worth of my assistance.",
+            "ferumbras": "He is one of Zathroth's strongest followers and wields special powers, given to him by the dark one.",
+            "time": "Who cares?",
+            "excalibug": "It's existence is just a lie to inspire hope and bravery in the hearts of the followers of good.",
+            "fardos": "Fardos is the creator. He is a helpless watcher whose 'creation' is far more then he bargained for.",
+            "uman": "Uman is a jealous keeper of magic. He gives only little knowledge to the mortals.",
+            "suon": "Suon is one of the suns of our world. He gives his light mindlessly to the weak and the strong alike.",
+            "crunor": "Crunor is a plantgod ... and plants exist to be stomped over.",
+            "nornur": "Nornur fancies himself as god of fate without even understanding the ways of fate at all.",
+            "bastesh": "Bastesh is so afraid that she hides in the depth of the seas.",
+            "kirok": "Kirok, the mad one, is the patron of scientists and jesters, more a nuisance than a god.",
+            "toth": "Toth is just the undertaker for the other 'gods of good'.",
+            "banor": "Banor isn't a god at all, but one of their tools. It is stupidity to worship a tool, isn't it?",
+            "tibiasula": "Zathroth took her life, recoginzig it was necessary for the process of creation.",
+            "sula": "Sula is just the mindless elemental power of water.",
+            "air": "Air is is just a mindless elemental force.",
+            "fire": "Fire is is just a mindless elemental force.",
+            "zathroth": "Zathroth represents the true and unbound power of magic. He is the keeper of great secrets.",
+            "fafnar": "Fafnar is the power of the sun. She burns the weak to ashes.",
+            "brog": "Brog, the raging one, the great destroyer, the berserk of darkness ... call him how you like, but fear his awesome power.",
+            "urgith": "Urgith is the master of the undead. The bonemaster also takes care of the damned souls.",
+            "archdemons": "The demons are powerful followers of Zathroth. Their leaders are known as the ruthless seven.",
+            "ruthless": "Infernatil, Pumin, Verminor, Tafariel, Apocalypse, Bazir and Ashfalor.",
+            "seven": "Infernatil, Pumin, Verminor, Tafariel, Apocalypse, Bazir and Ashfalor.",
+            "tafariel": "She is the mistress of the damned! Rewarding or torturing, it is the same for her victims!",
+            "apocalypse": "It is said even speaking its TRUE name will bring total destruction to you!",
+            "pumin": "He is the lord of despair.",
+            "infernatil": "The incendiary of hell.",
+            "bazir": "He is the great deciver, the lord of lies.",
+            "Verminor": "Ah, the plaguelord.",
+            "ashfalor": "The right hand of Urgith. The general of the undead hordes.",
+            "pits": "That name is a disgrace. The pityful nightmare knights couldn't defend them and even lost the treasure of their order there.",
+            "inferno": "After the ruthless seven conquered it, it's again a holy place for the followers of the dark path.",
+            "nightmare": "That name is a disgrace. The pityful nightmare knights couldn't defend them and even lost the treasure of their order there.",
+            "goshnar": "The necromant king was only defeated by the nightmare knights due to a bad twist of fate.",
+            "necromant": "That's none of your business!",
+            "nectar": "That's none of your business!"
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "What do you want, ?",
+                "I am a priest of Zathroth, the bringer of dark secrets."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "What do you want, %N?",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ],
+        "topics": {
+            "1": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "May the gods bless you!",
+                        "conditions": [
+                            {
+                                "type": "gold",
+                                "min": -1
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "deleteMoney",
+                                "amount": -1
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Don't be ashamed but you lack the gold.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "As you wish.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "2": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "good"
+                        ],
+                        "response": "The so called gods of good are Fardos, Uman, the elements, Suon, Crunor, Nornur, Bastesh, Kirok, Toth, and Banor.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "light"
+                        ],
+                        "response": "The so called gods of good are Fardos, Uman, the elements, Suon, Crunor, Nornur, Bastesh, Kirok, Toth, and Banor.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "tibia"
+                        ],
+                        "response": "Tibia is just the mindless elemental power of earth.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "evil"
+                        ],
+                        "response": "The glorious gods of darkness are Zathroth, Fafnar, Brog, Urgith, and the Archdemons.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "darkness"
+                        ],
+                        "response": "The glorious gods of darkness are Zathroth, Fafnar, Brog, Urgith, and the Archdemons.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    }
+                ]
+            },
+            "3": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Fine. Now you get what you deserve, you fool! DIE IN AGONY!",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true
+                    }
+                ]
+            }
+        },
+        "keywordNextTopics": {
+            "god$": 2,
+            "gods$": 2,
+            "gold": 1,
+            "money": 1,
+            "donation": 1
+        },
+        "keywordTopicPrices": {
+            "gold": 30,
+            "money": 30,
+            "donation": 30
+        },
+        "trade": {
+            "items": []
+        },
+        "script": "lugri.js"
+    }
+}

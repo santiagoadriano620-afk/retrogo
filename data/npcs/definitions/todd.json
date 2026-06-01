@@ -1,0 +1,84 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Todd",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  111,
+                                              "details":  {
+                                                              "head":  115,
+                                                              "body":  0,
+                                                              "legs":  67,
+                                                              "feet":  114
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  7,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "how":  "Oh, this headache, one of the beers frodo served me must have been foul.",
+                                          "are":  "Oh, this headache, one of the beers frodo served me must have been foul.",
+                                          "you":  "Oh, this headache, one of the beers frodo served me must have been foul.",
+                                          "job":  "I am... a traveller.",
+                                          "karl":  "Uhm, never heared about him... and you can\u0027t proof otherwise.",
+                                          "name":  "My Name? I am To... ahm... hum... My name is Hugo.",
+                                          "Hugo":  "Yes, thats my name of course.",
+                                          "smuggler":  "I am a honest person and don\u0027t like to be insulted!",
+                                          "carlin":  "I never was there. Now leave me alone.",
+                                          "resistance":  "Resistance is futile... uhm... I wonder where I picked that saying up. Oh my head...",
+                                          "head":  "Uhhh Ohhhh one of the beers yesterday must have been bad.",
+                                          "thais":  "I love that city.",
+                                          "william":  "Thats a common name, perhaps I met a William, not sure about that.",
+                                          "money":  "I don\u0027t know anything about money, missing or not.",
+                                          "todd":  "Uh .. I... I met a Todd on the road. He told me he was traveling to Venore, look there for your Todd."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Uhm oh hello... not so loud please... my head...",
+                                                       "I am... a traveller."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  "Uhm oh hello... not so loud please... my head...",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ]
+                     }
+}

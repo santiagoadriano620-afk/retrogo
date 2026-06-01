@@ -1,0 +1,106 @@
+{
+    "creatureStatistics": {
+        "name": "Cipfried",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 57,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 1,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "job": "I am just a humble monk. Ask me if you need help or healing.",
+            "name": "My name is Cipfried.",
+            "monk": "I sacrifice my life to serve the good gods of Tibia.",
+            "tibia": "That's where we are. The world of Tibia.",
+            "rookgaard": "The gods have chosen this isle as the point of arrival for the newborn souls.",
+            "god": "They created Tibia and all life on it. Visit our library and learn about them.",
+            "life": "The gods decorated Tibia with various forms of life. Plants, the citizens, and even the monsters.",
+            "plant": "Just walk around. You will see grass, trees, and bushes.",
+            "citizen": "Only few people live here. Walk around and talk to them.",
+            "obi": "He is a local shop owner.",
+            "al": "He is a local shop owner.",
+            "dee": "He is a local shop owner.",
+            "seymour": "Seymour is a loyal follower of the king and responsibe for the academy.",
+            "academy": "You should visit Seymour in the academy and ask him about a mission.",
+            "willie": "He is a fine farmer. The farm is located to the left of the temple.",
+            "monster": "They are a constant threat. Learn to fight by hunting rabbits, deers and sheeps. Then try to fight rats, bugs and perhaps spiders.",
+            "help": "First you should try to get some gold and buy better equipment.",
+            "hint": "First you should try to get some gold and buy better equipment.",
+            "quest": "First you should try to get some gold and buy better equipment.",
+            "task": "First you should try to get some gold and buy better equipment.",
+            "what": "First you should try to get some gold and buy better equipment.",
+            "do": "First you should try to get some gold and buy better equipment.",
+            "gold": "You have to slay monsters and take their gold. Or sell food at Willie's farm.",
+            "money": "If you need money, you have to slay monsters and take their gold. Look for spiders and rats.",
+            "rat": "In the north of this temple you find a sewer grate. Use it to enter the sewers if you feel prepared. Don't forget a torch; you'll need it.",
+            "sewer": "In the north of this temple you find a sewer grate. Use it to enter the sewers if you feel prepared. Don't forget a torch; you'll need it.",
+            "equipment": "First you need some armor and perhaps a better weapon or a shield. A real adventurer needs a rope, a shovel, and a fishing pole, too.",
+            "fight": "Take a weapon in your hand, activate your combat mode, and select a target. After a fight you should eat something to heal your wounds.",
+            "slay": "Take a weapon in your hand, activate your combat mode, and select a target. After a fight you should eat something to heal your wounds.",
+            "eat": "If you want to heal your wounds you should eat something. Willie sells excellent meals. But if you are very weak, come to me and ask me to heal you.",
+            "food": "If you want to heal your wounds you should eat something. Willie sells excellent meals. But if you are very weak, come to me and ask me to heal you.",
+            "heal$": "You aren't looking really bad. Sorry, I can't help you.",
+            "time": "Now, it is , my child."
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "Hello, ! Feel free to ask me for help.",
+                "I am just a humble monk. Ask me if you need help or healing."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {
+            "heal$": {
+                "damage": 65,
+                "effectSelf": null,
+                "effectTarget": 13
+            }
+        },
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Hello, %N! Feel free to ask me for help.",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ]
+    }
+}

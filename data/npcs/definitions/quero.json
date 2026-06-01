@@ -1,0 +1,175 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Quero",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  111,
+                                              "details":  {
+                                                              "head":  55,
+                                                              "body":  30,
+                                                              "legs":  23,
+                                                              "feet":  115
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  1,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "I make instruments and sometimes I\u0027m wandering through the lands of Tibia as a bard.",
+                                          "name":  "My name is Quero.",
+                                          "time":  "Sorry, I don\u0027t know what time it is.",
+                                          "music":  "I love the music of the elves.",
+                                          "elf":  "They live in the northeast of Tibia.",
+                                          "elves":  "They live in the northeast of Tibia.",
+                                          "bard":  "Selling instruments isn\u0027t enough to live on and I love music. That\u0027s why I wander through the lands from time to time.",
+                                          "benjamin":  "He\u0027s nice.",
+                                          "offer":  "You can buy a lyre, lute, drum, and simple fanfare.",
+                                          "goods":  "You can buy a lyre, lute, drum, and simple fanfare.",
+                                          "do":  "You can buy a lyre, lute, drum, and simple fanfare.",
+                                          "you":  "You can buy a lyre, lute, drum, and simple fanfare.",
+                                          "sell":  "You can buy a lyre, lute, drum, and simple fanfare.",
+                                          "have":  "You can buy a lyre, lute, drum, and simple fanfare.",
+                                          "instrument":  "You can buy a lyre, lute, drum, and simple fanfare."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Welcome ! Can I help you?",
+                                                       "I make instruments and sometimes I\u0027m wandering through the lands of Tibia as a bard."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Welcome %N! Can I help you?",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here you are.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Come back, when you have enough money.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Hmm, but next time.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Lyre",
+                                                         "price":  120,
+                                                         "id":  2071,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Lute",
+                                                         "price":  195,
+                                                         "id":  2072,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Drum",
+                                                         "price":  140,
+                                                         "id":  2073,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Simple Fanfare",
+                                                         "price":  150,
+                                                         "id":  2075,
+                                                         "type":  "sell"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "quero.js"
+                     }
+}

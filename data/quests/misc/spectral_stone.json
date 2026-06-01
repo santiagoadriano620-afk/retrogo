@@ -1,0 +1,28 @@
+{
+  "itemId": 4851,
+  "type": "questItem",
+  "branches": [
+    {
+      "conditions": [
+        { "type": "targetItem", "itemId": 474 },
+        { "type": "position", "x": 32665, "y": 32736, "z": 6 },
+        { "type": "storage", "key": 320, "value": 5 }
+      ],
+      "effects": [
+        { "type": "storage", "key": 321, "value": 1 },
+        { "type": "magicEffect", "effectId": 13 }
+      ]
+    },
+    {
+      "conditions": [
+        { "type": "targetItem", "itemId": 474 },
+        { "type": "position", "x": 32497, "y": 31622, "z": 6 },
+        { "type": "storage", "key": 320, "value": 5 }
+      ],
+      "effects": [
+        { "type": "storage", "key": 322, "value": 1 },
+        { "type": "magicEffect", "effectId": 13 }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "actionId": 3052,
+  "type": "bridge",
+  "events": ["onStepIn", "onAddItem"],
+  "tileItem": true,
+  "conditions": [
+    {"type": "isPlayer"},
+    {"type": "notPremium"}
+  ],
+  "effects": [
+    {"type": "sendMessage", "message": "You need a premium account to cross the bridge."}
+  ],
+  "teleport": {
+    "offsetX": 3,
+    "offsetY": 0,
+    "z": 7
+  },
+  "magicEffect": 13
+}

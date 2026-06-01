@@ -1,0 +1,173 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Captain Jack",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  115,
+                                              "details":  {
+                                                              "head":  19,
+                                                              "body":  70,
+                                                              "legs":  95,
+                                                              "feet":  115
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  2,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "travel":  true,
+                         "keywords":  {
+                                          "name":  "I\u0027m m ol\u0027 Captain Jack.",
+                                          "job":  "I work as a kind of ferryman. I transport wares and travellers for the monks.",
+                                          "sail":  "I work as a kind of ferryman. I transport wares and travellers for the monks.",
+                                          "captain":  "I work as a kind of ferryman. I transport wares and travellers for the monks.",
+                                          "ship":  "All right she\u0027s small. But she\u0027s a real beauty, don\u0027t you think?",
+                                          "ferry":  "All right she\u0027s small. But she\u0027s a real beauty, don\u0027t you think?",
+                                          "wares":  "They always need provisions from the cities, and they sell their wine there.",
+                                          "traveller":  "Sometimes pilgrims come to this place. And now and then a monk leaves the monastery for some time.",
+                                          "trip":  "Where do you want to go today?",
+                                          "passage":  "If you have the abbot\u0027s permission, I can take you to the home of a local fisherman on the continent Tibia. We can\u0027t sail to Carlin though.",
+                                          "carlin":  "For some obscure political reason the monks never sail to Carlin or Thais directly.",
+                                          "island":  "This is the isle of the kings. All the great Tibian leaders have found their final rest here under the monastery.",
+                                          "monastery":  "The white raven monastery is a place of wisdom and contemplation, or so the monks say. Sounds like a pretty boring place to me! HAR HAR!",
+                                          "monk":  "The order of the white raven.",
+                                          "white":  "I prefer parrots. And monkeys! And snakes! HAR! HAR!",
+                                          "raven":  "I prefer parrots. And monkeys! And snakes! HAR! HAR!",
+                                          "continent":  "Without the abbots permission I won\u0027t take sail you anywhere! Go and ask him for a passage first.",
+                                          "tibia":  "Without the abbots permission I won\u0027t take you anywhere! Go and ask him for a passage first."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "By the gods! You must be that intruder the good brothers were talking about! Begone!",
+                                                       "Ahoy, matey. You are lucky to catch me here. I was preparing to set sail.",
+                                                       "I work as a kind of ferryman. I transport wares and travellers for the monks."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "By the gods! You must be that intruder the good brothers were talking about! Begone!",
+                                                      "idle":  true
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Ahoy, matey. You are lucky to catch me here. I was preparing to set sail.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Have a nice trip!",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "teleport",
+                                                                                          "x":  32205,
+                                                                                          "y":  31756,
+                                                                                          "z":  7
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You don\u0027t have enough money.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Well, I\u0027ll be here if you change your mind.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+                                                   "continent":  1,
+                                                   "tibia":  1
+                                               },
+                         "keywordTopicPrices":  {
+                                                    "continent":  20,
+                                                    "tibia":  20
+                                                },
+                         "script":  "captain_jack.js"
+                     }
+}

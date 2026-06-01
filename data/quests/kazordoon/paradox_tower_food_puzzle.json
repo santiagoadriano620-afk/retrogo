@@ -1,0 +1,24 @@
+{
+  "actionId": 2049,
+  "type": "puzzle",
+  "itemIds": [1945, 1946],
+  "conditions": [
+    { "type": "itemAtPosition", "itemId": 2682, "pos": {"x": 32476, "y": 31900, "z": 4} },
+    { "type": "itemAtPosition", "itemId": 2676, "pos": {"x": 32477, "y": 31900, "z": 4} },
+    { "type": "itemAtPosition", "itemId": 2679, "pos": {"x": 32478, "y": 31900, "z": 4} },
+    { "type": "itemAtPosition", "itemId": 2674, "pos": {"x": 32479, "y": 31900, "z": 4} },
+    { "type": "itemAtPosition", "itemId": 2681, "pos": {"x": 32480, "y": 31900, "z": 4} },
+    { "type": "itemAtPosition", "itemId": 2678, "pos": {"x": 32481, "y": 31900, "z": 4} }
+  ],
+  "effects": [
+    { "type": "createItem", "itemId": 1386, "count": 1, "pos": {"x": 32476, "y": 31904, "z": 4} },
+    { "type": "removeItem", "pos": {"x": 32476, "y": 31900, "z": 4}, "itemId": 2682 },
+    { "type": "removeItem", "pos": {"x": 32477, "y": 31900, "z": 4}, "itemId": 2676 },
+    { "type": "removeItem", "pos": {"x": 32478, "y": 31900, "z": 4}, "itemId": 2679 },
+    { "type": "removeItem", "pos": {"x": 32479, "y": 31900, "z": 4}, "itemId": 2674 },
+    { "type": "removeItem", "pos": {"x": 32480, "y": 31900, "z": 4}, "itemId": 2681 },
+    { "type": "removeItem", "pos": {"x": 32481, "y": 31900, "z": 4}, "itemId": 2678 },
+    { "type": "transformItem", "from": 1945, "to": 1946, "decay": true }
+  ],
+  "effectsAlt": []
+}

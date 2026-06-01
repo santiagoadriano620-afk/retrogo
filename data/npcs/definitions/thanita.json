@@ -1,0 +1,84 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Thanita",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  121,
+                                              "details":  {
+                                                              "head":  78,
+                                                              "body":  52,
+                                                              "legs":  64,
+                                                              "feet":  52
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  2,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "I\u0027m an amazon guard. It\u0027s my job to keep my eyes open and to keep enemies from passing by. My job here truely is one of the toughest. All because of these nerve-racking beasts.",
+                                          "name":  "My name is Thanita. Nice to meet you.",
+                                          "beasts":  "These green, orcish raiders come in masses. Hundreds of them. They are worse than those goblins I have to deal with from time to time. ...",
+                                          "orcs":  "These green, orcish raiders come in masses. Hundreds of them. They are worse than those goblins I have to deal with from time to time. ...",
+                                          "them":  "These green, orcish raiders come in masses. Hundreds of them. They are worse than those goblins I have to deal with from time to time. ...",
+                                          "raid":  "These green, orcish raiders come in masses. Hundreds of them. They are worse than those goblins I have to deal with from time to time. ...",
+                                          "mission":  "Well, I cannot provide you with a mission, I have a mission to fulfill myself. ...",
+                                          "quest":  "Well, I cannot provide you with a mission, I have a mission to fulfill myself. ...",
+                                          "fight":  "To get rid of them, you need to be quite good in different martial arts.",
+                                          "defeat":  "To get rid of them, you need to be quite good in different martial arts.",
+                                          "femor":  "Are you kidding me? This is femor hills. Probably one of the roughest areas in Tibia. There is nobody else could do my job.",
+                                          "hills":  "Are you kidding me? This is femor hills. Probably one of the roughest areas in Tibia. There is nobody else could do my job.",
+                                          "tower":  "This is a watchtower of the city of carlin. From here I can see pretty much all of the surrounding lands. Hardly anybody can startle me up here. I see all enemies long before they can see me.",
+                                          "enemies":  "The enemies I fear most here are these nasty orcs.",
+                                          "amazon":  "I see you have heard of amazons before. Well let me tell you, probably everything you heard is true. We are much stronger and tougher than people think. Also, we know how to fight and could teach many men how to handle a weapon. ..."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "How could you sneak up on me like this? I thought you were one of THEM! Well, since you are not, what brings you to this wilderness?",
+                                                       "I\u0027m an amazon guard. It\u0027s my job to keep my eyes open and to keep enemies from passing by. My job here truely is one of the toughest. All because of these nerve-racking beasts."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  "How could you sneak up on me like this? I thought you were one of THEM! Well, since you are not, what brings you to this wilderness?",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ]
+                     }
+}

@@ -1,0 +1,10 @@
+﻿{
+  "actionId": 2068,
+  "type": "puzzle",
+  "effects": [
+    { "type": "magicEffect", "pos": { "x": 33094, "y": 32524, "z": 1 }, "effectId": 14 },
+    { "type": "removeItem", "itemId": 2344, "count": 1 },
+    { "type": "createItem", "itemId": 2356, "count": 1, "pos": { "x": 33095, "y": 32524, "z": 1 } },
+    { "type": "storage", "key": 288, "value": 2 }
+  ]
+}

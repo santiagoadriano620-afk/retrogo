@@ -1,0 +1,35 @@
+{
+  "actionId": 3100,
+  "type": "seal",
+  "itemIds": [1484, 1485, 1945, 1946],
+  "conditions": [
+    { "type": "storage", "key": 7, "value": -1 },
+    { "type": "itemAtPosition", "itemId": 1484, "pos": {"x": 32214, "y": 31850, "z": 15} }
+  ],
+  "effects": [
+    { "type": "relocate", "from": {"x": 0, "y": 0, "z": 0}, "to": {"x": 32271, "y": 31857, "z": 15} },
+    { "type": "storage", "key": 7, "value": 1 },
+    { "type": "magicEffect", "pos": {"x": 32271, "y": 31857, "z": 15}, "effectId": 14 },
+    { "type": "magicEffect", "pos": {"x": 32217, "y": 31846, "z": 14}, "effectId": 12 },
+    { "type": "magicEffect", "pos": {"x": 32215, "y": 31844, "z": 14}, "effectId": 12 },
+    { "type": "magicEffect", "pos": {"x": 32215, "y": 31846, "z": 14}, "effectId": 12 },
+    { "type": "magicEffect", "pos": {"x": 32217, "y": 31847, "z": 14}, "effectId": 12 },
+    { "type": "magicEffect", "pos": {"x": 32213, "y": 31847, "z": 14}, "effectId": 12 },
+    { "type": "magicEffect", "pos": {"x": 32217, "y": 31848, "z": 14}, "effectId": 12 },
+    { "type": "magicEffect", "pos": {"x": 32215, "y": 31848, "z": 14}, "effectId": 12 },
+    { "type": "createItem", "itemId": 1491, "count": 1, "pos": {"x": 32215, "y": 31848, "z": 15} },
+    { "type": "transformItemInPosition", "pos": {"x": 32214, "y": 31850, "z": 15}, "from": 1484, "to": 1485 },
+    { "type": "transformItemInPosition", "pos": {"x": 32215, "y": 31850, "z": 15}, "from": 1484, "to": 1485 },
+    { "type": "transformItemInPosition", "pos": {"x": 32216, "y": 31850, "z": 15}, "from": 1484, "to": 1485 },
+    { "type": "transformItemInPosition", "pos": {"x": 32220, "y": 31842, "z": 15}, "from": 1945, "to": 1946 },
+    { "type": "transformItemInPosition", "pos": {"x": 32220, "y": 31843, "z": 15}, "from": 1945, "to": 1946 },
+    { "type": "transformItemInPosition", "pos": {"x": 32220, "y": 31844, "z": 15}, "from": 1945, "to": 1946 },
+    { "type": "transformItemInPosition", "pos": {"x": 32220, "y": 31845, "z": 15}, "from": 1945, "to": 1946 },
+    { "type": "transformItemInPosition", "pos": {"x": 32220, "y": 31846, "z": 15}, "from": 1945, "to": 1946 }
+  ],
+  "effectsAlt": [
+    { "type": "relocate", "from": {"x": 0, "y": 0, "z": 0}, "to": {"x": 32215, "y": 31848, "z": 15} },
+    { "type": "magicEffect", "pos": {"x": 32215, "y": 31848, "z": 15}, "effectId": 1 },
+    { "type": "damage", "target": 0, "combat": "COMBAT_FIREDAMAGE", "min": -55, "max": -55 }
+  ]
+}

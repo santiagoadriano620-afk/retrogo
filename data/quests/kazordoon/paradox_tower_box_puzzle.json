@@ -1,0 +1,14 @@
+{
+  "actionId": 2047,
+  "type": "puzzle",
+  "itemIds": [1945, 1946],
+  "conditions": [],
+  "effects": [
+    { "type": "transformItem", "from": 1945, "to": 1946, "decay": true },
+    { "type": "createItem", "itemId": 1739, "count": 1, "pos": {"x": 32479, "y": 31901, "z": 5} },
+    { "type": "createItem", "itemId": 1491, "count": 1, "pos": {"x": 32479, "y": 31892, "z": 3} }
+  ],
+  "effectsAlt": [
+    { "type": "transformItem", "from": 1946, "to": 1945, "decay": true }
+  ]
+}

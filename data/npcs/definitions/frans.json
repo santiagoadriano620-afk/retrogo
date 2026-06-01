@@ -1,0 +1,152 @@
+{
+    "creatureStatistics": {
+        "name": "Frans",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 2229,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 1,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "name": "I am a FRANS.",
+            "frans": "Floating ReeeeAnimated Necromantic Seeeervant ... FRANS.",
+            "job": "I am selliiiing blaaaank ruuuunes and spellbooooooks.",
+            "sorcerer": "Sorcerorssss, druidssss, they all come to ussss.",
+            "druid": "Sorcerorssss, druidssss, they all come to ussss.",
+            "magic": "Is aaaall about magic more or lesssss, isn't it?",
+            "vladruc": "Heeee is the bossss. Better don't messss with him!",
+            "urghain": "Heeee is the bossss. Better don't messss with him!",
+            "ferumbras": "Wouldn't he beeee the perfect FRANS?",
+            "market": "Yes, that's a market heeeere, smarty ... Nice to seeeee I am not the only one without a braiiiin here.",
+            "excalibug": "We FRANSes don't liiiike any bugssss.",
+            "offer": "What do youuuu think I am? A lousy barberrrr? I'm selliiiing ruuuunes and spellboooooks.",
+            "goods": "What do youuuu think I am? A lousy barberrrr? I'm selliiiing ruuuunes and spellboooooks.",
+            "do": "What do youuuu think I am? A lousy barberrrr? I'm selliiiing ruuuunes and spellboooooks.",
+            "you": "What do youuuu think I am? A lousy barberrrr? I'm selliiiing ruuuunes and spellboooooks.",
+            "sell": "What do youuuu think I am? A lousy barberrrr? I'm selliiiing ruuuunes and spellboooooks.",
+            "have": "What do youuuu think I am? A lousy barberrrr? I'm selliiiing ruuuunes and spellboooooks.",
+            "rune": "I sell blank ruuuuunes and spell ruuuuunes."
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "Beeee Greeeeted . What is your neeeed?",
+                "I am selliiiing blaaaank ruuuunes and spellbooooooks."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Beeee Greeeeted %N. What is your neeeed?",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ],
+        "topics": {
+            "1": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "And here it isssss! Almost like magiiiic, isn't it?",
+                        "conditions": [
+                            {
+                                "type": "gold",
+                                "min": -1
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "deleteMoney",
+                                "amount": -1
+                            },
+                            {
+                                "type": "createItem",
+                                "id": -1
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Sorry, too many buttonssss and not enough gold in your pursssse.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Better not annoy a FRANS if you don't want to deeeeal with him!",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            }
+        },
+        "keywordNextTopics": {},
+        "trade": {
+            "items": [
+                {
+                    "name": "Blank Rune",
+                    "price": 10,
+                    "id": 2260,
+                    "type": "sell"
+                },
+                {
+                    "name": "Spellbook",
+                    "price": 150,
+                    "id": 2175,
+                    "type": "sell"
+                }
+            ]
+        },
+        "script": "frans.js"
+    }
+}

@@ -1,0 +1,18 @@
+﻿{
+  "actionId": 3055,
+  "type": "scarabCoin",
+  "events": ["onAddItem"],
+  "conditions": [
+    { "type": "itemAtPosition", "itemId": 2159, "pos": { "x": 33240, "y": 32855, "z": 13 } }
+  ],
+  "effects": [
+    { "type": "relocate", "from": { "x": 33240, "y": 32856, "z": 13 }, "to": { "x": 33246, "y": 32850, "z": 13 } },
+    { "type": "magicEffect", "pos": { "x": 33240, "y": 32856, "z": 13 }, "effectId": 11 },
+    { "type": "magicEffect", "pos": { "x": 33246, "y": 32850, "z": 13 }, "effectId": 11 },
+    { "type": "magicEffect", "pos": { "x": 33240, "y": 32855, "z": 13 }, "effectId": 16 },
+    { "type": "removeItem", "pos": { "x": 33240, "y": 32855, "z": 13 }, "itemId": 2159 }
+  ],
+  "effectsAlt": [
+    { "type": "magicEffect", "pos": { "x": 33240, "y": 32855, "z": 13 }, "effectId": 3 }
+  ]
+}

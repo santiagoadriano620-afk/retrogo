@@ -1,0 +1,261 @@
+{
+    "creatureStatistics": {
+        "name": "Irea",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 64,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 3,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "job": "I sell bows, arrows, crossbows and bolts. I also teach some spells.",
+            "name": "I am known as Irea.",
+            "time": "That's unimportant.",
+            "carlin": "The druids of Carlin seek our guidance now and then.",
+            "thais": "I don't understand what interest this humans form a far away land have in our town.",
+            "venore": "Their traders are verry intrusive.",
+            "roderick": "What is this humans use at all? I don't understabd it.",
+            "olrik": "His trade seems to be the delivery of messages and items.",
+            "elves": "Humans or dwarfs will never understand us.",
+            "dwarfs": "Bearded, heavy, and small.",
+            "humans": "Humans have so little time to learn.",
+            "troll": "I despise them.",
+            "cenath": "I often listen to their tales.",
+            "kuridai": "They provide us with tools and metal.",
+            "deraisim": "My people love the woods.",
+            "abdaisim": "One day we will be reunited.",
+            "teshial": "They have left so long ago.",
+            "ferumbras": "Who is that?",
+            "crunor": "The master of nature. He nurtures us and is our benevolent protector.",
+            "excalibug": "Our people have a bugfarm in the southeast of Ab'Dendriel.",
+            "news": "My news are not for your ears.",
+            "magic": "I teach spells to create enchanted arrows.",
+            "spell": "I teach 'Conjure Arrow', 'Poison Arrow', and 'Explosive Arrow'.",
+            "conjure": "I'm sorry, but this spell is only for paladins.",
+            "arrow": "I'm sorry, but this spell is only for paladins.",
+            "poison": "I'm sorry, but this spell is only for paladins.",
+            "explosive": "I'm sorry, but this spell is only for paladins."
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "Ashari .",
+                "I sell bows, arrows, crossbows and bolts. I also teach some spells."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Ashari %N.",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "ashari$"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ],
+        "topics": {
+            "1": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "And here it is.",
+                        "conditions": [
+                            {
+                                "type": "gold",
+                                "min": -1
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "deleteMoney",
+                                "amount": -1
+                            },
+                            {
+                                "type": "createItem",
+                                "id": -1
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Hey, you do not have enough gold.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Maybe we will make the deal another time.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "3": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You already know that spell.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You need to advance to magic level %A to learn this spell.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You do not have the gold to pay me.",
+                        "conditions": [
+                            {
+                                "type": "gold",
+                                "max": -1
+                            }
+                        ],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You have learned it now.",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "deleteMoney",
+                                "amount": -1
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "As you wish.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            }
+        },
+        "keywordNextTopics": {},
+        "keywordTopicSpellIds": {
+            "conjure": 36,
+            "arrow": 42,
+            "poison": 42,
+            "explosive": 40
+        },
+        "keywordTopicMagicLevels": {
+            "conjure": 0,
+            "arrow": 0,
+            "poison": 0,
+            "explosive": 0
+        },
+        "keywordTopicPrices": {
+            "conjure": 400,
+            "arrow": 1000,
+            "poison": 1000,
+            "explosive": 2000
+        },
+        "trade": {
+            "items": [
+                {
+                    "name": "Bow",
+                    "price": 350,
+                    "id": 2456,
+                    "type": "sell"
+                },
+                {
+                    "name": "Crossbow",
+                    "price": 450,
+                    "id": 2455,
+                    "type": "sell"
+                },
+                {
+                    "name": "Arrow",
+                    "price": 2,
+                    "id": 2544,
+                    "type": "sell"
+                },
+                {
+                    "name": "Bolt",
+                    "price": 3,
+                    "id": 2543,
+                    "type": "sell"
+                }
+            ]
+        },
+        "script": "irea.js"
+    }
+}

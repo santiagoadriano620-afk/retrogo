@@ -1,0 +1,18 @@
+﻿{
+  "actionId": 3072,
+  "type": "moveEvent",
+  "events": ["onStepIn", "onAddItem"],
+  "conditions": [
+    { "type": "playerItemCount", "itemId": 2354, "count": 1 },
+    { "type": "storage", "key": 265, "value": -1 }
+  ],
+  "effects": [
+    { "type": "relocate", "to": { "x": 33126, "y": 32592, "z": 15 } },
+    { "type": "magicEffect", "pos": { "x": 33126, "y": 32592, "z": 15 }, "effectId": 11 },
+    { "type": "removeItem", "itemId": 2354, "count": 1 }
+  ],
+  "effectsAlt": [
+    { "type": "relocate", "to": { "x": 33131, "y": 32566, "z": 8 } },
+    { "type": "magicEffect", "pos": { "x": 33131, "y": 32566, "z": 8 }, "effectId": 11 }
+  ]
+}

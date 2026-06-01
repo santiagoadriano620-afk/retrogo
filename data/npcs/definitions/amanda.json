@@ -1,0 +1,100 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Amanda",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  120,
+                                              "details":  {
+                                                              "head":  96,
+                                                              "body":  95,
+                                                              "legs":  0,
+                                                              "feet":  95
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  5,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "I am a humble nun.",
+                                          "name":  "I am sister Amanda.",
+                                          "tibia":  "That\u0027s our world.",
+                                          "god":  "They created the world and all life on it.",
+                                          "king":  "Our king is a religious man. A shining example.",
+                                          "tibianus":  "Our king is a religious man. A shining example.",
+                                          "army":  "Our army lives to the ideals of Banor.",
+                                          "banor":  "Our army lives to the ideals of Banor.",
+                                          "ferumbras":  "He is a pawn of evil.",
+                                          "excalibug":  "Only a being loyal to Banor will wield this blade.",
+                                          "news":  "Sorry, I rarely have time to chat.",
+                                          "time":  "Now, it is .",
+                                          "heal$":  "You aren\u0027t looking that bad. Sorry, I can\u0027t help you. But if you are looking for additional protection you should go on the pilgrimage of ashes.",
+                                          "blessing":  "There are five different blessings available in five sacred places. These blessings are: the spiritual shielding, the spark of the phoenix, the embrace of tibia, the fire of the suns and the wisdom of solitude.",
+                                          "pilgrimage":  "Whenever you receive a lethal wound your lifeforce is damaged. With every single of the five blessings you have this damage will be reduced.",
+                                          "ashes":  "Whenever you receive a lethal wound your lifeforce is damaged. With every single of the five blessings you have this damage will be reduced.",
+                                          "spiritual":  "You can receive the spiritual shielding in the whiteflower temple south of Thais.",
+                                          "shielding":  "You can receive the spiritual shielding in the whiteflower temple south of Thais.",
+                                          "sacred":  "Just ask in which of the five blessings you are interested in.",
+                                          "places":  "Just ask in which of the five blessings you are interested in.",
+                                          "spark":  "The spark of the phoenix is given by the dwarven priests of earth and fire in Kazordoon.",
+                                          "phoenix":  "The spark of the phoenix is given by the dwarven priests of earth and fire in Kazordoon.",
+                                          "embrace":  "The druids north of Carlin can provide you with the embrace of tibia.",
+                                          "fire":  "Ask for the blessing of the two suns in the suntower near Ab\u0027Dendriel .",
+                                          "suns":  "Ask for the blessing of the two suns in the suntower near Ab\u0027Dendriel .",
+                                          "wisdom":  "Talk to the hermit Eremo on the isle of Cormaya about this blessing.",
+                                          "solitude":  "Talk to the hermit Eremo on the isle of Cormaya about this blessing."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Welcome to the temple of Banor\u0027s blood .",
+                                                       "I am a humble nun."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+                                             "heal$":  {
+                                                           "damage":  40,
+                                                           "effectSelf":  null,
+                                                           "effectTarget":  13
+                                                       }
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Welcome to the temple of Banor\u0027s blood %N.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ]
+                     }
+}

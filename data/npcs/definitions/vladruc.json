@@ -1,0 +1,113 @@
+{
+    "creatureStatistics": {
+        "name": "Vladruc",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 68,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 2,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "name": "I am Vladruc Urghain. Welcome to my house!",
+            "job": "I am a humble merchant of little importance to the beautiful Venore.",
+            "thais": "Sadly only through books I have come to know your great Thais, and to know her is to love her.",
+            "books": "These companions have been good friends and teachers to me.",
+            "adventure": "The time I sought out adventure is long gone indeed.",
+            "Tibia": "What a wonderful world we do live in ... so full of life.",
+            "shop": "Ah, feel free to browse and buy in my humble shop below.",
+            "market": "Ah, feel free to browse and buy in my humble shop below.",
+            "time": "It is .",
+            "king": "I am of noble blood myself. I have been so long master that none other should be master of me.",
+            "tibianus": "I am of noble blood myself. I have been so long master that none other should be master of me.",
+            "venore": "Our ways are not your ways, and there shall be to you many strange things.",
+            "army": "The Thaian garrsion serves its purpose very well.",
+            "ferumbras": "You think he is of ancient evil? Little you know about ancientness or evilness.",
+            "excalibug": "A terrifying weapon if it does exist at all.",
+            "news": "I am a reclusive person and learn little of the local gossip of the peasants.",
+            "help": "I am sorry, but I can't be of much assistance to you.",
+            "monster": "Oh yes, the children of the night ... you dwellers in the city cannot enter into the feelings of the hunter.",
+            "dungeon": "Such lovely places, unjustly shunned by the people.",
+            "vampire": "Please don't talk about such creatures. You are scaring me.",
+            "thanks": "That's nothing worth to be mentioned.",
+            "thank": "That's nothing worth to be mentioned.",
+            "you": "That's nothing worth to be mentioned.",
+            "offer": "Please check my humble market downstairs for the wares that are offered.",
+            "magic": "Magic is a tool to be mastered.",
+            "spells": "I know a spell or two. You might want to buy some spells downstairs in the market.",
+            "alchemy": "You can buy some potions downstairs.",
+            "blood": "I like blood ... only the color, that is, of course ... <chuckles>",
+            "undead": "It is not dead, which can eternal lie, and in strange aeons, even death may die.",
+            "necroman": "Death is the final frontier. Necromancers boldly go, where no one has gone before.",
+            "coffin": "The final restingplace for all of us, isn't it?"
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "Chhhh ... Sorry, I'm busy. <cough>",
+                "I am Vladruc Urghain and welcome you, , to my house.",
+                "I am a humble merchant of little importance to the beautiful Venore."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Chhhh ... Sorry, I'm busy. <cough>",
+                "idle": true
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "I am Vladruc Urghain and welcome you, %N, to my house.",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ]
+    }
+}

@@ -1,0 +1,291 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Wally",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  112,
+                                              "details":  {
+                                                              "head":  96,
+                                                              "body":  113,
+                                                              "legs":  95,
+                                                              "feet":  115
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  2,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "mail":  "Our mail system is unique! And everyone can use it. Do you want to know more about it?",
+                                          "depot":  "The depots are very easy to use. Just step in front of them and you will find your items in them. They are free for all tibian citizens.",
+                                          "offer":  "I\u0027m selling letters and parcels.",
+                                          "letter":  "Do you want to buy a letter for 8 gold?",
+                                          "parcel":  "Do you want to buy a parcel for 15 gold?",
+                                          "name":  "I\u0027m Wally the post officer.",
+                                          "job":  "I am working here at the post office for Kevin.",
+                                          "kevin":  "Oh, our boss is upstairs. Better only disturb him with important issues though.",
+                                          "postner":  "Oh, our boss is upstairs. Better only disturb him with important issues though.",
+                                          "postmasters":  "We are an organization of importance for the whole of Tibia. Even kings tremble before our might.",
+                                          "guild":  "We are an organization of importance for the whole of Tibia. Even kings tremble before our might.",
+                                          "join":  "You have to talk with the exalted archpostman Kevin Postner if you want to join our prestigeous guild.",
+                                          "markwin":  "This minotaur is quite moody. Better make sure not to anger him. He\u0027s likely to call for his guards as soon as he notices a stranger, so you are on tough luck if you ever find him.",
+                                          "santa":  "This old whitebeard lives on some hill on the western coast of Vega as far as I know.",
+                                          "claus":  "This old whitebeard lives on some hill on the western coast of Vega as far as I know.",
+                                          "brassacres":  "This guy might be hard to find. Hes likely disguising himself. If you see someone suspicious, try to ask other people who are around about him. That might give you some clue.",
+                                          "mission":  "Ask Mr. Postner about your current missions.",
+                                          "ben":  "Old Ben lost some of his marbles in some battle long ago. He is still a quite capable postman though ... on second thought thats some disturbing fact.",
+                                          "lokur":  "Dwarfs make quite good postmen. They are stubborn, strong and ... sturdy. Its a waste that he prefers a job behind the counter.",
+                                          "dove":  "Dove is as good as a dozend pigeons. He He He.",
+                                          "olrik":  "This Olrik was made postman only for convenience. He is quite aware that his attitude and affiliation with the thaian government makes it impossible for him to rise in rank. This leads only to him behaving even worse tough.",
+                                          "liane":  "Although I never met her in person we became penpals over the time.",
+                                          "wally":  "Yes, thats me, Wally!",
+                                          "advancement":  "The exalted archpostman Kevin Postner alone decides about advancement of our members. All ranks come with certain privileges.",
+                                          "privileges":  "Our privileges are top secret, other people envy us enough already for beeing members in this splendid guild.",
+                                          "uniform":  "Oh thank you, this new uniform I just got suits me well!",
+                                          "waldo":  "To hear about Waldos death strikes my heart with grief. We did not only loose our greatest explorer but a dear friend.",
+                                          "dress":  "I vaguely remember the last dress pattern of our uniforms was dependend on certain key elements. It had some technical gadgets, a special smell and was uniquely colored.",
+                                          "pattern":  "I vaguely remember the last dress pattern of our uniforms was dependend on certain key elements. It had some technical gadgets, a special smell and was uniquely colored.",
+                                          "crowbar":  "Most general stores should sell crowbars. I think the store in Edron sells some for instance.",
+                                          "hint":  "I can\u0027t help you much with your missions. Of course we tell you everything we know and do\u0027t make our missions needlesly difficult.",
+                                          "headquarter":  "Its humble and practical. Considering we have bases all over the known world we don\u0027t need a bigger base anyways. On the other hand Mr. Postner is dreaming about a postman academy now and then.",
+                                          "bones":  "If I would be looking for bones I\u0027d inspect some skeletons ... If I weren\u0027t so affraid of them that is.",
+                                          "banana":  "Uh? How disgusting. Look for this rubbish in some places where waste is dumped .. and don\u0027t ever tell me what you need it for.",
+                                          "skin":  "Uh? How disgusting. Look for this rubbish in some places where waste is dumped .. and don\u0027t ever tell me what you need it for.",
+                                          "fur":  "As far as I heard some of the minor orcs carry a pice of fur as a fetish or lucky charm with them.",
+                                          "moldy":  "What a disgusting taste you have. Like those Goblins who carry this stuff with them.",
+                                          "cheese":  "What a disgusting taste you have. Like those Goblins who carry this stuff with them.",
+                                          "noodles":  "This dog is his majestys most priced possesion and heavily guarded. Anger the dog and you anger the king.",
+                                          "thais":  "One of the oldest holdings of humanity that still exist and the heart of the biggest kingdom in the known world.",
+                                          "carlin":  "Carlin is an upcoming power in theese days. Albeit its ambitions it still dwarfs the old kingdom of thais in power and influence.",
+                                          "venore":  "I think no longer is king Tibianus reigning this city, nor are the merchants ruling it, regardless what they might think. The true monarch before whom all there bow is the money.",
+                                          "edron":  "I gues Edron isn\u0027t the source of wealth and rescources as the thaians hoped. The defection of those knights did cause the expansion and exploitation there to an halt.",
+                                          "defection":  "I know nothing special about that story. I only heared that a good part of the knightly order the king sent there succumbed to their lust for wealth and power and turned against their swordbrethren.",
+                                          "darama":  "A far away place with strange customs and an even stranger philosophy. One day I might travel there to see it on my own.",
+                                          "darashia":  "A far away place with strange customs and an even stranger philosophy. One day I might travel there to see it on my own.",
+                                          "ab\u0027dendriel":  "Elven volunteers for becoming a postofficer are quite rare. We had to rely on a human living there to ensure our postsystems function. Most elvish members of the guild prefer to work as courriers.",
+                                          "elf":  "Elven volunteers for becoming a postofficer are quite rare. We had to rely on a human living there to ensure our postsystems function. Most elvish members of the guild prefer to work as courriers.",
+                                          "elven":  "Elven volunteers for becoming a postofficer are quite rare. We had to rely on a human living there to ensure our postsystems function. Most elvish members of the guild prefer to work as courriers.",
+                                          "Kazordoon":  "The city of the dwarfs is a bit hidden and new postoficers often get lost while looking for it. Just look for a hidden passage to a western valley in the mountaion called the big old one.",
+                                          "dwarf":  "The city of the dwarfs is a bit hidden and new postoficers often get lost while looking for it. Just look for a hidden passage to a western valley in the mountaion called the big old one.",
+                                          "dwarves":  "The city of the dwarfs is a bit hidden and new postoficers often get lost while looking for it. Just look for a hidden passage to a western valley in the mountaion called the big old one.",
+                                          "dwarfs":  "The city of the dwarfs is a bit hidden and new postoficers often get lost while looking for it. Just look for a hidden passage to a western valley in the mountaion called the big old one.",
+                                          "big":  "Its a huge Mountain, north of here, just across the river.",
+                                          "old":  "Its a huge Mountain, north of here, just across the river.",
+                                          "one":  "Its a huge Mountain, north of here, just across the river.",
+                                          "posthorn":  "A posthorn is a postmens bride ... or a postwomans husband. The only true friend a lonly postofficer has in the foregin lands and dangerous places he has to visit.",
+                                          "cap$":  "A cap is what shows you are a postofficer. But your heart and your state of mind are what you makes a postofficer.",
+                                          "mailbox":  "Our mailboxes are quite reliable but know and then one has to be fixed. Especually in the more rough climates."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Be greeted, traveller.",
+                                                       "I am working here at the post office for Kevin."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Be greeted, traveller.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "35":  {
+                                                   "entries":  [
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "The Tibia Mail System enables you to send and receive letters and parcels. You can buy them here if you want.",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+
+                                                                                    ],
+                                                                       "response":  "Is there anything else I can do for you?",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  true,
+                                                                       "isDefault":  true
+                                                                   }
+                                                               ]
+                                               },
+                                        "36":  {
+                                                   "entries":  [
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "Here it is. Don\u0027t forget to write the name of the receiver in the first line and the address in the second one before you put the letter in a mailbox.",
+                                                                       "conditions":  [
+                                                                                          {
+                                                                                              "type":  "gold",
+                                                                                              "min":  -1
+                                                                                          }
+                                                                                      ],
+                                                                       "actions":  [
+                                                                                       {
+                                                                                           "type":  "deleteMoney",
+                                                                                           "amount":  -1
+                                                                                       },
+                                                                                       {
+                                                                                           "type":  "createItem",
+                                                                                           "id":  2597
+                                                                                       }
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "Oh, you have not enough gold to buy a letter.",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+
+                                                                                    ],
+                                                                       "response":  "Ok.",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  true,
+                                                                       "isDefault":  true
+                                                                   }
+                                                               ]
+                                               },
+                                        "37":  {
+                                                   "entries":  [
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "Here you are. Don\u0027t forget to write the name and the address of the receiver on the label. The label has to be in the parcel before you put the parcel in a mailbox.",
+                                                                       "conditions":  [
+                                                                                          {
+                                                                                              "type":  "gold",
+                                                                                              "min":  -1
+                                                                                          }
+                                                                                      ],
+                                                                       "actions":  [
+                                                                                       {
+                                                                                           "type":  "deleteMoney",
+                                                                                           "amount":  -1
+                                                                                       },
+                                                                                       {
+                                                                                           "type":  "createItem",
+                                                                                           "id":  2595
+                                                                                       },
+                                                                                       {
+                                                                                           "type":  "createItem",
+                                                                                           "id":  2599
+                                                                                       }
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "I am sorry, you have not enough gold to buy a parcel.",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+
+                                                                                    ],
+                                                                       "response":  "Ok.",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  true,
+                                                                       "isDefault":  true
+                                                                   }
+                                                               ]
+                                               }
+                                    },
+                         "keywordNextTopics":  {
+                                                   "mail":  35,
+                                                   "letter":  36,
+                                                   "parcel":  37
+                                               },
+                         "keywordTopicPrices":  {
+                                                    "letter":  8,
+                                                    "parcel":  15
+                                                },
+                         "script":  "wally.js"
+                     }
+}

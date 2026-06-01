@@ -1,0 +1,189 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Mirabell",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  118,
+                                              "details":  {
+                                                              "head":  96,
+                                                              "body":  12,
+                                                              "legs":  87,
+                                                              "feet":  77
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  1,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "I am the owner of this tavern, which is known far beyond Edron.",
+                                          "tavern":  "I am the owner of this tavern, which is known far beyond Edron.",
+                                          "frodo":  "He\u0027s my cousin and lives in Thais.",
+                                          "name":  "My name is Mirabell.",
+                                          "time":  "It is  right now.",
+                                          "king":  "King Tibianus III should visit our beautiful isle more often.",
+                                          "tibianus":  "King Tibianus III should visit our beautiful isle more often.",
+                                          "army":  "Sadly most of them are too disciplined to visit my tavern.",
+                                          "ferumbras":  "I heard horrible things about him.",
+                                          "excalibug":  "I heard the Knights of the True Blood are looking for it on this isle.",
+                                          "thais":  "Thais will loose influence on Edron more and more.",
+                                          "tibia":  "I think Edron is the best place in Tibia.",
+                                          "carlin":  "They should return to the Thaian realm.",
+                                          "edron":  "I think it is the best place in Tibia.",
+                                          "news":  "Oh, there are so many. Just ask other travellers like you.",
+                                          "rumors":  "Oh, there are so many. Just ask other travellers like you.",
+                                          "buy":  "I can offer you food and drinks.",
+                                          "do":  "I can offer you food and drinks.",
+                                          "you":  "I can offer you food and drinks.",
+                                          "sell":  "I can offer you food and drinks.",
+                                          "have":  "I can offer you food and drinks.",
+                                          "food":  "Are you looking for food? I have bread, cheese, ham, and meat.",
+                                          "drink":  "I can offer you beer, wine, lemonade, and water."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Welcome to the Horn of Plenty, .",
+                                                       "I am the owner of this tavern, which is known far beyond Edron."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Welcome to the Horn of Plenty, %N.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here it is.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "I am sorry, but you do not have enough gold.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Maybe later.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Bread",
+                                                         "price":  4,
+                                                         "id":  2689,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Cheese",
+                                                         "price":  6,
+                                                         "id":  2696,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Meat",
+                                                         "price":  5,
+                                                         "id":  2666,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Ham",
+                                                         "price":  8,
+                                                         "id":  2671,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Mug",
+                                                         "price":  2,
+                                                         "id":  2012,
+                                                         "type":  "sell"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "mirabell.js"
+                     }
+}

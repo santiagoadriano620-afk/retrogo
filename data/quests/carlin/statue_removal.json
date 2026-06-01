@@ -1,0 +1,13 @@
+{
+  "actionId": 3025,
+  "type": "moveEvent",
+  "events": ["onStepIn"],
+  "conditions": [
+    { "type": "itemAtPosition", "itemId": 1443, "pos": {"x": 32255, "y": 31837, "z": 9} }
+  ],
+  "effects": [
+    { "type": "magicEffect", "pos": {"x": 32255, "y": 31837, "z": 9}, "effectId": 3 },
+    { "type": "removeItem", "pos": {"x": 32255, "y": 31837, "z": 9}, "itemId": 1443 },
+    { "type": "relocate", "from": {"x": 32255, "y": 31837, "z": 10}, "to": {"x": 32255, "y": 31837, "z": 9} }
+  ]
+}

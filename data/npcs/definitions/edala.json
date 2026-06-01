@@ -1,0 +1,224 @@
+{
+    "creatureStatistics": {
+        "name": "Edala",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 63,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 3,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "job": "I am a mystic of the suns. I provide protective blessings for those in need.",
+            "name": "My name is Edala, pilgrim.",
+            "mystic": "We mystics are philosophers and healers.",
+            "cenath": "I don't consider me a member of any caste, and I don't want to talk about this matter.",
+            "kuridai": "I don't consider me a member of any caste, and I don't want to talk about this matter.",
+            "deraisim": "I don't consider me a member of any caste, and I don't want to talk about this matter.",
+            "abdaisim": "I don't consider me a member of any caste, and I don't want to talk about this matter.",
+            "teshial": "I don't consider me a member of any caste, and I don't want to talk about this matter.",
+            "crunor": "Crunor is great in his beauty.",
+            "priyla": "The daughter of the stars is my patron.",
+            "excalibug": "It is true that this weapon brings great power. But you should not look for power. It is wisdom you really need.",
+            "news": "News? I don't care about news.",
+            "heal$": "You aren't looking that bad. Sorry, I can't help you. But if you are looking for additional protection you should go on the pilgrimage of ashes.",
+            "pilgrimage": "Whenever you receive a lethal wound your lifeforce is damaged. With every single of the five blessings you have this damage will be reduced.",
+            "ashes": "Whenever you receive a lethal wound your lifeforce is damaged. With every single of the five blessings you have this damage will be reduced.",
+            "spiritual": "You may receive the spiritual shielding in the whiteflowertemple south of Thais.",
+            "shielding": "You may receive the spiritual shielding in the whiteflowertemple south of Thais.",
+            "sacred": "Just ask my about the blessing you are interested in.",
+            "places": "Just ask my about the blessing you are interested in.",
+            "spark": "The spark of the phoenix will be given to you by the dwarven priests of earth and fire in Kazordoon.",
+            "phoenix": "The spark of the phoenix will be given to you by the dwarven priests of earth and fire in Kazordoon.",
+            "embrace": "The druids north of Carlin will provide you with the embrace of tibia.",
+            "fire": "Do you wish to receive the blessing of the two suns? It will cost you 10.000 gold, pilgrim.",
+            "suns": "Do you wish to receive the blessing of the two suns? It will cost you 10.000 gold, pilgrim.",
+            "wisdom": "Talk to the hermit Eremo on the isle of Cormaya about this blessing.",
+            "solitude": "Talk to the hermit Eremo on the isle of Cormaya about this blessing.",
+            "blessing": "I can sell you the Fire of the Suns for %d gold. Are you interested?",
+            "blessings": "I can sell you the Fire of the Suns for %d gold. Are you interested?"
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "Ashari, .",
+                "I am a mystic of the suns. I provide protective blessings for those in need."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {
+            "heal$": {
+                "damage": 40,
+                "effectSelf": null,
+                "effectTarget": 13
+            }
+        },
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Ashari, %N.",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "ashari$"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ],
+        "topics": {
+            "5": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You already possess this blessing.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Oh. You do not have enough money.",
+                        "conditions": [
+                            {
+                                "type": "gold",
+                                "max": -1
+                            }
+                        ],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Kneel down and receive the warmth of sunfire, pilgrim.",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "deleteMoney",
+                                "amount": -1
+                            },
+                            {
+                                "type": "setQuest",
+                                "questId": 103,
+                                "value": 3
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "All right. As you wish.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false,
+                        "isCatchAll": true
+                    }
+                ]
+            },
+            "6": {
+                "entries": [
+                    {
+                        "keywords": ["yes"],
+                        "response": "The Fire of the Suns is yours. May it protect you in your darkest hour.",
+                        "conditions": [
+                            {"type": "gold", "min": -1},
+                            {"type": "blessing", "index": 2, "state": false}
+                        ],
+                        "actions": [
+                            {"type": "deleteMoney", "amount": -1},
+                            {"type": "buyBlessing", "blessingIndex": 2}
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": ["yes"],
+                        "response": "I am sorry, but you do not have enough gold.",
+                        "conditions": [{"type": "blessing", "index": 2, "state": false}],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": ["yes"],
+                        "response": "You already carry this blessing.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Maybe later.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            }
+        },
+        "keywordNextTopics": {
+            "fire": 5,
+            "suns": 5,
+            "blessing": 6,
+            "blessings": 6
+        },
+        "keywordTopicPrices": {
+            "fire": 10000,
+            "suns": 10000,
+            "blessing": 0,
+            "blessings": 0
+        },
+        "script": "edala.js"
+    }
+}

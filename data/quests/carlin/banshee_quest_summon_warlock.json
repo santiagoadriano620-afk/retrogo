@@ -1,0 +1,13 @@
+{
+  "actionId": 3026,
+  "type": "moveEvent",
+  "events": ["onStepIn"],
+  "conditions": [
+    { "type": "storage", "key": 3, "value": -1 }
+  ],
+  "effects": [
+    { "type": "createMonster", "name": "Warlock", "pos": {"x": 32216, "y": 31841, "z": 15} },
+    { "type": "createMonster", "name": "Warlock", "pos": {"x": 32216, "y": 31834, "z": 15} },
+    { "type": "storage", "key": 3, "value": 1 }
+  ]
+}

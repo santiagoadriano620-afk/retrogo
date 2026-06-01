@@ -1,0 +1,324 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Iwan",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  111,
+                                              "details":  {
+                                                              "head":  0,
+                                                              "body":  112,
+                                                              "legs":  88,
+                                                              "feet":  113
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  1,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "name":  "I\u0027m Iwan.",
+                                          "job":  "I sell gems of all kind.",
+                                          "time":  "It should be  right now.",
+                                          "king":  "I am sure even the king would appreciate my wares.",
+                                          "tibianus":  "I am sure even the king would appreciate my wares.",
+                                          "army":  "I know not much about the local army.",
+                                          "ferumbras":  "I hope the academy is safe from his assaults.",
+                                          "excalibug":  "I am sure you\u0027d easily recognize it by the gems attached to it.",
+                                          "thais":  "We supply Thais with gems found on this isle.",
+                                          "tibia":  "I know only so little about our world. It\u0027s a pity.",
+                                          "carlin":  "I never visited that city.",
+                                          "edron":  "Our island is rich in precious stones.",
+                                          "news":  "I haven\u0027t been told anything of interest lately.",
+                                          "rumors":  "I haven\u0027t been told anything of interest lately.",
+                                          "offer":  "I can offer you various gems, pearls or some wonderful jewels.",
+                                          "goods":  "I can offer you various gems, pearls or some wonderful jewels.",
+                                          "do":  "I can offer you various gems, pearls or some wonderful jewels.",
+                                          "you":  "I can offer you various gems, pearls or some wonderful jewels.",
+                                          "sell":  "I can offer you various gems, pearls or some wonderful jewels.",
+                                          "have":  "I can offer you various gems, pearls or some wonderful jewels.",
+                                          "gem":  "You can buy and sell small diamonds, small sapphires, small rubies, small emeralds, and small amethysts.",
+                                          "pearl":  "There are white and black pearls you can buy or sell.",
+                                          "jewel":  "Currently you can purchase wedding rings, golden amulets, and ruby necklaces."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Feel welcome .",
+                                                       "I sell gems of all kind."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Feel welcome %N.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here you are.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Come back, when you have enough money.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Hmm, but next time.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "2":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Ok. Here is your money.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "createMoney"
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Sorry, you do not have one.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Sorry, you do not have so much.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Maybe next time.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Wedding Ring",
+                                                         "price":  990,
+                                                         "id":  2121,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Golden Amulet",
+                                                         "price":  6600,
+                                                         "id":  2130,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Ruby Necklace",
+                                                         "price":  3560,
+                                                         "id":  2133,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "White Pearl",
+                                                         "price":  320,
+                                                         "id":  2143,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Black Pearl",
+                                                         "price":  560,
+                                                         "id":  2144,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Small Diamond",
+                                                         "price":  600,
+                                                         "id":  2145,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Small Sapphire",
+                                                         "price":  500,
+                                                         "id":  2146,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Small Ruby",
+                                                         "price":  500,
+                                                         "id":  2147,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Small Emerald",
+                                                         "price":  500,
+                                                         "id":  2149,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Small Amethyst",
+                                                         "price":  400,
+                                                         "id":  2150,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "White Pearl",
+                                                         "price":  160,
+                                                         "id":  2143,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Black Pearl",
+                                                         "price":  280,
+                                                         "id":  2144,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Small Diamond",
+                                                         "price":  300,
+                                                         "id":  2145,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Small Sapphire",
+                                                         "price":  250,
+                                                         "id":  2146,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Small Ruby",
+                                                         "price":  250,
+                                                         "id":  2147,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Small Emerald",
+                                                         "price":  250,
+                                                         "id":  2149,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Small Amethyst",
+                                                         "price":  200,
+                                                         "id":  2150,
+                                                         "type":  "buy"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "iwan.js"
+                     }
+}
