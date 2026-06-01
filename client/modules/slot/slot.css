@@ -3,7 +3,7 @@
   height: 32px;
   background-image: url("/images/game/ui/item.png");
   position: relative;
-  border: 1px solid #111;
+  border: 1px solid transparent;
 }
 
 .slot.selected {

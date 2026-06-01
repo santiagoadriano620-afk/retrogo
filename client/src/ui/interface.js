@@ -888,11 +888,14 @@ Interface.prototype.getResolutionScale = function () {
 };
 
 Interface.prototype.__handleStackResize = function () {
-  for (let stack of Array.from(document.getElementsByClassName("column"))) {
-    if (stack.children.length === 0) return;
+  // Squeeze only auxiliary column on resize
+  for (let i = 0; i < 2; i++) {
+    let stack = document.getElementsByClassName("column")[i];
+    if (!stack || stack.children.length === 0) continue;
+    if (i === 0 && typeof Container.squeezeFromBottom === "function") {
+      Container.squeezeFromBottom(stack);
+    }
     let last = stack.children[stack.children.length - 1];
-
-    // Close windows when resizing
     if (last.className === "prototype window") {
       var bounding = last.getBoundingClientRect();
       if (bounding.bottom >= window.visualViewport.height) {

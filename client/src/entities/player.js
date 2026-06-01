@@ -505,7 +505,13 @@ Player.prototype.removeContainer = function (container) {
   }
 
   // Clean up the element from the DOM
+  let parentStack = container.window.__element.parentElement;
   container.window.remove();
+
+  // Squeeze only in auxiliary (extra) column
+  if (parentStack && parentStack === gameClient.interface.windowManager.getStack("extra")) {
+    Container.squeezeFromBottom(parentStack);
+  }
 };
 
 Player.prototype.closeContainer = function (container) {

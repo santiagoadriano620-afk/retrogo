@@ -27,37 +27,118 @@ Container.prototype.createDOM = function (title, items, itemId) {
    * Creates the DOM for the container
    */
 
-  // Copy the prototype
   let element = this.createElement(this.__containerId);
-
-  // Calculate expected height: header(22) + footer(4) + padding(16) + body(rows * 34)
-  let expectedHeight = 42 + Math.ceil(this.size / 4) * 34;
-
   this.window = new InteractiveWindow(element);
-
-  // Try right column first; fallback to extra column if it would overflow viewport
-  let rightStack = gameClient.interface.windowManager.getStack("right");
-  let usedHeight = Array.from(rightStack.children).reduce(function (h, c) {
-    return h + c.offsetHeight;
-  }, 0);
-  let oogwrap2 = rightStack.parentElement.querySelector(".oogwrap2");
-  if (oogwrap2) usedHeight += oogwrap2.offsetHeight;
-
-  if (usedHeight + expectedHeight <= window.visualViewport.height) {
-    this.window.addTo(rightStack);
-  } else {
-    let extraStack = gameClient.interface.windowManager.getStack("extra");
-    this.window.addTo(extraStack);
-    extraStack.parentElement.classList.add("has-windows");
-  }
-
-  // Register the window with the WindowManager to enable drag and drop
   gameClient.interface.windowManager.register(this.window);
 
+  let rightStack = gameClient.interface.windowManager.getStack("right");
+  let extraStack = gameClient.interface.windowManager.getStack("extra");
+  let extraWrapper = extraStack ? extraStack.parentElement : null;
+
+  let ROWS = Math.ceil(this.size / 4);
+  let MIN = 56;
+  let FULL = 56 + ROWS * 34;
+
+  // Helper: sum FULL heights of existing containers in a stack
+  let totalFullInStack = function (stack) {
+    let total = 0;
+    let elements = Array.from(stack.children).filter(function (el) {
+      return el.className === "prototype window";
+    });
+    for (let i = 0; i < elements.length; i++) {
+      let cid = Number(elements[i].getAttribute("containerIndex"));
+      let c = gameClient.player.getContainer(cid);
+      if (!c) continue;
+      let rows = Math.ceil(c.size / 4);
+      total += 56 + rows * 34;
+    }
+    return total;
+  };
+
+  let rightOog = rightStack.parentElement.querySelector(".oogwrap2");
+  let rightCapacity = window.visualViewport.height - (rightOog ? rightOog.offsetHeight : 0);
+
+  // Main column: always full height only, no squeezing
+  if (totalFullInStack(rightStack) + FULL <= rightCapacity) {
+    this.window.addTo(rightStack);
+    Container._addContent(this, element, title, items, itemId);
+    return;
+  }
+
+  // Main column is full — go to auxiliary column
+  if (!extraStack) {
+    this.window.addTo(rightStack);
+    Container._addContent(this, element, title, items, itemId);
+    return;
+  }
+
+  // Auxiliary column: try full, then squeeze, then replace
+  let extraCapacity = window.visualViewport.height;
+  let extraFull = totalFullInStack(extraStack) + FULL;
+  let extraMin = (Array.from(extraStack.children).filter(function (el) {
+    return el.className === "prototype window";
+  }).length + 1) * MIN;
+
+  if (extraFull <= extraCapacity) {
+    this.window.addTo(extraStack);
+    extraWrapper.classList.add("has-windows");
+  } else if (extraMin <= extraCapacity) {
+    // Squeeze from bottom in auxiliary column
+    this.window.addTo(extraStack);
+    extraWrapper.classList.add("has-windows");
+  } else {
+    // Replace last container in auxiliary column
+    let extraChildren = Array.from(extraStack.children).filter(function (el) {
+      return el.className === "prototype window";
+    });
+    if (extraChildren.length > 0) {
+      let last = extraChildren[extraChildren.length - 1];
+      let lastIndex = Number(last.getAttribute("containerIndex"));
+      let lastContainer = gameClient.player.getContainer(lastIndex);
+      if (lastContainer) {
+        gameClient.player.__openedContainers.forEach(function (parent) {
+          parent.slots.forEach(function (slot) {
+            if (slot.item && slot.item.__openContainerId === lastContainer.__containerId) {
+              slot.item.__openContainerId = undefined;
+            }
+          });
+        });
+        if (gameClient.player.equipment) {
+          gameClient.player.equipment.slots.forEach(function (slot) {
+            if (slot.item && slot.item.__openContainerId === lastContainer.__containerId) {
+              slot.item.__openContainerId = undefined;
+            }
+          });
+        }
+        gameClient.player.__openedContainers.delete(lastContainer);
+        lastContainer.window.remove();
+        gameClient.player.__openedContainers.forEach(function (c) {
+          c.__updateContainerIndicators();
+        });
+        let hasVisible = Array.from(extraStack.children).some(function (child) {
+          return child.style.display !== "none" && child.style.display !== "";
+        });
+        if (!hasVisible) {
+          extraWrapper.classList.remove("has-windows");
+        }
+      }
+    }
+    this.window.addTo(extraStack);
+    extraWrapper.classList.add("has-windows");
+  }
+
+  // Add content and squeeze auxiliary column if needed
+  Container._addContent(this, element, title, items, itemId);
+  Container.squeezeFromBottom(extraStack);
+
+}
+
+Container._addContent = function (self, element, title, items, itemId) {
+
   // Attach a listener to the window close event to inform the server of container close
-  this.window.on("close", this.close.bind(this));
-  this.window.on("back", this.handleBack.bind(this));
-  this.window.state.title = title.capitalize();
+  self.window.on("close", self.close.bind(self));
+  self.window.on("back", self.handleBack.bind(self));
+  self.window.state.title = title.capitalize();
 
   // Replace the generic bag icon with the actual item sprite
   if (itemId && typeof gameClient !== "undefined" && gameClient.spriteBuffer) {
@@ -98,10 +179,10 @@ Container.prototype.createDOM = function (title, items, itemId) {
   }
 
   // Adds the slots to the existing window body
-  this.createBodyContent(this.size);
+  self.createBodyContent(self.size);
 
   // Add the items to the slots
-  this.addItems(items);
+  self.addItems(items);
 
 }
 
@@ -115,8 +196,9 @@ Container.prototype.createElement = function (index) {
   // Copy over the container prototype from the DOM
   let element = document.getElementById("container-prototype").cloneNode(true);
   element.style.display = "flex";
+  element.style.width = "148px";
   element.setAttribute("containerIndex", index);
-  element.style.minHeight = 90;
+  element.style.minHeight = 56;
 
   // Mobile: Position containers at the bottom of the screen
   if (gameClient.touch && gameClient.touch.isMobileMode) {
@@ -197,9 +279,6 @@ Container.prototype.createBodyContent = function (size) {
 
   // Add all slots to the body of the window
   let body = this.window.getElement(".body");
-
-  // Set a limit to the container height based on the number of slots
-  body.style.maxHeight = Math.ceil(size / 4) * 34 + "px";
 
   // Create the requested number of slots in the backpack
   for (let i = 0; i < size; i++) {
@@ -341,3 +420,65 @@ Container.prototype.__render = function () {
   });
 
 }
+
+Container.squeezeFromBottom = function (stack) {
+
+  if (!stack) return;
+
+  let ROW = 34;
+  let MIN = 56;
+  let FIXED = 56;
+
+  let elements = Array.from(stack.children).filter(function (el) {
+    return el.className === "prototype window";
+  });
+  if (elements.length === 0) return;
+
+  let oogwrap2 = stack.parentElement.querySelector(".oogwrap2");
+  let used = oogwrap2 ? oogwrap2.offsetHeight : 0;
+  let avail = window.visualViewport.height - used;
+
+  let infos = [];
+  for (let i = 0; i < elements.length; i++) {
+    let cid = Number(elements[i].getAttribute("containerIndex"));
+    let c = gameClient.player.getContainer(cid);
+    if (!c) continue;
+    let rows = Math.ceil(c.size / 4);
+    infos.push({ el: elements[i], container: c, full: 56 + rows * ROW });
+  }
+  if (infos.length === 0) return;
+
+  // Set all to full height first
+  for (let i = 0; i < infos.length; i++) {
+    let body = infos[i].container.window.getElement(".body");
+    if (body) {
+      body.style.maxHeight = "";
+      body.style.minHeight = "";
+    }
+  }
+
+  let totalFull = infos.reduce(function (s, i) { return s + i.full; }, 0);
+
+  if (totalFull <= avail) return;
+
+  // Squeeze from bottom (last container) upward
+  let overflow = totalFull - avail;
+
+  for (let i = infos.length - 1; i >= 0; i--) {
+    if (overflow <= 0) break;
+    let squeezeable = infos[i].full - MIN;
+    let squeeze = Math.min(squeezeable, overflow);
+    if (squeeze > 0) {
+      let targetTotal = infos[i].full - squeeze;
+      let body = infos[i].container.window.getElement(".body");
+      if (body) {
+        body.style.maxHeight = Math.max(0, targetTotal - FIXED) + "px";
+        body.style.minHeight = "0";
+      }
+      overflow -= squeeze;
+    }
+  }
+
+};
+
+

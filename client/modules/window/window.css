@@ -28,8 +28,8 @@
 .window > .body {
   display: flex;
   flex-wrap: wrap;
-  padding: 8px 2px;
-  min-height: 40px;
+  padding: 0;
+  min-height: 0;
   justify-content: flex-start;
   align-items: flex-start;
   align-content: flex-start;
@@ -86,9 +86,6 @@
 }
 
 /* All containers: max 4 slots per row (each slot = 32px + 2×1px border) */
-.window[containerIndex] .body {
-  max-width: 136px;
-}
 
 #floater-enter {
   width: 340px;
