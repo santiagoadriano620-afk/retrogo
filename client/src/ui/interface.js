@@ -888,15 +888,13 @@ Interface.prototype.getResolutionScale = function () {
 };
 
 Interface.prototype.__handleStackResize = function () {
-  // Squeeze only auxiliary column on resize
-  for (let i = 0; i < 2; i++) {
-    let stack = document.getElementsByClassName("column")[i];
+  for (let stack of Array.from(document.getElementsByClassName("column"))) {
     if (!stack || stack.children.length === 0) continue;
-    if (i === 0 && typeof Container.squeezeFromBottom === "function") {
+    if (typeof Container.squeezeFromBottom === "function") {
       Container.squeezeFromBottom(stack);
     }
     let last = stack.children[stack.children.length - 1];
-    if (last.className === "prototype window") {
+    if (last.hasAttribute("containerIndex")) {
       var bounding = last.getBoundingClientRect();
       if (bounding.bottom >= window.visualViewport.height) {
         gameClient.player

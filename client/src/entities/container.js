@@ -35,62 +35,48 @@ Container.prototype.createDOM = function (title, items, itemId) {
   let extraStack = gameClient.interface.windowManager.getStack("extra");
   let extraWrapper = extraStack ? extraStack.parentElement : null;
 
+  // Measure FULL height of this container
   let ROWS = Math.ceil(this.size / 4);
-  let MIN = 91;
   let FULL = 56 + ROWS * 34;
-  element.style.minHeight = Math.min(91, FULL);
 
-  // Helper: sum FULL heights of existing containers in a stack
-  let totalFullInStack = function (stack) {
+  // Helper: sum actual offsetHeights of existing containers in a stack
+  function totalUsedInStack(stack) {
     let total = 0;
-    let elements = Array.from(stack.children).filter(function (el) {
-      return el.className === "prototype window";
+    Array.from(stack.children).filter(function (el) {
+      return el.hasAttribute("containerIndex");
+    }).forEach(function (el) {
+      total += el.offsetHeight;
     });
-    for (let i = 0; i < elements.length; i++) {
-      let cid = Number(elements[i].getAttribute("containerIndex"));
-      let c = gameClient.player.getContainer(cid);
-      if (!c) continue;
-      let rows = Math.ceil(c.size / 4);
-      total += 56 + rows * 34;
-    }
     return total;
-  };
+  }
 
-  let rightOog = rightStack.parentElement.querySelector(".oogwrap2");
-  let rightCapacity = window.visualViewport.height - (rightOog ? rightOog.offsetHeight : 0);
+  // Helper: available height inside a stack
+  function getStackCapacity(stack) {
+    let rect = stack.getBoundingClientRect();
+    return Math.max(0, window.visualViewport.height - rect.top);
+  }
 
-  // Main column: always full height only, no squeezing
-  if (totalFullInStack(rightStack) + FULL <= rightCapacity) {
+  // Try right column first
+  let rightCapacity = getStackCapacity(rightStack);
+  if (totalUsedInStack(rightStack) + FULL <= rightCapacity) {
     this.window.addTo(rightStack);
     Container._addContent(this, element, title, items, itemId);
     return;
   }
 
-  // Main column is full — go to auxiliary column
-  if (!extraStack) {
-    this.window.addTo(rightStack);
-    Container._addContent(this, element, title, items, itemId);
-    return;
-  }
+  // Try extra column
+  if (extraStack) {
+    let extraCapacity = getStackCapacity(extraStack);
+    if (totalUsedInStack(extraStack) + FULL <= extraCapacity) {
+      this.window.addTo(extraStack);
+      extraWrapper.classList.add("has-windows");
+      Container._addContent(this, element, title, items, itemId);
+      return;
+    }
 
-  // Auxiliary column: try full, then squeeze, then replace
-  let extraCapacity = window.visualViewport.height;
-  let extraFull = totalFullInStack(extraStack) + FULL;
-  let extraMin = (Array.from(extraStack.children).filter(function (el) {
-    return el.className === "prototype window";
-  }).length + 1) * MIN;
-
-  if (extraFull <= extraCapacity) {
-    this.window.addTo(extraStack);
-    extraWrapper.classList.add("has-windows");
-  } else if (extraMin <= extraCapacity) {
-    // Squeeze from bottom in auxiliary column
-    this.window.addTo(extraStack);
-    extraWrapper.classList.add("has-windows");
-  } else {
-    // Replace last container in auxiliary column
+    // Replace last container in extra column
     let extraChildren = Array.from(extraStack.children).filter(function (el) {
-      return el.className === "prototype window";
+      return el.hasAttribute("containerIndex");
     });
     if (extraChildren.length > 0) {
       let last = extraChildren[extraChildren.length - 1];
@@ -126,11 +112,13 @@ Container.prototype.createDOM = function (title, items, itemId) {
     }
     this.window.addTo(extraStack);
     extraWrapper.classList.add("has-windows");
+    Container._addContent(this, element, title, items, itemId);
+    return;
   }
 
-  // Add content and squeeze auxiliary column if needed
+  // Fallback to right column
+  this.window.addTo(rightStack);
   Container._addContent(this, element, title, items, itemId);
-  Container.squeezeFromBottom(extraStack);
 
 }
 
@@ -280,6 +268,11 @@ Container.prototype.createBodyContent = function (size) {
   // Add all slots to the body of the window
   let body = this.window.getElement(".body");
 
+  // Clear any leftover inline styles from old squeeze code
+  body.style.maxHeight = "";
+  body.style.height = "";
+  body.style.minHeight = "";
+
   // Create the requested number of slots in the backpack
   for (let i = 0; i < size; i++) {
     let slot = new Slot();
@@ -420,65 +413,3 @@ Container.prototype.__render = function () {
   });
 
 }
-
-Container.squeezeFromBottom = function (stack) {
-
-  if (!stack) return;
-
-  let ROW = 34;
-  let MIN = 91;
-  let FIXED = 56;
-
-  let elements = Array.from(stack.children).filter(function (el) {
-    return el.className === "prototype window";
-  });
-  if (elements.length === 0) return;
-
-  let oogwrap2 = stack.parentElement.querySelector(".oogwrap2");
-  let used = oogwrap2 ? oogwrap2.offsetHeight : 0;
-  let avail = window.visualViewport.height - used;
-
-  let infos = [];
-  for (let i = 0; i < elements.length; i++) {
-    let cid = Number(elements[i].getAttribute("containerIndex"));
-    let c = gameClient.player.getContainer(cid);
-    if (!c) continue;
-    let rows = Math.ceil(c.size / 4);
-    infos.push({ el: elements[i], container: c, full: 56 + rows * ROW });
-  }
-  if (infos.length === 0) return;
-
-  // Set all to full height first
-  for (let i = 0; i < infos.length; i++) {
-    let body = infos[i].container.window.getElement(".body");
-    if (body) {
-      body.style.maxHeight = "";
-      body.style.minHeight = "";
-    }
-  }
-
-  let totalFull = infos.reduce(function (s, i) { return s + i.full; }, 0);
-
-  if (totalFull <= avail) return;
-
-  // Squeeze from bottom (last container) upward
-  let overflow = totalFull - avail;
-
-  for (let i = infos.length - 1; i >= 0; i--) {
-    if (overflow <= 0) break;
-    let squeezeable = Math.max(0, infos[i].full - MIN);
-    let squeeze = Math.min(squeezeable, overflow);
-    if (squeeze > 0) {
-      let targetTotal = infos[i].full - squeeze;
-      let body = infos[i].container.window.getElement(".body");
-      if (body) {
-        body.style.maxHeight = Math.max(0, targetTotal - FIXED) + "px";
-        body.style.minHeight = "0";
-      }
-      overflow -= squeeze;
-    }
-  }
-
-};
-
-
