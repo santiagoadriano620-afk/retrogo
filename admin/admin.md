@@ -54,7 +54,7 @@ admin/
 4. `requireAdmin` middleware checks `req.session.accountId`
 5. Logout destroys session
 
-Admin account: account `111111`, password `111111`, requires `group_id >= 5`.
+Admin account: account `371903`, requires `group_id >= 3`.
 
 ## API Endpoints
 

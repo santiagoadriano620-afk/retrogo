@@ -1776,7 +1776,7 @@ Player.prototype.getVocationName = function () {
     case CONST.VOCATION.DRUID:
     case CONST.VOCATION.ELDER_DRUID:
       return "druid";
-    case CONST.VOCATION.GOD:
+    case CONST.VOCATION.ADMIN:
       return "admin";
     default:
       return "none";

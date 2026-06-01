@@ -128,7 +128,7 @@ Skills.prototype.__getVocationConstant = function (skillType) {
       case "shielding": return 1.5;
       case "fishing": return 1.1;
     }
-  } else if (vocation === 9) { // GOD
+  } else if (vocation === 9) { // ADMIN
     switch (skillType) {
       case "magic": return 3.0;
       case "club":

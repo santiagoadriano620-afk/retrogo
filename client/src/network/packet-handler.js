@@ -251,7 +251,7 @@ PacketHandler.prototype.__getVocationSkillConstant = function (skillType, vocati
       case CONST.PROPERTIES.SHIELDING: return 1.5;
       case CONST.PROPERTIES.FISHING: return 1.1;
     }
-  } else if (vocation === 9) { // GOD
+  } else if (vocation === 9) { // ADMIN
     switch (skillType) {
       case CONST.PROPERTIES.MAGIC: return 3.0;
       case CONST.PROPERTIES.CLUB:

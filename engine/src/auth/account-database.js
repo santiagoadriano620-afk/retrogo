@@ -413,6 +413,7 @@ AccountDatabase.prototype.addCharacter = async function (account, queryObject, c
     `).run(account, name, JSON.stringify(charData), now, now);
 
     this.db.prepare("UPDATE accounts SET updated_at = ? WHERE id = ?").run(now, account);
+    this.__cache.del("chars:" + account);
     callback(null, null);
   } catch (error) {
     console.error("Error adding character:", error);
@@ -465,6 +466,7 @@ AccountDatabase.prototype.deleteCharacter = async function (account, characterNa
       this.db.prepare("UPDATE accounts SET updated_at = ? WHERE id = ?").run(now, account);
     }
 
+    this.__cache.del("chars:" + account);
     callback(null);
   } catch (error) {
     console.error("Error deleting character:", error);

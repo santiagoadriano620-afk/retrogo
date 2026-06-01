@@ -104,7 +104,7 @@ CharacterCreator.prototype.create = function (name, sex) {
 
   // Admin character gets special vocation, default outfit 75, and all outfits available
   if (name === "Admin") {
-    copiedTemplate.properties.vocation = CONST.VOCATION.GOD;
+    copiedTemplate.properties.vocation = CONST.VOCATION.ADMIN;
     copiedTemplate.properties.outfit.id = CONST.LOOKTYPES.OTHER.GAMEMASTER;
     copiedTemplate.properties.availableOutfits = new Array(
       CONST.LOOKTYPES.MALE.CITIZEN,

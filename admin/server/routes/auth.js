@@ -17,7 +17,7 @@ router.post("/login", function (req, res) {
     return res.status(401).json({ error: "Invalid credentials" });
   }
 
-  if (creds.group_id < 5) {
+  if (creds.group_id < 3) {
     return res.status(403).json({ error: "Access denied. Insufficient permissions." });
   }
 

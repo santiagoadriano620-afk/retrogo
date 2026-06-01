@@ -151,7 +151,7 @@ ActionHandler.prototype.getRegenInterval = function () {
     case CONST.VOCATION.ELDER_DRUID: return { hp: 10000, mp: 4000 };
     case CONST.VOCATION.ROYAL_PALADIN: return { hp: 6000, mp: 6000 };
     case CONST.VOCATION.ELITE_KNIGHT: return { hp: 4000, mp: 10000 };
-    case CONST.VOCATION.GOD: return { hp: 1000, mp: 1000 };
+    case CONST.VOCATION.ADMIN: return { hp: 1000, mp: 1000 };
     default: return { hp: 6000, mp: 6000 };
   }
 };

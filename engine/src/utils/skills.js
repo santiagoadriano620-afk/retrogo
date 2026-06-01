@@ -53,7 +53,7 @@ Skills.prototype.__setMaximumPropertiesConsants = function (vocation, level) {
     case CONST.VOCATION.KNIGHT:
     case CONST.VOCATION.ELITE_KNIGHT:
       hpPerLevel = 15; mpPerLevel = 5; capPerLevel = 25; break;
-    case CONST.VOCATION.GOD:
+    case CONST.VOCATION.ADMIN:
       hpPerLevel = 50; mpPerLevel = 50; capPerLevel = 0; break;
     default:
       hpPerLevel = 5; mpPerLevel = 5; capPerLevel = 10;
@@ -79,7 +79,7 @@ Skills.prototype.setMaximumProperties = function () {
   // Set the maximum values
   this.__player.setProperty(CONST.PROPERTIES.HEALTH_MAX, health);
   this.__player.setProperty(CONST.PROPERTIES.MANA_MAX, mana);
-  this.__player.setProperty(CONST.PROPERTIES.CAPACITY_MAX, vocation === CONST.VOCATION.GOD ? 5000 : capacity);
+  this.__player.setProperty(CONST.PROPERTIES.CAPACITY_MAX, vocation === CONST.VOCATION.ADMIN ? 5000 : capacity);
 };
 
 Skills.prototype.calculateMaxCapacity = function (level, vocation) {
@@ -107,8 +107,8 @@ Skills.prototype.calculateMaxCapacity = function (level, vocation) {
     case CONST.VOCATION.DRUID:
       vocationBonus = level * 10;
       break;
-    case CONST.VOCATION.GOD:
-      return 5000; // Fixed capacity for GOD (Admin)
+    case CONST.VOCATION.ADMIN:
+      return 5000; // Fixed capacity for ADMIN
   }
 
   capacity += vocationBonus;

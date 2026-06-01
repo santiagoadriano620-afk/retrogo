@@ -220,7 +220,7 @@
     "TUTOR": 1,
     "SENIOR_TUTOR": 2,
     "GAMEMASTER": 3,
-    "GOD": 4
+    "ADMIN": 4
   },
   "FLUID": {
     "NONE": 0,
@@ -261,7 +261,7 @@
     "ROYAL_PALADIN": 6,
     "MASTER_SORCERER": 7,
     "ELDER_DRUID": 8,
-    "GOD": 9
+    "ADMIN": 9
   },
   "PROPERTIES": {
     "NAME": 0,

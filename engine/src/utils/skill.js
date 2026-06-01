@@ -101,7 +101,7 @@ Skill.prototype.__getVocationConstant = function (vocation) {
       case CONST.PROPERTIES.FISHING:
         return 1.1;
     }
-  } else if (vocation === CONST.VOCATION.GOD) {
+  } else if (vocation === CONST.VOCATION.ADMIN) {
     switch (this.__type) {
       case CONST.PROPERTIES.MAGIC:
         return 3.0;
