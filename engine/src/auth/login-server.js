@@ -263,6 +263,11 @@ LoginServer.prototype.__isValidCreateAccount = function (queryObject) {
     return false;
   }
 
+  // Password must be alphanumeric only (no special characters)
+  if (!/^[a-zA-Z0-9]+$/.test(queryObject.password)) {
+    return false;
+  }
+
   return true;
 
 }

@@ -68,7 +68,7 @@ Renderer.prototype.__isBoundaryItem = function (item, ids) {
   if (ids.has(item.id)) return true;
   let def = gameClient.itemDefinitions[item.id];
   if (def && def.properties && def.properties.floorchange) return false;
-  if (def && (def.id === 1786 || def.id === 1787 || def.id === 1620 || def.id === 1621 || def.id === 1617)) return false;
+  if (def && (def.id === 1786 || def.id === 1787 || def.id === 1620 || def.id === 1621 || def.id === 1617 || def.id === 1386)) return false;
   if (__itemHasAlwaysOnTop(item)) return true;
   return false;
 
