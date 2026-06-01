@@ -54,7 +54,7 @@ const Renderer = function () {
   this.__scratchElevation = [];
 
   this.__OVERLAY_IDS = new Set([1215, 1216, 1218]);
-  this.__BOUNDARY_IDS = new Set([1211]);
+  this.__BOUNDARY_IDS = new Set([1211, 1385]);
   this.__COVER_IDS = new Set([873,874,875,876,877,878,903,904,905,906,907,908,909,910,911,912,913,914,915,916,917,921,922,923,1217,1387]);
 
   this.__renderBreakdown = { tiles: 0, creatures: 0, flush: 0, rest: 0, rebuild: 0, tileObj: 0, creatureSort: 0, deferred: 0, anim: 0, distAnim: 0, combat: 0, weather: 0, light: 0 };
@@ -332,6 +332,7 @@ Renderer.prototype.__renderContainers = function () {
 // ─────────────────────────────────────────────────────────────────────────────
 
 Renderer.prototype.__isBoundaryItem = function (item, ids) {
+  if (ids.has(item.id) && gameClient.player && gameClient.player.isMoving()) return false;
   if (ids.has(item.id)) return true;
   let def = gameClient.itemDefinitions[item.id];
   if (def && def.properties && def.properties.floorchange) return false;

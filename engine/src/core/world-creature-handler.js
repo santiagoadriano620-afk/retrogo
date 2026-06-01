@@ -410,11 +410,12 @@ CreatureHandler.prototype.createNewPlayer = function (gameSocket, data) {
     player.properties.availableOutfits = migrated;
   }
 
-  // Admin debug account gets max speed, GOD vocation, and default outfit 75
+  // Admin debug account gets max speed, GOD vocation, unlimited capacity, and default outfit 75
   if (player.name === "Admin") {
     player.customSpeed = 1000;
     player.setProperty(CONST.PROPERTIES.SPEED, 1000);
     player.setProperty(CONST.PROPERTIES.VOCATION, CONST.VOCATION.GOD);
+    player.setProperty(CONST.PROPERTIES.CAPACITY_MAX, 5000);
     player.properties.availableOutfits = new Set([
       CONST.LOOKTYPES.MALE.CITIZEN, CONST.LOOKTYPES.MALE.HUNTER,
       CONST.LOOKTYPES.MALE.MAGE, CONST.LOOKTYPES.MALE.KNIGHT,

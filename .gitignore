@@ -9,3 +9,4 @@ packets.wal
 /data/accounts
 /client/dist/
 /data/database/crashes
+/data/database
