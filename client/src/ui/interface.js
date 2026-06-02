@@ -962,7 +962,7 @@ Interface.prototype.handleResize = function (event) {
       var unscaledHeight = this.SCREEN_HEIGHT_MIN * baseScale;
       this.setElementDimensions(canvasId, unscaledWidth - 45, unscaledHeight + 130);
       canvasId.style.marginTop = "0";
-      canvasId.style.marginLeft = "-125px";
+      canvasId.style.marginLeft = "-123px";
       if (upperElem) {
         upperElem.style.alignItems = "flex-start";
         upperElem.style.paddingTop = "5px";
