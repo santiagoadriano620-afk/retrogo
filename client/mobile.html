@@ -17,7 +17,15 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <link rel="stylesheet" type="text/css" href="css/mobile.css">
-<script>document.documentElement.dataset.layout = 'mobile';</script>
+<script>
+  document.documentElement.dataset.layout = 'mobile';
+  function checkOrientation() {
+    document.documentElement.dataset.orientation = window.innerHeight > window.innerWidth ? 'portrait' : 'landscape';
+  }
+  window.addEventListener('resize', checkOrientation);
+  window.addEventListener('orientationchange', checkOrientation);
+  checkOrientation();
+</script>
 
 <!-- Ambient Music -->
 <audio id="rain" src="sounds/rain.ogg" preload="auto" type="audio/ogg"></audio>
@@ -411,6 +419,14 @@
       </div>
 
     </div>
+  </div>
+
+  <!-- Orientation lock overlay -->
+  <div id="rotate-overlay">
+    <img src="/images/retrogo.png" alt="RetroGo" class="rotate-logo">
+    <div class="rotate-phone-icon">📱</div>
+    <p class="rotate-message">Vire seu dispositivo para<br>acessar o jogo</p>
+    <div class="rotate-arrow">↻</div>
   </div>
 
   <!-- Wrapper for the login screen -->

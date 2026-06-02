@@ -41,7 +41,7 @@ module.exports = {
     PRODUCTION: false,
     COMPRESSION: { ENABLED: true, THRESHOLD: 1024, LEVEL: 1 },
     ON_ALREADY_ONLINE: "replace",
-    EXTERNAL_HOST: "ws://localhost:2223",
+    EXTERNAL_HOST: "ws://192.168.1.11:2223",
     VERSION: "0.0.0",
     CLIENT_VERSION: "740",
     DATE: "2022-03-24",

@@ -52,6 +52,65 @@ div.column.window-column,
   display: none !important;
 }
 
+/* ========== ORIENTATION OVERLAY ========== */
+#rotate-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #0f0f1a;
+  z-index: 999999;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 40px;
+  text-align: center;
+}
+
+html[data-orientation="portrait"][data-layout="mobile"] #rotate-overlay {
+  display: flex;
+}
+
+html[data-orientation="portrait"][data-layout="mobile"] #login-wrapper,
+html[data-orientation="portrait"][data-layout="mobile"] #game-wrapper {
+  display: none !important;
+}
+
+.rotate-logo {
+  width: 160px;
+  height: auto;
+  filter: drop-shadow(0 0 20px rgba(233,69,96,0.3));
+}
+
+.rotate-phone-icon {
+  font-size: 64px;
+  animation: rotatePulse 2s ease-in-out infinite;
+}
+
+.rotate-message {
+  font-size: 18px;
+  font-weight: bold;
+  color: #d3d3d3;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.rotate-arrow {
+  font-size: 48px;
+  color: #e94560;
+  animation: rotateArrow 2s ease-in-out infinite;
+}
+
+@keyframes rotatePulse {
+  0%, 100% { transform: rotate(0deg); opacity: 0.6; }
+  50% { transform: rotate(90deg); opacity: 1; }
+}
+
+@keyframes rotateArrow {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(90deg) scale(1.2); }
+}
+
 /* ========== LOGIN SCREEN ========== */
 #login-wrapper {
   display: flex; flex-direction: column;
