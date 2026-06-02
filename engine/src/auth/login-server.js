@@ -253,29 +253,13 @@ LoginServer.prototype.__generateToken = function (name) {
 
 LoginServer.prototype.__isValidCreateAccount = function (queryObject) {
 
-  /*
-   * LoginServer.__isValidCreateAccount
-   * Returns true if the request to create the account is valid 
-   */
-
-  for (let property of ["account", "password", "name", "sex"]) {
+  for (let property of ["account", "password", "email"]) {
     if (!Object.prototype.hasOwnProperty.call(queryObject, property)) {
       return false;
     }
   }
 
-  // Accept only lower case letters for the character name
-  if (!/^[a-z]+$/.test(queryObject.name)) {
-    return false;
-  }
-
-  // Reject forbidden names (admin impersonation, profanity, etc.)
-  if (!isNameAllowed(queryObject.name)) {
-    return false;
-  }
-
-  // Must be male or female
-  if (queryObject.sex !== "male" && queryObject.sex !== "female") {
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(queryObject.email)) {
     return false;
   }
 
@@ -390,9 +374,9 @@ LoginServer.prototype.__handleRequest = function (request, response) {
   }
 
   // GET /api/bans returns currently banned players (login screen)
-  // GET /api/bans/list returns active bans with details (in-game god modal)
-  // GET /api/bans/search?q=X searches characters by name (in-game god modal)
-  // GET /api/bans/history returns ban history (in-game god modal)
+  // GET /api/bans/list returns active bans with details (in-game admin modal)
+  // GET /api/bans/search?q=X searches characters by name (in-game admin modal)
+  // GET /api/bans/history returns ban history (in-game admin modal)
   if (pathname === "/api/bans") {
     return this.__listBans(requestObject, response);
   }
@@ -411,7 +395,7 @@ LoginServer.prototype.__handleRequest = function (request, response) {
     return this.__listDeaths(requestObject, response);
   }
 
-  // GET /api/anticheat returns suspects and active cheaters (in-game god modal)
+  // GET /api/anticheat returns suspects and active cheaters (in-game admin modal)
   if (pathname === "/api/anticheat") {
     return this.__listAntiCheat(response);
   }

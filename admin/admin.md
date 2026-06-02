@@ -137,7 +137,7 @@ Key tables:
 ```json
 {
   "properties": {
-    "name": "God",
+    "name": "Admin",
     "health": 150, "healthMax": 150,
     "mana": 0, "manaMax": 0,
     "capacity": 400, "capacityMax": 400,
@@ -290,7 +290,7 @@ The server tries to fetch `https://www.vestauth.com` on startup — disable `REQ
 ### Server crash on player login
 Check for corrupt skill/experience values in `characters.data`. The `skills` object should contain reasonable numbers (fits in u32). Run:
 ```sql
-UPDATE characters SET data = json_set(data, '$.skills.magic', 0) WHERE name = 'God';
+UPDATE characters SET data = json_set(data, '$.skills.magic', 0) WHERE name = 'Admin';
 ```
 
 ### Sprite not found for item ID

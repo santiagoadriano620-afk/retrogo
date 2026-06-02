@@ -83,6 +83,7 @@ AccountDatabase.prototype.__createTables = function () {
       id TEXT PRIMARY KEY,
       hash TEXT NOT NULL,
       name TEXT,
+      email TEXT,
       group_id INTEGER DEFAULT 0,
       ip TEXT,
       premium_expiry INTEGER DEFAULT 0,
@@ -161,8 +162,8 @@ AccountDatabase.prototype.__migrateFromJson = function () {
   let migrated = 0;
 
   const insertAccount = this.db.prepare(`
-    INSERT OR IGNORE INTO accounts (id, hash, name, group_id, ip, premium_expiry, created_at, updated_at)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+    INSERT OR IGNORE INTO accounts (id, hash, name, email, group_id, ip, premium_expiry, created_at, updated_at)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
   `);
   const insertCharacter = this.db.prepare(`
     INSERT OR IGNORE INTO characters (account_id, name, data, created_at, updated_at)
@@ -181,6 +182,7 @@ AccountDatabase.prototype.__migrateFromJson = function () {
         meta.account,
         meta.hash,
         meta.name || null,
+        meta.email || null,
         meta.group || 0,
         meta.ip || null,
         meta.premiumExpiry || 0,
@@ -286,23 +288,16 @@ AccountDatabase.prototype.createAccount = async function (queryObject, callback)
 
   try {
     const hash = await bcrypt.hash(queryObject.password, SALT_ROUNDS);
-    const name = queryObject.name.capitalize();
-    const character = this.characterCreator.create(name, queryObject.sex);
-    const charData = JSON.parse(character);
     const now = Date.now();
+    const email = queryObject.email || null;
 
     const insertAccount = this.db.prepare(`
-      INSERT INTO accounts (id, hash, name, group_id, ip, premium_expiry, created_at, updated_at)
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-    `);
-    const insertCharacter = this.db.prepare(`
-      INSERT INTO characters (account_id, name, data, created_at, updated_at)
-      VALUES (?, ?, ?, ?, ?)
+      INSERT INTO accounts (id, hash, name, email, group_id, ip, premium_expiry, created_at, updated_at)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
     `);
 
     const create = this.db.transaction(() => {
-      insertAccount.run(account, hash, name, queryObject.group || 0, queryObject.ip || null, 0, now, now);
-      insertCharacter.run(account, name, JSON.stringify(charData), now, now);
+      insertAccount.run(account, hash, account, email, queryObject.group || 1, queryObject.ip || null, 0, now, now);
     });
 
     create();

@@ -15,29 +15,33 @@ CreateAccountModal.constructor = CreateAccountModal;
 
 CreateAccountModal.prototype.__isValidSubmission = function(options) {
 
-  /*
-   * Function CreateAccountModal.__isValidSubmission
-   * Returns true if the submission is valid
-   */
-
   document.getElementById("create-username").style.border = null;
   document.getElementById("create-password").style.border = null;
-  document.getElementById("create-name").style.border = null;
-  if(options.account === "" || options.password === "" || options.name === "") {
-    return false;
-  }
+  document.getElementById("create-password-repeat").style.border = null;
+  document.getElementById("create-email").style.border = null;
 
-  if(options.sex !== "male" && options.sex !== "female") {
+  if(options.account === "" || options.password === "" || options.passwordRepeat === "" || options.email === "") {
     return false;
   }
 
   if(options.account.length < 6) {
-    document.getElementById("create-username").style.border = "1px solid red"; 
+    document.getElementById("create-username").style.border = "1px solid red";
     return false;
   }
 
   if(options.password.length < 6) {
-    document.getElementById("create-password").style.border = "1px solid red"; 
+    document.getElementById("create-password").style.border = "1px solid red";
+    return false;
+  }
+
+  if(options.password !== options.passwordRepeat) {
+    document.getElementById("create-password").style.border = "1px solid red";
+    document.getElementById("create-password-repeat").style.border = "1px solid red";
+    return false;
+  }
+
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(options.email)) {
+    document.getElementById("create-email").style.border = "1px solid red";
     return false;
   }
 
@@ -55,8 +59,8 @@ CreateAccountModal.prototype.handleConfirm = function() {
   let options = new Object({
     "account": document.getElementById("create-username").value,
     "password": document.getElementById("create-password").value,
-    "name": document.getElementById("create-name").value.toLowerCase(),
-    "sex": document.querySelector('input[name="create-sex"]:checked').value
+    "passwordRepeat": document.getElementById("create-password-repeat").value,
+    "email": document.getElementById("create-email").value
   });
 
 

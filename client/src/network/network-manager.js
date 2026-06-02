@@ -522,8 +522,7 @@ NetworkManager.prototype.createAccount = function (options) {
   let body = {
     account: options.account,
     password: options.password,
-    name: options.name,
-    sex: options.sex
+    email: options.email
   };
   if (refCode) {
     body.ref = refCode;
@@ -537,7 +536,7 @@ NetworkManager.prototype.createAccount = function (options) {
     switch (response.status) {
       case 201: break;
       case 400: throw ("Malformed account creation request.");
-      case 409: throw ("An account or character with this name already exists.");
+      case 409: throw ("An account with this name already exists.");
       case 500: throw ("The server experienced an internal error.");
     }
 

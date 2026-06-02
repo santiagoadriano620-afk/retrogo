@@ -905,24 +905,50 @@ Interface.prototype.__handleStackResize = function () {
   }
 };
 
+Interface.prototype.applyZoom = function () {
+  var layout = document.documentElement.dataset.layout;
+  var el = document.getElementById('game-wrapper');
+  if (!el) return;
+
+  var zoom = 1;
+  if (layout === 'tv') {
+    zoom = Math.max(1.6, this.getResolutionScale());
+  } else if (layout === 'desktop') {
+    zoom = Math.max(1, this.getResolutionScale());
+  }
+
+  el.style.zoom = zoom;
+  // Prevent double-scaling with TV's CSS transform: scale(1.8)
+  el.style.transform = zoom > 1 ? 'none' : '';
+};
+
 Interface.prototype.handleResize = function (event) {
   this.__cachedMobileScale = null;
+  this.applyZoom();
+
   if (!gameClient.renderer) {
     return;
   }
 
-  let baseScale = this.getResolutionScale();
-  let finalScale = baseScale * this.cameraZoom;
-  gameClient.renderer.screen.setScale(finalScale);
+  var baseScale = this.getResolutionScale();
+  var finalScale = baseScale * this.cameraZoom;
+  var canvasId = document.getElementById("canvas-id");
+  var wrapper = document.getElementById("game-wrapper");
+  var upperElem = wrapper ? wrapper.querySelector(".upper") : null;
+  var hasZoom = wrapper && wrapper.style.zoom && parseFloat(wrapper.style.zoom) !== 1;
+  var isMobileLayout = document.documentElement.dataset.layout === "mobile-tablet";
 
-  let unscaledWidth = this.SCREEN_WIDTH_MIN * baseScale;
-  let unscaledHeight = this.SCREEN_HEIGHT_MIN * baseScale;
-  let canvasId = document.getElementById("canvas-id");
-  let wrapper = document.getElementById("game-wrapper");
-  let upperElem = wrapper ? wrapper.querySelector(".upper") : null;
+  if (!hasZoom && !isMobileLayout) {
+    gameClient.renderer.screen.setScale(finalScale);
+    var unscaledWidth = this.SCREEN_WIDTH_MIN * baseScale;
+    var unscaledHeight = this.SCREEN_HEIGHT_MIN * baseScale;
+    this.setElementDimensions(canvasId, unscaledWidth, unscaledHeight);
+  } else if (!isMobileLayout) {
+    // CSS zoom handles layout scaling; only apply camera zoom to canvas
+    gameClient.renderer.screen.setScale(this.cameraZoom);
+    this.setElementDimensions(canvasId, this.SCREEN_WIDTH_MIN, this.SCREEN_HEIGHT_MIN);
+  }
 
-  // Always clear fullscreen inline styles first
-  this.setElementDimensions(canvasId, unscaledWidth, unscaledHeight);
   canvasId.style.marginTop = "";
   canvasId.style.marginLeft = "";
   if (upperElem) {
@@ -931,16 +957,20 @@ Interface.prototype.handleResize = function (event) {
   }
 
   if (this.__isFullscreen()) {
-    this.setElementDimensions(canvasId, unscaledWidth - 45, unscaledHeight + 130);
-    canvasId.style.marginTop = "0";
-    canvasId.style.marginLeft = "-125px";
-    if (upperElem) {
-      upperElem.style.alignItems = "flex-start";
-      upperElem.style.paddingTop = "5px";
-    }
-    let screen = document.getElementById("screen");
-    if (screen) {
-      screen.style.transform = "scale(%s) translateX(40px)".format(finalScale);
+    if (!hasZoom) {
+      var unscaledWidth = this.SCREEN_WIDTH_MIN * baseScale;
+      var unscaledHeight = this.SCREEN_HEIGHT_MIN * baseScale;
+      this.setElementDimensions(canvasId, unscaledWidth - 45, unscaledHeight + 130);
+      canvasId.style.marginTop = "0";
+      canvasId.style.marginLeft = "-125px";
+      if (upperElem) {
+        upperElem.style.alignItems = "flex-start";
+        upperElem.style.paddingTop = "5px";
+      }
+      var screen = document.getElementById("screen");
+      if (screen) {
+        screen.style.transform = "scale(%s) translateX(40px)".format(finalScale);
+      }
     }
   }
 
@@ -1174,6 +1204,12 @@ Interface.prototype.__enableListeners = function () {
   window.onbeforeunload = this.__closeClientConfirm.bind(this);
   window.addEventListener("pagehide", this.closeClient.bind(this));
   window.onresize = this.__handleResizeWindow.bind(this);
+
+  // Reapply zoom when layout changes (desktop ↔ TV ↔ mobile-tablet)
+  window.addEventListener("layoutchange", this.applyZoom.bind(this));
+
+  // Initial zoom on page load (deferred to ensure DOM is ready)
+  setTimeout(this.applyZoom.bind(this), 0);
 };
 
 Interface.prototype.__updateBoostDisplay = function () {

@@ -401,6 +401,15 @@ Container.prototype.__renderAnimated = function () {
 
 }
 
+Container.squeezeFromBottom = function (stack) {
+  var items = Array.from(stack.children).filter(function (el) {
+    return el.hasAttribute("containerIndex");
+  });
+  items.forEach(function (el) {
+    stack.appendChild(el);
+  });
+};
+
 Container.prototype.__render = function () {
 
   /*
