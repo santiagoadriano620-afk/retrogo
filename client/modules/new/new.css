@@ -19,6 +19,9 @@ html {
   position: relative;
   width: 205px;
   flex-shrink: 0;
+  background-image: url("/images/game/ui/horizontal_line_dark.png");
+  background-repeat: repeat-x;
+  background-position: left top;
 }
 
 .oogwrap:not(.desktop-only)::before {
@@ -26,7 +29,7 @@ html {
   position: absolute;
   right: 2px;
   top: 0;
-  bottom: 0;
+  bottom: -140px;
   width: 1px;
   background-image: url("/images/game/ui/vertical_line_bright.png");
   background-repeat: repeat-y;
