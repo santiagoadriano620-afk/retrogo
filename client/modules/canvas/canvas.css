@@ -16,7 +16,7 @@
   align-items: center;
   overflow: hidden;
   transform: translate(-36px, 10px);
-  clip-path: inset(0 50px 0 0);
+  clip-path: inset(4px 48px 0 -2px);
 }
 
 #text-wrapper {

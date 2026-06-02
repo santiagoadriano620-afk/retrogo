@@ -563,6 +563,19 @@ button.container-btn[action="back"].visible {
   z-index: 10;
 }
 
+.lower::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: url("/images/game/ui/horizontal_line_dark.png") repeat-x;
+  background-size: 96px 2px;
+  pointer-events: none;
+  z-index: 100;
+}
+
 .lower::after {
   content: "";
   position: absolute;

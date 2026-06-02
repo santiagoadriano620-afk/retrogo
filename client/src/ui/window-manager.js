@@ -93,7 +93,7 @@ WindowManager.prototype.__addListeners = function (gameWindow) {
       let startY = event.clientY;
       let startH = el.offsetHeight;
       let rect = el.getBoundingClientRect();
-      let maxH = window.innerHeight - rect.top - 4;
+      let maxH = window.visualViewport.height - rect.top - 4;
       // Containers: never taller than the last slot
       if (el.hasAttribute("containerIndex") && body) {
         let naturalH = body.scrollHeight + 26;

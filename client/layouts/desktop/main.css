@@ -11,6 +11,7 @@
 #clock-time { font-size: 10px; position: absolute; top: 4px; left: 4px; }
 
 .lower { position: absolute; bottom: 0; left: 0; right: 167px; height: 140px; z-index: 10; }
+.lower::before { content: ""; position: absolute; top: -1px; left: 0; right: 0; height: 2px; background: url("/images/game/ui/horizontal_line_dark.png") repeat-x; background-size: 96px 2px; pointer-events: none; z-index: 100; }
 .lower::after { content: ""; position: absolute; top: 0; right: -1px; bottom: 0; width: 1px; background: url("/images/game/ui/vertical_line_bright.png") repeat-y; background-size: 1px 96px; pointer-events: none; z-index: 100; }
 
 .oogwrap { display: flex; flex-direction: column; height: 100%; }
@@ -25,7 +26,7 @@
 #extra-column-wrapper .window { margin-left: 43px; transform: translateX(-65px) translateY(5px); pointer-events: auto; }
 
 #screen { z-index: 100; background-color: black; box-shadow: 0px 0px 10px 0px black; }
-.canvas-wrapper { width: 1080px; height: 482px; max-width: 100%; position: relative; display: flex; justify-content: flex-start; align-items: center; overflow: hidden; transform: translate(-36px, 10px); clip-path: inset(0 50px 0 0); flex-shrink: 0; }
+.canvas-wrapper { width: 1080px; height: 482px; max-width: 100%; position: relative; display: flex; justify-content: flex-start; align-items: center; overflow: hidden; transform: translate(-36px, 10px); clip-path: inset(4px 48px 0 -2px); flex-shrink: 0; }
 #text-wrapper { position: absolute; left: 0; top: 0; width: 100%; height: 100%; pointer-events: none; z-index: 101; }
 
 .desktop-only { display: block; }

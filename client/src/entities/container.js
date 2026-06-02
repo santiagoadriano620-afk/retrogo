@@ -37,7 +37,7 @@ Container.prototype.createDOM = function (title, items, itemId) {
 
   // Measure FULL height of this container
   let ROWS = Math.ceil(this.size / 4);
-  let FULL = 56 + ROWS * 34;
+  let FULL = 56 + ROWS * 34 + (ROWS - 1) * 1;
 
   // Helper: sum actual offsetHeights of existing containers in a stack
   function totalUsedInStack(stack) {
@@ -56,9 +56,9 @@ Container.prototype.createDOM = function (title, items, itemId) {
     return Math.max(0, window.visualViewport.height - rect.top);
   }
 
-  // Try right column first
+  // Try right column first (with tolerance for flex-shrink compression)
   let rightCapacity = getStackCapacity(rightStack);
-  if (totalUsedInStack(rightStack) + FULL <= rightCapacity) {
+  if (totalUsedInStack(rightStack) + FULL <= rightCapacity + 60) {
     this.window.addTo(rightStack);
     Container._addContent(this, element, title, items, itemId);
     return;
@@ -185,7 +185,7 @@ Container.prototype.createElement = function (index) {
   // Copy over the container prototype from the DOM
   let element = document.getElementById("container-prototype").cloneNode(true);
   element.style.display = "flex";
-  element.style.width = "148px";
+  element.style.width = "152px";
   element.setAttribute("containerIndex", index);
 
   // Mobile: Position containers at the bottom of the screen
@@ -272,6 +272,7 @@ Container.prototype.createBodyContent = function (size) {
   body.style.maxHeight = "";
   body.style.height = "";
   body.style.minHeight = "";
+  body.style.gap = "1px";
 
   // Create the requested number of slots in the backpack
   for (let i = 0; i < size; i++) {
