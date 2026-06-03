@@ -81,10 +81,8 @@ ScreenElement.prototype.__getAbsoluteOffset = function (position) {
   var left, top;
 
   if (isMobileFS) {
-    var cox = window.mobileFS.__canvasOffsetX || 0;
-    var coy = window.mobileFS.__canvasOffsetY || 0;
-    left = cox + position.x * scale.x - (0.5 * this.element.offsetWidth);
-    top = coy + position.y * scale.y - (0.5 * this.element.offsetHeight);
+    left = position.x * scale.x - (0.5 * this.element.offsetWidth);
+    top = position.y * scale.y - (0.5 * this.element.offsetHeight);
   } else {
     var ox = gameClient.renderer.playerTileOffsetX;
     var oy = gameClient.renderer.playerTileOffsetY;
