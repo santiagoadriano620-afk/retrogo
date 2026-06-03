@@ -31,6 +31,13 @@ Renderer.prototype.__rebuildBackgroundCaches = function () {
 
     cacheCanvas.clear();
 
+    var shiftX = this.__bgCacheShiftX * 32;
+    var shiftY = this.__bgCacheShiftY * 32;
+    if ((shiftX || shiftY) && cacheCanvas.context) {
+      cacheCanvas.context.save();
+      cacheCanvas.context.translate(shiftX, shiftY);
+    }
+
     for (let j = 0; j < tiles.length; j++) {
       let tile = tiles[j];
       if (tile.id === 0 || tile.isAnimated()) continue;
@@ -41,6 +48,10 @@ Renderer.prototype.__rebuildBackgroundCaches = function () {
       if (this.__scratchPos.x < this.playerTileOffsetX - this.__bgCullMarginLeft || this.__scratchPos.x > this.playerTileOffsetX + this.__bgCullMarginRight) continue;
       if (this.__scratchPos.y < this.playerTileOffsetY - this.__bgCullMarginTop || this.__scratchPos.y > this.playerTileOffsetY + this.__bgCullMarginBottom) continue;
       cacheCanvas.drawSprite(tile, this.__scratchPos, 64);
+    }
+
+    if ((shiftX || shiftY) && cacheCanvas.context) {
+      cacheCanvas.context.restore();
     }
 
     if (this.screen.isGL) {
@@ -167,7 +178,7 @@ Renderer.prototype.__renderWorld = function () {
     let z = floor.z;
     let tiles = floor.tiles;
 
-    this.screen.drawImage(this.__backgroundCaches[z].canvas, mo.x * 32, mo.y * 32);
+    this.screen.drawImage(this.__backgroundCaches[z].canvas, mo.x * 32 - this.__bgCacheShiftX * 32, mo.y * 32 - this.__bgCacheShiftY * 32);
 
     let pp = gameClient.player.getPosition();
     let pz = pp.z % 8;

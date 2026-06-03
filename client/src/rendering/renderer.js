@@ -34,6 +34,8 @@ const Renderer = function () {
   this.__bgCullMarginRight = 22;
   this.__bgCullMarginTop = 9;
   this.__bgCullMarginBottom = 11;
+  this.__bgCacheShiftX = 0;
+  this.__bgCacheShiftY = 0;
 
   this.screen = new Canvas("screen", Interface.prototype.SCREEN_WIDTH_MIN, Interface.prototype.SCREEN_HEIGHT_MIN);
 

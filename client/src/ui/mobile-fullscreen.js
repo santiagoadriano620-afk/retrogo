@@ -308,17 +308,30 @@ MobileFullscreen.prototype.__adjustCanvas = function () {
     var renderer = gameClient.renderer;
     renderer.playerTileOffsetX = TILE_COUNT / 2;
     renderer.playerTileOffsetY = TILE_COUNT / 2;
-    // Symmetric culling: 5 SQM extra on all sides
-    renderer.__cullMarginLeft = TILE_COUNT / 2 + 5;
-    renderer.__cullMarginRight = TILE_COUNT / 2 + 5;
-    renderer.__cullMarginTop = TILE_COUNT / 2 + 5;
-    renderer.__cullMarginBottom = TILE_COUNT / 2 + 5;
-    // Bg cache: +2 extra tiles for scroll safety
-    renderer.__bgCullMarginLeft = TILE_COUNT / 2 + 7;
-    renderer.__bgCullMarginRight = TILE_COUNT / 2 + 7;
-    renderer.__bgCullMarginTop = TILE_COUNT / 2 + 7;
-    renderer.__bgCullMarginBottom = TILE_COUNT / 2 + 7;
+    // Uniform culling: 2.5 tiles pre-render outside each viewport edge
+    // Garante que objetos (items, creatures) já estejam renderizados
+    // antes de entrarem na tela, sem delay visível.
+    renderer.__cullMarginLeft = 10;
+    renderer.__cullMarginRight = 10;
+    renderer.__cullMarginTop = 10;
+    renderer.__cullMarginBottom = 10;
+    // Bg cache: 2 more tiles than foreground for scroll safety
+    renderer.__bgCullMarginLeft = 12;
+    renderer.__bgCullMarginRight = 12;
+    renderer.__bgCullMarginTop = 12;
+    renderer.__bgCullMarginBottom = 12;
+    renderer.__bgCacheShiftX = 1;
+    renderer.__bgCacheShiftY = 1;
     renderer.__tileCacheNeedsRebuild = true;
+
+    // Recreate bg cache canvases large enough for the 32px shift + entering tile.
+    // 576 = 18 tiles × 32px (viewport 15 + 2 entering + 1 shift margin)
+    // Default 1080×482 is too short — the vertical shift clips bottom content.
+    var bgW = 1080;
+    var bgH = 576;
+    for (var i = 0; i < 16; i++) {
+      renderer.__backgroundCaches[i] = new Canvas(null, bgW, bgH);
+    }
 
     renderer.screen.setScale(1);
     if (typeof renderer.screen.setDimensions === 'function') {
@@ -345,7 +358,16 @@ MobileFullscreen.prototype.__restoreCanvas = function () {
     renderer.__bgCullMarginRight = 22;
     renderer.__bgCullMarginTop = 9;
     renderer.__bgCullMarginBottom = 11;
+    renderer.__bgCacheShiftX = 0;
+    renderer.__bgCacheShiftY = 0;
     renderer.__tileCacheNeedsRebuild = true;
+
+    // Restore original bg cache canvas size
+    var ogW = Interface.prototype.SCREEN_WIDTH_MIN;
+    var ogH = Interface.prototype.SCREEN_HEIGHT_MIN;
+    for (var i = 0; i < 16; i++) {
+      renderer.__backgroundCaches[i] = new Canvas(null, ogW, ogH);
+    }
   }
 
   this.__canvasOffsetX = 0;
