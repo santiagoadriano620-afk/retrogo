@@ -252,25 +252,7 @@ BattleWindow.prototype.addCreature = function (creature) {
     nameSpan.style.color = "#CC4444";
   }
 
-  function blockMobileMouse(event) {
-    if (gameClient.touch && gameClient.touch.isMobileMode) {
-      event.preventDefault();
-      event.stopPropagation();
-      event.stopImmediatePropagation();
-    }
-  }
-
-  node.addEventListener("mousedown", blockMobileMouse);
-  node.addEventListener("mouseup", blockMobileMouse);
-
   node.addEventListener("click", function (event) {
-    if (gameClient.touch && gameClient.touch.isMobileMode) {
-      event.preventDefault();
-      event.stopPropagation();
-      event.stopImmediatePropagation();
-      return;
-    }
-
     if (gameClient.mouse.__multiUseObject !== null) {
       let creatureId = Number(this.id);
       gameClient.send(new ItemUseOnCreaturePacket(gameClient.mouse.__multiUseObject, creatureId));
@@ -294,44 +276,6 @@ BattleWindow.prototype.addCreature = function (creature) {
     } else {
       gameClient.player.setTarget(creature);
       gameClient.send(new TargetPacket(this.id));
-    }
-  });
-
-  let touchStartX = 0;
-  let touchStartY = 0;
-
-  node.addEventListener("touchstart", function (event) {
-    if (gameClient.touch && gameClient.touch.isMobileMode) {
-      let touch = event.changedTouches[0];
-      touchStartX = touch.clientX;
-      touchStartY = touch.clientY;
-    }
-  }, { passive: true });
-
-  node.addEventListener("touchend", function (event) {
-    if (gameClient.touch && gameClient.touch.isMobileMode) {
-      let touch = event.changedTouches[0];
-      let dx = Math.abs(touch.clientX - touchStartX);
-      let dy = Math.abs(touch.clientY - touchStartY);
-
-      if (dx < 10 && dy < 10) {
-        event.preventDefault();
-        event.stopPropagation();
-        event.stopImmediatePropagation();
-
-        let id = Number(this.id);
-        let creature = gameClient.world.getCreature(id);
-
-        if (creature) {
-          if (gameClient.player.isCreatureTarget(creature)) {
-            gameClient.player.setTarget(null);
-            gameClient.send(new TargetPacket(0));
-          } else {
-            gameClient.player.setTarget(creature);
-            gameClient.send(new TargetPacket(id));
-          }
-        }
-      }
     }
   });
 

@@ -1,2 +1,0 @@
-[data-layout="tv"] .tv-focus { outline: 3px solid #ffcc00 !important; outline-offset: 3px; }
-[data-layout="tv"] .tv-hint { position: fixed; bottom: 10px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.85); color: #ffcc00; padding: 8px 16px; border-radius: 8px; font-size: 14px; z-index: 99999; pointer-events: none; white-space: nowrap; }

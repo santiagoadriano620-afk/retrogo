@@ -414,12 +414,6 @@ LoginServer.prototype.__handleRequest = function (request, response) {
   let clientDir = path.join(__dirname, "..", "..", "..", "client");
   let dataDir = path.join(__dirname, "..", "..", "..", "data");
   let defaultDoc = "index.html";
-  if (pathname === "/") {
-    var ua = (request.headers["user-agent"] || "").toLowerCase();
-    if (/mobi|android|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(ua)) {
-      defaultDoc = "mobile.html";
-    }
-  }
   let filePath = path.join(clientDir, pathname === "/" ? defaultDoc : pathname);
 
   if (filePath.startsWith(clientDir)) {
@@ -503,12 +497,6 @@ LoginServer.prototype.__handlePostRequest = function (request, response, pathnam
   let clientDir = path.join(__dirname, "..", "..", "..", "client");
   let dataDir = path.join(__dirname, "..", "..", "..", "data");
   let defaultDoc = "index.html";
-  if (pathname === "/") {
-    var ua = (request.headers["user-agent"] || "").toLowerCase();
-    if (/mobi|android|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(ua)) {
-      defaultDoc = "mobile.html";
-    }
-  }
   let filePath = path.join(clientDir, pathname === "/" ? defaultDoc : pathname);
 
   if (filePath.startsWith(clientDir)) {

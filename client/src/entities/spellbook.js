@@ -21,8 +21,6 @@ const Spellbook = function (spells) {
 
   // Create the spellbook
   gameClient.interface.modalManager.get("spellbook-modal").createSpellList(this.spells);
-  gameClient.interface.hotbarManager.__loadConfiguration();
-
 }
 
 // Identifier of the global cooldown

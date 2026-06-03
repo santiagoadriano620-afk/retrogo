@@ -18,14 +18,6 @@ SpellbookModal.constructor = SpellbookModal;
 
 SpellbookModal.prototype.__handleClick = function (sid) {
 
-  /*
-   * Class SpellbookModal
-   * Wrapper for the modal that can open chat windows
-   */
-
-  // Add the slots to the hotbar
-  gameClient.interface.hotbarManager.addSlot(this.__index, sid);
-
   this.__buttonClick({ "target": this.element.querySelector("button[action='cancel']") });
 
 }
@@ -58,18 +50,6 @@ SpellbookModal.prototype.__createSpellNode = function (id) {
   let DOMElement = document.getElementById("spellbook-wrapper-prototype").cloneNode(true);
   let DOMElementCanvas = DOMElement.firstElementChild;
   let canvas = new Canvas(DOMElementCanvas, 32, 32);
-
-  // Draw icon on the canvas (guard against broken/missing sprite sheet)
-  if (HotbarManager.prototype.ICONS && HotbarManager.prototype.ICONS.complete && HotbarManager.prototype.ICONS.naturalWidth > 0) {
-    canvas.context.drawImage(
-      HotbarManager.prototype.ICONS,
-      32 * spell.icon.x,
-      32 * spell.icon.y,
-      32, 32,
-      0, 0,
-      32, 32
-    );
-  }
 
   // Format vocations for display (capitalize first letter)
   let vocationsText = "";

@@ -188,20 +188,6 @@ Container.prototype.createElement = function (index) {
   element.style.width = "152px";
   element.setAttribute("containerIndex", index);
 
-  // Mobile: Position containers at the bottom of the screen
-  if (gameClient.touch && gameClient.touch.isMobileMode) {
-    var openContainers = document.querySelectorAll('.window[containerIndex]').length;
-    var stackOffset = openContainers * 40;
-
-    element.style.setProperty('position', 'fixed', 'important');
-    element.style.setProperty('left', 'auto', 'important');
-    element.style.setProperty('right', '5px', 'important');
-    element.style.setProperty('top', 'auto', 'important');
-    element.style.setProperty('bottom', (70 + stackOffset) + 'px', 'important');
-    element.style.setProperty('max-height', '50vh', 'important');
-    element.style.setProperty('transform', 'scale(0.75)', 'important');
-  }
-
   return element;
 
 }

@@ -21,7 +21,6 @@ const MenuManager = function () {
     "chat-body-menu": new ChatBodyMenu("chat-body-menu"),
     "friend-list-menu": new FriendListMenu("friend-list-menu"),
     "friend-window-menu": new FriendWindowMenu("friend-window-menu"),
-    "hotbar-menu": new HotbarMenu("hotbar-menu"),
     "container-menu": new ContainerMenu("container-menu"),
     "minimap-menu": new MinimapMenu("minimap-menu"),
     "minimap-pin-menu": new MinimapPinMenu("minimap-pin-menu"),

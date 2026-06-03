@@ -24,9 +24,6 @@ const Interface = function () {
   // Manager for chat channels
   this.channelManager = new ChannelManager();
 
-  // Manager for hotbar
-  this.hotbarManager = new HotbarManager();
-
   // Manager for fight mode selector (Full Attack, Balanced, Full Defense)
   this.fightModeSelector = new FightModeSelector();
 
@@ -74,9 +71,6 @@ const Interface = function () {
   this.state.add("dataLoaded", this.enableEnterGame.bind(this));
 
   document.getElementById("chat-input").disabled = true;
-
-  // Cache for mobile scale to avoid layout thrashing
-  this.__cachedMobileScale = null;
 
   // Zoom factor (1 = normal, >1 = zoom in, <1 = zoom out)
   this.zoomFactor = 1.2;
@@ -815,27 +809,6 @@ Interface.prototype.getSpriteScaling = function () {
    * Mobile uses actual displayed canvas size, desktop uses resolution scale
    */
 
-  // Check if we're in mobile mode
-  let isMobile = gameClient.touch && gameClient.touch.isMobileMode;
-
-  if (isMobile) {
-    // Return cached value if available
-    if (this.__cachedMobileScale !== null) {
-      return this.__cachedMobileScale;
-    }
-
-    // Mobile: use actual displayed canvas size vs internal size
-    let canvas = gameClient.renderer.screen.canvas;
-    let displayedWidth = canvas.getBoundingClientRect().width;
-    let internalWidth = canvas.width;
-    let scale = displayedWidth / internalWidth;
-
-    // Cache the result (32 * scale)
-    this.__cachedMobileScale = 32 * scale;
-    return this.__cachedMobileScale;
-  }
-
-  // Desktop: use the original resolution scale calculation
   return 32 * this.getResolutionScale();
 };
 
@@ -846,29 +819,6 @@ Interface.prototype.getSpriteScalingVector = function () {
    * Needed for mobile where the canvas might be stretched non-uniformly
    */
 
-  // Check if we're in mobile mode
-  let isMobile = gameClient.touch && gameClient.touch.isMobileMode;
-
-  if (isMobile) {
-    let canvas = gameClient.renderer.screen.canvas;
-    let rect = canvas.getBoundingClientRect();
-
-    // Calculate separate scales for Width and Height
-    // Mobile CSS stretches to 100% width/height, potentially changing aspect ratio
-    let scaleX = rect.width / canvas.width;
-    let scaleY = rect.height / canvas.height;
-
-    // Cache the result for stability if needed, but for now return raw
-    // Note: If we need caching, we should cache both values
-    // For now reusing the existing cache variable for the scalar (width) scale
-
-    return {
-      x: 32 * scaleX,
-      y: 32 * scaleY
-    };
-  }
-
-  // Desktop: uniform scaling
   let scale = 32 * this.getResolutionScale() * this.cameraZoom;
   return { x: scale, y: scale };
 };
@@ -906,24 +856,13 @@ Interface.prototype.__handleStackResize = function () {
 };
 
 Interface.prototype.applyZoom = function () {
-  var layout = document.documentElement.dataset.layout;
   var el = document.getElementById('game-wrapper');
   if (!el) return;
-
-  var zoom = 1;
-  if (layout === 'tv') {
-    zoom = Math.max(1.6, this.getResolutionScale());
-  } else if (layout === 'desktop') {
-    zoom = Math.max(1, this.getResolutionScale());
-  }
-
+  var zoom = Math.max(1, this.getResolutionScale());
   el.style.zoom = zoom;
-  // Prevent double-scaling with TV's CSS transform: scale(1.8)
-  el.style.transform = zoom > 1 ? 'none' : '';
 };
 
 Interface.prototype.handleResize = function (event) {
-  this.__cachedMobileScale = null;
   this.applyZoom();
 
   if (!gameClient.renderer) {
@@ -936,15 +875,12 @@ Interface.prototype.handleResize = function (event) {
   var wrapper = document.getElementById("game-wrapper");
   var upperElem = wrapper ? wrapper.querySelector(".upper") : null;
   var hasZoom = wrapper && wrapper.style.zoom && parseFloat(wrapper.style.zoom) !== 1;
-  var isMobileLayout = document.documentElement.dataset.layout === "mobile-tablet";
-
-  if (!hasZoom && !isMobileLayout) {
+  if (!hasZoom) {
     gameClient.renderer.screen.setScale(finalScale);
     var unscaledWidth = this.SCREEN_WIDTH_MIN * baseScale;
     var unscaledHeight = this.SCREEN_HEIGHT_MIN * baseScale;
     this.setElementDimensions(canvasId, unscaledWidth, unscaledHeight);
-  } else if (!isMobileLayout) {
-    // CSS zoom handles layout scaling; only apply camera zoom to canvas
+  } else {
     gameClient.renderer.screen.setScale(this.cameraZoom);
     this.setElementDimensions(canvasId, this.SCREEN_WIDTH_MIN, this.SCREEN_HEIGHT_MIN);
   }
@@ -1205,7 +1141,6 @@ Interface.prototype.__enableListeners = function () {
   window.addEventListener("pagehide", this.closeClient.bind(this));
   window.onresize = this.__handleResizeWindow.bind(this);
 
-  // Reapply zoom when layout changes (desktop ↔ TV ↔ mobile-tablet)
   window.addEventListener("layoutchange", this.applyZoom.bind(this));
 
   // Initial zoom on page load (deferred to ensure DOM is ready)

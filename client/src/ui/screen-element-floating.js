@@ -53,9 +53,7 @@ FloatingElement.prototype.setTextPosition = function () {
   let age = this.getAge();
   let fraction = gameClient.interface.getSpriteScaling();
 
-  // Mobile needs larger offset due to CSS scaling
-  let isMobile = gameClient.touch && gameClient.touch.isMobileMode;
-  offset.top -= isMobile ? (fraction * 1.5) : 0;
+  offset.top -= 0;
 
   // Animate upwards
   offset.top -= Math.floor(0.05 * age);

@@ -168,7 +168,6 @@ CharacterElement.prototype.setTextPosition = function () {
    * Sets the text position of the character element
    */
 
-  let isMobile = gameClient.touch && gameClient.touch.isMobileMode;
   let isPlayer = this.__creature === gameClient.player;
 
   // Use the same position calculation for both desktop and mobile
@@ -195,10 +194,7 @@ CharacterElement.prototype.setTextPosition = function () {
     offset.left -= scale.x * 0.25;
   }
 
-  // Add an offset to make the nameplate hover above the player
-  // Mobile needs larger offset due to CSS scaling, desktop uses original
-  // Use scale.y for vertical offset to match height scaling
-  offset.top -= isMobile ? (scale.y * 0.7) : (scale.y * 0.25);
+  offset.top -= (scale.y * 0.25);
 
   // Adjust NPC nameplate: more to the left and higher up
   if (this.__creature.type === CONST.TYPES.NPC) {
@@ -211,12 +207,7 @@ CharacterElement.prototype.setTextPosition = function () {
     offset.top -= scale.y * 0.4;
   }
 
-  // Add smooth transition for mobile to reduce any visual jittering
-  if (isMobile) {
-    this.element.style.transition = "transform 0.05s linear";
-  } else {
-    this.element.style.transition = "";
-  }
+  this.element.style.transition = "";
 
   // Delegate to the generic move function
   this.__updateTextPosition(offset);

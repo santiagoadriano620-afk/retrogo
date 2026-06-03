@@ -473,22 +473,9 @@ Keyboard.prototype.__keyDown = function (event) {
     return this.__handleEscapeKey();
   }
 
-  if (event.keyCode >= this.KEYS.F1 && event.keyCode <= this.KEYS.F11) {
+  if (event.keyCode >= this.KEYS.F1 && event.keyCode <= this.KEYS.F12) {
     event.preventDefault();
-
-    let hotbarHandled = false;
-    if (gameClient.interface.hotbarManager) {
-      let slotIndex = event.keyCode - Keyboard.prototype.KEYS.F1;
-      let slot = gameClient.interface.hotbarManager.slots[slotIndex];
-      if (slot && (slot.spell !== null || slot.text !== null)) {
-        hotbarHandled = true;
-      }
-      gameClient.interface.hotbarManager.handleKeyPress(event.keyCode);
-    }
-
-    if (!hotbarHandled) {
-      return this.__handleHotkey(event.keyCode);
-    }
+    return this.__handleHotkey(event.keyCode);
   }
 
   // Tab key for switching channels

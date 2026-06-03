@@ -41,36 +41,13 @@
 <link rel="stylesheet" type="text/css" href="./modules/blessing/blessing.css">
 <link rel="stylesheet" type="text/css" href="./modules/fight-mode/fight-mode.css">
 <link rel="stylesheet" type="text/css" href="./modules/guild/guild.css">
-<link rel="stylesheet" type="text/css" href="./modules/hotbar/hotbar.css">
 <link rel="stylesheet" type="text/css" href="./modules/minimap/minimap.css">
-<link rel="stylesheet" type="text/css" href="./modules/mobile/mobile.css">
+
 <link rel="stylesheet" type="text/css" href="./modules/house/house.css">
 <link rel="stylesheet" type="text/css" href="./modules/trade/trade.css">
 <link rel="stylesheet" type="text/css" href="./modules/market/market.css">
 
 
-<!-- Layout System: device detection + overlay CSS/JS -->
-<script>
-  (function() {
-    var ua = navigator.userAgent.toLowerCase();
-    var touch = ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
-    var w = window.innerWidth;
-    var isMobile = (touch && (w <= 1024 || /mobi|android|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(ua))) || w <= 768;
-    var isTV = /tizen|webos|smart-tv|smarttv|netcast|viera|bravia|googletv|roku|firetv/i.test(ua)
-            || ((navigator.getGamepads ? Array.from(navigator.getGamepads()).some(function(g) { return g !== null; }) : false) && w >= 1920);
-
-    var layout = 'desktop';
-    try {
-      var saved = JSON.parse(localStorage.getItem('retrogo_layout'));
-      if (saved && saved.preferredLayout) layout = saved.preferredLayout;
-    } catch(e) {}
-    if (layout === 'desktop' && isTV) layout = 'tv';
-    if (layout === 'desktop' && isMobile) layout = 'mobile-tablet';
-
-    document.documentElement.dataset.layout = layout;
-    window.__layoutDetected = { layout: layout };
-  })();
-</script>
 <script src="./layouts/manager.js"></script>
 <script>LayoutManager.init();</script>
 
@@ -149,14 +126,6 @@
   <div class="contextmenu modal" id="chat-header-menu">
     <div class="menu-header">Menu</div>
     <button action="close">Close</button>
-  </div>
-
-  <!-- Menu for hotbar slot -->
-  <div class="contextmenu modal" id="hotbar-menu">
-    <div class="menu-header">Menu</div>
-    <button action="add">Add Spell</button>
-    <button action="add-text">Add Text</button>
-    <button action="remove">Remove</button>
   </div>
 
   <!-- Menu for chat entry -->
@@ -639,49 +608,6 @@
 
   <!-- The Game Interface -->
   <div id="game-wrapper">
-
-    <!-- Mobile Status Bar (Top) -->
-    <div id="mobile-status-bar" class="mobile-only">
-      <div class="mobile-bar-container">
-        <div class="mobile-bar">
-          <div id="mobile-health-bar" class="mobile-bar-fill health" style="width: 100%;"></div>
-          <span class="mobile-bar-text" id="mobile-health-text">??? / ???</span>
-        </div>
-        <div class="mobile-bar">
-          <div id="mobile-mana-bar" class="mobile-bar-fill mana" style="width: 100%;"></div>
-          <span class="mobile-bar-text" id="mobile-mana-text">??? / ???</span>
-        </div>
-      </div>
-      <button id="mobile-menu-btn" class="mobile-action-btn" title="Menu">☰</button>
-    </div>
-
-    <!-- Mobile Action Bar (Bottom) -->
-    <div id="mobile-action-bar" class="mobile-only">
-      <!-- Virtual Joystick Zone -->
-      <div id="mobile-joystick-zone">
-        <div id="virtual-joystick">
-          <div id="joystick-knob"></div>
-        </div>
-      </div>
-
-      <!-- Mobile Hotbar - 4 skill slots -->
-      <div id="mobile-hotbar">
-        <div class="mobile-hotbar-slot" data-slot="0"><canvas></canvas><span class="mobile-slot-key">1</span></div>
-        <div class="mobile-hotbar-slot" data-slot="1"><canvas></canvas><span class="mobile-slot-key">2</span></div>
-        <div class="mobile-hotbar-slot" data-slot="2"><canvas></canvas><span class="mobile-slot-key">3</span></div>
-        <div class="mobile-hotbar-slot" data-slot="3"><canvas></canvas><span class="mobile-slot-key">4</span></div>
-      </div>
-
-      <!-- Action Buttons -->
-      <div id="mobile-actions">
-        <button id="mobile-equipment-btn" class="mobile-action-btn equipment" title="Equipment">🛡</button>
-        <button id="mobile-inventory-btn" class="mobile-action-btn inventory" title="Inventory">🎒</button>
-        <button id="mobile-look-btn" class="mobile-action-btn look" title="Look">👁</button>
-        <button id="mobile-use-btn" class="mobile-action-btn use" title="Use">✋</button>
-        <button id="mobile-attack-btn" class="mobile-action-btn attack" title="Attack">⚔</button>
-        <button id="mobile-chat-btn" class="mobile-action-btn chat" title="Chat">💬</button>
-      </div>
-    </div>
 
     <!-- Main body for the screen etc.. -->
     <div class="main">
@@ -1255,29 +1181,11 @@
               <button class="close-button-transparent symbol-button" action="cancel" value="Cancel">✕</button>
               <div class="modal-header">Spellbook</div>
               <div class="modal-body">
-                Click on a spell icon to add it to the hotbar.
                 <div id="spellbook-list"></div>
                 <hr>
                 <!-- Buttons aligned to the right -->
                 <div class="modal-footer">
                   <button action="cancel" value="Cancel">Close</button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Hotbar Text Modal -->
-            <div id="hotbar-text-modal" class="modal">
-              <button class="close-button-transparent symbol-button" action="cancel" value="Cancel">✕</button>
-              <div class="modal-header">Add Custom Text</div>
-              <div class="modal-body">
-                Enter the text to send when this hotkey is pressed:
-                <input id="hotbar-text-input" type="text" placeholder="e.g., exura, Hi!, etc."
-                  style="width: 100%; margin-top: 8px; padding: 8px; font-size: 14px;">
-                <hr>
-                <!-- Buttons aligned to the right -->
-                <div class="modal-footer">
-                  <button action="cancel" value="Cancel">Cancel</button>
-                  <button action="confirm-text" value="Ok">Confirm</button>
                 </div>
               </div>
             </div>
@@ -1757,34 +1665,7 @@
         </div>
       </div>
 
-      <div class="middle mobile-only">
-        <div class="hotbar">
-          <div class="hotbar-item"><canvas></canvas><span class="hotbar-text"></span><span class="hotbar-key">F1</span>
-          </div>
-          <div class="hotbar-item"><canvas></canvas><span class="hotbar-text"></span><span class="hotbar-key">F2</span>
-          </div>
-          <div class="hotbar-item"><canvas></canvas><span class="hotbar-text"></span><span class="hotbar-key">F3</span>
-          </div>
-          <div class="hotbar-item"><canvas></canvas><span class="hotbar-text"></span><span class="hotbar-key">F4</span>
-          </div>
-          <div class="hotbar-item"><canvas></canvas><span class="hotbar-text"></span><span class="hotbar-key">F5</span>
-          </div>
-          <div class="hotbar-item"><canvas></canvas><span class="hotbar-text"></span><span class="hotbar-key">F6</span>
-          </div>
-          <div class="hotbar-item"><canvas></canvas><span class="hotbar-text"></span><span class="hotbar-key">F7</span>
-          </div>
-          <div class="hotbar-item"><canvas></canvas><span class="hotbar-text"></span><span class="hotbar-key">F8</span>
-          </div>
-          <div class="hotbar-item"><canvas></canvas><span class="hotbar-text"></span><span class="hotbar-key">F9</span>
-          </div>
-          <div class="hotbar-item"><canvas></canvas><span class="hotbar-text"></span><span class="hotbar-key">F10</span>
-          </div>
-          <div class="hotbar-item"><canvas></canvas><span class="hotbar-text"></span><span class="hotbar-key">F11</span>
-          </div>
-          <div class="hotbar-item"><canvas></canvas><span class="hotbar-text"></span><span class="hotbar-key">F12</span>
-          </div>
-        </div>
-      </div>
+      <div class="middle"></div>
 
       <!-- Extra container column (right of canvas) -->
       <div id="extra-column-wrapper">

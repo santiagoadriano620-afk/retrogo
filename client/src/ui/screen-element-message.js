@@ -91,10 +91,7 @@ MessageElement.prototype.setTextPosition = function () {
   // Center the text horizontally (match CharacterElement)
   offset.left += fraction / 2;
 
-  // Offset vertically - mobile needs larger offset due to CSS scaling
-  // Desktop: shift above nickname (which is ~1.15 tiles above tile center)
-  let isMobile = gameClient.touch && gameClient.touch.isMobileMode;
-  offset.top -= isMobile ? (fraction * 1.8) : (fraction * 0.8);
+  offset.top -= (fraction * 0.8);
 
   this.__updateTextPosition(offset);
 

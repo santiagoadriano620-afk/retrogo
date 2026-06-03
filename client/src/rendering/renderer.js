@@ -309,12 +309,6 @@ Renderer.prototype.__renderOther = function () {
 
   gameClient.interface.screenElementManager.render();
 
-  gameClient.interface.hotbarManager.render();
-
-  if (gameClient.touch && gameClient.touch.isMobileMode) {
-    gameClient.touch.syncMobileHotbar();
-  }
-
   gameClient.interface.windowManager.getWindow("party-window").sync();
 
   gameClient.interface.__updateBoostDisplay();
