@@ -149,7 +149,8 @@ window.addEventListener("error", function(e) {
     "src/core/event-queue.js",
     "src/utils/heap-event.js",
     "src/utils/binary-heap.js",
-    "src/core/index.js"
+    "src/core/index.js",
+    "src/ui/mobile-fullscreen.js"
   ];
 
   function loadNextScript(index) {

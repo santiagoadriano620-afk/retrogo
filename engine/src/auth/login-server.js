@@ -611,9 +611,15 @@ LoginServer.prototype.__getAccount = function (queryObject, response) {
           referralData.refLevelRequired = CONFIG.REFERRAL.LEVEL_REQUIRED || 20;
           referralData.refRewardPoints = CONFIG.REFERRAL.REWARD_PREMIUM_POINTS || 10;
         }
+        var clientIp = (response.socket.remoteAddress || "").replace(/^::ffff:/, "");
+        var isLocal = clientIp === "127.0.0.1" || clientIp === "::1" || clientIp === "localhost" ||
+          /^(10\.|172\.(1[6-9]|2[0-9]|3[01])\.|192\.168\.)/.test(clientIp);
+        var gameHost = isLocal
+          ? (process.env.LOCAL_HOST || CONFIG.SERVER.LOCAL_HOST || process.env.EXTERNAL_HOST || CONFIG.SERVER.EXTERNAL_HOST)
+          : (process.env.EXTERNAL_HOST || CONFIG.SERVER.EXTERNAL_HOST);
         response.end(JSON.stringify(Object.assign({
           "token": Buffer.from(JSON.stringify(tokenPayload)).toString("base64"),
-          "host": process.env.EXTERNAL_HOST || CONFIG.SERVER.EXTERNAL_HOST,
+          "host": gameHost,
           "characters": characters,
           "premiumExpiry": premiumExpiry,
           "xorKey": tokenPayload.xorKey

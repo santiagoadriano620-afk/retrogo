@@ -25,10 +25,19 @@ const Canvas = function (id, width, height) {
 
 }
 
+Canvas.prototype.getPlayerTileOffset = function () {
+  var r = gameClient && gameClient.renderer;
+  return {
+    x: r ? r.playerTileOffsetX : 14,
+    y: r ? r.playerTileOffsetY : 7
+  };
+};
+
 Canvas.prototype.setScale = function (scale) {
 
-  let originX = 14 * 32;
-  let originY = 7 * 32;
+  var o = this.getPlayerTileOffset();
+  var originX = o.x * 32;
+  var originY = o.y * 32;
   this.canvas.style.transformOrigin = "%spx %spx".format(originX, originY);
   this.canvas.style.transform = "scale(%s)".format(scale);
 
@@ -65,10 +74,11 @@ Canvas.prototype.getWorldCoordinates = function (event) {
 
   let scaling = gameClient.interface.getSpriteScalingVector();
   let position = gameClient.player.getPosition();
+  let o = this.getPlayerTileOffset();
 
   let projectedViewPosition = new Position(
-    Math.floor(x / scaling.x) + position.x - 14,
-    Math.floor(y / scaling.y) + position.y - 7,
+    Math.floor(x / scaling.x + position.x - o.x),
+    Math.floor(y / scaling.y + position.y - o.y),
     position.z
   );
 

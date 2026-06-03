@@ -124,7 +124,10 @@ ModalManager.prototype.__addEventListeners = function () {
   }
 
   // Add event listeners to the header elements of the modals
-  Array.from(document.querySelectorAll(".modal-header")).forEach(header => header.addEventListener("mousedown", this.__handleHeaderMouseDown));
+  Array.from(document.querySelectorAll(".modal-header")).forEach(header => {
+    header.addEventListener("mousedown", this.__handleHeaderMouseDown);
+    header.addEventListener("touchstart", this.__handleHeaderTouchStart, { passive: false });
+  });
 
 }
 
@@ -184,6 +187,40 @@ ModalManager.prototype.__handleHeaderMouseDown = function (event) {
   document.addEventListener("mouseup", __handleRelease);
 
 }
+
+ModalManager.prototype.__handleHeaderTouchStart = function (event) {
+
+  event.preventDefault();
+
+  var touch = event.touches[0];
+  var self = this;
+
+  var __handleRelease = function () {
+    document.removeEventListener("touchmove", __handleDrag);
+    document.removeEventListener("touchend", __handleRelease);
+  };
+
+  var __handleDrag = function (event) {
+    event.preventDefault();
+
+    var touch = event.touches[0];
+    var rect = gameClient.renderer.screen.canvas.getBoundingClientRect();
+    var modalElement = self.parentElement;
+
+    var left = touch.clientX - rect.left - 0.5 * modalElement.offsetWidth;
+    var top = touch.clientY - rect.top - 0.5 * self.offsetHeight;
+
+    left = left.clamp(0, rect.width - modalElement.offsetWidth);
+    top = top.clamp(0, rect.height - modalElement.offsetHeight);
+
+    modalElement.style.left = "%spx".format(left);
+    modalElement.style.top = "%spx".format(top);
+  };
+
+  document.addEventListener("touchmove", __handleDrag, { passive: false });
+  document.addEventListener("touchend", __handleRelease);
+
+};
 
 ModalManager.prototype.register = function (Class, id) {
 

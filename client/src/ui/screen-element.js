@@ -74,22 +74,29 @@ ScreenElement.prototype.__getAbsoluteOffset = function (position) {
    * Returns the offset of the screen element based on its properties and the screen size
    */
 
-  // Determine the fraction based on the size of the screen
   let scale = gameClient.interface.getSpriteScalingVector();
 
-  // Canvas transform-origin is at grid (14, 7) = pixel (448, 224)
-  // The CSS scale() with this transform-origin keeps (14, 7) fixed
-  // Nameplates must offset from this fixed point, not from (0,0)
-  let left = (position.x - 14) * scale.x + 448 - (0.5 * this.element.offsetWidth);
-  let top = (position.y - 7) * scale.y + 224 - (0.5 * this.element.offsetHeight);
+  var isMobileFS = window.mobileFS && window.mobileFS.active && window.mobileFS.__canvasOffsetX !== undefined;
 
-  // Fullscreen offset compensation
-  if (!!(document.fullscreenElement || document.webkitFullscreenElement)) {
-    left += 40 * (scale.x / 32);
-    top += 70;
+  var left, top;
+
+  if (isMobileFS) {
+    var cox = window.mobileFS.__canvasOffsetX || 0;
+    var coy = window.mobileFS.__canvasOffsetY || 0;
+    left = cox + position.x * scale.x - (0.5 * this.element.offsetWidth);
+    top = coy + position.y * scale.y - (0.5 * this.element.offsetHeight);
+  } else {
+    var ox = gameClient.renderer.playerTileOffsetX;
+    var oy = gameClient.renderer.playerTileOffsetY;
+    left = (position.x - ox) * scale.x + ox * 32 - (0.5 * this.element.offsetWidth);
+    top = (position.y - oy) * scale.y + oy * 32 - (0.5 * this.element.offsetHeight);
+
+    if (!!(document.fullscreenElement || document.webkitFullscreenElement)) {
+      left += 40 * (scale.x / 32);
+      top += 70;
+    }
   }
 
-  // Return the new offsets
   return { left, top }
 
 }

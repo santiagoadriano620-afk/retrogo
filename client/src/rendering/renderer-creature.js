@@ -31,8 +31,8 @@ Renderer.prototype.__renderCreature = function (tile, creature, deferred) {
   let cz = cp.z % 8;
   let cmo = creature.getMoveOffset();
 
-  this.__scratchPos.x = 14 + player.getMoveOffset().x + (cp.x + cz) - (pp.x + pz) - cmo.x;
-  this.__scratchPos.y = 7 + player.getMoveOffset().y + (cp.y + cz) - (pp.y + pz) - cmo.y;
+  this.__scratchPos.x = this.playerTileOffsetX + player.getMoveOffset().x + (cp.x + cz) - (pp.x + pz) - cmo.x;
+  this.__scratchPos.y = this.playerTileOffsetY + player.getMoveOffset().y + (cp.y + cz) - (pp.y + pz) - cmo.y;
 
   if (this.__shouldDefer(tile, creature) && !deferred) {
     return this.__defer(tile, creature);

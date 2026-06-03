@@ -33,6 +33,10 @@ const ENV_MAPPING = {
     path: ['SERVER', 'EXTERNAL_HOST'],
     type: 'string'
   },
+  LOCAL_HOST: {
+    path: ['SERVER', 'LOCAL_HOST'],
+    type: 'string'
+  },
 
   // TLS/SSL
   TLS_CERT: {

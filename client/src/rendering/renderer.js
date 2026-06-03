@@ -24,6 +24,17 @@ function __isServerItem(item, serverId) {
 
 const Renderer = function () {
 
+  this.playerTileOffsetX = 14;
+  this.playerTileOffsetY = 7;
+  this.__cullMarginLeft = 12;
+  this.__cullMarginRight = 16;
+  this.__cullMarginTop = 7;
+  this.__cullMarginBottom = 7;
+  this.__bgCullMarginLeft = 16;
+  this.__bgCullMarginRight = 22;
+  this.__bgCullMarginTop = 9;
+  this.__bgCullMarginBottom = 11;
+
   this.screen = new Canvas("screen", Interface.prototype.SCREEN_WIDTH_MIN, Interface.prototype.SCREEN_HEIGHT_MIN);
 
   this.lightscreen = new LightCanvas(null, Interface.prototype.SCREEN_WIDTH_MIN, Interface.prototype.SCREEN_HEIGHT_MIN);
@@ -263,8 +274,8 @@ Renderer.prototype.getStaticScreenPosition = function (position) {
   let pz = p.z % 8;
   let tz = position.z % 8;
 
-  this.__scratchPos.x = 14 + player.getMoveOffset().x + (position.x + tz) - (p.x + pz);
-  this.__scratchPos.y = 7 + player.getMoveOffset().y + (position.y + tz) - (p.y + pz);
+  this.__scratchPos.x = this.playerTileOffsetX + player.getMoveOffset().x + (position.x + tz) - (p.x + pz);
+  this.__scratchPos.y = this.playerTileOffsetY + player.getMoveOffset().y + (position.y + tz) - (p.y + pz);
 
   return this.__scratchPos;
 
@@ -279,8 +290,8 @@ Renderer.prototype.getCreatureScreenPosition = function (creature) {
   let cz = cp.z % 8;
   let cmo = creature.getMoveOffset();
 
-  this.__scratchPos2.x = 14 + player.getMoveOffset().x + (cp.x + cz) - (pp.x + pz) - cmo.x;
-  this.__scratchPos2.y = 7 + player.getMoveOffset().y + (cp.y + cz) - (pp.y + pz) - cmo.y;
+  this.__scratchPos2.x = this.playerTileOffsetX + player.getMoveOffset().x + (cp.x + cz) - (pp.x + pz) - cmo.x;
+  this.__scratchPos2.y = this.playerTileOffsetY + player.getMoveOffset().y + (cp.y + cz) - (pp.y + pz) - cmo.y;
 
   return this.__scratchPos2;
 

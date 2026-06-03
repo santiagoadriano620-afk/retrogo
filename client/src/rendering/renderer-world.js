@@ -36,10 +36,10 @@ Renderer.prototype.__rebuildBackgroundCaches = function () {
       if (tile.id === 0 || tile.isAnimated()) continue;
       let tp = tile.getPosition();
       let tz = tp.z % 8;
-      this.__scratchPos.x = 14 + (tp.x + tz) - (pp.x + pz);
-      this.__scratchPos.y = 7 + (tp.y + tz) - (pp.y + pz);
-      if (this.__scratchPos.x < -2 || this.__scratchPos.x > 36) continue;
-      if (this.__scratchPos.y < -2 || this.__scratchPos.y > 18) continue;
+      this.__scratchPos.x = this.playerTileOffsetX + (tp.x + tz) - (pp.x + pz);
+      this.__scratchPos.y = this.playerTileOffsetY + (tp.y + tz) - (pp.y + pz);
+      if (this.__scratchPos.x < this.playerTileOffsetX - this.__bgCullMarginLeft || this.__scratchPos.x > this.playerTileOffsetX + this.__bgCullMarginRight) continue;
+      if (this.__scratchPos.y < this.playerTileOffsetY - this.__bgCullMarginTop || this.__scratchPos.y > this.playerTileOffsetY + this.__bgCullMarginBottom) continue;
       cacheCanvas.drawSprite(tile, this.__scratchPos, 64);
     }
 
@@ -58,10 +58,11 @@ Renderer.prototype.__getFloorTilesTiles = function (floor, outArray) {
   let pp = player.getPosition();
   let pz = pp.z % 8;
 
-  const CULLING_LEFT = -16;
-  const CULLING_RIGHT = 22;
-  const CULLING_TOP = -9;
-  const CULLING_BOTTOM = 11;
+  var mo = player.getMoveOffset();
+  var CULLING_LEFT = -(this.__bgCullMarginLeft + Math.max(mo.x, 0));
+  var CULLING_RIGHT = this.__bgCullMarginRight + Math.max(-mo.x, 0);
+  var CULLING_TOP = -(this.__bgCullMarginTop + Math.max(mo.y, 0));
+  var CULLING_BOTTOM = this.__bgCullMarginBottom + Math.max(-mo.y, 0);
 
   for (let i = 0; i < chunks.length; i++) {
     let floorTiles = chunks[i].getFloorTiles(floor);
@@ -102,8 +103,8 @@ Renderer.prototype.__renderTile = function (tile) {
   let tp = tile.getPosition();
   let tz = tp.z % 8;
 
-  this.__scratchPos.x = 14 + player.getMoveOffset().x + (tp.x + tz) - (pp.x + pz);
-  this.__scratchPos.y = 7 + player.getMoveOffset().y + (tp.y + tz) - (pp.y + pz);
+  this.__scratchPos.x = this.playerTileOffsetX + player.getMoveOffset().x + (tp.x + tz) - (pp.x + pz);
+  this.__scratchPos.y = this.playerTileOffsetY + player.getMoveOffset().y + (tp.y + tz) - (pp.y + pz);
 
   this.screen.drawSprite(tile, this.__scratchPos, 64);
 
@@ -153,6 +154,10 @@ Renderer.prototype.__renderWorld = function () {
 
   let mo = gameClient.player.getMoveOffset();
   let atRest = (mo.x === 0 && mo.y === 0);
+  this.__cullLeft = this.playerTileOffsetX - this.__cullMarginLeft;
+  this.__cullRight = this.playerTileOffsetX + this.__cullMarginRight;
+  this.__cullTop = this.playerTileOffsetY - this.__cullMarginTop;
+  this.__cullBottom = this.playerTileOffsetY + this.__cullMarginBottom;
 
   let t0 = performance.now();
   let tCreatureAcc = 0;
@@ -176,9 +181,9 @@ Renderer.prototype.__renderWorld = function () {
       if (tile.id === 0 || !tile.isAnimated()) continue;
       let tp = tile.getPosition();
       let tz = tp.z % 8;
-      let ax = 14 + mo.x + (tp.x + tz) - (pp.x + pz);
-      let ay = 7 + mo.y + (tp.y + tz) - (pp.y + pz);
-      if (ax < 2 || ax > 30 || ay < 0 || ay > 14) continue;
+      let ax = this.playerTileOffsetX + mo.x + (tp.x + tz) - (pp.x + pz);
+      let ay = this.playerTileOffsetY + mo.y + (tp.y + tz) - (pp.y + pz);
+      if (ax < this.__cullLeft || ax > this.__cullRight || ay < this.__cullTop || ay > this.__cullBottom) continue;
       this.__scratchPos.x = ax;
       this.__scratchPos.y = ay;
       this.screen.drawSprite(tile, this.__scratchPos, 32);
@@ -191,19 +196,19 @@ Renderer.prototype.__renderWorld = function () {
 
       let tp = tile.getPosition();
       let tz = tp.z % 8;
-      let sx = 14 + mo.x + (tp.x + tz) - (pp.x + pz);
-      let sy = 7 + mo.y + (tp.y + tz) - (pp.y + pz);
+      let sx = this.playerTileOffsetX + mo.x + (tp.x + tz) - (pp.x + pz);
+      let sy = this.playerTileOffsetY + mo.y + (tp.y + tz) - (pp.y + pz);
 
-      if (sx < 2 || sx > 30 || sy < 0 || sy > 14) {
+      if (sx < this.__cullLeft || sx > this.__cullRight || sy < this.__cullTop || sy > this.__cullBottom) {
         continue;
       }
 
       if (tile.id !== 0 && !atRest) {
         let onEntryEdge = false;
-        if (mo.x > 0 && sx < 1.5) onEntryEdge = true;
-        if (mo.x < 0 && sx > 28) onEntryEdge = true;
-        if (mo.y > 0 && sy < 1.5) onEntryEdge = true;
-        if (mo.y < 0 && sy > 12) onEntryEdge = true;
+        if (mo.x > 0 && sx < this.playerTileOffsetX - 12.5) onEntryEdge = true;
+        if (mo.x < 0 && sx > this.playerTileOffsetX + 14) onEntryEdge = true;
+        if (mo.y > 0 && sy < this.playerTileOffsetY - 5.5) onEntryEdge = true;
+        if (mo.y < 0 && sy > this.playerTileOffsetY + 5) onEntryEdge = true;
         if (onEntryEdge) {
           this.__renderTile(tile);
         }

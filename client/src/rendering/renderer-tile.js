@@ -11,12 +11,12 @@ Renderer.prototype.__renderTileObjects = function (tile, sx, sy, skipLight) {
     let pz = pp.z % 8;
     let tp = tile.getPosition();
     let tz = tp.z % 8;
-    this.__scratchPos2.x = 14 + p.getMoveOffset().x + (tp.x + tz) - (pp.x + pz);
-    this.__scratchPos2.y = 7 + p.getMoveOffset().y + (tp.y + tz) - (pp.y + pz);
+    this.__scratchPos2.x = this.playerTileOffsetX + p.getMoveOffset().x + (tp.x + tz) - (pp.x + pz);
+    this.__scratchPos2.y = this.playerTileOffsetY + p.getMoveOffset().y + (tp.y + tz) - (pp.y + pz);
     position = this.__scratchPos2;
   }
 
-  if (position.x < -1 || position.x > 32 || position.y < -1 || position.y > 15) {
+  if (position.x < this.playerTileOffsetX - 15 || position.x > this.playerTileOffsetX + 18 || position.y < this.playerTileOffsetY - 8 || position.y > this.playerTileOffsetY + 8) {
     return;
   }
 
