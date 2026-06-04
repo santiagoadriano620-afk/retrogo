@@ -134,26 +134,26 @@ MobileFullscreen.prototype.__adjustCanvas = function () {
     renderer.playerTileOffsetX = halfX;
     renderer.playerTileOffsetY = halfY;
 
-    // Cull: viewport exactly (20×15 tiles)
-    renderer.__cullMarginLeft   = halfX;
-    renderer.__cullMarginRight  = halfX;
-    renderer.__cullMarginTop    = halfY;
-    renderer.__cullMarginBottom = halfY;
+    // Foreground culling: viewport + 4 tiles buffer on each side
+    renderer.__cullMarginLeft   = halfX + 4;   // 14
+    renderer.__cullMarginRight  = halfX + 4;   // 14
+    renderer.__cullMarginTop    = halfY + 4;   // 11
+    renderer.__cullMarginBottom = halfY + 4;   // 11
 
-    // Background cache: viewport + 2 tiles margin on each side
-    var bgMarginX = halfX + 2;
-    var bgMarginY = halfY + 2;
+    // Background cache: viewport + 6 tiles margin on each side
+    var bgMarginX = halfX + 6;   // 16
+    var bgMarginY = halfY + 6;   // 13
     renderer.__bgCullMarginLeft   = bgMarginX;
     renderer.__bgCullMarginRight  = bgMarginX;
     renderer.__bgCullMarginTop    = bgMarginY;
     renderer.__bgCullMarginBottom = bgMarginY;
-    renderer.__bgCacheShiftX = 1;
-    renderer.__bgCacheShiftY = 1;
+    renderer.__bgCacheShiftX = 6;
+    renderer.__bgCacheShiftY = 6;
     renderer.__tileCacheNeedsRebuild = true;
 
-    // Cache canvas: gameW + 4 tiles (768×608)
-    var cacheW = gameW + 4 * 32;
-    var cacheH = gameH + 4 * 32;
+    // Cache canvas: bgCull span = bgMargin*2 tiles on each axis
+    var cacheW = bgMarginX * 2 * 32;  // 16*2*32 = 1024
+    var cacheH = bgMarginY * 2 * 32;  // 13*2*32 = 832
     for (var i = 0; i < 16; i++) {
       renderer.__backgroundCaches[i] = new Canvas(null, cacheW, cacheH);
     }
@@ -164,11 +164,11 @@ MobileFullscreen.prototype.__adjustCanvas = function () {
     }
   }
 
-  // Override creature visibility to mobile viewport
+  // Override creature visibility to extended mobile viewport
   if (typeof Creature !== 'undefined' && !this.__origCanSee) {
     this.__origCanSee = Creature.prototype.canSee;
-    var mobileLimitX = Math.ceil(TILE_COUNT_X) + 2;
-    var mobileLimitY = Math.ceil(TILE_COUNT_Y) + 2;
+    var mobileLimitX = Math.ceil(TILE_COUNT_X) + halfX + 4;   // 20+14 = 34
+    var mobileLimitY = Math.ceil(TILE_COUNT_Y) + halfY + 4;   // 15+11 = 26
     Creature.prototype.canSee = function (thing) {
       var projectedSelf = this.getPosition().projected();
       var projectedThing = thing.getPosition().projected();

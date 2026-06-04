@@ -16,7 +16,7 @@ Renderer.prototype.__renderTileObjects = function (tile, sx, sy, skipLight) {
     position = this.__scratchPos2;
   }
 
-  if (position.x < this.playerTileOffsetX - 15 || position.x > this.playerTileOffsetX + 18 || position.y < this.playerTileOffsetY - 8 || position.y > this.playerTileOffsetY + 8) {
+  if (position.x < this.__cullLeft || position.x > this.__cullRight || position.y < this.__cullTop || position.y > this.__cullBottom) {
     return;
   }
 

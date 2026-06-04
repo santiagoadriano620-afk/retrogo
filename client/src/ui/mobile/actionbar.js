@@ -151,7 +151,7 @@ MobileFullscreen.prototype.__handleActionbarUse = function (index) {
       return;
     }
   }
-  gameClient.mouse.use({ which: which, index: data.index });
+  gameClient.mouse.use({ which: which, index: this.__actionbarSlots[index].index });
   this.__updateActionbarHighlight();
 };
 

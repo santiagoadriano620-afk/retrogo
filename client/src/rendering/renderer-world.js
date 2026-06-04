@@ -216,10 +216,10 @@ Renderer.prototype.__renderWorld = function () {
 
       if (tile.id !== 0 && !atRest) {
         let onEntryEdge = false;
-        if (mo.x > 0 && sx < this.playerTileOffsetX - 12.5) onEntryEdge = true;
-        if (mo.x < 0 && sx > this.playerTileOffsetX + 14) onEntryEdge = true;
-        if (mo.y > 0 && sy < this.playerTileOffsetY - 5.5) onEntryEdge = true;
-        if (mo.y < 0 && sy > this.playerTileOffsetY + 5) onEntryEdge = true;
+        if (mo.x > 0 && sx < this.__cullLeft) onEntryEdge = true;
+        if (mo.x < 0 && sx > this.__cullRight) onEntryEdge = true;
+        if (mo.y > 0 && sy < this.__cullTop) onEntryEdge = true;
+        if (mo.y < 0 && sy > this.__cullBottom) onEntryEdge = true;
         if (onEntryEdge) {
           this.__renderTile(tile);
         }
