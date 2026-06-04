@@ -276,7 +276,7 @@ Batches: 25-50  | Cah: 4-14ms | Rbl: 3-9ms | T_rest: 0ms (deferred)
 | `client/src/rendering/renderer.js` | 40-61, 444-634, 918-972 | Batching, culling, cache, deferral, sub-timers |
 | `client/src/input/keyboard.js` | 258-260 | Removed `updateTileCache()` from input handler |
 | `client/src/core/world.js` | 28-30, 131-175, 201-215 | Battle list deferral (dirty flag + throttled refresh) |
-| `client/src/ui/window-battle.js` | (unchanged) | Refresh called less frequently |
+| `client/src/ui/desktop/window-battle.js` | (unchanged) | Refresh called less frequently |
 | `engine/src/combat/area-definitions.js` | 261-287 | `AREAS.filterBlocked()` |
 | `data/spells/definitions/attack/*.js` | 8 files | Added `filterBlocked()` to area spells |
 

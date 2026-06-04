@@ -88,7 +88,7 @@ ModalManager.prototype.__addEventListeners = function () {
 
   // Lazy-loaded modals: load script on first click, then register and open
   document.getElementById("highscore-btn").addEventListener("click", function () {
-    this.__loadScript("src/ui/modals/modal-highscore.js").then(function () {
+    this.__loadScript("src/ui/desktop/modals/modal-highscore.js").then(function () {
       if (!this.__modals.hasOwnProperty("floater-highscore")) {
         this.register(HighscoreModal, "floater-highscore");
       }
@@ -97,7 +97,7 @@ ModalManager.prototype.__addEventListeners = function () {
   }.bind(this));
 
   document.getElementById("bans-btn").addEventListener("click", function () {
-    this.__loadScript("src/ui/modals/modal-bans.js").then(function () {
+    this.__loadScript("src/ui/desktop/modals/modal-bans.js").then(function () {
       if (!this.__modals.hasOwnProperty("floater-bans")) {
         this.register(BansModal, "floater-bans");
       }
@@ -106,7 +106,7 @@ ModalManager.prototype.__addEventListeners = function () {
   }.bind(this));
 
   document.getElementById("deaths-btn").addEventListener("click", function () {
-    this.__loadScript("src/ui/modals/modal-deaths.js").then(function () {
+    this.__loadScript("src/ui/desktop/modals/modal-deaths.js").then(function () {
       if (!this.__modals.hasOwnProperty("floater-deaths")) {
         this.register(DeathsModal, "floater-deaths");
       }

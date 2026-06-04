@@ -49,6 +49,39 @@
   - 300ms / 30px threshold
 - Cancel attack only by: creature leaving sight, level change, or tap again to untarget
 
+### Equipment slots on mobile (JS panel)
+- Created `__createMobileSlots()`: builds `#mobile-equipment` fixed panel (right side) with 10 slot elements across 3 columns (left: shoulder/left/ring+conditions, center: head/armor/legs/boots, right: backpack/right/quiver+capacity)
+- `setElement()` rebinds each `Slot` to the mobile DOM element + calls `render()` to draw item sprite on canvas
+- Desktop slot CSS backgrounds injected via `#mobile-equipment [slotIndex=N]` selectors — matches `Equipment.equipSlot()`/`removeItem()` dynamic `style.backgroundImage` changes
+- Original desktop elements stored in `__originalSlotEls[]`, restored on `__destroyMobileSlots()`
+- Conditions display and capacity display moved from desktop oogwrap into mobile panel, restored on destroy
+- Canvas in each slot positioned at `top:0;left:0` for proper item overlay
+
+### Drag sprite on mobile touch
+- Extended `__bindSlotTouch()` to call `mouse.__renderDragSprite()` + `mouse.__updateDragSpritePosition()` — creates a 32×32 floating canvas with the item sprite following the finger
+- `e.preventDefault()` suppresses simulated mouse events during drag
+
+### Drag from containers + ground to inventory
+- New `__getSlotObjectFromEvent()`: detects drag source from any `.slot` (equipment OR container windows) using `[containerIndex]` + `getContainer()`
+- New `__getGroundObjectFromEvent()`: detects drag source from canvas/tiles via `mouse.getWorldObject()`, checks `isMoveable()` on top tile item
+- `getDropTarget()` in `handleTouchEnd` resolves drop target: canvas (ground), equipment/container slots, or container window background (auto-finds empty slot)
+
+### Container toggle (tap to open/close)
+- In `handleTouchEnd` when no drag occurred (<8px threshold): checks if source item `isContainer()` → calls `gameClient.mouse.use()` which sends `ItemUsePacket` (same as right-click use on desktop)
+
+### Long-press reposition (equipment + D-pad)
+- `__enableRepositionDrag()`: generic long-press → drag mechanism
+- 3s hold on any slot → dashed gray blinking border on `#mobile-equipment` (CSS animation)
+- 3s hold on D-pad → dashed gray blinking border on `#mobile-dpad`
+- After release: frame stays blinking, element is in reposition mode
+- Next touch + drag: moves element freely with `position:fixed` (`left`/`top`)
+- Release: saves position to `localStorage` (`retrogo_equip_pos`, `retrogo_dpad_pos`)
+- Reposition mode checked in all existing touch handlers to prevent interference (D-pad movement, item drag)
+- Position saved on fullscreen exit
+
+### Equipment panel cleanup on player logout
+- `checkPlayer` interval: when `gameClient.player` becomes null while `__mobilePanel` exists, calls `__destroyMobileSlots()` to remove panel and rebind slots to desktop DOM
+
 ### Null-player safety
 - `Keyboard.handleMoveKey()`: added `!gameClient.player` guard before `__serverWalkConfirmation`
 - `MobileFullscreen.__dpadExecuteMove()`: added `gameClient.player` check in guard
@@ -57,16 +90,69 @@
 - `EXTERNAL_HOST` / `LOCAL_HOST` in `.env`, `config.js`, `env-mapper.js`
 - Login server auto-detects local vs external clients
 
+### Action buttons module (4 quick-action buttons)
+- New `#mobile-action-btns` positioned at bottom-center (horizontal row), above the actionbar
+- 4 buttons (36×36px):
+  - **Eye** — toggle look mode; next canvas tap calls `mouse.look(getWorldObject(event))`
+  - **Crossed Swords** — cycles monsters by distance from player; sends `TargetPacket`; deselects when end reached
+  - **Backpack** — calls `mouse.use({ which: equipment, index: 6 })` to open player's backpack
+  - **Chat** — toggles a text input bar at bottom of screen; Enter/Send calls `ChannelMessagePacket(0, 1, msg)`
+- Icons drawn on 28×28 canvases per button via `__drawActionIcon()` with pixel-art style (eye, crossed swords, backpack, chat bubble)
+- Lock icon (same lock/drag pattern as dpad/equipment) — `__enableLockableDrag(container, 'actionBtns', ...)`
+- Persistence: `localStorage['retrogo_actionBtns_pos']` + `retrogo_actionBtns_lock`
+- **Create/destroy**: integrated into `__handleFullscreenChange` (enter/exit) and `checkPlayer` interval (player login/logout)
+
 ## Files changed
-- `client/src/ui/mobile-fullscreen.js` — all mobile fullscreen, dpad, touch logic
+- `client/src/ui/mobile-fullscreen.js` — all mobile fullscreen, dpad, touch logic, equipment panel, long-press reposition, drag sprite, container toggle, action buttons module (4 buttons + canvas-drawn icons)
 - `client/src/input/keyboard.js` — null-player guard in handleMoveKey
 - Various hotbar files removed/stubbed (7+ files)
 - `engine/.env`, `engine/config.js`, `engine/lib/env-mapper.js`, `engine/src/auth/login-server.js`
+- `AGENTS.md` — this file
+
+## Key Implementation Details
+- `#mobile-equipment` uses CSS rule injection (`__injectStyles`) for per-slot background images via `[slotIndex]` attribute selectors, matching desktop `Equipment.equipSlot()`/`removeItem()` inline style changes
+- Drag sprite uses `mouse.__renderDragSprite()` (desktop's existing method) — creates a `position:fixed;pointer-events:none` canvas with the item sprite, reused for equipment, containers, and ground drags
+- Container toggle reuses `mouse.use()` which sets `__pendingContainerOpen` and sends `ItemUsePacket` — same code path as desktop right-click
+- `localStorage` keys: `retrogo_equip_pos` (equipment panel), `retrogo_dpad_pos` (D-pad)
+- CSS animation `mob-rep-blink` alternates border-color opacity for blinking dashed border
 
 ## Known issues
 - VisualViewport not used for canvas sizing (reverted to `window.innerHeight`); bottom edge may cut off during fullscreen transition on some browsers
 - Diagonal D-pad movement uses keyboard cooldown (`__diagonalMoveCooldown`) — same as desktop
+- Ground drag and creature attack share the same touchstart on canvas; if a tile has both items and creatures, attack fires first (tap again to untarget)
 
 ## Testing
 - Test on real mobile device: landscape fullscreen, dpad movement (all 8 dirs), single-tap creature attack, double-tap item use
+- Test equipment panel: all 10 slots visible, conditions + capacity displays, item sprites render, drag items between slots/containers/ground
+- Test container toggle: tap container item in slot → opens window, tap again → closes
+- Test long-press reposition: hold slot/dpad 3s → blinking border → drag to reposition → persists across sessions
+- Test logout: equipment panel disappears when returning to login screen
 - Desktop: click-drag on dpad via mouse events
+
+### Lock/unlock module reposition (lock icon)
+- Replaced long-press (3s hold + blinking border) reposition with an always-visible lock icon in the top-left corner of each module
+- Dpad wrapper (`#mobile-dpad-wrapper`) is a 130x130px `position:fixed` container with 1px gray border and rounded corners; the 120px dpad circle is centered inside via flexbox/absolute positioning
+- Equipment panel (`#mobile-equipment`) also has 1px gray border + `border-radius: 3px` + lock icon
+- Lock icon: 18x18px circle, gold `#d4a017` when locked 🔒, green `#5cd45c` when unlocked 🔓
+- Click/touch on icon toggles between locked (gameplay normal) and unlocked (drag module freely)
+- State (`retrogo_dpad_lock`, `retrogo_equip_lock`) saved to localStorage alongside position
+- Dpad touch events block when unlocked (check `__lockStates.dpad === false`)
+- Slot touch/drag blocks when equipment unlocked (check `__lockStates.equip === false`)
+- `__enableLockableDrag` replaces `__enableRepositionDrag` — no 3s timer, immediate drag when unlocked
+- `__saveModuleState` replaces `__saveRepositionPosition` — saves both position and lock state
+- `__repositioning` and `self.__repositioning` references completely removed
+- CSS: removed `@keyframes mob-rep-blink`, `#mobile-equipment.reposition-mode`, `#mobile-dpad.reposition-mode`
+
+### Actionbar module (8 quick-use slots)
+- New `#actionbar` fixed at bottom center of viewport, above the game canvas
+- 8 slots (`.actionbar-slot`) in a horizontal row, 32×32px each with dark background and subtle border
+- Lock icon (same pattern as dpad/equipment) — `__enableLockableDrag(bar, 'actionbar', ...)`
+- **Drag items in**: drag from inventory/container/equipment onto an actionbar slot → stores reference (`{ which, index }`), item stays in original container
+- **Tap to use**: single tap on a filled slot → calls `gameClient.mouse.use(data)` — works for any `use()`able item (potions, runes, ropes, etc.)
+- **Multi-use / use-with**: if item is multi-use (rope, runa, etc.), `mouse.use()` sets `__multiUseObject` and enters crosshair mode; next canvas tap completes the use-with
+- **Highlight**: when `__multiUseObject` matches an actionbar slot, that slot gets `.highlighted` class (golden border + glow) — removed automatically when use-with finishes or cancels
+- **Drag out**: drag from actionbar back to inventory/ground/container → item moves normally via `sendItemMove()` + actionbar slot cleared
+- **Persistence**: `localStorage['retrogo_actionbar_data']` stores 8 entries as `{ ci, si }` (container index + slot index, or `ci:-2` for equipment); stale references (item gone) show empty slot
+- **Lock guards**: `__lockStates.actionbar` blocks both actionbar slot tap/drag and document-level slot drag when unlocked
+- **Create/destroy**: integrated into `__handleFullscreenChange` (enter/exit) and `checkPlayer` interval (player login/logout)
+- **Rendering**: uses global `Canvas` wrapper with `drawSprite(item, false, false)` on each slot's canvas; stack counts shown on stackable items

@@ -1721,7 +1721,7 @@ PacketHandler.prototype.handleBanPanel = function () {
     return openBanModal();
   }
   let script = document.createElement("script");
-  script.src = "src/ui/modals/modal-bancontrol.js";
+  script.src = "src/ui/desktop/modals/modal-bancontrol.js";
   script.onload = function () {
     gameClient.interface.modalManager.register(BanControlModal, "floater-ban-control");
     openBanModal();
@@ -1758,7 +1758,7 @@ PacketHandler.prototype.handleBotPanel = function (packet) {
     return openBotModal();
   }
   let script = document.createElement("script");
-  script.src = "src/ui/modals/modal-botcontrol.js";
+  script.src = "src/ui/desktop/modals/modal-botcontrol.js";
   script.onload = function () {
     gameClient.interface.modalManager.register(BotControlModal, "floater-bot-control");
     openBotModal();
