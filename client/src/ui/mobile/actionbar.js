@@ -11,8 +11,10 @@ MobileFullscreen.prototype.__getActionbarSlotCount = function () {
 MobileFullscreen.prototype.__saveActionbarData = function () {
   if (!gameClient || !gameClient.player) return;
   try {
-    localStorage.setItem('retrogo_actionbar_data', JSON.stringify(this.__actionbarSlots));
-  } catch(e) {}
+    var str = JSON.stringify(this.__actionbarSlots);
+    localStorage.setItem('retrogo_actionbar_data', str);
+    console.log('[AB] saved data:', str);
+  } catch(e) { console.error('[AB] save error:', e); }
 };
 
 MobileFullscreen.prototype.__renderActionbarSlot = function (index) {
@@ -31,9 +33,11 @@ MobileFullscreen.prototype.__renderActionbarSlot = function (index) {
     if (countEl) countEl.style.display = 'none';
     return;
   }
+  console.log('[AB] render slot', index, 'ci=' + data.ci, 'idx=' + data.index);
 
   var which = this.__getContainerFromCI(data.ci);
   if (!which) {
+    console.log('[AB] container not found for ci=' + data.ci + ', clearing slot');
     this.__actionbarSlots[index] = null;
     var ctx = canvasEl.getContext('2d');
     ctx.clearRect(0, 0, 32, 32);
@@ -43,6 +47,7 @@ MobileFullscreen.prototype.__renderActionbarSlot = function (index) {
 
   var item = which.peekItem(data.index);
   if (!item) {
+    console.log('[AB] item not found at ci=' + data.ci + ' idx=' + data.index + ', clearing slot');
     this.__actionbarSlots[index] = null;
     var ctx = canvasEl.getContext('2d');
     ctx.clearRect(0, 0, 32, 32);
@@ -55,6 +60,7 @@ MobileFullscreen.prototype.__renderActionbarSlot = function (index) {
   }
   this.__actionbarCanvases[index].clear();
   this.__actionbarCanvases[index].drawSprite(item, false, false);
+  console.log('[AB] render success for slot', index);
 
   if (countEl) {
     if (item.isStackable && item.count > 1) {

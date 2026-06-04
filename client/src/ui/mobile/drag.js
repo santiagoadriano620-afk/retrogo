@@ -49,6 +49,24 @@ MobileFullscreen.prototype.__bindSlotTouch = function () {
     if (obj) {
       obj.startX = touch.clientX;
       obj.startY = touch.clientY;
+      // Resolve CI immediately (container reference may become stale by touchend)
+      var objCI = -3;
+      if (obj.which === gameClient.player.equipment) {
+        objCI = -2;
+        console.log('[DRAG] source is EQUIPMENT, ci=-2');
+      } else {
+        var cId = obj.which.__containerId;
+        console.log('[DRAG] container __containerId=' + cId + ' (type=' + typeof cId + ')');
+        for (var fc = 0; fc < 256; fc++) {
+          var fcont = gameClient.player.getContainer(fc);
+          if (fcont) {
+            if (fcont === obj.which) { objCI = fc; console.log('[DRAG] CI match at fc='+fc); break; }
+          }
+        }
+        if (objCI === -3) console.log('[DRAG] CI NOT FOUND in 0-255');
+      }
+      obj.__sourceCI = objCI;
+      console.log('[DRAG] sourceCI='+objCI);
       return obj;
     }
 
@@ -98,6 +116,7 @@ MobileFullscreen.prototype.__bindSlotTouch = function () {
     if (dx * dx + dy * dy < dragThreshold * dragThreshold) return;
 
     if (!self.__dragSprite) {
+      if (__canvasEl) __canvasEl.style.pointerEvents = 'none';
       gameClient.mouse.__renderDragSprite({ which: self.__dragSource.which, index: self.__dragSource.index });
       self.__dragSprite = gameClient.mouse.__dragSprite;
     }
@@ -105,7 +124,29 @@ MobileFullscreen.prototype.__bindSlotTouch = function () {
     e.preventDefault();
   };
 
+  var __canvasEl = document.getElementById('canvas-id');
+
+  var __actionbarSlotsByPoint = function (clientX, clientY) {
+    var slots = document.querySelectorAll('.actionbar-slot');
+    if (!slots || !slots.length) return -1;
+    for (var i = 0; i < slots.length; i++) {
+      var r = slots[i].getBoundingClientRect();
+      if (clientX >= r.left && clientX <= r.right &&
+          clientY >= r.top && clientY <= r.bottom) {
+        var idx = Number(slots[i].getAttribute('slotIndex'));
+        if (!isNaN(idx)) return idx;
+      }
+    }
+    return -1;
+  };
+
   var getDropTarget = function (touch) {
+    // Always check actionbar slots by bounding rect first (most reliable)
+    var abIdx = __actionbarSlotsByPoint(touch.clientX, touch.clientY);
+    if (abIdx >= 0) {
+      return { isActionbar: true, index: abIdx };
+    }
+
     var dropEl = document.elementFromPoint(touch.clientX, touch.clientY);
     if (!dropEl) return null;
 
@@ -113,7 +154,7 @@ MobileFullscreen.prototype.__bindSlotTouch = function () {
       return gameClient.mouse.getWorldObject({ clientX: touch.clientX, clientY: touch.clientY, target: gameClient.renderer.screen.canvas });
     }
 
-    // Actionbar slot drop
+    // Actionbar slot drop via elementFromPoint (fallback)
     var abSlot = dropEl.closest('.actionbar-slot');
     if (abSlot) {
       var abIndex = Number(abSlot.getAttribute('slotIndex'));
@@ -152,22 +193,27 @@ MobileFullscreen.prototype.__bindSlotTouch = function () {
     return null;
   };
 
+  var __restoreCanvasPointer = function () {
+    if (__canvasEl) __canvasEl.style.pointerEvents = '';
+  };
+
   var handleTouchEnd = function (e) {
-    if (!self.__dragSource) { self.__dragSprite = null; return; }
+    if (!self.__dragSource) { __restoreCanvasPointer(); self.__dragSprite = null; return; }
 
     var touch = e.changedTouches[0];
     var dx = touch.clientX - self.__dragSource.startX;
     var dy = touch.clientY - self.__dragSource.startY;
     var moved = dx * dx + dy * dy >= dragThreshold * dragThreshold;
 
-    if (!moved && self.__dragSprite) {
-      if (gameClient && gameClient.mouse) gameClient.mouse.__clearDragSprite();
-      self.__dragSprite = null;
-      self.__dragSource = null;
-      return;
-    }
-
+    // No-move: clear drag sprite or handle container tap
     if (!moved) {
+      __restoreCanvasPointer();
+      if (self.__dragSprite) {
+        if (gameClient && gameClient.mouse) gameClient.mouse.__clearDragSprite();
+        self.__dragSprite = null;
+        self.__dragSource = null;
+        return;
+      }
       e.preventDefault();
       var sourceItem = self.__dragSource.which && self.__dragSource.which.peekItem(self.__dragSource.index);
       if (sourceItem && sourceItem.isContainer && sourceItem.isContainer()) {
@@ -177,55 +223,57 @@ MobileFullscreen.prototype.__bindSlotTouch = function () {
       return;
     }
 
-    if (gameClient && gameClient.mouse && self.__dragSprite) {
-      e.preventDefault();
-      var fromObject = { which: self.__dragSource.which, index: self.__dragSource.index };
-      var abSourceIdx = self.__dragSource.__actionbarSource;
-      var toObject = getDropTarget(touch);
+    // Moved past threshold — always process drop regardless of dragSprite
+    e.preventDefault();
+    var fromObject = { which: self.__dragSource.which, index: self.__dragSource.index };
+    var abSourceIdx = self.__dragSource.__actionbarSource;
+    var toObject = getDropTarget(touch);
 
-      // Drop on actionbar slot → store reference instead of moving item
-      if (toObject && toObject.isActionbar) {
-        var abSlot = toObject.index;
-        var slotCount = self.__getActionbarSlotCount();
-        if (abSlot >= 0 && abSlot < slotCount) {
-          var item = fromObject.which.peekItem(fromObject.index);
-          if (item) {
-            // Resolve CI from the fromObject
-            var fromCI = -3;
-            if (fromObject.which === gameClient.player.equipment) {
-              fromCI = -2;
-            } else {
-              for (var fc = 0; fc < 256; fc++) {
-                var fcont = gameClient.player.getContainer(fc);
-                if (fcont && fcont === fromObject.which) { fromCI = fc; break; }
-              }
-            }
+    // Drop on actionbar slot → store reference instead of moving item
+    if (toObject && toObject.isActionbar) {
+      try {
+      var abSlot = toObject.index;
+      var slotCount = self.__getActionbarSlotCount();
+      if (abSlot >= 0 && abSlot < slotCount) {
+        var item = fromObject.which.peekItem(fromObject.index);
+        if (item && item.isMultiUse && item.isMultiUse()) {
+            // Use CI resolved at touchstart (container reference may be stale now)
+            var fromCI = self.__dragSource.__sourceCI !== undefined ? self.__dragSource.__sourceCI : -3;
             // Clear previous source slot if dragging from another actionbar slot
-            if (abSourceIdx !== undefined && abSourceIdx !== abSlot) {
-              self.__actionbarSlots[abSourceIdx] = null;
-            }
-            self.__actionbarSlots[abSlot] = { ci: fromCI, index: fromObject.index };
-            self.__renderActionbarSlot(abSlot);
-            if (abSourceIdx !== undefined && abSourceIdx !== abSlot) {
-              self.__renderActionbarSlot(abSourceIdx);
-            }
-            self.__saveActionbarData();
+          if (abSourceIdx !== undefined && abSourceIdx !== abSlot) {
+            self.__actionbarSlots[abSourceIdx] = null;
+          }
+          self.__actionbarSlots[abSlot] = { ci: fromCI, index: fromObject.index };
+          self.__renderActionbarSlot(abSlot);
+          if (abSourceIdx !== undefined && abSourceIdx !== abSlot) {
+            self.__renderActionbarSlot(abSourceIdx);
+          }
+          self.__saveActionbarData();
+        } else if (item) {
+          if (window.gameClient && window.gameClient.interface && window.gameClient.interface.notificationManager) {
+            window.gameClient.interface.notificationManager.setCancelMessage("You can only use multi-use items on the actionbar.");
           }
         }
-      } else if (abSourceIdx !== undefined) {
-        // Drag from actionbar to ground/container: move item, clear actionbar slot
-        if (toObject && toObject.which) {
-          gameClient.mouse.sendItemMove(fromObject, toObject, 1);
-        }
-        self.__actionbarSlots[abSourceIdx] = null;
-        self.__renderActionbarSlot(abSourceIdx);
-        self.__saveActionbarData();
-      } else if (toObject && toObject.which) {
+      }
+      } catch(er) { console.error('[DRAG] actionbar drop error:', er, er.stack); }
+      // Fall through to clear drag state below
+    } else if (abSourceIdx !== undefined) {
+      // Drag from actionbar to ground/container: move item, clear actionbar slot
+      if (toObject && toObject.which) {
         gameClient.mouse.sendItemMove(fromObject, toObject, 1);
       }
+      self.__actionbarSlots[abSourceIdx] = null;
+      self.__renderActionbarSlot(abSourceIdx);
+      self.__saveActionbarData();
+    } else if (toObject && toObject.which) {
+      gameClient.mouse.sendItemMove(fromObject, toObject, 1);
+    }
+
+    if (gameClient && gameClient.mouse && self.__dragSprite) {
       gameClient.mouse.__clearDragSprite();
     }
 
+    __restoreCanvasPointer();
     self.__dragSprite = null;
     self.__dragSource = null;
   };
