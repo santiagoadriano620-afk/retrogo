@@ -594,24 +594,70 @@ MobileFullscreen.prototype.__bindCanvasTouch = function () {
   });
 };
 
+MobileFullscreen.prototype.__getSlotObjectFromEvent = function (event) {
+  var slotEl = event.target.closest('.slot');
+  if (!slotEl) return null;
+  var slotIndex = Number(slotEl.getAttribute('slotIndex'));
+  var containerWindow = slotEl.closest('[containerIndex]');
+  var containerIdx = containerWindow ? Number(containerWindow.getAttribute('containerIndex')) : NaN;
+  var container = gameClient.player.getContainer(containerIdx);
+  if (container && container.slots && container.slots[slotIndex]) {
+    var slot = container.slots[slotIndex];
+    if (slot && slot.item) {
+      return { which: container, index: slotIndex };
+    }
+  }
+  return null;
+};
+
+MobileFullscreen.prototype.__getGroundObjectFromEvent = function (event) {
+  if (!gameClient || !gameClient.mouse || !gameClient.renderer) return null;
+  var worldObj = gameClient.mouse.getWorldObject({ clientX: event.clientX, clientY: event.clientY, target: gameClient.renderer.screen.canvas });
+  if (worldObj && worldObj.which) {
+    var tile = worldObj.which;
+    if (tile.items && tile.items.length > 0) {
+      var topItem = tile.peekItem(0xFF);
+      if (topItem && topItem.isMoveable && topItem.isMoveable()) {
+        return worldObj;
+      }
+    }
+  }
+  return null;
+};
+
 MobileFullscreen.prototype.__bindSlotTouch = function () {
   var self = this;
   this.__dragSource = null;
   this.__dragSprite = null;
   var dragThreshold = 8;
 
+  var resolveSource = function (e) {
+    var touch = e.changedTouches[0];
+    var obj = self.__getSlotObjectFromEvent({ target: e.target, clientX: touch.clientX, clientY: touch.clientY });
+    if (obj) {
+      obj.startX = touch.clientX;
+      obj.startY = touch.clientY;
+      return obj;
+    }
+    if (e.target.closest('#canvas-id') || e.target.closest('#screen')) {
+      var groundObj = self.__getGroundObjectFromEvent({ clientX: touch.clientX, clientY: touch.clientY });
+      if (groundObj) {
+        groundObj.startX = touch.clientX;
+        groundObj.startY = touch.clientY;
+        return groundObj;
+      }
+    }
+    return null;
+  };
+
   var handleTouchStart = function (e) {
     if (self.__repositioning) return;
     if (!self.active || !gameClient || !gameClient.player) return;
-    var slotEl = e.target.closest('.slot');
-    if (!slotEl) return;
-    var slotIndex = Number(slotEl.getAttribute('slotIndex'));
-    var equipment = gameClient.player.equipment;
-    if (!equipment || !equipment.slots || !equipment.slots[slotIndex]) return;
-    var slot = equipment.slots[slotIndex];
-    if (!slot || !slot.item) return;
-    var touch = e.changedTouches[0];
-    self.__dragSource = { which: equipment, index: slotIndex, startX: touch.clientX, startY: touch.clientY };
+    var source = resolveSource(e);
+    if (source) {
+      self.__dragSource = source;
+      e.preventDefault();
+    }
   };
 
   var handleTouchMove = function (e) {
@@ -631,45 +677,81 @@ MobileFullscreen.prototype.__bindSlotTouch = function () {
     e.preventDefault();
   };
 
-  var handleTouchEnd = function (e) {
-    if (!self.__dragSource) { self.__dragSprite = null; return; }
-    // Only process if drag actually started (threshold crossed)
-    if (!self.__dragSprite) { self.__dragSource = null; return; }
-    if (gameClient && gameClient.mouse) {
-      var touch = e.changedTouches[0];
-      var dropEl = document.elementFromPoint(touch.clientX, touch.clientY);
-      var fromObject = { which: self.__dragSource.which, index: self.__dragSource.index };
+  var getDropTarget = function (touch) {
+    var dropEl = document.elementFromPoint(touch.clientX, touch.clientY);
+    if (!dropEl) return null;
 
-      if (dropEl && dropEl.closest('#screen')) {
-        // Drop on canvas → move to ground
-        var worldObj = gameClient.mouse.getWorldObject({ clientX: touch.clientX, clientY: touch.clientY, target: dropEl.closest('#screen') });
-        if (worldObj && worldObj.which) {
-          gameClient.mouse.sendItemMove(fromObject, worldObj, 1);
-        }
-      } else if (dropEl) {
-        var targetSlot = dropEl.closest('.slot');
-        if (targetSlot) {
-          var targetIndex = Number(targetSlot.getAttribute('slotIndex'));
-          if (targetIndex !== self.__dragSource.index) {
-            gameClient.mouse.sendItemMove(fromObject, { which: gameClient.player.equipment, index: targetIndex }, 1);
-          }
-        } else if (dropEl.closest('.container-window') || dropEl.closest('.column')) {
-          // Dropped on a container window — find the actual slot
-          var containerSlot = dropEl.closest('[slotIndex]');
-          if (containerSlot && containerSlot.closest('.container-window')) {
-            var cSlotIndex = Number(containerSlot.getAttribute('slotIndex'));
-            var containerWindow = containerSlot.closest('[containerIndex]');
-            if (containerWindow) {
-              var containerIdx = Number(containerWindow.getAttribute('containerIndex'));
-              var container = gameClient.player.getContainer(containerIdx);
-              if (container) {
-                gameClient.mouse.sendItemMove(fromObject, { which: container, index: cSlotIndex }, 1);
-              }
+    if (dropEl.closest('#screen') || dropEl.closest('#canvas-id')) {
+      return gameClient.mouse.getWorldObject({ clientX: touch.clientX, clientY: touch.clientY, target: gameClient.renderer.screen.canvas });
+    }
+
+    var targetSlot = dropEl.closest('.slot');
+    if (targetSlot) {
+      var slotIndex = Number(targetSlot.getAttribute('slotIndex'));
+      var containerWindow = targetSlot.closest('[containerIndex]');
+      var containerIdx = containerWindow ? Number(containerWindow.getAttribute('containerIndex')) : NaN;
+      var container = gameClient.player.getContainer(containerIdx);
+      if (container) {
+        return { which: container, index: slotIndex };
+      }
+    }
+
+    // Container window background (not a specific slot)
+    var containerBg = dropEl.closest('.container-window');
+    if (containerBg) {
+      var cw = containerBg.closest('[containerIndex]');
+      if (cw) {
+        var idx = Number(cw.getAttribute('containerIndex'));
+        var cont = gameClient.player.getContainer(idx);
+        if (cont) {
+          // Find first empty slot in container
+          for (var i = 0; i < cont.slots.length; i++) {
+            if (!cont.slots[i] || !cont.slots[i].item) {
+              return { which: cont, index: i };
             }
           }
         }
       }
+    }
 
+    return null;
+  };
+
+  var handleTouchEnd = function (e) {
+    if (!self.__dragSource) { self.__dragSprite = null; return; }
+
+    var touch = e.changedTouches[0];
+    var dx = touch.clientX - self.__dragSource.startX;
+    var dy = touch.clientY - self.__dragSource.startY;
+    var moved = dx * dx + dy * dy >= dragThreshold * dragThreshold;
+
+    if (!moved && self.__dragSprite) {
+      // Drag sprite exists but finger didn't move on release — clean up
+      if (gameClient && gameClient.mouse) gameClient.mouse.__clearDragSprite();
+      self.__dragSprite = null;
+      self.__dragSource = null;
+      return;
+    }
+
+    if (!moved) {
+      // Tap without drag — toggle container if applicable
+      e.preventDefault();
+      var sourceItem = self.__dragSource.which && self.__dragSource.which.peekItem(self.__dragSource.index);
+      if (sourceItem && sourceItem.isContainer && sourceItem.isContainer()) {
+        gameClient.mouse.use({ which: self.__dragSource.which, index: self.__dragSource.index });
+      }
+      self.__dragSource = null;
+      return;
+    }
+
+    // Drag completed — move item
+    if (gameClient && gameClient.mouse && self.__dragSprite) {
+      e.preventDefault();
+      var fromObject = { which: self.__dragSource.which, index: self.__dragSource.index };
+      var toObject = getDropTarget(touch);
+      if (toObject && toObject.which) {
+        gameClient.mouse.sendItemMove(fromObject, toObject, 1);
+      }
       gameClient.mouse.__clearDragSprite();
     }
 
@@ -677,8 +759,7 @@ MobileFullscreen.prototype.__bindSlotTouch = function () {
     self.__dragSource = null;
   };
 
-  // Bind to document for all slot touches
-  document.addEventListener('touchstart', handleTouchStart, { passive: true });
+  document.addEventListener('touchstart', handleTouchStart, { passive: false });
   document.addEventListener('touchmove', handleTouchMove, { passive: false });
   document.addEventListener('touchend', handleTouchEnd);
 };
@@ -1119,6 +1200,8 @@ try {
       mobileFS.__updateDpadVisibility();
       if (mobileFS.active && gameClient && gameClient.player) {
         mobileFS.__createMobileSlots();
+      } else if (mobileFS.__mobilePanel) {
+        mobileFS.__destroyMobileSlots();
       }
     };
     window.addEventListener('load', function () {
