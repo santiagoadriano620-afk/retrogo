@@ -2,77 +2,88 @@ MobileFullscreen.prototype.__createActionButtons = function () {
   if (this.__actionBtnsEl || !window.gameClient || !window.gameClient.player) return;
 
   var self = this;
+  var isPremium = gameClient.player.isPremium;
+  var hotkeyCount = isPremium ? 8 : 4;
+  var rowsOf4 = Math.ceil(hotkeyCount / 4);
+
   var container = document.createElement('div');
   container.id = 'mobile-action-btns';
   container.style.cssText = 'display:flex;flex-direction:column;gap:2px;align-items:center;';
 
-  var topRow = document.createElement('div');
-  topRow.style.cssText = 'display:flex;gap:2px;';
-
-  // 4 hotkey speech buttons (top row)
+  // Load hotkey messages
   this.__hotkeyMessages = [];
   var saved = localStorage.getItem('retrogo_hotkey_msgs');
-  var msgs = saved ? JSON.parse(saved) : ['', '', '', ''];
-
-  for (var h = 0; h < 4; h++) {
-    (function (idx) {
-      var btn = document.createElement('div');
-      btn.className = 'action-btn hotkey-btn';
-      btn.dataset.hkIdx = idx;
-
-      var span = document.createElement('span');
-      span.className = 'action-icon';
-      span.textContent = msgs[idx] ? msgs[idx].charAt(0).toUpperCase() : '...';
-      btn.appendChild(span);
-
-      var label = document.createElement('span');
-      label.className = 'hk-label';
-      label.textContent = msgs[idx] || '...';
-      btn.appendChild(label);
-
-      var pressTimer = null;
-      var longPressed = false;
-
-      btn.addEventListener('touchstart', function (e) {
-        if (self.__lockStates.actionBtns === false) return;
-        e.preventDefault();
-        longPressed = false;
-        pressTimer = setTimeout(function () {
-          longPressed = true;
-          self.__openHotkeyEditor(idx);
-        }, 500);
-      }, { passive: false });
-
-      btn.addEventListener('touchend', function (e) {
-        if (pressTimer) { clearTimeout(pressTimer); pressTimer = null; }
-        if (self.__lockStates.actionBtns === false) return;
-        if (!longPressed) {
-          var msg = self.__hotkeyMessages[idx];
-          if (msg) {
-            // Message exists: short tap sends it
-            if (window.gameClient && window.gameClient.send) {
-              window.gameClient.send(new ChannelMessagePacket(0, 1, msg));
-            }
-          } else {
-            // Empty: tap opens editor
-            self.__openHotkeyEditor(idx);
-          }
-        }
-      });
-
-      btn.addEventListener('touchmove', function () {
-        if (pressTimer) { clearTimeout(pressTimer); pressTimer = null; }
-      });
-
-      topRow.appendChild(btn);
-      self.__hotkeyMessages[idx] = msgs[idx] || '';
-    })(h);
+  var msgs = saved ? JSON.parse(saved) : [];
+  // Pad to hotkeyCount
+  for (var p = 0; p < hotkeyCount; p++) {
+    this.__hotkeyMessages[p] = (msgs[p] !== undefined) ? msgs[p] : '';
   }
 
-  container.appendChild(topRow);
+  function createHotkeyBtn(idx) {
+    var btn = document.createElement('div');
+    btn.className = 'action-btn hotkey-btn';
+    btn.dataset.hkIdx = idx;
 
-  var bottomRow = document.createElement('div');
-  bottomRow.style.cssText = 'display:flex;gap:2px;';
+    var span = document.createElement('span');
+    span.className = 'action-icon';
+    span.textContent = self.__hotkeyMessages[idx] ? self.__hotkeyMessages[idx].charAt(0).toUpperCase() : '...';
+    btn.appendChild(span);
+
+    var label = document.createElement('span');
+    label.className = 'hk-label';
+    label.textContent = self.__hotkeyMessages[idx] || '...';
+    btn.appendChild(label);
+
+    var pressTimer = null;
+    var longPressed = false;
+
+    btn.addEventListener('touchstart', function (e) {
+      if (self.__lockStates.actionBtns === false) return;
+      e.preventDefault();
+      longPressed = false;
+      pressTimer = setTimeout(function () {
+        longPressed = true;
+        self.__openHotkeyEditor(idx);
+      }, 500);
+    }, { passive: false });
+
+    btn.addEventListener('touchend', function (e) {
+      if (pressTimer) { clearTimeout(pressTimer); pressTimer = null; }
+      if (self.__lockStates.actionBtns === false) return;
+      if (!longPressed) {
+        var msg = self.__hotkeyMessages[idx];
+        if (msg) {
+          if (window.gameClient && window.gameClient.send) {
+            window.gameClient.send(new ChannelMessagePacket(0, 1, msg));
+          }
+        } else {
+          self.__openHotkeyEditor(idx);
+        }
+      }
+    });
+
+    btn.addEventListener('touchmove', function () {
+      if (pressTimer) { clearTimeout(pressTimer); pressTimer = null; }
+    });
+
+    return btn;
+  }
+
+  // Create rows of 4 hotkey buttons
+  for (var r = 0; r < rowsOf4; r++) {
+    var row = document.createElement('div');
+    row.style.cssText = 'display:flex;gap:2px;';
+    for (var c = 0; c < 4; c++) {
+      var idx = r * 4 + c;
+      if (idx >= hotkeyCount) break;
+      row.appendChild(createHotkeyBtn(idx));
+    }
+    container.appendChild(row);
+  }
+
+  // Action buttons row (Eye, Swords, Backpack, Chat)
+  var actionRow = document.createElement('div');
+  actionRow.style.cssText = 'display:flex;gap:2px;';
 
   var buttons = [
     { id: 'look-btn', cls: 'eye', icon: 'eye', handler: function () { self.__handleLookTap(); } },
@@ -99,11 +110,11 @@ MobileFullscreen.prototype.__createActionButtons = function () {
         b.handler();
       }, { passive: false });
 
-      bottomRow.appendChild(btn);
+      actionRow.appendChild(btn);
     })(buttons[i]);
   }
 
-  container.appendChild(bottomRow);
+  container.appendChild(actionRow);
 
   document.body.appendChild(container);
   this.__actionBtnsEl = container;
@@ -261,7 +272,18 @@ MobileFullscreen.prototype.__handleAttackTap = function () {
 
 MobileFullscreen.prototype.__handleBackpackTap = function () {
   if (!window.gameClient || !window.gameClient.player || !window.gameClient.mouse) return;
-  gameClient.mouse.use({ which: gameClient.player.equipment, index: 6 });
+  var equip = gameClient.player.equipment;
+  var slot = equip && equip.slots && equip.slots[6];
+  var item = slot && slot.item;
+  if (item && item.__openContainerId != null) {
+    gameClient.player.__openedContainers.forEach(function (c) {
+      if (c.__containerId === item.__openContainerId) {
+        gameClient.player.removeContainer(c);
+      }
+    });
+  } else {
+    gameClient.mouse.use({ which: equip, index: 6 });
+  }
 };
 
 MobileFullscreen.prototype.__handleChatTap = function () {

@@ -1,7 +1,7 @@
 MobileFullscreen.prototype.__createMobileSlots = function () {
-  if (this.__mobilePanel || !gameClient || !gameClient.player) return;
+  if (this.__mobilePanel || !window.gameClient || !window.gameClient.player) return;
 
-  var equipment = gameClient.player.equipment;
+  var equipment = window.gameClient.player.equipment;
   if (!equipment) return;
 
   this.__originalSlotEls = [];
@@ -11,10 +11,41 @@ MobileFullscreen.prototype.__createMobileSlots = function () {
   var panel = document.createElement('div');
   panel.id = 'mobile-equipment';
   panel.setAttribute('containerIndex', '0');
-  panel.style.cssText = 'position:fixed;right:6px;top:6px;z-index:2147483645;display:flex;flex-direction:row;gap:2px;pointer-events:auto;';
+  panel.style.cssText = 'position:fixed;right:6px;top:6px;z-index:2147483645;display:flex;flex-direction:row;gap:2px;pointer-events:auto;transform:scale(0.95);transform-origin:top right;';
   this.__mobilePanel = panel;
 
   var columns = [
+    { slots: [], ids: [], extra: [
+      function () {
+        var col = document.createElement('div');
+        col.style.cssText = 'display:flex;flex-direction:column;gap:1px;';
+
+        var btnBase = 'background:none;background-color:#4a4a4a;border:1px solid #333;' +
+          'border-radius:0;color:#d3d3d3;font-size:8px;padding:1px 0;margin:0;' +
+          'width:32px;height:16px;cursor:pointer;touch-action:manipulation;' +
+          'white-space:nowrap;text-align:center;';
+
+        var intf = window.gameClient && window.gameClient.interface;
+
+        var defs = [
+          { id: 'mobile-bless-btn', text: 'Bls', handler: function () { if (intf) intf.modalManager.open('blessing-modal'); }},
+          { id: 'mobile-guild-btn', text: 'Gld', handler: function () { if (intf) intf.modalManager.open('guild-modal'); }},
+          { id: 'mobile-shop-btn',  text: 'Shp', handler: function () { if (intf) { intf.modalManager.open('shop-modal'); window.gameClient.send(new RequestPremiumBalancePacket()); }}},
+          { id: 'mobile-gift-btn',  text: 'Gft', handler: function () { window.gameClient.send(new OpenGiftContainerPacket()); }}
+        ];
+
+        defs.forEach(function (b) {
+          var btn = document.createElement('button');
+          btn.id = b.id;
+          btn.textContent = b.text;
+          btn.style.cssText = btnBase;
+          btn.addEventListener('click', b.handler);
+          col.appendChild(btn);
+        });
+
+        return col;
+      }
+    ]},
     { slots: [7, 5, 8], ids: ['neck', 'left-hand', 'finger'], extra: [
       function () {
         var el = document.getElementById('conditions-display');
@@ -64,7 +95,7 @@ MobileFullscreen.prototype.__createMobileSlots = function () {
           { id: 'openBattle',   text: 'Bat',   handler: function () { if (intf) intf.toggleWindow('battle-window'); } },
           { id: 'openVipList',  text: 'VIP',   handler: function () { if (intf) intf.toggleWindow('friend-window'); } },
           { id: 'openQuests',   text: 'Qst',   handler: function () { toggleModal('quest-log-modal'); } },
-          { id: 'openHotkey',   text: 'Key',   handler: function () { toggleModal('hotkey-modal'); } },
+
           { id: 'openSettings', text: 'Opt',   handler: function () { toggleModal('settings-modal'); } },
           { id: 'logout-button',text: 'Ext',   handler: function () { if (intf) intf.sendLogout(); } }
         ];
@@ -113,6 +144,9 @@ MobileFullscreen.prototype.__createMobileSlots = function () {
         this.__originalSlotEls[slotIndex] = equipment.slots[slotIndex].element;
         equipment.slots[slotIndex].setElement(slotEl);
         equipment.slots[slotIndex].render();
+        if (equipment.slots[slotIndex].item) {
+          slotEl.style.backgroundImage = "url('/images/game/ui/item.png')";
+        }
       }
     }
 
@@ -136,11 +170,11 @@ MobileFullscreen.prototype.__destroyMobileSlots = function () {
 
   this.__saveModuleState(this.__mobilePanel, 'equip');
 
-  if (gameClient && gameClient.player && gameClient.player.equipment && this.__originalSlotEls) {
+  if (window.gameClient && window.gameClient.player && window.gameClient.player.equipment && this.__originalSlotEls) {
     for (var i = 0; i < this.__originalSlotEls.length; i++) {
-      if (this.__originalSlotEls[i] && gameClient.player.equipment.slots[i]) {
-        gameClient.player.equipment.slots[i].setElement(this.__originalSlotEls[i]);
-        gameClient.player.equipment.slots[i].render();
+      if (this.__originalSlotEls[i] && window.gameClient.player.equipment.slots[i]) {
+        window.gameClient.player.equipment.slots[i].setElement(this.__originalSlotEls[i]);
+        window.gameClient.player.equipment.slots[i].render();
       }
     }
   }

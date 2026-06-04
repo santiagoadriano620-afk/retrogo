@@ -1,25 +1,17 @@
+MobileFullscreen.prototype.__getContainerFromCI = function (ci) {
+  if (ci === -2) return gameClient && gameClient.player && gameClient.player.equipment;
+  if (ci >= 0) return gameClient && gameClient.player && gameClient.player.getContainer(ci);
+  return null;
+};
+
+MobileFullscreen.prototype.__getActionbarSlotCount = function () {
+  return (gameClient && gameClient.player && gameClient.player.isPremium) ? 8 : 4;
+};
+
 MobileFullscreen.prototype.__saveActionbarData = function () {
   if (!gameClient || !gameClient.player) return;
   try {
-    var data = [];
-    for (var i = 0; i < this.__actionbarSlots.length; i++) {
-      var slot = this.__actionbarSlots[i];
-      if (slot) {
-        var containerIdx = -1;
-        if (slot.which === gameClient.player.equipment) {
-          containerIdx = -2;
-        } else {
-          for (var j = 0; j < 256; j++) {
-            var cont = gameClient.player.getContainer(j);
-            if (cont && cont === slot.which) { containerIdx = j; break; }
-          }
-        }
-        data.push({ ci: containerIdx, si: slot.index });
-      } else {
-        data.push(null);
-      }
-    }
-    localStorage.setItem('retrogo_actionbar_data', JSON.stringify(data));
+    localStorage.setItem('retrogo_actionbar_data', JSON.stringify(this.__actionbarSlots));
   } catch(e) {}
 };
 
@@ -40,7 +32,16 @@ MobileFullscreen.prototype.__renderActionbarSlot = function (index) {
     return;
   }
 
-  var item = data.which.peekItem(data.index);
+  var which = this.__getContainerFromCI(data.ci);
+  if (!which) {
+    this.__actionbarSlots[index] = null;
+    var ctx = canvasEl.getContext('2d');
+    ctx.clearRect(0, 0, 32, 32);
+    if (countEl) countEl.style.display = 'none';
+    return;
+  }
+
+  var item = which.peekItem(data.index);
   if (!item) {
     this.__actionbarSlots[index] = null;
     var ctx = canvasEl.getContext('2d');
@@ -65,14 +66,30 @@ MobileFullscreen.prototype.__renderActionbarSlot = function (index) {
   }
 };
 
+MobileFullscreen.prototype.__syncActionbarSlots = function () {
+  if (!this.__actionbarEl || !this.__actionbarSlots) return;
+  for (var i = 0; i < this.__actionbarSlots.length; i++) {
+    this.__renderActionbarSlot(i);
+  }
+};
+
 MobileFullscreen.prototype.__updateActionbarHighlight = function () {
   if (!this.__actionbarEl) return;
   var highlighted = -1;
   if (gameClient && gameClient.mouse && gameClient.mouse.__multiUseObject) {
     var muo = gameClient.mouse.__multiUseObject;
+    var muoCI = -3;
+    if (muo.which === gameClient.player.equipment) {
+      muoCI = -2;
+    } else {
+      for (var j = 0; j < 256; j++) {
+        var cont = gameClient.player.getContainer(j);
+        if (cont && cont === muo.which) { muoCI = j; break; }
+      }
+    }
     for (var i = 0; i < this.__actionbarSlots.length; i++) {
       var slot = this.__actionbarSlots[i];
-      if (slot && slot.which === muo.which && slot.index === muo.index) {
+      if (slot && slot.ci === muoCI && slot.index === muo.index) {
         highlighted = i;
         break;
       }
@@ -91,14 +108,21 @@ MobileFullscreen.prototype.__handleActionbarUse = function (index) {
   if (!this.active || !gameClient || !gameClient.player) return;
   var data = this.__actionbarSlots[index];
   if (!data) return;
-  var item = data.which.peekItem(data.index);
+  var which = this.__getContainerFromCI(data.ci);
+  if (!which) {
+    this.__actionbarSlots[index] = null;
+    this.__renderActionbarSlot(index);
+    this.__saveActionbarData();
+    return;
+  }
+  var item = which.peekItem(data.index);
   if (!item) {
     this.__actionbarSlots[index] = null;
     this.__renderActionbarSlot(index);
     this.__saveActionbarData();
     return;
   }
-  gameClient.mouse.use({ which: data.which, index: data.index });
+  gameClient.mouse.use({ which: which, index: data.index });
   this.__updateActionbarHighlight();
 };
 
@@ -106,11 +130,15 @@ MobileFullscreen.prototype.__createActionbar = function () {
   if (this.__actionbarEl || !gameClient || !gameClient.player) return;
 
   var self = this;
+  var slotCount = this.__getActionbarSlotCount();
+  this.__actionbarSlots = new Array(slotCount);
+  for (var x = 0; x < slotCount; x++) this.__actionbarSlots[x] = null;
+
   var bar = document.createElement('div');
   bar.id = 'actionbar';
   bar.style.cssText = 'display:flex;flex-direction:row;align-items:center;gap:0;';
 
-  for (var i = 0; i < 8; i++) {
+  for (var i = 0; i < slotCount; i++) {
     (function (slotIndex) {
       var slotEl = document.createElement('div');
       slotEl.className = 'actionbar-slot';
@@ -162,24 +190,18 @@ MobileFullscreen.prototype.__createActionbar = function () {
     var saved = localStorage.getItem('retrogo_actionbar_data');
     if (saved) {
       var data = JSON.parse(saved);
-      for (var k = 0; k < data.length && k < 8; k++) {
-        if (data[k]) {
-          var d = data[k];
-          var which = null;
-          if (d.ci === -2) {
-            which = gameClient.player.equipment;
-          } else if (d.ci >= 0) {
-            which = gameClient.player.getContainer(d.ci);
-          }
-          if (which && which.peekItem(d.si)) {
-            this.__actionbarSlots[k] = { which: which, index: d.si };
+      for (var k = 0; k < data.length && k < slotCount; k++) {
+        if (data[k] && typeof data[k].ci === 'number') {
+          var which = this.__getContainerFromCI(data[k].ci);
+          if (which && which.peekItem(data[k].index)) {
+            this.__actionbarSlots[k] = { ci: data[k].ci, index: data[k].index };
           }
         }
       }
     }
   } catch(e) {}
 
-  for (var r = 0; r < 8; r++) {
+  for (var r = 0; r < slotCount; r++) {
     this.__renderActionbarSlot(r);
   }
 

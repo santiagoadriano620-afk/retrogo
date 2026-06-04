@@ -55,9 +55,10 @@ MobileFullscreen.prototype.__adjustCanvas = function () {
   var vw = window.innerWidth;
   var vh = window.innerHeight;
 
-  var TILE_COUNT = 15;
-  var gameW = TILE_COUNT * 32;
-  var gameH = TILE_COUNT * 32;
+  var TILE_COUNT_X = 20;
+  var TILE_COUNT_Y = 15;
+  var gameW = TILE_COUNT_X * 32;
+  var gameH = TILE_COUNT_Y * 32;
   var scale = Math.min(vw / gameW, vh / gameH);
 
   wrapper.style.zoom = '1';
@@ -128,29 +129,52 @@ MobileFullscreen.prototype.__adjustCanvas = function () {
 
   if (gameClient && gameClient.renderer && gameClient.renderer.screen) {
     var renderer = gameClient.renderer;
-    renderer.playerTileOffsetX = TILE_COUNT / 2;
-    renderer.playerTileOffsetY = TILE_COUNT / 2;
-    renderer.__cullMarginLeft = 14;
-    renderer.__cullMarginRight = 14;
-    renderer.__cullMarginTop = 14;
-    renderer.__cullMarginBottom = 14;
-    renderer.__bgCullMarginLeft = 16;
-    renderer.__bgCullMarginRight = 16;
-    renderer.__bgCullMarginTop = 16;
-    renderer.__bgCullMarginBottom = 16;
+    var halfX = Math.floor(TILE_COUNT_X / 2);
+    var halfY = Math.floor(TILE_COUNT_Y / 2);
+    renderer.playerTileOffsetX = halfX;
+    renderer.playerTileOffsetY = halfY;
+
+    // Cull: viewport exactly (20×15 tiles)
+    renderer.__cullMarginLeft   = halfX;
+    renderer.__cullMarginRight  = halfX;
+    renderer.__cullMarginTop    = halfY;
+    renderer.__cullMarginBottom = halfY;
+
+    // Background cache: viewport + 2 tiles margin on each side
+    var bgMarginX = halfX + 2;
+    var bgMarginY = halfY + 2;
+    renderer.__bgCullMarginLeft   = bgMarginX;
+    renderer.__bgCullMarginRight  = bgMarginX;
+    renderer.__bgCullMarginTop    = bgMarginY;
+    renderer.__bgCullMarginBottom = bgMarginY;
     renderer.__bgCacheShiftX = 1;
     renderer.__bgCacheShiftY = 1;
     renderer.__tileCacheNeedsRebuild = true;
 
-    var bgW = 1080;
-    var bgH = 640;
+    // Cache canvas: gameW + 4 tiles (768×608)
+    var cacheW = gameW + 4 * 32;
+    var cacheH = gameH + 4 * 32;
     for (var i = 0; i < 16; i++) {
-      renderer.__backgroundCaches[i] = new Canvas(null, bgW, bgH);
+      renderer.__backgroundCaches[i] = new Canvas(null, cacheW, cacheH);
     }
 
     renderer.screen.setScale(1);
     if (typeof renderer.screen.setDimensions === 'function') {
       renderer.screen.setDimensions(gameW, gameH);
     }
+  }
+
+  // Override creature visibility to mobile viewport
+  if (typeof Creature !== 'undefined' && !this.__origCanSee) {
+    this.__origCanSee = Creature.prototype.canSee;
+    var mobileLimitX = Math.ceil(TILE_COUNT_X) + 2;
+    var mobileLimitY = Math.ceil(TILE_COUNT_Y) + 2;
+    Creature.prototype.canSee = function (thing) {
+      var projectedSelf = this.getPosition().projected();
+      var projectedThing = thing.getPosition().projected();
+      var dx = Math.abs(projectedSelf.x - projectedThing.x);
+      var dy = Math.abs(projectedSelf.y - projectedThing.y);
+      return (dx < mobileLimitX) && (dy < mobileLimitY);
+    };
   }
 };

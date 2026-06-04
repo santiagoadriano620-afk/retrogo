@@ -156,3 +156,30 @@
 - **Lock guards**: `__lockStates.actionbar` blocks both actionbar slot tap/drag and document-level slot drag when unlocked
 - **Create/destroy**: integrated into `__handleFullscreenChange` (enter/exit) and `checkPlayer` interval (player login/logout)
 - **Rendering**: uses global `Canvas` wrapper with `drawSprite(item, false, false)` on each slot's canvas; stack counts shown on stackable items
+
+### Mobile window management (this session)
+- **Container window created from scratch** — `Container.prototype.createDOM` overridden to build elements directly (no `prototype.cloneNode`), avoiding the hidden `.prototype` display issue
+- **Named windows (skill, battle, VIP, party, quest) moved to `document.body`** — `wm.getFreeStack` returns `document.body`, `wm.getStack('right'/'extra')` returns `document.body`, other stacks fall through to original
+- **Container window 4 slots per row** — width `155px` to accommodate border-image
+- **Window drag simplified** — per-drag temporary document listeners via closure (touchstart → add `onMove`/`onEnd` on document, touchend → remove); `header.style.pointerEvents = 'auto'` ensures whole header is draggable including over text
+- **Footer resize via touch** — resizes window height with `maxH` clamped to viewport or body scroll height
+- **VIP + button** — `+` button inserted in `friend-window` header before close; prompts for name, sends `FriendAddPacket`; double-tap on friend entry calls `FriendRemovePacket` with confirm dialog
+- **Debug logs cleaned** — removed `[DRAG]`, `[MOUSE]`, `[ACTIONS]` logs from drag.js, actions.js, topbar.js
+- **Backpack action button toggles container** — calls `mouse.use({ which: equipment, index: 6 })` (same code path as tap on backpack slot)
+- **`__dragSprite = null` in handleTouchStart** — defensive null check before rendering drag sprite
+- **Window position persistence** — saves to `localStorage['retrogo_window_positions']` per window id/containerIndex; restored on topbar creation
+
+### Engine performance & stability (`engine/tutorials/summary.md`)
+- Draw time reduced from ~25,200 tile iterations/frame to ~5,000; frame rate 41→60-61 fps
+- Weather transition: `"\t"`→`"off"` ternary fix in `weather-canvas.js`; weather toggle via `__applyWeather(enabled)` with guard
+- Background cache rebuilt synchronously (no `setTimeout`)
+- Real worker pool for pathfinding with `worker_threads` (N-1 workers)
+- XOR key lost on character select flow fixed — `xorKey` passed through modal-characters → `connectWithToken`
+- Definitions.json 404 fixed — path corrected to `./items/definitions.json`
+- HMAC secret randomized (was hardcoded zeros); XOR encryption made optional via `ENCRYPTION.ENABLED`
+- Default character creation only in dev mode (`SERVER.PRODUCTION=true` disables it)
+- XSS sanitization on chat, private messages, books/labels
+- Rate limiter: login 5 attempts/min/IP, game socket 20 packets/sec
+- Generic error messages (401/500 with empty body)
+- start.js rewritten with auto-restart (max 5), metrics monitoring, graceful shutdown
+- Unused files moved to `engine/_unused/`; Drizzle/SQLite removed; logs moved to `engine/logs/`

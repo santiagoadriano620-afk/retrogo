@@ -74,14 +74,14 @@ MobileFullscreen.prototype.__injectStyles = function () {
     '#mobile-dpad {' +
     '  display: none; position: fixed; bottom: 42px; left: 32px;' +
     '  z-index: 2147483646; touch-action: none;' +
-    '  width: 120px; height: 120px; border-radius: 50%;' +
+    '  width: 75px; height: 75px; border-radius: 50%;' +
     '  background: transparent;' +
     '  border: 1px solid rgba(150,150,150,0.3);' +
     '  user-select: none; -webkit-user-select: none;' +
     '}' +
     '#mobile-dpad.visible { display: block; }' +
     '#mobile-dpad .dpad-arrow {' +
-    '  position: absolute; font-size: 20px;' +
+    '  position: absolute; font-size: 13px;' +
     '  color: rgba(255,255,255,0.5); font-weight: bold;' +
     '  pointer-events: none; transform: translate(-50%, -50%);' +
     '  transition: color 0.08s, text-shadow 0.08s;' +
@@ -93,7 +93,7 @@ MobileFullscreen.prototype.__injectStyles = function () {
     '#mobile-dpad .dpad-arrow.active { color: rgba(100,180,255,0.9); text-shadow: 0 0 20px rgba(100,180,255,0.5); }' +
     '#mobile-dpad .dpad-ball {' +
     '  position: absolute; top: 50%; left: 50%;' +
-    '  width: 28px; height: 28px; border-radius: 50%;' +
+    '  width: 18px; height: 18px; border-radius: 50%;' +
     '  background: radial-gradient(circle at 40% 35%, #e8e8f0, #8888a0);' +
     '  transform: translate(-50%, -50%);' +
     '  box-shadow: 0 2px 8px rgba(0,0,0,0.3), inset 0 1px 4px rgba(255,255,255,0.5);' +
@@ -115,14 +115,14 @@ MobileFullscreen.prototype.__injectStyles = function () {
     '#mobile-equipment [slotIndex="9"] { background-image: url("/images/game/inventory/ammo.png"); }' +
     '#mobile-dpad-wrapper {' +
     '  display: none; position: fixed; bottom: 42px; left: 32px;' +
-    '  z-index: 2147483646; width: 130px; height: 130px;' +
-    '  border: 1px solid rgba(150,150,150,0.3); border-radius: 4px;' +
+    '  z-index: 2147483646; width: 75px; height: 75px;' +
+    '  border: 1px solid rgba(150,150,150,0.3); border-radius: 50%;' +
     '  touch-action: none; user-select: none; -webkit-user-select: none;' +
     '}' +
     '#mobile-dpad-wrapper.visible { display: block; }' +
     '#mobile-dpad-wrapper #mobile-dpad {' +
-    '  display: block; position: absolute; top: 50%; left: 50%;' +
-    '  transform: translate(-50%, -50%); border: none;' +
+    '  display: block; width: 100%; height: 100%; position: static;' +
+    '  transform: none; border: none;' +
     '}' +
     '.module-lock-icon {' +
     '  position: absolute; top: -14px; left: 2px;' +
@@ -132,6 +132,22 @@ MobileFullscreen.prototype.__injectStyles = function () {
     '}' +
     '.module-lock-icon.locked { background: #888; border: 2px solid #666; }' +
     '.module-lock-icon.unlocked { background: transparent; border: 2px solid #888; }' +
+    '.dpad-diagonal-btn {' +
+    '  position: absolute; top: -14px; right: 2px;' +
+    '  width: 16px; height: 16px; z-index: 10;' +
+    '  cursor: pointer; pointer-events: auto; touch-action: manipulation;' +
+    '  border-radius: 3px; -webkit-tap-highlight-color: transparent;' +
+    '}' +
+    '.dpad-diagonal-btn.on { background: #888; border: 2px solid #666; }' +
+    '.dpad-diagonal-btn { background: transparent; border: 2px solid #888; }' +
+    '.dpad-diagonal-btn .ddi {' +
+    '  position: absolute; font-size: 6px; line-height: 1; color: #ddd;' +
+    '  pointer-events: none;' +
+    '}' +
+    '.dpad-diagonal-btn .ddi.nw { top: 0; left: 1px; }' +
+    '.dpad-diagonal-btn .ddi.ne { top: 0; right: 1px; }' +
+    '.dpad-diagonal-btn .ddi.sw { bottom: 0; left: 1px; }' +
+    '.dpad-diagonal-btn .ddi.se { bottom: 0; right: 1px; }' +
     '#actionbar {' +
     '  display: none; position: fixed; bottom: 10px;' +
     '  z-index: 2147483644;' +
@@ -164,7 +180,7 @@ MobileFullscreen.prototype.__injectStyles = function () {
     'body.mobile-fullscreen #friend-window,' +
     'body.mobile-fullscreen #party-window,' +
     'body.mobile-fullscreen #quest-tracker-window {' +
-    '  position: fixed !important; top: 50px !important; left: 6px !important; right: auto !important;' +
+    '  position: fixed !important; top: 50px; left: 6px; right: auto !important;' +
     '  z-index: 2147483646 !important;' +
     '  width: 140px !important; max-height: calc(100vh - 60px) !important;' +
     '}' +
@@ -176,8 +192,8 @@ MobileFullscreen.prototype.__injectStyles = function () {
     '  overflow-y: auto !important;' +
     '}' +
     'body.mobile-fullscreen .window[containerIndex] {' +
-    '  position: fixed !important; top: 50px !important; left: 6px !important; right: auto !important;' +
-    '  z-index: 2147483646 !important; width: 140px !important;' +
+    '  position: fixed !important; top: 50px; left: 6px; right: auto !important;' +
+    '  z-index: 2147483646 !important;' +
     '  max-height: calc(100vh - 60px) !important;' +
     '}' +
     'body.mobile-fullscreen .window[containerIndex] .body {' +
@@ -228,6 +244,7 @@ MobileFullscreen.prototype.__injectStyles = function () {
     '}';
   document.head.appendChild(s);
 };
+
 
 MobileFullscreen.prototype.__overrideMethods = function () {
   var self = this;
@@ -450,6 +467,12 @@ MobileFullscreen.prototype.__restoreCanvas = function () {
   screen.style.margin = '';
   screen.style.width = '';
   screen.style.height = '';
+
+  // Restore original creature visibility
+  if (this.__origCanSee && typeof Creature !== 'undefined') {
+    Creature.prototype.canSee = this.__origCanSee;
+    this.__origCanSee = null;
+  }
 };
 
 try {
@@ -461,6 +484,7 @@ try {
       if (mobileFS.active && gameClient && gameClient.player) {
         mobileFS.__createMobileSlots();
         mobileFS.__createActionbar();
+        mobileFS.__syncActionbarSlots();
         mobileFS.__updateActionbarHighlight();
         mobileFS.__createTopbar();
         mobileFS.__createActionButtons();
@@ -477,7 +501,7 @@ try {
             clearTarget = true;
           } else if (tPos.z !== pPos.z) {
             clearTarget = true;
-          } else if (Math.max(Math.abs(tPos.x - pPos.x), Math.abs(tPos.y - pPos.y)) > 7) {
+          } else if (Math.max(Math.abs(tPos.x - pPos.x), Math.abs(tPos.y - pPos.y)) > (gameClient.renderer ? gameClient.renderer.playerTileOffsetX : 10)) {
             clearTarget = true;
           } else if (!gameClient.world.activeCreatures[target.id]) {
             clearTarget = true;

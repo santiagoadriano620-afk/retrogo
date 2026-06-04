@@ -84,26 +84,57 @@ MobileFullscreen.prototype.__createTopbar = function () {
   var intf = window.gameClient && window.gameClient.interface;
   var wm = intf && intf.windowManager;
   if (wm && !wm.__mobileFS_overridden) {
-    this.__origGetFreeStack = wm.getFreeStack;
-    this.__origGetStack = wm.getStack.bind(wm);
     wm.__mobileFS_overridden = true;
 
-    // Use a dedicated wrapper so totalUsedInStack doesn't count the equipment panel
-    var containerStack = document.getElementById('mobile-container-stack');
-    if (!containerStack) {
-      containerStack = document.createElement('div');
-      containerStack.id = 'mobile-container-stack';
-      containerStack.style.cssText = 'position:fixed;top:50px;left:6px;max-width:280px;z-index:2147483646;display:flex;flex-direction:column;gap:2px;';
-      document.body.appendChild(containerStack);
-    }
-
-    wm.getFreeStack = function () { return containerStack; };
-    var self3 = this;
+    // Keep windows from being moved back to hidden .oogwrap
+    self.__origGetFreeStack = wm.getFreeStack;
+    self.__origGetStack = wm.getStack.bind(wm);
+    wm.getFreeStack = function () { return document.body; };
     wm.getStack = function (name) {
-      if (name === 'right' || name === 'extra') return containerStack;
-      return self3.__origGetStack(name);
+      if (name === 'right' || name === 'extra') return document.body;
+      return self.__origGetStack(name);
     };
-    this.__containerStack = containerStack;
+
+    // Wrap Container.createDOM to skip stack capacity (no extraWrapper crash)
+    self.__origContainerCreateDOM = Container.prototype.createDOM;
+    Container.prototype.createDOM = function (title, items, itemId) {
+      var element = document.createElement('div');
+      element.className = 'window';
+      element.style.cssText = 'display:flex;flex-direction:column;width:155px;';
+      element.setAttribute('containerIndex', this.__containerId);
+      var header = document.createElement('div');
+      header.className = 'header';
+      header.style.cssText = 'display:flex;align-items:center;gap:2px;height:20px;flex-shrink:0;';
+      var icon = document.createElement('span');
+      icon.className = 'window-icon bag';
+      icon.style.cssText = 'width:12px;height:12px;flex:0 0 auto;';
+      header.appendChild(icon);
+      var titleEl = document.createElement('span');
+      titleEl.className = 'title';
+      titleEl.style.cssText = 'flex:1 1 auto;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:11px;pointer-events:auto;';
+      header.appendChild(titleEl);
+      ['back','minimize','close'].forEach(function (a) {
+        var btn = document.createElement('button');
+        btn.className = 'container-btn';
+        btn.setAttribute('action', a);
+        btn.textContent = a === 'back' ? '\u25C0' : a === 'minimize' ? '_' : 'X';
+        btn.style.cssText = 'flex:0 0 auto;background:none;border:none;color:#ccc;cursor:pointer;font-size:10px;padding:0 4px;';
+        header.appendChild(btn);
+      });
+      element.appendChild(header);
+      var body = document.createElement('div');
+      body.className = 'body';
+      body.style.cssText = 'display:flex;flex-wrap:wrap;gap:1px;padding:2px;overflow-y:auto;flex:1;';
+      element.appendChild(body);
+      var footer = document.createElement('div');
+      footer.className = 'footer';
+      footer.style.cssText = 'height:4px;flex-shrink:0;';
+      element.appendChild(footer);
+      this.window = new InteractiveWindow(element);
+      gameClient.interface.windowManager.register(this.window);
+      document.body.appendChild(element);
+      Container._addContent(this, element, title, items, itemId);
+    };
   }
 
   function setupWindowDrag(win) {
@@ -112,37 +143,36 @@ MobileFullscreen.prototype.__createTopbar = function () {
     var header = win.querySelector('.header');
     if (!header) return;
     header.style.touchAction = 'none';
-    var drag = null;
+    header.style.pointerEvents = 'auto';
     header.addEventListener('touchstart', function (e) {
-      if (e.target.closest('button')) return;
+      if (e.target.tagName === 'BUTTON' || e.target.closest('button')) return;
       var touch = e.changedTouches[0];
-      var rect = win.getBoundingClientRect();
-      drag = {
-        startX: touch.clientX, startY: touch.clientY,
-        startLeft: rect.left, startTop: rect.top
-      };
+      var startX = touch.clientX;
+      var startY = touch.clientY;
+      var startLeft = win.getBoundingClientRect().left;
+      var startTop = win.getBoundingClientRect().top;
+      function onMove(ev) {
+        var t = ev.changedTouches[0];
+        win.style.left = (startLeft + t.clientX - startX) + 'px';
+        win.style.top = (startTop + t.clientY - startY) + 'px';
+        win.style.right = 'auto';
+        ev.preventDefault();
+      }
+      function onEnd(ev) {
+        document.removeEventListener('touchmove', onMove);
+        document.removeEventListener('touchend', onEnd);
+        document.removeEventListener('touchcancel', onEnd);
+        try {
+          var saved = JSON.parse(localStorage.getItem('retrogo_window_positions') || '{}');
+          var key = win.id || win.getAttribute('containerIndex') || 'win';
+          saved[key] = { x: win.offsetLeft, y: win.offsetTop };
+          localStorage.setItem('retrogo_window_positions', JSON.stringify(saved));
+        } catch(ex) {}
+      }
+      document.addEventListener('touchmove', onMove, { passive: false });
+      document.addEventListener('touchend', onEnd);
+      document.addEventListener('touchcancel', onEnd);
       e.preventDefault();
-    });
-    header.addEventListener('touchmove', function (e) {
-      if (!drag) return;
-      var touch = e.changedTouches[0];
-      win.style.left = (drag.startLeft + touch.clientX - drag.startX) + 'px';
-      win.style.top = (drag.startTop + touch.clientY - drag.startY) + 'px';
-      win.style.right = 'auto';
-      e.preventDefault();
-    });
-    header.addEventListener('touchend', function () {
-      if (!drag) return;
-      try {
-        var saved = JSON.parse(localStorage.getItem('retrogo_window_positions') || '{}');
-        var key = win.id || win.getAttribute('containerIndex') || 'win';
-        saved[key] = { x: win.offsetLeft, y: win.offsetTop };
-        localStorage.setItem('retrogo_window_positions', JSON.stringify(saved));
-      } catch(ex) {}
-      drag = null;
-    });
-    header.addEventListener('touchcancel', function () {
-      drag = null;
     });
 
     // Footer resize via touch
@@ -212,6 +242,54 @@ MobileFullscreen.prototype.__createTopbar = function () {
     }
     setupWindowDrag(el);
   });
+
+  // Mobile VIP: add "+" button to friend-window header, double-tap to remove
+  (function () {
+    var fw = document.getElementById('friend-window');
+    if (!fw || fw.querySelector('.mobile-vip-add')) return;
+    var header = fw.querySelector('.header');
+    if (!header) return;
+    var addBtn = document.createElement('button');
+    addBtn.className = 'mobile-vip-add';
+    addBtn.textContent = '+';
+    addBtn.title = 'Add VIP';
+    addBtn.style.cssText = 'font-size:16px;font-weight:bold;line-height:16px;padding:0 5px;';
+    // Insert before the close button
+    var closeBtn = header.querySelector('button[action="close"]');
+    if (closeBtn) {
+      header.insertBefore(addBtn, closeBtn);
+    } else {
+      header.appendChild(addBtn);
+    }
+    addBtn.addEventListener('click', function () {
+      var name = prompt('Enter character name to add to VIP:');
+      if (name && name.trim()) {
+        name = name.trim();
+        if (name === window.gameClient.player.name) {
+          return window.gameClient.interface.setCancelMessage('You cannot add yourself to the VIP list.');
+        }
+        if (window.gameClient.player.friendlist.has(name)) {
+          return window.gameClient.interface.setCancelMessage('This player is already in your VIP list.');
+        }
+        window.gameClient.send(new FriendAddPacket(name));
+      }
+    });
+    // Override double-click on friend entries to remove instead of private chat
+    var body = fw.querySelector('.body');
+    if (body) {
+      body.addEventListener('dblclick', function (e) {
+        var entry = e.target.closest('.friend-entry');
+        if (!entry) return;
+        e.preventDefault();
+        e.stopPropagation();
+        var friend = entry.getAttribute('friend');
+        if (friend && confirm('Remove ' + friend + ' from VIP?')) {
+          window.gameClient.send(new FriendRemovePacket(friend));
+          window.gameClient.player.friendlist.remove(friend);
+        }
+      });
+    }
+  })();
 
   self.__containerObserver = new MutationObserver(function (mutations) {
     mutations.forEach(function (m) {
@@ -284,12 +362,18 @@ MobileFullscreen.prototype.__destroyTopbar = function () {
   }
   var intf = window.gameClient && window.gameClient.interface;
   var wm = intf && intf.windowManager;
-  if (wm && wm.__mobileFS_overridden && this.__origGetFreeStack) {
-    wm.getFreeStack = this.__origGetFreeStack;
-    wm.getStack = this.__origGetStack;
+  if (wm && wm.__mobileFS_overridden) {
+    if (this.__origGetFreeStack) {
+      wm.getFreeStack = this.__origGetFreeStack;
+      wm.getStack = this.__origGetStack;
+      this.__origGetFreeStack = null;
+      this.__origGetStack = null;
+    }
+    if (this.__origContainerCreateDOM) {
+      Container.prototype.createDOM = this.__origContainerCreateDOM;
+      this.__origContainerCreateDOM = null;
+    }
     wm.__mobileFS_overridden = false;
-    this.__origGetFreeStack = null;
-    this.__origGetStack = null;
   }
   if (this.__origUpdateBars) {
     Player.prototype.__updateMobileStatusBars = this.__origUpdateBars;
@@ -307,8 +391,5 @@ MobileFullscreen.prototype.__destroyTopbar = function () {
     this.__containerObserver.disconnect();
     this.__containerObserver = null;
   }
-  if (this.__containerStack) {
-    this.__containerStack.parentNode.removeChild(this.__containerStack);
-    this.__containerStack = null;
-  }
+  this.__dragWindow = null;
 };

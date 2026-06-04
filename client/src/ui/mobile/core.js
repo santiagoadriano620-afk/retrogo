@@ -9,20 +9,25 @@ MobileFullscreen = function () {
   this.dpadTouchId = null;
   this.dpadDirection = null;
   this.dpadKey = null;
-  this.DPAD_SIZE = 120;
-  this.DPAD_DEAD_ZONE = 18;
+  this.DPAD_SIZE = 75;
+  this.DPAD_DEAD_ZONE = 11;
   this.__lastTapTime = 0;
   this.__lastTapX = 0;
   this.__lastTapY = 0;
   this.__lockStates = {};
   this.__actionbarEl = null;
-  this.__actionbarSlots = [null, null, null, null, null, null, null, null];
+  this.__actionbarSlots = [];
   this.__actionbarCanvases = [];
   this.__actionbarHighlight = -1;
   this.__tapSlotIndex = -1;
   this.__actionBtnsEl = null;
   this.__lookMode = false;
   this.__chatInputEl = null;
+  this.__dpadDiagonalMode = true;
+  try {
+    var savedDiag = localStorage.getItem('retrogo_dpad_diagonal');
+    if (savedDiag !== null) this.__dpadDiagonalMode = JSON.parse(savedDiag);
+  } catch(e) {}
 
   if (this.isMobile) {
     this.__injectStyles();
@@ -56,16 +61,33 @@ MobileFullscreen.prototype.__enableLockableDrag = function (element, moduleName,
   var posKey = 'retrogo_' + moduleName + '_pos';
   var lockKey = 'retrogo_' + moduleName + '_lock';
 
+  var vw = window.innerWidth;
+  var vh = window.innerHeight;
+
   try {
     var saved = localStorage.getItem(posKey);
     if (saved) {
       var p = JSON.parse(saved);
+      // Clamp position away from edges so lock icon is always reachable
+      p.x = Math.max(30, Math.min(p.x, vw - 100));
+      p.y = Math.max(30, Math.min(p.y, vh - 100));
       element.style.left = p.x + 'px';
       element.style.top = p.y + 'px';
       element.style.right = 'auto';
       element.style.bottom = 'auto';
+    } else {
+      // Ensure safe default: bottom-center area, never top-left
+      element.style.left = '32px';
+      element.style.bottom = '75px';
+      element.style.top = 'auto';
+      element.style.right = 'auto';
     }
-  } catch(e) {}
+  } catch(e) {
+    element.style.left = '32px';
+    element.style.bottom = '60px';
+    element.style.top = 'auto';
+    element.style.right = 'auto';
+  }
 
   var locked = true;
   try {

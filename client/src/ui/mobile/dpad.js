@@ -30,6 +30,29 @@ MobileFullscreen.prototype.__createDpad = function () {
   document.body.appendChild(wrapper);
   this.dpad = el;
   this.dpadWrapper = wrapper;
+
+  var self = this;
+  var diagBtn = document.createElement('div');
+  diagBtn.className = 'dpad-diagonal-btn';
+  diagBtn.innerHTML =
+    '<span class="ddi nw">&#8598;</span>' +
+    '<span class="ddi ne">&#8599;</span>' +
+    '<span class="ddi sw">&#8601;</span>' +
+    '<span class="ddi se">&#8600;</span>';
+  diagBtn.classList.toggle('on', this.__dpadDiagonalMode);
+  wrapper.appendChild(diagBtn);
+
+  function toggleDiag(e) {
+    e.stopPropagation();
+    e.preventDefault();
+    self.__dpadDiagonalMode = !self.__dpadDiagonalMode;
+    diagBtn.classList.toggle('on', self.__dpadDiagonalMode);
+    try { localStorage.setItem('retrogo_dpad_diagonal', JSON.stringify(self.__dpadDiagonalMode)); } catch(e2) {}
+  }
+
+  diagBtn.addEventListener('touchstart', toggleDiag, { passive: false });
+  diagBtn.addEventListener('click', toggleDiag);
+
   this.__bindDpadEvents(el);
   this.__enableLockableDrag(wrapper, 'dpad', { onDragStart: function () {}, onDragEnd: function () {} });
 };
@@ -154,7 +177,7 @@ MobileFullscreen.prototype.__dpadUpdateBall = function (angleRad, dist) {
   var ball = this.dpad.querySelector('.dpad-ball');
   if (!ball) return;
 
-  var maxBallOffset = 28;
+  var maxBallOffset = 18;
   var maxTouchDist = this.DPAD_SIZE * 0.45;
   var clamped = Math.min(dist, maxTouchDist);
   var ratio = maxTouchDist > 0 ? clamped / maxTouchDist : 0;
@@ -198,18 +221,35 @@ MobileFullscreen.prototype.__dpadProcessMove = function (clientX, clientY, cente
   var sector = this.__directionFromAngle(angleDeg);
   if (!sector) return;
 
-  this.dpadDirection = sector.dir;
+  var finalDir = sector.dir;
+
+  // If diagonal mode is off, snap diagonals to nearest cardinal
+  if (!this.__dpadDiagonalMode) {
+    var dirVal = finalDir;
+    if (dirVal === CONST.DIRECTION.NORTHEAST) {
+      finalDir = (Math.abs(dx) >= Math.abs(dy)) ? CONST.DIRECTION.EAST : CONST.DIRECTION.NORTH;
+    } else if (dirVal === CONST.DIRECTION.SOUTHEAST) {
+      finalDir = (Math.abs(dx) >= Math.abs(dy)) ? CONST.DIRECTION.EAST : CONST.DIRECTION.SOUTH;
+    } else if (dirVal === CONST.DIRECTION.SOUTHWEST) {
+      finalDir = (Math.abs(dx) >= Math.abs(dy)) ? CONST.DIRECTION.WEST : CONST.DIRECTION.SOUTH;
+    } else if (dirVal === CONST.DIRECTION.NORTHWEST) {
+      finalDir = (Math.abs(dx) >= Math.abs(dy)) ? CONST.DIRECTION.WEST : CONST.DIRECTION.NORTH;
+    }
+  }
+
+  this.dpadDirection = finalDir;
   this.__dpadUpdateBall(angleRad, dist);
+  // Activate the arrow indicator for the original sector (visual only)
   if (sector.arrow) {
     var arrowEl = this.dpad.querySelector('.dpad-arrow.' + sector.arrow);
     if (arrowEl) arrowEl.classList.add('active');
   }
 
-  if (this.dpadKey !== null && DPAD_GET_KEY(sector.dir) !== this.dpadKey) {
+  if (this.dpadKey !== null && DPAD_GET_KEY(finalDir) !== this.dpadKey) {
     this.__dpadReleaseKey();
   }
   if (this.dpadKey === null) {
-    this.__dpadPressKey(sector.dir);
+    this.__dpadPressKey(finalDir);
   }
 };
 

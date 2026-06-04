@@ -165,4 +165,42 @@ client/src/
 │   ├── settings.js                  ← weather guard
 │   └── modals/
 │       └── modal-characters.js      ← xorKey para connectWithToken
+
+---
+
+## 8. Sessão — Mobile Performance (Item Cache Tentativa)
+
+### O que foi tentado
+Tentativa de pré-renderizar todos os items do mapa (paredes, árvores, escadas, etc.) em um cache separado para reduzir as 500–2000 chamadas `drawSprite` por frame causadas por `__renderTileObjects`.
+
+### O que foi feito (depois revertido)
+
+**`renderer.js`:**
+- Adicionado `__itemCaches[16]` — array de canvases, um por andar, para armazenar items pré-renderizados
+- Adicionado `__itemCacheNeedsRebuild` — flag de invalidação
+- Adicionado `__useItemCache` — flag de ativação (mobile-only)
+
+**`renderer-world.js`:**
+- `__rebuildItemCaches()` — desenha todos os items no cache com elevação e camadas (mesma lógica de `__renderTileObjects`)
+- `__renderTileItemsDynamic()` — versão leve que só calcula elevação e lida com boundary/cover/overlay sem desenhar sprites
+- `__renderWorld` modificado para blitar o item cache e substituir `__renderTileObjects` pela versão dinâmica quando `__useItemCache = true`
+
+**`canvas.js` (mobile):**
+- `bgMargin` alterado de `half+2` (9) para `half+5` (12)
+- Cache aumentado de 608×608 para 800×800
+- `__itemCaches[i]` criados no mesmo tamanho
+- `__useItemCache = true` ativado
+
+**`index.js` (mobile):**
+- Hooks em `Tile.prototype.addItem` / `Tile.prototype.removeItem` para invalidar cache
+- `__restoreCanvas` limpa `__itemCaches` e reseta flags
+
+### Resultado
+Ficou visualmente ruim (items com posições erradas, provavelmente elevação incorreta ou itens perdidos). Revertido completamente.
+
+### Estado atual (pós-reversão)
+- `canvas.js`: `playerTileOffset=7`, `cullMargin=7`, `bgMargin=9`, `shift=1`, cache 608×608
+- Renderer sem item cache (idêntico ao desktop original)
+- Próximo passo: resolver lag real sem cache de items
+
 ```

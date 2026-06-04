@@ -57,8 +57,11 @@ MobileFullscreen.prototype.__bindSlotTouch = function () {
     if (abSlotEl) {
       var abIdx = Number(abSlotEl.getAttribute('slotIndex'));
       var abData = self.__actionbarSlots[abIdx];
-      if (abData && abData.which && abData.which.peekItem(abData.index)) {
-        return { which: abData.which, index: abData.index, startX: touch.clientX, startY: touch.clientY, __actionbarSource: abIdx };
+      if (abData && abData.ci !== undefined) {
+        var which = self.__getContainerFromCI(abData.ci);
+        if (which && which.peekItem(abData.index)) {
+          return { which: which, index: abData.index, startX: touch.clientX, startY: touch.clientY, __actionbarSource: abIdx };
+        }
       }
       return null;
     }
@@ -76,6 +79,7 @@ MobileFullscreen.prototype.__bindSlotTouch = function () {
 
   var handleTouchStart = function (e) {
     if (!self.active || !gameClient || !gameClient.player) return;
+    self.__dragSprite = null;
     if (e.target.closest('.window .header')) return;
     if (e.target.closest('.window .footer')) return;
     var source = resolveSource(e);
@@ -182,23 +186,30 @@ MobileFullscreen.prototype.__bindSlotTouch = function () {
       // Drop on actionbar slot → store reference instead of moving item
       if (toObject && toObject.isActionbar) {
         var abSlot = toObject.index;
-        if (abSlot >= 0 && abSlot < 8) {
+        var slotCount = self.__getActionbarSlotCount();
+        if (abSlot >= 0 && abSlot < slotCount) {
           var item = fromObject.which.peekItem(fromObject.index);
-          if (item && item.isMultiUse && item.isMultiUse()) {
+          if (item) {
+            // Resolve CI from the fromObject
+            var fromCI = -3;
+            if (fromObject.which === gameClient.player.equipment) {
+              fromCI = -2;
+            } else {
+              for (var fc = 0; fc < 256; fc++) {
+                var fcont = gameClient.player.getContainer(fc);
+                if (fcont && fcont === fromObject.which) { fromCI = fc; break; }
+              }
+            }
             // Clear previous source slot if dragging from another actionbar slot
             if (abSourceIdx !== undefined && abSourceIdx !== abSlot) {
               self.__actionbarSlots[abSourceIdx] = null;
             }
-            self.__actionbarSlots[abSlot] = { which: fromObject.which, index: fromObject.index };
+            self.__actionbarSlots[abSlot] = { ci: fromCI, index: fromObject.index };
             self.__renderActionbarSlot(abSlot);
             if (abSourceIdx !== undefined && abSourceIdx !== abSlot) {
               self.__renderActionbarSlot(abSourceIdx);
             }
             self.__saveActionbarData();
-          } else if (item) {
-            if (window.gameClient && window.gameClient.interface && window.gameClient.interface.notificationManager) {
-              window.gameClient.interface.notificationManager.setCancelMessage("You can only use multi-use items on the actionbar.");
-            }
           }
         }
       } else if (abSourceIdx !== undefined) {
