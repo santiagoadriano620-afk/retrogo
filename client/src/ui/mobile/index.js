@@ -175,6 +175,10 @@ MobileFullscreen.prototype.__injectStyles = function () {
     '#actionbar .actionbar-slot.highlighted {' +
     '  border-color: #ffcc00; box-shadow: 0 0 8px rgba(255,204,0,0.6);' +
     '}' +
+    '#actionbar .actionbar-slot.tapped {' +
+    '  border-color: #aaddff; box-shadow: 0 0 10px rgba(170,221,255,0.7);' +
+    '  background: rgba(50,60,80,0.8);' +
+    '}' +
     'body.mobile-fullscreen #skill-window,' +
     'body.mobile-fullscreen #battle-window,' +
     'body.mobile-fullscreen #friend-window,' +

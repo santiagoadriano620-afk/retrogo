@@ -49,24 +49,14 @@ MobileFullscreen.prototype.__bindSlotTouch = function () {
     if (obj) {
       obj.startX = touch.clientX;
       obj.startY = touch.clientY;
-      // Resolve CI immediately (container reference may become stale by touchend)
+      // Resolve CI from __containerId directly (container reference may become stale by touchend)
       var objCI = -3;
       if (obj.which === gameClient.player.equipment) {
         objCI = -2;
-        console.log('[DRAG] source is EQUIPMENT, ci=-2');
-      } else {
-        var cId = obj.which.__containerId;
-        console.log('[DRAG] container __containerId=' + cId + ' (type=' + typeof cId + ')');
-        for (var fc = 0; fc < 256; fc++) {
-          var fcont = gameClient.player.getContainer(fc);
-          if (fcont) {
-            if (fcont === obj.which) { objCI = fc; console.log('[DRAG] CI match at fc='+fc); break; }
-          }
-        }
-        if (objCI === -3) console.log('[DRAG] CI NOT FOUND in 0-255');
+      } else if (obj.which && typeof obj.which.__containerId === 'number') {
+        objCI = obj.which.__containerId;
       }
       obj.__sourceCI = objCI;
-      console.log('[DRAG] sourceCI='+objCI);
       return obj;
     }
 
@@ -78,7 +68,7 @@ MobileFullscreen.prototype.__bindSlotTouch = function () {
       if (abData && abData.ci !== undefined) {
         var which = self.__getContainerFromCI(abData.ci);
         if (which && which.peekItem(abData.index)) {
-          return { which: which, index: abData.index, startX: touch.clientX, startY: touch.clientY, __actionbarSource: abIdx };
+          return { which: which, index: abData.index, startX: touch.clientX, startY: touch.clientY, __actionbarSource: abIdx, __abItemId: abData.itemId };
         }
       }
       return null;
@@ -231,7 +221,6 @@ MobileFullscreen.prototype.__bindSlotTouch = function () {
 
     // Drop on actionbar slot → store reference instead of moving item
     if (toObject && toObject.isActionbar) {
-      try {
       var abSlot = toObject.index;
       var slotCount = self.__getActionbarSlotCount();
       if (abSlot >= 0 && abSlot < slotCount) {
@@ -243,7 +232,11 @@ MobileFullscreen.prototype.__bindSlotTouch = function () {
           if (abSourceIdx !== undefined && abSourceIdx !== abSlot) {
             self.__actionbarSlots[abSourceIdx] = null;
           }
-          self.__actionbarSlots[abSlot] = { ci: fromCI, index: fromObject.index };
+          var itemId = item.id;
+          if (abSourceIdx !== undefined && self.__dragSource.__abItemId !== undefined) {
+            itemId = self.__dragSource.__abItemId;
+          }
+          self.__actionbarSlots[abSlot] = { ci: fromCI, index: fromObject.index, itemId: itemId };
           self.__renderActionbarSlot(abSlot);
           if (abSourceIdx !== undefined && abSourceIdx !== abSlot) {
             self.__renderActionbarSlot(abSourceIdx);
@@ -255,8 +248,6 @@ MobileFullscreen.prototype.__bindSlotTouch = function () {
           }
         }
       }
-      } catch(er) { console.error('[DRAG] actionbar drop error:', er, er.stack); }
-      // Fall through to clear drag state below
     } else if (abSourceIdx !== undefined) {
       // Drag from actionbar to ground/container: move item, clear actionbar slot
       if (toObject && toObject.which) {

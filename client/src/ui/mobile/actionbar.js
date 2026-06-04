@@ -11,10 +11,8 @@ MobileFullscreen.prototype.__getActionbarSlotCount = function () {
 MobileFullscreen.prototype.__saveActionbarData = function () {
   if (!gameClient || !gameClient.player) return;
   try {
-    var str = JSON.stringify(this.__actionbarSlots);
-    localStorage.setItem('retrogo_actionbar_data', str);
-    console.log('[AB] saved data:', str);
-  } catch(e) { console.error('[AB] save error:', e); }
+    localStorage.setItem('retrogo_actionbar_data', JSON.stringify(this.__actionbarSlots));
+  } catch(e) {}
 };
 
 MobileFullscreen.prototype.__renderActionbarSlot = function (index) {
@@ -33,11 +31,8 @@ MobileFullscreen.prototype.__renderActionbarSlot = function (index) {
     if (countEl) countEl.style.display = 'none';
     return;
   }
-  console.log('[AB] render slot', index, 'ci=' + data.ci, 'idx=' + data.index);
-
   var which = this.__getContainerFromCI(data.ci);
   if (!which) {
-    console.log('[AB] container not found for ci=' + data.ci + ', clearing slot');
     this.__actionbarSlots[index] = null;
     var ctx = canvasEl.getContext('2d');
     ctx.clearRect(0, 0, 32, 32);
@@ -47,7 +42,18 @@ MobileFullscreen.prototype.__renderActionbarSlot = function (index) {
 
   var item = which.peekItem(data.index);
   if (!item) {
-    console.log('[AB] item not found at ci=' + data.ci + ' idx=' + data.index + ', clearing slot');
+    // Auto-refill: search for another item with same type in this container
+    if (data.itemId && which && which.slots) {
+      for (var si = 0; si < which.slots.length; si++) {
+        var s = which.slots[si];
+        if (s && s.item && s.item.id === data.itemId && s.item.id !== undefined) {
+          this.__actionbarSlots[index] = { ci: data.ci, index: si, itemId: data.itemId };
+          this.__renderActionbarSlot(index);
+          this.__saveActionbarData();
+          return;
+        }
+      }
+    }
     this.__actionbarSlots[index] = null;
     var ctx = canvasEl.getContext('2d');
     ctx.clearRect(0, 0, 32, 32);
@@ -60,7 +66,6 @@ MobileFullscreen.prototype.__renderActionbarSlot = function (index) {
   }
   this.__actionbarCanvases[index].clear();
   this.__actionbarCanvases[index].drawSprite(item, false, false);
-  console.log('[AB] render success for slot', index);
 
   if (countEl) {
     if (item.isStackable && item.count > 1) {
@@ -87,11 +92,8 @@ MobileFullscreen.prototype.__updateActionbarHighlight = function () {
     var muoCI = -3;
     if (muo.which === gameClient.player.equipment) {
       muoCI = -2;
-    } else {
-      for (var j = 0; j < 256; j++) {
-        var cont = gameClient.player.getContainer(j);
-        if (cont && cont === muo.which) { muoCI = j; break; }
-      }
+    } else if (muo.which && typeof muo.which.__containerId === 'number') {
+      muoCI = muo.which.__containerId;
     }
     for (var i = 0; i < this.__actionbarSlots.length; i++) {
       var slot = this.__actionbarSlots[i];
@@ -101,6 +103,12 @@ MobileFullscreen.prototype.__updateActionbarHighlight = function () {
       }
     }
   }
+  // Clear tapped when multi-use ends
+  if (!gameClient.mouse.__multiUseObject) {
+    var tappedEls = this.__actionbarEl.querySelectorAll('.actionbar-slot.tapped');
+    for (var t = 0; t < tappedEls.length; t++) tappedEls[t].classList.remove('tapped');
+  }
+
   if (highlighted !== this.__actionbarHighlight) {
     this.__actionbarHighlight = highlighted;
     var slotEls = this.__actionbarEl.querySelectorAll('.actionbar-slot');
@@ -123,10 +131,25 @@ MobileFullscreen.prototype.__handleActionbarUse = function (index) {
   }
   var item = which.peekItem(data.index);
   if (!item) {
-    this.__actionbarSlots[index] = null;
-    this.__renderActionbarSlot(index);
-    this.__saveActionbarData();
-    return;
+    // Try auto-refill before clearing
+    if (data.itemId && which.slots) {
+      for (var si = 0; si < which.slots.length; si++) {
+        var s = which.slots[si];
+        if (s && s.item && s.item.id === data.itemId) {
+          this.__actionbarSlots[index] = { ci: data.ci, index: si, itemId: data.itemId };
+          this.__renderActionbarSlot(index);
+          this.__saveActionbarData();
+          item = which.peekItem(si);
+          if (item) break;
+        }
+      }
+    }
+    if (!item) {
+      this.__actionbarSlots[index] = null;
+      this.__renderActionbarSlot(index);
+      this.__saveActionbarData();
+      return;
+    }
   }
   gameClient.mouse.use({ which: which, index: data.index });
   this.__updateActionbarHighlight();
@@ -162,6 +185,12 @@ MobileFullscreen.prototype.__createActionbar = function () {
 
       slotEl.addEventListener('touchstart', function (e) {
         if (self.__lockStates.actionbar === false) return;
+        // Clear tapped from all slots, add to current
+        if (self.__actionbarEl) {
+          var prev = self.__actionbarEl.querySelectorAll('.actionbar-slot.tapped');
+          for (var p = 0; p < prev.length; p++) prev[p].classList.remove('tapped');
+        }
+        slotEl.classList.add('tapped');
         self.__tapStartX = e.changedTouches[0].clientX;
         self.__tapStartY = e.changedTouches[0].clientY;
         self.__tapSlotIndex = slotIndex;
@@ -199,8 +228,18 @@ MobileFullscreen.prototype.__createActionbar = function () {
       for (var k = 0; k < data.length && k < slotCount; k++) {
         if (data[k] && typeof data[k].ci === 'number') {
           var which = this.__getContainerFromCI(data[k].ci);
+          var restoreId = data[k].itemId;
           if (which && which.peekItem(data[k].index)) {
-            this.__actionbarSlots[k] = { ci: data[k].ci, index: data[k].index };
+            this.__actionbarSlots[k] = { ci: data[k].ci, index: data[k].index, itemId: restoreId };
+          } else if (restoreId && which && which.slots) {
+            // Auto-refill on restore: search by item type
+            for (var si = 0; si < which.slots.length; si++) {
+              var s = which.slots[si];
+              if (s && s.item && s.item.id === restoreId) {
+                this.__actionbarSlots[k] = { ci: data[k].ci, index: si, itemId: restoreId };
+                break;
+              }
+            }
           }
         }
       }
