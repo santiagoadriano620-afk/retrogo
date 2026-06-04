@@ -4,13 +4,24 @@ MobileFullscreen = function () {
   this.isMobile = this.__detectMobile();
   this.active = false;
   this.button = null;
+  this.dpad = null;
+  this.dpadTouchId = null;
+  this.dpadDirection = null;
+  this.dpadKey = null;
+  this.DPAD_SIZE = 120;
+  this.DPAD_DEAD_ZONE = 18;
+  this.__lastTapTime = 0;
+  this.__lastTapX = 0;
+  this.__lastTapY = 0;
 
   if (this.isMobile) {
     this.__injectStyles();
     this.__createButton();
+    this.__createDpad();
     this.__bindEvents();
     this.__checkOrientation();
     this.__overrideMethods();
+    this.__bindCanvasTouch();
   }
 
   mobileFS = this;
@@ -88,7 +99,39 @@ MobileFullscreen.prototype.__injectStyles = function () {
     'body.mobile-fullscreen #game-wrapper .lower * { display: none !important; }' +
     'body.mobile-fullscreen .chatbox-wrapper { display: none !important; }' +
     'body {-webkit-touch-callout: none; -webkit-user-select: none;' +
-    '  user-select: none; touch-action: none;}';
+    '  user-select: none; touch-action: none;}' +
+    '#mobile-dpad {' +
+    '  display: none; position: fixed; bottom: 42px; left: 32px;' +
+    '  z-index: 2147483646; touch-action: none;' +
+    '  width: 120px; height: 120px; border-radius: 50%;' +
+    '  background: transparent;' +
+    '  border: 2px solid rgba(255,255,255,0.25);' +
+    '  user-select: none; -webkit-user-select: none;' +
+    '}' +
+    '#mobile-dpad.visible { display: block; }' +
+    '#mobile-dpad .dpad-arrow {' +
+    '  position: absolute; font-size: 20px;' +
+    '  color: rgba(255,255,255,0.5); font-weight: bold;' +
+    '  pointer-events: none; transform: translate(-50%, -50%);' +
+    '  transition: color 0.08s, text-shadow 0.08s;' +
+    '}' +
+    '#mobile-dpad .dpad-arrow.up    { top: 10%; left: 50%; }' +
+    '#mobile-dpad .dpad-arrow.down  { top: 90%; left: 50%; }' +
+    '#mobile-dpad .dpad-arrow.left  { top: 50%; left: 10%; }' +
+    '#mobile-dpad .dpad-arrow.right { top: 50%; left: 90%; }' +
+    '#mobile-dpad .dpad-arrow.active { color: rgba(100,180,255,0.9); text-shadow: 0 0 20px rgba(100,180,255,0.5); }' +
+    '#mobile-dpad .dpad-ball {' +
+    '  position: absolute; top: 50%; left: 50%;' +
+    '  width: 28px; height: 28px; border-radius: 50%;' +
+    '  background: radial-gradient(circle at 40% 35%, #e8e8f0, #8888a0);' +
+    '  transform: translate(-50%, -50%);' +
+    '  box-shadow: 0 2px 8px rgba(0,0,0,0.3), inset 0 1px 4px rgba(255,255,255,0.5);' +
+    '  pointer-events: none; z-index: 1;' +
+    '  will-change: transform;' +
+    '}' +
+    '#mobile-dpad .dpad-ball.returning {' +
+    '  transition: transform 0.15s ease-out;' +
+    '}';
   document.head.appendChild(s);
 };
 
@@ -136,6 +179,213 @@ MobileFullscreen.prototype.__createButton = function () {
   this.button.id = 'mobile-play-button';
   this.button.textContent = 'Jogar';
   document.body.appendChild(this.button);
+};
+
+MobileFullscreen.prototype.__createDpad = function () {
+  var el = document.createElement('div');
+  el.id = 'mobile-dpad';
+  el.innerHTML =
+    '<span class="dpad-arrow up">&#9650;</span>' +
+    '<span class="dpad-arrow down">&#9660;</span>' +
+    '<span class="dpad-arrow left">&#9664;</span>' +
+    '<span class="dpad-arrow right">&#9654;</span>' +
+    '<div class="dpad-ball"></div>';
+  document.body.appendChild(el);
+  this.dpad = el;
+  this.__bindDpadEvents(el);
+};
+
+var DPAD_KEY_MAP = null;
+
+function DPAD_GET_KEY(dir) {
+  if (!DPAD_KEY_MAP) {
+    DPAD_KEY_MAP = {};
+    DPAD_KEY_MAP[CONST.DIRECTION.NORTH] = 38;
+    DPAD_KEY_MAP[CONST.DIRECTION.SOUTH] = 40;
+    DPAD_KEY_MAP[CONST.DIRECTION.EAST]  = 39;
+    DPAD_KEY_MAP[CONST.DIRECTION.WEST]  = 37;
+    DPAD_KEY_MAP[CONST.DIRECTION.NORTHEAST] = 69;
+    DPAD_KEY_MAP[CONST.DIRECTION.NORTHWEST] = 81;
+    DPAD_KEY_MAP[CONST.DIRECTION.SOUTHEAST] = 67;
+    DPAD_KEY_MAP[CONST.DIRECTION.SOUTHWEST] = 90;
+  }
+  return DPAD_KEY_MAP[dir];
+}
+
+MobileFullscreen.prototype.__directionFromAngle = function (angleDeg) {
+  var sectors = [
+    { min: -22.5, max: 22.5, dir: CONST.DIRECTION.EAST, arrow: 'right' },
+    { min: 22.5, max: 67.5, dir: CONST.DIRECTION.SOUTHEAST, arrow: null },
+    { min: 67.5, max: 112.5, dir: CONST.DIRECTION.SOUTH, arrow: 'down' },
+    { min: 112.5, max: 157.5, dir: CONST.DIRECTION.SOUTHWEST, arrow: null },
+    { min: 157.5, max: 180, dir: CONST.DIRECTION.WEST, arrow: 'left' },
+    { min: -180, max: -157.5, dir: CONST.DIRECTION.WEST, arrow: 'left' },
+    { min: -157.5, max: -112.5, dir: CONST.DIRECTION.NORTHWEST, arrow: null },
+    { min: -112.5, max: -67.5, dir: CONST.DIRECTION.NORTH, arrow: 'up' },
+    { min: -67.5, max: -22.5, dir: CONST.DIRECTION.NORTHEAST, arrow: null }
+  ];
+  for (var i = 0; i < sectors.length; i++) {
+    if (angleDeg >= sectors[i].min && angleDeg < sectors[i].max) {
+      return sectors[i];
+    }
+  }
+  return null;
+};
+
+MobileFullscreen.prototype.__getKeyboard = function () {
+  if (window.gameClient && window.gameClient.keyboard) {
+    return window.gameClient.keyboard;
+  }
+  return null;
+};
+
+MobileFullscreen.prototype.__dpadReleaseKey = function () {
+  var kb = this.__getKeyboard();
+  if (this.dpadKey !== null) {
+    if (kb) kb.__activeKeys.delete(this.dpadKey);
+    this.dpadKey = null;
+  }
+};
+
+MobileFullscreen.prototype.__dpadPressKey = function (dir) {
+  var key = DPAD_GET_KEY(dir);
+  if (key === undefined) return;
+  var kb = this.__getKeyboard();
+  if (kb) kb.__activeKeys.add(key);
+  this.dpadKey = key;
+};
+
+MobileFullscreen.prototype.__bindDpadEvents = function (el) {
+  var self = this;
+
+  var getCenter = function () {
+    var r = el.getBoundingClientRect();
+    return { x: r.left + r.width / 2, y: r.top + r.height / 2 };
+  };
+
+  var handleStart = function (clientX, clientY, touchId) {
+    if (self.dpadTouchId !== null) return;
+    self.dpadTouchId = touchId;
+    self.__dpadProcessMove(clientX, clientY, getCenter());
+  };
+
+  var handleEnd = function () {
+    self.__dpadReleaseKey();
+    self.dpadTouchId = null;
+    self.dpadDirection = null;
+    self.__dpadResetBall();
+    var arrows = el.querySelectorAll('.dpad-arrow');
+    for (var i = 0; i < arrows.length; i++) arrows[i].classList.remove('active');
+  };
+
+  el.addEventListener('touchstart', function (e) {
+    e.preventDefault();
+    var t = e.changedTouches[0];
+    handleStart(t.clientX, t.clientY, t.identifier);
+  });
+
+  el.addEventListener('touchmove', function (e) {
+    e.preventDefault();
+    if (self.dpadTouchId === null) return;
+    for (var i = 0; i < e.changedTouches.length; i++) {
+      if (e.changedTouches[i].identifier === self.dpadTouchId) {
+        self.__dpadProcessMove(e.changedTouches[i].clientX, e.changedTouches[i].clientY, getCenter());
+        break;
+      }
+    }
+  });
+
+  el.addEventListener('touchend', function (e) {
+    e.preventDefault();
+    for (var i = 0; i < e.changedTouches.length; i++) {
+      if (e.changedTouches[i].identifier === self.dpadTouchId) {
+        handleEnd();
+        break;
+      }
+    }
+  });
+
+  el.addEventListener('touchcancel', function (e) {
+    handleEnd();
+  });
+
+  el.addEventListener('mousedown', function (e) {
+    handleStart(e.clientX, e.clientY, -1);
+  });
+
+  document.addEventListener('mouseup', function (e) {
+    if (self.dpadTouchId === -1) handleEnd();
+  });
+
+  el.addEventListener('mousemove', function (e) {
+    if (self.dpadTouchId === -1) {
+      self.__dpadProcessMove(e.clientX, e.clientY, getCenter());
+    }
+  });
+};
+
+MobileFullscreen.prototype.__dpadUpdateBall = function (angleRad, dist) {
+  var ball = this.dpad.querySelector('.dpad-ball');
+  if (!ball) return;
+
+  var maxBallOffset = 28;
+  var maxTouchDist = this.DPAD_SIZE * 0.45;
+  var clamped = Math.min(dist, maxTouchDist);
+  var ratio = maxTouchDist > 0 ? clamped / maxTouchDist : 0;
+  var ballDist = ratio * maxBallOffset;
+
+  if (ballDist < 1) {
+    ball.classList.add('returning');
+    ball.style.transform = 'translate(-50%, -50%)';
+  } else {
+    ball.classList.remove('returning');
+    var bx = Math.cos(angleRad) * ballDist;
+    var by = Math.sin(angleRad) * ballDist;
+    ball.style.transform = 'translate(calc(-50% + ' + bx.toFixed(1) + 'px), calc(-50% + ' + by.toFixed(1) + 'px))';
+  }
+};
+
+MobileFullscreen.prototype.__dpadResetBall = function () {
+  var ball = this.dpad.querySelector('.dpad-ball');
+  if (!ball) return;
+  ball.classList.add('returning');
+  ball.style.transform = 'translate(-50%, -50%)';
+};
+
+MobileFullscreen.prototype.__dpadProcessMove = function (clientX, clientY, center) {
+  var dx = clientX - center.x;
+  var dy = clientY - center.y;
+  var dist = Math.sqrt(dx * dx + dy * dy);
+
+  var arrows = this.dpad.querySelectorAll('.dpad-arrow');
+  for (var i = 0; i < arrows.length; i++) arrows[i].classList.remove('active');
+
+  if (dist < this.DPAD_DEAD_ZONE) {
+    this.__dpadReleaseKey();
+    this.dpadDirection = null;
+    this.__dpadResetBall();
+    return;
+  }
+
+  var angleRad = Math.atan2(dy, dx);
+  var angleDeg = angleRad * (180 / Math.PI);
+  var sector = this.__directionFromAngle(angleDeg);
+  if (!sector) return;
+
+  this.dpadDirection = sector.dir;
+  this.__dpadUpdateBall(angleRad, dist);
+  if (sector.arrow) {
+    var arrowEl = this.dpad.querySelector('.dpad-arrow.' + sector.arrow);
+    if (arrowEl) arrowEl.classList.add('active');
+  }
+
+  // Release old key before pressing new one, to avoid stale keys
+  if (this.dpadKey !== null && DPAD_GET_KEY(sector.dir) !== this.dpadKey) {
+    this.__dpadReleaseKey();
+  }
+  if (this.dpadKey === null) {
+    this.__dpadPressKey(sector.dir);
+  }
 };
 
 MobileFullscreen.prototype.__bindEvents = function () {
@@ -198,8 +448,11 @@ MobileFullscreen.prototype.__handleFullscreenChange = function () {
     var self = this;
     setTimeout(function () { self.__adjustCanvas(); }, 300);
     setTimeout(function () { self.__adjustCanvas(); }, 800);
+    this.__updateDpadVisibility();
   } else {
     document.body.classList.remove('mobile-fullscreen');
+    this.__dpadReleaseKey();
+    this.__hideDpad();
     this.__restoreCanvas();
     if (window.gameClient && window.gameClient.interface) {
       window.gameClient.interface.handleResize();
@@ -207,6 +460,107 @@ MobileFullscreen.prototype.__handleFullscreenChange = function () {
   }
 
   this.__checkOrientation();
+};
+
+MobileFullscreen.prototype.__updateDpadVisibility = function () {
+  if (!this.dpad) return;
+  var show = this.active && window.gameClient && window.gameClient.player;
+  this.dpad.classList.toggle('visible', show);
+};
+
+MobileFullscreen.prototype.__hideDpad = function () {
+  if (!this.dpad) return;
+  this.dpad.classList.remove('visible');
+  this.dpadTouchId = null;
+  this.dpadDirection = null;
+  this.__dpadResetBall();
+  var arrows = this.dpad.querySelectorAll('.dpad-arrow');
+  for (var i = 0; i < arrows.length; i++) arrows[i].classList.remove('active');
+};
+
+MobileFullscreen.prototype.__bindCanvasTouch = function () {
+  var self = this;
+  var canvas = document.getElementById('canvas-id');
+  if (!canvas) return;
+
+  canvas.addEventListener('touchstart', function (e) {
+    if (!self.active) return;
+    if (!gameClient || !gameClient.player) return;
+
+    if (!gameClient.mouse || !gameClient.mouse.getWorldObject) return;
+
+    var touch = e.changedTouches[0];
+    if (!touch) return;
+
+    var now = Date.now();
+    var dt = now - self.__lastTapTime;
+    var dx = touch.clientX - self.__lastTapX;
+    var dy = touch.clientY - self.__lastTapY;
+    self.__lastTapTime = now;
+    self.__lastTapX = touch.clientX;
+    self.__lastTapY = touch.clientY;
+
+    var touchEvent = { clientX: touch.clientX, clientY: touch.clientY, target: e.target };
+    var worldObj = gameClient.mouse.getWorldObject(touchEvent);
+    if (!worldObj || !worldObj.which) return;
+
+    var tile = worldObj.which;
+
+    // Double tap on non-creature → use action
+    if (dt < 300 && Math.sqrt(dx * dx + dy * dy) < 30) {
+      if (tile && tile.monsters) {
+        var monsterCount = 0;
+        tile.monsters.forEach(function (c) { if (c.type !== 0) monsterCount++; });
+        if (monsterCount === 0) {
+          gameClient.mouse.use({ which: tile, index: 0xFF });
+          e.preventDefault();
+        }
+      }
+      return;
+    }
+
+    // Single tap → check for creatures with expanded hitbox
+    if (!tile || !tile.monsters || !tile.__position) return;
+
+    var creatureTile = tile;
+    var hasMonster = false;
+    var selfCheck = function (t) {
+      var found = false;
+      t.monsters.forEach(function (c) {
+        if (!found && c.type !== 0 && c !== gameClient.player) found = true;
+      });
+      return found;
+    };
+
+    // Check center tile
+    hasMonster = selfCheck(tile);
+
+    // If none, check 4 cardinal neighbors (~1.5 SQM hitbox)
+    if (!hasMonster) {
+      var pos = tile.__position;
+      var offsets = [
+        { x: 0, y: -1 }, { x: 0, y: 1 },
+        { x: -1, y: 0 }, { x: 1, y: 0 }
+      ];
+      for (var i = 0; i < offsets.length; i++) {
+        var nPos = new Position(pos.x + offsets[i].x, pos.y + offsets[i].y, pos.z);
+        var chunk = gameClient.world.getChunkFromWorldPosition(nPos);
+        if (chunk) {
+          var nTile = chunk.getFirstTileFromTop(nPos.projected());
+          if (nTile && selfCheck(nTile)) {
+            creatureTile = nTile;
+            hasMonster = true;
+            break;
+          }
+        }
+      }
+    }
+
+    if (hasMonster) {
+      gameClient.world.targetMonster(creatureTile.monsters);
+      e.preventDefault();
+    }
+  });
 };
 
 MobileFullscreen.prototype.__isFullscreenActive = function () {
@@ -308,27 +662,24 @@ MobileFullscreen.prototype.__adjustCanvas = function () {
     var renderer = gameClient.renderer;
     renderer.playerTileOffsetX = TILE_COUNT / 2;
     renderer.playerTileOffsetY = TILE_COUNT / 2;
-    // Uniform culling: 2.5 tiles pre-render outside each viewport edge
-    // Garante que objetos (items, creatures) já estejam renderizados
-    // antes de entrarem na tela, sem delay visível.
-    renderer.__cullMarginLeft = 10;
-    renderer.__cullMarginRight = 10;
-    renderer.__cullMarginTop = 10;
-    renderer.__cullMarginBottom = 10;
+    // Uniform culling: 6.5 tiles pre-render outside each viewport edge
+    renderer.__cullMarginLeft = 14;
+    renderer.__cullMarginRight = 14;
+    renderer.__cullMarginTop = 14;
+    renderer.__cullMarginBottom = 14;
     // Bg cache: 2 more tiles than foreground for scroll safety
-    renderer.__bgCullMarginLeft = 12;
-    renderer.__bgCullMarginRight = 12;
-    renderer.__bgCullMarginTop = 12;
-    renderer.__bgCullMarginBottom = 12;
+    renderer.__bgCullMarginLeft = 16;
+    renderer.__bgCullMarginRight = 16;
+    renderer.__bgCullMarginTop = 16;
+    renderer.__bgCullMarginBottom = 16;
     renderer.__bgCacheShiftX = 1;
     renderer.__bgCacheShiftY = 1;
     renderer.__tileCacheNeedsRebuild = true;
 
-    // Recreate bg cache canvases large enough for the 32px shift + entering tile.
-    // 576 = 18 tiles × 32px (viewport 15 + 2 entering + 1 shift margin)
-    // Default 1080×482 is too short — the vertical shift clips bottom content.
+    // Recreate bg cache canvases large enough for the 32px shift + wide culling.
+    // 640 = 20 tiles × 32px — gives room for bgCullMargin=16 with shiftY=1.
     var bgW = 1080;
-    var bgH = 576;
+    var bgH = 640;
     for (var i = 0; i < 16; i++) {
       renderer.__backgroundCaches[i] = new Canvas(null, bgW, bgH);
     }
@@ -439,11 +790,13 @@ try {
   new MobileFullscreen();
   if (mobileFS && mobileFS.isMobile) {
     var checkVisible = function () { mobileFS.__checkOrientation(); };
+    var checkPlayer = function () { mobileFS.__updateDpadVisibility(); };
     window.addEventListener('load', function () {
       setTimeout(checkVisible, 500);
       setTimeout(checkVisible, 1500);
     });
     setInterval(checkVisible, 3000);
+    setInterval(checkPlayer, 1000);
   }
 } catch(e) {
   console.warn("MobileFullscreen:", e);

@@ -95,7 +95,7 @@ Used in two places:
 | Context | `playerTileOffset` | `cullMargin` | `bgCullMargin` |
 |---|---|---|---|
 | **Desktop** | X=14, Y=7 | L=12 R=16 T=7 B=7 | L=16 R=22 T=9 B=11 |
-| **Mobile FS** | **7.5** (both) | **10** (all sides) | **12** (all sides) |
+| **Mobile FS** | **7.5** (both) | **14** (all sides) | **16** (all sides) |
 
 ## Background Cache
 

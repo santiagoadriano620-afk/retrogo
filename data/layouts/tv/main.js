@@ -36,7 +36,7 @@ const TVLayout = {
 };
 
 const TVFocusManager = function () {
-  this.focusableSelector = 'button, .slot, .window, .mobile-hotbar-slot, .mobile-action-btn, input, select';
+  this.focusableSelector = 'button, .slot, .window, input, select';
   this.focusableElements = [];
   this.currentFocusIndex = -1;
   this.isActive = false;

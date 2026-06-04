@@ -29,8 +29,6 @@ const GameClient = function () {
   // Create a keyboard and mouse input handlers
   this.keyboard = new Keyboard();
   this.mouse = new Mouse();
-  this.touch = new Touch();
-
   // Create a networking interface for communication with the server
   this.networkManager = new NetworkManager();
 

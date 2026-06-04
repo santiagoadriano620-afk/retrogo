@@ -153,8 +153,47 @@ foreground tiles when ~256 suffice.
 | Type | Calculation | Value |
 |---|---|---|
 | Visible | `playerTileOffset = 7.5` | 15 tiles |
-| Movement buffer | 1 tile entering from edge | +1 |
-| Restore at rest | entering tile at pos -0.5 after movement | ensures margin ≥ 8 |
-| **Foreground margin** | | **8** |
-| BG safety | 2 tiles beyond foreground | +2 |
-| **BG cache margin** | | **10** |
+| Pre-render buffer | objects rendered this many tiles before entering viewport | 6.5 |
+| **Foreground margin** | | **14** |
+| BG cache | 2 tiles beyond foreground for safety | **16** |
+
+---
+
+## 10. BG cache height increased to 640 px (`mobile-fullscreen.js`)
+
+With `bgCullMargin = 16` on all sides, the bg cache draws tiles from -8.5 to
+23.5 (32 tiles = 1024 px range). After the 32 px shift and quad offset, the
+viewport reads up to cache pixel 544 during UP movement. Height raised from
+576 to **640** to safely accommodate the wider culling + shift.
+
+---
+
+## 11. Old touch/D-pad system removed
+
+Deleted files:
+- `data/layouts/mobile-tablet/` (entire directory, 7 files)
+- `client/src/input/touch.js`
+
+Removed references from 7 files (launcher.js, gameclient.js, manager.js,
+base.css, tv/main.js, desktop/main.css × 2).
+
+---
+
+## 12. New modern D-pad added (`mobile-fullscreen.js`)
+
+A touch-based virtual D-pad built directly into `mobile-fullscreen.js`:
+
+- **Position**: bottom-left of screen, 150 × 150 px circle
+- **Design**: semi-transparent dark radial gradient with white arrow indicators
+- **Detection**: angle-based 8-direction (N, S, E, W, NE, NW, SE, SW)
+- **Dead zone**: 18 px center radius prevents accidental moves
+- **Auto-repeat**: immediate first step + 150 ms interval while holding
+- **Integration**: calls `Keyboard.handleMoveKey(direction)` — the same API
+  used by mouse drag and keyboard input
+- **Lifecycle**: shown on fullscreen enter, hidden on exit, cleaned up on
+  fullscreen change
+
+Key properties:
+- `DPAD_SIZE = 150` (px, visual diameter)
+- `DPAD_DEAD_ZONE = 18` (px, center dead zone)
+- `DPAD_INTERVAL_MS = 150` (ms between auto-repeat steps)

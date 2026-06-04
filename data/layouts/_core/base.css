@@ -158,4 +158,3 @@ button.container-btn[action="back"].visible { display: inline-block; }
 }
 .sex-radio input[type="radio"]:disabled + .radio-circle { opacity: 0.4; cursor: not-allowed; }
 
-[data-layout="mobile-tablet"] #fullscreen-button { display: none !important; }

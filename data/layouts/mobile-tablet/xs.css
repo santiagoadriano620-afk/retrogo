@@ -1,8 +1,0 @@
-:root { --mobile-action-btn-size: 42px; --mobile-joystick-size: 80px; --mobile-hotbar-height: 50px; --mobile-header-height: 32px; }
-.mobile-action-btn { font-size: 18px !important; }
-#mobile-hotbar { gap: 4px; padding: 4px 6px; }
-.mobile-hotbar-slot { width: 34px; height: 34px; }
-.mobile-hotbar-slot canvas { width: 28px; height: 28px; }
-#mobile-actions { gap: 5px; }
-#mobile-status-bar { font-size: 10px; }
-.mobile-bar { height: 14px; }

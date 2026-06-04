@@ -268,8 +268,13 @@ Keyboard.prototype.handleMoveKey = function (direction) {
    * Handles movement by direction constant (used by touch controls)
    */
 
+  // Block if player doesn't exist yet
+  if (!gameClient.player) {
+    return;
+  }
+
   // Block all input when player is dead
-  if (gameClient.player && gameClient.player.isDead) {
+  if (gameClient.player.isDead) {
     return;
   }
 

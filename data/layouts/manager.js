@@ -38,11 +38,9 @@ const LayoutManager = {
   detect() {
     if (this.settings.preferredLayout) return this.settings.preferredLayout;
     const w = window.innerWidth;
-    const touch = ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
     const ua = navigator.userAgent.toLowerCase();
     if (/tizen|webos|smart-tv|smarttv|netcast|viera|bravia|googletv|roku|firetv/i.test(ua)) return 'tv';
     if ((navigator.getGamepads ? Array.from(navigator.getGamepads()).some(g => g !== null) : false) && w >= 1920) return 'tv';
-    if ((touch && (w <= 1024 || /mobi|android|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(ua))) || w <= 768) return 'mobile-tablet';
     return 'desktop';
   },
 
