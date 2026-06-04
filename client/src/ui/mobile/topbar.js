@@ -1,5 +1,5 @@
 MobileFullscreen.prototype.__createTopbar = function () {
-  if (this.__topbarEl || !window.gameClient || !window.gameClient.player) return;
+  if (this.__topbarEl || !gameClient || !gameClient.player) return;
   var self = this;
   var wrapper = document.getElementById('canvas-id');
   if (!wrapper) return;
@@ -81,7 +81,7 @@ MobileFullscreen.prototype.__createTopbar = function () {
     }
   });
 
-  var intf = window.gameClient && window.gameClient.interface;
+  var intf = gameClient && gameClient.interface;
   var wm = intf && intf.windowManager;
   if (wm && !wm.__mobileFS_overridden) {
     wm.__mobileFS_overridden = true;
@@ -265,13 +265,13 @@ MobileFullscreen.prototype.__createTopbar = function () {
       var name = prompt('Enter character name to add to VIP:');
       if (name && name.trim()) {
         name = name.trim();
-        if (name === window.gameClient.player.name) {
-          return window.gameClient.interface.setCancelMessage('You cannot add yourself to the VIP list.');
+        if (name === gameClient.player.name) {
+          return gameClient.interface.setCancelMessage('You cannot add yourself to the VIP list.');
         }
-        if (window.gameClient.player.friendlist.has(name)) {
-          return window.gameClient.interface.setCancelMessage('This player is already in your VIP list.');
+        if (gameClient.player.friendlist.has(name)) {
+          return gameClient.interface.setCancelMessage('This player is already in your VIP list.');
         }
-        window.gameClient.send(new FriendAddPacket(name));
+        gameClient.send(new FriendAddPacket(name));
       }
     });
     // Override double-click on friend entries to remove instead of private chat
@@ -284,8 +284,8 @@ MobileFullscreen.prototype.__createTopbar = function () {
         e.stopPropagation();
         var friend = entry.getAttribute('friend');
         if (friend && confirm('Remove ' + friend + ' from VIP?')) {
-          window.gameClient.send(new FriendRemovePacket(friend));
-          window.gameClient.player.friendlist.remove(friend);
+          gameClient.send(new FriendRemovePacket(friend));
+          gameClient.player.friendlist.remove(friend);
         }
       });
     }
@@ -328,16 +328,16 @@ MobileFullscreen.prototype.__createTopbar = function () {
     if (!tb) return;
     var fps = tb.querySelector('.topbar-fps');
     var ping = tb.querySelector('.topbar-ping');
-    if (fps && window.gameClient && window.gameClient.renderer && window.gameClient.renderer.debugger) {
-      fps.textContent = 'FPS:' + (window.gameClient.renderer.debugger.__averageFPS || '0');
+    if (fps && gameClient && gameClient.renderer && gameClient.renderer.debugger) {
+      fps.textContent = 'FPS:' + (gameClient.renderer.debugger.__averageFPS || '0');
     }
-    if (ping && window.gameClient && window.gameClient.networkManager) {
-      ping.textContent = 'Ping:' + (Math.round(window.gameClient.networkManager.state.latency) || 0) + 'ms';
+    if (ping && gameClient && gameClient.networkManager) {
+      ping.textContent = 'Ping:' + (Math.round(gameClient.networkManager.state.latency) || 0) + 'ms';
     }
   }, 1000);
 
-  if (window.gameClient && window.gameClient.player) {
-    window.gameClient.player.__updateMobileStatusBars();
+  if (gameClient && gameClient.player) {
+    gameClient.player.__updateMobileStatusBars();
   }
 };
 
@@ -360,7 +360,7 @@ MobileFullscreen.prototype.__destroyTopbar = function () {
     }, this);
     this.__windowOrigParents = null;
   }
-  var intf = window.gameClient && window.gameClient.interface;
+  var intf = gameClient && gameClient.interface;
   var wm = intf && intf.windowManager;
   if (wm && wm.__mobileFS_overridden) {
     if (this.__origGetFreeStack) {

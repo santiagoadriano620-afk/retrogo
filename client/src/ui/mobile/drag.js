@@ -243,8 +243,8 @@ MobileFullscreen.prototype.__bindSlotTouch = function () {
           }
           self.__saveActionbarData();
         } else if (item) {
-          if (window.gameClient && window.gameClient.interface && window.gameClient.interface.notificationManager) {
-            window.gameClient.interface.notificationManager.setCancelMessage("You can only use multi-use items on the actionbar.");
+          if (gameClient && gameClient.interface && gameClient.interface.notificationManager) {
+            gameClient.interface.notificationManager.setCancelMessage("You can only use multi-use items on the actionbar.");
           }
         }
       }

@@ -169,6 +169,16 @@
 - **`__dragSprite = null` in handleTouchStart** — defensive null check before rendering drag sprite
 - **Window position persistence** — saves to `localStorage['retrogo_window_positions']` per window id/containerIndex; restored on topbar creation
 
+### Pre-render buffer expansion (mobile culling)
+- **Problem**: Foreground culling margins matched viewport exactly (zero buffer). On movement, objects visibly rendered at screen edges.
+- **`mobile/canvas.js`**: `cullMargin*` increased from `halfX/Y` (10/7) to **+4** (14/11); `bgCullMargin*` from `halfX/Y+2` (12/9) to **+6** (16/13)
+- `bgCacheShiftX/Y` increased from 1 to **6** to prevent cache canvas clipping at pixel 0
+- Background cache canvases enlarged from 768×608 to **1024×832**
+- `Creature.prototype.canSee` limits expanded from 20/15 to **34/26** tiles
+- **`renderer-world.js:219-222`**: Entry edge conditions switched from hardcoded values to dynamic `this.__cullLeft/Right/Top/Bottom`
+- **`renderer-tile.js:19`**: Second object culling switched from hardcoded `15/18/8/8` to dynamic `this.__cullLeft/Right/Top/Bottom`
+- **Result**: 4 tiles (~2s) foreground pre-render buffer, 6 tiles (~3s) background cache buffer — no visible pop-in on movement
+
 ### Engine performance & stability (`engine/tutorials/summary.md`)
 - Draw time reduced from ~25,200 tile iterations/frame to ~5,000; frame rate 41→60-61 fps
 - Weather transition: `"\t"`→`"off"` ternary fix in `weather-canvas.js`; weather toggle via `__applyWeather(enabled)` with guard

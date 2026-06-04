@@ -1,5 +1,5 @@
 MobileFullscreen.prototype.__createActionButtons = function () {
-  if (this.__actionBtnsEl || !window.gameClient || !window.gameClient.player) return;
+  if (this.__actionBtnsEl || !gameClient || !gameClient.player) return;
 
   var self = this;
   var isPremium = gameClient.player.isPremium;
@@ -53,8 +53,8 @@ MobileFullscreen.prototype.__createActionButtons = function () {
       if (!longPressed) {
         var msg = self.__hotkeyMessages[idx];
         if (msg) {
-          if (window.gameClient && window.gameClient.send) {
-            window.gameClient.send(new ChannelMessagePacket(0, 1, msg));
+          if (gameClient && gameClient.send) {
+            gameClient.send(new ChannelMessagePacket(0, 1, msg));
           }
         } else {
           self.__openHotkeyEditor(idx);
@@ -262,16 +262,16 @@ MobileFullscreen.prototype.__handleLookTap = function () {
 };
 
 MobileFullscreen.prototype.__handleAttackTap = function () {
-  if (!window.gameClient || !window.gameClient.player) return;
-  var player = window.gameClient.player;
+  if (!gameClient || !gameClient.player) return;
+  var player = gameClient.player;
   if (player.__target) {
     player.setTarget(null);
-    if (window.gameClient.send) window.gameClient.send(new TargetPacket(0));
+    if (gameClient.send) gameClient.send(new TargetPacket(0));
   }
 };
 
 MobileFullscreen.prototype.__handleBackpackTap = function () {
-  if (!window.gameClient || !window.gameClient.player || !window.gameClient.mouse) return;
+  if (!gameClient || !gameClient.player || !gameClient.mouse) return;
   var equip = gameClient.player.equipment;
   var slot = equip && equip.slots && equip.slots[6];
   var item = slot && slot.item;
@@ -287,7 +287,7 @@ MobileFullscreen.prototype.__handleBackpackTap = function () {
 };
 
 MobileFullscreen.prototype.__handleChatTap = function () {
-  if (!window.gameClient || !window.gameClient.player) return;
+  if (!gameClient || !gameClient.player) return;
 
   if (this.__chatInputEl) {
     this.__chatInputEl.remove();
@@ -321,8 +321,8 @@ MobileFullscreen.prototype.__handleChatTap = function () {
   function sendMessage() {
     var msg = input.value.trim();
     if (msg === '') return;
-    if (window.gameClient && window.gameClient.send) {
-      window.gameClient.send(new ChannelMessagePacket(0, 1, msg));
+    if (gameClient && gameClient.send) {
+      gameClient.send(new ChannelMessagePacket(0, 1, msg));
     }
     input.value = '';
   }

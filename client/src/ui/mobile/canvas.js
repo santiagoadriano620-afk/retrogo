@@ -22,7 +22,7 @@ MobileFullscreen.prototype.__bindCanvasTouch = function () {
 };
 
 MobileFullscreen.prototype.__handleCanvasLookTap = function (touchEvent) {
-  if (!window.gameClient || !window.gameClient.mouse || !window.gameClient.mouse.look) {
+  if (!gameClient || !gameClient.mouse || !gameClient.mouse.look) {
     this.__lookMode = false;
     return;
   }
