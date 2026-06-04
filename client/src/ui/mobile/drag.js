@@ -51,6 +51,18 @@ MobileFullscreen.prototype.__bindSlotTouch = function () {
       obj.startY = touch.clientY;
       return obj;
     }
+
+    // Drag from actionbar slot
+    var abSlotEl = e.target.closest('.actionbar-slot');
+    if (abSlotEl) {
+      var abIdx = Number(abSlotEl.getAttribute('slotIndex'));
+      var abData = self.__actionbarSlots[abIdx];
+      if (abData && abData.which && abData.which.peekItem(abData.index)) {
+        return { which: abData.which, index: abData.index, startX: touch.clientX, startY: touch.clientY, __actionbarSource: abIdx };
+      }
+      return null;
+    }
+
     if (e.target.closest('#canvas-id') || e.target.closest('#screen')) {
       var groundObj = self.__getGroundObjectFromEvent({ clientX: touch.clientX, clientY: touch.clientY });
       if (groundObj) {
@@ -65,6 +77,7 @@ MobileFullscreen.prototype.__bindSlotTouch = function () {
   var handleTouchStart = function (e) {
     if (!self.active || !gameClient || !gameClient.player) return;
     if (e.target.closest('.window .header')) return;
+    if (e.target.closest('.window .footer')) return;
     var source = resolveSource(e);
     if (source) {
       self.__dragSource = source;
@@ -94,6 +107,15 @@ MobileFullscreen.prototype.__bindSlotTouch = function () {
 
     if (dropEl.closest('#screen') || dropEl.closest('#canvas-id')) {
       return gameClient.mouse.getWorldObject({ clientX: touch.clientX, clientY: touch.clientY, target: gameClient.renderer.screen.canvas });
+    }
+
+    // Actionbar slot drop
+    var abSlot = dropEl.closest('.actionbar-slot');
+    if (abSlot) {
+      var abIndex = Number(abSlot.getAttribute('slotIndex'));
+      if (!isNaN(abIndex)) {
+        return { isActionbar: true, index: abIndex };
+      }
     }
 
     var targetSlot = dropEl.closest('.slot');
@@ -154,8 +176,40 @@ MobileFullscreen.prototype.__bindSlotTouch = function () {
     if (gameClient && gameClient.mouse && self.__dragSprite) {
       e.preventDefault();
       var fromObject = { which: self.__dragSource.which, index: self.__dragSource.index };
+      var abSourceIdx = self.__dragSource.__actionbarSource;
       var toObject = getDropTarget(touch);
-      if (toObject && toObject.which) {
+
+      // Drop on actionbar slot → store reference instead of moving item
+      if (toObject && toObject.isActionbar) {
+        var abSlot = toObject.index;
+        if (abSlot >= 0 && abSlot < 8) {
+          var item = fromObject.which.peekItem(fromObject.index);
+          if (item && item.isMultiUse && item.isMultiUse()) {
+            // Clear previous source slot if dragging from another actionbar slot
+            if (abSourceIdx !== undefined && abSourceIdx !== abSlot) {
+              self.__actionbarSlots[abSourceIdx] = null;
+            }
+            self.__actionbarSlots[abSlot] = { which: fromObject.which, index: fromObject.index };
+            self.__renderActionbarSlot(abSlot);
+            if (abSourceIdx !== undefined && abSourceIdx !== abSlot) {
+              self.__renderActionbarSlot(abSourceIdx);
+            }
+            self.__saveActionbarData();
+          } else if (item) {
+            if (window.gameClient && window.gameClient.interface && window.gameClient.interface.notificationManager) {
+              window.gameClient.interface.notificationManager.setCancelMessage("You can only use multi-use items on the actionbar.");
+            }
+          }
+        }
+      } else if (abSourceIdx !== undefined) {
+        // Drag from actionbar to ground/container: move item, clear actionbar slot
+        if (toObject && toObject.which) {
+          gameClient.mouse.sendItemMove(fromObject, toObject, 1);
+        }
+        self.__actionbarSlots[abSourceIdx] = null;
+        self.__renderActionbarSlot(abSourceIdx);
+        self.__saveActionbarData();
+      } else if (toObject && toObject.which) {
         gameClient.mouse.sendItemMove(fromObject, toObject, 1);
       }
       gameClient.mouse.__clearDragSprite();

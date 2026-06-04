@@ -130,7 +130,8 @@ InteractiveWindow.prototype.setElementVisible = function (buttonElement) {
   this.getBody().style.display = "flex";
   this.getBody().style.height = "40px";
   this.__element.style.minHeight = "82px";
-  this.getElement(".footer").style.display = "block";
+  var footer = this.getElement(".footer");
+  if (footer) footer.style.display = "block";
 
 
 
@@ -144,7 +145,8 @@ InteractiveWindow.prototype.setElementHidden = function (buttonElement) {
    */
 
   this.getBody().style.display = "none";
-  this.getElement(".footer").style.display = "none";
+  var footer = this.getElement(".footer");
+  if (footer) footer.style.display = "none";
 
   // Set to hidden height
   this.__element.style.minHeight = this.HIDDEN_HEIGHT + "px";

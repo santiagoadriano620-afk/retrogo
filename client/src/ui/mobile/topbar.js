@@ -87,12 +87,23 @@ MobileFullscreen.prototype.__createTopbar = function () {
     this.__origGetFreeStack = wm.getFreeStack;
     this.__origGetStack = wm.getStack.bind(wm);
     wm.__mobileFS_overridden = true;
-    wm.getFreeStack = function () { return document.body; };
+
+    // Use a dedicated wrapper so totalUsedInStack doesn't count the equipment panel
+    var containerStack = document.getElementById('mobile-container-stack');
+    if (!containerStack) {
+      containerStack = document.createElement('div');
+      containerStack.id = 'mobile-container-stack';
+      containerStack.style.cssText = 'position:fixed;top:50px;left:6px;max-width:280px;z-index:2147483646;display:flex;flex-direction:column;gap:2px;';
+      document.body.appendChild(containerStack);
+    }
+
+    wm.getFreeStack = function () { return containerStack; };
     var self3 = this;
     wm.getStack = function (name) {
-      if (name === 'right' || name === 'extra') return document.body;
+      if (name === 'right' || name === 'extra') return containerStack;
       return self3.__origGetStack(name);
     };
+    this.__containerStack = containerStack;
   }
 
   function setupWindowDrag(win) {
@@ -101,33 +112,106 @@ MobileFullscreen.prototype.__createTopbar = function () {
     var header = win.querySelector('.header');
     if (!header) return;
     header.style.touchAction = 'none';
+    var drag = null;
     header.addEventListener('touchstart', function (e) {
       if (e.target.closest('button')) return;
       var touch = e.changedTouches[0];
       var rect = win.getBoundingClientRect();
-      self.__winDrag = {
-        el: win,
+      drag = {
         startX: touch.clientX, startY: touch.clientY,
         startLeft: rect.left, startTop: rect.top
       };
       e.preventDefault();
     });
+    header.addEventListener('touchmove', function (e) {
+      if (!drag) return;
+      var touch = e.changedTouches[0];
+      win.style.left = (drag.startLeft + touch.clientX - drag.startX) + 'px';
+      win.style.top = (drag.startTop + touch.clientY - drag.startY) + 'px';
+      win.style.right = 'auto';
+      e.preventDefault();
+    });
+    header.addEventListener('touchend', function () {
+      if (!drag) return;
+      try {
+        var saved = JSON.parse(localStorage.getItem('retrogo_window_positions') || '{}');
+        var key = win.id || win.getAttribute('containerIndex') || 'win';
+        saved[key] = { x: win.offsetLeft, y: win.offsetTop };
+        localStorage.setItem('retrogo_window_positions', JSON.stringify(saved));
+      } catch(ex) {}
+      drag = null;
+    });
+    header.addEventListener('touchcancel', function () {
+      drag = null;
+    });
+
+    // Footer resize via touch
+    var footer = win.querySelector('.footer');
+    if (footer) {
+      footer.style.touchAction = 'none';
+      var resize = null;
+      footer.addEventListener('touchstart', function (e) {
+        resize = null;
+        var body = win.querySelector('.body');
+        var touch = e.changedTouches[0];
+        var startY = touch.clientY;
+        var startH = win.offsetHeight;
+        var rect = win.getBoundingClientRect();
+        var maxH = (window.visualViewport ? window.visualViewport.height : window.innerHeight) - rect.top - 4;
+        if (win.hasAttribute('containerIndex') && body) {
+          var naturalH = body.scrollHeight + 26;
+          if (naturalH < maxH) maxH = naturalH;
+        }
+        resize = { el: win, startY: startY, startH: startH, maxH: maxH };
+        e.preventDefault();
+      });
+      footer.addEventListener('touchmove', function (e) {
+        if (!resize) return;
+        var touch = e.changedTouches[0];
+        var newH = resize.startH + (touch.clientY - resize.startY);
+        resize.el.style.height = Math.max(80, Math.min(newH, resize.maxH)) + 'px';
+        e.preventDefault();
+      });
+      footer.addEventListener('touchend', function () {
+        resize = null;
+      });
+      footer.addEventListener('touchcancel', function () {
+        resize = null;
+      });
+    }
   }
 
-  self.__winDrag = null;
-  try {
-    var savedPos = JSON.parse(localStorage.getItem('retrogo_window_positions') || '{}');
-    windowIds.forEach(function (id) {
-      var el = document.getElementById(id);
-      if (!el) return;
-      if (savedPos[id]) {
-        el.style.left = savedPos[id].x + 'px';
-        el.style.top = savedPos[id].y + 'px';
-        el.style.right = 'auto';
-      }
-      setupWindowDrag(el);
-    });
-  } catch(e) {}
+  // Override minimize/restore for mobile: preserve width, clear forced heights
+  this.__origSetElementHidden = InteractiveWindow.prototype.setElementHidden;
+  this.__origSetElementVisible = InteractiveWindow.prototype.setElementVisible;
+  InteractiveWindow.prototype.setElementHidden = function () {
+    // Freeze current width so window doesn't shrink when body is hidden
+    this.__element.style.width = this.__element.offsetWidth + 'px';
+    this.getBody().style.display = 'none';
+    var f = this.getElement('.footer');
+    if (f) f.style.display = 'none';
+    this.__element.style.minHeight = this.HIDDEN_HEIGHT + 'px';
+  };
+  InteractiveWindow.prototype.setElementVisible = function () {
+    this.getBody().style.display = 'flex';
+    // Clear forced heights but keep the frozen width to prevent expansion
+    this.getBody().style.height = '';
+    this.__element.style.minHeight = '';
+    var f = this.getElement('.footer');
+    if (f) f.style.display = '';
+  };
+
+  var savedPos = JSON.parse(localStorage.getItem('retrogo_window_positions') || '{}');
+  windowIds.forEach(function (id) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    if (savedPos[id]) {
+      el.style.left = savedPos[id].x + 'px';
+      el.style.top = savedPos[id].y + 'px';
+      el.style.right = 'auto';
+    }
+    setupWindowDrag(el);
+  });
 
   self.__containerObserver = new MutationObserver(function (mutations) {
     mutations.forEach(function (m) {
@@ -144,35 +228,6 @@ MobileFullscreen.prototype.__createTopbar = function () {
     });
   });
   self.__containerObserver.observe(document.body, { childList: true, subtree: true });
-
-  self.__winDragMove = function (e) {
-    if (!self.__winDrag) return;
-    var touch = e.changedTouches[0];
-    var dx = touch.clientX - self.__winDrag.startX;
-    var dy = touch.clientY - self.__winDrag.startY;
-    if (self.__winDrag.el) {
-      self.__winDrag.el.style.left = (self.__winDrag.startLeft + dx) + 'px';
-      self.__winDrag.el.style.top = (self.__winDrag.startTop + dy) + 'px';
-      self.__winDrag.el.style.right = 'auto';
-      e.preventDefault();
-    }
-  };
-
-  self.__winDragEnd = function () {
-    if (!self.__winDrag) return;
-    try {
-      var saved = JSON.parse(localStorage.getItem('retrogo_window_positions') || '{}');
-      if (self.__winDrag.el) {
-        var key = self.__winDrag.el.id || self.__winDrag.el.getAttribute('containerIndex') || 'win';
-        saved[key] = { x: self.__winDrag.el.offsetLeft, y: self.__winDrag.el.offsetTop };
-        localStorage.setItem('retrogo_window_positions', JSON.stringify(saved));
-      }
-    } catch(ex) {}
-    self.__winDrag = null;
-  };
-
-  document.addEventListener('touchmove', self.__winDragMove, { passive: false });
-  document.addEventListener('touchend', self.__winDragEnd);
 
   if (Player.prototype.__updateMobileStatusBars !== this.__origUpdateBars) {
     this.__origUpdateBars = Player.prototype.__updateMobileStatusBars;
@@ -240,15 +295,20 @@ MobileFullscreen.prototype.__destroyTopbar = function () {
     Player.prototype.__updateMobileStatusBars = this.__origUpdateBars;
     this.__origUpdateBars = null;
   }
-  if (this.__winDragMove) {
-    document.removeEventListener('touchmove', this.__winDragMove);
-    document.removeEventListener('touchend', this.__winDragEnd);
-    this.__winDragMove = null;
-    this.__winDragEnd = null;
-    this.__winDrag = null;
+  if (this.__origSetElementHidden) {
+    InteractiveWindow.prototype.setElementHidden = this.__origSetElementHidden;
+    this.__origSetElementHidden = null;
+  }
+  if (this.__origSetElementVisible) {
+    InteractiveWindow.prototype.setElementVisible = this.__origSetElementVisible;
+    this.__origSetElementVisible = null;
   }
   if (this.__containerObserver) {
     this.__containerObserver.disconnect();
     this.__containerObserver = null;
+  }
+  if (this.__containerStack) {
+    this.__containerStack.parentNode.removeChild(this.__containerStack);
+    this.__containerStack = null;
   }
 };

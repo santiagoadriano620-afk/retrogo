@@ -55,6 +55,9 @@ const GameSocket = function (socket, account, xorKey) {
   // XOR encryption key for this session (8 bytes, may be null if disabled)
   this.__xorKey = xorKey;
 
+  // Device type derived from User-Agent (desktop, mobile, tablet, tv)
+  this.__deviceType = null;
+
   // Attach the socket listeners
   this.socket.on("message", this.__handleSocketData.bind(this));
   this.socket.on("error", this.__handleSocketError.bind(this));

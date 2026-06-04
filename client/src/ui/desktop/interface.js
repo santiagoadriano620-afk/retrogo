@@ -77,6 +77,12 @@ const Interface = function () {
 
   // Camera zoom multiplier for gameplay (independent of UI zoom)
   this.cameraZoom = 1.35;
+
+  // Start polling players online count every 5 minutes
+  this.__playersOnlineInterval = null;
+  this.__fetchPlayersOnline();
+  this.__playersOnlineInterval = setInterval(this.__fetchPlayersOnline.bind(this), 300000);
+
 };
   Interface.prototype.SCREEN_WIDTH_MIN = 1080;
 
@@ -608,6 +614,32 @@ Interface.prototype.reset = function () {
   this.hideGameInterface();
 };
 
+Interface.prototype.__fetchPlayersOnline = function () {
+
+  /*
+   * Function Interface.__fetchPlayersOnline
+   * Fetches player counts by device type from the server and updates the login screen display
+   */
+
+  fetch("/api/players-online").then(function (response) {
+    if (!response.ok) throw new Error("HTTP " + response.status);
+    return response.json();
+  }.bind(this)).then(function (data) {
+    var setText = function (id, text) {
+      var el = document.getElementById(id);
+      if (el) el.textContent = text;
+    };
+    setText("po-desktop", data.desktop || 0);
+    setText("po-mobile", data.mobile || 0);
+    setText("po-tablet", data.tablet || 0);
+    setText("po-tv", data.tv || 0);
+    setText("po-total", data.total || 0);
+  }).catch(function () {
+    // Silently ignore fetch errors (server may be offline)
+  });
+
+};
+
 Interface.prototype.enableEnterGame = function () {
   /*
    * Function Interface.enableEnterGame
@@ -666,6 +698,12 @@ Interface.prototype.hideGameInterface = function () {
   document.getElementById("login-wrapper").style.display = "flex";
   document.getElementById("game-wrapper").style.display = "none";
 
+  // Restart polling when returning to login screen
+  if (!this.__playersOnlineInterval) {
+    this.__fetchPlayersOnline();
+    this.__playersOnlineInterval = setInterval(this.__fetchPlayersOnline.bind(this), 300000);
+  }
+
   window.onresize();
 };
 
@@ -678,6 +716,12 @@ Interface.prototype.showGameInterface = function () {
   // Sets the login screen to hidden and opens the game interface
   document.getElementById("login-wrapper").style.display = "none";
   document.getElementById("game-wrapper").style.display = "flex";
+
+  // Stop polling when in game
+  if (this.__playersOnlineInterval) {
+    clearInterval(this.__playersOnlineInterval);
+    this.__playersOnlineInterval = null;
+  }
 
   window.onresize();
 };

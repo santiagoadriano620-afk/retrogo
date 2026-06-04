@@ -161,23 +161,33 @@ MobileFullscreen.prototype.__injectStyles = function () {
     '}' +
     'body.mobile-fullscreen #skill-window,' +
     'body.mobile-fullscreen #battle-window,' +
-    'body.mobile-fullscreen #friend-window {' +
+    'body.mobile-fullscreen #friend-window,' +
+    'body.mobile-fullscreen #party-window,' +
+    'body.mobile-fullscreen #quest-tracker-window {' +
     '  position: fixed !important; top: 50px !important; left: 6px !important; right: auto !important;' +
     '  z-index: 2147483646 !important;' +
-    '  max-width: 280px !important; max-height: calc(100vh - 60px) !important;' +
+    '  width: 140px !important; max-height: calc(100vh - 60px) !important;' +
     '}' +
     'body.mobile-fullscreen #skill-window .body,' +
     'body.mobile-fullscreen #battle-window .body,' +
-    'body.mobile-fullscreen #friend-window .body {' +
+    'body.mobile-fullscreen #friend-window .body,' +
+    'body.mobile-fullscreen #party-window .body,' +
+    'body.mobile-fullscreen #quest-tracker-window .body {' +
     '  overflow-y: auto !important;' +
     '}' +
     'body.mobile-fullscreen .window[containerIndex] {' +
     '  position: fixed !important; top: 50px !important; left: 6px !important; right: auto !important;' +
-    '  z-index: 2147483646 !important; max-width: 280px !important;' +
+    '  z-index: 2147483646 !important; width: 140px !important;' +
     '  max-height: calc(100vh - 60px) !important;' +
     '}' +
     'body.mobile-fullscreen .window[containerIndex] .body {' +
     '  overflow-y: auto !important;' +
+    '}' +
+    'body.mobile-fullscreen #container-prototype {' +
+    '  display: none !important;' +
+    '}' +
+    'body.mobile-fullscreen #fullscreen-button {' +
+    '  display: none !important;' +
     '}' +
     '#mobile-action-btns {' +
 '  display:none;position:fixed;bottom:56px;left:50%;' +
@@ -186,7 +196,7 @@ MobileFullscreen.prototype.__injectStyles = function () {
 '  background:rgba(10,10,15,0.55);' +
 '  border:1px solid rgba(150,150,150,0.3);' +
 '  border-radius:4px;padding:2px;' +
-'  flex-direction:row;gap:2px;' +
+'  flex-direction:column;gap:2px;align-items:center;' +
 '  touch-action:none;user-select:none;-webkit-user-select:none;' +
 '}' +
 '#mobile-action-btns .action-btn {' +
@@ -204,6 +214,17 @@ MobileFullscreen.prototype.__injectStyles = function () {
 '}' +
     '#mobile-action-btns .action-btn .action-icon {' +
     '  font-size:20px;line-height:28px;pointer-events:none;display:block;text-align:center;' +
+    '}' +
+    '#mobile-action-btns .hotkey-btn {' +
+    '  width:36px;height:36px;flex-direction:column;padding:1px 0;gap:0;' +
+    '}' +
+    '#mobile-action-btns .hotkey-btn .action-icon {' +
+    '  font-size:14px;line-height:16px;' +
+    '}' +
+    '#mobile-action-btns .hotkey-btn .hk-label {' +
+    '  font-size:7px;line-height:9px;color:#aaa;overflow:hidden;' +
+    '  text-overflow:ellipsis;max-width:32px;white-space:nowrap;' +
+    '  pointer-events:none;display:block;text-align:center;' +
     '}';
   document.head.appendChild(s);
 };

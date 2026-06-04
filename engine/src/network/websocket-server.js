@@ -119,6 +119,9 @@ WebsocketServer.prototype.__handleConnection = function (
   // Create a new class that wraps the connected socket
   let gameSocket = new GameSocket(socket, accountName, xorKey);
 
+  // Detect device type from User-Agent
+  gameSocket.__deviceType = this.__detectDeviceType(request.headers["user-agent"]);
+
   // The server is full
   if (this.socketHandler.isOverpopulated()) {
     return gameSocket.closeError(
@@ -330,6 +333,42 @@ WebsocketServer.prototype.__handleLoginRequest = function (
     );
   }
 };
+
+WebsocketServer.prototype.__detectDeviceType = function (userAgent) {
+
+  /*
+   * Function WebsocketServer.__detectDeviceType
+   * Returns the device type based on the User-Agent string
+   */
+
+  if (!userAgent) return "desktop";
+
+  var ua = userAgent.toLowerCase();
+
+  // TV devices
+  if (/smarttv|appletv|googletv|roku|hbbtv|netcast|viera|tizen\s*tv/.test(ua)) {
+    return "tv";
+  }
+
+  // Tablet: iPad, PlayBook, or Android without "mobile"
+  if (/\bipad\b|\bplaybook\b|\btablet\b/.test(ua)) {
+    return "tablet";
+  }
+
+  // Android can be tablet or phone: if it says "mobile" it's a phone
+  if (/android/.test(ua) && !/mobile/.test(ua)) {
+    return "tablet";
+  }
+
+  // Mobile: phones, small handhelds
+  if (/mobile|mobi|iphone|ipod|blackberry|iemobile|opera mini|fennec|wpdesktop/.test(ua)) {
+    return "mobile";
+  }
+
+  // Everything else is desktop
+  return "desktop";
+
+}
 
 WebsocketServer.prototype.__getCompressionConfiguration = function () {
   /*

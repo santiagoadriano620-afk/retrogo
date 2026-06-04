@@ -4,7 +4,75 @@ MobileFullscreen.prototype.__createActionButtons = function () {
   var self = this;
   var container = document.createElement('div');
   container.id = 'mobile-action-btns';
-  container.style.display = 'flex';
+  container.style.cssText = 'display:flex;flex-direction:column;gap:2px;align-items:center;';
+
+  var topRow = document.createElement('div');
+  topRow.style.cssText = 'display:flex;gap:2px;';
+
+  // 4 hotkey speech buttons (top row)
+  this.__hotkeyMessages = [];
+  var saved = localStorage.getItem('retrogo_hotkey_msgs');
+  var msgs = saved ? JSON.parse(saved) : ['', '', '', ''];
+
+  for (var h = 0; h < 4; h++) {
+    (function (idx) {
+      var btn = document.createElement('div');
+      btn.className = 'action-btn hotkey-btn';
+      btn.dataset.hkIdx = idx;
+
+      var span = document.createElement('span');
+      span.className = 'action-icon';
+      span.textContent = msgs[idx] ? msgs[idx].charAt(0).toUpperCase() : '...';
+      btn.appendChild(span);
+
+      var label = document.createElement('span');
+      label.className = 'hk-label';
+      label.textContent = msgs[idx] || '...';
+      btn.appendChild(label);
+
+      var pressTimer = null;
+      var longPressed = false;
+
+      btn.addEventListener('touchstart', function (e) {
+        if (self.__lockStates.actionBtns === false) return;
+        e.preventDefault();
+        longPressed = false;
+        pressTimer = setTimeout(function () {
+          longPressed = true;
+          self.__openHotkeyEditor(idx);
+        }, 500);
+      }, { passive: false });
+
+      btn.addEventListener('touchend', function (e) {
+        if (pressTimer) { clearTimeout(pressTimer); pressTimer = null; }
+        if (self.__lockStates.actionBtns === false) return;
+        if (!longPressed) {
+          var msg = self.__hotkeyMessages[idx];
+          if (msg) {
+            // Message exists: short tap sends it
+            if (window.gameClient && window.gameClient.send) {
+              window.gameClient.send(new ChannelMessagePacket(0, 1, msg));
+            }
+          } else {
+            // Empty: tap opens editor
+            self.__openHotkeyEditor(idx);
+          }
+        }
+      });
+
+      btn.addEventListener('touchmove', function () {
+        if (pressTimer) { clearTimeout(pressTimer); pressTimer = null; }
+      });
+
+      topRow.appendChild(btn);
+      self.__hotkeyMessages[idx] = msgs[idx] || '';
+    })(h);
+  }
+
+  container.appendChild(topRow);
+
+  var bottomRow = document.createElement('div');
+  bottomRow.style.cssText = 'display:flex;gap:2px;';
 
   var buttons = [
     { id: 'look-btn', cls: 'eye', icon: 'eye', handler: function () { self.__handleLookTap(); } },
@@ -31,9 +99,11 @@ MobileFullscreen.prototype.__createActionButtons = function () {
         b.handler();
       }, { passive: false });
 
-      container.appendChild(btn);
+      bottomRow.appendChild(btn);
     })(buttons[i]);
   }
+
+  container.appendChild(bottomRow);
 
   document.body.appendChild(container);
   this.__actionBtnsEl = container;
@@ -47,6 +117,115 @@ MobileFullscreen.prototype.__createActionButtons = function () {
   this.__enableLockableDrag(container, 'actionBtns', { onDragStart: function () {}, onDragEnd: function () {} });
 };
 
+MobileFullscreen.prototype.__openHotkeyEditor = function (idx) {
+
+  /*
+   * Function MobileFullscreen.__openHotkeyEditor
+   * Opens a small inline input near the hotkey button to edit its message
+   */
+
+  if (this.__hotkeyEditorEl) {
+    this.__hotkeyEditorEl.remove();
+    this.__hotkeyEditorEl = null;
+  }
+
+  var self = this;
+  var btn = this.__actionBtnsEl.querySelector('.hotkey-btn[data-hk-idx="' + idx + '"]');
+  if (!btn) return;
+
+  var rect = btn.getBoundingClientRect();
+  var el = document.createElement('div');
+  el.id = 'hotkey-edit-' + idx;
+  el.style.cssText = [
+    'position:fixed',
+    'z-index:2147483647',
+    'background:rgba(10,10,15,0.95)',
+    'border:1px solid rgba(200,180,50,0.6)',
+    'border-radius:4px',
+    'padding:3px 5px',
+    'display:flex',
+    'align-items:center',
+    'gap:3px',
+    'box-sizing:border-box'
+  ].join(';');
+
+  // Position centered on screen
+  el.style.left = '50%';
+  el.style.top = '50%';
+  el.style.transform = 'translate(-50%, -50%)';
+  el.style.width = '260px';
+
+  var input = document.createElement('input');
+  input.type = 'text';
+  input.maxLength = 255;
+  input.value = self.__hotkeyMessages[idx] || '';
+  input.placeholder = 'Type message...';
+  input.style.cssText = [
+    'flex:1',
+    'height:24px',
+    'background:rgba(30,30,40,0.85)',
+    'border:1px solid rgba(120,120,140,0.4)',
+    'border-radius:3px',
+    'color:#d3d3d3',
+    'font-size:12px',
+    'padding:0 5px',
+    'outline:none'
+  ].join(';');
+
+  function save() {
+    var val = input.value.trim();
+    if (val === '' && self.__hotkeyMessages[idx]) {
+      // Allow clearing by saving empty
+    }
+    self.__hotkeyMessages[idx] = val;
+    localStorage.setItem('retrogo_hotkey_msgs', JSON.stringify(self.__hotkeyMessages));
+    self.__refreshHotkeyButton(idx);
+    if (self.__hotkeyEditorEl) {
+      self.__hotkeyEditorEl.remove();
+      self.__hotkeyEditorEl = null;
+    }
+  }
+
+  input.addEventListener('keydown', function (e) {
+    if (e.keyCode === 13) save();
+    if (e.keyCode === 27) {
+      if (self.__hotkeyEditorEl) {
+        self.__hotkeyEditorEl.remove();
+        self.__hotkeyEditorEl = null;
+      }
+    }
+  });
+
+  var okBtn = document.createElement('button');
+  okBtn.textContent = '\u2713';
+  okBtn.style.cssText = 'width:24px;height:24px;background:#4a7a3a;border:1px solid #5a9a4a;border-radius:3px;color:#fff;font-size:13px;cursor:pointer;touch-action:manipulation;padding:0;line-height:24px;text-align:center;';
+  okBtn.addEventListener('touchstart', function (e) { e.preventDefault(); save(); }, { passive: false });
+
+  el.appendChild(input);
+  el.appendChild(okBtn);
+  document.body.appendChild(el);
+  this.__hotkeyEditorEl = el;
+
+  setTimeout(function () { input.focus(); input.select(); }, 100);
+};
+
+MobileFullscreen.prototype.__refreshHotkeyButton = function (idx) {
+
+  /*
+   * Function MobileFullscreen.__refreshHotkeyButton
+   * Updates the displayed icon and label for a hotkey button
+   */
+
+  var btn = this.__actionBtnsEl.querySelector('.hotkey-btn[data-hk-idx="' + idx + '"]');
+  if (!btn) return;
+
+  var msg = this.__hotkeyMessages[idx] || '';
+  var icon = btn.querySelector('.action-icon');
+  var label = btn.querySelector('.hk-label');
+  if (icon) icon.textContent = msg ? msg.charAt(0).toUpperCase() : '...';
+  if (label) label.textContent = msg || '...';
+};
+
 MobileFullscreen.prototype.__destroyActionButtons = function () {
   if (!this.__actionBtnsEl) return;
   this.__saveModuleState(this.__actionBtnsEl, 'actionBtns');
@@ -54,8 +233,13 @@ MobileFullscreen.prototype.__destroyActionButtons = function () {
     this.__chatInputEl.remove();
     this.__chatInputEl = null;
   }
+  if (this.__hotkeyEditorEl) {
+    this.__hotkeyEditorEl.remove();
+    this.__hotkeyEditorEl = null;
+  }
   this.__actionBtnsEl.remove();
   this.__actionBtnsEl = null;
+  this.__hotkeyMessages = null;
   this.__lookMode = false;
 };
 

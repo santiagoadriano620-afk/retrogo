@@ -54,6 +54,13 @@ BattleWindow.prototype.__isPartyMember = function(creature) {
 }
 
 BattleWindow.prototype.__showCreature = function(creature) {
+
+// Override open to refresh battle list when opened (applies FOV filter)
+BattleWindow.prototype.open = function () {
+  this.__element.style.display = "flex";
+  this.__element.style.height = "";
+  this.refresh();
+};
   if (creature.type === 0) {
     if (!this.__filters.players) return false;
     if (!this.__filters.party && this.__isPartyMember(creature)) return false;
@@ -223,6 +230,21 @@ BattleWindow.prototype.addCreature = function (creature) {
   let existing = this.getBody().querySelector('[id="%s"]'.format(creature.id));
   if (existing) {
     return this.updateCreature(creature);
+  }
+
+  // FOV Check: Only show creatures actually visible on the game canvas
+  let player = gameClient.player;
+  if (player && !gameClient.isSelf(creature)) {
+    let cp = creature.getPosition();
+    let pp = player.getPosition();
+    if (cp.z !== pp.z) {
+      return;
+    }
+    let screenX = 14 + (cp.x + (cp.z % 8)) - (pp.x + (pp.z % 8));
+    let screenY = 7 + (cp.y + (cp.z % 8)) - (pp.y + (pp.z % 8));
+    if (screenX < 0 || screenX >= 34 || screenY < 0 || screenY >= 15) {
+      return;
+    }
   }
 
   let node = document.getElementById("battle-window-target").cloneNode(true);

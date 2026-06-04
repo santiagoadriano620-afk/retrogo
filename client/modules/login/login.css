@@ -103,3 +103,43 @@
   font-size: 10px;
   white-space: nowrap;
 }
+
+#players-online {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.85);
+  border-bottom: 1px solid #555;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-radius: 0;
+  padding: 3px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 5;
+  white-space: nowrap;
+  pointer-events: none;
+}
+#players-online .po-item {
+  color: #ccc;
+  font-size: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+#players-online .po-icon {
+  font-size: 11px;
+}
+#players-online .po-item b {
+  color: #fff;
+}
+#players-online .po-total {
+  color: #ffd700;
+  font-size: 11px;
+  font-weight: bold;
+  padding-left: 6px;
+  border-left: 1px solid #555;
+}

@@ -410,6 +410,11 @@ LoginServer.prototype.__handleRequest = function (request, response) {
     return this.__handlePaymentsConfig(response);
   }
 
+  // GET /api/players-online returns player count by device type
+  if (pathname === "/api/players-online") {
+    return this.__listPlayersOnline(response);
+  }
+
   // Static file serving: try client/ first, then root data/
   let clientDir = path.join(__dirname, "..", "..", "..", "client");
   let dataDir = path.join(__dirname, "..", "..", "..", "data");
@@ -1036,6 +1041,54 @@ LoginServer.prototype.__listAntiCheat = function (response) {
     response.statusCode = 500;
     response.end(JSON.stringify({ error: "Internal server error" }));
   }
+};
+
+LoginServer.prototype.__listPlayersOnline = function (response) {
+
+  /*
+   * Function LoginServer.__listPlayersOnline
+   * Returns player counts by device type (desktop, mobile, tablet, tv)
+   */
+
+  try {
+    if (typeof gameServer === "undefined" || !gameServer || !gameServer.HTTPServer || !gameServer.HTTPServer.websocketServer) {
+      response.setHeader("Content-Type", "application/json");
+      response.statusCode = 200;
+      return response.end(JSON.stringify({ desktop: 0, mobile: 0, tablet: 0, tv: 0, total: 0 }));
+    }
+
+    var counts = { desktop: 0, mobile: 0, tablet: 0, tv: 0 };
+    var sockets = gameServer.HTTPServer.websocketServer.socketHandler.getConnectedSockets();
+
+    sockets.forEach(function (gameSocket) {
+      if (gameSocket.player !== null) {
+        var type = gameSocket.__deviceType || "desktop";
+        if (counts[type] !== undefined) {
+          counts[type]++;
+        } else {
+          counts.desktop++;
+        }
+      }
+    });
+
+    var total = counts.desktop + counts.mobile + counts.tablet + counts.tv;
+
+    response.setHeader("Content-Type", "application/json");
+    response.statusCode = 200;
+    response.end(JSON.stringify({
+      desktop: counts.desktop,
+      mobile: counts.mobile,
+      tablet: counts.tablet,
+      tv: counts.tv,
+      total: total
+    }));
+  } catch (error) {
+    console.error("Players online error:", error);
+    response.setHeader("Content-Type", "application/json");
+    response.statusCode = 200;
+    response.end(JSON.stringify({ desktop: 0, mobile: 0, tablet: 0, tv: 0, total: 0 }));
+  }
+
 };
 
 LoginServer.prototype.__listSprVersion = function (response) {
