@@ -13,6 +13,7 @@ MobileFullscreen = function () {
   this.__lastTapTime = 0;
   this.__lastTapX = 0;
   this.__lastTapY = 0;
+  this.__repositioning = null;
 
   if (this.isMobile) {
     this.__injectStyles();
@@ -22,6 +23,7 @@ MobileFullscreen = function () {
     this.__checkOrientation();
     this.__overrideMethods();
     this.__bindCanvasTouch();
+    this.__bindSlotTouch();
   }
 
   mobileFS = this;
@@ -131,6 +133,24 @@ MobileFullscreen.prototype.__injectStyles = function () {
     '}' +
     '#mobile-dpad .dpad-ball.returning {' +
     '  transition: transform 0.15s ease-out;' +
+    '}' +
+    '#mobile-equipment [slotIndex="7"] { background-image: url("/images/game/inventory/neck.png"); }' +
+    '#mobile-equipment [slotIndex="5"] { background-image: url("/images/game/inventory/left-hand.png"); }' +
+    '#mobile-equipment [slotIndex="8"] { background-image: url("/images/game/inventory/finger.png"); }' +
+    '#mobile-equipment [slotIndex="0"] { background-image: url("/images/game/inventory/head.png"); }' +
+    '#mobile-equipment [slotIndex="1"] { background-image: url("/images/game/inventory/body.png"); }' +
+    '#mobile-equipment [slotIndex="2"] { background-image: url("/images/game/inventory/legs.png"); }' +
+    '#mobile-equipment [slotIndex="3"] { background-image: url("/images/game/inventory/feet.png"); }' +
+    '#mobile-equipment [slotIndex="6"] { background-image: url("/images/game/inventory/back.png"); }' +
+    '#mobile-equipment [slotIndex="4"] { background-image: url("/images/game/inventory/right-hand.png"); }' +
+    '#mobile-equipment [slotIndex="9"] { background-image: url("/images/game/inventory/ammo.png"); }' +
+    '@keyframes mob-rep-blink {' +
+    '  0%, 100% { border-color: rgba(160,160,160,0.8); }' +
+    '  50% { border-color: rgba(160,160,160,0.1); }' +
+    '}' +
+    '#mobile-equipment.reposition-mode, #mobile-dpad.reposition-mode {' +
+    '  border: 2px dashed rgba(160,160,160,0.8);' +
+    '  animation: mob-rep-blink 0.6s ease-in-out infinite;' +
     '}';
   document.head.appendChild(s);
 };
@@ -193,6 +213,10 @@ MobileFullscreen.prototype.__createDpad = function () {
   document.body.appendChild(el);
   this.dpad = el;
   this.__bindDpadEvents(el);
+  this.__enableRepositionDrag(el, 'retrogo_dpad_pos', {
+    onStart: function () { el.style.transition = 'border-color 0s'; },
+    onEnd: function () {}
+  });
 };
 
 var DPAD_KEY_MAP = null;
@@ -279,12 +303,14 @@ MobileFullscreen.prototype.__bindDpadEvents = function (el) {
   };
 
   el.addEventListener('touchstart', function (e) {
+    if (self.__repositioning === el) return;
     e.preventDefault();
     var t = e.changedTouches[0];
     handleStart(t.clientX, t.clientY, t.identifier);
   });
 
   el.addEventListener('touchmove', function (e) {
+    if (self.__repositioning === el) return;
     e.preventDefault();
     if (self.dpadTouchId === null) return;
     for (var i = 0; i < e.changedTouches.length; i++) {
@@ -296,6 +322,7 @@ MobileFullscreen.prototype.__bindDpadEvents = function (el) {
   });
 
   el.addEventListener('touchend', function (e) {
+    if (self.__repositioning === el) return;
     e.preventDefault();
     for (var i = 0; i < e.changedTouches.length; i++) {
       if (e.changedTouches[i].identifier === self.dpadTouchId) {
@@ -306,6 +333,7 @@ MobileFullscreen.prototype.__bindDpadEvents = function (el) {
   });
 
   el.addEventListener('touchcancel', function (e) {
+    if (self.__repositioning === el) return;
     handleEnd();
   });
 
@@ -449,10 +477,13 @@ MobileFullscreen.prototype.__handleFullscreenChange = function () {
     setTimeout(function () { self.__adjustCanvas(); }, 300);
     setTimeout(function () { self.__adjustCanvas(); }, 800);
     this.__updateDpadVisibility();
+    this.__createMobileSlots();
   } else {
     document.body.classList.remove('mobile-fullscreen');
     this.__dpadReleaseKey();
+    if (this.dpad) this.__saveRepositionPosition(this.dpad, 'retrogo_dpad_pos');
     this.__hideDpad();
+    this.__destroyMobileSlots();
     this.__restoreCanvas();
     if (window.gameClient && window.gameClient.interface) {
       window.gameClient.interface.handleResize();
@@ -560,6 +591,300 @@ MobileFullscreen.prototype.__bindCanvasTouch = function () {
       gameClient.world.targetMonster(creatureTile.monsters);
       e.preventDefault();
     }
+  });
+};
+
+MobileFullscreen.prototype.__bindSlotTouch = function () {
+  var self = this;
+  this.__dragSource = null;
+  this.__dragSprite = null;
+  var dragThreshold = 8;
+
+  var handleTouchStart = function (e) {
+    if (self.__repositioning) return;
+    if (!self.active || !gameClient || !gameClient.player) return;
+    var slotEl = e.target.closest('.slot');
+    if (!slotEl) return;
+    var slotIndex = Number(slotEl.getAttribute('slotIndex'));
+    var equipment = gameClient.player.equipment;
+    if (!equipment || !equipment.slots || !equipment.slots[slotIndex]) return;
+    var slot = equipment.slots[slotIndex];
+    if (!slot || !slot.item) return;
+    var touch = e.changedTouches[0];
+    self.__dragSource = { which: equipment, index: slotIndex, startX: touch.clientX, startY: touch.clientY };
+  };
+
+  var handleTouchMove = function (e) {
+    if (self.__repositioning) return;
+    if (!self.__dragSource) return;
+    if (!gameClient || !gameClient.mouse) return;
+    var touch = e.changedTouches[0];
+    var dx = touch.clientX - self.__dragSource.startX;
+    var dy = touch.clientY - self.__dragSource.startY;
+    if (dx * dx + dy * dy < dragThreshold * dragThreshold) return;
+
+    if (!self.__dragSprite) {
+      gameClient.mouse.__renderDragSprite({ which: self.__dragSource.which, index: self.__dragSource.index });
+      self.__dragSprite = gameClient.mouse.__dragSprite;
+    }
+    gameClient.mouse.__updateDragSpritePosition(e);
+    e.preventDefault();
+  };
+
+  var handleTouchEnd = function (e) {
+    if (!self.__dragSource) { self.__dragSprite = null; return; }
+    // Only process if drag actually started (threshold crossed)
+    if (!self.__dragSprite) { self.__dragSource = null; return; }
+    if (gameClient && gameClient.mouse) {
+      var touch = e.changedTouches[0];
+      var dropEl = document.elementFromPoint(touch.clientX, touch.clientY);
+      var fromObject = { which: self.__dragSource.which, index: self.__dragSource.index };
+
+      if (dropEl && dropEl.closest('#screen')) {
+        // Drop on canvas → move to ground
+        var worldObj = gameClient.mouse.getWorldObject({ clientX: touch.clientX, clientY: touch.clientY, target: dropEl.closest('#screen') });
+        if (worldObj && worldObj.which) {
+          gameClient.mouse.sendItemMove(fromObject, worldObj, 1);
+        }
+      } else if (dropEl) {
+        var targetSlot = dropEl.closest('.slot');
+        if (targetSlot) {
+          var targetIndex = Number(targetSlot.getAttribute('slotIndex'));
+          if (targetIndex !== self.__dragSource.index) {
+            gameClient.mouse.sendItemMove(fromObject, { which: gameClient.player.equipment, index: targetIndex }, 1);
+          }
+        } else if (dropEl.closest('.container-window') || dropEl.closest('.column')) {
+          // Dropped on a container window — find the actual slot
+          var containerSlot = dropEl.closest('[slotIndex]');
+          if (containerSlot && containerSlot.closest('.container-window')) {
+            var cSlotIndex = Number(containerSlot.getAttribute('slotIndex'));
+            var containerWindow = containerSlot.closest('[containerIndex]');
+            if (containerWindow) {
+              var containerIdx = Number(containerWindow.getAttribute('containerIndex'));
+              var container = gameClient.player.getContainer(containerIdx);
+              if (container) {
+                gameClient.mouse.sendItemMove(fromObject, { which: container, index: cSlotIndex }, 1);
+              }
+            }
+          }
+        }
+      }
+
+      gameClient.mouse.__clearDragSprite();
+    }
+
+    self.__dragSprite = null;
+    self.__dragSource = null;
+  };
+
+  // Bind to document for all slot touches
+  document.addEventListener('touchstart', handleTouchStart, { passive: true });
+  document.addEventListener('touchmove', handleTouchMove, { passive: false });
+  document.addEventListener('touchend', handleTouchEnd);
+};
+
+MobileFullscreen.prototype.__createMobileSlots = function () {
+  if (this.__mobilePanel || !gameClient || !gameClient.player) return;
+
+  var equipment = gameClient.player.equipment;
+  if (!equipment) return;
+
+  this.__originalSlotEls = [];
+  this.__originalConditionsParent = null;
+  this.__originalCapacityParent = null;
+
+  var panel = document.createElement('div');
+  panel.id = 'mobile-equipment';
+  panel.style.cssText = 'position:fixed;right:6px;top:6px;z-index:2147483645;display:flex;flex-direction:row;gap:2px;pointer-events:auto;';
+  this.__mobilePanel = panel;
+
+  var columns = [
+    { slots: [7, 5, 8], ids: ['neck', 'left-hand', 'finger'], extra: [
+      function () {
+        var el = document.getElementById('conditions-display');
+        if (el && el.parentNode) {
+          this.__originalConditionsParent = el.parentNode;
+          return el.parentNode.removeChild(el);
+        }
+        return null;
+      }
+    ]},
+    { slots: [0, 1, 2, 3], ids: ['head', 'body', 'legs', 'feet'], extra: [] },
+    { slots: [6, 4, 9], ids: ['back', 'right-hand', 'ammo'], extra: [
+      function () {
+        var el = document.querySelector('.capacity-display');
+        if (el && el.parentNode) {
+          this.__originalCapacityParent = el.parentNode;
+          el.parentNode.removeChild(el);
+        }
+        return el;
+      }
+    ]}
+  ];
+
+  for (var c = 0; c < columns.length; c++) {
+    var col = document.createElement('div');
+    col.style.cssText = 'display:flex;flex-direction:column;gap:2px;';
+
+    for (var s = 0; s < columns[c].slots.length; s++) {
+      var slotIndex = columns[c].slots[s];
+      var slotId = columns[c].ids[s];
+
+      var slotEl = document.createElement('div');
+      slotEl.className = 'slot';
+      slotEl.setAttribute('slotIndex', slotIndex);
+      slotEl.style.cssText = 'width:32px;height:32px;position:relative;touch-action:auto;';
+
+      var canvas = document.createElement('canvas');
+      canvas.width = 32;
+      canvas.height = 32;
+      canvas.style.cssText = 'width:32px;height:32px;position:absolute;top:0;left:0;z-index:100;pointer-events:none;';
+      slotEl.appendChild(canvas);
+
+      var count = document.createElement('span');
+      count.className = 'count';
+      count.style.cssText = 'color:#d3d3d3;font-size:10px;font-weight:bold;position:absolute;bottom:2px;right:4px;pointer-events:none;z-index:100;text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;touch-action:auto;';
+      slotEl.appendChild(count);
+
+      col.appendChild(slotEl);
+
+      if (equipment.slots[slotIndex]) {
+        this.__originalSlotEls[slotIndex] = equipment.slots[slotIndex].element;
+        equipment.slots[slotIndex].setElement(slotEl);
+        equipment.slots[slotIndex].render();
+      }
+    }
+
+    // Append extra elements (conditions, capacity)
+    for (var e = 0; e < columns[c].extra.length; e++) {
+      var extraEl = columns[c].extra[e].call(this);
+      if (extraEl) {
+        col.appendChild(extraEl);
+      }
+    }
+
+    panel.appendChild(col);
+  }
+
+  document.body.appendChild(panel);
+
+  this.__enableRepositionDrag(panel, 'retrogo_equip_pos', {
+    onStart: function () {},
+    onEnd: function () {}
+  });
+};
+
+MobileFullscreen.prototype.__destroyMobileSlots = function () {
+  if (!this.__mobilePanel) return;
+
+  this.__saveRepositionPosition(this.__mobilePanel, 'retrogo_equip_pos');
+
+  if (gameClient && gameClient.player && gameClient.player.equipment && this.__originalSlotEls) {
+    for (var i = 0; i < this.__originalSlotEls.length; i++) {
+      if (this.__originalSlotEls[i] && gameClient.player.equipment.slots[i]) {
+        gameClient.player.equipment.slots[i].setElement(this.__originalSlotEls[i]);
+        gameClient.player.equipment.slots[i].render();
+      }
+    }
+  }
+
+  // Restore conditions-display to original parent
+  var conditionsEl = document.getElementById('conditions-display');
+  if (conditionsEl && this.__originalConditionsParent) {
+    this.__originalConditionsParent.appendChild(conditionsEl);
+  }
+
+  // Restore capacity-display to original parent
+  var capacityEl = document.querySelector('.capacity-display');
+  if (capacityEl && this.__originalCapacityParent) {
+    this.__originalCapacityParent.appendChild(capacityEl);
+  }
+
+  this.__mobilePanel.remove();
+  this.__mobilePanel = null;
+  this.__originalSlotEls = null;
+  this.__originalConditionsParent = null;
+  this.__originalCapacityParent = null;
+};
+
+MobileFullscreen.prototype.__saveRepositionPosition = function (element, storageKey) {
+  try {
+    localStorage.setItem(storageKey, JSON.stringify({
+      x: element.offsetLeft,
+      y: element.offsetTop
+    }));
+  } catch(e) {}
+};
+
+MobileFullscreen.prototype.__enableRepositionDrag = function (element, storageKey, opts) {
+  var self = this;
+  var timer = null;
+  var drag = null;
+
+  try {
+    var saved = localStorage.getItem(storageKey);
+    if (saved) {
+      var p = JSON.parse(saved);
+      element.style.left = p.x + 'px';
+      element.style.top = p.y + 'px';
+      element.style.right = '';
+      element.style.bottom = '';
+    }
+  } catch(e) {}
+
+  function cancelTimer() { if (timer) { clearTimeout(timer); timer = null; } }
+  function exitMode() {
+    self.__repositioning = null;
+    element.classList.remove('reposition-mode');
+    if (opts && opts.onEnd) opts.onEnd(element);
+  }
+
+  element.addEventListener('touchstart', function (e) {
+    if (self.__repositioning === element) {
+      var t = e.changedTouches[0];
+      drag = {
+        startX: t.clientX, startY: t.clientY,
+        startLeft: element.offsetLeft, startTop: element.offsetTop
+      };
+      element.style.transition = 'none';
+      e.preventDefault();
+      return;
+    }
+    if (self.__repositioning) return;
+
+    timer = setTimeout(function () {
+      timer = null;
+      self.__repositioning = element;
+      element.classList.add('reposition-mode');
+      if (opts && opts.onStart) opts.onStart(element);
+    }, 3000);
+  }, { passive: true });
+
+  element.addEventListener('touchmove', function (e) {
+    if (self.__repositioning !== element) { cancelTimer(); return; }
+    if (!drag) return;
+    var t = e.changedTouches[0];
+    var dx = t.clientX - drag.startX;
+    var dy = t.clientY - drag.startY;
+    element.style.left = (drag.startLeft + dx) + 'px';
+    element.style.top = (drag.startTop + dy) + 'px';
+    e.preventDefault();
+  }, { passive: false });
+
+  element.addEventListener('touchend', function () {
+    if (drag) {
+      self.__saveRepositionPosition(element, storageKey);
+      drag = null;
+      exitMode();
+      return;
+    }
+    cancelTimer();
+  });
+
+  element.addEventListener('touchcancel', function () {
+    cancelTimer();
+    drag = null;
+    exitMode();
   });
 };
 
@@ -790,7 +1115,12 @@ try {
   new MobileFullscreen();
   if (mobileFS && mobileFS.isMobile) {
     var checkVisible = function () { mobileFS.__checkOrientation(); };
-    var checkPlayer = function () { mobileFS.__updateDpadVisibility(); };
+    var checkPlayer = function () {
+      mobileFS.__updateDpadVisibility();
+      if (mobileFS.active && gameClient && gameClient.player) {
+        mobileFS.__createMobileSlots();
+      }
+    };
     window.addEventListener('load', function () {
       setTimeout(checkVisible, 500);
       setTimeout(checkVisible, 1500);
