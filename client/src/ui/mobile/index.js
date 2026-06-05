@@ -193,7 +193,7 @@ MobileFullscreen.prototype.__injectStyles = function () {
     '  width: 140px !important; max-height: calc(100vh - 60px) !important;' +
     '}' +
     'body.mobile-fullscreen #guild-modal {' +
-    '  width: 70% !important;' +
+    '  width: 360px !important;' +
     '}' +
     'body.mobile-fullscreen #offer-modal {' +
     '  width: 400px !important;' +
