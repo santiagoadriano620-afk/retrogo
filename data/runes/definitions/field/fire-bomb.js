@@ -7,7 +7,7 @@ module.exports = function fireBomb(source, target) {
     let relPosition = target.position.add(offset);
     let tile = process.gameServer.world.getTileFromWorldPosition(relPosition);
     if (tile === null || tile.isBlockSolid()) return;
-    tile.addTopThing(process.gameServer.database.createThing(1487));
+    tile.addTopThing(process.gameServer.database.createThing(1500));
   });
   return true;
 }

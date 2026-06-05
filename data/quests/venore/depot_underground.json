@@ -1,11 +1,42 @@
 {
-  "actionId": 3118,
-  "type": "moveEvent",
-  "events": ["onStepIn"],
-  "teleport": {"to": {"x": 32918, "y": 32072, "z": 12}},
-  "magicEffect": 13,
-  "effects": [
-    { "type": "relocate", "from": {}, "to": {"x": 32918, "y": 32072, "z": 12} },
-    { "type": "magicEffect", "pos": {"x": 32918, "y": 32072, "z": 11}, "effectId": 13 }
-  ]
+    "actionId":  3118,
+    "type":  "moveEvent",
+    "events":  [
+                   "onStepIn"
+               ],
+    "teleport":  {
+                     "to":  {
+                                "x":  32918,
+                                "y":  32072,
+                                "z":  12
+                            }
+                 },
+    "magicEffect":  13,
+    "effects":  [
+                    {
+                        "type":  "relocate",
+                        "from":  {
+
+                                 },
+                        "to":  {
+                                   "x":  32918,
+                                   "y":  32072,
+                                   "z":  12
+                               }
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  32918,
+                                    "y":  32072,
+                                    "z":  11
+                                },
+                        "effectId":  13
+                    },
+                    {
+                        "key":  8118,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ]
 }

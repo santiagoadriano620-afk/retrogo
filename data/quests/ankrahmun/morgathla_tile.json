@@ -1,12 +1,30 @@
-﻿{
-  "actionId": 3014,
-  "type": "moveEvent",
-  "events": ["onStepIn"],
-  "conditions": [
-    { "type": "storage", "key": 293, "value": 7 }
-  ],
-  "effects": [
-    { "type": "storage", "key": 296, "value": 1 },
-    { "type": "magicEffect", "effectId": 13 }
-  ]
+{
+    "actionId":  3014,
+    "type":  "moveEvent",
+    "events":  [
+                   "onStepIn"
+               ],
+    "conditions":  [
+                       {
+                           "type":  "storage",
+                           "key":  293,
+                           "value":  7
+                       }
+                   ],
+    "effects":  [
+                    {
+                        "type":  "storage",
+                        "key":  296,
+                        "value":  1
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "effectId":  13
+                    },
+                    {
+                        "key":  8014,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ]
 }

@@ -169,6 +169,36 @@
 - **`__dragSprite = null` in handleTouchStart** — defensive null check before rendering drag sprite
 - **Window position persistence** — saves to `localStorage['retrogo_window_positions']` per window id/containerIndex; restored on topbar creation
 
+### Lock icons use images instead of CSS colors
+- `.module-lock-icon` CSS changed from `background: #888` / `background: transparent` to `background-image: url("/images/game/console/locked.png")` and `unlocked.png`
+- Uses `background-size: contain; background-repeat: no-repeat; background-position: center; border: none`
+- Keeps same 16x16 icon size and className toggling (`locked` / `unlocked`)
+
+### Double-tap NPC with trade opens trade window (mobile)
+- Added double-tap detection (300ms / 30px threshold) to canvas `touchstart` handler in `canvas.js`
+- On double-tap: checks if tapped tile has an NPC with `hasTrade === true`
+- If found: sends `"hi"` then after 200ms sends `"trade"` on default channel (same as typing it manually)
+- Reuses `__lastTapTime/X/Y` properties from `core.js` (previously unused)
+
+### Fire field decay with damage scaling
+- **Problem**: Fire field rune (2301) created item 1487 (permanent, no decay) — fire lasted forever
+- **Fix**: Rune scripts now create decaying items:
+  - `firefield.js` rune → item **1492** (instead of 1487)
+  - `fire-bomb.js` rune → item **1500** (instead of 1487)
+  - `fire-wall-rune.js` rune → item **1492** (instead of 1487)
+  - Monster `firefield` attack → item **1492** (instead of 1487)
+- **Decay chain** (items 1492→1493→1494→0, 120s each = 6 min total):
+  - Item 1492: `field: "fire_strong"` — 7 ticks BURNING (full damage)
+  - Item 1493: `field: "fire_medium"` — 4 ticks BURNING (medium damage)
+  - Item 1494: `field: "fire_weak"` — 2 ticks BURNING (low damage)
+- **Fire bomb** (items 1500→1501→1502→0, 10s each = 30s total):
+  - Same `fire_strong`/`fire_medium`/`fire_weak` field value scaling
+- `item-stack.js`: `__applyFieldCondition` and `hasDamagingField` updated with mappings for fire_strong/medium/weak; all share fire immunity check
+- Items 1487-1489 (permanent fire fields) still exist but are no longer created by runes/monsters
+- Fire Elemental (`fire_elemental.json`): added `noCorpse: true`, `deathField: 1492`, `deathEffect: "fire"` — drops a decaying fire field instead of a corpse on death
+- `monster.js`: added `this.deathEffect` property for custom death animation
+- `world-creature-handler.js`: death effect now checks `creature.deathEffect` — uses `HITBYFIRE` for `"fire"`, default `POISONAREA` + slime splash otherwise
+
 ### Pre-render buffer expansion (mobile culling)
 - **Problem**: Foreground culling margins matched viewport exactly (zero buffer). On movement, objects visibly rendered at screen edges.
 - **`mobile/canvas.js`**: `cullMargin*` increased from `halfX/Y` (10/7) to **+4** (14/11); `bgCullMargin*` from `halfX/Y+2` (12/9) to **+6** (16/13)

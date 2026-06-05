@@ -637,12 +637,8 @@ PacketHandler.prototype.handlePlayerSay = function (player, packet) {
    * When player says a message handle it
    */
 
-  // Sanitize message: strip HTML/script to prevent XSS on other clients
-  packet.message = packet.message
-    .replace(/[<>]/g, "")
-    .replace(/&/g, "&amp;")
-    .replace(/"/g, "&quot;")
-    .substring(0, 256);
+  // Sanitize: limit length (XSS handled by PacketWriter.encodeString → escapeHTML)
+  packet.message = packet.message.substring(0, 256);
 
   // Spell words mapping to spell IDs
   const SPELL_WORDS = {

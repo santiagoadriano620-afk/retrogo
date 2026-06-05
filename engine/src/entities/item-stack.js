@@ -360,10 +360,13 @@ ItemStack.prototype.__applyFieldCondition = function(field, creature) {
    * Applies the field condition to the creature
    */
 
-  // Check creature immunities before applying field damage
+  // Map field types to immunity type
   const immunityMap = {
     "energy": "energy",
     "fire": "fire",
+    "fire_strong": "fire",
+    "fire_medium": "fire",
+    "fire_weak": "fire",
     "poison": "earth"
   };
   const immunityType = immunityMap[field];
@@ -371,10 +374,13 @@ ItemStack.prototype.__applyFieldCondition = function(field, creature) {
     return;
   }
 
-  // Handle specific field types
-    switch(field) {
+  // Handle specific field types — decaying fire stages deal less damage
+  switch(field) {
     case "energy": return creature.addCondition(CONST.CONDITION.ELECTRIFIED, 2, 2000, null);
-    case "fire": return creature.addCondition(CONST.CONDITION.BURNING, 7, 9000, null);
+    case "fire":
+    case "fire_strong": return creature.addCondition(CONST.CONDITION.BURNING, 7, 9000, null);
+    case "fire_medium": return creature.addCondition(CONST.CONDITION.BURNING, 4, 9000, null);
+    case "fire_weak": return creature.addCondition(CONST.CONDITION.BURNING, 2, 9000, null);
     case "poison": return creature.addCondition(CONST.CONDITION.POISONED, 45, 2000, null);
   }
 
@@ -390,6 +396,9 @@ ItemStack.prototype.hasDamagingField = function (creature) {
   const immunityMap = {
     "energy": "energy",
     "fire": "fire",
+    "fire_strong": "fire",
+    "fire_medium": "fire",
+    "fire_weak": "fire",
     "poison": "earth"
   };
 

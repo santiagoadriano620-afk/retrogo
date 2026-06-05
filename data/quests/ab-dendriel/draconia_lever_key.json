@@ -1,19 +1,72 @@
-[
-  {
-    "actionId": 2008,
-    "type": "lever",
-    "itemIds": [1945, 1946],
-    "conditions": [
-      { "type": "isItemInPosition", "pos": { "x": 32792, "y": 31581, "z": 7 }, "itemId": 1037 }
-    ],
-    "effects": [
-      { "type": "transformItem", "from": 1945, "to": 1946, "decay": true },
-      { "type": "removeItem", "pos": { "x": 32792, "y": 31581, "z": 7 }, "itemId": 1037 }
-    ],
-    "effectsAlt": [
-      { "type": "transformItem", "from": 1946, "to": 1945, "decay": true },
-      { "type": "relocate", "from": { "x": 32792, "y": 31581, "z": 7 }, "to": { "x": 32792, "y": 31582, "z": 7 } },
-      { "type": "createItem", "itemId": 1037, "count": 1, "pos": { "x": 32792, "y": 31581, "z": 7 } }
-    ]
-  }
-]
+{
+    "actionId":  2008,
+    "type":  "lever",
+    "itemIds":  [
+                    1945,
+                    1946
+                ],
+    "conditions":  [
+                       {
+                           "type":  "isItemInPosition",
+                           "pos":  {
+                                       "x":  32792,
+                                       "y":  31581,
+                                       "z":  7
+                                   },
+                           "itemId":  1037
+                       }
+                   ],
+    "effects":  [
+                    {
+                        "type":  "transformItem",
+                        "from":  1945,
+                        "to":  1946,
+                        "decay":  true
+                    },
+                    {
+                        "type":  "removeItem",
+                        "pos":  {
+                                    "x":  32792,
+                                    "y":  31581,
+                                    "z":  7
+                                },
+                        "itemId":  1037
+                    },
+                    {
+                        "key":  7008,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "effectsAlt":  [
+                       {
+                           "type":  "transformItem",
+                           "from":  1946,
+                           "to":  1945,
+                           "decay":  true
+                       },
+                       {
+                           "type":  "relocate",
+                           "from":  {
+                                        "x":  32792,
+                                        "y":  31581,
+                                        "z":  7
+                                    },
+                           "to":  {
+                                      "x":  32792,
+                                      "y":  31582,
+                                      "z":  7
+                                  }
+                       },
+                       {
+                           "type":  "createItem",
+                           "itemId":  1037,
+                           "count":  1,
+                           "pos":  {
+                                       "x":  32792,
+                                       "y":  31581,
+                                       "z":  7
+                                   }
+                       }
+                   ]
+}

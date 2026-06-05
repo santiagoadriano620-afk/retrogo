@@ -15,8 +15,6 @@
     "armor": 1
   },
   "experience": 0,
-  "corpse": 2813,
-  "fluidType": 2,
   "behaviour": {
     "type": 2,
     "fleeHealth": 0,
@@ -59,6 +57,7 @@
     "canPushCreatures": true,
     "illusionable": false,
     "targetDistance": 1,
-    "runonhealth": 100
+    "runonhealth": 100,
+    "noCorpse": true
   }
 }

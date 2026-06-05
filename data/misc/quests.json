@@ -1,48 +1,3229 @@
 [
     {
-        "id": 1,
-        "name": "The Rookie",
-        "missions": [
-            {
-                "id": 1,
-                "name": "Talk to the Oracle",
-                "description": "Go to the temple and talk to the Oracle to choose your vocation.",
-                "storageKey": 1001,
-                "storageValue": 1
-            },
-            {
-                "id": 2,
-                "name": "First Equipment",
-                "description": "Find the chest in the sewers to get your first equipment.",
-                "storageKey": 1001,
-                "storageValue": 2
-            }
-        ]
+        "id":  1,
+        "name":  "The Rookie",
+        "missions":  [
+                         {
+                             "id":  1,
+                             "name":  "Talk to the Oracle",
+                             "description":  "Go to the temple and talk to the Oracle to choose your vocation.",
+                             "storageKey":  1001,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  2,
+                             "name":  "First Equipment",
+                             "description":  "Find the chest in the sewers to get your first equipment.",
+                             "storageKey":  1001,
+                             "storageValue":  2
+                         }
+                     ]
     },
     {
-        "id": 2,
-        "name": "Rat Plague",
-        "missions": [
-            {
-                "id": 1,
-                "name": "Exterminate Rats",
-                "description": "Kill 10 rats in the basement.",
-                "storageKey": 1002,
-                "storageValue": 1
-            }
-        ]
+        "id":  2,
+        "name":  "Rat Plague",
+        "missions":  [
+                         {
+                             "id":  1,
+                             "name":  "Exterminate Rats",
+                             "description":  "Kill 10 rats in the basement.",
+                             "storageKey":  1002,
+                             "storageValue":  1
+                         }
+                     ]
     },
     {
-        "id": 3,
-        "name": "The Magician",
-        "missions": [
-            {
-                "id": 1,
-                "name": "Cast Light",
-                "description": "Cast the Light spell (utevo lux) to prove your magical ability.",
-                "storageKey": 2001,
-                "storageValue": 1
-            }
-        ]
+        "id":  3,
+        "name":  "The Magician",
+        "missions":  [
+                         {
+                             "id":  1,
+                             "name":  "Cast Light",
+                             "description":  "Cast the Light spell to prove your magical ability.",
+                             "storageKey":  2001,
+                             "storageValue":  1
+                         }
+                     ]
+    },
+    {
+        "id":  10,
+        "name":  "Rookgaard",
+        "missions":  [
+                         {
+                             "id":  1,
+                             "name":  "The Katana Door",
+                             "description":  "Pull the lever to open the katana door.",
+                             "storageKey":  7051,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  2,
+                             "name":  "The Bear\u0027s Chamber",
+                             "description":  "Pull the lever to unlock the bear room.",
+                             "storageKey":  7052,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  3,
+                             "name":  "The Rat Bridge",
+                             "description":  "Activate the bridge mechanism to cross the rat pit.",
+                             "storageKey":  7053,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  4,
+                             "name":  "The Rat Bridge Part II",
+                             "description":  "Pull the second lever to complete the rat bridge.",
+                             "storageKey":  7054,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  5,
+                             "name":  "The Hidden Library",
+                             "description":  "Pull the lever to reveal the secret library entrance.",
+                             "storageKey":  7055,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  6,
+                             "name":  "The Bug Infestation",
+                             "description":  "Pull the lever to clear the bug path.",
+                             "storageKey":  7056,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  7,
+                             "name":  "The Wolf\u0027s Lair",
+                             "description":  "Pull the lever to open the wolf den passage.",
+                             "storageKey":  7057,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  8,
+                             "name":  "The Troll Cave",
+                             "description":  "Pull the lever to gain access deeper into troll territory.",
+                             "storageKey":  7058,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  9,
+                             "name":  "The Spider\u0027s Web",
+                             "description":  "Pull the lever to bypass the spider nest.",
+                             "storageKey":  7059,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  10,
+                             "name":  "The Spike Sword",
+                             "description":  "Step on the pressure plate to claim the Spike Sword.",
+                             "storageKey":  8012,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  11,
+                             "name":  "Bridge to Level 2",
+                             "description":  "Activate the bridge to reach the second level.",
+                             "storageKey":  8051,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  12,
+                             "name":  "The Premium Bridge",
+                             "description":  "Cross the premium bridge to access restricted areas.",
+                             "storageKey":  8052,
+                             "storageValue":  1
+                         }
+                     ]
+    },
+    {
+        "id":  11,
+        "name":  "Thais Adventures",
+        "missions":  [
+                         {
+                             "id":  1,
+                             "name":  "Mintwallin Bridge",
+                             "description":  "Pull the lever to extend the bridge in Mintwallin.",
+                             "storageKey":  7037,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  2,
+                             "name":  "Mintwallin Sewer Gate",
+                             "description":  "Step on the tile to open the Mintwallin sewer gate.",
+                             "storageKey":  8034,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  3,
+                             "name":  "Beholder Bridge South",
+                             "description":  "Pull the southern lever to connect the beholder bridge.",
+                             "storageKey":  7060,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  4,
+                             "name":  "Beholder Bridge North",
+                             "description":  "Pull the northern lever to complete the beholder bridge.",
+                             "storageKey":  7061,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  5,
+                             "name":  "McRonald\u0027s Pig #1",
+                             "description":  "Pull the first lever to help McRonald with his pigs.",
+                             "storageKey":  7062,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  6,
+                             "name":  "McRonald\u0027s Pig #2",
+                             "description":  "Pull the second lever to finish the pig puzzle.",
+                             "storageKey":  7063,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  7,
+                             "name":  "Cyclops Wall",
+                             "description":  "Pull the lever to open the cyclops wall.",
+                             "storageKey":  7066,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  9,
+                             "name":  "Sorcerer-Only Passage",
+                             "description":  "Pass through the sorcerer-only gate in Thais.",
+                             "storageKey":  8117,
+                             "storageValue":  1
+                         }
+                     ]
+    },
+    {
+        "id":  12,
+        "name":  "The Lighthouse Secret",
+        "missions":  [
+                         {
+                             "id":  1,
+                             "name":  "The Lighthouse Entrance",
+                             "description":  "Pull the lever to enter the lighthouse.",
+                             "storageKey":  7064,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  2,
+                             "name":  "The Lighthouse Portal",
+                             "description":  "Activate the portal deep within the lighthouse.",
+                             "storageKey":  8114,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  3,
+                             "name":  "Escape the Lighthouse",
+                             "description":  "Find the exit portal to leave the lighthouse.",
+                             "storageKey":  8115,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  4,
+                             "name":  "Lighthouse Teleport",
+                             "description":  "Pull the lever to activate the lighthouse teleport.",
+                             "storageKey":  7065,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  5,
+                             "name":  "Lighthouse Stairway",
+                             "description":  "Step on the hidden tile to reveal the lighthouse stairs.",
+                             "storageKey":  8033,
+                             "storageValue":  1
+                         }
+                     ]
+    },
+    {
+        "id":  13,
+        "name":  "The Draw Well",
+        "missions":  [
+                         {
+                             "id":  1,
+                             "name":  "Down the Well",
+                             "description":  "Pull the lever to descend into the draw well.",
+                             "storageKey":  7078,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  2,
+                             "name":  "Fibula Well Entrance",
+                             "description":  "Pull the lever to enter the Fibula draw well.",
+                             "storageKey":  7079,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  3,
+                             "name":  "The Skeleton Well",
+                             "description":  "Step into the teleport to reach the skeleton well.",
+                             "storageKey":  7080,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  4,
+                             "name":  "The Pick Hole",
+                             "description":  "Use a pick on the marked spot to dig a hole.",
+                             "storageKey":  9003,
+                             "storageValue":  1
+                         }
+                     ]
+    },
+    {
+        "id":  15,
+        "name":  "The Bright Sword",
+        "missions":  [
+                         {
+                             "id":  1,
+                             "name":  "The Barrel Lever",
+                             "description":  "Pull the barrel lever to advance the Bright Sword quest.",
+                             "storageKey":  7044,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  2,
+                             "name":  "The Oven Lever",
+                             "description":  "Pull the oven lever to continue forging the Bright Sword.",
+                             "storageKey":  7045,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  3,
+                             "name":  "The Power Ring Lever",
+                             "description":  "Pull the power ring lever to complete the Bright Sword.",
+                             "storageKey":  7046,
+                             "storageValue":  1
+                         }
+                     ]
+    },
+    {
+        "id":  16,
+        "name":  "Desert Dungeon",
+        "missions":  [
+                         {
+                             "id":  1,
+                             "name":  "The Dungeon Lever",
+                             "description":  "Pull the lever to enter the desert dungeon.",
+                             "storageKey":  7010,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  2,
+                             "name":  "Pressure Tiles",
+                             "description":  "Navigate the pressure tile puzzle in the desert dungeon.",
+                             "storageKey":  8000,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  3,
+                             "name":  "The Library Switch",
+                             "description":  "Flip the switch in the desert dungeon library.",
+                             "storageKey":  8021,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  4,
+                             "name":  "The Reward Portal",
+                             "description":  "Enter the portal to claim the desert dungeon reward.",
+                             "storageKey":  8070,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  5,
+                             "name":  "Druid Portal",
+                             "description":  "Pass through the druid gate.",
+                             "storageKey":  8087,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  6,
+                             "name":  "Sorcerer Portal",
+                             "description":  "Pass through the sorcerer gate.",
+                             "storageKey":  8088,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  7,
+                             "name":  "Paladin Portal",
+                             "description":  "Pass through the paladin gate.",
+                             "storageKey":  8089,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  8,
+                             "name":  "Knight Portal",
+                             "description":  "Pass through the knight gate.",
+                             "storageKey":  8090,
+                             "storageValue":  1
+                         }
+                     ]
+    },
+    {
+        "id":  17,
+        "name":  "Plains of Havoc",
+        "missions":  [
+                         {
+                             "id":  1,
+                             "name":  "The Stone Lever",
+                             "description":  "Pull the stone lever in the Plains of Havoc.",
+                             "storageKey":  7041,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  2,
+                             "name":  "Stalagmite Passage",
+                             "description":  "Step on the hidden tile to open the stalagmite passage.",
+                             "storageKey":  8001,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  3,
+                             "name":  "The Jungle Grass Path",
+                             "description":  "Step on the hidden jungle grass to find the path.",
+                             "storageKey":  7002,
+                             "storageValue":  1
+                         }
+                     ]
+    },
+    {
+        "id":  18,
+        "name":  "Venore Environs",
+        "missions":  [
+                         {
+                             "id":  1,
+                             "name":  "The Triangle Tower",
+                             "description":  "Pull the lever to enter the Triangle Tower.",
+                             "storageKey":  7036,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  2,
+                             "name":  "Dark Cathedral",
+                             "description":  "Solve the dark cathedral lever puzzle.",
+                             "storageKey":  7086,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  3,
+                             "name":  "Netlios\u0027 Lever",
+                             "description":  "Pull Netlios\u0027 lever in Venore.",
+                             "storageKey":  7009,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  4,
+                             "name":  "Spike Sword Secret",
+                             "description":  "Pull the secret spike sword lever.",
+                             "storageKey":  7011,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  5,
+                             "name":  "Hidden Jungle Grass",
+                             "description":  "Step on the hidden jungle grass tile.",
+                             "storageKey":  8003,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  6,
+                             "name":  "Goblin Mountain",
+                             "description":  "Step on the hidden tile in Goblin Mountain.",
+                             "storageKey":  8002,
+                             "storageValue":  1
+                         }
+                     ]
+    },
+    {
+        "id":  19,
+        "name":  "The Demon Helmet",
+        "missions":  [
+                         {
+                             "id":  1,
+                             "name":  "The Demon Lever",
+                             "description":  "Pull the lever to begin the Demon Helmet quest.",
+                             "storageKey":  7012,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  2,
+                             "name":  "The Eastern Wall",
+                             "description":  "Remove the eastern magic wall in the demon tunnels.",
+                             "storageKey":  8022,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  3,
+                             "name":  "The Western Wall",
+                             "description":  "Remove the western magic wall in the demon tunnels.",
+                             "storageKey":  8023,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  4,
+                             "name":  "The Escape Route",
+                             "description":  "Find the exit from the demon helmet dungeon.",
+                             "storageKey":  8091,
+                             "storageValue":  1
+                         }
+                     ]
+    },
+    {
+        "id":  20,
+        "name":  "The Annihilator",
+        "missions":  [
+                         {
+                             "id":  1,
+                             "name":  "The Challenge Lever",
+                             "description":  "Pull the lever to start the Annihilator challenge.",
+                             "storageKey":  7015,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  2,
+                             "name":  "Escape the Arena",
+                             "description":  "Find the exit after surviving the Annihilator.",
+                             "storageKey":  8083,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  3,
+                             "name":  "Annihilator Reward",
+                             "description":  "Claim your reward from the Annihilator chests.",
+                             "storageKey":  203,
+                             "storageValue":  1
+                         }
+                     ]
+    },
+    {
+        "id":  21,
+        "name":  "Edron Quests",
+        "missions":  [
+                         {
+                             "id":  1,
+                             "name":  "Ghostlands",
+                             "description":  "Pull the lever to enter the Ghostlands.",
+                             "storageKey":  7018,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  2,
+                             "name":  "Ghostlands Beholder",
+                             "description":  "Pull the beholder lever in the Ghostlands.",
+                             "storageKey":  7026,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  3,
+                             "name":  "Behemoth\u0027s Bane",
+                             "description":  "Pull the lever to challenge the behemoth.",
+                             "storageKey":  7013,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  4,
+                             "name":  "Goblin Cave Passage",
+                             "description":  "Pull the lever to open the goblin cave passage.",
+                             "storageKey":  7014,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  5,
+                             "name":  "Demona Entrance",
+                             "description":  "Pull the lever to enter the Demona fortress.",
+                             "storageKey":  7016,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  6,
+                             "name":  "Demona Energy Trap",
+                             "description":  "Pull the lever to disable the energy trap.",
+                             "storageKey":  7017,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  7,
+                             "name":  "The Demon Scroll",
+                             "description":  "Step on the tile to summon and defeat the demons.",
+                             "storageKey":  8121,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  8,
+                             "name":  "Statue Removal",
+                             "description":  "Step on the tile to move the statue.",
+                             "storageKey":  8025,
+                             "storageValue":  1
+                         }
+                     ]
+    },
+    {
+        "id":  22,
+        "name":  "The Paradox Tower",
+        "missions":  [
+                         {
+                             "id":  1,
+                             "name":  "The Box Puzzle",
+                             "description":  "Solve the box puzzle in the Paradox Tower.",
+                             "storageKey":  7047,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  2,
+                             "name":  "The Lever Puzzle",
+                             "description":  "Solve the lever puzzle in the Paradox Tower.",
+                             "storageKey":  7048,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  3,
+                             "name":  "The Food Offering",
+                             "description":  "Solve the food puzzle in the Paradox Tower.",
+                             "storageKey":  7049,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  4,
+                             "name":  "The Chessboard",
+                             "description":  "Solve the chess puzzle in the Paradox Tower.",
+                             "storageKey":  7050,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  5,
+                             "name":  "The Dead Tree",
+                             "description":  "Step on the hidden tile behind the dead tree.",
+                             "storageKey":  8004,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  6,
+                             "name":  "Tower Entrance",
+                             "description":  "Step on the entrance tile to enter the Paradox Tower.",
+                             "storageKey":  8005,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  7,
+                             "name":  "The Crate Puzzle",
+                             "description":  "Solve the crate puzzle.",
+                             "storageKey":  8048,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  8,
+                             "name":  "The Skull Gate",
+                             "description":  "Step on the skull entrance tile.",
+                             "storageKey":  8049,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  9,
+                             "name":  "The Stair Opener",
+                             "description":  "Step on the tile to reveal the tower stairs.",
+                             "storageKey":  8035,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  10,
+                             "name":  "Escape the Tower",
+                             "description":  "Step on the exit tile to leave the Paradox Tower.",
+                             "storageKey":  8050,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  11,
+                             "name":  "Reward Chest I",
+                             "description":  "Open the first reward chest.",
+                             "storageKey":  42,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  12,
+                             "name":  "Reward Chest II",
+                             "description":  "Open the second reward chest.",
+                             "storageKey":  41,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  13,
+                             "name":  "Reward Chest III",
+                             "description":  "Open the third reward chest.",
+                             "storageKey":  43,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  14,
+                             "name":  "Reward Chest IV",
+                             "description":  "Open the fourth reward chest.",
+                             "storageKey":  41,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  15,
+                             "name":  "Reward Chest V",
+                             "description":  "Open the fifth reward chest.",
+                             "storageKey":  43,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  16,
+                             "name":  "Reward Chest VI",
+                             "description":  "Open the sixth reward chest.",
+                             "storageKey":  42,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  17,
+                             "name":  "Reward Chest VII",
+                             "description":  "Open the seventh reward chest.",
+                             "storageKey":  43,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  18,
+                             "name":  "Reward Chest VIII",
+                             "description":  "Open the eighth reward chest.",
+                             "storageKey":  44,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  19,
+                             "name":  "Reward Chest IX",
+                             "description":  "Open the ninth reward chest.",
+                             "storageKey":  41,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  20,
+                             "name":  "Reward Chest X",
+                             "description":  "Open the tenth reward chest.",
+                             "storageKey":  44,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  21,
+                             "name":  "Reward Chest XI",
+                             "description":  "Open the eleventh reward chest.",
+                             "storageKey":  44,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  22,
+                             "name":  "Reward Chest XII",
+                             "description":  "Open the twelfth reward chest.",
+                             "storageKey":  42,
+                             "storageValue":  1
+                         }
+                     ]
+    },
+    {
+        "id":  23,
+        "name":  "Kazordoon",
+        "missions":  [
+                         {
+                             "id":  1,
+                             "name":  "Elevator Descent",
+                             "description":  "Pull the lever to go down in the Kazordoon elevator.",
+                             "storageKey":  7032,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  2,
+                             "name":  "The Stone Lever",
+                             "description":  "Pull the stone lever in Kazordoon.",
+                             "storageKey":  7033,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  3,
+                             "name":  "The Ladder Lever",
+                             "description":  "Pull the lever to extend the ladder.",
+                             "storageKey":  7034,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  4,
+                             "name":  "Elevator Ascent",
+                             "description":  "Pull the lever to go up in the elevator.",
+                             "storageKey":  7035,
+                             "storageValue":  1
+                         }
+                     ]
+    },
+    {
+        "id":  24,
+        "name":  "The Pharaoh Tombs",
+        "missions":  [
+                         {
+                             "id":  1,
+                             "name":  "Thalas\u0027 Puzzle",
+                             "description":  "Solve Thalas\u0027 lever puzzle.",
+                             "storageKey":  8063,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  2,
+                             "name":  "Escape Thalas",
+                             "description":  "Find the exit from Thalas\u0027 tomb.",
+                             "storageKey":  8064,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  3,
+                             "name":  "Escape Vashresamun",
+                             "description":  "Find the exit from Vashresamun\u0027s tomb.",
+                             "storageKey":  8071,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  4,
+                             "name":  "Escape Mahrdis",
+                             "description":  "Find the exit from Mahrdis\u0027 tomb.",
+                             "storageKey":  8067,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  5,
+                             "name":  "Escape Morguthis",
+                             "description":  "Find the exit from Morguthis\u0027 tomb.",
+                             "storageKey":  8069,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  6,
+                             "name":  "Escape Omruc",
+                             "description":  "Find the exit from Omruc\u0027s tomb.",
+                             "storageKey":  8066,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  7,
+                             "name":  "Escape Rahemos",
+                             "description":  "Find the exit from Rahemos\u0027 tomb.",
+                             "storageKey":  8074,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  8,
+                             "name":  "Escape Dipthrah",
+                             "description":  "Find the exit from Dipthrah\u0027s tomb.",
+                             "storageKey":  8072,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  9,
+                             "name":  "Escape Ashmunrah",
+                             "description":  "Find the exit from Ashmunrah\u0027s tomb.",
+                             "storageKey":  8068,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  10,
+                             "name":  "Thalas\u0027 Scarab Coin",
+                             "description":  "Place the scarab coin at Thalas\u0027 seal.",
+                             "storageKey":  8053,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  11,
+                             "name":  "Vashresamun\u0027s Scarab Coin",
+                             "description":  "Place the scarab coin at the seal.",
+                             "storageKey":  8054,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  12,
+                             "name":  "Mahrdis\u0027 Scarab Coin",
+                             "description":  "Place the scarab coin at the seal.",
+                             "storageKey":  8055,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  13,
+                             "name":  "Morguthis\u0027 Scarab Coin",
+                             "description":  "Place the scarab coin at the seal.",
+                             "storageKey":  8056,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  14,
+                             "name":  "Temple Scarab Coin",
+                             "description":  "Place the scarab coin at the temple seal.",
+                             "storageKey":  8057,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  15,
+                             "name":  "Rahemos\u0027 Scarab Coin",
+                             "description":  "Place the scarab coin at the seal.",
+                             "storageKey":  8058,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  16,
+                             "name":  "Omruc\u0027s Scarab Coin",
+                             "description":  "Place the scarab coin at the seal.",
+                             "storageKey":  8059,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  17,
+                             "name":  "Dipthrah\u0027s Scarab Coin",
+                             "description":  "Place the scarab coin at the seal.",
+                             "storageKey":  8060,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  18,
+                             "name":  "Sacrificial Altar",
+                             "description":  "Use the sacrificial altar.",
+                             "storageKey":  8061,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  19,
+                             "name":  "The Second Altar",
+                             "description":  "Use the second sacrificial altar.",
+                             "storageKey":  8062,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  20,
+                             "name":  "Deathslicer Puzzle",
+                             "description":  "Solve the deathslicer puzzle.",
+                             "storageKey":  8065,
+                             "storageValue":  1
+                         }
+                     ]
+    },
+    {
+        "id":  25,
+        "name":  "Helmet of the Ancients",
+        "missions":  [
+                         {
+                             "id":  1,
+                             "name":  "Piece #1",
+                             "description":  "Find the first piece.",
+                             "storageKey":  232,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  2,
+                             "name":  "Piece #2",
+                             "description":  "Find the second piece.",
+                             "storageKey":  243,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  3,
+                             "name":  "Piece #3",
+                             "description":  "Find the third piece.",
+                             "storageKey":  247,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  4,
+                             "name":  "Piece #4",
+                             "description":  "Find the fourth piece.",
+                             "storageKey":  261,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  5,
+                             "name":  "Piece #5",
+                             "description":  "Find the fifth piece.",
+                             "storageKey":  262,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  6,
+                             "name":  "Piece #6",
+                             "description":  "Find the sixth piece.",
+                             "storageKey":  263,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  7,
+                             "name":  "Piece #7",
+                             "description":  "Find the seventh piece.",
+                             "storageKey":  264,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  8,
+                             "name":  "Piece #8",
+                             "description":  "Find the eighth piece.",
+                             "storageKey":  265,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  9,
+                             "name":  "Piece #9",
+                             "description":  "Find the ninth piece.",
+                             "storageKey":  266,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  10,
+                             "name":  "Piece #10",
+                             "description":  "Find the tenth piece.",
+                             "storageKey":  267,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  11,
+                             "name":  "The Final Assembly",
+                             "description":  "Assemble all pieces to create the Helmet.",
+                             "storageKey":  8018,
+                             "storageValue":  1
+                         }
+                     ]
+    },
+    {
+        "id":  26,
+        "name":  "The Dark Pyramid",
+        "missions":  [
+                         {
+                             "id":  1,
+                             "name":  "Eastern Wall",
+                             "description":  "Pass through the eastern wall.",
+                             "storageKey":  8019,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  2,
+                             "name":  "Western Wall",
+                             "description":  "Pass through the western wall.",
+                             "storageKey":  8020,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  3,
+                             "name":  "The Key Passage",
+                             "description":  "Find the key and exit the Dark Pyramid.",
+                             "storageKey":  8103,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  4,
+                             "name":  "The Lever Puzzle",
+                             "description":  "Solve the lever puzzle.",
+                             "storageKey":  8104,
+                             "storageValue":  1
+                         }
+                     ]
+    },
+    {
+        "id":  27,
+        "name":  "Desert Symphony",
+        "missions":  [
+                         {
+                             "id":  1,
+                             "name":  "The Drum",
+                             "description":  "Play the drum.",
+                             "storageKey":  7070,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  2,
+                             "name":  "The Trumpet",
+                             "description":  "Play the trumpet.",
+                             "storageKey":  7071,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  3,
+                             "name":  "The Horn",
+                             "description":  "Play the horn.",
+                             "storageKey":  7072,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  4,
+                             "name":  "The Mandolin",
+                             "description":  "Play the mandolin.",
+                             "storageKey":  7073,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  5,
+                             "name":  "The Second Horn",
+                             "description":  "Play the second horn.",
+                             "storageKey":  7074,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  6,
+                             "name":  "The Lyre",
+                             "description":  "Play the lyre.",
+                             "storageKey":  7075,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  7,
+                             "name":  "The Panpipes",
+                             "description":  "Play the panpipes.",
+                             "storageKey":  7076,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  8,
+                             "name":  "The Flute",
+                             "description":  "Play the flute.",
+                             "storageKey":  7077,
+                             "storageValue":  1
+                         }
+                     ]
+    },
+    {
+        "id":  28,
+        "name":  "The Mystic Flames",
+        "missions":  [
+                         {
+                             "id":  1,
+                             "name":  "Flame I",
+                             "description":  "Step on the first flame tile.",
+                             "storageKey":  8076,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  2,
+                             "name":  "Flame II",
+                             "description":  "Step on the second flame tile.",
+                             "storageKey":  8077,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  3,
+                             "name":  "Flame III",
+                             "description":  "Step on the third flame tile.",
+                             "storageKey":  8078,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  4,
+                             "name":  "Flame IV",
+                             "description":  "Step on the fourth flame tile.",
+                             "storageKey":  8079,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  5,
+                             "name":  "Flame V",
+                             "description":  "Step on the fifth flame tile.",
+                             "storageKey":  8080,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  6,
+                             "name":  "Flame VI",
+                             "description":  "Step on the sixth flame tile.",
+                             "storageKey":  8081,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  7,
+                             "name":  "Flame VII",
+                             "description":  "Step on the seventh flame tile.",
+                             "storageKey":  8082,
+                             "storageValue":  1
+                         }
+                     ]
+    },
+    {
+        "id":  29,
+        "name":  "Ankrahmun Secrets",
+        "missions":  [
+                         {
+                             "id":  1,
+                             "name":  "The Wasp Lever",
+                             "description":  "Pull the wasp lever.",
+                             "storageKey":  7001,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  2,
+                             "name":  "Scarab Monument",
+                             "description":  "Pull the scarab monument lever.",
+                             "storageKey":  7002,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  3,
+                             "name":  "Serpentine Tower",
+                             "description":  "Pull the fire elemental lever.",
+                             "storageKey":  7003,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  4,
+                             "name":  "Magician\u0027s Hat",
+                             "description":  "Solve the magician hat puzzle.",
+                             "storageKey":  7004,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  5,
+                             "name":  "The Secret Switch",
+                             "description":  "Pull the secret switch.",
+                             "storageKey":  7043,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  6,
+                             "name":  "The Water Basin",
+                             "description":  "Fill a container at the water basin.",
+                             "storageKey":  7067,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  7,
+                             "name":  "Gemmed Lamp I",
+                             "description":  "Use the first gemmed lamp.",
+                             "storageKey":  7068,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  8,
+                             "name":  "Gemmed Lamp II",
+                             "description":  "Use the second gemmed lamp.",
+                             "storageKey":  7069,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  9,
+                             "name":  "Morgathla\u0027s Seal",
+                             "description":  "Step on Morgathla\u0027s tile.",
+                             "storageKey":  8014,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  10,
+                             "name":  "The Cobra\u0027s Venom",
+                             "description":  "Survive the poison floor.",
+                             "storageKey":  8015,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  11,
+                             "name":  "Pacman East",
+                             "description":  "Take the eastern teleport.",
+                             "storageKey":  8016,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  12,
+                             "name":  "Pacman West",
+                             "description":  "Take the western teleport.",
+                             "storageKey":  8017,
+                             "storageValue":  1
+                         }
+                     ]
+    },
+    {
+        "id":  30,
+        "name":  "The Door Hallway",
+        "missions":  [
+                         {
+                             "id":  1,
+                             "name":  "The Wrong Door",
+                             "description":  "Step on the wrong door.",
+                             "storageKey":  8122,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  2,
+                             "name":  "The Correct Door",
+                             "description":  "Step on the correct door.",
+                             "storageKey":  8123,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  3,
+                             "name":  "Hallway Teleport",
+                             "description":  "Step on the hallway teleport.",
+                             "storageKey":  8075,
+                             "storageValue":  1
+                         }
+                     ]
+    },
+    {
+        "id":  31,
+        "name":  "The Banshee\u0027s Curse",
+        "missions":  [
+                         {
+                             "id":  1,
+                             "name":  "Lever Puzzle I",
+                             "description":  "Solve the first lever puzzle.",
+                             "storageKey":  7019,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  2,
+                             "name":  "Lever Puzzle II",
+                             "description":  "Solve the second lever puzzle.",
+                             "storageKey":  7020,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  3,
+                             "name":  "Lever Puzzle III",
+                             "description":  "Solve the third lever puzzle.",
+                             "storageKey":  7021,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  4,
+                             "name":  "Lever Puzzle IV",
+                             "description":  "Solve the fourth lever puzzle.",
+                             "storageKey":  7022,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  5,
+                             "name":  "Lever Puzzle V",
+                             "description":  "Solve the fifth lever puzzle.",
+                             "storageKey":  7023,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  6,
+                             "name":  "Lever Puzzle VI",
+                             "description":  "Solve the sixth lever puzzle.",
+                             "storageKey":  7024,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  7,
+                             "name":  "Secret Seal Lever",
+                             "description":  "Pull the secret seal lever.",
+                             "storageKey":  7025,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  8,
+                             "name":  "Stepback Illusion South",
+                             "description":  "Step on the southern illusion tile.",
+                             "storageKey":  8006,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  9,
+                             "name":  "Stepback Illusion North",
+                             "description":  "Step on the northern illusion tile.",
+                             "storageKey":  8007,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  10,
+                             "name":  "Hole Removal South",
+                             "description":  "Step on the tile to seal the hole.",
+                             "storageKey":  8008,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  11,
+                             "name":  "Hole Removal North",
+                             "description":  "Step on the tile to seal the hole.",
+                             "storageKey":  8009,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  12,
+                             "name":  "Entrance Restore I",
+                             "description":  "Step on the first restoration tile.",
+                             "storageKey":  8010,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  13,
+                             "name":  "Entrance Restore II",
+                             "description":  "Step on the second restoration tile.",
+                             "storageKey":  8011,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  14,
+                             "name":  "Summon Warlock",
+                             "description":  "Step on the summon tile.",
+                             "storageKey":  8026,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  15,
+                             "name":  "Tile Puzzle Start",
+                             "description":  "Step on the first tile.",
+                             "storageKey":  8027,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  16,
+                             "name":  "Tile Puzzle Correct",
+                             "description":  "Step on the correct tile.",
+                             "storageKey":  8028,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  17,
+                             "name":  "Tile Puzzle Incorrect",
+                             "description":  "Survive the incorrect tile.",
+                             "storageKey":  8029,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  18,
+                             "name":  "Blood Tile",
+                             "description":  "Step on the blood tile.",
+                             "storageKey":  8030,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  19,
+                             "name":  "The Ghost Seal",
+                             "description":  "Activate the ghost seal.",
+                             "storageKey":  8098,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  20,
+                             "name":  "The Blood Seal",
+                             "description":  "Activate the blood seal.",
+                             "storageKey":  8099,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  21,
+                             "name":  "The Warlock Seal",
+                             "description":  "Activate the warlock seal.",
+                             "storageKey":  8100,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  22,
+                             "name":  "The Tiles Seal",
+                             "description":  "Activate the tiles seal.",
+                             "storageKey":  8101,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  23,
+                             "name":  "The Pearls Seal",
+                             "description":  "Activate the pearls seal.",
+                             "storageKey":  8102,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  24,
+                             "name":  "Pearls Puzzle I",
+                             "description":  "Solve the pearls puzzle.",
+                             "storageKey":  8095,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  25,
+                             "name":  "Pearls Puzzle II",
+                             "description":  "Solve the second pearls puzzle.",
+                             "storageKey":  8096,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  26,
+                             "name":  "Banshee Lever Puzzle",
+                             "description":  "Pull the main lever puzzle.",
+                             "storageKey":  8097,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  27,
+                             "name":  "Escape the Banshee",
+                             "description":  "Find the exit.",
+                             "storageKey":  8094,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  28,
+                             "name":  "Restore Magic Walls",
+                             "description":  "Restore the magic walls.",
+                             "storageKey":  8024,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  29,
+                             "name":  "Sub-Lever #1",
+                             "description":  "Pull the first sub-lever.",
+                             "storageKey":  7027,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  30,
+                             "name":  "Sub-Lever #2",
+                             "description":  "Pull the second sub-lever.",
+                             "storageKey":  7028,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  31,
+                             "name":  "Sub-Lever #3",
+                             "description":  "Pull the third sub-lever.",
+                             "storageKey":  7029,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  32,
+                             "name":  "Sub-Lever #4",
+                             "description":  "Pull the fourth sub-lever.",
+                             "storageKey":  7030,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  33,
+                             "name":  "Sub-Lever #5",
+                             "description":  "Pull the fifth sub-lever.",
+                             "storageKey":  7031,
+                             "storageValue":  1
+                         }
+                     ]
+    },
+    {
+        "id":  32,
+        "name":  "Port Hope",
+        "missions":  [
+                         {
+                             "id":  1,
+                             "name":  "Banuta 999 Entrance",
+                             "description":  "Pull the lever to enter.",
+                             "storageKey":  7005,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  2,
+                             "name":  "Banuta 999 Exit",
+                             "description":  "Pull the lever to exit.",
+                             "storageKey":  7006,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  3,
+                             "name":  "Kongra Teleport",
+                             "description":  "Enter the Kongra teleport.",
+                             "storageKey":  8084,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  4,
+                             "name":  "The Canopic Jar",
+                             "description":  "Solve the canopic jar puzzle.",
+                             "storageKey":  8085,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  5,
+                             "name":  "The Dworc Hole",
+                             "description":  "Pull the lever to open the hole.",
+                             "storageKey":  7042,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  6,
+                             "name":  "Orichalcum Pearl I",
+                             "description":  "Enter the first pearl portal.",
+                             "storageKey":  8092,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  7,
+                             "name":  "Orichalcum Pearl II",
+                             "description":  "Enter the second pearl portal.",
+                             "storageKey":  8093,
+                             "storageValue":  1
+                         }
+                     ]
+    },
+    {
+        "id":  33,
+        "name":  "Isle of Kings",
+        "missions":  [
+                         {
+                             "id":  1,
+                             "name":  "First Trespass",
+                             "description":  "Step on the first trespass tile.",
+                             "storageKey":  8031,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  2,
+                             "name":  "Second Trespass",
+                             "description":  "Step on the second trespass tile.",
+                             "storageKey":  8032,
+                             "storageValue":  1
+                         }
+                     ]
+    },
+    {
+        "id":  34,
+        "name":  "Senja",
+        "missions":  [
+                         {
+                             "id":  1,
+                             "name":  "The Magic Walls",
+                             "description":  "Pull the lever to dispel the magic walls.",
+                             "storageKey":  7039,
+                             "storageValue":  1
+                         }
+                     ]
+    },
+    {
+        "id":  35,
+        "name":  "GM Island",
+        "missions":  [
+                         {
+                             "id":  1,
+                             "name":  "The Torture Chamber",
+                             "description":  "Pull the lever in the torture chamber.",
+                             "storageKey":  7038,
+                             "storageValue":  1
+                         }
+                     ]
+    },
+    {
+        "id":  40,
+        "name":  "Rookie\u0027s Fortune",
+        "missions":  [
+                         {
+                             "id":  1,
+                             "name":  "The First Key",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  14,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  2,
+                             "name":  "Explorer\u0027s Backpack",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  15,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  3,
+                             "name":  "The Second Key",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  16,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  4,
+                             "name":  "Dwarven Shield",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  17,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  5,
+                             "name":  "Highscore Label",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  18,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  6,
+                             "name":  "The Third Key",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  19,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  7,
+                             "name":  "Rings of Power",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  20,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  8,
+                             "name":  "Crystal Ring I",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  21,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  9,
+                             "name":  "Crystal Ring II",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  22,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  10,
+                             "name":  "Bread and Gold",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  23,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  11,
+                             "name":  "Silver and Leather",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  24,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  12,
+                             "name":  "Troll Spoils",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  25,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  13,
+                             "name":  "Potion and Runes",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  26,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  14,
+                             "name":  "Silver Brooch",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  27,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  15,
+                             "name":  "The Fourth Key",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  28,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  16,
+                             "name":  "Snakebite Rod",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  29,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  17,
+                             "name":  "Mace",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  30,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  18,
+                             "name":  "Halberd",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  31,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  19,
+                             "name":  "Fishing Rod",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  32,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  20,
+                             "name":  "Bread Supply",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  33,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  21,
+                             "name":  "Brass Shield",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  34,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  22,
+                             "name":  "Chain Armor",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  35,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  23,
+                             "name":  "The Fifth Key",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  36,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  24,
+                             "name":  "Adventurer\u0027s Kit",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  37,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  25,
+                             "name":  "The Sixth Key",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  38,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  26,
+                             "name":  "The Seventh Key",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  39,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  27,
+                             "name":  "The Eighth Key",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  40,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  28,
+                             "name":  "Convince Scroll",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  41,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  29,
+                             "name":  "Platinum",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  42,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  30,
+                             "name":  "Gold Coins",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  43,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  31,
+                             "name":  "Strange Symbol",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  44,
+                             "storageValue":  1
+                         }
+                     ]
+    },
+    {
+        "id":  41,
+        "name":  "Adventurer\u0027s Spoils",
+        "missions":  [
+                         {
+                             "id":  1,
+                             "name":  "The Torn Diary",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  46,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  2,
+                             "name":  "The Ninth Key",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  49,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  3,
+                             "name":  "Strange Helmet",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  50,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  4,
+                             "name":  "Knight\u0027s Cache",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  51,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  5,
+                             "name":  "The Tenth Key",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  52,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  6,
+                             "name":  "Noble Axe Cache",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  53,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  7,
+                             "name":  "The Eleventh Key",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  54,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  8,
+                             "name":  "The Twelfth Key",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  55,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  9,
+                             "name":  "The Thirteenth Key",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  56,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  10,
+                             "name":  "The Fourteenth Key",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  57,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  11,
+                             "name":  "Ham Supply",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  58,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  12,
+                             "name":  "Studded Shield",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  59,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  13,
+                             "name":  "Sabre",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  60,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  14,
+                             "name":  "The Fifteenth Key",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  61,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  15,
+                             "name":  "Fresh Bread",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  65,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  16,
+                             "name":  "Shovel",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  67,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  17,
+                             "name":  "The Fox\u0027s Note",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  68,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  18,
+                             "name":  "Hand Axe",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  69,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  19,
+                             "name":  "Gold Coins I",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  70,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  20,
+                             "name":  "Gold Coins II",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  71,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  21,
+                             "name":  "Steel Helmet",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  72,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  22,
+                             "name":  "Bone Shield",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  73,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  23,
+                             "name":  "Warrior\u0027s Kit",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  74,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  24,
+                             "name":  "Pearls and Gold",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  75,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  25,
+                             "name":  "The Sixteenth Key",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  76,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  26,
+                             "name":  "Guardian\u0027s Cache",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  77,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  27,
+                             "name":  "Stealth and Runes",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  78,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  28,
+                             "name":  "Demon Shields",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  79,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  29,
+                             "name":  "Scale Armor",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  80,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  30,
+                             "name":  "Battle Hammer",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  81,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  31,
+                             "name":  "Black Pearls",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  82,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  32,
+                             "name":  "Mushrooms",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  83,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  33,
+                             "name":  "Healing Rune",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  84,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  34,
+                             "name":  "Knight Armor",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  85,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  35,
+                             "name":  "Great Fireball Rune",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  86,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  36,
+                             "name":  "Dark Shield",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  87,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  37,
+                             "name":  "Magic Longsword",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  88,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  38,
+                             "name":  "Magic Plate Armor",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  89,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  39,
+                             "name":  "Explosion Rune",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  90,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  40,
+                             "name":  "Provisions",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  91,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  41,
+                             "name":  "Crowbar and Emeralds",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  92,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  42,
+                             "name":  "Tool Kit",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  93,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  43,
+                             "name":  "Gold Cache",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  94,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  44,
+                             "name":  "Crown Shield",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  95,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  45,
+                             "name":  "Black Shield",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  96,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  46,
+                             "name":  "Watch and Scroll",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  97,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  47,
+                             "name":  "Present and Sapphires",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  98,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  48,
+                             "name":  "Might Ring",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  99,
+                             "storageValue":  1
+                         }
+                     ]
+    },
+    {
+        "id":  42,
+        "name":  "Hero\u0027s Hoard",
+        "missions":  [
+                         {
+                             "id":  1,
+                             "name":  "Executioner Shield",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  100,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  2,
+                             "name":  "Knight Legs",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  106,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  3,
+                             "name":  "Blue Robe",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  107,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  4,
+                             "name":  "Giant Sword",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  108,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  5,
+                             "name":  "Mage\u0027s Cache",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  109,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  6,
+                             "name":  "Golden Armor",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  110,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  7,
+                             "name":  "Thunderstorm Runes",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  111,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  8,
+                             "name":  "Spellbook",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  112,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  9,
+                             "name":  "Black Pearls",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  113,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  10,
+                             "name":  "Crown Armor",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  114,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  11,
+                             "name":  "Jewelry Cache",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  115,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  12,
+                             "name":  "Gold",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  116,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  13,
+                             "name":  "Fire Axe",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  117,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  14,
+                             "name":  "Gold Coin",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  118,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  15,
+                             "name":  "Hengis\u0027 Diary",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  119,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  16,
+                             "name":  "Platinum Coins",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  120,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  17,
+                             "name":  "Crown Cache",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  121,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  18,
+                             "name":  "Crown Legs",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  122,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  19,
+                             "name":  "Spell Cache",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  123,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  20,
+                             "name":  "Krendorak\u0027s Journal",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  124,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  21,
+                             "name":  "Giant Smithhammer",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  125,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  22,
+                             "name":  "Sudden Death Runes",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  126,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  23,
+                             "name":  "Dragon Scale Legs",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  127,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  24,
+                             "name":  "Dragon Lance",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  128,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  25,
+                             "name":  "The 17th Key",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  129,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  26,
+                             "name":  "The 18th Key",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  130,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  27,
+                             "name":  "The 19th Key",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  131,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  28,
+                             "name":  "The 20th Key",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  132,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  29,
+                             "name":  "Energy Ring",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  133,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  30,
+                             "name":  "Scroll and Pearl",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  134,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  31,
+                             "name":  "Green Shield",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  135,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  32,
+                             "name":  "Dragon Scale Boots",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  136,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  33,
+                             "name":  "Golden Legs",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  137,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  34,
+                             "name":  "Might Ring",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  138,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  35,
+                             "name":  "Serpent Sword",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  139,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  36,
+                             "name":  "Skull Staff",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  140,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  37,
+                             "name":  "Great Fireballs",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  141,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  38,
+                             "name":  "Emeralds",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  142,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  39,
+                             "name":  "White Pearl",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  143,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  40,
+                             "name":  "Royal Spears",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  144,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  41,
+                             "name":  "Emeralds II",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  145,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  42,
+                             "name":  "Demon Armor",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  146,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  43,
+                             "name":  "Mastermind Potion",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  147,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  44,
+                             "name":  "Blank Runes",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  148,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  45,
+                             "name":  "Ice Rapier",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  149,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  46,
+                             "name":  "Mace",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  150,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  47,
+                             "name":  "Fire Devil",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  151,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  48,
+                             "name":  "Heavy Mace",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  152,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  49,
+                             "name":  "Bone Shield",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  153,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  50,
+                             "name":  "Fire Sword",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  154,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  51,
+                             "name":  "Bright Sword",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  155,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  52,
+                             "name":  "Magic Sword",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  156,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  53,
+                             "name":  "Obsidian Lance",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  157,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  54,
+                             "name":  "Dragon Scale Boots II",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  158,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  55,
+                             "name":  "Map of Tibia",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  159,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  56,
+                             "name":  "Map of Glory",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  160,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  57,
+                             "name":  "Bucket",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  161,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  58,
+                             "name":  "Ferumbras\u0027 Letter",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  162,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  59,
+                             "name":  "Stonecutter Axe",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  163,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  60,
+                             "name":  "Spellbook II",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  164,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  61,
+                             "name":  "Stealth Ring",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  165,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  62,
+                             "name":  "Glorious Axe Cache",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  166,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  63,
+                             "name":  "Fire Devil II",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  167,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  64,
+                             "name":  "Steel Helmet",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  168,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  65,
+                             "name":  "Dark Armor",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  169,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  66,
+                             "name":  "Tower Shield",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  170,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  67,
+                             "name":  "Golden Sickle",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  171,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  68,
+                             "name":  "Scale Armor",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  172,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  69,
+                             "name":  "Explosion Runes",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  173,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  70,
+                             "name":  "Scroll",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  174,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  71,
+                             "name":  "The 21st Key",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  175,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  72,
+                             "name":  "Crown Helmet",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  176,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  73,
+                             "name":  "Obsidian Knife",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  177,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  74,
+                             "name":  "Mycological Mace",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  178,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  75,
+                             "name":  "Energy Ring II",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  179,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  76,
+                             "name":  "Skull Staff II",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  180,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  77,
+                             "name":  "Stone Skin Amulets",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  181,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  78,
+                             "name":  "Life Potions",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  182,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  79,
+                             "name":  "Magic Plate Armor II",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  183,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  80,
+                             "name":  "Convince Scroll II",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  184,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  81,
+                             "name":  "Pick",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  185,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  82,
+                             "name":  "Great Fireballs II",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  186,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  83,
+                             "name":  "Assassin Star",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  187,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  84,
+                             "name":  "Steel Helmet II",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  188,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  85,
+                             "name":  "Demonbone",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  189,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  86,
+                             "name":  "Platinum II",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  190,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  87,
+                             "name":  "Mage\u0027s War Cache",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  191,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  88,
+                             "name":  "The 22nd Key",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  192,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  89,
+                             "name":  "Blank Runes II",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  193,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  90,
+                             "name":  "Spellbook III",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  194,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  91,
+                             "name":  "Tower Shield II",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  195,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  92,
+                             "name":  "Dragon Shield",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  196,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  93,
+                             "name":  "Demonbone II",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  197,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  94,
+                             "name":  "Platinum III",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  198,
+                             "storageValue":  1
+                         }
+                     ]
+    },
+    {
+        "id":  43,
+        "name":  "Champion\u0027s Tribute",
+        "missions":  [
+                         {
+                             "id":  1,
+                             "name":  "Scale Armor II",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  200,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  2,
+                             "name":  "Warrior Helmet",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  201,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  3,
+                             "name":  "Vampire Shield",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  202,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  4,
+                             "name":  "Smithhammer Cache",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  206,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  5,
+                             "name":  "Monk\u0027s Diary",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  207,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  6,
+                             "name":  "The 23rd Key",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  208,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  7,
+                             "name":  "Bridge Riddle",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  209,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  8,
+                             "name":  "The 24th Key",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  210,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  9,
+                             "name":  "Bread Cache",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  213,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  10,
+                             "name":  "Dreammaster\u0027s Journal",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  214,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  11,
+                             "name":  "Scarab Amulet",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  215,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  12,
+                             "name":  "Musician\u0027s Cache",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  216,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  13,
+                             "name":  "The 25th Key",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  221,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  14,
+                             "name":  "Spike Sword",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  223,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  15,
+                             "name":  "Heavy Old Tome",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  224,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  16,
+                             "name":  "Soft Boots",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  225,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  17,
+                             "name":  "The 26th Key",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  226,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  18,
+                             "name":  "Helmet Piece #1",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  232,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  19,
+                             "name":  "Helmet Piece #2",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  243,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  20,
+                             "name":  "Helmet Piece #3",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  247,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  21,
+                             "name":  "Scroll and Emeralds",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  253,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  22,
+                             "name":  "War Hammer",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  254,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  23,
+                             "name":  "Bug Report",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  255,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  24,
+                             "name":  "Black Pearl",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  257,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  25,
+                             "name":  "Helmet Piece #4",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  261,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  26,
+                             "name":  "Helmet Piece #5",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  262,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  27,
+                             "name":  "Helmet Piece #6",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  263,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  28,
+                             "name":  "Helmet Piece #7",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  264,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  29,
+                             "name":  "Helmet Piece #8",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  265,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  30,
+                             "name":  "Helmet Piece #9",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  266,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  31,
+                             "name":  "Helmet Piece #10",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  267,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  32,
+                             "name":  "Arkhothep\u0027s Lore",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  268,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  33,
+                             "name":  "Ancient Poem",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  269,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  34,
+                             "name":  "Hellforged Axe",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  290,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  35,
+                             "name":  "The 27th Key",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  291,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  36,
+                             "name":  "Ancient Tiaras",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  292,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  37,
+                             "name":  "Arcane Staff",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  294,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  38,
+                             "name":  "Shadow Strike",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  295,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  39,
+                             "name":  "Hellforged Amulet",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  298,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  40,
+                             "name":  "Soulstone",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  312,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  41,
+                             "name":  "Void Boots",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  314,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  42,
+                             "name":  "Dragon Scale",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  319,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  43,
+                             "name":  "Dark Armor",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  324,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  44,
+                             "name":  "Frost Giant Plate",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  326,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  45,
+                             "name":  "Lightning Legs",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  328,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  46,
+                             "name":  "Dragon Slayer",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  329,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  47,
+                             "name":  "Demon Trophy",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  330,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  48,
+                             "name":  "Bone Armor",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  331,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  49,
+                             "name":  "The Justice",
+                             "description":  "Open the treasure chest to claim your reward.",
+                             "storageKey":  332,
+                             "storageValue":  1
+                         }
+                     ]
+    },
+    {
+        "id":  44,
+        "name":  "The Dog Track",
+        "missions":  [
+                         {
+                             "id":  1,
+                             "name":  "Starting Lever",
+                             "description":  "Pull the lever to start the dog race.",
+                             "storageKey":  7040,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  2,
+                             "name":  "North Lap",
+                             "description":  "Step on the northern lap tile.",
+                             "storageKey":  8119,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  3,
+                             "name":  "South Lap",
+                             "description":  "Step on the southern lap tile.",
+                             "storageKey":  8120,
+                             "storageValue":  1
+                         }
+                     ]
+    },
+    {
+        "id":  45,
+        "name":  "Draconia",
+        "missions":  [
+                         {
+                             "id":  1,
+                             "name":  "The Stone Barrier",
+                             "description":  "Pull the stone lever to dispel the barrier in Draconia.",
+                             "storageKey":  7007,
+                             "storageValue":  1
+                         },
+                         {
+                             "id":  2,
+                             "name":  "The Hidden Passage",
+                             "description":  "Use the key at the lever to unlock the hidden passage.",
+                             "storageKey":  7008,
+                             "storageValue":  1
+                         }
+                     ]
+    },
+    {
+        "id":  46,
+        "name":  "Depot Underground",
+        "missions":  [
+                         {
+                             "id":  1,
+                             "name":  "Hidden Entrance",
+                             "description":  "Step on the hidden tile in the Venore depot to enter the underground.",
+                             "storageKey":  8118,
+                             "storageValue":  1
+                         }
+                     ]
     }
 ]

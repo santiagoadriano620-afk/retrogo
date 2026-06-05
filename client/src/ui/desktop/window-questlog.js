@@ -214,6 +214,11 @@ WindowQuestLog.prototype.setQuestDetails = function (questId, missions) {
   missions.forEach((mission, index) => {
     let div = document.createElement("div");
     div.className = "mission-entry";
+    if (mission.completed) {
+      div.classList.add("completed");
+    } else {
+      div.classList.add("incomplete");
+    }
 
     let title = document.createElement("div");
     title.className = "mission-name";
@@ -221,11 +226,11 @@ WindowQuestLog.prototype.setQuestDetails = function (questId, missions) {
     // Add checkmark for mission
     let checkSpan = document.createElement("span");
     checkSpan.className = "mission-check";
-    checkSpan.innerText = "✓";
+    checkSpan.innerText = mission.completed ? "✓" : "○";
     title.appendChild(checkSpan);
 
     let nameText = document.createElement("span");
-    nameText.innerText = "Mission " + String(index + 1).padStart(2, "0") + ": " + mission.name;
+    nameText.innerText = mission.name;
     title.appendChild(nameText);
 
     let desc = document.createElement("div");

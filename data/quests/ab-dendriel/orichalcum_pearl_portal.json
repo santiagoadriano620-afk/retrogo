@@ -1,20 +1,63 @@
-[
-  {
-    "actionId": 3093,
-    "type": "portal",
-    "itemIds": [],
-    "conditions": [
-      { "type": "isPlayer" },
-      { "type": "storageCheck", "key": 323, "value": 1 },
-      { "type": "isPremium" },
-      { "type": "itemCount", "itemId": 5022, "count": 1 }
-    ],
-    "effects": [
-      { "type": "relocate", "from": null, "to": { "x": 32664, "y": 32735, "z": 6 } },
-      { "type": "magicEffect", "pos": null, "effectId": 11 },
-      { "type": "magicEffect", "pos": { "x": 32664, "y": 32735, "z": 6 }, "effectId": 11 },
-      { "type": "removeItemFromPlayer", "itemId": 5022, "count": 1 }
-    ],
-    "effectsAlt": []
-  }
-]
+{
+    "actionId":  3093,
+    "type":  "portal",
+    "itemIds":  [
+
+                ],
+    "conditions":  [
+                       {
+                           "type":  "isPlayer"
+                       },
+                       {
+                           "type":  "storageCheck",
+                           "key":  323,
+                           "value":  1
+                       },
+                       {
+                           "type":  "isPremium"
+                       },
+                       {
+                           "type":  "itemCount",
+                           "itemId":  5022,
+                           "count":  1
+                       }
+                   ],
+    "effects":  [
+                    {
+                        "type":  "relocate",
+                        "from":  null,
+                        "to":  {
+                                   "x":  32664,
+                                   "y":  32735,
+                                   "z":  6
+                               }
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  null,
+                        "effectId":  11
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  32664,
+                                    "y":  32735,
+                                    "z":  6
+                                },
+                        "effectId":  11
+                    },
+                    {
+                        "type":  "removeItemFromPlayer",
+                        "itemId":  5022,
+                        "count":  1
+                    },
+                    {
+                        "key":  8093,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "effectsAlt":  [
+
+                   ]
+}

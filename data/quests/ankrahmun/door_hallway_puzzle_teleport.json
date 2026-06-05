@@ -1,17 +1,63 @@
-﻿{
-  "actionId": 3075,
-  "type": "moveEvent",
-  "events": ["onStepIn", "onAddItem"],
-  "conditions": [
-    { "type": "storage", "key": 260, "value": 1 }
-  ],
-  "effects": [
-    { "type": "relocate", "to": { "x": 33095, "y": 32590, "z": 15 } },
-    { "type": "magicEffect", "pos": { "x": 33095, "y": 32590, "z": 15 }, "effectId": 11 },
-    { "type": "storage", "key": 260, "value": 0 }
-  ],
-  "effectsAlt": [
-    { "type": "relocate", "to": { "x": 33073, "y": 32604, "z": 15 } },
-    { "type": "magicEffect", "pos": { "x": 33073, "y": 32604, "z": 15 }, "effectId": 11 }
-  ]
+{
+    "actionId":  3075,
+    "type":  "moveEvent",
+    "events":  [
+                   "onStepIn",
+                   "onAddItem"
+               ],
+    "conditions":  [
+                       {
+                           "type":  "storage",
+                           "key":  260,
+                           "value":  1
+                       }
+                   ],
+    "effects":  [
+                    {
+                        "type":  "relocate",
+                        "to":  {
+                                   "x":  33095,
+                                   "y":  32590,
+                                   "z":  15
+                               }
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  33095,
+                                    "y":  32590,
+                                    "z":  15
+                                },
+                        "effectId":  11
+                    },
+                    {
+                        "type":  "storage",
+                        "key":  260,
+                        "value":  0
+                    },
+                    {
+                        "key":  8075,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "effectsAlt":  [
+                       {
+                           "type":  "relocate",
+                           "to":  {
+                                      "x":  33073,
+                                      "y":  32604,
+                                      "z":  15
+                                  }
+                       },
+                       {
+                           "type":  "magicEffect",
+                           "pos":  {
+                                       "x":  33073,
+                                       "y":  32604,
+                                       "z":  15
+                                   },
+                           "effectId":  11
+                       }
+                   ]
 }

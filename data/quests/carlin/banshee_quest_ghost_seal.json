@@ -1,20 +1,103 @@
 {
-  "actionId": 3098,
-  "type": "seal",
-  "conditions": [
-    { "type": "storage", "key": 5, "value": -1 }
-  ],
-  "effects": [
-    { "type": "createMonster", "name": "ghost", "pos": {"x": 32275, "y": 31901, "z": 13} },
-    { "type": "createMonster", "name": "ghost", "pos": {"x": 32276, "y": 31905, "z": 13} },
-    { "type": "storage", "key": 5, "value": 1 },
-    { "type": "relocate", "from": {"x": 0, "y": 0, "z": 0}, "to": {"x": 32266, "y": 31849, "z": 15} },
-    { "type": "magicEffect", "pos": {"x": 32266, "y": 31849, "z": 15}, "effectId": 14 },
-    { "type": "createMonster", "name": "demon skeleton", "pos": {"x": 32275, "y": 31903, "z": 13} }
-  ],
-  "effectsAlt": [
-    { "type": "relocate", "from": {"x": 0, "y": 0, "z": 0}, "to": {"x": 32277, "y": 31903, "z": 13} },
-    { "type": "magicEffect", "pos": {"x": 32277, "y": 31903, "z": 13}, "effectId": 1 },
-    { "type": "damage", "target": 0, "combat": "COMBAT_FIREDAMAGE", "min": -55, "max": -55 }
-  ]
+    "actionId":  3098,
+    "type":  "seal",
+    "conditions":  [
+                       {
+                           "type":  "storage",
+                           "key":  5,
+                           "value":  -1
+                       }
+                   ],
+    "effects":  [
+                    {
+                        "type":  "createMonster",
+                        "name":  "ghost",
+                        "pos":  {
+                                    "x":  32275,
+                                    "y":  31901,
+                                    "z":  13
+                                }
+                    },
+                    {
+                        "type":  "createMonster",
+                        "name":  "ghost",
+                        "pos":  {
+                                    "x":  32276,
+                                    "y":  31905,
+                                    "z":  13
+                                }
+                    },
+                    {
+                        "type":  "storage",
+                        "key":  5,
+                        "value":  1
+                    },
+                    {
+                        "type":  "relocate",
+                        "from":  {
+                                     "x":  0,
+                                     "y":  0,
+                                     "z":  0
+                                 },
+                        "to":  {
+                                   "x":  32266,
+                                   "y":  31849,
+                                   "z":  15
+                               }
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  32266,
+                                    "y":  31849,
+                                    "z":  15
+                                },
+                        "effectId":  14
+                    },
+                    {
+                        "type":  "createMonster",
+                        "name":  "demon skeleton",
+                        "pos":  {
+                                    "x":  32275,
+                                    "y":  31903,
+                                    "z":  13
+                                }
+                    },
+                    {
+                        "key":  8098,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "effectsAlt":  [
+                       {
+                           "type":  "relocate",
+                           "from":  {
+                                        "x":  0,
+                                        "y":  0,
+                                        "z":  0
+                                    },
+                           "to":  {
+                                      "x":  32277,
+                                      "y":  31903,
+                                      "z":  13
+                                  }
+                       },
+                       {
+                           "type":  "magicEffect",
+                           "pos":  {
+                                       "x":  32277,
+                                       "y":  31903,
+                                       "z":  13
+                                   },
+                           "effectId":  1
+                       },
+                       {
+                           "type":  "damage",
+                           "target":  0,
+                           "combat":  "COMBAT_FIREDAMAGE",
+                           "min":  -55,
+                           "max":  -55
+                       }
+                   ]
 }

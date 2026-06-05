@@ -1,13 +1,47 @@
 {
-  "actionId": 3005,
-  "type": "entrance",
-  "itemIds": [],
-  "conditions": [
-    { "type": "itemAtPosition", "itemId": 1385, "pos": {"x": 32478, "y": 31902, "z": 7} }
-  ],
-  "effects": [
-    { "type": "transformItemInPosition", "pos": {"x": 32478, "y": 31902, "z": 7}, "from": 1385, "to": 1304 },
-    { "type": "magicEffect", "pos": {"x": 32478, "y": 31902, "z": 7}, "effectId": 3 }
-  ],
-  "effectsAlt": []
+    "actionId":  3005,
+    "type":  "entrance",
+    "itemIds":  [
+
+                ],
+    "conditions":  [
+                       {
+                           "type":  "itemAtPosition",
+                           "itemId":  1385,
+                           "pos":  {
+                                       "x":  32478,
+                                       "y":  31902,
+                                       "z":  7
+                                   }
+                       }
+                   ],
+    "effects":  [
+                    {
+                        "type":  "transformItemInPosition",
+                        "pos":  {
+                                    "x":  32478,
+                                    "y":  31902,
+                                    "z":  7
+                                },
+                        "from":  1385,
+                        "to":  1304
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  32478,
+                                    "y":  31902,
+                                    "z":  7
+                                },
+                        "effectId":  3
+                    },
+                    {
+                        "key":  8005,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "effectsAlt":  [
+
+                   ]
 }

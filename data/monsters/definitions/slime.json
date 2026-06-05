@@ -16,7 +16,7 @@
   },
   "experience": 160,
   "corpse": 2963,
-  "fluidType": 3,
+  "fluidType": 1,
   "deathField": 1496,
   "behaviour": {
     "type": 2,

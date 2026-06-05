@@ -1,16 +1,32 @@
 {
-  "actionId": 3051,
-  "type": "bridge",
-  "events": ["onStepIn"],
-  "conditions": [
-    {"type": "isPlayer"},
-    {"type": "level", "comparison": "!=", "value": 2}
-  ],
-  "effects": [
-    {"type": "sendMessage", "message": "You need at least level 2 to cross this bridge."}
-  ],
-  "teleport": {
-    "offsetY": 2
-  },
-  "magicEffect": 13
+    "actionId":  3051,
+    "type":  "bridge",
+    "events":  [
+                   "onStepIn"
+               ],
+    "conditions":  [
+                       {
+                           "type":  "isPlayer"
+                       },
+                       {
+                           "type":  "level",
+                           "comparison":  "!=",
+                           "value":  2
+                       }
+                   ],
+    "effects":  [
+                    {
+                        "type":  "sendMessage",
+                        "message":  "You need at least level 2 to cross this bridge."
+                    },
+                    {
+                        "key":  8051,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "teleport":  {
+                     "offsetY":  2
+                 },
+    "magicEffect":  13
 }

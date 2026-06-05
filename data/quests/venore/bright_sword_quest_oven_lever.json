@@ -1,15 +1,81 @@
 {
-  "actionId": 2045,
-  "type": "lever",
-  "itemIds": [1945, 1946],
-  "effects": [
-    { "type": "transformItem", "from": 1945, "to": 1946, "decay": true },
-    { "type": "relocate", "from": {"x": 32623, "y": 32189, "z": 9}, "to": {"x": 32623, "y": 32190, "z": 9} },
-    { "type": "relocate", "from": {"x": 32623, "y": 32188, "z": 9}, "to": {"x": 32623, "y": 32189, "z": 9} }
-  ],
-  "effectsAlt": [
-    { "type": "transformItem", "from": 1946, "to": 1945, "decay": true },
-    { "type": "relocate", "from": {"x": 32623, "y": 32188, "z": 9}, "to": {"x": 32622, "y": 32189, "z": 9} },
-    { "type": "relocate", "from": {"x": 32623, "y": 32189, "z": 9}, "to": {"x": 32623, "y": 32188, "z": 9} }
-  ]
+    "actionId":  2045,
+    "type":  "lever",
+    "itemIds":  [
+                    1945,
+                    1946
+                ],
+    "effects":  [
+                    {
+                        "type":  "transformItem",
+                        "from":  1945,
+                        "to":  1946,
+                        "decay":  true
+                    },
+                    {
+                        "type":  "relocate",
+                        "from":  {
+                                     "x":  32623,
+                                     "y":  32189,
+                                     "z":  9
+                                 },
+                        "to":  {
+                                   "x":  32623,
+                                   "y":  32190,
+                                   "z":  9
+                               }
+                    },
+                    {
+                        "type":  "relocate",
+                        "from":  {
+                                     "x":  32623,
+                                     "y":  32188,
+                                     "z":  9
+                                 },
+                        "to":  {
+                                   "x":  32623,
+                                   "y":  32189,
+                                   "z":  9
+                               }
+                    },
+                    {
+                        "key":  7045,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "effectsAlt":  [
+                       {
+                           "type":  "transformItem",
+                           "from":  1946,
+                           "to":  1945,
+                           "decay":  true
+                       },
+                       {
+                           "type":  "relocate",
+                           "from":  {
+                                        "x":  32623,
+                                        "y":  32188,
+                                        "z":  9
+                                    },
+                           "to":  {
+                                      "x":  32622,
+                                      "y":  32189,
+                                      "z":  9
+                                  }
+                       },
+                       {
+                           "type":  "relocate",
+                           "from":  {
+                                        "x":  32623,
+                                        "y":  32189,
+                                        "z":  9
+                                    },
+                           "to":  {
+                                      "x":  32623,
+                                      "y":  32188,
+                                      "z":  9
+                                  }
+                       }
+                   ]
 }

@@ -1,17 +1,85 @@
 {
-  "actionId": 3001,
-  "type": "moveEvent",
-  "events": ["onStepIn", "onStepOut"],
-  "conditions": [
-    { "type": "itemAtPosition", "itemId": 387, "pos": {"x": 32771, "y": 32297, "z": 10} }
-  ],
-  "effectsOnStepIn": [
-    { "type": "removeItem", "pos": {"x": 32771, "y": 32297, "z": 10}, "itemId": 387 },
-    { "type": "transformItemInPosition", "pos": {"x": 32770, "y": 32282, "z": 10}, "from": 353, "to": 355 }
-  ],
-  "effectsOnStepOut": [
-    { "type": "relocate", "from": {"x": 32771, "y": 32297, "z": 10}, "to": {"x": 32771, "y": 32296, "z": 10} },
-    { "type": "createItem", "itemId": 387, "count": 1, "pos": {"x": 32771, "y": 32297, "z": 10} },
-    { "type": "transformItemInPosition", "pos": {"x": 32770, "y": 32282, "z": 10}, "from": 355, "to": 353 }
-  ]
+    "actionId":  3001,
+    "type":  "moveEvent",
+    "events":  [
+                   "onStepIn",
+                   "onStepOut"
+               ],
+    "conditions":  [
+                       {
+                           "type":  "itemAtPosition",
+                           "itemId":  387,
+                           "pos":  {
+                                       "x":  32771,
+                                       "y":  32297,
+                                       "z":  10
+                                   }
+                       }
+                   ],
+    "effectsOnStepIn":  [
+                            {
+                                "type":  "removeItem",
+                                "pos":  {
+                                            "x":  32771,
+                                            "y":  32297,
+                                            "z":  10
+                                        },
+                                "itemId":  387
+                            },
+                            {
+                                "type":  "transformItemInPosition",
+                                "pos":  {
+                                            "x":  32770,
+                                            "y":  32282,
+                                            "z":  10
+                                        },
+                                "from":  353,
+                                "to":  355
+                            },
+                            {
+                                "key":  8001,
+                                "value":  1,
+                                "type":  "storage"
+                            }
+                        ],
+    "effectsOnStepOut":  [
+                             {
+                                 "type":  "relocate",
+                                 "from":  {
+                                              "x":  32771,
+                                              "y":  32297,
+                                              "z":  10
+                                          },
+                                 "to":  {
+                                            "x":  32771,
+                                            "y":  32296,
+                                            "z":  10
+                                        }
+                             },
+                             {
+                                 "type":  "createItem",
+                                 "itemId":  387,
+                                 "count":  1,
+                                 "pos":  {
+                                             "x":  32771,
+                                             "y":  32297,
+                                             "z":  10
+                                         }
+                             },
+                             {
+                                 "type":  "transformItemInPosition",
+                                 "pos":  {
+                                             "x":  32770,
+                                             "y":  32282,
+                                             "z":  10
+                                         },
+                                 "from":  355,
+                                 "to":  353
+                             },
+                             {
+                                 "key":  8001,
+                                 "value":  1,
+                                 "type":  "storage"
+                             }
+                         ]
 }

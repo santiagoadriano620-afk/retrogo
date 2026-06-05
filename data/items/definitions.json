@@ -12711,7 +12711,7 @@
       "type": "magicfield",
       "decayTo": 1493,
       "duration": 120,
-      "field": "fire"
+      "field": "fire_strong"
     }
   },
   "1493": {
@@ -12724,7 +12724,7 @@
       "type": "magicfield",
       "decayTo": 1494,
       "duration": 120,
-      "field": "fire"
+      "field": "fire_medium"
     }
   },
   "1494": {
@@ -12737,7 +12737,7 @@
       "type": "magicfield",
       "decayTo": 0,
       "duration": 120,
-      "field": "fire"
+      "field": "fire_weak"
     }
   },
   "1495": {
@@ -12810,7 +12810,7 @@
       "type": "magicfield",
       "decayTo": 1501,
       "duration": 10,
-      "field": "fire"
+      "field": "fire_strong"
     }
   },
   "1501": {
@@ -12823,7 +12823,7 @@
       "type": "magicfield",
       "decayTo": 1502,
       "duration": 10,
-      "field": "fire"
+      "field": "fire_medium"
     }
   },
   "1502": {
@@ -12836,7 +12836,7 @@
       "type": "magicfield",
       "decayTo": 0,
       "duration": 10,
-      "field": "fire"
+      "field": "fire_weak"
     }
   },
   "1503": {

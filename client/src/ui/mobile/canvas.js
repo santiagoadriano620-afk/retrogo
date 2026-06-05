@@ -6,17 +6,48 @@ MobileFullscreen.prototype.__bindCanvasTouch = function () {
   canvas.addEventListener('touchstart', function (e) {
     if (!self.active) return;
     if (!gameClient || !gameClient.player) return;
-
     if (!gameClient.mouse || !gameClient.mouse.getWorldObject) return;
 
     var touch = e.changedTouches[0];
     if (!touch) return;
 
+    // Look mode single tap
     if (self.__lookMode) {
       e.preventDefault();
       var lookEvent = { clientX: touch.clientX, clientY: touch.clientY, target: e.target };
       self.__handleCanvasLookTap(lookEvent);
       return;
+    }
+
+    // Double-tap detection (300ms / 30px threshold)
+    var now = Date.now();
+    var dt = now - self.__lastTapTime;
+    var dx = Math.abs(touch.clientX - self.__lastTapX);
+    var dy = Math.abs(touch.clientY - self.__lastTapY);
+    self.__lastTapTime = now;
+    self.__lastTapX = touch.clientX;
+    self.__lastTapY = touch.clientY;
+
+    if (dt < 300 && dx < 30 && dy < 30) {
+      e.preventDefault();
+      var worldObj = gameClient.mouse.getWorldObject({ clientX: touch.clientX, clientY: touch.clientY });
+      if (worldObj && worldObj.which) {
+        var tile = worldObj.which;
+        if (tile.monsters) {
+          var npcs = Array.from(tile.monsters).filter(function (c) { return c.type === 2 && c.hasTrade; });
+          if (npcs.length > 0) {
+            gameClient.send(new ChannelMessagePacket(0, 1, "hi"));
+            setTimeout(function () {
+              gameClient.send(new ChannelMessagePacket(0, 1, "trade"));
+            }, 200);
+            return;
+          }
+        }
+        if (tile.items && tile.items.length > 0 && gameClient.mouse && gameClient.mouse.use) {
+          gameClient.mouse.use({ which: tile, index: 0xFF });
+          return;
+        }
+      }
     }
   });
 };

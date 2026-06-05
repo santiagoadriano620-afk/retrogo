@@ -1,15 +1,65 @@
 {
-  "actionId": 2063,
-  "type": "lever",
-  "itemIds": [1945, 1946],
-  "conditions": [],
-  "effects": [
-    { "type": "transformItem", "from": 1945, "to": 1946, "decay": true },
-    { "type": "transformItemInPosition", "pos": { "x": 32400, "y": 32239, "z": 6 }, "from": 427, "to": 405 }
-  ],
-  "effectsAlt": [
-    { "type": "transformItem", "from": 1946, "to": 1945, "decay": true },
-    { "type": "transformItemInPosition", "pos": { "x": 32400, "y": 32239, "z": 6 }, "from": 405, "to": 427 },
-    { "type": "relocate", "from": { "x": 32400, "y": 32239, "z": 6 }, "to": { "x": 32400, "y": 32239, "z": 7 } }
-  ]
+    "actionId":  2063,
+    "type":  "lever",
+    "itemIds":  [
+                    1945,
+                    1946
+                ],
+    "conditions":  [
+
+                   ],
+    "effects":  [
+                    {
+                        "type":  "transformItem",
+                        "from":  1945,
+                        "to":  1946,
+                        "decay":  true
+                    },
+                    {
+                        "type":  "transformItemInPosition",
+                        "pos":  {
+                                    "x":  32400,
+                                    "y":  32239,
+                                    "z":  6
+                                },
+                        "from":  427,
+                        "to":  405
+                    },
+                    {
+                        "key":  7063,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "effectsAlt":  [
+                       {
+                           "type":  "transformItem",
+                           "from":  1946,
+                           "to":  1945,
+                           "decay":  true
+                       },
+                       {
+                           "type":  "transformItemInPosition",
+                           "pos":  {
+                                       "x":  32400,
+                                       "y":  32239,
+                                       "z":  6
+                                   },
+                           "from":  405,
+                           "to":  427
+                       },
+                       {
+                           "type":  "relocate",
+                           "from":  {
+                                        "x":  32400,
+                                        "y":  32239,
+                                        "z":  6
+                                    },
+                           "to":  {
+                                      "x":  32400,
+                                      "y":  32239,
+                                      "z":  7
+                                  }
+                       }
+                   ]
 }

@@ -16,8 +16,8 @@ const PacketWriter = function(opcode, length) {
   // Whether the buffer encountered an overflow
   this.__inBounds = true;
 
-  // Allocate space for the buffer
-  this.buffer = Buffer.allocUnsafe(1 + length);
+  // Allocate space for the buffer (+2 for the writeBuffer UInt16 length prefix)
+  this.buffer = Buffer.allocUnsafe(1 + length + 2);
 
   // And write the opcode
   this.writeUInt8(opcode);
@@ -291,7 +291,7 @@ PacketWriter.prototype.encodeString = function(message) {
     return new Uint8Array();
   }
 
-  return new TextEncoder("utf-8").encode(message.escapeHTML());
+  return new TextEncoder("utf-8").encode(message);
 
 }
 

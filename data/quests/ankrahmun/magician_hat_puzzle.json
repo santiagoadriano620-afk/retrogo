@@ -1,36 +1,121 @@
-﻿{
-  "actionId": 2004,
-  "type": "lever",
-  "itemIds": [1945, 1946],
-  "effects": [
-    {
-      "chance": 70,
-      "actions": [
-        { "type": "transformItem", "from": 1945, "to": 1946 },
-        { "type": "decay" },
-        { "type": "removeItemsInPosition" },
-        { "type": "createItem", "itemId": 2355, "count": 1 },
-        { "type": "damage", "min": 200, "max": 200, "element": "fire" }
-      ]
-    },
-    {
-      "actions": [
-        { "type": "transformItem", "from": 1945, "to": 1946 },
-        { "type": "decay" },
-        { "type": "removeItemsInPosition" },
-        { "type": "createItem", "itemId": 2684, "count": 1 },
-        { "type": "storage", "key": 258, "value": 1 },
-        { "type": "magicEffect", "pos": { "x": 33122, "y": 32765, "z": 14 }, "effectId": 15 },
-        { "type": "magicEffect", "pos": { "x": 33117, "y": 32761, "z": 14 }, "effectId": 15 },
-        { "type": "magicEffect", "pos": { "x": 33117, "y": 32762, "z": 14 }, "effectId": 15 },
-        { "type": "magicEffect", "pos": { "x": 33117, "y": 32763, "z": 14 }, "effectId": 15 }
-      ]
-    }
-  ],
-  "effectsAlt": [
-    { "type": "transformItem", "from": 1946, "to": 1945 },
-    { "type": "decay" },
-    { "type": "removeItemsInPosition" },
-    { "type": "createItem", "itemId": 2662, "count": 1 }
-  ]
+{
+    "actionId":  2004,
+    "type":  "lever",
+    "itemIds":  [
+                    1945,
+                    1946
+                ],
+    "effects":  [
+                    {
+                        "chance":  70,
+                        "actions":  [
+                                        {
+                                            "type":  "transformItem",
+                                            "from":  1945,
+                                            "to":  1946
+                                        },
+                                        {
+                                            "type":  "decay"
+                                        },
+                                        {
+                                            "type":  "removeItemsInPosition"
+                                        },
+                                        {
+                                            "type":  "createItem",
+                                            "itemId":  2355,
+                                            "count":  1
+                                        },
+                                        {
+                                            "type":  "damage",
+                                            "min":  200,
+                                            "max":  200,
+                                            "element":  "fire"
+                                        }
+                                    ]
+                    },
+                    {
+                        "actions":  [
+                                        {
+                                            "type":  "transformItem",
+                                            "from":  1945,
+                                            "to":  1946
+                                        },
+                                        {
+                                            "type":  "decay"
+                                        },
+                                        {
+                                            "type":  "removeItemsInPosition"
+                                        },
+                                        {
+                                            "type":  "createItem",
+                                            "itemId":  2684,
+                                            "count":  1
+                                        },
+                                        {
+                                            "type":  "storage",
+                                            "key":  258,
+                                            "value":  1
+                                        },
+                                        {
+                                            "type":  "magicEffect",
+                                            "pos":  {
+                                                        "x":  33122,
+                                                        "y":  32765,
+                                                        "z":  14
+                                                    },
+                                            "effectId":  15
+                                        },
+                                        {
+                                            "type":  "magicEffect",
+                                            "pos":  {
+                                                        "x":  33117,
+                                                        "y":  32761,
+                                                        "z":  14
+                                                    },
+                                            "effectId":  15
+                                        },
+                                        {
+                                            "type":  "magicEffect",
+                                            "pos":  {
+                                                        "x":  33117,
+                                                        "y":  32762,
+                                                        "z":  14
+                                                    },
+                                            "effectId":  15
+                                        },
+                                        {
+                                            "type":  "magicEffect",
+                                            "pos":  {
+                                                        "x":  33117,
+                                                        "y":  32763,
+                                                        "z":  14
+                                                    },
+                                            "effectId":  15
+                                        }
+                                    ]
+                    },
+                    {
+                        "key":  7004,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "effectsAlt":  [
+                       {
+                           "type":  "transformItem",
+                           "from":  1946,
+                           "to":  1945
+                       },
+                       {
+                           "type":  "decay"
+                       },
+                       {
+                           "type":  "removeItemsInPosition"
+                       },
+                       {
+                           "type":  "createItem",
+                           "itemId":  2662,
+                           "count":  1
+                       }
+                   ]
 }

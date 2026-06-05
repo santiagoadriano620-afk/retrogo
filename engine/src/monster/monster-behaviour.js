@@ -457,6 +457,8 @@ MonsterBehaviour.prototype.getNextMoveTile = function () {
     return this.__followMaster();
   }
 
+
+
   // If the monster does not have a target always aimlessly wander around
   if (!this.hasTarget()) {
     return this.wander();

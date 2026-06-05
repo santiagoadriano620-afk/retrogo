@@ -7,7 +7,7 @@ module.exports = function fireWallRune(source, target) {
     let relPos = target.position.add(offset);
     let tile = process.gameServer.world.getTileFromWorldPosition(relPos);
     if (tile === null || tile.isBlockSolid()) return;
-    tile.addTopThing(process.gameServer.database.createThing(1487));
+    tile.addTopThing(process.gameServer.database.createThing(1492));
   });
   return true;
 }

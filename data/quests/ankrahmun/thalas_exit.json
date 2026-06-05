@@ -1,18 +1,68 @@
-﻿{
-  "actionId": 3064,
-  "type": "moveEvent",
-  "events": ["onStepIn", "onAddItem"],
-  "conditions": [
-    { "type": "playerItemCount", "itemId": 2351, "count": 1 },
-    { "type": "storage", "key": 262, "value": -1 }
-  ],
-  "effects": [
-    { "type": "relocate", "to": { "x": 33349, "y": 32830, "z": 14 } },
-    { "type": "magicEffect", "pos": { "x": 33349, "y": 32830, "z": 14 }, "effectId": 11 },
-    { "type": "removeItem", "itemId": 2351, "count": 1 }
-  ],
-  "effectsAlt": [
-    { "type": "relocate", "to": { "x": 33280, "y": 32740, "z": 10 } },
-    { "type": "magicEffect", "pos": { "x": 33280, "y": 32740, "z": 10 }, "effectId": 11 }
-  ]
+{
+    "actionId":  3064,
+    "type":  "moveEvent",
+    "events":  [
+                   "onStepIn",
+                   "onAddItem"
+               ],
+    "conditions":  [
+                       {
+                           "type":  "playerItemCount",
+                           "itemId":  2351,
+                           "count":  1
+                       },
+                       {
+                           "type":  "storage",
+                           "key":  262,
+                           "value":  -1
+                       }
+                   ],
+    "effects":  [
+                    {
+                        "type":  "relocate",
+                        "to":  {
+                                   "x":  33349,
+                                   "y":  32830,
+                                   "z":  14
+                               }
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  33349,
+                                    "y":  32830,
+                                    "z":  14
+                                },
+                        "effectId":  11
+                    },
+                    {
+                        "type":  "removeItem",
+                        "itemId":  2351,
+                        "count":  1
+                    },
+                    {
+                        "key":  8064,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "effectsAlt":  [
+                       {
+                           "type":  "relocate",
+                           "to":  {
+                                      "x":  33280,
+                                      "y":  32740,
+                                      "z":  10
+                                  }
+                       },
+                       {
+                           "type":  "magicEffect",
+                           "pos":  {
+                                       "x":  33280,
+                                       "y":  32740,
+                                       "z":  10
+                                   },
+                           "effectId":  11
+                       }
+                   ]
 }

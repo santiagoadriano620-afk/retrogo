@@ -1083,6 +1083,7 @@ const QuestLinePacket = function (questId, missions) {
     this.writeBuffer(encodedName);
     let encodedDescription = this.encodeString(mission.description);
     this.writeBuffer(encodedDescription);
+    this.writeBoolean(mission.completed || false);
   }, this);
 };
 QuestLinePacket.prototype = Object.create(PacketWriter.prototype);

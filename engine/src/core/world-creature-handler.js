@@ -123,8 +123,12 @@ CreatureHandler.prototype.addSummon = function (player, monsterName, position) {
   // Set the master reference
   monster.master = player;
 
-  // Add to world at the given position (handles registration internally)
-  if (!this.addCreaturePosition(monster, position)) {
+  // Try to find an available tile near the player first (same as monster AI summons)
+  let tile = gameServer.world.findAvailableTile(monster, position);
+  let spawnPosition = tile !== null ? tile.position : position;
+
+  // Add to world at the found position (handles registration internally)
+  if (!this.addCreaturePosition(monster, spawnPosition)) {
     player.sendCancelMessage("Could not place the summon.");
     return null;
   }
@@ -665,11 +669,16 @@ CreatureHandler.prototype.dieCreature = function (creature) {
 
   // Monsters with noCorpse flag: spawn death field instead of corpse
   if (corpse === null) {
-    // Add poison area effect
-    gameServer.world.sendMagicEffect(position, CONST.EFFECT.MAGIC.POISONAREA);
-    // Add slime splash
-    gameServer.world.addSplash(2016, position, CONST.FLUID.SLIME);
-    // Spawn death field item (e.g. poison field for Slime)
+    // Use deathEffect or default to poison
+    var deathMagic;
+    if (creature.deathEffect === 'fire') {
+      deathMagic = CONST.EFFECT.MAGIC.HITBYFIRE;
+    } else {
+      deathMagic = CONST.EFFECT.MAGIC.POISONAREA;
+      gameServer.world.addSplash(2016, position, CONST.FLUID.SLIME);
+    }
+    gameServer.world.sendMagicEffect(position, deathMagic);
+    // Spawn death field item (e.g. poison field for Slime, fire field for Fire Elemental)
     if (creature.deathField) {
       let field = gameServer.database.createThing(creature.deathField);
       if (field !== null) {

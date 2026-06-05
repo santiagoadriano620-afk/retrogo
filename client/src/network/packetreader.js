@@ -1198,7 +1198,8 @@ PacketReader.prototype.readQuestLine = function () {
   for (let i = 0; i < length; i++) {
     missions.push({
       name: this.readString(),
-      description: this.readString()
+      description: this.readString(),
+      completed: this.readBoolean()
     });
   }
   return { id: questId, missions: missions }; // Return object wrapper if needed, or modify logic

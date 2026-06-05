@@ -1,16 +1,81 @@
 {
-  "actionId": 2036,
-  "type": "lever",
-  "itemIds": [1945, 1946],
-  "effects": [
-    { "type": "transformItem", "from": 1945, "to": 1946, "decay": true },
-    { "type": "removeItem", "pos": {"x": 32566, "y": 32119, "z": 7}, "itemId": 1025 },
-    { "type": "transformItemInPosition", "pos": {"x": 32566, "y": 32118, "z": 7}, "from": 1025, "to": 1029 }
-  ],
-  "effectsAlt": [
-    { "type": "transformItem", "from": 1946, "to": 1945, "decay": true },
-    { "type": "relocate", "from": {"x": 32566, "y": 32119, "z": 7}, "to": {"x": 32567, "y": 32119, "z": 7} },
-    { "type": "createItem", "itemId": 1025, "count": 1, "pos": {"x": 32566, "y": 32119, "z": 7} },
-    { "type": "transformItemInPosition", "pos": {"x": 32566, "y": 32118, "z": 7}, "from": 1029, "to": 1025 }
-  ]
+    "actionId":  2036,
+    "type":  "lever",
+    "itemIds":  [
+                    1945,
+                    1946
+                ],
+    "effects":  [
+                    {
+                        "type":  "transformItem",
+                        "from":  1945,
+                        "to":  1946,
+                        "decay":  true
+                    },
+                    {
+                        "type":  "removeItem",
+                        "pos":  {
+                                    "x":  32566,
+                                    "y":  32119,
+                                    "z":  7
+                                },
+                        "itemId":  1025
+                    },
+                    {
+                        "type":  "transformItemInPosition",
+                        "pos":  {
+                                    "x":  32566,
+                                    "y":  32118,
+                                    "z":  7
+                                },
+                        "from":  1025,
+                        "to":  1029
+                    },
+                    {
+                        "key":  7036,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "effectsAlt":  [
+                       {
+                           "type":  "transformItem",
+                           "from":  1946,
+                           "to":  1945,
+                           "decay":  true
+                       },
+                       {
+                           "type":  "relocate",
+                           "from":  {
+                                        "x":  32566,
+                                        "y":  32119,
+                                        "z":  7
+                                    },
+                           "to":  {
+                                      "x":  32567,
+                                      "y":  32119,
+                                      "z":  7
+                                  }
+                       },
+                       {
+                           "type":  "createItem",
+                           "itemId":  1025,
+                           "count":  1,
+                           "pos":  {
+                                       "x":  32566,
+                                       "y":  32119,
+                                       "z":  7
+                                   }
+                       },
+                       {
+                           "type":  "transformItemInPosition",
+                           "pos":  {
+                                       "x":  32566,
+                                       "y":  32118,
+                                       "z":  7
+                                   },
+                           "from":  1029,
+                           "to":  1025
+                       }
+                   ]
 }

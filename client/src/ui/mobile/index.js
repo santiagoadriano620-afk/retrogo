@@ -69,8 +69,8 @@ MobileFullscreen.prototype.__injectStyles = function () {
     '}' +
     'body.mobile-fullscreen #game-wrapper .lower * { display: none !important; }' +
     'body.mobile-fullscreen .chatbox-wrapper { display: none !important; }' +
-    'body {-webkit-touch-callout: none; -webkit-user-select: none;' +
-    '  user-select: none; touch-action: none;}' +
+'body {-webkit-touch-callout: none; -webkit-user-select: none;' +
+'  user-select: none; touch-action: none;}' +
     '#mobile-dpad {' +
     '  display: none; position: fixed; bottom: 42px; left: 32px;' +
     '  z-index: 2147483646; touch-action: none;' +
@@ -81,7 +81,7 @@ MobileFullscreen.prototype.__injectStyles = function () {
     '}' +
     '#mobile-dpad.visible { display: block; }' +
     '#mobile-dpad .dpad-arrow {' +
-    '  position: absolute; font-size: 13px;' +
+    '  position: absolute; font-size: 16px;' +
     '  color: rgba(255,255,255,0.5); font-weight: bold;' +
     '  pointer-events: none; transform: translate(-50%, -50%);' +
     '  transition: color 0.08s, text-shadow 0.08s;' +
@@ -128,10 +128,12 @@ MobileFullscreen.prototype.__injectStyles = function () {
     '  position: absolute; top: -14px; left: 2px;' +
     '  width: 16px; height: 16px; z-index: 10;' +
     '  cursor: pointer; pointer-events: auto; touch-action: manipulation;' +
-    '  border-radius: 3px; -webkit-tap-highlight-color: transparent;' +
+    '  -webkit-tap-highlight-color: transparent;' +
+    '  background-size: contain; background-repeat: no-repeat;' +
+    '  background-position: center; border: none;' +
     '}' +
-    '.module-lock-icon.locked { background: #888; border: 2px solid #666; }' +
-    '.module-lock-icon.unlocked { background: transparent; border: 2px solid #888; }' +
+    '.module-lock-icon.locked { background-image: url("/images/game/console/locked.png"); }' +
+    '.module-lock-icon.unlocked { background-image: url("/images/game/console/unlocked.png"); }' +
     '.dpad-diagonal-btn {' +
     '  position: absolute; top: -14px; right: 2px;' +
     '  width: 16px; height: 16px; z-index: 10;' +
@@ -148,6 +150,8 @@ MobileFullscreen.prototype.__injectStyles = function () {
     '.dpad-diagonal-btn .ddi.ne { top: 0; right: 1px; }' +
     '.dpad-diagonal-btn .ddi.sw { bottom: 0; left: 1px; }' +
     '.dpad-diagonal-btn .ddi.se { bottom: 0; right: 1px; }' +
+    'body.mobile-fullscreen .checkbox-label[for="show-ping"],' +
+    'body.mobile-fullscreen .checkbox-label[for="show-fps"] { display: none !important; }' +
     '#actionbar {' +
     '  display: none; position: fixed; bottom: 10px;' +
     '  z-index: 2147483644;' +
@@ -187,6 +191,28 @@ MobileFullscreen.prototype.__injectStyles = function () {
     '  position: fixed !important; top: 50px; left: 6px; right: auto !important;' +
     '  z-index: 2147483646 !important;' +
     '  width: 140px !important; max-height: calc(100vh - 60px) !important;' +
+    '}' +
+    'body.mobile-fullscreen #guild-modal {' +
+    '  width: 70% !important;' +
+    '}' +
+    'body.mobile-fullscreen #offer-modal {' +
+    '  width: 400px !important;' +
+    '}' +
+    'body.mobile-fullscreen #quest-log-modal {' +
+    '  width: 500px !important;' +
+    '}' +
+    'body.mobile-fullscreen #quest-log-modal .quest-log-window {' +
+    '  width: 100% !important;' +
+    '  height: calc(100vh - 100px) !important;' +
+    '  max-height: calc(100vh - 100px) !important;' +
+    '  min-height: 200px !important;' +
+    '}' +
+    'body.mobile-fullscreen #quest-log-modal .quest-list-container {' +
+    '  max-width: 110px !important;' +
+    '  margin-right: 6px !important;' +
+    '}' +
+    'body.mobile-fullscreen #quest-log-modal .footer-right {' +
+    '  min-width: 60px !important;' +
     '}' +
     'body.mobile-fullscreen #skill-window .body,' +
     'body.mobile-fullscreen #battle-window .body,' +
@@ -371,8 +397,8 @@ MobileFullscreen.prototype.__handleFullscreenChange = function () {
     this.__destroyTopbar();
     this.__destroyActionButtons();
     this.__restoreCanvas();
-    if (window.gameClient && window.gameClient.interface) {
-      window.gameClient.interface.handleResize();
+    if (gameClient && gameClient.interface) {
+      gameClient.interface.handleResize();
     }
   }
 
@@ -385,8 +411,8 @@ MobileFullscreen.prototype.__restoreCanvas = function () {
   var screen = document.getElementById('screen');
   if (!wrapper || !canvasId || !screen) return;
 
-  if (window.gameClient && window.gameClient.renderer) {
-    var renderer = window.gameClient.renderer;
+  if (gameClient && gameClient.renderer) {
+    var renderer = gameClient.renderer;
     renderer.playerTileOffsetX = 14;
     renderer.playerTileOffsetY = 7;
     renderer.__cullMarginLeft = 12;

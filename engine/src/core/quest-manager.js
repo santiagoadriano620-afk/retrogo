@@ -36,35 +36,29 @@ QuestManager.prototype.__loadQuests = function () {
 QuestManager.prototype.getQuestList = function (player) {
     /*
      * Function QuestManager.getQuestList
-     * Returns a list of quests and their current status for a player
-     * Status: "started" or "completed" (logic to be refined needed)
+     * Returns ALL quests and their current status for a player.
+     * Each quest shows completed if ALL missions are done, incomplete otherwise.
      */
 
     let playerQuests = [];
 
     this.quests.forEach(quest => {
-        // We check the first mission to see if the quest is started
         if (quest.missions.length === 0) return;
 
-        let firstMission = quest.missions[0];
-        let storageValue = player.getStorage(firstMission.storageKey);
+        let allDone = true;
 
-        console.log("Checking Quest: %s (ID: %s), Mission: %s, Required: %s, Player Has: %s".format(
-            quest.name, quest.id, firstMission.name, firstMission.storageValue, storageValue
-        ));
-
-        // If the player has the storage key set to a value >= the first mission's value, the quest is started
-        if (storageValue >= firstMission.storageValue) {
-            // Determine if completed (logic can be improved, e.g., check last mission)
-            let lastMission = quest.missions[quest.missions.length - 1];
-            let isCompleted = player.getStorage(lastMission.storageKey) > lastMission.storageValue; // Example logic
-
-            playerQuests.push({
-                id: quest.id,
-                name: quest.name,
-                completed: isCompleted
-            });
+        for (let i = 0; i < quest.missions.length; i++) {
+            let mission = quest.missions[i];
+            let storageValue = player.getStorage(mission.storageKey);
+            let done = storageValue >= mission.storageValue;
+            if (!done) allDone = false;
         }
+
+        playerQuests.push({
+            id: quest.id,
+            name: quest.name,
+            completed: allDone
+        });
     });
 
     return playerQuests;
@@ -73,7 +67,7 @@ QuestManager.prototype.getQuestList = function (player) {
 QuestManager.prototype.getQuestMissions = function (player, questId) {
     /*
      * Function QuestManager.getQuestMissions
-     * Returns missions for a specific quest
+     * Returns ALL missions for a quest, each with a completed flag
      */
 
     let quest = this.quests.find(q => q.id === questId);
@@ -83,14 +77,11 @@ QuestManager.prototype.getQuestMissions = function (player, questId) {
 
     quest.missions.forEach(mission => {
         let storageValue = player.getStorage(mission.storageKey);
-
-        // Show mission if player has reached the required storage value
-        if (storageValue >= mission.storageValue) {
-            missions.push({
-                name: mission.name,
-                description: mission.description
-            });
-        }
+        missions.push({
+            name: mission.name,
+            description: mission.description,
+            completed: storageValue >= mission.storageValue
+        });
     });
 
     return missions;

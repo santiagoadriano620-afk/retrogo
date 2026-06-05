@@ -1,11 +1,26 @@
-﻿{
-  "actionId": 3107,
-  "type": "home",
-  "events": ["onStepIn", "onAddItem"],
-  "tileItem": true,
-  "town": "Ankrahmun",
-  "teleport": { "to": { "x": 33194, "y": 32853, "z": 8 } },
-  "magicEffect": 13,
-  "teleportAddItem": { "to": { "x": 33195, "y": 32851, "z": 6 } },
-  "magicEffectAddItem": 14
+{
+    "actionId": 3107,
+    "type": "home",
+    "events": [
+        "onStepIn",
+        "onAddItem"
+    ],
+    "tileItem": true,
+    "town": "Ankrahmun",
+    "teleport": {
+        "to": {
+            "x": 33194,
+            "y": 32853,
+            "z": 8
+        }
+    },
+    "magicEffect": 13,
+    "teleportAddItem": {
+        "to": {
+            "x": 33195,
+            "y": 32851,
+            "z": 6
+        }
+    },
+    "magicEffectAddItem": 14
 }

@@ -1,11 +1,34 @@
 {
-  "actionId": 3042,
-  "type": "reward",
-  "itemIds": [],
-  "conditions": [],
-  "effects": [
-    { "type": "storage", "key": 43, "value": 1 },
-    { "type": "magicEffect", "pos": {"x": 32479, "y": 31900, "z": 1}, "effectId": 7 }
-  ],
-  "effectsAlt": []
+    "actionId":  3042,
+    "type":  "reward",
+    "itemIds":  [
+
+                ],
+    "conditions":  [
+
+                   ],
+    "effects":  [
+                    {
+                        "type":  "storage",
+                        "key":  43,
+                        "value":  1
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  32479,
+                                    "y":  31900,
+                                    "z":  1
+                                },
+                        "effectId":  7
+                    },
+                    {
+                        "key":  8042,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "effectsAlt":  [
+
+                   ]
 }

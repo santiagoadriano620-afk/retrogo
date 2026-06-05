@@ -1,20 +1,99 @@
 {
-  "actionId": 3121,
-  "type": "moveEvent",
-  "events": ["onRemoveItem"],
-  "tileItem": true,
-  "conditions": [
-    {"type": "storageNotSet", "key": "GlobalStorageKeys.edronDemonScroll", "value": 1}
-  ],
-  "effects": [
-    {"type": "createMonster", "name": "Demon", "pos": {"x": 33060, "y": 31623, "z": 15}},
-    {"type": "createMonster", "name": "Demon", "pos": {"x": 33066, "y": 31623, "z": 15}},
-    {"type": "createMonster", "name": "Demon", "pos": {"x": 33066, "y": 31627, "z": 15}},
-    {"type": "createMonster", "name": "Demon", "pos": {"x": 33060, "y": 31627, "z": 15}},
-    {"type": "magicEffect", "pos": {"x": 33060, "y": 31622, "z": 15}, "effectId": 14},
-    {"type": "magicEffect", "pos": {"x": 33066, "y": 31622, "z": 15}, "effectId": 14},
-    {"type": "magicEffect", "pos": {"x": 33066, "y": 31628, "z": 15}, "effectId": 14},
-    {"type": "magicEffect", "pos": {"x": 33060, "y": 31628, "z": 15}, "effectId": 14},
-    {"type": "storage", "key": "GlobalStorageKeys.edronDemonScroll", "value": 1}
-  ]
+    "actionId":  3121,
+    "type":  "moveEvent",
+    "events":  [
+                   "onRemoveItem"
+               ],
+    "tileItem":  true,
+    "conditions":  [
+                       {
+                           "type":  "storageNotSet",
+                           "key":  "GlobalStorageKeys.edronDemonScroll",
+                           "value":  1
+                       }
+                   ],
+    "effects":  [
+                    {
+                        "type":  "createMonster",
+                        "name":  "Demon",
+                        "pos":  {
+                                    "x":  33060,
+                                    "y":  31623,
+                                    "z":  15
+                                }
+                    },
+                    {
+                        "type":  "createMonster",
+                        "name":  "Demon",
+                        "pos":  {
+                                    "x":  33066,
+                                    "y":  31623,
+                                    "z":  15
+                                }
+                    },
+                    {
+                        "type":  "createMonster",
+                        "name":  "Demon",
+                        "pos":  {
+                                    "x":  33066,
+                                    "y":  31627,
+                                    "z":  15
+                                }
+                    },
+                    {
+                        "type":  "createMonster",
+                        "name":  "Demon",
+                        "pos":  {
+                                    "x":  33060,
+                                    "y":  31627,
+                                    "z":  15
+                                }
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  33060,
+                                    "y":  31622,
+                                    "z":  15
+                                },
+                        "effectId":  14
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  33066,
+                                    "y":  31622,
+                                    "z":  15
+                                },
+                        "effectId":  14
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  33066,
+                                    "y":  31628,
+                                    "z":  15
+                                },
+                        "effectId":  14
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  33060,
+                                    "y":  31628,
+                                    "z":  15
+                                },
+                        "effectId":  14
+                    },
+                    {
+                        "type":  "storage",
+                        "key":  "GlobalStorageKeys.edronDemonScroll",
+                        "value":  1
+                    },
+                    {
+                        "key":  8121,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ]
 }

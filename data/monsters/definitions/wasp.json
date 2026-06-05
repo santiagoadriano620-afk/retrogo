@@ -16,7 +16,7 @@
   },
   "experience": 24,
   "corpse": 2899,
-  "fluidType": 3,
+  "fluidType": 0,
   "behaviour": {
     "type": 2,
     "fleeHealth": 0,

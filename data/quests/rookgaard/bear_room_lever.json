@@ -1,15 +1,64 @@
 {
-  "actionId": 2052,
-  "type": "lever",
-  "itemIds": [1945, 1946],
-  "conditions": [],
-  "effects": [
-    {"type": "transformItem", "from": 1945, "to": 1946, "decay": true},
-    {"type": "removeItem", "pos": {"x": 32145, "y": 32101, "z": 11}, "itemId": 1304}
-  ],
-  "effectsAlt": [
-    {"type": "transformItem", "from": 1946, "to": 1945, "decay": true},
-    {"type": "relocate", "from": {"x": 32145, "y": 32101, "z": 11}, "to": {"x": 32145, "y": 32102, "z": 11}},
-    {"type": "createItem", "itemId": 1304, "count": 1, "pos": {"x": 32145, "y": 32101, "z": 11}}
-  ]
+    "actionId":  2052,
+    "type":  "lever",
+    "itemIds":  [
+                    1945,
+                    1946
+                ],
+    "conditions":  [
+
+                   ],
+    "effects":  [
+                    {
+                        "type":  "transformItem",
+                        "from":  1945,
+                        "to":  1946,
+                        "decay":  true
+                    },
+                    {
+                        "type":  "removeItem",
+                        "pos":  {
+                                    "x":  32145,
+                                    "y":  32101,
+                                    "z":  11
+                                },
+                        "itemId":  1304
+                    },
+                    {
+                        "key":  7052,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "effectsAlt":  [
+                       {
+                           "type":  "transformItem",
+                           "from":  1946,
+                           "to":  1945,
+                           "decay":  true
+                       },
+                       {
+                           "type":  "relocate",
+                           "from":  {
+                                        "x":  32145,
+                                        "y":  32101,
+                                        "z":  11
+                                    },
+                           "to":  {
+                                      "x":  32145,
+                                      "y":  32102,
+                                      "z":  11
+                                  }
+                       },
+                       {
+                           "type":  "createItem",
+                           "itemId":  1304,
+                           "count":  1,
+                           "pos":  {
+                                       "x":  32145,
+                                       "y":  32101,
+                                       "z":  11
+                                   }
+                       }
+                   ]
 }

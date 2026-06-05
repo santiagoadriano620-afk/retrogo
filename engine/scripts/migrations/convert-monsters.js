@@ -13,11 +13,11 @@ const DEFINITIONS_FILE = path.join(__dirname, '..', '..', 'data', 'monsters', 'd
 
 // Race to fluidType mapping
 const RACE_TO_FLUID = {
-    'blood': 1,
+    'blood': 0,
     'undead': 2,
     'fire': 0,
-    'venom': 3,
-    'energy': 4,
+    'venom': 1,
+    'energy': 0,
     'default': 0
 };
 

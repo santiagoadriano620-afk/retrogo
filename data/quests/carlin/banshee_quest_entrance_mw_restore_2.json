@@ -1,12 +1,49 @@
 {
-  "actionId": 3011,
-  "type": "entrance",
-  "events": ["onStepIn"],
-  "conditions": [
-    { "type": "itemAtPosition", "itemId": 1498, "pos": {"x": 32259, "y": 31890, "z": 10}, "invert": true }
-  ],
-  "effects": [
-    { "type": "relocate", "from": {"x": 32259, "y": 31890, "z": 10}, "to": {"x": 32259, "y": 31889, "z": 10} },
-    { "type": "createItem", "itemId": 1498, "count": 1, "pos": {"x": 32259, "y": 31890, "z": 10} }
-  ]
+    "actionId":  3011,
+    "type":  "entrance",
+    "events":  [
+                   "onStepIn"
+               ],
+    "conditions":  [
+                       {
+                           "type":  "itemAtPosition",
+                           "itemId":  1498,
+                           "pos":  {
+                                       "x":  32259,
+                                       "y":  31890,
+                                       "z":  10
+                                   },
+                           "invert":  true
+                       }
+                   ],
+    "effects":  [
+                    {
+                        "type":  "relocate",
+                        "from":  {
+                                     "x":  32259,
+                                     "y":  31890,
+                                     "z":  10
+                                 },
+                        "to":  {
+                                   "x":  32259,
+                                   "y":  31889,
+                                   "z":  10
+                               }
+                    },
+                    {
+                        "type":  "createItem",
+                        "itemId":  1498,
+                        "count":  1,
+                        "pos":  {
+                                    "x":  32259,
+                                    "y":  31890,
+                                    "z":  10
+                                }
+                    },
+                    {
+                        "key":  8011,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ]
 }

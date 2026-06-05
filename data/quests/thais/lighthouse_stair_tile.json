@@ -1,13 +1,49 @@
 {
-  "actionId": 3033,
-  "type": "tile",
-  "events": ["onStepIn", "onStepOut"],
-  "effects": [
-    { "type": "transformItem", "from": 425, "to": 426, "decay": true },
-    { "type": "transformItemInPosition", "pos": { "x": 32225, "y": 32282, "z": 9 }, "from": 424, "to": 433 }
-  ],
-  "effectsAlt": [
-    { "type": "transformItem", "from": 426, "to": 425, "decay": true },
-    { "type": "transformItemInPosition", "pos": { "x": 32225, "y": 32282, "z": 9 }, "from": 433, "to": 424 }
-  ]
+    "actionId":  3033,
+    "type":  "tile",
+    "events":  [
+                   "onStepIn",
+                   "onStepOut"
+               ],
+    "effects":  [
+                    {
+                        "type":  "transformItem",
+                        "from":  425,
+                        "to":  426,
+                        "decay":  true
+                    },
+                    {
+                        "type":  "transformItemInPosition",
+                        "pos":  {
+                                    "x":  32225,
+                                    "y":  32282,
+                                    "z":  9
+                                },
+                        "from":  424,
+                        "to":  433
+                    },
+                    {
+                        "key":  8033,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "effectsAlt":  [
+                       {
+                           "type":  "transformItem",
+                           "from":  426,
+                           "to":  425,
+                           "decay":  true
+                       },
+                       {
+                           "type":  "transformItemInPosition",
+                           "pos":  {
+                                       "x":  32225,
+                                       "y":  32282,
+                                       "z":  9
+                                   },
+                           "from":  433,
+                           "to":  424
+                       }
+                   ]
 }

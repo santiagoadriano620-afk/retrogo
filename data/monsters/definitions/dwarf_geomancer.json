@@ -15,8 +15,8 @@
     "armor": 15
   },
   "experience": 265,
-  "corpse": 2813,
-  "fluidType": 1,
+  "corpse": 2960,
+  "fluidType": 0,
   "behaviour": {
     "type": 2,
     "fleeHealth": 150,

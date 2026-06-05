@@ -1,9 +1,26 @@
-﻿{
-  "actionId": 2067,
-  "type": "basin",
-  "effects": [
-    { "type": "createItem", "itemId": 2346, "count": 1, "pos": "playerPosition" },
-    { "type": "magicEffect", "effectId": 2 },
-    { "type": "storage", "key": 287, "value": 2 }
-  ]
+{
+    "actionId":  2067,
+    "type":  "basin",
+    "effects":  [
+                    {
+                        "type":  "createItem",
+                        "itemId":  2346,
+                        "count":  1,
+                        "pos":  "playerPosition"
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "effectId":  2
+                    },
+                    {
+                        "type":  "storage",
+                        "key":  287,
+                        "value":  2
+                    },
+                    {
+                        "key":  7067,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ]
 }

@@ -106,6 +106,49 @@
     font-size: 13px;
 }
 
+/* Completed mission - full color */
+.quest-log-window .mission-entry.completed {
+    border-left-color: #4caf50;
+    background: #2d3d2d;
+}
+
+.quest-log-window .mission-entry.completed .mission-name {
+    color: #8bc34a;
+}
+
+.quest-log-window .mission-entry.completed .mission-description {
+    color: #999;
+}
+
+/* Incomplete mission - faded style */
+.quest-log-window .mission-entry.incomplete {
+    border-left-color: #555;
+    background: #2a2a2a;
+}
+
+.quest-log-window .mission-entry.incomplete .mission-name {
+    color: #888;
+}
+
+.quest-log-window .mission-entry.incomplete .mission-description {
+    color: #666;
+}
+
+/* Quest entry completed indicator */
+.quest-log-window .quest-entry.completed .quest-name {
+    color: #8bc34a;
+    font-weight: 600;
+}
+
+.quest-log-window .quest-entry:not(.completed) .quest-name {
+    color: #999;
+}
+
+/* Incomplete quest check - dull */
+.quest-log-window .quest-entry:not(.completed) .quest-check {
+    background-color: #333;
+}
+
 .quest-log-window .mission-description {
     color: #bbb;
     font-size: 11px;
@@ -206,16 +249,28 @@
 
 /* Scrollbars */
 .quest-log-window ::-webkit-scrollbar {
-    width: 6px;
+    width: 8px;
 }
 
 .quest-log-window ::-webkit-scrollbar-track {
-    background: transparent;
+    background: #1a1a1a;
+    border-radius: 4px;
 }
 
 .quest-log-window ::-webkit-scrollbar-thumb {
-    background: #444;
-    border-radius: 3px;
+    background: #5a5a5a;
+    border-radius: 4px;
+    min-height: 40px;
+}
+
+.quest-log-window ::-webkit-scrollbar-thumb:hover {
+    background: #7a7a7a;
+}
+
+/* Ensure scroll containers fill height */
+.quest-log-window .quest-list,
+.quest-log-window .quest-details {
+    max-height: 100%;
 }
 
 /* Empty State */

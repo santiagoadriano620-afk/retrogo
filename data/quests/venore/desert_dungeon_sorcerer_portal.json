@@ -1,18 +1,76 @@
 {
-  "actionId": 3088,
-  "type": "portal",
-  "events": ["onStepIn", "onAddItem"],
-  "tileItem": true,
-  "vocationIds": [1, 5],
-  "teleport": {"to": {"x": 32659, "y": 32105, "z": 9}},
-  "teleportAlt": {"to": {"x": 32641, "y": 32141, "z": 11}},
-  "effects": [
-    { "type": "relocate", "from": {}, "to": {"x": 32659, "y": 32105, "z": 9} }
-  ],
-  "effectsAlt": [
-    { "type": "relocate", "from": {}, "to": {"x": 32641, "y": 32141, "z": 11} }
-  ],
-  "effectsAddItem": [
-    { "type": "relocate", "from": {}, "to": {"x": 32641, "y": 32141, "z": 11} }
-  ]
+    "actionId":  3088,
+    "type":  "portal",
+    "events":  [
+                   "onStepIn",
+                   "onAddItem"
+               ],
+    "tileItem":  true,
+    "vocationIds":  [
+                        1,
+                        5
+                    ],
+    "teleport":  {
+                     "to":  {
+                                "x":  32659,
+                                "y":  32105,
+                                "z":  9
+                            }
+                 },
+    "teleportAlt":  {
+                        "to":  {
+                                   "x":  32641,
+                                   "y":  32141,
+                                   "z":  11
+                               }
+                    },
+    "effects":  [
+                    {
+                        "type":  "relocate",
+                        "from":  {
+
+                                 },
+                        "to":  {
+                                   "x":  32659,
+                                   "y":  32105,
+                                   "z":  9
+                               }
+                    },
+                    {
+                        "key":  8088,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "effectsAlt":  [
+                       {
+                           "type":  "relocate",
+                           "from":  {
+
+                                    },
+                           "to":  {
+                                      "x":  32641,
+                                      "y":  32141,
+                                      "z":  11
+                                  }
+                       }
+                   ],
+    "effectsAddItem":  [
+                           {
+                               "type":  "relocate",
+                               "from":  {
+
+                                        },
+                               "to":  {
+                                          "x":  32641,
+                                          "y":  32141,
+                                          "z":  11
+                                      }
+                           },
+                           {
+                               "key":  8088,
+                               "value":  1,
+                               "type":  "storage"
+                           }
+                       ]
 }

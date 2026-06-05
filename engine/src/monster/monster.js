@@ -24,6 +24,7 @@ const Monster = function (cid, data) {
   this.cid = cid;
   this.corpse = data.corpse;
   this.deathField = data.deathField || null;
+  this.deathEffect = data.deathEffect || null;
   this.fluidType = CONST.COLOR.RED;
   this.experience = data.experience;
 
@@ -564,7 +565,7 @@ Monster.prototype.handleSpecialAttacks = function () {
   }
 
   // Target is in a protection zone — drop target, do not attack
-  if (target.isInProtectionZone()) {
+  if (target.isInProtectionZone && target.isInProtectionZone()) {
     this.behaviourHandler.setTarget(null);
     let shortLock = Math.max(1, Math.floor(500 / CONFIG.SERVER.MS_TICK_INTERVAL));
     this.__specialAttackCooldowns.forEach((_, i) => {
@@ -775,11 +776,11 @@ Monster.prototype.__applyAttackEffect = function (attack, target, damage) {
       break;
 
     case 'firefield':
-      // Fire field attacks create a fire field item on the target tile
+      // Fire field attacks create a decaying fire field item on the target tile
       if (target && target.position) {
         var tile = gameServer.world.getTileFromWorldPosition(target.position);
         if (tile) {
-          tile.addTopThing(gameServer.database.createThing(1487));
+          tile.addTopThing(gameServer.database.createThing(1492));
           gameServer.world.sendMagicEffect(target.position, CONST.EFFECT.MAGIC.HITBYFIRE);
         }
       }
@@ -849,7 +850,7 @@ Monster.prototype.__applyRadiusAttack = function (attack, target, damage, effect
         let tile = gameServer.world.getTileFromWorldPosition(pos);
         if (tile === null) continue;
 
-        tile.addTopThing(gameServer.database.createThing(1487));
+        tile.addTopThing(gameServer.database.createThing(1492));
       }
     }
     gameServer.world.sendMagicEffect(targetPos, CONST.EFFECT.MAGIC.HITBYFIRE);

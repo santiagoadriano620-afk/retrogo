@@ -1,3 +1,84 @@
+MobileFullscreen.prototype.__showMobileCountSelector = function (fromObject, toObject, fromItem) {
+  var overlay = document.createElement('div');
+  overlay.style.cssText = 'position:fixed;top:0;left:0;width:100vw;height:100vh;' +
+    'background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;z-index:2147483647;';
+
+  var win = document.createElement('div');
+  win.style.cssText = 'display:flex;flex-direction:column;width:150px;color:#d3d3d3;' +
+    'border-width:22px 6px 4px 6px;border-style:solid;border-color:transparent;' +
+    'border-image-source:url("/images/game/ui/window.png");' +
+    'border-image-slice:22 6 4 6 fill;border-image-repeat:stretch;';
+
+  var header = document.createElement('div');
+  header.style.cssText = 'display:flex;align-items:center;height:22px;' +
+    'margin:-22px -6px 0 -6px;padding:0 4px;';
+
+  var title = document.createElement('span');
+  title.textContent = 'Move Item';
+  title.style.cssText = 'flex:1;font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#d3d3d3;pointer-events:none;';
+
+  var closeBtn = document.createElement('button');
+  closeBtn.textContent = 'X';
+  closeBtn.style.cssText = 'flex:0 0 auto;background:none;border:none;color:#ccc;cursor:pointer;font-size:10px;padding:0 4px;';
+
+  header.appendChild(title);
+  header.appendChild(closeBtn);
+
+  var body = document.createElement('div');
+  body.style.cssText = 'display:flex;flex-direction:row;align-items:center;justify-content:center;padding:4px 4px;gap:4px;';
+
+  var spriteCanvas = document.createElement('canvas');
+  spriteCanvas.width = 32;
+  spriteCanvas.height = 32;
+  spriteCanvas.style.cssText = 'width:24px;height:24px;image-rendering:pixelated;flex:0 0 auto;';
+  var ctx = spriteCanvas.getContext('2d');
+  var frameGroup = fromItem.getFrameGroup(FrameGroup.prototype.NONE);
+  if (frameGroup) {
+    var frame = fromItem.getFrame();
+    var pattern = fromItem.getPattern();
+    var spriteIndex = frameGroup.getSpriteIndex(frame, pattern.x, pattern.y, pattern.z, 0, 0, 0);
+    var spriteSrc = frameGroup.getSprite(spriteIndex);
+    if (spriteSrc && spriteSrc.src) {
+      ctx.drawImage(spriteSrc.src, 32 * spriteSrc.position.x, 32 * spriteSrc.position.y, 32, 32, 0, 0, 32, 32);
+    }
+  }
+
+  var countLabel = document.createElement('span');
+  countLabel.textContent = String(fromItem.count);
+  countLabel.style.cssText = 'font-size:11px;color:#d3d3d3;min-width:20px;text-align:center;';
+
+  var slider = document.createElement('input');
+  slider.type = 'range';
+  slider.min = '1';
+  slider.max = String(fromItem.count);
+  slider.value = String(fromItem.count);
+  slider.style.cssText = 'flex:1;min-width:0;height:16px;margin:0;';
+
+  slider.addEventListener('input', function () { countLabel.textContent = slider.value; });
+
+  var okBtn = document.createElement('button');
+  okBtn.textContent = 'OK';
+  okBtn.style.cssText = 'padding:2px 8px;background:none;border:1px solid #555;color:#ccc;cursor:pointer;font-size:10px;flex:0 0 auto;';
+
+  okBtn.addEventListener('click', function () {
+    overlay.remove();
+    var count = parseInt(slider.value, 10) || 1;
+    if (gameClient && gameClient.mouse) gameClient.mouse.sendItemMove(fromObject, toObject, count);
+  });
+
+  closeBtn.addEventListener('click', function () { overlay.remove(); });
+
+  body.appendChild(spriteCanvas);
+  body.appendChild(countLabel);
+  body.appendChild(slider);
+  body.appendChild(okBtn);
+
+  win.appendChild(header);
+  win.appendChild(body);
+  overlay.appendChild(win);
+  document.body.appendChild(overlay);
+};
+
 MobileFullscreen.prototype.__getSlotObjectFromEvent = function (event) {
   var slotEl = event.target.closest('.slot');
   if (!slotEl) return null;
@@ -138,6 +219,20 @@ MobileFullscreen.prototype.__bindSlotTouch = function () {
     }
 
     var dropEl = document.elementFromPoint(touch.clientX, touch.clientY);
+
+    // Fallback: if elementFromPoint returns the drag sprite (z-index on top of everything),
+    // check geometrically if the touch is within the canvas bounds
+    if (dropEl && !dropEl.closest('#screen') && !dropEl.closest('#canvas-id') && !dropEl.closest('.slot') && !dropEl.closest('.actionbar-slot') && !dropEl.closest('.container-window')) {
+      var canvas = document.getElementById('canvas-id');
+      if (canvas) {
+        var rect = canvas.getBoundingClientRect();
+        if (touch.clientX >= rect.left && touch.clientX <= rect.right &&
+            touch.clientY >= rect.top && touch.clientY <= rect.bottom) {
+          return gameClient.mouse.getWorldObject({ clientX: touch.clientX, clientY: touch.clientY, target: gameClient.renderer.screen.canvas });
+        }
+      }
+    }
+
     if (!dropEl) return null;
 
     if (dropEl.closest('#screen') || dropEl.closest('#canvas-id')) {
@@ -208,6 +303,8 @@ MobileFullscreen.prototype.__bindSlotTouch = function () {
       var sourceItem = self.__dragSource.which && self.__dragSource.which.peekItem(self.__dragSource.index);
       if (sourceItem && sourceItem.isContainer && sourceItem.isContainer()) {
         gameClient.mouse.use({ which: self.__dragSource.which, index: self.__dragSource.index });
+      } else if (sourceItem && self.__dragSource.which.constructor && self.__dragSource.which.constructor.name === 'Tile') {
+        gameClient.mouse.use({ which: self.__dragSource.which, index: self.__dragSource.index });
       }
       self.__dragSource = null;
       return;
@@ -257,7 +354,12 @@ MobileFullscreen.prototype.__bindSlotTouch = function () {
       self.__renderActionbarSlot(abSourceIdx);
       self.__saveActionbarData();
     } else if (toObject && toObject.which) {
-      gameClient.mouse.sendItemMove(fromObject, toObject, 1);
+      var fromItem = fromObject.which && fromObject.which.peekItem(fromObject.index);
+      if (fromItem && fromItem.isStackable && fromItem.isStackable() && fromItem.count > 1) {
+        self.__showMobileCountSelector(fromObject, toObject, fromItem);
+      } else {
+        gameClient.mouse.sendItemMove(fromObject, toObject, 1);
+      }
     }
 
     if (gameClient && gameClient.mouse && self.__dragSprite) {

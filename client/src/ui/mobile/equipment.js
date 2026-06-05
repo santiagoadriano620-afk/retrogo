@@ -11,41 +11,78 @@ MobileFullscreen.prototype.__createMobileSlots = function () {
   var panel = document.createElement('div');
   panel.id = 'mobile-equipment';
   panel.setAttribute('containerIndex', '0');
-  panel.style.cssText = 'position:fixed;right:6px;top:6px;z-index:2147483645;display:flex;flex-direction:row;gap:2px;pointer-events:auto;transform:scale(0.95);transform-origin:top right;';
+  panel.style.cssText = 'position:fixed;right:6px;top:6px;z-index:2147483645;display:flex;flex-direction:column;align-items:center;gap:2px;pointer-events:auto;transform:scale(0.95);transform-origin:top right;';
   this.__mobilePanel = panel;
 
-  var columns = [
-    { slots: [], ids: [], extra: [
-      function () {
-        var col = document.createElement('div');
-        col.style.cssText = 'display:flex;flex-direction:column;gap:1px;';
+  // Top row with Bls, Gld, Shp, Gft centered above slots
+  var topRow = document.createElement('div');
+  topRow.style.cssText = 'display:flex;flex-direction:row;justify-content:center;gap:2px;width:100%;';
 
-        var btnBase = 'background:none;background-color:#4a4a4a;border:1px solid #333;' +
-          'border-radius:0;color:#d3d3d3;font-size:8px;padding:1px 0;margin:0;' +
-          'width:32px;height:16px;cursor:pointer;touch-action:manipulation;' +
-          'white-space:nowrap;text-align:center;';
+  var btnBase = 'background:none;background-color:#4a4a4a;border:1px solid #333;' +
+    'border-radius:0;color:#d3d3d3;font-size:8px;padding:0;margin:0;' +
+    'width:22px;height:16px;cursor:pointer;touch-action:manipulation;' +
+    'background-size:contain;background-repeat:no-repeat;background-position:center;';
 
-        var intf = window.gameClient && window.gameClient.interface;
+  var intf = window.gameClient && window.gameClient.interface;
 
-        var defs = [
-          { id: 'mobile-bless-btn', text: 'Bls', handler: function () { if (intf) intf.modalManager.open('blessing-modal'); }},
-          { id: 'mobile-guild-btn', text: 'Gld', handler: function () { if (intf) intf.modalManager.open('guild-modal'); }},
-          { id: 'mobile-shop-btn',  text: 'Shp', handler: function () { if (intf) { intf.modalManager.open('shop-modal'); window.gameClient.send(new RequestPremiumBalancePacket()); }}},
-          { id: 'mobile-gift-btn',  text: 'Gft', handler: function () { window.gameClient.send(new OpenGiftContainerPacket()); }}
-        ];
+  function toggleModal(name) {
+    if (!intf) return;
+    var mm = intf.modalManager;
+    var modal = mm.get(name);
+    if (modal && modal.element && modal.element.style.display === 'block') {
+      mm.close();
+    } else {
+      mm.open(name);
+    }
+  }
 
-        defs.forEach(function (b) {
-          var btn = document.createElement('button');
-          btn.id = b.id;
-          btn.textContent = b.text;
-          btn.style.cssText = btnBase;
-          btn.addEventListener('click', b.handler);
-          col.appendChild(btn);
-        });
+  var self = this;
 
-        return col;
+  var defs = [
+    { id: 'mobile-bless-btn', icon: '/images/icons/crystal_01a.png', handler: function () { toggleModal('blessing-modal'); }},
+    { id: 'mobile-guild-btn', icon: '/images/icons/shield_01a.png', handler: function () { toggleModal('guild-modal'); }},
+    { id: 'mobile-shop-btn',  icon: '/images/icons/coin_01a.png', handler: function () {
+      var shopOpen = intf && intf.modalManager.get('shop-modal') &&
+        intf.modalManager.get('shop-modal').element &&
+        intf.modalManager.get('shop-modal').element.style.display === 'block';
+      toggleModal('shop-modal');
+      if (!shopOpen) window.gameClient.send(new RequestPremiumBalancePacket());
+    }},
+    { id: 'mobile-gift-btn',  icon: '/images/icons/gift_01a.png', handler: function () {
+      var containers = window.gameClient && window.gameClient.player && window.gameClient.player.__openedContainers;
+      if (self.__giftToggle) {
+        self.__giftToggle = false;
+        if (containers && containers.size > 0) {
+          var arr = Array.from(containers);
+          window.gameClient.player.removeContainer(arr[arr.length - 1]);
+        }
+      } else {
+        self.__giftToggle = true;
+        window.gameClient.send(new OpenGiftContainerPacket());
       }
-    ]},
+    }}
+  ];
+
+  defs.forEach(function (b) {
+    var btn = document.createElement('button');
+    btn.id = b.id;
+    btn.style.cssText = b.icon ? btnBase : btnBase + 'width:auto;padding:1px 3px;background-image:none;';
+    if (b.icon) {
+      btn.style.backgroundImage = "url('" + b.icon + "')";
+    } else {
+      btn.textContent = b.text;
+    }
+    btn.addEventListener('click', b.handler);
+    topRow.appendChild(btn);
+  });
+
+  panel.appendChild(topRow);
+
+  var slotContainer = document.createElement('div');
+  slotContainer.style.cssText = 'display:flex;flex-direction:row;gap:2px;';
+  panel.appendChild(slotContainer);
+
+  var columns = [
     { slots: [7, 5, 8], ids: ['neck', 'left-hand', 'finger'], extra: [
       function () {
         var el = document.getElementById('conditions-display');
@@ -73,8 +110,8 @@ MobileFullscreen.prototype.__createMobileSlots = function () {
         btnCol.style.cssText = 'display:flex;flex-direction:column;gap:1px;';
 
         var btnBaseStyle = 'background:none;background-color:#4a4a4a;border:1px solid #333;' +
-          'border-radius:0;color:#d3d3d3;font-size:8px;padding:1px 0;margin:0;' +
-          'width:32px;height:16px;cursor:pointer;touch-action:manipulation;' +
+          'border-radius:0;color:#d3d3d3;font-size:8px;padding:1px 2px;margin:0;' +
+          'width:46px;height:16px;cursor:pointer;touch-action:manipulation;' +
           'white-space:nowrap;text-align:center;';
 
         var intf = window.gameClient && window.gameClient.interface;
@@ -91,13 +128,13 @@ MobileFullscreen.prototype.__createMobileSlots = function () {
         }
 
         var buttonDefs = [
-          { id: 'openSkills',   text: 'Sk',    handler: function () { if (intf) intf.toggleWindow('skill-window'); } },
-          { id: 'openBattle',   text: 'Bat',   handler: function () { if (intf) intf.toggleWindow('battle-window'); } },
-          { id: 'openVipList',  text: 'VIP',   handler: function () { if (intf) intf.toggleWindow('friend-window'); } },
-          { id: 'openQuests',   text: 'Qst',   handler: function () { toggleModal('quest-log-modal'); } },
+          { id: 'openSkills',   text: 'Skills',  handler: function () { if (intf) intf.toggleWindow('skill-window'); } },
+          { id: 'openBattle',   text: 'Battle',  handler: function () { if (intf) intf.toggleWindow('battle-window'); } },
+          { id: 'openVipList',  text: 'VIP',     handler: function () { if (intf) intf.toggleWindow('friend-window'); } },
+          { id: 'openQuests',   text: 'Quests',  handler: function () { toggleModal('quest-log-modal'); } },
 
-          { id: 'openSettings', text: 'Opt',   handler: function () { toggleModal('settings-modal'); } },
-          { id: 'logout-button',text: 'Ext',   handler: function () { if (intf) intf.sendLogout(); } }
+          { id: 'openSettings', text: 'Options', handler: function () { toggleModal('settings-modal'); } },
+          { id: 'logout-button',text: 'Logout',  handler: function () { if (intf) intf.sendLogout(); } }
         ];
 
         buttonDefs.forEach(function (b) {
@@ -157,7 +194,7 @@ MobileFullscreen.prototype.__createMobileSlots = function () {
       }
     }
 
-    panel.appendChild(col);
+    slotContainer.appendChild(col);
   }
 
   document.body.appendChild(panel);

@@ -15,8 +15,8 @@
     "armor": 18
   },
   "experience": 220,
-  "corpse": 2813,
-  "fluidType": 0,
+  "deathField": 1492,
+  "deathEffect": "fire",
   "behaviour": {
     "type": 2,
     "fleeHealth": 0,
@@ -74,6 +74,7 @@
     "canPushCreatures": false,
     "illusionable": true,
     "targetDistance": 1,
-    "runonhealth": 0
+    "runonhealth": 0,
+    "noCorpse": true
   }
 }

@@ -1,15 +1,63 @@
 {
-  "actionId": 2064,
-  "type": "lever",
-  "itemIds": [1945, 1946],
-  "conditions": [],
-  "effects": [
-    { "type": "transformItem", "from": 1945, "to": 1946, "decay": true },
-    { "type": "relocate", "from": { "x": 32225, "y": 32276, "z": 8 }, "to": { "x": 32225, "y": 32276, "z": 9 } },
-    { "type": "createTile", "effectId": 383, "pos": { "x": 32225, "y": 32276, "z": 8 } }
-  ],
-  "effectsAlt": [
-    { "type": "transformItem", "from": 1946, "to": 1945, "decay": true },
-    { "type": "createTile", "effectId": 351, "pos": { "x": 32225, "y": 32276, "z": 8 } }
-  ]
+    "actionId":  2064,
+    "type":  "lever",
+    "itemIds":  [
+                    1945,
+                    1946
+                ],
+    "conditions":  [
+
+                   ],
+    "effects":  [
+                    {
+                        "type":  "transformItem",
+                        "from":  1945,
+                        "to":  1946,
+                        "decay":  true
+                    },
+                    {
+                        "type":  "relocate",
+                        "from":  {
+                                     "x":  32225,
+                                     "y":  32276,
+                                     "z":  8
+                                 },
+                        "to":  {
+                                   "x":  32225,
+                                   "y":  32276,
+                                   "z":  9
+                               }
+                    },
+                    {
+                        "type":  "createTile",
+                        "effectId":  383,
+                        "pos":  {
+                                    "x":  32225,
+                                    "y":  32276,
+                                    "z":  8
+                                }
+                    },
+                    {
+                        "key":  7064,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "effectsAlt":  [
+                       {
+                           "type":  "transformItem",
+                           "from":  1946,
+                           "to":  1945,
+                           "decay":  true
+                       },
+                       {
+                           "type":  "createTile",
+                           "effectId":  351,
+                           "pos":  {
+                                       "x":  32225,
+                                       "y":  32276,
+                                       "z":  8
+                                   }
+                       }
+                   ]
 }

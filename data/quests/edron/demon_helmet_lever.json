@@ -1,18 +1,96 @@
 {
-  "actionId": 2012,
-  "type": "lever",
-  "itemIds": [1945, 1946],
-  "conditions": [],
-  "effects": [
-    {"type": "transformItem", "from": 1945, "to": 1946, "decay": true},
-    {"type": "removeItem", "pos": {"x": 33314, "y": 31592, "z": 15}, "itemId": 1355},
-    {"type": "relocate", "from": {"x": 33316, "y": 31591, "z": 15}, "to": {"x": 33317, "y": 31591, "z": 15}},
-    {"type": "createItem", "itemId": 1387, "count": 1, "pos": {"x": 33316, "y": 31591, "z": 15}}
-  ],
-  "effectsAlt": [
-    {"type": "transformItem", "from": 1946, "to": 1945, "decay": true},
-    {"type": "relocate", "from": {"x": 33314, "y": 31592, "z": 15}, "to": {"x": 33315, "y": 31592, "z": 15}},
-    {"type": "createItem", "itemId": 1355, "count": 1, "pos": {"x": 33314, "y": 31592, "z": 15}},
-    {"type": "removeItem", "pos": {"x": 33316, "y": 31591, "z": 15}, "itemId": 1387}
-  ]
+    "actionId":  2012,
+    "type":  "lever",
+    "itemIds":  [
+                    1945,
+                    1946
+                ],
+    "conditions":  [
+
+                   ],
+    "effects":  [
+                    {
+                        "type":  "transformItem",
+                        "from":  1945,
+                        "to":  1946,
+                        "decay":  true
+                    },
+                    {
+                        "type":  "removeItem",
+                        "pos":  {
+                                    "x":  33314,
+                                    "y":  31592,
+                                    "z":  15
+                                },
+                        "itemId":  1355
+                    },
+                    {
+                        "type":  "relocate",
+                        "from":  {
+                                     "x":  33316,
+                                     "y":  31591,
+                                     "z":  15
+                                 },
+                        "to":  {
+                                   "x":  33317,
+                                   "y":  31591,
+                                   "z":  15
+                               }
+                    },
+                    {
+                        "type":  "createItem",
+                        "itemId":  1387,
+                        "count":  1,
+                        "pos":  {
+                                    "x":  33316,
+                                    "y":  31591,
+                                    "z":  15
+                                }
+                    },
+                    {
+                        "key":  7012,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "effectsAlt":  [
+                       {
+                           "type":  "transformItem",
+                           "from":  1946,
+                           "to":  1945,
+                           "decay":  true
+                       },
+                       {
+                           "type":  "relocate",
+                           "from":  {
+                                        "x":  33314,
+                                        "y":  31592,
+                                        "z":  15
+                                    },
+                           "to":  {
+                                      "x":  33315,
+                                      "y":  31592,
+                                      "z":  15
+                                  }
+                       },
+                       {
+                           "type":  "createItem",
+                           "itemId":  1355,
+                           "count":  1,
+                           "pos":  {
+                                       "x":  33314,
+                                       "y":  31592,
+                                       "z":  15
+                                   }
+                       },
+                       {
+                           "type":  "removeItem",
+                           "pos":  {
+                                       "x":  33316,
+                                       "y":  31591,
+                                       "z":  15
+                                   },
+                           "itemId":  1387
+                       }
+                   ]
 }

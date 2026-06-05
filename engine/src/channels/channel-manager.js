@@ -122,12 +122,8 @@ ChannelManager.prototype.handleSendPrivateMessage = function(player, packet) {
     return;
   }
 
-  // Sanitize message to prevent XSS
-  let safeMessage = packet.message
-    .replace(/[<>]/g, "")
-    .replace(/&/g, "&amp;")
-    .replace(/"/g, "&quot;")
-    .substring(0, 256);
+  // Sanitize: limit length (XSS handled by PacketWriter.encodeString → escapeHTML)
+  let safeMessage = packet.message.substring(0, 256);
 
   targetPlayer.write(new ChannelPrivatePacket(player.getProperty(CONST.PROPERTIES.NAME), safeMessage));
 

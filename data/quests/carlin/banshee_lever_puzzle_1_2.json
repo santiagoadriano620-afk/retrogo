@@ -1,22 +1,109 @@
 {
-  "actionId": 2028,
-  "type": "lever",
-  "itemIds": [1946],
-  "conditions": [
-    { "type": "itemAtPosition", "itemId": 1945, "pos": {"x": 32220, "y": 31843, "z": 15} },
-    { "type": "storage", "key": 7, "value": 1, "invert": true }
-  ],
-  "effects": [
-    { "type": "transformItem", "from": 1946, "to": 1945, "decay": true },
-    { "type": "magicEffect", "pos": {"x": 0, "y": 0, "z": 0}, "effectId": 13 },
-    { "type": "magicEffect", "pos": {"x": 32217, "y": 31844, "z": 14}, "effectId": 12 },
-    { "type": "magicEffect", "pos": {"x": 32218, "y": 31844, "z": 14}, "effectId": 12 },
-    { "type": "magicEffect", "pos": {"x": 32219, "y": 31843, "z": 14}, "effectId": 12 },
-    { "type": "magicEffect", "pos": {"x": 32219, "y": 31845, "z": 14}, "effectId": 12 },
-    { "type": "magicEffect", "pos": {"x": 32220, "y": 31843, "z": 14}, "effectId": 12 }
-  ],
-  "effectsAlt": [
-    { "type": "magicEffect", "pos": {"x": 0, "y": 0, "z": 0}, "effectId": 12 },
-    { "type": "damage", "target": 0, "combat": "COMBAT_FIREDAMAGE", "min": -170, "max": -170 }
-  ]
+    "actionId":  2028,
+    "type":  "lever",
+    "itemIds":  [
+                    1946
+                ],
+    "conditions":  [
+                       {
+                           "type":  "itemAtPosition",
+                           "itemId":  1945,
+                           "pos":  {
+                                       "x":  32220,
+                                       "y":  31843,
+                                       "z":  15
+                                   }
+                       },
+                       {
+                           "type":  "storage",
+                           "key":  7,
+                           "value":  1,
+                           "invert":  true
+                       }
+                   ],
+    "effects":  [
+                    {
+                        "type":  "transformItem",
+                        "from":  1946,
+                        "to":  1945,
+                        "decay":  true
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  0,
+                                    "y":  0,
+                                    "z":  0
+                                },
+                        "effectId":  13
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  32217,
+                                    "y":  31844,
+                                    "z":  14
+                                },
+                        "effectId":  12
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  32218,
+                                    "y":  31844,
+                                    "z":  14
+                                },
+                        "effectId":  12
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  32219,
+                                    "y":  31843,
+                                    "z":  14
+                                },
+                        "effectId":  12
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  32219,
+                                    "y":  31845,
+                                    "z":  14
+                                },
+                        "effectId":  12
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  32220,
+                                    "y":  31843,
+                                    "z":  14
+                                },
+                        "effectId":  12
+                    },
+                    {
+                        "key":  7028,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "effectsAlt":  [
+                       {
+                           "type":  "magicEffect",
+                           "pos":  {
+                                       "x":  0,
+                                       "y":  0,
+                                       "z":  0
+                                   },
+                           "effectId":  12
+                       },
+                       {
+                           "type":  "damage",
+                           "target":  0,
+                           "combat":  "COMBAT_FIREDAMAGE",
+                           "min":  -170,
+                           "max":  -170
+                       }
+                   ]
 }

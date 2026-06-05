@@ -1,9 +1,23 @@
-﻿{
-  "actionId": 2070,
-  "type": "instrument",
-  "itemIds": [],
-  "effects": [
-    { "type": "magicEffect", "effectId": 23 },
-    { "type": "storage", "key": 259, "value": 1 }
-  ]
+{
+    "actionId":  2070,
+    "type":  "instrument",
+    "itemIds":  [
+
+                ],
+    "effects":  [
+                    {
+                        "type":  "magicEffect",
+                        "effectId":  23
+                    },
+                    {
+                        "type":  "storage",
+                        "key":  259,
+                        "value":  1
+                    },
+                    {
+                        "key":  7070,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ]
 }

@@ -1,11 +1,35 @@
 {
-  "actionId": 3009,
-  "type": "moveEvent",
-  "events": ["onStepIn"],
-  "conditions": [
-    { "type": "itemAtPosition", "itemId": 392, "pos": {"x": 32266, "y": 31892, "z": 12} }
-  ],
-  "effects": [
-    { "type": "transformItemInPosition", "pos": {"x": 32266, "y": 31892, "z": 12}, "from": 392, "to": 355 }
-  ]
+    "actionId":  3009,
+    "type":  "moveEvent",
+    "events":  [
+                   "onStepIn"
+               ],
+    "conditions":  [
+                       {
+                           "type":  "itemAtPosition",
+                           "itemId":  392,
+                           "pos":  {
+                                       "x":  32266,
+                                       "y":  31892,
+                                       "z":  12
+                                   }
+                       }
+                   ],
+    "effects":  [
+                    {
+                        "type":  "transformItemInPosition",
+                        "pos":  {
+                                    "x":  32266,
+                                    "y":  31892,
+                                    "z":  12
+                                },
+                        "from":  392,
+                        "to":  355
+                    },
+                    {
+                        "key":  8009,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ]
 }

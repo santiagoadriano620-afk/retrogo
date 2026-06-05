@@ -1,19 +1,34 @@
 {
-  "actionId": 3052,
-  "type": "bridge",
-  "events": ["onStepIn", "onAddItem"],
-  "tileItem": true,
-  "conditions": [
-    {"type": "isPlayer"},
-    {"type": "notPremium"}
-  ],
-  "effects": [
-    {"type": "sendMessage", "message": "You need a premium account to cross the bridge."}
-  ],
-  "teleport": {
-    "offsetX": 3,
-    "offsetY": 0,
-    "z": 7
-  },
-  "magicEffect": 13
+    "actionId":  3052,
+    "type":  "bridge",
+    "events":  [
+                   "onStepIn",
+                   "onAddItem"
+               ],
+    "tileItem":  true,
+    "conditions":  [
+                       {
+                           "type":  "isPlayer"
+                       },
+                       {
+                           "type":  "notPremium"
+                       }
+                   ],
+    "effects":  [
+                    {
+                        "type":  "sendMessage",
+                        "message":  "You need a premium account to cross the bridge."
+                    },
+                    {
+                        "key":  8052,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "teleport":  {
+                     "offsetX":  3,
+                     "offsetY":  0,
+                     "z":  7
+                 },
+    "magicEffect":  13
 }

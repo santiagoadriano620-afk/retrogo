@@ -1480,10 +1480,8 @@ PacketHandler.prototype.handleQuestLog = function (quests) {
    * Function PacketHandler.handleQuestLog
    * Handles the quest list packet
    */
-  console.log("Client PacketHandler: handleQuestLog called with " + quests.length + " quests.");
   let window = gameClient.interface.modalManager.get("quest-log-modal");
   if (window) {
-    console.log("Client PacketHandler: Updating Quest Log Window.");
     window.setQuests(quests);
   } else {
     console.error("Client PacketHandler: Quest Log Window not found!");

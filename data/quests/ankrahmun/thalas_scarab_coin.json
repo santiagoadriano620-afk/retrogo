@@ -1,18 +1,85 @@
-﻿{
-  "actionId": 3053,
-  "type": "scarabCoin",
-  "events": ["onAddItem"],
-  "conditions": [
-    { "type": "itemAtPosition", "itemId": 2159, "pos": { "x": 33293, "y": 32741, "z": 13 } }
-  ],
-  "effects": [
-    { "type": "relocate", "from": { "x": 33293, "y": 32742, "z": 13 }, "to": { "x": 33299, "y": 32742, "z": 13 } },
-    { "type": "magicEffect", "pos": { "x": 33293, "y": 32742, "z": 13 }, "effectId": 11 },
-    { "type": "magicEffect", "pos": { "x": 33299, "y": 32742, "z": 13 }, "effectId": 11 },
-    { "type": "magicEffect", "pos": { "x": 33293, "y": 32741, "z": 13 }, "effectId": 16 },
-    { "type": "removeItem", "pos": { "x": 33293, "y": 32741, "z": 13 }, "itemId": 2159 }
-  ],
-  "effectsAlt": [
-    { "type": "magicEffect", "pos": { "x": 33293, "y": 32741, "z": 13 }, "effectId": 3 }
-  ]
+{
+    "actionId":  3053,
+    "type":  "scarabCoin",
+    "events":  [
+                   "onAddItem"
+               ],
+    "conditions":  [
+                       {
+                           "type":  "itemAtPosition",
+                           "itemId":  2159,
+                           "pos":  {
+                                       "x":  33293,
+                                       "y":  32741,
+                                       "z":  13
+                                   }
+                       }
+                   ],
+    "effects":  [
+                    {
+                        "type":  "relocate",
+                        "from":  {
+                                     "x":  33293,
+                                     "y":  32742,
+                                     "z":  13
+                                 },
+                        "to":  {
+                                   "x":  33299,
+                                   "y":  32742,
+                                   "z":  13
+                               }
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  33293,
+                                    "y":  32742,
+                                    "z":  13
+                                },
+                        "effectId":  11
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  33299,
+                                    "y":  32742,
+                                    "z":  13
+                                },
+                        "effectId":  11
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  33293,
+                                    "y":  32741,
+                                    "z":  13
+                                },
+                        "effectId":  16
+                    },
+                    {
+                        "type":  "removeItem",
+                        "pos":  {
+                                    "x":  33293,
+                                    "y":  32741,
+                                    "z":  13
+                                },
+                        "itemId":  2159
+                    },
+                    {
+                        "key":  8053,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "effectsAlt":  [
+                       {
+                           "type":  "magicEffect",
+                           "pos":  {
+                                       "x":  33293,
+                                       "y":  32741,
+                                       "z":  13
+                                   },
+                           "effectId":  3
+                       }
+                   ]
 }
