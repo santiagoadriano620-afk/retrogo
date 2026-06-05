@@ -39,7 +39,7 @@ PacketWriter.prototype.writeOutfits = function(player) {
    */
 
   const sex = player.getProperty(CONST.PROPERTIES.SEX);
-  const outfitIds = sex === 1
+  const outfitIds = sex === CONST.SEX.MALE
     ? [111, 112, 113, 114, 115, 116, 117]
     : [118, 119, 120, 121, 122, 123, 124];
 

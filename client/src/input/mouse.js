@@ -400,15 +400,16 @@ Mouse.prototype.__handleContextMenu = function (event) {
 
     let tile = this.getWorldObject(event);
 
-    // Attack monsters on right-click (unless safe fight is on)
-    let monsters = tile !== null && tile.which.monsters && Array.from(tile.which.monsters).filter(function (c) { return c.type !== 0; });
-    if (monsters && monsters.length > 0) {
-      if (!gameClient.interface.fightModeSelector || !gameClient.interface.fightModeSelector.isSafeFight()) {
-        return gameClient.world.targetMonster(tile.which.monsters);
+    // Skip monster/player attack on right-click when Ctrl is held (context menu mode)
+    if (!event.ctrlKey) {
+      let monsters = tile !== null && tile.which.monsters && Array.from(tile.which.monsters).filter(function (c) { return c.type !== 0; });
+      if (monsters && monsters.length > 0) {
+        if (!gameClient.interface.fightModeSelector || !gameClient.interface.fightModeSelector.isSafeFight()) {
+          return gameClient.world.targetMonster(tile.which.monsters);
+        }
       }
     }
 
-    // Skip player attack on right-click when Ctrl is held (context menu mode)
     if (!event.ctrlKey) {
       let players = tile !== null && tile.which.monsters && Array.from(tile.which.monsters).filter(function (c) { return c.type === 0 && c !== gameClient.player; });
       if (players && players.length > 0) {
@@ -427,10 +428,8 @@ Mouse.prototype.__handleContextMenu = function (event) {
       }
     }
 
-    // Use items directly on right-click
-    // Open containers/corpses directly, use other items directly
-    // Multi-use items enter multi-use mode directly (same as container slot behavior)
-    if (tile !== null && tile.which.items.length > 0) {
+    // Use items directly on right-click (skip when Ctrl is held for context menu)
+    if (!event.ctrlKey && tile !== null && tile.which.items.length > 0) {
       let topItem = tile.which.peekItem(0xFF);
 
       if (!topItem.isMultiUse()) {
@@ -438,13 +437,14 @@ Mouse.prototype.__handleContextMenu = function (event) {
       }
 
       // Multi-use items on right-click (without Ctrl) enter multi-use mode directly
-      if (!event.ctrlKey) {
-        return this.use(tile);
-      }
+      return this.use(tile);
     }
 
-    // Only show context menu when Ctrl is held
+    // Only show context menu when Ctrl is held on a player tile (self or other player)
     if (event.ctrlKey) {
+      let topCreature = tile !== null && tile.which && tile.which.getTopCreature();
+      if (!topCreature || topCreature.type !== 0) return;
+
       let menu = gameClient.interface.menuManager.getMenu("screen-menu");
       menu.element.querySelector("button[action=use]").innerHTML = "Use";
       if (tile !== null && tile.which.items.length > 0) {

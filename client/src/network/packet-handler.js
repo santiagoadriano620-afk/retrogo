@@ -1710,6 +1710,25 @@ PacketHandler.prototype.handleTradeCancel = function (packet) {
   }
 };
 
+PacketHandler.prototype.handleAdminAddSkillModal = function () {
+  function openModal() {
+    gameClient.interface.modalManager.open("floater-admin-addskill");
+  }
+  if (gameClient.interface.modalManager.__modals.hasOwnProperty("floater-admin-addskill")) {
+    return openModal();
+  }
+  let script = document.createElement("script");
+  script.src = "src/ui/desktop/modals/modal-addskill.js";
+  script.onload = function () {
+    gameClient.interface.modalManager.register(AdminAddSkillModal, "floater-admin-addskill");
+    openModal();
+  };
+  script.onerror = function () {
+    console.error("Failed to load admin add-skill modal.");
+  };
+  document.body.appendChild(script);
+};
+
 PacketHandler.prototype.handleBanPanel = function () {
   let self = this;
   function openBanModal() {

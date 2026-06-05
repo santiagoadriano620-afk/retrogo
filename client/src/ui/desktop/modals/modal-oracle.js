@@ -45,11 +45,6 @@ OracleModal.prototype.__renderVocations = function() {
   let container = document.getElementById("oracle-vocations");
   container.innerHTML = "";
 
-  let playerColors = { head: 0, body: 0, legs: 0, feet: 0 };
-  if (gameClient && gameClient.player && gameClient.player.outfit) {
-    playerColors = gameClient.player.outfit.details;
-  }
-
   this.__vocations.forEach(function(v, i) {
     let card = document.createElement("div");
     card.className = "oracle-vocation-card";
@@ -76,12 +71,7 @@ OracleModal.prototype.__renderVocations = function() {
     container.appendChild(card);
 
     let ctx = c.getContext("2d");
-    let outfit = new Outfit({
-      id: v.outfitId,
-      details: { head: playerColors.head, body: playerColors.body, legs: playerColors.legs, feet: playerColors.feet },
-      addonOne: false,
-      addonTwo: false
-    });
+    let outfit = gameClient.player.outfit.copy();
     let outfitData = outfit.getDataObject();
     if (outfitData) {
       let item = outfitData.getFrameGroup(0);

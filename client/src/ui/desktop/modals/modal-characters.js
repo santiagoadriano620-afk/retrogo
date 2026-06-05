@@ -528,6 +528,7 @@ CharacterSelectModal.prototype.__refreshList = function(account, password) {
       characters: data.characters,
       token: data.token,
       host: data.host,
+      xorKey: data.xorKey,
       account: account,
       password: password,
       premiumExpiry: data.premiumExpiry || 0,

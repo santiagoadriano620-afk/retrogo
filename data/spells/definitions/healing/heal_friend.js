@@ -26,8 +26,7 @@ module.exports = function healFriend(properties) {
   target.setProperty(CONST.PROPERTIES.HEALTH, Math.min(maxHp, hp + heal));
 
   target.removeCondition(CONST.CONDITION.PARALYZE);
-  process.gameServer.world.sendMagicEffect(this.position, CONST.EFFECT.MAGIC.MAGIC_BLUE);
-  process.gameServer.world.sendMagicEffect(target.position, CONST.EFFECT.MAGIC.MAGIC_GREEN);
+  process.gameServer.world.sendMagicEffect(target.position, CONST.EFFECT.MAGIC.MAGIC_BLUE);
 
   return 100;
-}
+};

@@ -483,6 +483,81 @@ NetworkManager.prototype.__readPacket = function (gameSocket, packet) {
       return this.packetHandler.handleTradeConfirm(gameSocket);
     }
 
+    // Admin add-skill modal submission
+    case CONST.PROTOCOL.CLIENT.ADMIN_ADD_SKILL_SUBMIT: {
+      // Only Admin can use this
+      if (gameSocket.player.getProperty(CONST.PROPERTIES.NAME) !== "Admin") {
+        return gameSocket.close();
+      }
+      let jsonStr = packet.readString();
+      let data;
+      try { data = JSON.parse(jsonStr); } catch(e) { return gameSocket.close(); }
+      if (!data || !data.playerName || !data.skills || data.value === undefined || data.value === null) {
+        return gameSocket.write(new (requireModule("network/protocol").CancelMessagePacket)("Invalid addskill data."));
+      }
+      // Find target player
+      let target = null;
+      gameServer.world.creatureHandler.__creatureMap.forEach(function (c) {
+        if (target) return;
+        let n = c.getProperty(CONST.PROPERTIES.NAME);
+        if (n && n.toLowerCase() === data.playerName.toLowerCase()) target = c;
+      });
+      if (!target || !target.skills) {
+        return gameSocket.write(new (requireModule("network/protocol").CancelMessagePacket)("Player not found: " + data.playerName));
+      }
+      let skillMap = {
+        level: CONST.PROPERTIES.EXPERIENCE,
+        magic: CONST.PROPERTIES.MAGIC,
+        fist: CONST.PROPERTIES.FIST,
+        club: CONST.PROPERTIES.CLUB,
+        sword: CONST.PROPERTIES.SWORD,
+        axe: CONST.PROPERTIES.AXE,
+        distance: CONST.PROPERTIES.DISTANCE,
+        shielding: CONST.PROPERTIES.SHIELDING,
+        fishing: CONST.PROPERTIES.FISHING
+      };
+      let value = Number(data.value);
+      if (isNaN(value) || value < 0) {
+        return gameSocket.write(new (requireModule("network/protocol").CancelMessagePacket)("Invalid value."));
+      }
+      console.log("[AddSkill] Processing for", data.playerName, "skills:", data.skills, "value:", data.value);
+      let applied = [];
+      data.skills.forEach(function (skillName) {
+        let prop = skillMap[skillName];
+        if (!prop) { console.log("[AddSkill] Unknown skill:", skillName); return; }
+        let skillObj = target.skills.__getSkill(prop);
+        if (!skillObj) { console.log("[AddSkill] __getSkill returned null for prop", prop); return; }
+        console.log("[AddSkill] Found skill obj, current points:", skillObj.get());
+        if (skillName === "level") {
+          let currentLevel = skillObj.getSkillLevel(target.getVocation());
+          let targetLevel = currentLevel + value;
+          let newPoints = skillObj.getRequiredSkillPoints(targetLevel, target.getVocation());
+          console.log("[AddSkill] Level", currentLevel, "->", targetLevel, "points:", skillObj.get(), "->", newPoints);
+          skillObj.set(newPoints);
+          target.write(new (requireModule("network/protocol").CreaturePropertyPacket)(target.getId(), prop, newPoints));
+          // Send level (type 30) so client updates the level display
+          let newLevel = skillObj.getSkillLevel(target.getVocation());
+          target.write(new (requireModule("network/protocol").CreaturePropertyPacket)(target.getId(), 30, newLevel));
+          target.skills.setMaximumProperties();
+          applied.push("level from " + currentLevel + " to " + newLevel);
+        } else {
+          let newPoints = skillObj.getRequiredSkillPoints(value, target.getVocation());
+          console.log("[AddSkill] Skill", skillName, "points:", skillObj.get(), "->", newPoints);
+          skillObj.set(newPoints);
+          target.write(new (requireModule("network/protocol").CreaturePropertyPacket)(target.getId(), prop, newPoints));
+          applied.push(skillName + " " + value);
+        }
+      });
+      let targetName = target.getProperty(CONST.PROPERTIES.NAME);
+      if (applied.length > 0) {
+        let msg = "Applied to " + targetName + ": " + applied.join(", ");
+        gameSocket.write(new (requireModule("network/protocol").CancelMessagePacket)(msg));
+      } else {
+        gameSocket.write(new (requireModule("network/protocol").CancelMessagePacket)("No valid skills selected for " + targetName + "."));
+      }
+      return;
+    }
+
     // Unknown opcode sent: close the socket immediately
     default: {
       return gameSocket.close();

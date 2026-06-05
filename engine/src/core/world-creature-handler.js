@@ -414,6 +414,13 @@ CreatureHandler.prototype.createNewPlayer = function (gameSocket, data) {
     player.properties.availableOutfits = migrated;
   }
 
+  // Default invalid/zero outfit IDs to gender-appropriate citizen outfit
+  if (currentOutfit && (!currentOutfit.id || currentOutfit.id <= 0 || currentOutfit.id > 255)) {
+    let sex = player.getProperty(CONST.PROPERTIES.SEX);
+    currentOutfit.id = sex === CONST.SEX.MALE ? CONST.LOOKTYPES.MALE.CITIZEN : CONST.LOOKTYPES.FEMALE.CITIZEN;
+    player.properties.setProperty(CONST.PROPERTIES.OUTFIT, currentOutfit);
+  }
+
   // Admin debug account gets max speed, ADMIN vocation, unlimited capacity, and default outfit 75
   if (player.name === "Admin") {
     player.customSpeed = 1000;

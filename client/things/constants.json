@@ -85,7 +85,8 @@
       "MARKET_START": 65,
       "MARKET_BUY": 66,
       "MARKET_CLOSE": 67,
-      "MARKET_REQUEST_VIEW": 68
+      "MARKET_REQUEST_VIEW": 68,
+      "ADMIN_ADD_SKILL_SUBMIT": 69
     },
     "SERVER": {
       "LATENCY": 0,
@@ -164,7 +165,8 @@
       "MARKET_BUY_RESULT": 82,
       "MARKET_CLOSED": 83,
       "GLOBAL_BOOST_UPDATE": 84,
-      "TRAINING_TIMER": 85
+      "TRAINING_TIMER": 85,
+      "ADMIN_ADD_SKILL_MODAL": 86
     }
   },
   "DIRECTION": {

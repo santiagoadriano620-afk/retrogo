@@ -760,3 +760,12 @@ const MarketBuyPacket = function (sellerId, itemIndex, count, useRetro) {
 };
 MarketBuyPacket.prototype = Object.create(PacketWriter.prototype);
 MarketBuyPacket.prototype.constructor = MarketBuyPacket;
+
+const AdminAddSkillSubmitPacket = function (playerName, skills, value) {
+  let data = JSON.stringify({ playerName: playerName, skills: skills, value: value });
+  let { stringEncoded, stringLength } = this.encodeString(data);
+  PacketWriter.call(this, CONST.PROTOCOL.CLIENT.ADMIN_ADD_SKILL_SUBMIT, stringLength);
+  this.writeBuffer(stringEncoded);
+};
+AdminAddSkillSubmitPacket.prototype = Object.create(PacketWriter.prototype);
+AdminAddSkillSubmitPacket.prototype.constructor = AdminAddSkillSubmitPacket;

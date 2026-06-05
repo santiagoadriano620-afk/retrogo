@@ -14,8 +14,6 @@ module.exports = function massHealing() {
   this.setProperty(CONST.PROPERTIES.HEALTH, Math.min(maxHp, hp + heal));
   this.removeCondition(CONST.CONDITION.PARALYZE);
 
-  let party = this.party;
-
   offsets.forEach(function (off) {
     let pos = { x: this.position.x + off.x, y: this.position.y + off.y, z: this.position.z };
     world.sendMagicEffect(pos, CONST.EFFECT.MAGIC.MAGIC_BLUE);
@@ -23,11 +21,9 @@ module.exports = function massHealing() {
     if (!tile || !tile.creatures) return;
     tile.creatures.forEach(function (creature) {
       if (creature.id === this.id) return;
-      if (party && party.members.includes(creature)) {
-        let hp = creature.getProperty(CONST.PROPERTIES.HEALTH);
-        let maxHp = creature.getProperty(CONST.PROPERTIES.HEALTH_MAX);
-        creature.setProperty(CONST.PROPERTIES.HEALTH, Math.min(maxHp, hp + heal));
-      }
+      let hp = creature.getProperty(CONST.PROPERTIES.HEALTH);
+      let maxHp = creature.getProperty(CONST.PROPERTIES.HEALTH_MAX);
+      creature.setProperty(CONST.PROPERTIES.HEALTH, Math.min(maxHp, hp + heal));
     }, this);
   }, this);
 

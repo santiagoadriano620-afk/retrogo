@@ -897,6 +897,12 @@ const BotPanelPacket = function (suspects, cheaters) {
 BotPanelPacket.prototype = Object.create(PacketWriter.prototype);
 BotPanelPacket.prototype.constructor = BotPanelPacket;
 
+const AdminAddSkillModalPacket = function () {
+  PacketWriter.call(this, CONST.PROTOCOL.SERVER.ADMIN_ADD_SKILL_MODAL, 0);
+};
+AdminAddSkillModalPacket.prototype = Object.create(PacketWriter.prototype);
+AdminAddSkillModalPacket.prototype.constructor = AdminAddSkillModalPacket;
+
 const IgnoreDataPacket = function (ignoredList) {
   let count = ignoredList.length;
   let totalLength = 2;
@@ -1523,6 +1529,7 @@ module.exports = {
   TradeRemoveItemPacket,
   TradeSetGoldPacket,
   BanPanelPacket,
+  AdminAddSkillModalPacket,
   IgnoreDataPacket,
   IgnoreAddResultPacket,
   IgnoreRemoveResultPacket,

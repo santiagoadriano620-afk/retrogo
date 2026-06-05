@@ -285,7 +285,9 @@ CommandHandler.prototype.handle = function (player, message) {
   }
 
   if (message[0] === "/addskill") {
-    return this.handleCommandAddSkill(player, message[1], message[2]);
+    // Open the admin add-skill modal
+    player.write(new (requireModule("network/protocol").AdminAddSkillModalPacket)());
+    return;
   }
 
   // Create item command: /i [item_id_or_name] [count]

@@ -357,6 +357,10 @@ NetworkManager.prototype.readPacket = function (packet) {
       return this.packetHandler.handleGlobalBoostUpdate(packet.readUInt32(), packet.readUInt32(), packet.readUInt32());
     }
 
+    case CONST.PROTOCOL.SERVER.ADMIN_ADD_SKILL_MODAL: {
+      return this.packetHandler.handleAdminAddSkillModal();
+    }
+
     case CONST.PROTOCOL.SERVER.BOT_PANEL: {
       return this.packetHandler.handleBotPanel(packet);
     }

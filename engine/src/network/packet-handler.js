@@ -719,7 +719,7 @@ PacketHandler.prototype.handlePlayerSay = function (player, packet) {
 
   // Special handling for Creature Illusion (utevo res ina "monster")
   if (messageLower.startsWith("utevo res ina ")) {
-    let monsterName = messageLower.substring(14).replace(/"/g, "").trim(); // Remove prefix and quotes
+    let monsterName = messageLower.substring(14).replace(/&quot;/g, "").replace(/"/g, "").trim(); // Remove prefix and quotes
     let monster = gameServer.database.getMonsterByName(monsterName);
 
     if (monster) {
@@ -740,7 +740,7 @@ PacketHandler.prototype.handlePlayerSay = function (player, packet) {
     // Show the spell words as speech
     player.speechHandler.internalCreatureSay(packet.message, CONST.COLOR.YELLOW);
 
-    let monsterName = messageLower.substring(10).replace(/"/g, "").trim(); // Remove prefix and quotes
+    let monsterName = messageLower.substring(10).replace(/&quot;/g, "").replace(/"/g, "").trim(); // Remove prefix and quotes
 
     // Summon at the player's position (addSummon validates existence internally)
     let summon = gameServer.world.creatureHandler.addSummon(player, monsterName, player.getPosition());
@@ -759,6 +759,24 @@ PacketHandler.prototype.handlePlayerSay = function (player, packet) {
       player.speechHandler.internalCreatureSay(packet.message, CONST.COLOR.YELLOW);
       return player.spellbook.handleSpell(9, { direction: direction });
     }
+  }
+
+  // Special handling for exura sio "player" (heal friend by name)
+  if (messageLower.startsWith("exura sio ")) {
+    player.speechHandler.internalCreatureSay(packet.message, CONST.COLOR.YELLOW);
+    let playerName = messageLower.substring(10).replace(/&quot;/g, "").replace(/"/g, "").trim();
+    let target = gameServer.world.creatureHandler.getPlayerByName(playerName);
+    if (!target) {
+      player.sendCancelMessage("Player not found.");
+      return;
+    }
+    let dx = Math.abs(player.position.x - target.position.x);
+    let dy = Math.abs(player.position.y - target.position.y);
+    if (dx > 7 || dy > 5) {
+      player.sendCancelMessage("Destination out of reach.");
+      return;
+    }
+    return player.spellbook.handleSpell(26, { targetId: target.id });
   }
 
   if (SPELL_WORDS.hasOwnProperty(messageLower)) {
