@@ -301,9 +301,7 @@ MobileFullscreen.prototype.__bindSlotTouch = function () {
       }
       e.preventDefault();
       var sourceItem = self.__dragSource.which && self.__dragSource.which.peekItem(self.__dragSource.index);
-      if (sourceItem && sourceItem.isContainer && sourceItem.isContainer()) {
-        gameClient.mouse.use({ which: self.__dragSource.which, index: self.__dragSource.index });
-      } else if (sourceItem && self.__dragSource.which.constructor && self.__dragSource.which.constructor.name === 'Tile') {
+      if (sourceItem) {
         gameClient.mouse.use({ which: self.__dragSource.which, index: self.__dragSource.index });
       }
       self.__dragSource = null;

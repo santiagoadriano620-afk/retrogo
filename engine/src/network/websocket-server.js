@@ -119,6 +119,11 @@ WebsocketServer.prototype.__handleConnection = function (
   // Create a new class that wraps the connected socket
   let gameSocket = new GameSocket(socket, accountName, xorKey);
 
+  // Disable Nagle's algorithm: send small packets immediately (reduces latency spikes)
+  if (socket._socket && typeof socket._socket.setNoDelay === 'function') {
+    socket._socket.setNoDelay(true);
+  }
+
   // Detect device type from User-Agent
   gameSocket.__deviceType = this.__detectDeviceType(request.headers["user-agent"]);
 

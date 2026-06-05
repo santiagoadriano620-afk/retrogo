@@ -52,7 +52,7 @@ module.exports = {
     MS_TICK_INTERVAL: 50,
     MS_SHUTDOWN_SCHEDULE: 1000,
     MAX_PACKET_SIZE: 1024,
-    PING_INTERVAL: 5,
+    PING_INTERVAL: 40,
   },
 
   // ═══════════════════════════════════════════════════════════════════════════

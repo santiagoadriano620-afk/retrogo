@@ -283,33 +283,22 @@ Player.prototype.isUnderground = function () {
   return this.getPosition().z > 7;
 };
 
-Player.prototype.setMovementBuffer = function (key) {
+Player.prototype.queueMovement = function (fn) {
   /*
-   * Function Player.setMovementBuffer
-   * Functions to overwrite the private movement buffer state variable
+   * Function Player.queueMovement
+   * Queues a movement callback to execute when the server confirms the current step.
+   * Accepts a function to allow both keyboard key codes and D-pad directions.
    */
 
-  this.__movementBuffer = key;
-};
-
-Player.prototype.extendMovementBuffer = function (key) {
-  /*
-   * Function Player.setMovementBuffer
-   * Sets the movement buffer of the player to a key
-   */
-
-  // This parameter defines the responsiveness of the buffer
-  const LENIENCY = 0.75;
-
-  if (this.getMovingFraction() < LENIENCY) {
-    return this.setMovementBuffer(key);
+  if (this.__movementQueue.length < this.__movementQueueMax) {
+    this.__movementQueue.push(fn);
   }
 };
 
 Player.prototype.confirmClientWalk = function () {
   /*
    * Function Player.confirmClientWalk
-   * Confirms the client-side walk-ahead. The player may only walk again after the server has confirmed its move
+   * Confirms the client-side walk-ahead. Processes queued movements immediately.
    */
 
   if (this.__serverWalkConfirmation) {
@@ -317,6 +306,12 @@ Player.prototype.confirmClientWalk = function () {
   }
 
   this.__serverWalkConfirmation = true;
+
+  // Process next queued movement immediately
+  if (this.__movementQueue.length > 0 && !this.isMoving()) {
+    let fn = this.__movementQueue.shift();
+    fn();
+  }
 };
 
 Player.prototype.isCreatureTarget = function (creature) {

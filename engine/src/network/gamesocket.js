@@ -49,7 +49,7 @@ const GameSocket = function (socket, account, xorKey) {
 
   // Rate limiting: track packets in current window
   this.__packetTimestamps = [];
-  this.__rateLimitMax = 20;
+  this.__rateLimitMax = 60;
   this.__rateLimitWindow = 1000;
 
   // XOR encryption key for this session (8 bytes, may be null if disabled)

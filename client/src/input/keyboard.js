@@ -119,20 +119,14 @@ Keyboard.prototype.handleInput = function () {
       return;
     }
 
-    // Must have confirmation from the server before moving to the next tile is allowed
-    if (!gameClient.player.__serverWalkConfirmation) {
-      return;
-    }
-
     key = Number(key);
 
     // Block keyboard input when the character is moving or when the server has not confirmed movement
-    if (gameClient.player.isMoving()) {
-      // Diagonal keys should not use movement buffer (no hold-to-walk)
-      if (this.__isDiagonalKey(key)) {
-        return;
-      }
-      return gameClient.player.extendMovementBuffer(key);
+    if (gameClient.player.isMoving() || !gameClient.player.__serverWalkConfirmation) {
+      let queuedKey = key;
+      return gameClient.player.queueMovement(function () {
+        gameClient.keyboard.handleCharacterMovement(queuedKey);
+      });
     }
 
     // Shift is being held down: rotate
@@ -280,12 +274,24 @@ Keyboard.prototype.handleMoveKey = function (direction) {
 
   // Must have confirmation from the server before moving
   if (!gameClient.player.__serverWalkConfirmation) {
-    return;
+    let queuedDir = direction;
+    return gameClient.player.queueMovement(function () {
+      gameClient.keyboard.__handleCharacterMovementWrapper(
+        queuedDir,
+        gameClient.player.getPosition().fromOpcode(queuedDir)
+      );
+    });
   }
 
   // Block when the character is moving
   if (gameClient.player.isMoving()) {
-    return;
+    let queuedDir = direction;
+    return gameClient.player.queueMovement(function () {
+      gameClient.keyboard.__handleCharacterMovementWrapper(
+        queuedDir,
+        gameClient.player.getPosition().fromOpcode(queuedDir)
+      );
+    });
   }
 
   // Get current position

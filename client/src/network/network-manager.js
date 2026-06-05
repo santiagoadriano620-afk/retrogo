@@ -378,7 +378,9 @@ NetworkManager.prototype.readPacket = function (packet) {
     }
 
     default:
-      throw ("An unknown packet was received from the server.");
+      var _unknownId = packet.buffer && packet.buffer.length > 0 ? packet.buffer[0] : -1;
+      console.error("[DEBUG] Unknown packet ID:", _unknownId, "(0x" + (_unknownId >= 0 ? _unknownId.toString(16) : "??") + ")");
+      throw ("An unknown packet was received from the server (ID=" + _unknownId + ").");
 
   }
 

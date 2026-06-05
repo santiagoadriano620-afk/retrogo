@@ -104,51 +104,76 @@ MobileFullscreen.prototype.__createMobileSlots = function () {
         return el;
       }
     ]},
-    { slots: [], ids: [], extra: [
-      function () {
-        var btnCol = document.createElement('div');
-        btnCol.style.cssText = 'display:flex;flex-direction:column;gap:1px;';
+    { slots: [], ids: [], extra: [function () {
+      // Combat modes — two columns side-by-side like desktop
+      var wrapper = document.createElement('div');
+      wrapper.style.cssText = 'display:flex;flex-direction:row;gap:1px;';
+      wrapper.id = 'mobile-combat-modes';
 
-        var btnBaseStyle = 'background:none;background-color:#4a4a4a;border:1px solid #333;' +
-          'border-radius:0;color:#d3d3d3;font-size:8px;padding:1px 2px;margin:0;' +
-          'width:46px;height:16px;cursor:pointer;touch-action:manipulation;' +
-          'white-space:nowrap;text-align:center;';
+      var btnStyle = 'width:20px;height:20px;background:none;background-color:#3a3a3a;border:1px solid #555;border-radius:2px;cursor:pointer;padding:0;margin:0;background-size:20px 40px;background-repeat:no-repeat;background-position:0 0;';
 
-        var intf = window.gameClient && window.gameClient.interface;
-
-        function toggleModal(name) {
-          if (!intf) return;
-          var mm = intf.modalManager;
-          var modal = mm.get(name);
-          if (modal && modal.element && modal.element.style.display === 'block') {
-            mm.close();
-          } else {
-            mm.open(name);
-          }
-        }
-
-        var buttonDefs = [
-          { id: 'openSkills',   text: 'Skills',  handler: function () { if (intf) intf.toggleWindow('skill-window'); } },
-          { id: 'openBattle',   text: 'Battle',  handler: function () { if (intf) intf.toggleWindow('battle-window'); } },
-          { id: 'openVipList',  text: 'VIP',     handler: function () { if (intf) intf.toggleWindow('friend-window'); } },
-          { id: 'openQuests',   text: 'Quests',  handler: function () { toggleModal('quest-log-modal'); } },
-
-          { id: 'openSettings', text: 'Options', handler: function () { toggleModal('settings-modal'); } },
-          { id: 'logout-button',text: 'Logout',  handler: function () { if (intf) intf.sendLogout(); } }
-        ];
-
-        buttonDefs.forEach(function (b) {
-          var btn = document.createElement('button');
-          btn.id = b.id;
-          btn.textContent = b.text;
-          btn.style.cssText = btnBaseStyle;
-          btn.addEventListener('click', b.handler);
-          btnCol.appendChild(btn);
+      // Left column: fight modes (offensive, balanced, defensive)
+      var leftCol = document.createElement('div');
+      leftCol.style.cssText = 'display:flex;flex-direction:column;gap:1px;';
+      var fms = [
+        { m: 0, i: '/images/game/combatmodes/fightoffensive.png', t: 'Full Attack' },
+        { m: 1, i: '/images/game/combatmodes/fightbalanced.png', t: 'Balanced' },
+        { m: 2, i: '/images/game/combatmodes/fightdefensive.png', t: 'Full Defense' }
+      ];
+      fms.forEach(function (fm) {
+        var b = document.createElement('button');
+        b.style.cssText = btnStyle;
+        b.style.backgroundImage = "url('" + fm.i + "')";
+        b.title = fm.t;
+        b.className = 'mobile-fight-btn';
+        b.setAttribute('data-fight', fm.m);
+        b.addEventListener('click', function () {
+          var sel = gameClient && gameClient.interface && gameClient.interface.fightModeSelector;
+          if (sel) sel.setFightMode(fm.m);
+          self.__syncCombatVisState();
         });
+        leftCol.appendChild(b);
+      });
+      wrapper.appendChild(leftCol);
 
-        return btnCol;
-      }
-    ]}
+      // Right column: chase modes (stand, chase, safe fight)
+      var rightCol = document.createElement('div');
+      rightCol.style.cssText = 'display:flex;flex-direction:column;gap:1px;';
+      var cms = [
+        { m: 0, i: '/images/game/combatmodes/standmode.png', t: 'Stand (Don\'t Follow)' },
+        { m: 1, i: '/images/game/combatmodes/chasemode.png', t: 'Chase (Follow Target)' },
+        { i: '/images/game/combatmodes/safefight.png', t: 'Safe Fight', s: true }
+      ];
+      cms.forEach(function (cm) {
+        var b = document.createElement('button');
+        b.style.cssText = btnStyle;
+        b.style.backgroundImage = "url('" + cm.i + "')";
+        b.title = cm.t;
+        if (cm.m !== undefined) {
+          b.className = 'mobile-chase-btn';
+          b.setAttribute('data-chase', cm.m);
+        } else {
+          b.className = 'mobile-safefight-btn';
+        }
+        if (cm.s) {
+          b.addEventListener('click', function () {
+            var sel = gameClient && gameClient.interface && gameClient.interface.fightModeSelector;
+            if (sel) sel.toggleSafeFight();
+            self.__syncCombatVisState();
+          });
+        } else {
+          b.addEventListener('click', function () {
+            var sel = gameClient && gameClient.interface && gameClient.interface.fightModeSelector;
+            if (sel) sel.setChaseMode(cm.m);
+            self.__syncCombatVisState();
+          });
+        }
+        rightCol.appendChild(b);
+      });
+      wrapper.appendChild(rightCol);
+
+      return wrapper;
+    }]}
   ];
 
   for (var c = 0; c < columns.length; c++) {
@@ -197,9 +222,73 @@ MobileFullscreen.prototype.__createMobileSlots = function () {
     slotContainer.appendChild(col);
   }
 
+  // Action buttons (2 rows x 3 cols) below equipment
+  var btnRowContainer = document.createElement('div');
+  btnRowContainer.style.cssText = 'display:flex;flex-direction:column;gap:2px;width:100%;margin-top:3px;';
+
+  var btnRBase = 'background:none;background-color:#4a4a4a;border:1px solid #333;border-radius:0;color:#d3d3d3;font-size:8px;padding:1px 2px;margin:0;cursor:pointer;touch-action:manipulation;white-space:nowrap;text-align:center;';
+
+  var rows = [
+    [
+      { id: 'mobile-openSkills',  text: 'Skills',  handler: function () { if (intf) intf.toggleWindow('skill-window'); } },
+      { id: 'mobile-openBattle',  text: 'Battle',  handler: function () { if (intf) intf.toggleWindow('battle-window'); } },
+      { id: 'mobile-openVip',     text: 'VIP',     handler: function () { if (intf) intf.toggleWindow('friend-window'); } }
+    ],
+    [
+      { id: 'mobile-openQuests',  text: 'Quests',  handler: function () { toggleModal('quest-log-modal'); } },
+      { id: 'mobile-openOptions', text: 'Options', handler: function () { toggleModal('settings-modal'); } },
+      { id: 'mobile-logout',      text: 'Logout',  handler: function () { if (intf) intf.sendLogout(); } }
+    ]
+  ];
+
+  rows.forEach(function (rowDefs) {
+    var rowDiv = document.createElement('div');
+    rowDiv.style.cssText = 'display:flex;flex-direction:row;gap:2px;justify-content:center;';
+    rowDefs.forEach(function (bd) {
+      var btn = document.createElement('button');
+      btn.id = bd.id;
+      btn.textContent = bd.text;
+      btn.style.cssText = btnRBase + 'flex:1;';
+      btn.addEventListener('click', bd.handler);
+      rowDiv.appendChild(btn);
+    });
+    btnRowContainer.appendChild(rowDiv);
+  });
+
+  panel.appendChild(btnRowContainer);
+
   document.body.appendChild(panel);
 
+  this.__syncCombatVisState();
+
   this.__enableLockableDrag(panel, 'equip', { onDragStart: function () {}, onDragEnd: function () {} });
+};
+
+MobileFullscreen.prototype.__syncCombatVisState = function () {
+  var sel = gameClient && gameClient.interface && gameClient.interface.fightModeSelector;
+  if (!sel) return;
+
+  var setActive = function (b, isActive) {
+    b.style.backgroundPosition = isActive ? '0 -20px' : '0 0';
+  };
+
+  // Fight mode
+  var fightBtns = document.querySelectorAll('#mobile-combat-modes .mobile-fight-btn');
+  fightBtns.forEach(function (b) {
+    setActive(b, parseInt(b.getAttribute('data-fight'), 10) === sel.currentFightMode);
+  });
+
+  // Chase mode
+  var chaseBtns = document.querySelectorAll('#mobile-combat-modes .mobile-chase-btn');
+  chaseBtns.forEach(function (b) {
+    setActive(b, parseInt(b.getAttribute('data-chase'), 10) === sel.currentChaseMode);
+  });
+
+  // Safe fight
+  var sfBtn = document.querySelector('#mobile-combat-modes .mobile-safefight-btn');
+  if (sfBtn) {
+    setActive(sfBtn, !!sel.__safeFight);
+  }
 };
 
 MobileFullscreen.prototype.__destroyMobileSlots = function () {

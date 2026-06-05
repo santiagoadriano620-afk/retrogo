@@ -493,19 +493,19 @@ Creature.prototype.unlockMovement = function () {
   }
 
   if (this.__movementQueue.length > 0) {
-    let next = this.__movementQueue.shift();
-    this.__chunk = gameClient.world.getChunkFromWorldPosition(next.position);
-    this.__startMove(next.position, next.speed);
+    if (gameClient.player === this) {
+      let fn = this.__movementQueue.shift();
+      fn();
+    } else {
+      let next = this.__movementQueue.shift();
+      this.__chunk = gameClient.world.getChunkFromWorldPosition(next.position);
+      this.__startMove(next.position, next.speed);
+    }
     return;
   }
 
   if (gameClient.player === this && (gameClient.world.pathfinder.__pathfindCache.length > 0 || gameClient.world.pathfinder.__finalDestination !== null)) {
     return gameClient.world.pathfinder.handlePathfind();
-  }
-
-  if (gameClient.player === this && this.__movementBuffer !== null) {
-    gameClient.keyboard.handleCharacterMovement(this.__movementBuffer);
-    this.__movementBuffer = null;
   }
 
 }

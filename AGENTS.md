@@ -102,7 +102,17 @@
 - Persistence: `localStorage['retrogo_actionBtns_pos']` + `retrogo_actionBtns_lock`
 - **Create/destroy**: integrated into `__handleFullscreenChange` (enter/exit) and `checkPlayer` interval (player login/logout)
 
+### Equipment panel layout rework (mobile)
+- Replaced the right-side button column (Skills/Battle/VIP/Quests/Options/Logout) with combat mode controls (fight + chase + safe fight)
+- 6 action buttons moved BELOW the equipment slots, arranged as 2 rows of 3 buttons (Skills/Battle/VIP top, Quests/Options/Logout bottom)
+- Combat modes column (4th column in equipment flex-row): 3 fight mode buttons (offensive/balanced/defensive), separator, 3 chase/follow buttons (stand/chase/safe fight)
+- Each combat button uses the same icon images as desktop (`/images/game/combatmodes/*.png`)
+- Active state sync via `__syncCombatVisState()` reads from `FightModeSelector` state → gold border + dark gold bg on active buttons
+- Click handlers reuse `gameClient.interface.fightModeSelector.setFightMode/setChaseMode/toggleSafeFight()` (same desktop code path, sends FightModePacket/ChaseModePacket)
+- Equipment panel `__enableLockableDrag` repositions entire panel (including combat modes + action buttons) when unlocked
+
 ## Files changed
+- `client/src/ui/mobile/equipment.js` — new combat modes column, 2×3 action buttons below, __syncCombatVisState method
 - `client/src/ui/mobile-fullscreen.js` — all mobile fullscreen, dpad, touch logic, equipment panel, long-press reposition, drag sprite, container toggle, action buttons module (4 buttons + canvas-drawn icons)
 - `client/src/input/keyboard.js` — null-player guard in handleMoveKey
 - Various hotbar files removed/stubbed (7+ files)
