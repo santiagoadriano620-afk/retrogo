@@ -45,7 +45,7 @@
 #ring-slot { background-image: url("/images/game/inventory/finger.png"); }
 
 .equipment-padding { text-align: center; font-size: 10px; }
-.capacity-display { width: 32px; height: 16px; background-image: url("/images/game/ui/item.png"); border: 1px solid #111; display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1; color: #d3d3d3; font-size: 7px; }
+.capacity-display { width: 32px; height: 16px; background-image: url("/images/game/ui/item.png"); border: 1px solid #111; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; line-height: 1; color: #d3d3d3; font-size: 7px; }
 
 #conditions-display { width: 32px; min-height: 16px; border: 1px solid #111; background-image: url("/images/game/inventory/containerslot.png"); display: flex; flex-wrap: wrap; align-items: center; justify-content: center; align-content: center; gap: 1px; }
 #conditions-display img { width: 9px; height: 9px; image-rendering: pixelated; }
@@ -68,7 +68,7 @@
 .equipment.wrapper.minimized #quiver-slot { display: flex; width: 32px; height: 32px; border: 1px solid #444; background-size: 32px 32px; background-position: center; position: relative; }
 .equipment.wrapper.minimized #quiver-slot canvas { width: 32px; height: 32px; }
 .equipment.wrapper.minimized #quiver-slot .count { font-size: 10px; bottom: 2px; right: 4px; }
-.equipment.wrapper.minimized .capacity-display { display: flex; width: 32px; height: 32px; border: 1px solid #444; background: #3a3a3a; flex-direction: column; align-items: center; justify-content: center; font-size: 8px; line-height: 1; color: #d3d3d3; margin: 0; }
+.equipment.wrapper.minimized .capacity-display { display: flex; width: 32px; height: 32px; border: 1px solid #444; background: #3a3a3a; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-size: 8px; line-height: 1; color: #d3d3d3; margin: 0; }
 .equipment.wrapper.minimized .capacity-display br { display: block; }
 
 #openSkills, #openBattle, #openVipList, #openQuests, #openHotkey, #openSettings, #logout-button {

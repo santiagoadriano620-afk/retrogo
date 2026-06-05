@@ -1042,9 +1042,11 @@ Player.prototype.syncProperties = function () {
   if (this.containerManager) {
     let totalWeight = this.containerManager.equipment.getTotalWeight();
     let maxCapacity = this.getProperty(CONST.PROPERTIES.CAPACITY_MAX);
+    let maxCapacityUnits = maxCapacity * 100;
+    let currentCapacityUnits = Math.max(0, maxCapacityUnits - totalWeight);
     this.setProperty(
       CONST.PROPERTIES.CAPACITY,
-      Math.max(0, maxCapacity - totalWeight)
+      Math.floor(currentCapacityUnits / 100)
     );
   }
 
