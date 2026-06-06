@@ -68,7 +68,7 @@ Renderer.prototype.__isBoundaryItem = function (item, ids) {
   if (ids.has(item.id)) return true;
   let def = gameClient.itemDefinitions[item.id];
   if (def && def.properties && def.properties.floorchange) return false;
-  if (def && (def.id === 1786 || def.id === 1787 || def.id === 1620 || def.id === 1621 || def.id === 1617 || def.id === 1386)) return false;
+  if (def && (def.id === 1786 || def.id === 1787 || def.id === 1620 || def.id === 1621 || def.id === 1617 || def.id === 1618 || def.id === 1386)) return false;
   if (__itemHasAlwaysOnTop(item)) return true;
   return false;
 
@@ -82,9 +82,8 @@ var __origGetItemLayer = Renderer.prototype.__getItemLayer;
 
 Renderer.prototype.__getItemLayer = function (item) {
 
-  if (item.id === 919) return 4;
   if (item.hasFlag(PropBitFlag.prototype.flags.DatFlagOnTop)) {
-    if (__isServerItem(item, 1786) || __isServerItem(item, 1787) || __isServerItem(item, 1620) || __isServerItem(item, 1621) || __isServerItem(item, 1617)) return 3;
+    if (__isServerItem(item, 1786) || __isServerItem(item, 1787) || __isServerItem(item, 1620) || __isServerItem(item, 1621) || __isServerItem(item, 1617) || __isServerItem(item, 1618)) return 3;
   }
   return __origGetItemLayer.call(this, item);
 

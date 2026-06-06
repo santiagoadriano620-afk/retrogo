@@ -96,7 +96,7 @@ Renderer.prototype.__renderTileObjects = function (tile, sx, sy, skipLight) {
       let i = bucket[k];
       let item = items[i];
 
-      let isOnTop = item.hasFlag(PropBitFlag.prototype.flags.DatFlagOnTop) || item.id === 919;
+      let isOnTop = item.hasFlag(PropBitFlag.prototype.flags.DatFlagOnTop);
       if (isOnTop) {
         this.__scratchPos.x = position.x;
         this.__scratchPos.y = position.y;

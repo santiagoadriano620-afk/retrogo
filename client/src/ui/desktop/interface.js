@@ -1123,12 +1123,22 @@ Interface.prototype.__enableListeners = function () {
     .getElementById("equipment-toggle-btn")
     .addEventListener("click", function () {
       var wrapper = document.querySelector(".equipment.wrapper");
+      var minimized = !wrapper.classList.contains("minimized");
       wrapper.classList.toggle("minimized");
       this.classList.toggle("minimized");
-      this.title = wrapper.classList.contains("minimized")
+      this.title = minimized
         ? __("inventory.maximize")
         : __("inventory.minimize");
 
+      if (minimized) {
+        document.getElementById("blessing-btn").style.display = "none";
+        document.getElementById("guild-btn").style.display = "none";
+        document.getElementById("shop-gift-button").style.display = "none";
+      } else {
+        document.getElementById("blessing-btn").style.display = "";
+        document.getElementById("guild-btn").style.display = "";
+        document.getElementById("shop-gift-button").style.display = "";
+      }
     });
 
   var enterBtn = document.getElementById("enter-game");

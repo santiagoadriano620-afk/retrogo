@@ -39,13 +39,25 @@ PacketWriter.prototype.writeOutfits = function(player) {
    */
 
   const sex = player.getProperty(CONST.PROPERTIES.SEX);
-  const outfitIds = sex === CONST.SEX.MALE
+  const defaultIds = sex === CONST.SEX.MALE
     ? [111, 112, 113, 114, 115, 116, 117]
     : [118, 119, 120, 121, 122, 123, 124];
 
-  this.writeUInt8(outfitIds.length);
+  const availableOutfits = player.getProperty(CONST.PROPERTIES.OUTFITS);
+  let extraIds = [];
+  if (availableOutfits) {
+    availableOutfits.forEach(function(id) {
+      if (defaultIds.indexOf(id) === -1) {
+        extraIds.push(id);
+      }
+    });
+  }
 
-  outfitIds.forEach(function(id) {
+  const allIds = defaultIds.concat(extraIds);
+
+  this.writeUInt8(allIds.length);
+
+  allIds.forEach(function(id) {
     this.writeUInt16(id);
     let stringEncoded = this.encodeString(Outfit.prototype.getName(id));
     this.writeBuffer(stringEncoded);

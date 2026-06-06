@@ -121,3 +121,5 @@
 #guild-btn { position: absolute; top: 18px; left: -20px; z-index: 10; width: 12px; height: 12px; border: 1px solid #444; background-color: #555; border-radius: 2px; cursor: pointer; padding: 0; outline: none; }
 #guild-btn::before { content: "G"; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; color: #aaa; font-size: 8px; line-height: 1; }
 #guild-btn:focus, #guild-btn:focus-visible, #guild-btn:active { outline: none !important; box-shadow: none !important; }
+
+

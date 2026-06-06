@@ -12,6 +12,11 @@ const ShopModal = function (id) {
   this.__scrollbarTrack = document.getElementById("shop-scrollbar");
   this.__dragging = false;
   this.__pendingItemId = null;
+  this.__outfitSpriteBuffer = new SpriteBuffer(2);
+  this.__outfitPreviewCanvas = document.createElement("canvas");
+  this.__outfitPreviewCanvas.width = 32;
+  this.__outfitPreviewCanvas.height = 32;
+  this.__outfitPreview = new Canvas(this.__outfitPreviewCanvas, 32, 32);
   this.__initScrollbar();
   this.__initConfirm();
 };
@@ -105,9 +110,22 @@ ShopModal.prototype.__selectCategory = function (name) {
 ShopModal.prototype.handleRender = function () {
   for (var i = 0; i < this.__animEntries.length; i++) {
     var e = this.__animEntries[i];
-    this.__drawItemSprite(e.canvas.getContext("2d"), e.itemId);
+    if (e.itemId >= 65001 && e.itemId <= 65008) {
+      var ctx = e.canvas.getContext("2d");
+      ctx.clearRect(0, 0, 32, 32);
+      this.__drawOutfitPreview(ctx, e.itemId);
+    } else {
+      this.__drawItemSprite(e.canvas.getContext("2d"), e.itemId);
+    }
   }
 };
+
+ShopModal.prototype.__getGenderMatch = function () {
+  if (!gameClient.player) return "male";
+  var id = gameClient.player.outfit.id;
+  if ((id >= 111 && id <= 117) || (id >= 126 && id <= 129)) return "male";
+  return "female";
+}
 
 ShopModal.prototype.__renderItems = function (categoryName) {
   this.__animEntries = [];
@@ -125,7 +143,12 @@ ShopModal.prototype.__renderItems = function (categoryName) {
     this.__updateScrollbar();
     return;
   }
+  var gender = this.__getGenderMatch();
   cat.items.forEach(function (item) {
+    if (item.id >= 65001 && item.id <= 65008) {
+      if (gender === "male" && item.id >= 65005) return;
+      if (gender === "female" && item.id <= 65004) return;
+    }
     var entry = document.createElement("div");
     entry.className = "shop-item-entry";
 
@@ -141,14 +164,21 @@ ShopModal.prototype.__renderItems = function (categoryName) {
       icon.height = 92;
       icon.style.setProperty("width", "44px", "important");
       icon.style.setProperty("height", "92px", "important");
-    } else if (isService && item.id >= 64001 && item.id <= 64003) {
-      var days = item.id === 64001 ? 30 : item.id === 64002 ? 90 : 180;
+    } else if (isService && ((item.id >= 64001 && item.id <= 64003) || item.id === 64007)) {
+      var days = item.id === 64001 ? 30 : item.id === 64002 ? 90 : item.id === 64003 ? 180 : 365;
       icon = document.createElement("img");
       icon.className = "shop-item-img";
       icon.src = "images/game/console/" + days + ".png";
       icon.alt = days + " Days";
       icon.width = 32;
       icon.height = 32;
+    } else if (item.id >= 65001 && item.id <= 65008) {
+      icon = document.createElement("canvas");
+      icon.className = "shop-item-icon";
+      icon.width = 32;
+      icon.height = 32;
+      this.__drawOutfitPreview(icon.getContext("2d"), item.id);
+      this.__animEntries.push({ canvas: icon, itemId: item.id });
     } else {
       icon = document.createElement("canvas");
       icon.className = "shop-item-icon";
@@ -174,7 +204,7 @@ ShopModal.prototype.__renderItems = function (categoryName) {
 
     var priceEl = document.createElement("div");
     priceEl.className = "shop-item-price";
-    priceEl.textContent = item.price + " PP";
+    priceEl.innerHTML = item.price + ' <img src="images/game/console/retrogocoin.png" class="shop-coin-icon" alt="">';
 
     var buyBtn = document.createElement("button");
     buyBtn.className = "shop-buy-btn";
@@ -273,6 +303,41 @@ ShopModal.prototype.__updateScrollbar = function () {
     self.__syncThumbFromScroll();
   });
 };
+
+ShopModal.prototype.__drawOutfitPreview = function (ctx, shopItemId) {
+  try {
+    if (!gameClient.player) return;
+    var outfitIdMap = { 65001:126, 65002:127, 65003:128, 65004:129, 65005:130, 65006:131, 65007:132, 65008:133 };
+    var outfitId = outfitIdMap[shopItemId];
+    if (!outfitId) return;
+    var outfit = new Outfit({
+      id: outfitId,
+      details: gameClient.player.outfit.details,
+      addonOne: false,
+      addonTwo: false
+    });
+    var dataObj = outfit.getDataObject();
+    if (!dataObj) return;
+    var frameGroup = dataObj.getFrameGroup(0);
+    if (!frameGroup) return;
+    this.__outfitSpriteBuffer.clear();
+    this.__outfitPreview.clear();
+    this.__outfitPreview.__drawCharacter(
+      this.__outfitSpriteBuffer,
+      outfit,
+      new Position(0, 0),
+      frameGroup,
+      0,
+      2,
+      0,
+      32,
+      0
+    );
+    ctx.drawImage(this.__outfitPreviewCanvas, 0, 0);
+  } catch (e) {
+    console.warn("[Shop] Failed to draw outfit preview", e);
+  }
+}
 
 ShopModal.prototype.__drawItemSprite = function (ctx, itemId) {
   try {

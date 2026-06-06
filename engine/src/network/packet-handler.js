@@ -512,12 +512,13 @@ PacketHandler.prototype.handleBuyPremiumItem = function (player, packet) {
   }
   player.premiumPoints -= totalPrice;
 
-  // Premium Days service (IDs 64001-64003)
-  if (itemId >= 64000 && itemId <= 64003) {
+  // Premium Days service (IDs 64001-64003, 64007)
+  if ((itemId >= 64001 && itemId <= 64003) || itemId === 64007) {
     let days = 0;
     if (itemId === 64001) days = 30;
     else if (itemId === 64002) days = 90;
     else if (itemId === 64003) days = 180;
+    else if (itemId === 64007) days = 365;
     let now = Date.now();
     if (player.premiumExpiry > now) {
       player.premiumExpiry += days * 86400000;
@@ -536,6 +537,27 @@ PacketHandler.prototype.handleBuyPremiumItem = function (player, packet) {
     player.write(new PremiumBalanceUpdatePacket(player.premiumPoints));
     player.write(new BlessingUpdatePacket(player.getBlessingBitmask(), player.isPremium()));
     return player.sendCancelMessage("Purchase complete! " + days + " days of premium added to your account.");
+  }
+
+  // Outfit unlocks (IDs 65001-65008)
+  if (itemId >= 65001 && itemId <= 65008) {
+    const Outfit = requireModule("entities/outfit");
+    const outfitIdMap = { 65001:126, 65002:127, 65003:128, 65004:129, 65005:130, 65006:131, 65007:132, 65008:133 };
+    const outfitId = outfitIdMap[itemId];
+    const outfitName = Outfit.prototype.getName(outfitId) || "Unknown Outfit";
+    let available = player.getProperty(CONST.PROPERTIES.OUTFITS);
+    if (available && available.has(outfitId)) {
+      return player.sendCancelMessage("You already own this outfit!");
+    }
+    if (!available) {
+      available = new Set();
+      player.setProperty(CONST.PROPERTIES.OUTFITS, available);
+    }
+    available.add(outfitId);
+    const { PremiumBalanceUpdatePacket, OutfitUnlockPacket } = requireModule("network/protocol");
+    player.write(new PremiumBalanceUpdatePacket(player.premiumPoints));
+    player.write(new OutfitUnlockPacket(outfitId, outfitName));
+    return player.sendCancelMessage("Outfit unlocked: " + outfitName + "!");
   }
 
   // Global Boosts (IDs 64004-64006)

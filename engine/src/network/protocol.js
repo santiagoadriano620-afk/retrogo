@@ -1372,6 +1372,16 @@ const PremiumBalanceUpdatePacket = function (balance) {
 PremiumBalanceUpdatePacket.prototype = Object.create(PacketWriter.prototype);
 PremiumBalanceUpdatePacket.prototype.constructor = PremiumBalanceUpdatePacket;
 
+const OutfitUnlockPacket = function (outfitId, outfitName) {
+  let nameEncoded = this.encodeString(outfitName);
+  PacketWriter.call(this, CONST.PROTOCOL.SERVER.OUTFIT_UNLOCK, 2 + nameEncoded.getEncodedLength() + 1);
+  this.writeUInt16(outfitId);
+  this.writeBuffer(nameEncoded);
+  this.writeUInt8(0);
+};
+OutfitUnlockPacket.prototype = Object.create(PacketWriter.prototype);
+OutfitUnlockPacket.prototype.constructor = OutfitUnlockPacket;
+
 const GlobalBoostUpdatePacket = function (expExpiry, lootExpiry, skillsExpiry) {
   PacketWriter.call(this, CONST.PROTOCOL.SERVER.GLOBAL_BOOST_UPDATE, 14);
   this.writeUInt32(expExpiry);
@@ -1541,5 +1551,6 @@ module.exports = {
   MarketOpenOwnerPacket,
   MarketOpenBuyerPacket,
   MarketBuyResultPacket,
-  MarketClosedPacket
+  MarketClosedPacket,
+  OutfitUnlockPacket
 };

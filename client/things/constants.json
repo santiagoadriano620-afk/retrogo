@@ -166,7 +166,8 @@
       "MARKET_CLOSED": 83,
       "GLOBAL_BOOST_UPDATE": 84,
       "TRAINING_TIMER": 85,
-      "ADMIN_ADD_SKILL_MODAL": 86
+      "ADMIN_ADD_SKILL_MODAL": 86,
+      "OUTFIT_UNLOCK": 87
     }
   },
   "DIRECTION": {
@@ -441,7 +442,11 @@
       "KNIGHT": 114,
       "NOBLEMAN": 115,
       "SUMMONER": 116,
-      "WARRIOR": 117
+      "WARRIOR": 117,
+      "MALE1": 126,
+      "MALE2": 127,
+      "MALE3": 128,
+      "MALE4": 129
     },
     "FEMALE": {
       "CITIZEN": 118,
@@ -450,7 +455,11 @@
       "KNIGHT": 121,
       "NOBLEMAN": 122,
       "SUMMONER": 123,
-      "WARRIOR": 124
+      "WARRIOR": 124,
+      "FEMALE1": 130,
+      "FEMALE2": 131,
+      "FEMALE3": 132,
+      "FEMALE4": 133
     },
     "OTHER": {
       "GAMEMASTER": 75,

@@ -1087,6 +1087,21 @@ PacketReader.prototype.__readSingleSpell = function () {
 
 }
 
+PacketReader.prototype.readOutfitUnlock = function () {
+
+  /*
+   * Function PacketReader.readOutfitUnlock
+   * Reads an outfit unlock packet
+   */
+
+  return new Object({
+    "id": this.readUInt16(),
+    "name": this.readString(),
+    "premium": Boolean(this.readUInt8())
+  });
+
+}
+
 PacketReader.prototype.__readSingleOutfit = function () {
 
   /*

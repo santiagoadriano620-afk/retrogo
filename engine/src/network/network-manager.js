@@ -218,6 +218,16 @@ NetworkManager.prototype.__readPacket = function (gameSocket, packet) {
       if (outfitData && outfitData.premium && !gameSocket.player.isPremium()) {
         return gameSocket.player.write(new (requireModule("network/protocol").CancelMessagePacket)("This outfit is only available to premium players."));
       }
+      if (outfitData && !outfitData.premium) {
+        let defaults = gameSocket.player.getProperty(CONST.PROPERTIES.SEX) === CONST.SEX.MALE
+          ? [111, 112, 113, 114] : [118, 119, 120, 121];
+        if (defaults.indexOf(outfit.id) === -1) {
+          let available = gameSocket.player.getProperty(CONST.PROPERTIES.OUTFITS);
+          if (!available || !available.has(outfit.id)) {
+            return gameSocket.player.write(new (requireModule("network/protocol").CancelMessagePacket)("You don't own this outfit."));
+          }
+        }
+      }
       return gameSocket.player.changeOutfit(outfit);
     }
 

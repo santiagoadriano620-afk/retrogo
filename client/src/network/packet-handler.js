@@ -864,6 +864,20 @@ PacketHandler.prototype.handleDamageEvent = function (packet) {
 
 }
 
+PacketHandler.prototype.handleOutfitUnlock = function (data) {
+
+  /*
+   * Function PacketHandler.handleOutfitUnlock
+   * Handles an outfit unlock packet from the server
+   */
+
+  if (gameClient.player) {
+    gameClient.player.outfits.push(data);
+    gameClient.interface.notificationManager.setServerMessage("New outfit unlocked: " + data.name + "!", Interface.prototype.COLORS.LIGHTGREEN);
+  }
+
+}
+
 PacketHandler.prototype.handleChangeOutfit = function (packet) {
 
   /*

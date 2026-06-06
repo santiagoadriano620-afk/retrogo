@@ -69,6 +69,46 @@
 		"name": "Warrior",
 		"premium": true
 	},
+	"126": {
+		"type": "1",
+		"name": "Royal Nobleman Outfit",
+		"premium": false
+	},
+	"127": {
+		"type": "1",
+		"name": "Knight Commander Outfit",
+		"premium": false
+	},
+	"128": {
+		"type": "1",
+		"name": "Jester Outfit",
+		"premium": false
+	},
+	"129": {
+		"type": "1",
+		"name": "Sage Outfit",
+		"premium": false
+	},
+	"130": {
+		"type": "0",
+		"name": "Warrior Female",
+		"premium": false
+	},
+	"131": {
+		"type": "0",
+		"name": "Knight Commander",
+		"premium": false
+	},
+	"132": {
+		"type": "0",
+		"name": "Alchemist",
+		"premium": false
+	},
+	"133": {
+		"type": "0",
+		"name": "Mademoiselle",
+		"premium": false
+	},
 	"62": {
 		"type": "1",
 		"name": "Elf",

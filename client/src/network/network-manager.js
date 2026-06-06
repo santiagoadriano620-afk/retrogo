@@ -103,6 +103,10 @@ NetworkManager.prototype.readPacket = function (packet) {
       return this.packetHandler.handleChangeOutfit(packet.readChangeOutfit());
     }
 
+    case CONST.PROTOCOL.SERVER.OUTFIT_UNLOCK: {
+      return this.packetHandler.handleOutfitUnlock(packet.readOutfitUnlock());
+    }
+
     case CONST.PROTOCOL.SERVER.ITEM_TEXT: {
       return this.packetHandler.handleReadText(packet.readReadable());
     }

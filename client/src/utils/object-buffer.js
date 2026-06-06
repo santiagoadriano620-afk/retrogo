@@ -412,7 +412,7 @@ ObjectBuffer.prototype.__load = function (name, buffer) {
   this.__createLoopedAnimations();
 
   // Tables, passthroughs, and ovens with missing .dat flags — force elevation for correct rendering
-  [1620, 1621, 1622, 1623, 1634, 2302, 2303, 2304, 2305, 2306, 2307, 2308, 2309, 2310, 2311, 2312, 2313, 2322, 2323, 2324, 2325, 2326, 2327, 2328, 2329, 2330, 2331, 2332, 2333, 2334, 2336, 2337, 2338, 2339, 2340,   2341, 1617].forEach(function(id) {
+  [1620, 1621, 1622, 1623, 1634, 2302, 2303, 2304, 2305, 2306, 2307, 2308, 2309, 2310, 2311, 2312, 2313, 2322, 2323, 2324, 2325, 2326, 2327, 2328, 2329, 2330, 2331, 2332, 2333, 2334, 2336, 2337, 2338, 2339, 2340,   2341, 1617, 919].forEach(function(id) {
     var obj = this.dataObjects[id];
     if (!obj) return;
     obj.flags.set(PropBitFlag.prototype.flags.DatFlagOnTop);
