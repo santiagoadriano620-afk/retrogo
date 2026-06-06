@@ -156,7 +156,10 @@ Creature.prototype.getCharacterFrames = function () {
 
   let characterGroup, characterFrame;
 
-  if (!this.isMoving()) {
+  if (this.outfit.isItemLooktype()) {
+    characterGroup = characterObject.getFrameGroup(FrameGroup.prototype.GROUP_IDLE) || characterObject.frameGroups[0];
+    characterFrame = 0;
+  } else if (!this.isMoving()) {
     characterGroup = characterObject.getFrameGroup(FrameGroup.prototype.GROUP_IDLE);
     if (characterObject.frameGroups.length === 1 && !characterObject.isAlwaysAnimated()) {
       characterFrame = 0;

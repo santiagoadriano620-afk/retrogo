@@ -201,6 +201,19 @@ Canvas.prototype.drawCharacter = function (creature, position, size, offset) {
     return;
   }
 
+  if (creature.outfit.isItemLooktype()) {
+    let obj = creature.outfit.getDataObject();
+    let frameGroup = obj.getFrameGroup(FrameGroup.prototype.NONE);
+    if (frameGroup) {
+      let index = frameGroup.getSpriteIndex(0, 0, 0, 0, 0, 0, 0);
+      let sprite = frameGroup.getSprite(index);
+      if (sprite) {
+        this.__drawSprite(sprite, position, 0, 0, size);
+      }
+    }
+    return;
+  }
+
   let direction = creature.__lookDirection;
   let xPattern;
 

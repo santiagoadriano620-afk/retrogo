@@ -115,7 +115,22 @@ Outfit.prototype.getDataObject = function() {
    * Returns the data object that belongs to the outfit
    */
 
-  return gameClient.dataObjects.getOutfit(this.id) || gameClient.dataObjects.getOutfit(1);
+  let obj = gameClient.dataObjects.getOutfit(this.id);
+  if (obj) return obj;
+  obj = gameClient.dataObjects.get(this.id);
+  if (obj) return obj;
+  return gameClient.dataObjects.getOutfit(1);
+
+}
+
+Outfit.prototype.isItemLooktype = function() {
+
+  /*
+   * Function Outfit.isItemLooktype
+   * Returns true if the outfit is actually an item looktype
+   */
+
+  return !gameClient.dataObjects.getOutfit(this.id) && gameClient.dataObjects.get(this.id) !== null;
 
 }
 

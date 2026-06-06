@@ -15,10 +15,8 @@ const Outfit = function (outfit) {
   // Identifier is required
   this.id = outfit.id !== undefined ? outfit.id : 1;
 
-  // Outfit IDs outside the .dat range default to outfit 128 (Citizen)
-  if (this.id > 255) {
-    this.id = 111;
-  }
+  // Mark as item looktype if ID is outside the outfit range
+  this.isItem = this.id > 255;
 
   // Read the passed outfit details or set the default
   this.details = outfit.details ?? null;

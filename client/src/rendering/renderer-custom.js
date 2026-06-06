@@ -82,6 +82,7 @@ var __origGetItemLayer = Renderer.prototype.__getItemLayer;
 
 Renderer.prototype.__getItemLayer = function (item) {
 
+  if (item.id === 919) return 4;
   if (item.hasFlag(PropBitFlag.prototype.flags.DatFlagOnTop)) {
     if (__isServerItem(item, 1786) || __isServerItem(item, 1787) || __isServerItem(item, 1620) || __isServerItem(item, 1621) || __isServerItem(item, 1617)) return 3;
   }
