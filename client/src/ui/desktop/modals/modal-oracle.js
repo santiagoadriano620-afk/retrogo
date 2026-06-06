@@ -10,10 +10,10 @@ const OracleModal = function(id) {
 }
 
 OracleModal.DESCRIPTIONS = {
-  "Knight": "Expert in close combat. Specializes in melee weapons and heavy armor.",
-  "Paladin": "Master of ranged combat. Uses distance weapons and light magic.",
-  "Sorcerer": "Wielder of destructive magic. Excels at dealing massive elemental damage.",
-  "Druid": "Master of healing arts. Restores allies and harnesses natural magic."
+  "Knight": __("modal.oracle.knight_desc"),
+  "Paladin": __("modal.oracle.paladin_desc"),
+  "Sorcerer": __("modal.oracle.sorcerer_desc"),
+  "Druid": __("modal.oracle.druid_desc")
 }
 
 OracleModal.prototype = Object.create(Modal.prototype);
@@ -26,7 +26,7 @@ OracleModal.prototype.handleOpen = function(properties) {
   this.__selectedVocation = -1;
   this.__selectedTown = -1;
 
-  this.setTitle("Choose Your Destiny");
+  this.setTitle(__("modal.oracle.title"));
   this.__renderVocations();
   this.__renderTowns();
 }

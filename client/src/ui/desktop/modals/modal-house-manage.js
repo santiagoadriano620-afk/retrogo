@@ -49,19 +49,19 @@ HouseManageModal.prototype.handleOpen = function (options) {
 
   var badge = document.getElementById("hm-badge");
   if (options.guildhall) {
-    badge.textContent = "Guildhall";
+    badge.textContent = __("modal.house.guildhall");
     badge.style.color = "#ffd700";
   } else {
-    badge.textContent = "House";
+    badge.textContent = __("modal.house.house");
     badge.style.color = "#00ff88";
   }
 
   var tenureBadge = document.getElementById("hm-tenure-badge");
   if (options.boughtOutright) {
-    tenureBadge.textContent = "Purchased";
+    tenureBadge.textContent = __("modal.house.purchased");
     tenureBadge.className = "hm-tenure-badge hm-tenure-purchased";
   } else {
-    tenureBadge.textContent = "Rented";
+    tenureBadge.textContent = __("modal.house.rented");
     tenureBadge.className = "hm-tenure-badge hm-tenure-rented";
   }
 
@@ -134,7 +134,7 @@ HouseManageModal.prototype.__refreshGuestList = function (invited) {
   if (!invited || invited.length === 0) {
     var empty = document.createElement("div");
     empty.className = "hm-guest-empty";
-    empty.textContent = "No invited guests.";
+    empty.textContent = __("modal.house.no_guests");
     list.appendChild(empty);
     return;
   }
@@ -149,7 +149,7 @@ HouseManageModal.prototype.__refreshGuestList = function (invited) {
 
     var removeBtn = document.createElement("button");
     removeBtn.className = "btn-botao hm-remove-btn";
-    removeBtn.textContent = "Remove";
+    removeBtn.textContent = __("common.remove");
     removeBtn.addEventListener("click", function () {
       gameClient.send(new HouseRemoveGuestPacket(name));
     });

@@ -170,7 +170,7 @@ MobileFullscreen.prototype.__openHotkeyEditor = function (idx) {
   input.type = 'text';
   input.maxLength = 255;
   input.value = self.__hotkeyMessages[idx] || '';
-  input.placeholder = 'Type message...';
+  input.placeholder = __("mobile.type_message");
   input.style.cssText = [
     'flex:1',
     'height:24px',
@@ -311,11 +311,11 @@ MobileFullscreen.prototype.__handleChatTap = function () {
   var input = document.createElement('input');
   input.type = 'text';
   input.maxLength = 255;
-  input.placeholder = 'Say...';
+  input.placeholder = __("mobile.say");
   input.style.cssText = 'flex:1;height:26px;background:rgba(30,30,40,0.85);border:1px solid rgba(120,120,140,0.4);border-radius:3px;color:#d3d3d3;font-size:13px;padding:0 6px;outline:none;';
 
   var sendBtn = document.createElement('button');
-  sendBtn.textContent = 'Send';
+  sendBtn.textContent = __("mobile.send");
   sendBtn.style.cssText = 'width:40px;height:26px;background:#4a7a3a;border:1px solid #5a9a4a;border-radius:3px;color:#fff;font-size:11px;font-weight:bold;cursor:pointer;touch-action:manipulation;';
 
   function sendMessage() {

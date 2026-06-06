@@ -45,6 +45,17 @@
                         "key":  7040,
                         "value":  1,
                         "type":  "storage"
+                    },
+                    {
+                        "type":  "monsterGoto",
+                        "monsterName":  "Dog",
+                        "centerPos":  {
+                                          "x":  32915,
+                                          "y":  32078,
+                                          "z":  5
+                                      },
+                        "radius":  15,
+                        "targetActionId":  3119
                     }
                 ],
     "effectsNoCondition":  [

@@ -31,8 +31,12 @@ if (document.readyState === "complete") {
   window.onload = __startGameClient;
 }
 
-document.addEventListener("DOMContentLoaded", function DOMContentLoaded() {
-
+if (document.readyState === "complete" || document.readyState === "interactive") {
   document.getElementById("enter-game").disabled = true;
-
-});
+  if (window.__initI18n) window.__initI18n();
+} else {
+  document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("enter-game").disabled = true;
+    if (window.__initI18n) window.__initI18n();
+  });
+}

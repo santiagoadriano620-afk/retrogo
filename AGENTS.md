@@ -233,3 +233,5 @@
 - Generic error messages (401/500 with empty body)
 - start.js rewritten with auto-restart (max 5), metrics monitoring, graceful shutdown
 - Unused files moved to `engine/_unused/`; Drizzle/SQLite removed; logs moved to `engine/logs/`
+
+

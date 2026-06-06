@@ -60,13 +60,17 @@ Renderer.prototype.__renderCreature = function (tile, creature, deferred) {
   var spriteOffsetY = creature.type === 1 ? 0.21875 : 0;
 
   if (creature.hasCondition(ConditionManager.prototype.INVISIBLE)) {
-    this.__renderAnimation(LoopedAnimation.prototype.MAGIC_BLUE, creature);
-  } else {
-    this.screen.drawCharacter(creature, {
+    this.screen.drawSprite(LoopedAnimation.prototype.MAGIC_BLUE, {
       x: this.__scratchPos.x + spriteOffsetX,
       y: this.__scratchPos.y + spriteOffsetY
-    }, 32, 0.25);
+    }, 32);
+    return;
   }
+
+  this.screen.drawCharacter(creature, {
+    x: this.__scratchPos.x + spriteOffsetX,
+    y: this.__scratchPos.y + spriteOffsetY
+  }, 32, 0.25);
 
   if (gameClient.player.isCreatureTarget(creature)) {
     this.__combatRects.push({ x: this.__scratchPos.x, y: this.__scratchPos.y, color: Interface.prototype.COLORS.RED });
@@ -203,10 +207,6 @@ Renderer.prototype.__shouldDefer = function (tile, creature) {
   }
 
   if (creature.getPosition().z !== creature.__previousPosition.z) {
-    return false;
-  }
-
-  if (tile.__needsNoDefer) {
     return false;
   }
 

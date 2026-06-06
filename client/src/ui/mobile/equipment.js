@@ -116,9 +116,9 @@ MobileFullscreen.prototype.__createMobileSlots = function () {
       var leftCol = document.createElement('div');
       leftCol.style.cssText = 'display:flex;flex-direction:column;gap:1px;';
       var fms = [
-        { m: 0, i: '/images/game/combatmodes/fightoffensive.png', t: 'Full Attack' },
-        { m: 1, i: '/images/game/combatmodes/fightbalanced.png', t: 'Balanced' },
-        { m: 2, i: '/images/game/combatmodes/fightdefensive.png', t: 'Full Defense' }
+        { m: 0, i: '/images/game/combatmodes/fightoffensive.png', t: __('equip.combat.full_attack') },
+        { m: 1, i: '/images/game/combatmodes/fightbalanced.png', t: __('equip.combat.balanced') },
+        { m: 2, i: '/images/game/combatmodes/fightdefensive.png', t: __('equip.combat.full_defense') }
       ];
       fms.forEach(function (fm) {
         var b = document.createElement('button');
@@ -140,9 +140,9 @@ MobileFullscreen.prototype.__createMobileSlots = function () {
       var rightCol = document.createElement('div');
       rightCol.style.cssText = 'display:flex;flex-direction:column;gap:1px;';
       var cms = [
-        { m: 0, i: '/images/game/combatmodes/standmode.png', t: 'Stand (Don\'t Follow)' },
-        { m: 1, i: '/images/game/combatmodes/chasemode.png', t: 'Chase (Follow Target)' },
-        { i: '/images/game/combatmodes/safefight.png', t: 'Safe Fight', s: true }
+        { m: 0, i: '/images/game/combatmodes/standmode.png', t: __('equip.combat.stand') },
+        { m: 1, i: '/images/game/combatmodes/chasemode.png', t: __('equip.combat.chase') },
+        { i: '/images/game/combatmodes/safefight.png', t: __('equip.combat.safe_fight'), s: true }
       ];
       cms.forEach(function (cm) {
         var b = document.createElement('button');
@@ -230,14 +230,14 @@ MobileFullscreen.prototype.__createMobileSlots = function () {
 
   var rows = [
     [
-      { id: 'mobile-openSkills',  text: 'Skills',  handler: function () { if (intf) intf.toggleWindow('skill-window'); } },
-      { id: 'mobile-openBattle',  text: 'Battle',  handler: function () { if (intf) intf.toggleWindow('battle-window'); } },
-      { id: 'mobile-openVip',     text: 'VIP',     handler: function () { if (intf) intf.toggleWindow('friend-window'); } }
+      { id: 'mobile-openSkills',  text: __('equip.skills'),  handler: function () { if (intf) intf.toggleWindow('skill-window'); } },
+      { id: 'mobile-openBattle',  text: __('equip.battle'),  handler: function () { if (intf) intf.toggleWindow('battle-window'); } },
+      { id: 'mobile-openVip',     text: __('equip.vip'),     handler: function () { if (intf) intf.toggleWindow('friend-window'); } }
     ],
     [
-      { id: 'mobile-openQuests',  text: 'Quests',  handler: function () { toggleModal('quest-log-modal'); } },
-      { id: 'mobile-openOptions', text: 'Options', handler: function () { toggleModal('settings-modal'); } },
-      { id: 'mobile-logout',      text: 'Logout',  handler: function () { if (intf) intf.sendLogout(); } }
+      { id: 'mobile-openQuests',  text: __('equip.quests'),  handler: function () { toggleModal('quest-log-modal'); } },
+      { id: 'mobile-openOptions', text: __('equip.options'), handler: function () { toggleModal('settings-modal'); } },
+      { id: 'mobile-logout',      text: __('equip.logout'),  handler: function () { if (intf) intf.sendLogout(); } }
     ]
   ];
 

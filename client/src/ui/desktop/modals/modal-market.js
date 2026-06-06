@@ -157,13 +157,13 @@ MarketModal.prototype.openAsSetup = function () {
 
 MarketModal.prototype.__renderOwner = function () {
   this.__hideAll();
-  this.__headerEl.textContent = "Your Market";
-  this.__shopNameEl.textContent = this.__shopName || "No name";
+  this.__headerEl.textContent = __("modal.market.your_market");
+  this.__shopNameEl.textContent = this.__shopName || __("modal.market.no_name");
   this.__shopNameEl.style.display = "block";
   this.__ownerInfoEl.style.display = "flex";
   this.__earningsGoldEl.textContent = this.__gold;
   this.__earningsRetroEl.textContent = this.__retroGold;
-  this.__actionBtn.textContent = "Close Market";
+  this.__actionBtn.textContent = __("modal.market.close_market");
   this.__actionBtn.style.display = "block";
   this.__itemListEl.style.display = "block";
   this.__renderItems(false);
@@ -171,7 +171,7 @@ MarketModal.prototype.__renderOwner = function () {
 
 MarketModal.prototype.__renderBuyer = function () {
   this.__hideAll();
-  this.__headerEl.textContent = this.__sellerName + "'s Market";
+  this.__headerEl.textContent = __("modal.market.seller_market", this.__sellerName);
   this.__shopNameEl.textContent = this.__shopName || "";
   this.__shopNameEl.style.display = this.__shopName ? "block" : "none";
   this.__itemListEl.style.display = "block";
@@ -223,7 +223,7 @@ MarketModal.prototype.__renderCoinSprites = function () {
 
 MarketModal.prototype.__renderSetup = function () {
   this.__hideAll();
-  this.__headerEl.textContent = "Start a Market";
+  this.__headerEl.textContent = __("modal.market.start_market");
   this.__setupEl.style.display = "block";
   this.__setupNameEl.value = "";
   this.__setupItems = [];
@@ -240,7 +240,7 @@ MarketModal.prototype.__renderSetupSlots = function () {
   if (this.__setupItems.length === 0) {
     let empty = document.createElement("div");
     empty.className = "market-empty";
-    empty.textContent = "Drag items here.";
+    empty.textContent = __("modal.market.drag_items");
     this.__setupSlotsEl.appendChild(empty);
     return;
   }
@@ -374,16 +374,16 @@ MarketModal.prototype.__toggleCoinEditor = function (wrapper, index, type, item)
   input.type = "number";
   input.className = "input-botao";
   input.min = "0";
-  input.placeholder = type === "gold" ? "Gold price" : "Retro price";
+  input.placeholder = type === "gold" ? __("modal.market.gold_price") : __("modal.market.retro_price");
   input.value = item[priceKey] > 0 ? item[priceKey] : "";
 
   let okBtn = document.createElement("button");
   okBtn.className = "btn-botao";
-  okBtn.textContent = "OK";
+  okBtn.textContent = __("common.ok");
 
   let cancelBtn = document.createElement("button");
   cancelBtn.className = "btn-botao";
-  cancelBtn.textContent = "CANCEL";
+  cancelBtn.textContent = __("common.cancel");
 
   editor.appendChild(input);
   editor.appendChild(okBtn);
@@ -422,7 +422,7 @@ MarketModal.prototype.__showItemOptions = function (wrapper, index) {
 
   let editBtn = document.createElement("button");
   editBtn.className = "btn-botao";
-  editBtn.textContent = "Edit";
+  editBtn.textContent = __("modal.market.edit");
   editBtn.addEventListener("click", function () {
     opts.remove();
     let item = this.__setupItems[index];
@@ -438,7 +438,7 @@ MarketModal.prototype.__showItemOptions = function (wrapper, index) {
 
   let removeBtn = document.createElement("button");
   removeBtn.className = "btn-botao";
-  removeBtn.textContent = "Remove";
+  removeBtn.textContent = __("common.remove");
   removeBtn.style.cssText = "background:#5a1a1a;border-color:#8a2a2a;";
   removeBtn.addEventListener("click", function () {
     this.__setupItems.splice(index, 1);
@@ -545,11 +545,11 @@ MarketModal.prototype.__updateSetupConfirm = function () {
 MarketModal.prototype.__onSetupConfirm = function () {
   let name = this.__setupNameEl.value.trim();
   if (name.length < 3) {
-    gameClient.interface.setCancelMessage("Shop name must be at least 3 characters.");
+    gameClient.interface.setCancelMessage(__("modal.market.name_required"));
     return;
   }
   if (this.__setupItems.length === 0) {
-    gameClient.interface.setCancelMessage("Add at least one item to your shop.");
+    gameClient.interface.setCancelMessage(__("modal.market.items_required"));
     return;
   }
   let items = this.__setupItems.map(function (item) {
@@ -569,7 +569,7 @@ MarketModal.prototype.__renderItems = function (clickable) {
   if (!this.__items || this.__items.length === 0) {
     let empty = document.createElement("div");
     empty.className = "market-empty";
-    empty.textContent = "No items in this shop.";
+    empty.textContent = __("modal.market.no_items");
     this.__itemListEl.appendChild(empty);
     return;
   }
@@ -696,13 +696,13 @@ MarketModal.prototype.__onBuyConfirm = function () {
   let item = this.__pendingBuy.item;
   let count = this.__pendingBuy.count || 1;
   if (count > (item.count || 1)) {
-    gameClient.interface.setCancelMessage("Not enough stock.");
+    gameClient.interface.setCancelMessage(__("modal.market.not_enough_stock"));
     return;
   }
   let useRetro = (item.priceGold || 0) <= 0 && (item.priceRetro || 0) > 0;
   let price = useRetro ? item.priceRetro : item.priceGold;
   if (price <= 0) {
-    gameClient.interface.setCancelMessage("This item has no price set.");
+    gameClient.interface.setCancelMessage(__("modal.market.no_price"));
     return;
   }
   gameClient.send(new MarketBuyPacket(this.__sellerId, this.__pendingBuy.index, count, useRetro));

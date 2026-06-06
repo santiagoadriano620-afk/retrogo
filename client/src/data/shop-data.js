@@ -2,7 +2,7 @@
 
 const SHOP_CATEGORIES = [
   {
-    name: "Training Weapons",
+    name: __("modal.shop.category_training"),
     items: [
       { id: 3139, name: "Training Rod", desc: "Reduces spell mana cost by 10% while equipped.", price: 25 },
       { id: 3140, name: "Training Spear", desc: "For distance fighting training. Attack speed 20% faster.", price: 25 },
@@ -14,14 +14,14 @@ const SHOP_CATEGORIES = [
     ]
   },
   {
-    name: "Tools",
+    name: __("modal.shop.category_tools"),
     items: [
       { id: 3145, name: "Keyring", desc: "A handy ring to keep all your keys organized. (5 slots)", price: 20 },
-      { id: 3150, name: "Multitool", desc: "A versatile tool combining rope, shovel, and pick functions.", price: 25 },
+      { id: 3146, name: "Multitool", desc: "A versatile tool combining rope, shovel, and pick functions.", price: 25 },
     ]
   },
   {
-    name: "Premium Days",
+    name: __("modal.shop.category_premium"),
     items: [
       { id: 64001, name: "30 Days Premium", desc: "30 days of premium account features.", price: 100 },
       { id: 64002, name: "90 Days Premium", desc: "90 days of premium account features.", price: 250 },
@@ -29,7 +29,7 @@ const SHOP_CATEGORIES = [
     ]
   },
   {
-    name: "Outfits",
+    name: __("modal.shop.category_outfits"),
     items: [
       { id: 2671, name: "Warrior Outfit", desc: "A complete warrior outfit set.", price: 75 },
       { id: 2672, name: "Mage Outfit", desc: "A complete mage outfit set.", price: 75 },
@@ -37,7 +37,7 @@ const SHOP_CATEGORIES = [
     ]
   },
   {
-    name: "Global Boost",
+    name: __("modal.shop.category_boosts"),
     items: [
       { id: 64004, name: "EXP Boost", desc: "All players receive +10% experience for 2 hours.", price: 80 },
       { id: 64005, name: "Drop Boost", desc: "All players receive +20% loot rate for 2 hours.", price: 120 },

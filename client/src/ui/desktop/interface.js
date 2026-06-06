@@ -328,22 +328,22 @@ Interface.prototype.WEBCOLORS = new Array(
 // Map to look up spells
 Interface.prototype.SPELLS = new Map();
 Interface.prototype.SPELLS.set(0, {
-  name: "Cure Burning",
-  description: "Cures Burning Condition",
+  name: __("spell.cure_burning"),
+  description: __("spell.cure_burning_desc"),
   icon: { x: 0, y: 0 },
   words: "exana flam",
   vocations: ["sorcerer", "druid", "paladin", "knight"],
 });
 Interface.prototype.SPELLS.set(1, {
-  name: "Explosion",
-  description: "Causes an Explosion",
+  name: __("spell.explosion"),
+  description: __("spell.explosion_desc"),
   icon: { x: 0, y: 4 },
   words: "exevo mas flam",
   vocations: ["sorcerer"],
 });
 Interface.prototype.SPELLS.set(2, {
-  name: "Healing",
-  description: "Heal Damage",
+  name: __("spell.healing"),
+  description: __("spell.healing_desc"),
   icon: { x: 2, y: 0 },
   words: "exura",
   vocations: ["sorcerer", "druid", "paladin", "knight"],
@@ -364,7 +364,7 @@ Interface.prototype.SPELLS.set(4, {
 });
 Interface.prototype.SPELLS.set(5, {
   name: "Parva Lux",
-  description: "Surround yourself by light",
+  description: __("spell.light_desc"),
   icon: { x: 8, y: 9 },
   words: "utevo lux",
   vocations: ["sorcerer", "druid", "paladin", "knight"],
@@ -385,7 +385,7 @@ Interface.prototype.SPELLS.set(7, {
 });
 Interface.prototype.SPELLS.set(8, {
   name: "Velocitas",
-  description: "Increases your movement speed",
+  description: __("spell.haste_desc"),
   icon: { x: 4, y: 8 },
   words: "utani hur",
   vocations: ["sorcerer", "druid", "paladin", "knight"],
@@ -398,22 +398,22 @@ Interface.prototype.SPELLS.set(9, {
   vocations: ["sorcerer", "druid", "paladin", "knight"],
 });
 Interface.prototype.SPELLS.set(10, {
-  name: "Intense Healing",
-  description: "Heals more damage",
+  name: __("spell.cure_bleeding"),
+  description: __("spell.cure_bleeding_desc"),
   icon: { x: 2, y: 1 },
   words: "exura gran",
   vocations: ["sorcerer", "druid", "paladin", "knight"],
 });
 Interface.prototype.SPELLS.set(11, {
-  name: "Ultimate Healing",
-  description: "Heals all damage",
+  name: __("spell.ultimate_healing"),
+  description: __("spell.ultimate_healing_desc"),
   icon: { x: 2, y: 2 },
   words: "exura vita",
   vocations: ["sorcerer", "druid"],
 });
 Interface.prototype.SPELLS.set(12, {
-  name: "Antidote",
-  description: "Cures poison",
+  name: __("spell.cure_poison"),
+  description: __("spell.cure_poison_desc"),
   icon: { x: 1, y: 0 },
   words: "exana pox",
   vocations: ["sorcerer", "druid", "paladin", "knight"],
@@ -433,36 +433,36 @@ Interface.prototype.SPELLS.set(14, {
   vocations: ["sorcerer", "druid"],
 });
 Interface.prototype.SPELLS.set(15, {
-  name: "Fire Wave",
-  description: "Wave of fire",
+  name: __("spell.fire_wave"),
+  description: __("spell.fire_wave_desc"),
   icon: { x: 2, y: 2 },
   words: "exevo flam hur",
   vocations: ["sorcerer"],
 });
 Interface.prototype.SPELLS.set(16, {
   name: "Energy Beam",
-  description: "Beam of energy",
+  description: __("spell.energy_wave_desc"),
   icon: { x: 2, y: 4 },
   words: "exevo vis lux",
   vocations: ["sorcerer"],
 });
 Interface.prototype.SPELLS.set(17, {
-  name: "Strong Haste",
-  description: "Run even faster",
+  name: __("spell.strong_haste"),
+  description: __("spell.strong_haste_desc"),
   icon: { x: 5, y: 8 },
   words: "utani gran hur",
   vocations: ["sorcerer", "druid"],
 });
 Interface.prototype.SPELLS.set(18, {
-  name: "Magic Shield",
-  description: "Protect yourself with mana",
+  name: __("spell.mana_shield"),
+  description: __("spell.mana_shield_desc"),
   icon: { x: 3, y: 10 },
   words: "utamo vita",
   vocations: ["sorcerer", "druid"],
 });
 Interface.prototype.SPELLS.set(19, {
-  name: "Great Light",
-  description: "Greatly illuminates the area",
+  name: __("spell.great_light"),
+  description: __("spell.great_light_desc"),
   icon: { x: 7, y: 9 },
   words: "utevo gran lux",
   vocations: ["sorcerer", "druid", "paladin", "knight"],
@@ -570,8 +570,8 @@ Interface.prototype.enterGame = function () {
 
     switch (response.status) {
       case 200: return response.json();
-      case 401: throw new Error("The account number or password is incorrect.");
-      case 500: throw new Error("The server experienced an internal error.");
+      case 401: throw new Error(__("error.wrong_credentials"));
+      case 500: throw new Error(__("error.server_error"));
       case 503: throw new Error("Login server unavailable.");
       default: throw new Error("Login failed (HTTP " + response.status + ")");
     }
@@ -991,7 +991,7 @@ Interface.prototype.sendLogout = function () {
   this.modalManager.open("confirm-modal", function () {
     // Block no logout zones
     if (gameClient.player.getTile().isNoLogoutZone()) {
-      return gameClient.interface.setCancelMessage("You may not logout here.");
+      return gameClient.interface.setCancelMessage(__("error.no_logout_here"));
     }
 
     gameClient.send(new LogoutPacket());
@@ -1085,10 +1085,10 @@ Interface.prototype.__enableListeners = function () {
       modal.setConfirmCallback(function (name) {
         if (!name) return;
         if (name === gameClient.player.name) {
-          return gameClient.interface.setCancelMessage("You cannot add yourself to the VIP list.");
+          return gameClient.interface.setCancelMessage(__("error.cannot_add_self"));
         }
         if (gameClient.player.friendlist.has(name)) {
-          return gameClient.interface.setCancelMessage("This player is already in your VIP list.");
+          return gameClient.interface.setCancelMessage(__("error.already_in_vip"));
         }
         gameClient.send(new FriendAddPacket(name));
       });
@@ -1097,7 +1097,7 @@ Interface.prototype.__enableListeners = function () {
 
   document.getElementById("ignore-button").addEventListener("click", function () {
     if (!gameClient.player || !gameClient.player.isPremium) {
-      return gameClient.interface.setCancelMessage("You need a premium account in order to filter your private messages.");
+      return gameClient.interface.setCancelMessage(__("error.premium_required"));
     }
     gameClient.interface.modalManager.open("ignore-list-modal");
   });
@@ -1126,8 +1126,8 @@ Interface.prototype.__enableListeners = function () {
       wrapper.classList.toggle("minimized");
       this.classList.toggle("minimized");
       this.title = wrapper.classList.contains("minimized")
-        ? "Maximizar Inventário"
-        : "Minimizar Inventário";
+        ? __("inventory.maximize")
+        : __("inventory.minimize");
 
     });
 
@@ -1138,7 +1138,7 @@ Interface.prototype.__enableListeners = function () {
   this.__debugInterval = setInterval(function () {
     var btn = document.getElementById("enter-game");
     if (!btn) return;
-    var state = "Enter Game: " + (btn.disabled ? "DISABLED" : "ENABLED");
+    var state = (btn.disabled ? __("inventory.enter_game_disabled") : __("inventory.enter_game_enabled"));
     state += " | spritesLoaded=" + this.state.spritesLoaded + " dataLoaded=" + this.state.dataLoaded;
     state += " | assetsLoaded=" + this.areAssetsLoaded();
     if (gameClient && gameClient.networkManager) {

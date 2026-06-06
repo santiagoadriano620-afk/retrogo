@@ -1,6 +1,7 @@
 {
     "actionId":  3119,
     "type":  "moveEvent",
+    "allowMonsters":  true,
     "events":  [
                    "onStepIn",
                    "onStepOut"

@@ -220,7 +220,7 @@
   <!-- VIP List -->
   <div id="friend-window" class="window">
     <div class="header">
-      <span class="window-icon person"></span><span class="title">VIP List</span>
+      <span class="window-icon person"></span>      <span class="title">VIP List</span>
       <button class="container-btn" action="minimize" title="Minimize"></button>
       <button class="container-btn" action="close" title="Close"></button>
     </div>
@@ -462,8 +462,8 @@
         <div id="settings-box" class="modal">
           <div class="modal-header">Connection Settings</div>
           <div class="modal-body">
-            <p style="font-size: 11px; color: #ccc;">Login Server Address:
-              <br><input class="input-botao" style="text-align: center; width: 100%; margin-top: 4px;" id="host" value="127.0.0.1:1337" placeholder="127.0.0.1:1337">
+            <label for="host" style="font-size: 11px; color: #ccc;">Login Server Address:</label>
+              <br><input class="input-botao" style="text-align: center; width: 100%; margin-top: 4px;" id="host" autocomplete="off" value="127.0.0.1:1337" placeholder="127.0.0.1:1337">
               <hr class="hr-botao">
               <button class="btn-botao" id="clear-database" onclick="gameClient.database.clear()" style="height: 22px; font-size: 10px;">Reset Client</button>
             <div class="modal-footer" style="margin-top: 8px;">
@@ -477,15 +477,15 @@
           <div class="modal-header">Account Information</div>
           <div class="modal-body">
             <form>
-              <p style="font-size: 11px; color: #ccc; margin: 4px 0;">Username:
-                <br><input class="input-botao password-input" name='username' id="user-username" value="" type="text"
+              <p style="font-size: 11px; color: #ccc; margin: 4px 0;"><label for="user-username">Username:</label>
+                <br><input class="input-botao password-input" name='username' id="user-username" value="" type="text" autocomplete="username"
                   placeholder="Account Name" style="width: 100%; margin-top: 4px;">
-              <p style="font-size: 11px; color: #ccc; margin: 4px 0;">Password:
-                <br><input class="input-botao password-input" name='password' id="user-password" value="" type="password"
+              <p style="font-size: 11px; color: #ccc; margin: 4px 0;"><label for="user-password">Password:</label>
+                <br><input class="input-botao password-input" name='password' id="user-password" value="" type="password" autocomplete="current-password"
                   placeholder="Account Password" style="width: 100%; margin-top: 4px;">
               <p style="font-size: 11px; color: #ccc; margin: 2px 0 4px 0;">
                 <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
-                  <input type="checkbox" id="save-password" checked>
+                  <input type="checkbox" id="save-password" autocomplete="off" checked>
                   <span style="font-size: 11px; color: #ccc;">Save Password</span>
                 </label>
               </p>
@@ -509,13 +509,13 @@
         <div id="floater-create" class="modal">
           <div class="modal-header">Create Account</div>
           <div class="modal-body">
-            <p style="font-size: 11px; color: #ccc; margin: 4px 0;">Account:
+            <p style="font-size: 11px; color: #ccc; margin: 4px 0;"><span>Account:</span>
               <br><input class="input-botao password-input" id="create-username" type="password" placeholder="Account Number" style="width: 100%; margin-top: 4px;">
-            <p style="font-size: 11px; color: #ccc; margin: 4px 0;">Password:
+            <p style="font-size: 11px; color: #ccc; margin: 4px 0;"><span>Password:</span>
               <br><input class="input-botao password-input" id="create-password" type="password" placeholder="Account Password" style="width: 100%; margin-top: 4px;">
-            <p style="font-size: 11px; color: #ccc; margin: 4px 0;">Repeat Password:
+            <p style="font-size: 11px; color: #ccc; margin: 4px 0;"><span>Repeat Password:</span>
               <br><input class="input-botao password-input" id="create-password-repeat" type="password" placeholder="Repeat Password" style="width: 100%; margin-top: 4px;">
-            <p style="font-size: 11px; color: #ccc; margin: 4px 0;">Email:
+            <p style="font-size: 11px; color: #ccc; margin: 4px 0;"><span>Email:</span>
               <br><input class="input-botao password-input" id="create-email" type="email" placeholder="Email" style="width: 100%; margin-top: 4px;">
             <div class="modal-footer">
               <button class="btn-botao" action="confirm" id="create-account-close" style="height: 22px; font-size: 10px;">Create Account</button>
@@ -651,7 +651,7 @@
               <button class="close-button-transparent symbol-button" action="cancel" value="Cancel">✕</button>
               <div class="modal-header">Map Mark</div>
               <div class="modal-body">
-                <label style="color: #ccc; font-size: 11px; display: block; margin-bottom: 4px;">Choose a flag:</label>
+                  <label style="color: #ccc; font-size: 11px; display: block; margin-bottom: 4px;">Choose a flag:</label>
                 <div class="flag-selector-grid" id="flag-selector-grid"></div>
                 <hr>
                 <div class="mark-description-wrapper">
@@ -688,7 +688,7 @@
               <button class="close-button-transparent symbol-button" action="cancel" value="Cancel">✕</button>
               <div class="modal-header">Chat Options</div>
               <div class="modal-body">
-                Select a channel:
+                <span>Select a channel:</span>
                 <br>
                 <select id="channel-select" class="channel-select" size="7">
                   <option channelType="global" channelId="1">World</option>
@@ -698,7 +698,7 @@
                   <option channelType="local" channelId="Console">Console</option>
                 </select>
                 <hr>
-                Open a private channel:
+                <span>Open a private channel:</span>
                 <br>
                 <input id="open-private-channel-input" type="text" onkeypress="return /[a-z]/i.test(event.key)">
                 <hr>
@@ -716,7 +716,7 @@
               <div class="modal-body">
                 <div class="checkboxes">
                   <label class="checkbox-label" for="enable-weather">
-                    <input type="checkbox" id="enable-weather" autocomplete="off"> Enable Weather
+                    <input type="checkbox" id="enable-weather" autocomplete="off"><span> Enable Weather</span>
                   </label>
                   <label class="checkbox-label" for="enable-sound">
                     <input type="checkbox" id="enable-sound" autocomplete="off"> Enable Sound
@@ -835,6 +835,7 @@
               <div class="modal-body">
                 <div class="blessing-slots" id="blessing-slots"></div>
                 <div class="blessing-summary" id="blessing-summary"></div>
+                <div class="blessing-premium-msg" id="blessing-premium-msg" style="display:none;">You need a premium account to buy blessings from here.</div>
                 <div class="modal-footer">
                   <button class="btn-botao" action="confirm" value="Close">Close</button>
                 </div>
@@ -1218,7 +1219,6 @@
               <div class="modal-body">
                 <div id="spellbook-list"></div>
                 <hr>
-                <!-- Buttons aligned to the right -->
                 <div class="modal-footer">
                   <button action="cancel" value="Cancel">Close</button>
                 </div>
@@ -1670,6 +1670,7 @@
           </div>
 
           <!-- The Actual Gamescreen -->
+          <canvas id="screen" width="680" height="402"></canvas>
           <canvas id="screen" width="680" height="402"></canvas>
 
           <!-- Wrapper for elements on top of the gamescreen (overlay on canvas) -->

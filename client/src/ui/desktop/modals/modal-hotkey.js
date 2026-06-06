@@ -31,7 +31,7 @@ HotkeyModal.prototype.__loadData = function() {
       configs: []
     };
     for (let i = 0; i < 5; i++) {
-      this.__data.configs.push({ name: "Hotkeys config #" + (i + 1), bindings: [] });
+      this.__data.configs.push({ name: __("modal.hotkey.config").replace("%d", i + 1), bindings: [] });
     }
   }
 }
@@ -68,7 +68,7 @@ HotkeyModal.prototype.__renderList = function() {
   if (!config || config.bindings.length === 0) {
     let empty = document.createElement("div");
     empty.className = "hotkey-list-empty";
-    empty.textContent = "No hotkeys configured.";
+    empty.textContent = __("modal.hotkey.no_configured");
     list.appendChild(empty);
     return;
   }
@@ -198,7 +198,7 @@ HotkeyModal.prototype.__openCapture = function() {
   let addBtn = document.getElementById("hotkey-capture-add-btn");
   let cancelBtn = document.getElementById("hotkey-capture-cancel-btn");
 
-  preview.textContent = "Current hotkey to add: none";
+  preview.textContent = __("modal.hotkey.current_none");
   addBtn.disabled = true;
   captureModal.style.display = "block";
 
@@ -222,7 +222,7 @@ HotkeyModal.prototype.__openCapture = function() {
     let config = this.__data.configs[this.__data.activeConfig];
     let exists = config.bindings.some(function(b) { return b.key === keyName; });
     if (exists) {
-      preview.textContent = "Key " + keyName + " is already bound.";
+      preview.textContent = __("modal.hotkey.key_bound").replace("%s", keyName);
       return;
     }
 

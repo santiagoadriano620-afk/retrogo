@@ -243,7 +243,7 @@ UseHandler.prototype.handleItemUse = function (packet) {
   }
 
   // Retro Gold Coin → Premium Points
-  if (item.id === 3151) {
+  if (item.id === 3147) {
     return this.__handleRetroGoldCoin(packet.which, item);
   }
 

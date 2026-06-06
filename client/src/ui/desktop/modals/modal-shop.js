@@ -38,7 +38,7 @@ ShopModal.prototype.__initConfirm = function () {
 };
 
 ShopModal.prototype.__showConfirm = function (itemName, price, itemId) {
-  document.getElementById("shop-confirm-text").textContent = "Buy " + itemName + " for " + price + " Premium Points?";
+  document.getElementById("shop-confirm-text").textContent = __("modal.shop.buy_for", itemName, price);
   document.getElementById("shop-confirm-area").style.display = "block";
   this.__pendingItemId = itemId;
 };
@@ -69,26 +69,21 @@ ShopModal.prototype.handleOpen = function () {
 
 ShopModal.prototype.__renderCategories = function () {
   this.__categoriesEl.innerHTML = "";
-  var iconMap = {
-    "Training Weapons": "icon-cat-weapons.png",
-    "Tools": "icon-cat-tools.png",
-    "Premium Days": "icon-cat-premium.png",
-    "Outfits": "icon-cat-outfits.png",
-    "Global Boost": "icon-cat-boost.png"
-  };
-  SHOP_CATEGORIES.forEach(function (cat) {
+  var CATEGORY_KEYS = ["modal.shop.category_training", "modal.shop.category_tools", "modal.shop.category_premium", "modal.shop.category_outfits", "modal.shop.category_boosts"];
+  var ICON_FILES = ["icon-cat-weapons.png", "icon-cat-tools.png", "icon-cat-premium.png", "icon-cat-outfits.png", "icon-cat-boost.png"];
+  SHOP_CATEGORIES.forEach(function (cat, idx) {
     var btn = document.createElement("button");
     btn.className = "shop-cat-btn";
 
     var icon = document.createElement("img");
     icon.className = "shop-cat-icon";
-    icon.src = "images/icons/" + (iconMap[cat.name] || "");
+    icon.src = "images/icons/" + (ICON_FILES[idx] || "");
     icon.alt = "";
     icon.width = 16;
     icon.height = 16;
 
     var label = document.createElement("span");
-    label.textContent = cat.name;
+    label.textContent = __(CATEGORY_KEYS[idx] || cat.name, cat.name);
 
     btn.appendChild(icon);
     btn.appendChild(label);
@@ -125,7 +120,7 @@ ShopModal.prototype.__renderItems = function (categoryName) {
     }
   }
   if (!cat || !cat.items || cat.items.length === 0) {
-    this.__itemsEl.innerHTML = '<div class="shop-empty">No items available.</div>';
+    this.__itemsEl.innerHTML = '<div class="shop-empty">' + __("modal.shop.no_items") + '</div>';
     this.__itemsEl.scrollTop = 0;
     this.__updateScrollbar();
     return;
@@ -183,11 +178,11 @@ ShopModal.prototype.__renderItems = function (categoryName) {
 
     var buyBtn = document.createElement("button");
     buyBtn.className = "shop-buy-btn";
-    buyBtn.textContent = "Buy";
+    buyBtn.textContent = __("common.buy");
     (function (modal, itemId, price, itemName) {
       buyBtn.addEventListener("click", function () {
         if (modal.__balance < price) {
-          gameClient.interface.setCancelMessage("You need " + price + " Premium Points to buy this.");
+          gameClient.interface.setCancelMessage(__("modal.shop.not_enough_points", price));
           return;
         }
         modal.__showConfirm(itemName, price, itemId);

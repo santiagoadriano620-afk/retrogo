@@ -1,9 +1,9 @@
 const BLESSING_DATA = [
-  { name: "Wisdom of Solitude", icon: 1 },
-  { name: "Spark of the Phoenix", icon: 2 },
-  { name: "Fire of the Suns", icon: 3 },
-  { name: "Spiritual Shielding", icon: 4 },
-  { name: "Embrace of Tibia", icon: 5 }
+  { name: __("modal.blessing.wisdom"), icon: 1 },
+  { name: __("modal.blessing.spark"), icon: 2 },
+  { name: __("modal.blessing.fire"), icon: 3 },
+  { name: __("modal.blessing.winds"), icon: 4 },
+  { name: __("modal.blessing.water"), icon: 5 }
 ];
 
 const BLESSING_CONFIG = {
@@ -79,7 +79,7 @@ BlessingModal.prototype.__renderSummary = function () {
 
   let header = document.createElement("div");
   header.className = "blessing-summary-header";
-  header.textContent = "You have " + data.count + " of 5 active blessings";
+  header.textContent = __n("modal.blessing.count", data.count);
   container.appendChild(header);
 
   let hr = document.createElement("hr");
@@ -87,7 +87,7 @@ BlessingModal.prototype.__renderSummary = function () {
   container.appendChild(hr);
 
   let rows = [
-    { label: "XP/Skill Reduction:", value: data.xpReduction + "%" },
+    { label: __("modal.blessing.xp_reduction"), value: data.xpReduction + "%" },
   ];
 
   rows.forEach(function (row) {
@@ -133,36 +133,15 @@ BlessingModal.prototype.__render = function () {
 
     if (!owned) {
       let goldPrice = self.__getBlessingPrice();
-      let ppPrice = self.__getBlessingPPPrice();
 
-      let goldOpt = document.createElement("div");
-      goldOpt.className = "blessing-currency-opt selected";
-      goldOpt.textContent = goldPrice.toLocaleString() + " gp";
-      goldOpt.addEventListener("click", function () {
-        slot.querySelectorAll(".blessing-currency-opt").forEach(function (el) {
-          el.classList.remove("selected");
-        });
-        goldOpt.classList.add("selected");
-        buyBtn._currency = 0;
-      });
-      slot.appendChild(goldOpt);
-
-      let ppOpt = document.createElement("div");
-      ppOpt.className = "blessing-currency-opt";
-      ppOpt.textContent = ppPrice + " PP";
-      ppOpt.addEventListener("click", function () {
-        slot.querySelectorAll(".blessing-currency-opt").forEach(function (el) {
-          el.classList.remove("selected");
-        });
-        ppOpt.classList.add("selected");
-        buyBtn._currency = 1;
-      });
-      slot.appendChild(ppOpt);
+      let goldPriceDiv = document.createElement("div");
+      goldPriceDiv.className = "blessing-gold-price";
+      goldPriceDiv.textContent = goldPrice.toLocaleString() + " gp";
+      slot.appendChild(goldPriceDiv);
 
       let buyBtn = document.createElement("button");
       buyBtn.className = "blessing-buy-btn";
-      buyBtn.textContent = "Buy";
-      buyBtn._currency = 0;
+      buyBtn.textContent = __("common.buy");
       if (!isPremium) {
         buyBtn.disabled = true;
         buyBtn.title = "Premium account required";
@@ -170,7 +149,7 @@ BlessingModal.prototype.__render = function () {
       buyBtn.addEventListener("click", function () {
         buyBtn.disabled = true;
         buyBtn.textContent = "...";
-        gameClient.send(new BlessingBuyPacket(i, buyBtn._currency));
+        gameClient.send(new BlessingBuyPacket(i, 0));
       });
       slot.appendChild(buyBtn);
     }
@@ -178,5 +157,47 @@ BlessingModal.prototype.__render = function () {
     container.appendChild(slot);
   });
 
+  this.__renderTree();
+
+  let premiumMsg = document.getElementById("blessing-premium-msg");
+  if (premiumMsg) {
+    premiumMsg.style.display = isPremium ? "none" : "block";
+  }
+
   this.__renderSummary();
 }
+
+BlessingModal.prototype.__renderTree = function () {
+  let totalGold = this.__getBlessingPrice() * 5;
+  let totalPP = Math.floor(totalGold / 10000);
+  let container = document.getElementById("blessing-slots");
+  let mask = gameClient.player ? gameClient.player.blessingBitmask : 0;
+
+  let tree = document.createElement("div");
+  tree.className = "blessing-tree";
+  tree.style.gridColumn = "1 / -1";
+
+  let stemsRow = document.createElement("div");
+  stemsRow.className = "blessing-tree-stems";
+  for (let i = 0; i < 5; i++) {
+    let col = document.createElement("div");
+    col.className = "blessing-tree-stem-col";
+    let stem = document.createElement("div");
+    stem.className = "blessing-tree-stem";
+    col.appendChild(stem);
+    stemsRow.appendChild(col);
+  }
+  tree.appendChild(stemsRow);
+
+  let dropLine = document.createElement("div");
+  dropLine.className = "blessing-tree-drop";
+  tree.appendChild(dropLine);
+
+  let price = document.createElement("div");
+  price.className = "blessing-tree-price";
+  let allOwned = (mask & 0x1F) === 0x1F;
+  price.textContent = allOwned ? "0 PP" : totalPP + " PP";
+  tree.appendChild(price);
+
+  container.appendChild(tree);
+};

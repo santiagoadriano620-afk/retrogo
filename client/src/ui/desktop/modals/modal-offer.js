@@ -75,7 +75,7 @@ OfferModal.prototype.setOffers = function () {
   }, this);
 
   if (filteredOffers.length === 0) {
-    return offerDOM.innerHTML = "No %s offers to display.".format(this.__offerType);
+    return offerDOM.innerHTML = __("modal.offer.no_offers", this.__offerType);
   }
 
   filteredOffers.map(function (item) {
@@ -201,9 +201,9 @@ OfferModal.prototype.__updateSelectedInfo = function (offer, qty) {
     document.getElementById("trade-selected-info").textContent = "";
     return;
   }
-  let label = this.__offerType === "buy" ? "Buy" : "Sell";
+  let label = this.__offerType === "buy" ? __("modal.offer.buy") : __("modal.offer.sell");
   let total = offer.price * qty;
-  document.getElementById("trade-selected-info").textContent = label + " " + qty + "x " + offer.name + " for " + total + " gold";
+  document.getElementById("trade-selected-info").textContent = __("modal.offer.selected_info", label, qty, offer.name, total);
 }
 
 OfferModal.prototype.__showQuantityOverlay = function (card, offer, index) {
@@ -230,7 +230,7 @@ OfferModal.prototype.__showQuantityOverlay = function (card, offer, index) {
 
   document.getElementById("trade-qty-name").textContent = offer.name;
   document.getElementById("trade-qty-value").textContent = this.__qtyTempQuantity;
-  document.getElementById("trade-qty-max").textContent = "Max: " + max;
+  document.getElementById("trade-qty-max").textContent = __("modal.offer.max", max);
   document.getElementById("trade-qty-overlay").style.display = "flex";
 }
 
@@ -246,7 +246,7 @@ OfferModal.prototype.__qtyChange = function (delta) {
   let newQty = this.__qtyTempQuantity + delta;
   if (newQty < 1) newQty = 1;
   let max = this.__getMaxQuantity(this.__qtyPendingOffer);
-  document.getElementById("trade-qty-max").textContent = "Max: " + max;
+  document.getElementById("trade-qty-max").textContent = __("modal.offer.max", max);
   if (newQty > max) newQty = max;
   this.__qtyTempQuantity = newQty;
   document.getElementById("trade-qty-value").textContent = newQty;
@@ -395,7 +395,7 @@ OfferModal.prototype.handleOpen = function (properties) {
   this.__renderNpcAvatar();
   this.__offerType = null;
   this.setOfferType("buy");
-  this.setTitle("NPC Trade");
+  this.setTitle(__("modal.offer.npc_trade"));
 }
 
 OfferModal.prototype.handleConfirm = function () {

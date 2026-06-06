@@ -169,7 +169,7 @@ Tooltip.prototype.__generateContent = function (item, dataObject) {
     }
 
     // Prefer server properties for name/stats as they are more complete
-    let name = serverProps.name || props.name || "Unknown Item";
+    let name = serverProps.name || props.name || __("tooltip.unknown_item");
 
     // Override name for fluid containers with the fluid type
     if (item.isFluidContainer && item.isFluidContainer()) {
@@ -189,10 +189,10 @@ Tooltip.prototype.__generateContent = function (item, dataObject) {
 
     let statsHtml = '<div class="tooltip-stats">';
 
-    if (armor) statsHtml += `<div class="stat"><span class="icon">🛡️</span> Armor: ${armor}</div>`;
-    if (attack) statsHtml += `<div class="stat"><span class="icon">⚔️</span> Attack: ${attack}</div>`;
-    if (defense) statsHtml += `<div class="stat"><span class="icon">🛡️</span> Defense: ${defense}</div>`;
-    if (weight) statsHtml += `<div class="stat"><span class="icon">⚖️</span> Weight: ${(weight / 100).toFixed(2)} oz</div>`;
+    if (armor) statsHtml += `<div class="stat"><span class="icon">🛡️</span> ${__("tooltip.armor")} ${armor}</div>`;
+    if (attack) statsHtml += `<div class="stat"><span class="icon">⚔️</span> ${__("tooltip.attack")} ${attack}</div>`;
+    if (defense) statsHtml += `<div class="stat"><span class="icon">🛡️</span> ${__("tooltip.defense")} ${defense}</div>`;
+    if (weight) statsHtml += `<div class="stat"><span class="icon">⚖️</span> ${__("tooltip.weight")} ${(weight / 100).toFixed(2)} oz</div>`;
     if (serverProps.trainingWeapon) {
       let timer = gameClient.interface.trainingTimer;
       if (timer === undefined) timer = 0;
@@ -211,7 +211,7 @@ Tooltip.prototype.__generateContent = function (item, dataObject) {
         descriptionHtml = `<div class="tooltip-description">📖 ${description}</div>`;
     } else if (dataObject.flags.get(PropBitFlag.prototype.flags.DatFlagMultiUse)) {
         // Generic hint for usable items
-        descriptionHtml = `<div class="tooltip-description">Use with...</div>`;
+        descriptionHtml = `<div class="tooltip-description">${__("tooltip.use_with")}</div>`;
     }
 
     // Handle pluralization for stackables

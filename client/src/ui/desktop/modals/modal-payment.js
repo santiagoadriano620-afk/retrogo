@@ -84,7 +84,7 @@ PaymentModal.prototype.__loadStripe = function () {
       self.__initStripe(data.publishableKey);
     })
     .catch(function (err) {
-      self.__showError("Failed to load payment config: " + err.message);
+      self.__showError(__("modal.payment.config_error", err.message));
     });
 };
 
@@ -102,7 +102,7 @@ PaymentModal.prototype.__initStripe = function (publishableKey) {
     self.__setupElements(publishableKey);
   };
   script.onerror = function () {
-    self.__showError("Failed to load Stripe.js. Check your connection.");
+    self.__showError(__("modal.payment.stripe_error"));
   };
   document.head.appendChild(script);
 };
@@ -146,7 +146,7 @@ PaymentModal.prototype.__handlePay = function () {
   if (this.__processing || !this.__selectedPoints || !this.__cardNumber) return;
   this.__processing = true;
 
-  this.__showLoading("Creating payment...");
+  this.__showLoading(__("modal.payment.creating"));
   document.getElementById("payment-pay-btn").disabled = true;
 
   var baseUrl = window.location.origin;
@@ -163,7 +163,7 @@ PaymentModal.prototype.__handlePay = function () {
     })
     .then(function (data) {
       self.__clientSecret = data.clientSecret;
-      self.__showLoading("Processing card...");
+      self.__showLoading(__("modal.payment.processing"));
       return self.__stripe.confirmCardPayment(self.__clientSecret, {
         payment_method: {
           card: self.__cardNumber,
@@ -182,7 +182,7 @@ PaymentModal.prototype.__handlePay = function () {
       }
     })
     .catch(function (err) {
-      self.__showError(err.message || "Payment failed. Please try again.");
+      self.__showError(err.message || __("modal.payment.failed"));
       self.__processing = false;
       document.getElementById("payment-pay-btn").disabled = false;
     });
@@ -195,12 +195,12 @@ PaymentModal.prototype.__onPaymentSuccess = function () {
   this.__showError("");
 
   var fields = document.getElementById("payment-card-fields");
-  if (fields) fields.innerHTML = '<div style="text-align:center;color:#059669;font-size:16px;padding:24px 0;">✓ Payment Successful!</div>';
+  if (fields) fields.innerHTML = '<div style="text-align:center;color:#059669;font-size:16px;padding:24px 0;">' + __("modal.payment.success") + '</div>';
 
   setTimeout(function () {
     self.handleCancel();
     gameClient.send(new RequestPremiumBalancePacket());
-    gameClient.interface.setCancelMessage("Premium Points credited! Check your balance.");
+    gameClient.interface.setCancelMessage(__("modal.payment.credited"));
   }, 1500);
 };
 
@@ -228,7 +228,7 @@ PaymentModal.prototype.__showError = function (msg) {
 PaymentModal.prototype.__showLoading = function (msg) {
   var el = document.getElementById("payment-loading");
   if (el) {
-    el.textContent = msg || "Processing...";
+    el.textContent = msg || __("modal.payment.processing");
     el.style.display = "block";
   }
 };

@@ -997,10 +997,19 @@ PacketHandler.prototype.handleCharacterInformation = function (packet) {
     case 8: vocationName = "Elder Druid"; break;
   }
 
+  // Self-look: "You see yourself. You are a Vocation."
+  let playerName = gameClient.player && gameClient.player.name;
+  let isSelf = playerName && packet.name === playerName;
+
   // Format: "You see Name (Level X). He is a Vocation." — NPCs omit level/vocation
-  let message = packet.level > 0
-    ? "You see %s (Level %s). %s is a %s.".format(packet.name, packet.level, gender, vocationName)
-    : "You see %s.".format(packet.name);
+  let message;
+  if (isSelf) {
+    message = "You see yourself. You are a %s.".format(vocationName);
+  } else {
+    message = packet.level > 0
+      ? "You see %s (Level %s). %s is a %s.".format(packet.name, packet.level, gender, vocationName)
+      : "You see %s.".format(packet.name);
+  }
 
   // Show a server message
   gameClient.interface.notificationManager.setServerMessage(

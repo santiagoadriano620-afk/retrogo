@@ -18,10 +18,10 @@ IgnoreListModal.prototype.__handleAdd = function () {
     modal.setConfirmCallback(function (name) {
       if (!name) return;
       if (name === gameClient.player.name) {
-        return gameClient.interface.setCancelMessage("You cannot ignore yourself.");
+        return gameClient.interface.setCancelMessage(__("modal.ignore.cannot_ignore_self"));
       }
       if (gameClient.player.ignorelist.has(name)) {
-        return gameClient.interface.setCancelMessage("This player is already on your ignore list.");
+        return gameClient.interface.setCancelMessage(__("modal.ignore.already_ignored"));
       }
       gameClient.send(new IgnoreAddPacket(name));
     });
@@ -34,7 +34,7 @@ IgnoreListModal.prototype.__renderList = function () {
   container.innerHTML = "";
 
   if (list.length === 0) {
-    container.innerHTML = "<div class=\"ignore-list-empty\">Your ignore list is empty.</div>";
+    container.innerHTML = "<div class=\"ignore-list-empty\">" + __("modal.ignore.empty") + "</div>";
     return;
   }
 
@@ -48,7 +48,7 @@ IgnoreListModal.prototype.__renderList = function () {
 
     let removeBtn = document.createElement("button");
     removeBtn.className = "ignore-list-remove";
-    removeBtn.textContent = "Remove";
+    removeBtn.textContent = __("common.remove");
     removeBtn.addEventListener("click", function () {
       gameClient.send(new IgnoreRemovePacket(name));
       gameClient.player.ignorelist.remove(name);

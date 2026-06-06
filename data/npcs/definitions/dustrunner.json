@@ -39,7 +39,8 @@
         ],
         "sayings": {
             "texts": [
-                "Hello there!"
+                "Woof!",
+                "Woof woof!"
             ],
             "rate": 300,
             "chance": 0.1

@@ -147,6 +147,80 @@
   background: rgba(255, 215, 0, 0.1);
 }
 
+.blessing-gold-price {
+  font-size: 9px;
+  color: #c8a44e;
+  text-align: center;
+  width: 100%;
+}
+
+.blessing-tree {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.blessing-tree-stems {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 4px;
+  width: 100%;
+  position: relative;
+}
+
+.blessing-tree-stem-col {
+  display: flex;
+  justify-content: center;
+}
+
+.blessing-tree-stem {
+  width: 1px;
+  height: 10px;
+  background: #555;
+}
+
+.blessing-tree-stems::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: #555;
+}
+
+.blessing-tree-drop {
+  width: 1px;
+  height: 12px;
+  background: #555;
+}
+
+.blessing-tree-price {
+  font-size: 11px;
+  color: #c8a44e;
+  font-weight: bold;
+  padding: 2px 10px;
+  border: 1px solid #555;
+  border-radius: 3px;
+  background: #1e1e1e;
+  line-height: normal;
+  margin-top: 2px;
+}
+
+.blessing-premium-msg {
+  font-size: 11px;
+  color: #d4a017;
+  text-align: center;
+  padding: 6px 8px;
+  margin: 4px 0;
+  background: #2a2510;
+  border: 1px solid #5a4a1a;
+  border-radius: 3px;
+}
+
 .blessing-slot .blessing-buy-btn {
   font-size: 9px;
   padding: 1px 6px;

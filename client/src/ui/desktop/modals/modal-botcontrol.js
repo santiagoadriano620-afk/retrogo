@@ -52,17 +52,17 @@ BotControlModal.prototype.__renderSuspects = function () {
   if (!container) return;
 
   if (this.__suspects.length === 0) {
-    container.innerHTML = "<div class='highscore-empty'>No suspects detected.</div>";
+    container.innerHTML = "<div class='highscore-empty'>" + __("modal.bot_control.no_suspects") + "</div>";
     return;
   }
 
   let html = "";
   this.__suspects.forEach(function (s) {
     html += "<div class='bot-entry'>";
-    html += "<div><span class='bot-entry-name'>" + s.name + "</span> <span class='bot-entry-score'>(" + s.score + " violações)</span></div>";
+    html += "<div><span class='bot-entry-name'>" + s.name + "</span> <span class='bot-entry-score'>(" + __("modal.bot_control.violations", s.score) + ")</span></div>";
     html += "<div class='bot-entry-actions'>";
-    html += "<button class='bot-btn-confirm' onclick='BotControlModal.__confirmCheater(\"" + s.name + "\")'>Confirmar</button>";
-    html += "<button class='bot-btn-dismiss' onclick='BotControlModal.__dismissSuspect(\"" + s.name + "\")'>Descartar</button>";
+    html += "<button class='bot-btn-confirm' onclick='BotControlModal.__confirmCheater(\"" + s.name + "\")'>" + __("modal.bot_control.confirm") + "</button>";
+    html += "<button class='bot-btn-dismiss' onclick='BotControlModal.__dismissSuspect(\"" + s.name + "\")'>" + __("modal.bot_control.dismiss") + "</button>";
     html += "</div></div>";
   });
   container.innerHTML = html;
@@ -73,7 +73,7 @@ BotControlModal.prototype.__renderCheaters = function () {
   if (!container) return;
 
   if (this.__cheaters.length === 0) {
-    container.innerHTML = "<div class='highscore-empty'>No active cheaters.</div>";
+    container.innerHTML = "<div class='highscore-empty'>" + __("modal.bot_control.no_cheaters") + "</div>";
     return;
   }
 
@@ -82,7 +82,7 @@ BotControlModal.prototype.__renderCheaters = function () {
     html += "<div class='bot-entry'>";
     html += "<div><span class='bot-entry-name bot-cheater-label'>● " + c.name + "</span></div>";
     html += "<div class='bot-entry-actions'>";
-    html += "<button class='bot-btn-remove' onclick='BotControlModal.__removeCheater(\"" + c.name + "\")'>Remove Skull</button>";
+    html += "<button class='bot-btn-remove' onclick='BotControlModal.__removeCheater(\"" + c.name + "\")'>" + __("modal.bot_control.remove_skull") + "</button>";
     html += "</div></div>";
   });
   container.innerHTML = html;
@@ -94,11 +94,11 @@ BotControlModal.__confirmCheater = function (name) {
   xhr.setRequestHeader("Content-Type", "application/json");
   xhr.onload = function () {
     if (xhr.status === 200) {
-      gameClient.interface.setCancelMessage(name + " marked as cheater.");
+      gameClient.interface.setCancelMessage(__("modal.bot_control.marked_cheater", name));
       let modal = gameClient.interface.modalManager.get("floater-bot-control");
       if (modal) modal.__fetchData();
     } else {
-      gameClient.interface.setCancelMessage("Failed to confirm cheater.");
+      gameClient.interface.setCancelMessage(__("modal.bot_control.failed_confirm"));
     }
   };
   xhr.send(JSON.stringify({ name: name }));
@@ -123,11 +123,11 @@ BotControlModal.__removeCheater = function (name) {
   xhr.setRequestHeader("Content-Type", "application/json");
   xhr.onload = function () {
     if (xhr.status === 200) {
-      gameClient.interface.setCancelMessage(name + " cheater skull removed.");
+      gameClient.interface.setCancelMessage(__("modal.bot_control.skull_removed", name));
       let modal = gameClient.interface.modalManager.get("floater-bot-control");
       if (modal) modal.__fetchData();
     } else {
-      gameClient.interface.setCancelMessage("Failed to remove cheater skull.");
+      gameClient.interface.setCancelMessage(__("modal.bot_control.failed_remove"));
     }
   };
   xhr.send(JSON.stringify({ name: name }));

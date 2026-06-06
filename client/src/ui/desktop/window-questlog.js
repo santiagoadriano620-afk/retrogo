@@ -19,15 +19,15 @@ const WindowQuestLog = function (id) {
       <!-- Main Content Row -->
       <div style="display: flex; flex-direction: row; flex: 1; overflow: hidden;">
         <div class="quest-list-container">
-          <div class="section-header">Quest Lines</div>
+          <div class="section-header">${__("questlog.quest_lines")}</div>
           <div class="quest-list" id="quest-log-list">
-            <div class="empty-state">Loading...</div>
+            <div class="empty-state">${__("common.loading")}</div>
           </div>
         </div>
         <div class="quest-details-container">
-          <div class="section-header quest-details-header" id="quest-details-title">Select a Quest</div>
+          <div class="section-header quest-details-header" id="quest-details-title">${__("questlog.select_quest")}</div>
           <div class="quest-details" id="quest-log-details">
-            <div class="empty-state">Select a quest to view details.</div>
+            <div class="empty-state">${__("questlog.select_quest")}</div>
           </div>
         </div>
       </div>
@@ -36,27 +36,27 @@ const WindowQuestLog = function (id) {
       <div class="footer-panel">
         <div class="footer-left">
            <select class="tibia-select">
-             <option>Alphabetically (A-Z)</option>
+              <option>${__("questlog.sort_alpha")}</option>
            </select>
            
-           <input type="text" class="tibia-input" placeholder="Type to search">
+           <input type="text" class="tibia-input" placeholder="${__("common.search")}">
 
            <div class="tibia-checkbox-group">
-             <label class="tibia-checkbox">
-               <input type="checkbox" checked> Show completed
-             </label>
-             <div style="flex:1"></div>
+              <label class="tibia-checkbox">
+                <input type="checkbox" checked> ${__("questlog.show_completed")}
+              </label>
+              <div style="flex:1"></div>
            </div>
         </div>
 
         <div class="footer-right">
            <label class="tibia-checkbox text-right" style="margin-bottom: 4px;">
-              <input type="checkbox" action="tracker-check"> Show in quest tracker
+              <input type="checkbox" action="tracker-check"> ${__("questlog.show_tracker")}
            </label>
            
            <div class="tibia-btn-group">
-             <button class="tibia-button" action="tracker">Quest Tracker</button>
-             <button class="tibia-button" action="close">Close</button>
+              <button class="tibia-button" action="tracker">${__("window.questtracker.title")}</button>
+              <button class="tibia-button" action="close">${__("common.close")}</button>
            </div>
         </div>
       </div>
@@ -130,7 +130,7 @@ WindowQuestLog.prototype.setQuests = function (quests) {
   this.listContainer.innerHTML = "";
 
   if (quests.length === 0) {
-    this.listContainer.innerHTML = '<div class="empty-state">No quests started.</div>';
+    this.listContainer.innerHTML = '<div class="empty-state">' + __("questlog.no_quests") + '</div>';
     return;
   }
 
@@ -181,7 +181,7 @@ WindowQuestLog.prototype.requestQuestDetails = function (questId) {
    * Sends packet to request quest details
    */
 
-  this.detailsContainer.innerHTML = '<div class="empty-state">Loading missions...</div>';
+  this.detailsContainer.innerHTML = '<div class="empty-state">' + __("questlog.loading_missions") + '</div>';
 
   gameClient.send(new QuestLogPacket(questId));
 }
@@ -207,7 +207,7 @@ WindowQuestLog.prototype.setQuestDetails = function (questId, missions) {
   }
 
   if (missions.length === 0) {
-    this.detailsContainer.innerHTML = '<div class="empty-state">No missions found.</div>';
+    this.detailsContainer.innerHTML = '<div class="empty-state">' + __("questlog.no_missions") + '</div>';
     return;
   }
 

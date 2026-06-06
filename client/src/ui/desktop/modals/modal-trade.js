@@ -46,7 +46,7 @@ TradeModal.prototype.getRequesterName = function () {
 
 TradeModal.prototype.showRequest = function (requesterName) {
   this.__requesterName = requesterName;
-  gameClient.interface.setCancelMessage(requesterName + " wants to trade with you.");
+  gameClient.interface.setCancelMessage(__("modal.trade.wants_to_trade", requesterName));
 };
 
 TradeModal.prototype.handleOpen = function (data) {
@@ -95,7 +95,7 @@ TradeModal.prototype.updateConfirm = function (data) {
 
 TradeModal.prototype.tradeComplete = function () {
   this.__active = false;
-  gameClient.interface.setCancelMessage("Trade completed successfully.");
+  gameClient.interface.setCancelMessage(__("modal.trade.completed"));
   gameClient.interface.modalManager.close();
 };
 

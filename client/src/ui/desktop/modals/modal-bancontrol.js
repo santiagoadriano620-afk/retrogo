@@ -111,7 +111,7 @@ BanControlModal.prototype.__searchCharacters = function (query) {
 
         let infoEl = document.createElement("span");
         infoEl.className = "ban-search-info";
-        infoEl.textContent = "Lv." + entry.level + " " + (VOCATION_NAMES[entry.vocation] || "None");
+        infoEl.textContent = __("modal.ban_control.level", entry.level) + " " + (VOCATION_NAMES[entry.vocation] || "");
         row.appendChild(infoEl);
 
         resultsEl.appendChild(row);
@@ -125,8 +125,8 @@ BanControlModal.prototype.__selectCharacter = function (entry) {
   let detail = document.getElementById("ban-detail");
   detail.style.display = "block";
   document.getElementById("ban-detail-name").textContent = entry.name;
-  document.getElementById("ban-detail-level").textContent = "Level " + entry.level;
-  document.getElementById("ban-detail-vocation").textContent = VOCATION_NAMES[entry.vocation] || "None";
+  document.getElementById("ban-detail-level").textContent = __("modal.ban_control.level", entry.level);
+  document.getElementById("ban-detail-vocation").textContent = VOCATION_NAMES[entry.vocation] || __("modal.guild.unknown");
   this.__renderOutfitPreview(entry.outfit, document.getElementById("ban-detail-outfit"));
   document.getElementById("ban-days").value = "7";
   document.getElementById("ban-reason").value = "";
@@ -186,7 +186,7 @@ BanControlModal.prototype.__fetchBanList = function () {
   let offset = (this.__currentPage - 1) * 5;
   let listEl = document.getElementById("ban-list-entries");
   if (!listEl) return;
-  listEl.innerHTML = "<div class='highscore-loading'>Loading...</div>";
+  listEl.innerHTML = "<div class='highscore-loading'>" + __("common.loading") + "</div>";
 
   fetch("/api/bans/list?limit=5&offset=" + offset)
     .then(function (r) { return r.json(); })
@@ -196,7 +196,7 @@ BanControlModal.prototype.__fetchBanList = function () {
       this.__totalPages = Math.max(1, Math.ceil((data.total || 0) / 5));
 
       if (entries.length === 0) {
-        listEl.innerHTML = "<div class='highscore-empty'>No active bans.</div>";
+        listEl.innerHTML = "<div class='highscore-empty'>" + __("modal.ban_control.no_active") + "</div>";
         return;
       }
 
@@ -212,7 +212,7 @@ BanControlModal.prototype.__fetchBanList = function () {
 
         let daysEl = document.createElement("div");
         daysEl.className = "ban-list-days";
-        daysEl.textContent = entry.days > 0 ? entry.days + "d" : "Permanent";
+        daysEl.textContent = entry.days > 0 ? entry.days + "d" : __("modal.ban_control.permanent");
         row.appendChild(daysEl);
 
         let reasonEl = document.createElement("div");
@@ -225,13 +225,13 @@ BanControlModal.prototype.__fetchBanList = function () {
 
         let editBtn = document.createElement("button");
         editBtn.className = "btn-botao ban-action-btn";
-        editBtn.textContent = "Edit";
+        editBtn.textContent = __("modal.ban_control.edit");
         editBtn.addEventListener("click", function () { this.__editBan(entry); }.bind(this));
         actionsEl.appendChild(editBtn);
 
         let removeBtn = document.createElement("button");
         removeBtn.className = "btn-botao ban-action-btn";
-        removeBtn.textContent = "Remove";
+        removeBtn.textContent = __("common.remove");
         removeBtn.addEventListener("click", function () { this.__removeBan(entry.character_name); }.bind(this));
         actionsEl.appendChild(removeBtn);
 
@@ -241,7 +241,7 @@ BanControlModal.prototype.__fetchBanList = function () {
 
       this.__renderBanPagination("ban");
     }.bind(this))
-    .catch(function () { listEl.innerHTML = "<div class='highscore-loading'>Failed to load bans.</div>"; });
+    .catch(function () { listEl.innerHTML = "<div class='highscore-loading'>" + __("modal.ban_control.failed_load") + "</div>"; });
 };
 
 BanControlModal.prototype.__editBan = function (entry) {
@@ -297,7 +297,7 @@ BanControlModal.prototype.__fetchBanHistory = function () {
   let offset = (this.__currentPage - 1) * 5;
   let listEl = document.getElementById("ban-history-entries");
   if (!listEl) return;
-  listEl.innerHTML = "<div class='highscore-loading'>Loading...</div>";
+  listEl.innerHTML = "<div class='highscore-loading'>" + __("common.loading") + "</div>";
 
   fetch("/api/bans/history?limit=5&offset=" + offset)
     .then(function (r) { return r.json(); })
@@ -307,7 +307,7 @@ BanControlModal.prototype.__fetchBanHistory = function () {
       this.__totalPages = Math.max(1, Math.ceil((data.total || 0) / 5));
 
       if (entries.length === 0) {
-        listEl.innerHTML = "<div class='highscore-empty'>No ban history.</div>";
+        listEl.innerHTML = "<div class='highscore-empty'>" + __("modal.ban_control.no_history") + "</div>";
         return;
       }
 
@@ -327,7 +327,7 @@ BanControlModal.prototype.__fetchBanHistory = function () {
 
         let daysEl = document.createElement("div");
         daysEl.className = "ban-history-days";
-        daysEl.textContent = entry.days > 0 ? entry.days + "d" : "Permanent";
+        daysEl.textContent = entry.days > 0 ? entry.days + "d" : __("modal.ban_control.permanent");
         row.appendChild(daysEl);
 
         let reasonEl = document.createElement("div");
@@ -337,7 +337,7 @@ BanControlModal.prototype.__fetchBanHistory = function () {
 
         let statusEl = document.createElement("div");
         statusEl.className = "ban-history-status";
-        statusEl.textContent = entry.active ? "Active" : "Removed";
+        statusEl.textContent = entry.active ? __("modal.ban_control.active") : __("modal.ban_control.removed");
         row.appendChild(statusEl);
 
         listEl.appendChild(row);
@@ -345,7 +345,7 @@ BanControlModal.prototype.__fetchBanHistory = function () {
 
       this.__renderBanPagination("history");
     }.bind(this))
-    .catch(function () { listEl.innerHTML = "<div class='highscore-loading'>Failed to load history.</div>"; });
+    .catch(function () { listEl.innerHTML = "<div class='highscore-loading'>" + __("modal.ban_control.history_failed") + "</div>"; });
 };
 
 BanControlModal.prototype.__renderBanPagination = function (prefix) {

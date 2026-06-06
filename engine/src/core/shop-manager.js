@@ -94,7 +94,7 @@ ShopManager.prototype.buyItem = function (buyer, sellerId, itemIndex, count, use
   }
 
   // Check currency FIRST
-  let currencyId = useRetro ? 3151 : 2148;
+  let currencyId = useRetro ? 3147 : 2148;
   let backpack = buyer.containerManager.equipment.peekIndex(CONST.EQUIPMENT.BACKPACK);
   if (backpack === null) {
     return { success: false, message: "You need a backpack to carry items." };
@@ -204,7 +204,7 @@ ShopManager.prototype.returnItemsAndEarnings = function (player) {
   }
 
   if (shop.earningsRetro > 0) {
-    let thing = process.gameServer.database.createThing(3151);
+    let thing = process.gameServer.database.createThing(3147);
     thing.setCount(shop.earningsRetro);
     if (!player.containerManager.equipment.canPushItem(thing)) {
       gameServer.world.addTopThing(player.position, thing);
@@ -228,7 +228,7 @@ ShopManager.prototype.returnItemsFromData = function (player, data) {
 
   let earningsRetro = data.earningsRetro || 0;
   if (earningsRetro > 0) {
-    let thing = process.gameServer.database.createThing(3151);
+    let thing = process.gameServer.database.createThing(3147);
     thing.setCount(earningsRetro);
     if (!player.containerManager.equipment.canPushItem(thing)) {
       gameServer.world.addTopThing(player.position, thing);

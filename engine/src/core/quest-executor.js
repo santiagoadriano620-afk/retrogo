@@ -19,7 +19,11 @@ QuestExecutor.prototype.handleLeverQuest = function (player, tile, item, questAc
 }
 
 QuestExecutor.prototype.handleMoveEventOnTile = function (tile, creature, eventType) {
-  if (eventType !== "onAddItem" && (!creature || !creature.isPlayer())) return;
+  if (eventType !== "onAddItem" && (!creature || !creature.isPlayer())) {
+    // Allow monsters if the quest action explicitly permits it
+    const questAction = tile.actionId && gameServer.questDataLoader.getByActionId(tile.actionId);
+    if (!questAction || !questAction.allowMonsters) return;
+  }
 
   if (tile.actionId) {
     const questAction = gameServer.questDataLoader.getByActionId(tile.actionId);
@@ -316,6 +320,49 @@ QuestExecutor.prototype.__executeEffect = function (effect, creature, tile, item
       gameServer.questFlags = gameServer.questFlags || {};
       gameServer.questFlags[effect.key] = Date.now() + (effect.duration || 30000);
       break;
+    case "monsterGoto":
+      this.__effectMonsterGoto(effect);
+      break;
+  }
+}
+
+QuestExecutor.prototype.__effectMonsterGoto = function (effect) {
+  if (!effect.monsterName || !effect.targetActionId || !effect.centerPos) return;
+
+  const centerPos = new Position(effect.centerPos.x, effect.centerPos.y, effect.centerPos.z);
+  const radius = effect.radius || 10;
+  const targetName = effect.monsterName.toLowerCase();
+
+  // Find the tile with the target actionId
+  let targetPos = null;
+  for (let dx = -radius; dx <= radius; dx++) {
+    for (let dy = -radius; dy <= radius; dy++) {
+      const checkPos = new Position(centerPos.x + dx, centerPos.y + dy, centerPos.z);
+      const tile = gameServer.world.getTileFromWorldPosition(checkPos);
+      if (tile && tile.actionId === effect.targetActionId) {
+        targetPos = tile.getPosition();
+        break;
+      }
+    }
+    if (targetPos) break;
+  }
+  if (!targetPos) return;
+
+  // Find all monsters of the given name within the radius and set their goto position
+  for (let dx = -radius; dx <= radius; dx++) {
+    for (let dy = -radius; dy <= radius; dy++) {
+      const checkPos = new Position(centerPos.x + dx, centerPos.y + dy, centerPos.z);
+      const tile = gameServer.world.getTileFromWorldPosition(checkPos);
+      if (!tile || tile.id === 0 || !tile.creatures) continue;
+
+      for (const creature of tile.creatures) {
+        if (creature.isMonster && creature.isMonster() &&
+            creature.getProperty(CONST.PROPERTIES.NAME).toLowerCase() === targetName &&
+            creature.behaviourHandler) {
+          creature.behaviourHandler.setGotoPosition(targetPos);
+        }
+      }
+    }
   }
 }
 

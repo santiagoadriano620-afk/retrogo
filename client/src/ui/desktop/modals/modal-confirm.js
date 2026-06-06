@@ -28,8 +28,8 @@ ConfirmModal.prototype.handleOpen = function(options) {
 
   if (typeof options === "function") {
     this.__confirmCallback = options;
-    if (header) header.textContent = "Confirm?";
-    if (body) body.textContent = "Are you sure?";
+    if (header) header.textContent = __("modal.confirm.title");
+    if (body) body.textContent = __("modal.confirm.are_you_sure");
     return;
   }
 

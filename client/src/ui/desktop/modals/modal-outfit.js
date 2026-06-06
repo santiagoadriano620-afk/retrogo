@@ -22,7 +22,7 @@ OutfitModal.prototype.handleOpen = function(options) {
 
 OutfitModal.prototype.handleConfirm = function() {
   if (this.__outfit.premium && !gameClient.player.isPremium) {
-    gameClient.interface.setCancelMessage("This outfit is only available to premium players.");
+    gameClient.interface.setCancelMessage(__("modal.outfit.premium_only"));
     return false;
   }
   if (!gameClient.player.outfit.equals(this.__outfit)) {

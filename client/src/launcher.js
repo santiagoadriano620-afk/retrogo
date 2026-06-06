@@ -14,6 +14,7 @@ window.addEventListener("error", function(e) {
 
   // List of all scripts to load in order
   const SCRIPTS = [
+    "src/i18n/i18n.js",
     "src/utils/error.js",
     "src/utils/position.js",
     "src/input/pathfinder.js",

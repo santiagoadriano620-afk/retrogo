@@ -19,12 +19,12 @@ CharacterSelectModal.prototype.__renderTabBar = function(list) {
 
   let charsTab = document.createElement("span");
   charsTab.className = "character-tab" + (this.__activeTab !== "referral" ? " active" : "");
-  charsTab.textContent = "Character List";
+  charsTab.textContent = __("modal.characters.title");
   charsTab.dataset.tab = "chars";
 
   let refTab = document.createElement("span");
   refTab.className = "character-tab" + (this.__activeTab === "referral" ? " active" : "");
-  refTab.textContent = "Referral Program";
+  refTab.textContent = __("modal.characters.referral_program");
   refTab.dataset.tab = "referral";
 
   tabBar.appendChild(charsTab);
@@ -56,7 +56,7 @@ CharacterSelectModal.prototype.__renderReferralView = function(list, options) {
 
   let codeLabel = document.createElement("div");
   codeLabel.className = "referral-code-label";
-  codeLabel.textContent = "Your Referral Code";
+  codeLabel.textContent = __("modal.characters.your_referral_code");
 
   let codeValue = document.createElement("div");
   codeValue.className = "referral-code-value";
@@ -64,7 +64,7 @@ CharacterSelectModal.prototype.__renderReferralView = function(list, options) {
 
   let codeHint = document.createElement("div");
   codeHint.className = "referral-code-hint";
-  codeHint.textContent = "Share this link with your friends!";
+  codeHint.textContent = __("modal.characters.share_link");
 
   let linkInput = document.createElement("input");
   linkInput.className = "referral-link-input";
@@ -75,12 +75,12 @@ CharacterSelectModal.prototype.__renderReferralView = function(list, options) {
 
   let copyBtn = document.createElement("button");
   copyBtn.className = "referral-copy-btn";
-  copyBtn.textContent = "Copy Link";
+  copyBtn.textContent = __("modal.characters.copy_link");
   copyBtn.addEventListener("click", function() {
     linkInput.select();
     document.execCommand("copy");
     copyBtn.textContent = "Copied!";
-    setTimeout(function() { copyBtn.textContent = "Copy Link"; }, 2000);
+    setTimeout(function() { copyBtn.textContent = __("modal.characters.copy_link"); }, 2000);
   });
 
   codeSection.appendChild(codeLabel);
@@ -95,7 +95,7 @@ CharacterSelectModal.prototype.__renderReferralView = function(list, options) {
 
   let statsTitle = document.createElement("div");
   statsTitle.className = "referral-stats-title";
-  statsTitle.textContent = "Referral Stats";
+  statsTitle.textContent = __("modal.characters.referral_stats");
 
   let infoText = document.createElement("div");
   infoText.className = "referral-info-text";
@@ -240,9 +240,9 @@ CharacterSelectModal.prototype.handleOpen = function(options) {
   let text = document.createElement("span");
   if (isPremium) {
     let remaining = Math.max(0, Math.ceil((premiumExpiry - Date.now()) / 86400000));
-    text.textContent = "Premium Account \u2014 " + remaining + " day" + (remaining !== 1 ? "s" : "") + " remaining";
+    text.textContent = __n("modal.characters.premium_days", remaining);
   } else {
-    text.textContent = "Free Account";
+    text.textContent = __("modal.characters.free_account");
   }
   badge.appendChild(icon);
   badge.appendChild(text);
@@ -268,15 +268,15 @@ CharacterSelectModal.prototype.__toggleCreateForm = function() {
   confirmArea.style.display = "block";
 
   confirmArea.innerHTML =
-    '<div class="confirm-text" style="margin-bottom:8px;">Create a new character:</div>' +
-    '<input class="confirm-input" id="create-char-name" type="text" placeholder="Character name" autocomplete="off" spellcheck="false" style="width:calc(100% - 16px);margin-bottom:12px;padding:8px 8px;">' +
+    '<div class="confirm-text" style="margin-bottom:8px;">' + __("modal.characters.create_new") + '</div>' +
+    '<input class="confirm-input" id="create-char-name" type="text" placeholder="' + __("modal.characters.character_name") + '" autocomplete="off" spellcheck="false" style="width:calc(100% - 16px);margin-bottom:12px;padding:8px 8px;">' +
     '<div class="sex-selector" style="margin-bottom:12px;">' +
-      '<label class="sex-radio"><input type="radio" name="create-char-sex" value="male" checked><span class="radio-circle"></span> Male</label>' +
-      '<label class="sex-radio"><input type="radio" name="create-char-sex" value="female"><span class="radio-circle"></span> Female</label>' +
+      '<label class="sex-radio"><input type="radio" name="create-char-sex" value="male" checked><span class="radio-circle"></span> ' + __("modal.characters.male") + '</label>' +
+      '<label class="sex-radio"><input type="radio" name="create-char-sex" value="female"><span class="radio-circle"></span> ' + __("modal.characters.female") + '</label>' +
     '</div>' +
     '<div class="confirm-buttons">' +
-      '<button class="confirm-btn-yes" id="create-char-confirm">Create</button>' +
-      '<button class="confirm-btn-no" id="create-char-cancel">Cancel</button>' +
+      '<button class="confirm-btn-yes" id="create-char-confirm">' + __("common.create") + '</button>' +
+      '<button class="confirm-btn-no" id="create-char-cancel">' + __("common.cancel") + '</button>' +
     '</div>';
 
   document.getElementById("create-char-confirm").addEventListener("click", this.__executeCreate.bind(this));
@@ -416,10 +416,10 @@ CharacterSelectModal.prototype.__startDeleteFlow = function(charName) {
   confirmArea.style.display = "block";
 
   confirmArea.innerHTML =
-    '<div class="confirm-text">Tem certeza que deseja remover <b>' + __escapeHtml(charName) + '</b>?</div>' +
+    '<div class="confirm-text">' + __("modal.characters.delete_confirm").replace("%s", __escapeHtml(charName)) + '</div>' +
     '<div class="confirm-buttons">' +
-      '<button class="confirm-btn-yes" id="confirm-yes">Sim</button>' +
-      '<button class="confirm-btn-no" id="confirm-no">N\u00e3o</button>' +
+      '<button class="confirm-btn-yes" id="confirm-yes">' + __("common.yes") + '</button>' +
+      '<button class="confirm-btn-no" id="confirm-no">' + __("common.no") + '</button>' +
     '</div>';
 
   document.getElementById("confirm-yes").addEventListener("click", this.__showTypeNameStep.bind(this));
@@ -431,11 +431,11 @@ CharacterSelectModal.prototype.__showTypeNameStep = function() {
 
   let confirmArea = document.getElementById("character-confirm-area");
   confirmArea.innerHTML =
-    '<div class="confirm-text">Digite o nome do personagem para confirmar:</div>' +
+    '<div class="confirm-text">' + __("modal.characters.type_name_confirm") + '</div>' +
     '<input class="confirm-input" id="confirm-input" type="text" placeholder="' + __escapeHtml(this.__pendingDeleteName) + '" autocomplete="off" spellcheck="false">' +
     '<div class="confirm-buttons">' +
-      '<button class="confirm-btn-delete" id="confirm-delete">Deletar</button>' +
-      '<button class="confirm-btn-exit" id="confirm-exit">Sair</button>' +
+      '<button class="confirm-btn-delete" id="confirm-delete">' + __("common.remove") + '</button>' +
+      '<button class="confirm-btn-exit" id="confirm-exit">' + __("common.cancel") + '</button>' +
     '</div>';
 
   document.getElementById("confirm-delete").addEventListener("click", this.__executeDelete.bind(this));
@@ -483,7 +483,7 @@ CharacterSelectModal.prototype.__executeDelete = function() {
   if (typedName.toLowerCase() !== expectedName.toLowerCase()) {
     input.style.border = "1px solid #c00";
     input.value = "";
-    input.placeholder = "Nome incorreto! Digite novamente.";
+    input.placeholder = __("modal.characters.wrong_name");
     input.focus();
     return;
   }

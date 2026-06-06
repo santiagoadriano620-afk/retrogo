@@ -32,15 +32,15 @@ HouseModal.prototype.handleOpen = function (options) {
   document.getElementById("house-price-per-sqm").textContent = pricePerSqm.toLocaleString() + " gp";
   document.getElementById("house-weekly-rent").textContent = weeklyRent.toLocaleString() + " gold";
   document.getElementById("house-buy-price").textContent = buyPrice.toLocaleString() + " gold";
-  document.getElementById("house-rent-period").textContent = "Every " + rentDays + " days";
+  document.getElementById("house-rent-period").textContent = __("modal.house.every_days", rentDays);
   document.getElementById("house-beds").textContent = options.beds || 0;
 
   let badge = document.getElementById("house-badge");
   if (options.guildhall) {
-    badge.textContent = "Guildhall";
+    badge.textContent = __("modal.house.guildhall");
     badge.setAttribute("data-type", "guildhall");
   } else {
-    badge.textContent = "House";
+    badge.textContent = __("modal.house.house");
     badge.setAttribute("data-type", "house");
   }
 

@@ -34,6 +34,7 @@ const MonsterBehaviour = function (monster, behaviour) {
 
   // Properties
   this.__target = null;
+  this.__gotoPosition = null;
 
   this.ignoreCharacters = false;
   this.openDoors = behaviour.openDoors;
@@ -299,6 +300,14 @@ MonsterBehaviour.prototype.setTarget = function (target) {
 
 }
 
+MonsterBehaviour.prototype.setGotoPosition = function (pos) {
+  this.__gotoPosition = pos;
+}
+
+MonsterBehaviour.prototype.clearGotoPosition = function () {
+  this.__gotoPosition = null;
+}
+
 MonsterBehaviour.prototype.handleDamage = function (attacker) {
 
   /*
@@ -445,6 +454,54 @@ MonsterBehaviour.prototype.__followMaster = function () {
 
 };
 
+MonsterBehaviour.prototype.__gotoPathfind = function () {
+
+  let targetPos = this.__gotoPosition;
+  if (!targetPos) return null;
+
+  let pos = this.monster.getPosition();
+
+  // Reached the exact target position
+  if (targetPos.isEqual(pos)) {
+    this.__gotoPosition = null;
+    return null;
+  }
+
+  // Move in a straight line toward the target
+  let dx = targetPos.x - pos.x;
+  let dy = targetPos.y - pos.y;
+  let stepX = dx > 0 ? 1 : (dx < 0 ? -1 : 0);
+  let stepY = dy > 0 ? 1 : (dy < 0 ? -1 : 0);
+
+  // Try diagonal step first (toward target)
+  let diagPos = pos.add(new Position(stepX, stepY, 0));
+  let diagTile = gameServer.world.getTileFromWorldPosition(diagPos);
+  if (diagTile && diagTile.id !== 0 && !this.monster.isTileOccupied(diagTile)) {
+    return diagTile;
+  }
+
+  // Try cardinal X
+  if (stepX !== 0) {
+    let xPos = pos.add(new Position(stepX, 0, 0));
+    let xTile = gameServer.world.getTileFromWorldPosition(xPos);
+    if (xTile && xTile.id !== 0 && !this.monster.isTileOccupied(xTile)) {
+      return xTile;
+    }
+  }
+
+  // Try cardinal Y
+  if (stepY !== 0) {
+    let yPos = pos.add(new Position(0, stepY, 0));
+    let yTile = gameServer.world.getTileFromWorldPosition(yPos);
+    if (yTile && yTile.id !== 0 && !this.monster.isTileOccupied(yTile)) {
+      return yTile;
+    }
+  }
+
+  return null;
+
+}
+
 MonsterBehaviour.prototype.getNextMoveTile = function () {
 
   /*
@@ -457,7 +514,10 @@ MonsterBehaviour.prototype.getNextMoveTile = function () {
     return this.__followMaster();
   }
 
-
+  // Has a goto position: walk toward it
+  if (this.__gotoPosition && !this.hasTarget()) {
+    return this.__gotoPathfind();
+  }
 
   // If the monster does not have a target always aimlessly wander around
   if (!this.hasTarget()) {

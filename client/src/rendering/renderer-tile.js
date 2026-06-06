@@ -216,3 +216,5 @@ Renderer.prototype.__isPlayerOnTile = function (tile) {
   }
   return false;
 };
+
+
