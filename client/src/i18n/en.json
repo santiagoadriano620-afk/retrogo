@@ -176,7 +176,7 @@
     "modal.market.type_to_search": "Type to search",
 
     "modal.shop.title": "Premium Shop",
-    "modal.shop.buy_for": "Buy %s for %d Premium Points?",
+    "modal.shop.buy_for": "Buy %s for %s Premium Points?",
     "modal.shop.no_items": "No items available.",
     "modal.shop.category_training": "Training Weapons",
     "modal.shop.category_tools": "Tools",

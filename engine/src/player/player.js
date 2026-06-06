@@ -1115,7 +1115,7 @@ Player.prototype.toJSON = function () {
     role: this.getProperty(CONST.PROPERTIES.ROLE),
     vocation: this.getProperty(CONST.PROPERTIES.VOCATION),
     sex: this.getProperty(CONST.PROPERTIES.SEX),
-    availableOutfits: this.getProperty(CONST.PROPERTIES.OUTFITS),
+    availableOutfits: Array.from(this.getProperty(CONST.PROPERTIES.OUTFITS) || []),
   };
 
 

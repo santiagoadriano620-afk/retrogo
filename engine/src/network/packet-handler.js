@@ -546,12 +546,15 @@ PacketHandler.prototype.handleBuyPremiumItem = function (player, packet) {
     const outfitId = outfitIdMap[itemId];
     const outfitName = Outfit.prototype.getName(outfitId) || "Unknown Outfit";
     let available = player.getProperty(CONST.PROPERTIES.OUTFITS);
-    if (available && available.has(outfitId)) {
-      return player.sendCancelMessage("You already own this outfit!");
-    }
     if (!available) {
       available = new Set();
       player.setProperty(CONST.PROPERTIES.OUTFITS, available);
+    } else if (Array.isArray(available)) {
+      available = new Set(available);
+      player.setProperty(CONST.PROPERTIES.OUTFITS, available);
+    }
+    if (available.has(outfitId)) {
+      return player.sendCancelMessage("You already own this outfit!");
     }
     available.add(outfitId);
     const { PremiumBalanceUpdatePacket, OutfitUnlockPacket } = requireModule("network/protocol");

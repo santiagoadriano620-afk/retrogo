@@ -43,7 +43,10 @@ PacketWriter.prototype.writeOutfits = function(player) {
     ? [111, 112, 113, 114, 115, 116, 117]
     : [118, 119, 120, 121, 122, 123, 124];
 
-  const availableOutfits = player.getProperty(CONST.PROPERTIES.OUTFITS);
+  let availableOutfits = player.getProperty(CONST.PROPERTIES.OUTFITS);
+  if (availableOutfits && !(availableOutfits instanceof Set)) {
+    availableOutfits = new Set(availableOutfits);
+  }
   let extraIds = [];
   if (availableOutfits) {
     availableOutfits.forEach(function(id) {

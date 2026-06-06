@@ -223,6 +223,7 @@ NetworkManager.prototype.__readPacket = function (gameSocket, packet) {
           ? [111, 112, 113, 114] : [118, 119, 120, 121];
         if (defaults.indexOf(outfit.id) === -1) {
           let available = gameSocket.player.getProperty(CONST.PROPERTIES.OUTFITS);
+          if (Array.isArray(available)) available = new Set(available);
           if (!available || !available.has(outfit.id)) {
             return gameSocket.player.write(new (requireModule("network/protocol").CancelMessagePacket)("You don't own this outfit."));
           }
