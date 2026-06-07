@@ -241,4 +241,22 @@
 - **`getRemainingDuration` unit fix**: Was mixing ticks and seconds (returned seconds for decaying items, ticks for non-decaying). Now ALWAYS returns ticks (frames). Added `getRemainingDurationSeconds()` helper for callers that need seconds (TrainTimerPacket, getDurationString).
 - **Client `__initEquipmentTimers`**: Convert `props.duration` from ticks to seconds (`Math.round(duration / 20)`) for correct initial timer value
 
+### Startup fix: missing modal-starter-box.js + mouse.js guard
+- `launcher.js` SCRIPTS list was missing `modal-starter-box.js` → `StarterBoxModal` undefined → `ModalManager` constructor threw → `GameClient` never created → `gameClient` undefined
+- Added `"src/ui/desktop/modals/modal-starter-box.js"` to SCRIPTS list
+- Added `typeof gameClient === "undefined"` guard in `Mouse.__handleMouseMove` (mouse.js:784)
+
+### Tab-out desync fix (this session — v2)
+- **Problem (v1 fix was insufficient)**: The original fix only refreshed visual caches on `visibilitychange`, but the real issue was the **event queue**. `rAF` stops while tab is hidden → `eventQueue.tick()` doesn't run → deferred events pile up → on return `performance.now()` has grown huge, so ALL events fire at once in the first frame, causing cascading state changes (creature jumps, tile transforms) that overwrite the fresh cache.
+- **Root cause**: `event-queue.js::__update()` computes `__internalDelta = performance.now() - __start`. While tab is hidden this delta grows unbounded, making every queued event appear "overdue" on return.
+- **Fix (v2)**: Four-pronged approach:
+  1. **`EventQueue.prototype.clear()`** — empties the event heap
+  2. **`EventQueue.prototype.reset()`** — clears + resets `__start`/`__internalDelta` to prevent stale events from firing
+  3. **`EventQueue.__update()` guard** — if `__internalDelta > 10000ms`, auto-clears the queue and resets the clock (last-resort safety net even if `visibilitychange` doesn't fire)
+  4. **`World.prototype.__resetCreatureStates()`** — cancels `__movementEvent` and clears `__movementQueue` on all active creatures (creature positions are already correct — set directly by packet handlers)
+  5. **`__pendingTabReturn` flag in game loop** — after `eventQueue.tick()` + `renderer.render()` in the first frame post-return, re-invalidates caches and renders a second time to catch any late-arriving packets
+- **`interface.js`**: On `visibilitychange → visible`, if hidden > 2s: calls `eventQueue.reset()`, `world.__resetCreatureStates()`, invalidates caches, rebuilds neighbours, sets `gameClient.__pendingTabReturn = true`
+- **Files changed**: `client/src/core/event-queue.js`, `client/src/core/world.js`, `client/src/core/gameclient.js`, `client/src/ui/desktop/interface.js`, `client/src/launcher.js`, `client/src/input/mouse.js`
+- **No game loop changes to packet processing** — WebSocket `onmessage` already processes packets immediately regardless of tab state; world state stays correct
+
 

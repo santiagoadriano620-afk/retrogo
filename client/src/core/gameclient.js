@@ -62,6 +62,9 @@ const GameClient = function () {
   this.__stutterLog = [];
   this.__stutterLogMax = 30;
 
+  // Flag: on tab return, force a second render pass after world state settles
+  this.__pendingTabReturn = false;
+
   // Load item definitions
   this.itemDefinitions = {};
   fetch("./items/definitions.json").then(response => {
@@ -526,6 +529,21 @@ GameClient.prototype.__loop = function () {
       this.__stutterLog.push(stutterEntry);
       if (this.__stutterLog.length > this.__stutterLogMax) this.__stutterLog.shift();
     }
+  }
+
+  // Tab return: re-invalidate caches and re-render so the frame reflects the
+  // settled world state after event queue / creature resets took effect.
+  if (this.__pendingTabReturn && this.player) {
+    this.__pendingTabReturn = false;
+    this.renderer.__lastCacheX = -1;
+    this.renderer.__lastCacheY = -1;
+    this.renderer.__lastCacheZ = -1;
+    this.renderer.updateTileCache();
+    this.renderer.__tileCacheNeedsRebuild = true;
+    if (this.world) {
+      this.world.__refreshNeighboursLarge(this.player.getPosition(), 15);
+    }
+    this.renderer.render();
   }
 
 }

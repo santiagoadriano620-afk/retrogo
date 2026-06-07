@@ -719,7 +719,11 @@ NetworkManager.prototype.__handlePacket = function (event) {
   // Save the number of received bytes
   this.state.bytesRecv += packet.buffer.length;
 
-  // Can still read the packet
+  // Debug log opcode before processing (peek first byte)
+  let firstOpcode = packet.buffer && packet.buffer.length > 0 ? packet.buffer[0] : -1;
+  let packetLen = event.data.byteLength || 0;
+  let hidden = document.hidden ? "H" : "V";
+
   while (packet.readable()) {
     try {
       this.readPacket(packet);
@@ -727,6 +731,13 @@ NetworkManager.prototype.__handlePacket = function (event) {
       console.error("[DEBUG] __handlePacket: error processing packet:", e);
     }
   }
+
+  // Debug log: send to login server
+  try {
+    let url = `http://${window.location.hostname || "localhost"}:8000/__debug_log`;
+    let body = JSON.stringify({ msg: `[C] ${hidden} op=${firstOpcode} len=${packetLen}` });
+    fetch(url, { method: "POST", body, headers: { "Content-Type": "application/json" }, mode: "no-cors" }).catch(function(){});
+  } catch(e) {}
 
 
 

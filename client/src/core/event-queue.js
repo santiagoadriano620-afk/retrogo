@@ -99,6 +99,25 @@ EventQueue.prototype.__update = function() {
 
   this.__internalDelta = performance.now() - this.__start;
 
+  // Guard: if we missed more than 10s of ticks (tab was hidden), discard stale
+  // events and reset the clock. World state was already updated directly by
+  // packet handlers — deferred events are only for visual interpolation.
+  if (this.__internalDelta > 10000) {
+    this.clear();
+    this.__start = performance.now();
+    this.__internalDelta = 0;
+  }
+
+}
+
+EventQueue.prototype.clear = function () {
+  this.heap.content = [];
+}
+
+EventQueue.prototype.reset = function () {
+  this.clear();
+  this.__start = performance.now();
+  this.__internalDelta = 0;
 }
 
 EventQueue.prototype.__isValidFrame = function(frame) {

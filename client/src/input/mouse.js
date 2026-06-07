@@ -207,6 +207,15 @@ Mouse.prototype.use = function (object) {
     }
   }
 
+  // Starter Boxes open the choice modal instead
+  if (item && (item.id === 3135 || item.id === 3136 || item.id === 3137)) {
+    return gameClient.interface.modalManager.open("starter-box-modal", {
+      boxId: item.id,
+      which: object.which,
+      index: object.index
+    });
+  }
+
   // Track which slot initiated this use, for precise container open association
   if (item && item.isContainer()) {
     gameClient.__pendingContainerOpen = {
@@ -772,7 +781,7 @@ Mouse.prototype.__handleMouseMove = function (event) {
    */
 
   // Must be connected to the gameserver
-  if (!gameClient.isRunning()) {
+  if (typeof gameClient === "undefined" || !gameClient.isRunning()) {
     return;
   }
 

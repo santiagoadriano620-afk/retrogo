@@ -1003,7 +1003,7 @@ Interface.prototype.sendLogout = function () {
 Interface.prototype.__handleVisibiliyChange = function (event) {
   /*
    * Function Interface.handleVisibiliyChange
-   * Callback fired when the window is hidden
+   * Callback fired when the window visibility changes
    */
 
   // Must be connected to the gameserver
@@ -1011,11 +1011,77 @@ Interface.prototype.__handleVisibiliyChange = function (event) {
     return;
   }
 
-  // Disable the keyboard when tabbing out: reset all active keys to prevent "hanging"
-  gameClient.keyboard.setInactive();
+  if (document.hidden) {
+    // Record when the tab was hidden so we can measure duration on return
+    this.__tabHiddenAt = performance.now();
 
-  if (gameClient.renderer) {
-    gameClient.renderer.__handleVisibiliyChange(event);
+    // Tab hidden: clear keyboard state to prevent "hanging" keys
+    gameClient.keyboard.setInactive();
+
+    if (gameClient.renderer) {
+      gameClient.renderer.__handleVisibiliyChange(event);
+    }
+
+    // Log hidden
+    try {
+      let url = `http://${window.location.hostname || "localhost"}:8000/__debug_log`;
+      fetch(url, { method: "POST", body: JSON.stringify({ msg: "[C] HIDE" }), headers: { "Content-Type": "application/json" }, mode: "no-cors" }).catch(function(){});
+    } catch(e) {}
+  } else {
+    // Tab visible again: sync state after potential tab-out gap
+    if (!gameClient.renderer || !gameClient.player) return;
+
+    // Log visible
+    try {
+      let url = `http://${window.location.hostname || "localhost"}:8000/__debug_log`;
+      fetch(url, { method: "POST", body: JSON.stringify({ msg: "[C] SHOW" }), headers: { "Content-Type": "application/json" }, mode: "no-cors" }).catch(function(){});
+    } catch(e) {}
+
+    // Only do full reset if tab was hidden long enough to cause desync
+    let hiddenDuration = performance.now() - (this.__tabHiddenAt || performance.now());
+    let needsFullReset = hiddenDuration > 2000;
+
+    if (needsFullReset) {
+      // Step 1: Clear stale deferred events — packet handlers already set final state
+      if (gameClient.eventQueue) {
+        gameClient.eventQueue.reset();
+      }
+
+      // Step 2: Cancel all creature movement animations (positions already correct)
+      if (gameClient.world) {
+        gameClient.world.__resetCreatureStates();
+      }
+
+      // Step 3: Force tile cache rebuild from current (correct) world state
+      gameClient.renderer.__lastCacheX = -1;
+      gameClient.renderer.__lastCacheY = -1;
+      gameClient.renderer.__lastCacheZ = -1;
+      gameClient.renderer.updateTileCache();
+      gameClient.renderer.__tileCacheNeedsRebuild = true;
+
+      // Step 4: Rebuild neighbour graph to fix invisible walls
+      if (gameClient.world) {
+        gameClient.world.__refreshNeighboursLarge(
+          gameClient.player.getPosition(), 15
+        );
+      }
+
+      // Step 5: Flag for a second render pass after event queue settles
+      gameClient.__pendingTabReturn = true;
+    } else {
+      // Brief hide: just refresh caches as before
+      gameClient.renderer.__lastCacheX = -1;
+      gameClient.renderer.__lastCacheY = -1;
+      gameClient.renderer.__lastCacheZ = -1;
+      gameClient.renderer.updateTileCache();
+      gameClient.renderer.__tileCacheNeedsRebuild = true;
+
+      if (gameClient.world) {
+        gameClient.world.__refreshNeighboursLarge(
+          gameClient.player.getPosition(), 15
+        );
+      }
+    }
   }
 };
 

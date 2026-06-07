@@ -74,8 +74,8 @@ ShopModal.prototype.handleOpen = function () {
 
 ShopModal.prototype.__renderCategories = function () {
   this.__categoriesEl.innerHTML = "";
-  var CATEGORY_KEYS = ["modal.shop.category_training", "modal.shop.category_tools", "modal.shop.category_premium", "modal.shop.category_outfits", "modal.shop.category_boosts"];
-  var ICON_FILES = ["icon-cat-weapons.png", "icon-cat-tools.png", "icon-cat-premium.png", "icon-cat-outfits.png", "icon-cat-boost.png"];
+  var CATEGORY_KEYS = ["modal.shop.category_training", "modal.shop.category_tools", "modal.shop.category_premium", "modal.shop.category_outfits", "modal.shop.category_boosts", "modal.shop.category_starter_box"];
+  var ICON_FILES = ["icon-cat-weapons.png", "icon-cat-tools.png", "icon-cat-premium.png", "icon-cat-outfits.png", "icon-cat-boost.png", "gift_01a.png"];
   SHOP_CATEGORIES.forEach(function (cat, idx) {
     var btn = document.createElement("button");
     btn.className = "shop-cat-btn";

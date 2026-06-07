@@ -49,5 +49,13 @@ const SHOP_CATEGORIES = [
       { id: 64005, name: "Drop Boost", desc: "All players receive +20% loot rate for 2 hours.", price: 5 },
       { id: 64006, name: "Skills Boost", desc: "All players receive +10% skill rate for 2 hours.", price: 5 },
     ]
+  },
+  {
+    name: __("modal.shop.category_starter_box"),
+    items: [
+      { id: 3135, name: "Bronze Starter Box", desc: "30 days premium, 2 training weapons, and 10 premium points.", price: 15 },
+      { id: 3136, name: "Silver Starter Box", desc: "90 days premium, 5 training weapons, a tool, an outfit, and training dummy.", price: 70 },
+      { id: 3137, name: "Golden Starter Box", desc: "180 days premium, 10 training weapons, 2 tools, 2 outfits, and 50 premium points.", price: 140 },
+    ]
   }
 ];

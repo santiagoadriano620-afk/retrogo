@@ -1813,3 +1813,101 @@
   border-color:#d4a017;
   background:#4a4a3a;
 }
+
+/* Starter Box Modal */
+#starter-box-modal {
+  max-height: 90vh;
+}
+#starter-box-modal .modal-body {
+  max-height: 27vh;
+  overflow-y: auto;
+}
+#starter-box-modal .starter-box-section {
+  margin-bottom: 6px;
+  padding: 6px 8px;
+  background: rgba(0,0,0,0.2);
+  border-radius: 4px;
+}
+#starter-box-modal .starter-box-section:last-child {
+  margin-bottom: 0;
+}
+#starter-box-modal .starter-box-section-title {
+  font-size: 13px;
+  font-weight: bold;
+  color: #d4a017;
+  margin-bottom: 6px;
+}
+#starter-box-modal .starter-box-row {
+  padding: 4px 6px;
+  font-size: 12px;
+  color: #ddd;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+#starter-box-modal .starter-box-auto {
+  color: #8a8;
+}
+#starter-box-modal .starter-box-selectable {
+  cursor: pointer;
+  border-radius: 3px;
+}
+#starter-box-modal .starter-box-selectable:hover {
+  background: rgba(255,255,255,0.06);
+}
+#starter-box-modal .starter-box-checkbox {
+  margin: 0;
+  flex-shrink: 0;
+}
+#starter-box-modal .modal-footer button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+#starter-box-modal .starter-box-total {
+  font-size: 11px;
+  color: #aaa;
+  margin-bottom: 6px;
+  text-align: right;
+}
+#starter-box-modal .starter-box-qty-row {
+  justify-content: space-between;
+}
+#starter-box-modal .starter-box-qty-label {
+  flex: 1;
+}
+#starter-box-modal .starter-box-qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+#starter-box-modal .starter-box-qty-btn {
+  width: 22px;
+  height: 22px;
+  border: 1px solid #555;
+  border-radius: 3px;
+  background: #333;
+  color: #ddd;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  padding: 0;
+}
+#starter-box-modal .starter-box-qty-btn:hover:not(:disabled) {
+  background: #555;
+}
+#starter-box-modal .starter-box-qty-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+#starter-box-modal .starter-box-qty-count {
+  min-width: 18px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: bold;
+  color: #fff;
+}

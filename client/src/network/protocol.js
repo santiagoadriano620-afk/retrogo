@@ -62,6 +62,18 @@ const BuyPremiumItemPacket = function (itemId, quantity) {
 BuyPremiumItemPacket.prototype = Object.create(PacketWriter.prototype);
 BuyPremiumItemPacket.prototype.constructor = BuyPremiumItemPacket;
 
+const StarterBoxChoicePacket = function (which, index, choiceIds) {
+  var size = 10 + choiceIds.length * 2;
+  PacketWriter.call(this, CONST.PROTOCOL.CLIENT.STARTER_BOX_CHOICE, size);
+  this.__writeGenericMove({ which: which, index: index });
+  this.writeUInt8(choiceIds.length);
+  for (var i = 0; i < choiceIds.length; i++) {
+    this.writeUInt16(choiceIds[i]);
+  }
+};
+StarterBoxChoicePacket.prototype = Object.create(PacketWriter.prototype);
+StarterBoxChoicePacket.prototype.constructor = StarterBoxChoicePacket;
+
 const ChannelMessagePacket = function (id, loudness, string) {
 
   /*

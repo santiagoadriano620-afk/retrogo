@@ -603,6 +603,202 @@ PacketHandler.prototype.handleBuyPremiumItem = function (player, packet) {
   player.write(new PremiumBalanceUpdatePacket(player.premiumPoints));
 }
 
+PacketHandler.prototype.handleStarterBoxChoice = function (player, packet) {
+  var type = packet.readUInt8();
+  var containerId, tilePos;
+  if (type === 0) {
+    packet.readUInt16();
+    containerId = packet.readUInt32();
+  } else {
+    tilePos = packet.readPosition();
+  }
+  var slotIndex = packet.readUInt8();
+  var choiceCount = packet.readUInt8();
+  var choiceIds = [];
+  for (var i = 0; i < choiceCount; i++) {
+    choiceIds.push(packet.readUInt16());
+  }
+
+  var boxContainer, boxItem;
+  if (type === 0) {
+    boxContainer = player.containerManager.getContainerFromId(containerId);
+  } else {
+    boxContainer = gameServer.world.getTileFromWorldPosition(tilePos);
+  }
+  if (!boxContainer) {
+    return player.sendCancelMessage("Could not find the box.");
+  }
+  boxItem = boxContainer.peekIndex(slotIndex);
+  if (!boxItem || (boxItem.id !== 3135 && boxItem.id !== 3136 && boxItem.id !== 3137)) {
+    return player.sendCancelMessage("Invalid starter box.");
+  }
+
+  var boxId = boxItem.id;
+  boxContainer.deleteThing(boxItem);
+
+  const { PremiumBalanceUpdatePacket, BlessingUpdatePacket, OutfitUnlockPacket } = requireModule("network/protocol");
+  const Outfit = requireModule("entities/outfit");
+
+  var validChoices = [];
+  var ci = 0;
+
+  if (boxId === 3135) {
+    // auto grant: 30 days premium
+    var days = 30;
+    var now = Date.now();
+    if (player.premiumExpiry > now) {
+      player.premiumExpiry += days * 86400000;
+    } else {
+      player.premiumExpiry = now + days * 86400000;
+    }
+    var controller = player.socketHandler.getController();
+    if (controller) {
+      controller.premiumExpiry = player.premiumExpiry;
+      var accountDb = process.gameServer.HTTPServer.websocketServer.accountDatabase;
+      if (accountDb) accountDb.setPremiumExpiry(controller.account, player.premiumExpiry);
+    }
+    player.write(new PremiumBalanceUpdatePacket(player.premiumPoints));
+    player.write(new BlessingUpdatePacket(player.getBlessingBitmask(), player.isPremium()));
+
+    // 2 training weapons
+    var validWeapons = [3139, 3140, 3141, 3142, 3143, 3144];
+    for (ci = 0; ci < choiceIds.length && ci < 2; ci++) {
+      if (validWeapons.indexOf(choiceIds[ci]) !== -1) {
+        validChoices.push(choiceIds[ci]);
+      }
+    }
+  } else if (boxId === 3136) {
+    // auto grant: 90 days premium + training dummy
+    var days2 = 90;
+    var now2 = Date.now();
+    if (player.premiumExpiry > now2) {
+      player.premiumExpiry += days2 * 86400000;
+    } else {
+      player.premiumExpiry = now2 + days2 * 86400000;
+    }
+    var controller2 = player.socketHandler.getController();
+    if (controller2) {
+      controller2.premiumExpiry = player.premiumExpiry;
+      var accountDb2 = process.gameServer.HTTPServer.websocketServer.accountDatabase;
+      if (accountDb2) accountDb2.setPremiumExpiry(controller2.account, player.premiumExpiry);
+    }
+    player.write(new PremiumBalanceUpdatePacket(player.premiumPoints));
+    player.write(new BlessingUpdatePacket(player.getBlessingBitmask(), player.isPremium()));
+
+    var dummy = gameServer.database.createThing(3138);
+    if (!player.containerManager.giftContainer.addThingSmart(dummy)) {
+      gameServer.world.addTopThing(player.position, dummy);
+    }
+
+    // Parse choices: first 5 valid weapons, then 1 tool, then 1 outfit
+    var validWeapons2 = [3139, 3140, 3141, 3142, 3143, 3144];
+    var validTools = [3145, 3146];
+    var weaponCount = 0;
+    var toolCount = 0;
+    var outfitCount = 0;
+    for (ci = 0; ci < choiceIds.length; ci++) {
+      var cid = choiceIds[ci];
+      if (weaponCount < 5 && validWeapons2.indexOf(cid) !== -1) {
+        validChoices.push(cid);
+        weaponCount++;
+      } else if (toolCount < 1 && validTools.indexOf(cid) !== -1) {
+        validChoices.push(cid);
+        toolCount++;
+      } else if (outfitCount < 1 && cid >= 65001 && cid <= 65008) {
+        var outfitIdMap = { 65001:126, 65002:127, 65003:128, 65004:129, 65005:130, 65006:131, 65007:132, 65008:133 };
+        var oId = outfitIdMap[cid];
+        var sex = player.getProperty(CONST.PROPERTIES.SEX);
+        var isMale = sex === 0;
+        var isMaleOutfit = cid <= 65004;
+        if (isMale === isMaleOutfit) {
+          var available = player.getProperty(CONST.PROPERTIES.OUTFITS);
+          if (!available) {
+            available = new Set();
+            player.setProperty(CONST.PROPERTIES.OUTFITS, available);
+          } else if (Array.isArray(available)) {
+            available = new Set(available);
+            player.setProperty(CONST.PROPERTIES.OUTFITS, available);
+          }
+          if (!available.has(oId)) {
+            available.add(oId);
+            var outfitName = Outfit.prototype.getName(oId) || "Unknown Outfit";
+            player.write(new OutfitUnlockPacket(oId, outfitName));
+            outfitCount++;
+          }
+        }
+      }
+    }
+  } else if (boxId === 3137) {
+    // auto grant: 180 days premium + 50 PP
+    player.premiumPoints += 50;
+    var days3 = 180;
+    var now3 = Date.now();
+    if (player.premiumExpiry > now3) {
+      player.premiumExpiry += days3 * 86400000;
+    } else {
+      player.premiumExpiry = now3 + days3 * 86400000;
+    }
+    var controller3 = player.socketHandler.getController();
+    if (controller3) {
+      controller3.premiumExpiry = player.premiumExpiry;
+      var accountDb3 = process.gameServer.HTTPServer.websocketServer.accountDatabase;
+      if (accountDb3) accountDb3.setPremiumExpiry(controller3.account, player.premiumExpiry);
+    }
+    player.write(new PremiumBalanceUpdatePacket(player.premiumPoints));
+    player.write(new BlessingUpdatePacket(player.getBlessingBitmask(), player.isPremium()));
+
+    // Parse: 10 weapons, 2 tools, 2 outfits
+    var validWeapons3 = [3139, 3140, 3141, 3142, 3143, 3144];
+    var validTools3 = [3145, 3146];
+    var weaponCount3 = 0;
+    var toolCount3 = 0;
+    var outfitCount3 = 0;
+    for (ci = 0; ci < choiceIds.length; ci++) {
+      var cid3 = choiceIds[ci];
+      if (weaponCount3 < 10 && validWeapons3.indexOf(cid3) !== -1) {
+        validChoices.push(cid3);
+        weaponCount3++;
+      } else if (toolCount3 < 2 && validTools3.indexOf(cid3) !== -1) {
+        validChoices.push(cid3);
+        toolCount3++;
+      } else if (outfitCount3 < 2 && cid3 >= 65001 && cid3 <= 65008) {
+        var outfitIdMap3 = { 65001:126, 65002:127, 65003:128, 65004:129, 65005:130, 65006:131, 65007:132, 65008:133 };
+        var oId3 = outfitIdMap3[cid3];
+        var sex3 = player.getProperty(CONST.PROPERTIES.SEX);
+        var isMale3 = sex3 === 0;
+        var isMaleOutfit3 = cid3 <= 65004;
+        if (isMale3 === isMaleOutfit3) {
+          var available3 = player.getProperty(CONST.PROPERTIES.OUTFITS);
+          if (!available3) {
+            available3 = new Set();
+            player.setProperty(CONST.PROPERTIES.OUTFITS, available3);
+          } else if (Array.isArray(available3)) {
+            available3 = new Set(available3);
+            player.setProperty(CONST.PROPERTIES.OUTFITS, available3);
+          }
+          if (!available3.has(oId3)) {
+            available3.add(oId3);
+            var outfitName3 = Outfit.prototype.getName(oId3) || "Unknown Outfit";
+            player.write(new OutfitUnlockPacket(oId3, outfitName3));
+            outfitCount3++;
+          }
+        }
+      }
+    }
+  }
+
+  // Grant all valid choice items
+  for (ci = 0; ci < validChoices.length; ci++) {
+    var newItem = gameServer.database.createThing(validChoices[ci]);
+    if (!player.containerManager.giftContainer.addThingSmart(newItem)) {
+      gameServer.world.addTopThing(player.position, newItem);
+    }
+  }
+
+  gameServer.world.sendMagicEffect(player.position, CONST.EFFECT.MAGIC.POFF);
+  player.sendCancelMessage("Starter Box opened! Check your inventory.");
+}
+
 PacketHandler.prototype.handleTargetCreature = function (player, id) {
 
   /*

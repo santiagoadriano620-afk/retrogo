@@ -207,6 +207,8 @@ const CreatureMovePacket = function (guid, position, duration) {
   this.writeUInt32(guid);
   this.writePosition(position);
   this.writeUInt16(duration);
+
+  this.__debugStr = `id=${guid} to=(${position.x},${position.y},${position.z}) dur=${duration}`;
 };
 
 CreatureMovePacket.prototype = Object.create(PacketWriter.prototype);
@@ -223,6 +225,8 @@ const CreatureTeleportPacket = function (guid, position) {
 
   this.writeUInt32(guid);
   this.writePosition(position);
+
+  this.__debugStr = `id=${guid} to=(${position.x},${position.y},${position.z})`;
 };
 
 CreatureTeleportPacket.prototype = Object.create(PacketWriter.prototype);
@@ -264,6 +268,8 @@ const ItemAddPacket = function (position, thing, index) {
   this.writeUInt8(thing.count);
   this.writePosition(position);
   this.writeUInt8(index);
+
+  this.__debugStr = `id=${thing.id} pos=(${position.x},${position.y},${position.z}) idx=${index}`;
 };
 
 ItemAddPacket.prototype = Object.create(PacketWriter.prototype);
@@ -281,6 +287,8 @@ const ItemRemovePacket = function (position, index, count) {
   this.writePosition(position);
   this.writeUInt8(index);
   this.writeUInt8(count);
+
+  this.__debugStr = `pos=(${position.x},${position.y},${position.z}) idx=${index}`;
 };
 
 ItemRemovePacket.prototype = Object.create(PacketWriter.prototype);
@@ -298,6 +306,8 @@ const ContainerAddPacket = function (guid, index, item) {
   this.writeUInt32(guid);
   this.writeUInt8(index);
   this.writeItem(item);
+
+  this.__debugStr = `guid=${guid} idx=${index}`;
 };
 
 ContainerAddPacket.prototype = Object.create(PacketWriter.prototype);
@@ -315,6 +325,8 @@ const ContainerRemovePacket = function (guid, index, count) {
   this.writeUInt32(guid);
   this.writeUInt8(index);
   this.writeUInt8(count);
+
+  this.__debugStr = `guid=${guid} idx=${index}`;
 };
 
 ContainerRemovePacket.prototype = Object.create(PacketWriter.prototype);
@@ -332,6 +344,8 @@ const ChunkPacket = function (chunk) {
   // This is the number that unique identifies the chunk
   this.writeUInt32(chunk.id);
   this.writePosition(chunk.position);
+
+  this.__debugStr = `id=${chunk.id} pos=(${chunk.position.x},${chunk.position.y},${chunk.position.z})`;
 
   // Serialize each tile
   chunk.layers.forEach(function (layer) {
@@ -397,6 +411,8 @@ const CreatureStatePacket = function (creature) {
     if (creature.conversationHandler.conversation.keywords && (creature.conversationHandler.conversation.keywords.spell || creature.conversationHandler.conversation.keywords.spells)) npcFlags |= 8;
   }
   this.writeUInt8(npcFlags);
+
+  this.__debugStr = `id=${creature.getId()} name="${creature.getProperty(CONST.PROPERTIES.NAME)}" pos=(${creature.getPosition().x},${creature.getPosition().y},${creature.getPosition().z})`;
 };
 
 CreatureStatePacket.prototype = Object.create(PacketWriter.prototype);

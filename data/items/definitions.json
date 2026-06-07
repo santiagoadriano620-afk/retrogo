@@ -31106,6 +31106,39 @@
       "corpseType": "blood"
     }
   },
+  "3135": {
+    "id": 3135,
+    "flags": 96,
+    "group": 0,
+    "properties": {
+      "article": "a",
+      "name": "Bronze Starter Box",
+      "description": "A bronze box containing beginner supplies. Right-click to open.",
+      "weight": 400
+    }
+  },
+  "3136": {
+    "id": 3136,
+    "flags": 96,
+    "group": 0,
+    "properties": {
+      "article": "a",
+      "name": "Silver Starter Box",
+      "description": "A silver box containing adventurer supplies. Right-click to open.",
+      "weight": 500
+    }
+  },
+  "3137": {
+    "id": 3137,
+    "flags": 96,
+    "group": 0,
+    "properties": {
+      "article": "a",
+      "name": "Golden Starter Box",
+      "description": "A golden box containing premium supplies. Right-click to open.",
+      "weight": 600
+    }
+  },
   "3138": {
     "id": 3138,
     "flags": 112,

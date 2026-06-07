@@ -78,6 +78,33 @@ World.prototype.__refreshNeighbours = function (position) {
   }, this);
 }
 
+World.prototype.__refreshNeighboursLarge = function (position, radius) {
+  for (let dx = -radius; dx <= radius; dx++) {
+    for (let dy = -radius; dy <= radius; dy++) {
+      let pos = new Position(position.x + dx, position.y + dy, position.z);
+      let tile = this.getTileFromWorldPosition(pos);
+      if (tile === null) continue;
+      tile.neighbours = [];
+      [pos.west(), pos.north(), pos.east(), pos.south(),
+       pos.northwest(), pos.southwest(), pos.northeast(), pos.southeast()].forEach(function (np) {
+        let nt = this.getTileFromWorldPosition(np);
+        if (nt !== null) tile.neighbours.push(nt);
+      }, this);
+    }
+  }
+}
+
+World.prototype.__resetCreatureStates = function () {
+  Object.values(this.activeCreatures).forEach(function (creature) {
+    if (creature.__movementEvent) {
+      creature.__movementEvent.cancel();
+      creature.__movementEvent = null;
+    }
+    creature.__movementQueue = [];
+    creature.__teleported = false;
+  });
+}
+
 World.prototype.handleTransformTile = function (packet) {
 
   /*

@@ -569,6 +569,11 @@ NetworkManager.prototype.__readPacket = function (gameSocket, packet) {
       return;
     }
 
+    // Starter Box choice from the modal
+    case CONST.PROTOCOL.CLIENT.STARTER_BOX_CHOICE: {
+      return this.packetHandler.handleStarterBoxChoice(gameSocket.player, packet);
+    }
+
     // Unknown opcode sent: close the socket immediately
     default: {
       return gameSocket.close();

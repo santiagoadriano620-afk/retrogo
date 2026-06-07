@@ -86,7 +86,8 @@
       "MARKET_BUY": 66,
       "MARKET_CLOSE": 67,
       "MARKET_REQUEST_VIEW": 68,
-      "ADMIN_ADD_SKILL_SUBMIT": 69
+      "ADMIN_ADD_SKILL_SUBMIT": 69,
+      "STARTER_BOX_CHOICE": 70
     },
     "SERVER": {
       "LATENCY": 0,

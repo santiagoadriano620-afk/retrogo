@@ -1,0 +1,2283 @@
+[22:25:17.621] [S->Admin] ServerStatePacket 
+[22:25:17.622] [S->Admin] ChunkPacket id=17090793 pos=(3567,4602,0)
+[22:25:17.628] [S->Admin] ChunkPacket id=17090792 pos=(3566,4602,0)
+[22:25:17.631] [S->Admin] ChunkPacket id=17087080 pos=(3567,4601,0)
+[22:25:17.632] [S->Admin] CreatureStatePacket id=72426 name="Dixi" pos=(32105,32207,6)
+[22:25:17.635] [S->Admin] ChunkPacket id=17090794 pos=(3568,4602,0)
+[22:25:17.635] [S->Admin] ChunkPacket id=17094506 pos=(3567,4603,0)
+[22:25:17.636] [S->Admin] CreatureStatePacket id=74750 name="Cipfried" pos=(32097,32217,7)
+[22:25:17.636] [S->Admin] ChunkPacket id=17087079 pos=(3566,4601,0)
+[22:25:17.642] [S->Admin] ChunkPacket id=17094505 pos=(3566,4603,0)
+[22:25:17.649] [S->Admin] ChunkPacket id=17087081 pos=(3568,4601,0)
+[22:25:17.650] [S->Admin] CreatureStatePacket id=74702 name="Obi" pos=(32109,32204,7)
+[22:25:17.653] [S->Admin] ChunkPacket id=17094507 pos=(3568,4603,0)
+[22:25:17.655] [S->Admin] ChunkPacket id=17090791 pos=(3565,4602,0)
+[22:25:17.655] [S->Admin] ChunkPacket id=17087078 pos=(3565,4601,0)
+[22:25:17.656] [S->Admin] ChunkPacket id=17094504 pos=(3565,4603,0)
+[22:25:17.657] [S->Admin] ChunkPacket id=17083367 pos=(3567,4600,0)
+[22:25:17.657] [S->Admin] CreatureStatePacket id=74670 name="Seymour" pos=(32103,32195,7)
+[22:25:17.658] [S->Admin] ChunkPacket id=17083366 pos=(3566,4600,0)
+[22:25:17.663] [S->Admin] ChunkPacket id=17083368 pos=(3568,4600,0)
+[22:25:17.670] [S->Admin] ChunkPacket id=17090795 pos=(3569,4602,0)
+[22:25:17.673] [S->Admin] ChunkPacket id=17087082 pos=(3569,4601,0)
+[22:25:17.673] [S->Admin] ChunkPacket id=17094508 pos=(3569,4603,0)
+[22:25:17.674] [S->Admin] ChunkPacket id=17098219 pos=(3567,4604,0)
+[22:25:17.675] [S->Admin] ChunkPacket id=17098218 pos=(3566,4604,0)
+[22:25:17.675] [S->Admin] CreatureStatePacket id=72437 name="Rabbit" pos=(32095,32228,6)
+[22:25:17.676] [S->Admin] CreatureStatePacket id=72438 name="Rabbit" pos=(32096,32228,6)
+[22:25:17.678] [S->Admin] ChunkPacket id=17098220 pos=(3568,4604,0)
+[22:25:17.679] [S->Admin] ChunkPacket id=17083365 pos=(3565,4600,0)
+[22:25:17.682] [S->Admin] CreatureStatePacket id=74684 name="Tom" pos=(32085,32199,7)
+[22:25:17.683] [S->Admin] ChunkPacket id=17098217 pos=(3565,4604,0)
+[22:25:17.685] [S->Admin] ChunkPacket id=17083369 pos=(3569,4600,0)
+[22:25:17.692] [S->Admin] ChunkPacket id=17098221 pos=(3569,4604,0)
+[22:25:17.695] [S->Admin] ChunkPacket id=17090790 pos=(3564,4602,0)
+[22:25:17.698] [S->Admin] CreatureStatePacket id=74719 name="Sheep" pos=(32069,32212,7)
+[22:25:17.699] [S->Admin] CreatureStatePacket id=74720 name="Sheep" pos=(32070,32212,7)
+[22:25:17.699] [S->Admin] CreatureStatePacket id=74722 name="Sheep" pos=(32069,32213,7)
+[22:25:17.699] [S->Admin] CreatureStatePacket id=74723 name="Sheep" pos=(32070,32213,7)
+[22:25:17.700] [S->Admin] ChunkPacket id=17087077 pos=(3564,4601,0)
+[22:25:17.702] [S->Admin] ChunkPacket id=17094503 pos=(3564,4603,0)
+[22:25:17.706] [S->Admin] ChunkPacket id=17083364 pos=(3564,4600,0)
+[22:25:17.706] [S->Admin] ChunkPacket id=17098216 pos=(3564,4604,0)
+[22:25:17.707] [S->Admin] ChunkPacket id=17079654 pos=(3567,4599,0)
+[22:25:17.708] [S->Admin] CreatureStatePacket id=72406 name="The Oracle" pos=(32104,32190,6)
+[22:25:17.708] [S->Admin] ChunkPacket id=17079653 pos=(3566,4599,0)
+[22:25:17.709] [S->Admin] ChunkPacket id=17079655 pos=(3568,4599,0)
+[22:25:17.715] [S->Admin] ChunkPacket id=17079652 pos=(3565,4599,0)
+[22:25:17.718] [S->Admin] ChunkPacket id=17079656 pos=(3569,4599,0)
+[22:25:17.719] [S->Admin] ChunkPacket id=17090796 pos=(3570,4602,0)
+[22:25:17.720] [S->Admin] ChunkPacket id=17087083 pos=(3570,4601,0)
+[22:25:17.722] [S->Admin] ChunkPacket id=17094509 pos=(3570,4603,0)
+[22:25:17.726] [S->Admin] ChunkPacket id=17083370 pos=(3570,4600,0)
+[22:25:17.729] [S->Admin] CreatureStatePacket id=74671 name="Deer" pos=(32131,32195,7)
+[22:25:17.729] [S->Admin] ChunkPacket id=17098222 pos=(3570,4604,0)
+[22:25:17.731] [S->Admin] CreatureStatePacket id=74785 name="Snake" pos=(32131,32222,7)
+[22:25:17.732] [S->Admin] ChunkPacket id=17101932 pos=(3567,4605,0)
+[22:25:17.733] [S->Admin] ChunkPacket id=17101931 pos=(3566,4605,0)
+[22:25:17.733] [S->Admin] ChunkPacket id=17101933 pos=(3568,4605,0)
+[22:25:17.742] [S->Admin] CreatureStatePacket id=74840 name="Rabbit" pos=(32108,32230,7)
+[22:25:17.743] [S->Admin] CreatureStatePacket id=74841 name="Rabbit" pos=(32109,32230,7)
+[22:25:17.745] [S->Admin] ChunkPacket id=17101930 pos=(3565,4605,0)
+[22:25:17.748] [S->Admin] ChunkPacket id=17101934 pos=(3569,4605,0)
+[22:25:17.748] [S->Admin] ChunkPacket id=17079651 pos=(3564,4599,0)
+[22:25:17.751] [S->Admin] ChunkPacket id=17101929 pos=(3564,4605,0)
+[22:25:17.752] [S->Admin] ChunkPacket id=17079657 pos=(3570,4599,0)
+[22:25:17.752] [S->Admin] ChunkPacket id=17101935 pos=(3570,4605,0)
+[22:25:17.757] [S->Admin] PlayerStatePacket 
+[22:25:17.759] [S->Admin] BlessingUpdatePacket 
+[22:25:17.762] [S->Admin] WorldTimePacket 
+[22:25:17.763] [S->Admin] PlayerLoginPacket 
+[22:25:17.763] [S->Admin] SpellAddPacket 
+[22:25:17.763] [S->Admin] SpellAddPacket 
+[22:25:17.769] [S->Admin] SpellAddPacket 
+[22:25:17.772] [S->Admin] SpellAddPacket 
+[22:25:17.772] [S->Admin] SpellAddPacket 
+[22:25:17.773] [S->Admin] SpellAddPacket 
+[22:25:17.776] [S->Admin] SpellAddPacket 
+[22:25:17.780] [S->Admin] SpellAddPacket 
+[22:25:17.781] [S->Admin] SpellAddPacket 
+[22:25:17.782] [S->Admin] SpellAddPacket 
+[22:25:17.783] [S->Admin] SpellAddPacket 
+[22:25:17.783] [S->Admin] SpellAddPacket 
+[22:25:17.789] [S->Admin] SpellAddPacket 
+[22:25:17.792] [S->Admin] SpellAddPacket 
+[22:25:17.795] [S->Admin] SpellAddPacket 
+[22:25:17.795] [S->Admin] SpellAddPacket 
+[22:25:17.796] [S->Admin] SpellAddPacket 
+[22:25:17.796] [S->Admin] SpellAddPacket 
+[22:25:17.796] [S->Admin] SpellAddPacket 
+[22:25:17.796] [S->Admin] SpellAddPacket 
+[22:25:17.797] [S->Admin] SpellAddPacket 
+[22:25:17.797] [S->Admin] IgnoreDataPacket 
+[22:25:17.797] [S->Admin] GlobalBoostUpdatePacket 
+[22:25:17.800] [S->Admin] CreaturePropertyPacket 
+[22:25:17.803] [S->Admin] CreaturePropertyPacket 
+[22:25:17.803] [S->Admin] CreaturePropertyPacket 
+[22:25:17.805] [S->Admin] CreaturePropertyPacket 
+[22:25:17.807] [S->Admin] CreaturePropertyPacket 
+[22:25:17.807] [S->Admin] CreaturePropertyPacket 
+[22:25:17.808] [S->Admin] TrainTimerPacket 
+[22:25:17.858] [S->Admin] CreatureMovePacket id=72426 to=(32105,32206,6) dur=45
+[22:25:17.860] [S->Admin] CreatureMovePacket id=74750 to=(32097,32216,7) dur=45
+[22:25:17.861] [S->Admin] CreatureMovePacket id=74702 to=(32110,32204,7) dur=45
+[22:25:19.104] [C] V op=19 len=39625
+[22:25:19.106] [C] V op=5 len=39
+[22:25:19.505] [C] V op=0 len=1
+[22:25:19.521] [C] V op=0 len=1
+[22:25:20.210] [S->Admin] CreatureMovePacket id=90365 to=(32096,32211,7) dur=2
+[22:25:20.213] [S->Admin] CreaturePropertyPacket 
+[22:25:20.223] [C] V op=5 len=23
+[22:25:20.319] [S->Admin] CreatureMovePacket id=90365 to=(32096,32210,7) dur=2
+[22:25:20.321] [S->Admin] CreaturePropertyPacket 
+[22:25:20.386] [C] V op=5 len=23
+[22:25:20.565] [C] V op=0 len=1
+[22:25:20.833] [S->Admin] PremiumBalanceUpdatePacket 
+[22:25:20.834] [S->Admin] PremiumBalanceUpdatePacket 
+[22:25:20.851] [C] V op=79 len=10
+[22:25:21.518] [C] V op=0 len=1
+[22:25:21.562] [C] V op=0 len=1
+[22:25:22.216] [S->Admin] CreatureMovePacket id=72426 to=(32105,32207,6) dur=45
+[22:25:22.216] [S->Admin] CreatureMovePacket id=74750 to=(32097,32217,7) dur=45
+[22:25:22.219] [S->Admin] CreatureMovePacket id=74702 to=(32109,32204,7) dur=45
+[22:25:22.270] [C] V op=5 len=39
+[22:25:22.564] [C] V op=0 len=1
+[22:25:23.512] [C] V op=0 len=1
+[22:25:23.559] [C] V op=0 len=1
+[22:25:24.557] [C] V op=0 len=1
+[22:25:25.516] [C] V op=0 len=1
+[22:25:25.557] [C] V op=0 len=1
+[22:25:25.898] [S->Admin] CancelMessagePacket 
+[22:25:25.898] [S->Admin] PremiumBalanceUpdatePacket 
+[22:25:25.910] [C] V op=22 len=54
+[22:25:26.307] [S->Admin] CreatureMovePacket id=72426 to=(32105,32206,6) dur=45
+[22:25:26.308] [S->Admin] CreatureMovePacket id=74750 to=(32096,32217,7) dur=45
+[22:25:26.308] [S->Admin] CreatureMovePacket id=74702 to=(32110,32204,7) dur=45
+[22:25:26.354] [C] V op=5 len=39
+[22:25:26.553] [C] V op=0 len=1
+[22:25:27.589] [C] V op=0 len=1
+[22:25:27.593] [C] V op=0 len=1
+[22:25:28.549] [C] V op=0 len=1
+[22:25:28.906] [S->Admin] ContainerOpenPacket 
+[22:25:28.926] [C] V op=6 len=75
+[22:25:29.515] [C] V op=0 len=1
+[22:25:29.548] [C] V op=0 len=1
+[22:25:29.673] [S->Admin] ContainerClosePacket 
+[22:25:29.683] [C] V op=11 len=5
+[22:25:30.167] [S->Admin] ContainerOpenPacket 
+[22:25:30.188] [C] V op=6 len=75
+[22:25:30.373] [S->Admin] CreatureMovePacket id=72426 to=(32105,32207,6) dur=45
+[22:25:30.376] [S->Admin] CreatureMovePacket id=74750 to=(32097,32217,7) dur=45
+[22:25:30.377] [S->Admin] CreatureMovePacket id=74702 to=(32109,32204,7) dur=45
+[22:25:30.440] [C] V op=5 len=39
+[22:25:30.552] [C] V op=0 len=1
+[22:25:31.514] [C] V op=0 len=1
+[22:25:31.562] [C] V op=0 len=1
+[22:25:32.583] [C] V op=0 len=1
+[22:25:33.517] [C] V op=0 len=1
+[22:25:33.578] [C] V op=0 len=1
+[22:25:34.291] [C] HIDE
+[22:25:34.481] [S->Admin] CreatureMovePacket id=72426 to=(32105,32206,6) dur=45
+[22:25:34.482] [S->Admin] CreatureMovePacket id=74750 to=(32097,32218,7) dur=45
+[22:25:34.482] [S->Admin] CreatureMovePacket id=74702 to=(32110,32204,7) dur=45
+[22:25:34.536] [C] H op=5 len=39
+[22:25:36.151] [C] H op=0 len=1
+[22:25:38.145] [C] H op=0 len=1
+[22:25:38.522] [S->Admin] CreatureMovePacket id=72426 to=(32105,32207,6) dur=45
+[22:25:38.522] [S->Admin] CreatureMovePacket id=74750 to=(32097,32217,7) dur=45
+[22:25:38.523] [S->Admin] CreatureMovePacket id=74702 to=(32109,32204,7) dur=45
+[22:25:38.593] [C] H op=5 len=39
+[22:25:40.139] [C] H op=0 len=1
+[22:25:42.147] [C] H op=0 len=1
+[22:25:42.567] [S->Admin] CreatureMovePacket id=72426 to=(32105,32208,6) dur=45
+[22:25:42.568] [S->Admin] CreatureMovePacket id=74750 to=(32096,32217,7) dur=45
+[22:25:42.569] [S->Admin] CreatureMovePacket id=74702 to=(32109,32205,7) dur=45
+[22:25:42.634] [C] H op=5 len=39
+[22:25:43.271] [C] SHOW
+[22:25:43.516] [C] V op=0 len=1
+[22:25:43.696] [C] V op=0 len=1
+[22:25:44.707] [C] V op=0 len=1
+[22:25:45.530] [C] V op=0 len=1
+[22:25:45.706] [C] V op=0 len=1
+[22:25:46.705] [C] V op=0 len=1
+[22:25:46.923] [S->Admin] CreatureMovePacket id=72426 to=(32105,32207,6) dur=45
+[22:25:46.923] [S->Admin] CreatureMovePacket id=74750 to=(32097,32217,7) dur=45
+[22:25:46.924] [S->Admin] CreatureMovePacket id=74702 to=(32109,32204,7) dur=45
+[22:25:46.973] [C] V op=5 len=39
+[22:25:47.538] [C] V op=0 len=1
+[22:25:47.721] [C] V op=0 len=1
+[22:25:48.736] [C] V op=0 len=1
+[22:25:49.516] [C] V op=0 len=1
+[22:25:49.733] [C] V op=0 len=1
+[22:25:50.729] [C] V op=0 len=1
+[22:25:51.099] [S->Admin] CreatureMovePacket id=72426 to=(32105,32206,6) dur=45
+[22:25:51.100] [S->Admin] CreatureMovePacket id=74750 to=(32096,32217,7) dur=45
+[22:25:51.106] [S->Admin] CreatureMovePacket id=74702 to=(32109,32205,7) dur=45
+[22:25:51.161] [C] V op=5 len=39
+[22:25:51.512] [C] V op=0 len=1
+[22:25:51.725] [C] V op=0 len=1
+[22:25:52.509] [C] HIDE
+[22:25:54.140] [C] H op=0 len=1
+[22:25:55.148] [S->Admin] CreatureMovePacket id=72426 to=(32105,32207,6) dur=45
+[22:25:55.150] [S->Admin] CreatureMovePacket id=74750 to=(32097,32217,7) dur=45
+[22:25:55.151] [S->Admin] CreatureMovePacket id=74702 to=(32109,32204,7) dur=45
+[22:25:55.201] [C] H op=5 len=39
+[22:25:56.147] [C] H op=0 len=1
+[22:25:58.169] [C] H op=0 len=1
+[22:25:59.252] [S->Admin] CreatureMovePacket id=72426 to=(32105,32206,6) dur=45
+[22:25:59.253] [S->Admin] CreatureMovePacket id=74750 to=(32097,32218,7) dur=45
+[22:25:59.260] [S->Admin] CreatureMovePacket id=74702 to=(32109,32205,7) dur=45
+[22:25:59.308] [C] H op=5 len=39
+[22:25:59.976] [C] SHOW
+[22:26:00.060] [C] V op=0 len=1
+[22:26:00.213] [C] V op=0 len=1
+[22:26:01.873] [S->Admin] EffectMagicPacket 
+[22:26:01.890] [S->Admin] PlayerLogoutPacket 
+[22:26:01.891] [S->Admin] ContainerClosePacket 
+[22:26:01.892] [S->Admin] CancelMessagePacket 
+[22:26:01.893] [S->Admin] ToggleConditionPacket 
+[22:26:01.893] [S->Admin] ToggleConditionPacket 
+[22:26:01.898] [S->Admin] CreatureForgetPacket 
+[22:26:06.671] [S->Admin] ServerStatePacket 
+[22:26:06.673] [S->Admin] ChunkPacket id=17090793 pos=(3567,4602,0)
+[22:26:06.677] [S->Admin] ChunkPacket id=17090792 pos=(3566,4602,0)
+[22:26:06.678] [S->Admin] ChunkPacket id=17087080 pos=(3567,4601,0)
+[22:26:06.678] [S->Admin] CreatureStatePacket id=72426 name="Dixi" pos=(32105,32206,6)
+[22:26:06.679] [S->Admin] ChunkPacket id=17090794 pos=(3568,4602,0)
+[22:26:06.681] [S->Admin] ChunkPacket id=17094506 pos=(3567,4603,0)
+[22:26:06.681] [S->Admin] CreatureStatePacket id=74750 name="Cipfried" pos=(32097,32218,7)
+[22:26:06.682] [S->Admin] ChunkPacket id=17087079 pos=(3566,4601,0)
+[22:26:06.682] [S->Admin] ChunkPacket id=17094505 pos=(3566,4603,0)
+[22:26:06.683] [S->Admin] ChunkPacket id=17087081 pos=(3568,4601,0)
+[22:26:06.683] [S->Admin] CreatureStatePacket id=74702 name="Obi" pos=(32109,32205,7)
+[22:26:06.684] [S->Admin] ChunkPacket id=17094507 pos=(3568,4603,0)
+[22:26:06.684] [S->Admin] ChunkPacket id=17090791 pos=(3565,4602,0)
+[22:26:06.684] [S->Admin] ChunkPacket id=17087078 pos=(3565,4601,0)
+[22:26:06.684] [S->Admin] ChunkPacket id=17094504 pos=(3565,4603,0)
+[22:26:06.685] [S->Admin] ChunkPacket id=17083367 pos=(3567,4600,0)
+[22:26:06.685] [S->Admin] CreatureStatePacket id=74670 name="Seymour" pos=(32103,32196,7)
+[22:26:06.685] [S->Admin] ChunkPacket id=17083366 pos=(3566,4600,0)
+[22:26:06.687] [S->Admin] ChunkPacket id=17083368 pos=(3568,4600,0)
+[22:26:06.687] [S->Admin] ChunkPacket id=17090795 pos=(3569,4602,0)
+[22:26:06.688] [S->Admin] ChunkPacket id=17087082 pos=(3569,4601,0)
+[22:26:06.688] [S->Admin] ChunkPacket id=17094508 pos=(3569,4603,0)
+[22:26:06.689] [S->Admin] ChunkPacket id=17098219 pos=(3567,4604,0)
+[22:26:06.689] [S->Admin] ChunkPacket id=17098218 pos=(3566,4604,0)
+[22:26:06.689] [S->Admin] ChunkPacket id=17098220 pos=(3568,4604,0)
+[22:26:06.690] [S->Admin] ChunkPacket id=17083365 pos=(3565,4600,0)
+[22:26:06.691] [S->Admin] CreatureStatePacket id=74684 name="Tom" pos=(32085,32198,7)
+[22:26:06.692] [S->Admin] ChunkPacket id=17098217 pos=(3565,4604,0)
+[22:26:06.694] [S->Admin] ChunkPacket id=17083369 pos=(3569,4600,0)
+[22:26:06.695] [S->Admin] ChunkPacket id=17098221 pos=(3569,4604,0)
+[22:26:06.695] [S->Admin] ChunkPacket id=17090790 pos=(3564,4602,0)
+[22:26:06.695] [S->Admin] CreatureStatePacket id=74719 name="Sheep" pos=(32069,32212,7)
+[22:26:06.695] [S->Admin] CreatureStatePacket id=74720 name="Sheep" pos=(32070,32212,7)
+[22:26:06.696] [S->Admin] CreatureStatePacket id=74722 name="Sheep" pos=(32069,32213,7)
+[22:26:06.696] [S->Admin] CreatureStatePacket id=74723 name="Sheep" pos=(32070,32213,7)
+[22:26:06.697] [S->Admin] ChunkPacket id=17087077 pos=(3564,4601,0)
+[22:26:06.697] [S->Admin] ChunkPacket id=17094503 pos=(3564,4603,0)
+[22:26:06.697] [S->Admin] ChunkPacket id=17083364 pos=(3564,4600,0)
+[22:26:06.698] [S->Admin] ChunkPacket id=17098216 pos=(3564,4604,0)
+[22:26:06.698] [S->Admin] ChunkPacket id=17079654 pos=(3567,4599,0)
+[22:26:06.698] [S->Admin] CreatureStatePacket id=72406 name="The Oracle" pos=(32104,32190,6)
+[22:26:06.698] [S->Admin] ChunkPacket id=17079653 pos=(3566,4599,0)
+[22:26:06.699] [S->Admin] ChunkPacket id=17079655 pos=(3568,4599,0)
+[22:26:06.699] [S->Admin] ChunkPacket id=17079652 pos=(3565,4599,0)
+[22:26:06.699] [S->Admin] ChunkPacket id=17079656 pos=(3569,4599,0)
+[22:26:06.700] [S->Admin] ChunkPacket id=17090796 pos=(3570,4602,0)
+[22:26:06.700] [S->Admin] ChunkPacket id=17087083 pos=(3570,4601,0)
+[22:26:06.700] [S->Admin] ChunkPacket id=17094509 pos=(3570,4603,0)
+[22:26:06.701] [S->Admin] ChunkPacket id=17083370 pos=(3570,4600,0)
+[22:26:06.701] [S->Admin] CreatureStatePacket id=74671 name="Deer" pos=(32131,32195,7)
+[22:26:06.701] [S->Admin] ChunkPacket id=17098222 pos=(3570,4604,0)
+[22:26:06.702] [S->Admin] CreatureStatePacket id=74785 name="Snake" pos=(32131,32222,7)
+[22:26:06.702] [S->Admin] ChunkPacket id=17101932 pos=(3567,4605,0)
+[22:26:06.702] [S->Admin] ChunkPacket id=17101931 pos=(3566,4605,0)
+[22:26:06.703] [S->Admin] CreatureStatePacket id=72438 name="Rabbit" pos=(32096,32229,6)
+[22:26:06.703] [S->Admin] CreatureStatePacket id=72437 name="Rabbit" pos=(32090,32229,6)
+[22:26:06.703] [S->Admin] ChunkPacket id=17101933 pos=(3568,4605,0)
+[22:26:06.703] [S->Admin] CreatureStatePacket id=74840 name="Rabbit" pos=(32108,32230,7)
+[22:26:06.704] [S->Admin] CreatureStatePacket id=74841 name="Rabbit" pos=(32109,32230,7)
+[22:26:06.709] [S->Admin] ChunkPacket id=17101930 pos=(3565,4605,0)
+[22:26:06.710] [S->Admin] ChunkPacket id=17101934 pos=(3569,4605,0)
+[22:26:06.711] [S->Admin] ChunkPacket id=17079651 pos=(3564,4599,0)
+[22:26:06.711] [S->Admin] ChunkPacket id=17101929 pos=(3564,4605,0)
+[22:26:06.712] [S->Admin] ChunkPacket id=17079657 pos=(3570,4599,0)
+[22:26:06.712] [S->Admin] ChunkPacket id=17101935 pos=(3570,4605,0)
+[22:26:06.712] [S->Admin] PlayerStatePacket 
+[22:26:06.713] [S->Admin] BlessingUpdatePacket 
+[22:26:06.713] [S->Admin] WorldTimePacket 
+[22:26:06.714] [S->Admin] PlayerLoginPacket 
+[22:26:06.714] [S->Admin] SpellAddPacket 
+[22:26:06.714] [S->Admin] SpellAddPacket 
+[22:26:06.715] [S->Admin] SpellAddPacket 
+[22:26:06.715] [S->Admin] SpellAddPacket 
+[22:26:06.715] [S->Admin] SpellAddPacket 
+[22:26:06.716] [S->Admin] SpellAddPacket 
+[22:26:06.716] [S->Admin] SpellAddPacket 
+[22:26:06.716] [S->Admin] SpellAddPacket 
+[22:26:06.716] [S->Admin] SpellAddPacket 
+[22:26:06.717] [S->Admin] SpellAddPacket 
+[22:26:06.717] [S->Admin] SpellAddPacket 
+[22:26:06.717] [S->Admin] SpellAddPacket 
+[22:26:06.717] [S->Admin] SpellAddPacket 
+[22:26:06.717] [S->Admin] SpellAddPacket 
+[22:26:06.718] [S->Admin] SpellAddPacket 
+[22:26:06.718] [S->Admin] SpellAddPacket 
+[22:26:06.718] [S->Admin] SpellAddPacket 
+[22:26:06.718] [S->Admin] SpellAddPacket 
+[22:26:06.719] [S->Admin] SpellAddPacket 
+[22:26:06.719] [S->Admin] SpellAddPacket 
+[22:26:06.719] [S->Admin] SpellAddPacket 
+[22:26:06.719] [S->Admin] IgnoreDataPacket 
+[22:26:06.719] [S->Admin] GlobalBoostUpdatePacket 
+[22:26:06.720] [S->Admin] CreaturePropertyPacket 
+[22:26:06.720] [S->Admin] CreaturePropertyPacket 
+[22:26:06.720] [S->Admin] CreaturePropertyPacket 
+[22:26:06.721] [S->Admin] CreaturePropertyPacket 
+[22:26:06.721] [S->Admin] CreaturePropertyPacket 
+[22:26:06.721] [S->Admin] CreaturePropertyPacket 
+[22:26:06.722] [S->Admin] TrainTimerPacket 
+[22:26:06.723] [S->Admin] CreatureMovePacket id=72426 to=(32105,32207,6) dur=45
+[22:26:06.725] [S->Admin] CreatureMovePacket id=74750 to=(32097,32217,7) dur=45
+[22:26:06.726] [S->Admin] CreatureMovePacket id=74702 to=(32109,32204,7) dur=45
+[22:26:07.093] [C] V op=19 len=39625
+[22:26:07.349] [C] V op=5 len=39
+[22:26:08.362] [C] V op=0 len=1
+[22:26:08.709] [C] V op=0 len=1
+[22:26:08.719] [S->Admin] PremiumBalanceUpdatePacket 
+[22:26:08.719] [S->Admin] PremiumBalanceUpdatePacket 
+[22:26:08.731] [C] V op=79 len=10
+[22:26:09.394] [C] V op=0 len=1
+[22:26:10.394] [C] V op=0 len=1
+[22:26:10.677] [C] V op=0 len=1
+[22:26:10.854] [S->Admin] CreatureMovePacket id=72426 to=(32105,32206,6) dur=45
+[22:26:10.854] [S->Admin] CreatureMovePacket id=74750 to=(32097,32218,7) dur=45
+[22:26:10.856] [S->Admin] CreatureMovePacket id=74702 to=(32109,32205,7) dur=45
+[22:26:10.909] [C] V op=5 len=39
+[22:26:11.393] [C] V op=0 len=1
+[22:26:11.980] [S->Admin] ContainerOpenPacket 
+[22:26:12.001] [C] V op=6 len=75
+[22:26:12.404] [C] V op=0 len=1
+[22:26:12.671] [C] V op=0 len=1
+[22:26:13.404] [C] V op=0 len=1
+[22:26:14.407] [C] V op=0 len=1
+[22:26:14.673] [C] V op=0 len=1
+[22:26:14.957] [S->Admin] CreatureMovePacket id=72426 to=(32105,32207,6) dur=45
+[22:26:14.958] [S->Admin] CreatureMovePacket id=74750 to=(32097,32217,7) dur=45
+[22:26:14.960] [S->Admin] CreatureMovePacket id=74702 to=(32109,32204,7) dur=45
+[22:26:15.000] [C] V op=5 len=39
+[22:26:15.399] [C] V op=0 len=1
+[22:26:16.398] [C] V op=0 len=1
+[22:26:17.598] [C] V op=0 len=1
+[22:26:17.626] [S->Admin] EffectMagicPacket 
+[22:26:17.627] [S->Admin] PlayerLogoutPacket 
+[22:26:17.629] [S->Admin] ContainerClosePacket 
+[22:26:17.679] [S->Admin] CancelMessagePacket 
+[22:26:17.684] [S->Admin] ToggleConditionPacket 
+[22:26:17.693] [S->Admin] ToggleConditionPacket 
+[22:26:17.695] [S->Admin] CreatureForgetPacket 
+[22:26:28.374] [S->Admin] ServerStatePacket 
+[22:26:28.376] [S->Admin] ChunkPacket id=17090793 pos=(3567,4602,0)
+[22:26:28.378] [S->Admin] ChunkPacket id=17090792 pos=(3566,4602,0)
+[22:26:28.380] [S->Admin] ChunkPacket id=17087080 pos=(3567,4601,0)
+[22:26:28.381] [S->Admin] CreatureStatePacket id=72426 name="Dixi" pos=(32105,32207,6)
+[22:26:28.382] [S->Admin] ChunkPacket id=17090794 pos=(3568,4602,0)
+[22:26:28.382] [S->Admin] ChunkPacket id=17094506 pos=(3567,4603,0)
+[22:26:28.382] [S->Admin] CreatureStatePacket id=74750 name="Cipfried" pos=(32097,32217,7)
+[22:26:28.383] [S->Admin] ChunkPacket id=17087079 pos=(3566,4601,0)
+[22:26:28.383] [S->Admin] ChunkPacket id=17094505 pos=(3566,4603,0)
+[22:26:28.384] [S->Admin] ChunkPacket id=17087081 pos=(3568,4601,0)
+[22:26:28.384] [S->Admin] CreatureStatePacket id=74702 name="Obi" pos=(32109,32204,7)
+[22:26:28.384] [S->Admin] ChunkPacket id=17094507 pos=(3568,4603,0)
+[22:26:28.386] [S->Admin] ChunkPacket id=17090791 pos=(3565,4602,0)
+[22:26:28.387] [S->Admin] ChunkPacket id=17087078 pos=(3565,4601,0)
+[22:26:28.388] [S->Admin] ChunkPacket id=17094504 pos=(3565,4603,0)
+[22:26:28.388] [S->Admin] ChunkPacket id=17083367 pos=(3567,4600,0)
+[22:26:28.389] [S->Admin] CreatureStatePacket id=74670 name="Seymour" pos=(32103,32195,7)
+[22:26:28.390] [S->Admin] ChunkPacket id=17083366 pos=(3566,4600,0)
+[22:26:28.391] [S->Admin] ChunkPacket id=17083368 pos=(3568,4600,0)
+[22:26:28.392] [S->Admin] ChunkPacket id=17090795 pos=(3569,4602,0)
+[22:26:28.392] [S->Admin] ChunkPacket id=17087082 pos=(3569,4601,0)
+[22:26:28.393] [S->Admin] ChunkPacket id=17094508 pos=(3569,4603,0)
+[22:26:28.393] [S->Admin] ChunkPacket id=17098219 pos=(3567,4604,0)
+[22:26:28.394] [S->Admin] ChunkPacket id=17098218 pos=(3566,4604,0)
+[22:26:28.394] [S->Admin] ChunkPacket id=17098220 pos=(3568,4604,0)
+[22:26:28.395] [S->Admin] ChunkPacket id=17083365 pos=(3565,4600,0)
+[22:26:28.396] [S->Admin] CreatureStatePacket id=74684 name="Tom" pos=(32085,32199,7)
+[22:26:28.396] [S->Admin] ChunkPacket id=17098217 pos=(3565,4604,0)
+[22:26:28.396] [S->Admin] ChunkPacket id=17083369 pos=(3569,4600,0)
+[22:26:28.397] [S->Admin] ChunkPacket id=17098221 pos=(3569,4604,0)
+[22:26:28.397] [S->Admin] ChunkPacket id=17090790 pos=(3564,4602,0)
+[22:26:28.397] [S->Admin] CreatureStatePacket id=74719 name="Sheep" pos=(32069,32212,7)
+[22:26:28.398] [S->Admin] CreatureStatePacket id=74720 name="Sheep" pos=(32070,32212,7)
+[22:26:28.398] [S->Admin] CreatureStatePacket id=74722 name="Sheep" pos=(32069,32213,7)
+[22:26:28.398] [S->Admin] CreatureStatePacket id=74723 name="Sheep" pos=(32070,32213,7)
+[22:26:28.398] [S->Admin] ChunkPacket id=17087077 pos=(3564,4601,0)
+[22:26:28.399] [S->Admin] ChunkPacket id=17094503 pos=(3564,4603,0)
+[22:26:28.399] [S->Admin] ChunkPacket id=17083364 pos=(3564,4600,0)
+[22:26:28.400] [S->Admin] ChunkPacket id=17098216 pos=(3564,4604,0)
+[22:26:28.402] [S->Admin] ChunkPacket id=17079654 pos=(3567,4599,0)
+[22:26:28.403] [S->Admin] CreatureStatePacket id=72406 name="The Oracle" pos=(32104,32190,6)
+[22:26:28.404] [S->Admin] ChunkPacket id=17079653 pos=(3566,4599,0)
+[22:26:28.405] [S->Admin] ChunkPacket id=17079655 pos=(3568,4599,0)
+[22:26:28.406] [S->Admin] ChunkPacket id=17079652 pos=(3565,4599,0)
+[22:26:28.406] [S->Admin] ChunkPacket id=17079656 pos=(3569,4599,0)
+[22:26:28.407] [S->Admin] ChunkPacket id=17090796 pos=(3570,4602,0)
+[22:26:28.407] [S->Admin] ChunkPacket id=17087083 pos=(3570,4601,0)
+[22:26:28.407] [S->Admin] ChunkPacket id=17094509 pos=(3570,4603,0)
+[22:26:28.408] [S->Admin] ChunkPacket id=17083370 pos=(3570,4600,0)
+[22:26:28.408] [S->Admin] CreatureStatePacket id=74671 name="Deer" pos=(32131,32195,7)
+[22:26:28.408] [S->Admin] ChunkPacket id=17098222 pos=(3570,4604,0)
+[22:26:28.408] [S->Admin] CreatureStatePacket id=74785 name="Snake" pos=(32131,32222,7)
+[22:26:28.409] [S->Admin] ChunkPacket id=17101932 pos=(3567,4605,0)
+[22:26:28.409] [S->Admin] ChunkPacket id=17101931 pos=(3566,4605,0)
+[22:26:28.409] [S->Admin] CreatureStatePacket id=72438 name="Rabbit" pos=(32096,32229,6)
+[22:26:28.409] [S->Admin] CreatureStatePacket id=72437 name="Rabbit" pos=(32090,32229,6)
+[22:26:28.410] [S->Admin] ChunkPacket id=17101933 pos=(3568,4605,0)
+[22:26:28.410] [S->Admin] CreatureStatePacket id=74840 name="Rabbit" pos=(32108,32230,7)
+[22:26:28.410] [S->Admin] CreatureStatePacket id=74841 name="Rabbit" pos=(32109,32230,7)
+[22:26:28.410] [S->Admin] ChunkPacket id=17101930 pos=(3565,4605,0)
+[22:26:28.411] [S->Admin] ChunkPacket id=17101934 pos=(3569,4605,0)
+[22:26:28.411] [S->Admin] ChunkPacket id=17079651 pos=(3564,4599,0)
+[22:26:28.411] [S->Admin] ChunkPacket id=17101929 pos=(3564,4605,0)
+[22:26:28.411] [S->Admin] ChunkPacket id=17079657 pos=(3570,4599,0)
+[22:26:28.411] [S->Admin] ChunkPacket id=17101935 pos=(3570,4605,0)
+[22:26:28.412] [S->Admin] PlayerStatePacket 
+[22:26:28.412] [S->Admin] BlessingUpdatePacket 
+[22:26:28.412] [S->Admin] WorldTimePacket 
+[22:26:28.412] [S->Admin] PlayerLoginPacket 
+[22:26:28.412] [S->Admin] SpellAddPacket 
+[22:26:28.412] [S->Admin] SpellAddPacket 
+[22:26:28.413] [S->Admin] SpellAddPacket 
+[22:26:28.413] [S->Admin] SpellAddPacket 
+[22:26:28.413] [S->Admin] SpellAddPacket 
+[22:26:28.413] [S->Admin] SpellAddPacket 
+[22:26:28.413] [S->Admin] SpellAddPacket 
+[22:26:28.414] [S->Admin] SpellAddPacket 
+[22:26:28.414] [S->Admin] SpellAddPacket 
+[22:26:28.414] [S->Admin] SpellAddPacket 
+[22:26:28.414] [S->Admin] SpellAddPacket 
+[22:26:28.415] [S->Admin] SpellAddPacket 
+[22:26:28.415] [S->Admin] SpellAddPacket 
+[22:26:28.415] [S->Admin] SpellAddPacket 
+[22:26:28.416] [S->Admin] SpellAddPacket 
+[22:26:28.416] [S->Admin] SpellAddPacket 
+[22:26:28.416] [S->Admin] SpellAddPacket 
+[22:26:28.416] [S->Admin] SpellAddPacket 
+[22:26:28.417] [S->Admin] SpellAddPacket 
+[22:26:28.417] [S->Admin] SpellAddPacket 
+[22:26:28.417] [S->Admin] SpellAddPacket 
+[22:26:28.417] [S->Admin] IgnoreDataPacket 
+[22:26:28.417] [S->Admin] GlobalBoostUpdatePacket 
+[22:26:28.418] [S->Admin] CreaturePropertyPacket 
+[22:26:28.419] [S->Admin] CreaturePropertyPacket 
+[22:26:28.420] [S->Admin] CreaturePropertyPacket 
+[22:26:28.420] [S->Admin] CreaturePropertyPacket 
+[22:26:28.420] [S->Admin] CreaturePropertyPacket 
+[22:26:28.421] [S->Admin] CreaturePropertyPacket 
+[22:26:28.421] [S->Admin] TrainTimerPacket 
+[22:26:28.422] [S->Admin] CreatureMovePacket id=72426 to=(32105,32206,6) dur=45
+[22:26:28.422] [S->Admin] CreatureMovePacket id=74750 to=(32097,32216,7) dur=45
+[22:26:28.423] [S->Admin] CreatureMovePacket id=74702 to=(32110,32204,7) dur=45
+[22:26:28.821] [C] V op=19 len=39625
+[22:26:28.980] [C] V op=5 len=39
+[22:26:29.991] [C] V op=0 len=1
+[22:26:30.376] [C] V op=0 len=1
+[22:26:30.590] [S->Admin] ContainerOpenPacket 
+[22:26:30.603] [C] V op=6 len=75
+[22:26:30.989] [C] V op=0 len=1
+[22:26:31.990] [C] V op=0 len=1
+[22:26:32.374] [C] V op=0 len=1
+[22:26:32.558] [S->Admin] CreatureMovePacket id=72426 to=(32105,32207,6) dur=45
+[22:26:32.559] [S->Admin] CreatureMovePacket id=74750 to=(32097,32217,7) dur=45
+[22:26:32.559] [S->Admin] CreatureMovePacket id=74702 to=(32109,32204,7) dur=45
+[22:26:32.608] [C] V op=5 len=39
+[22:26:33.004] [C] V op=0 len=1
+[22:26:34.001] [C] V op=0 len=1
+[22:26:34.384] [C] V op=0 len=1
+[22:26:35.007] [C] V op=0 len=1
+[22:26:35.995] [C] V op=0 len=1
+[22:26:36.370] [C] V op=0 len=1
+[22:26:36.606] [S->Admin] CreatureMovePacket id=72426 to=(32105,32206,6) dur=45
+[22:26:36.608] [S->Admin] CreatureMovePacket id=74750 to=(32096,32217,7) dur=45
+[22:26:36.609] [S->Admin] CreatureMovePacket id=74702 to=(32109,32205,7) dur=45
+[22:26:36.661] [C] V op=5 len=39
+[22:26:36.993] [C] V op=0 len=1
+[22:26:37.994] [C] V op=0 len=1
+[22:26:38.203] [C] HIDE
+[22:26:39.147] [C] H op=0 len=1
+[22:26:40.662] [S->Admin] CreatureMovePacket id=72426 to=(32105,32207,6) dur=45
+[22:26:40.663] [S->Admin] CreatureMovePacket id=74750 to=(32097,32217,7) dur=45
+[22:26:40.663] [S->Admin] CreatureMovePacket id=74702 to=(32109,32204,7) dur=45
+[22:26:40.720] [C] H op=5 len=39
+[22:26:41.159] [C] H op=0 len=1
+[22:26:42.949] [C] SHOW
+[22:26:43.123] [C] V op=0 len=1
+[22:26:43.666] [C] HIDE
+[22:26:43.810] [S->Admin] ChannelDefaultPacket 
+[22:26:43.864] [C] H op=25 len=72
+[22:26:44.824] [S->Admin] CreatureMovePacket id=72426 to=(32105,32208,6) dur=45
+[22:26:44.824] [S->Admin] CreatureMovePacket id=74750 to=(32096,32217,7) dur=45
+[22:26:44.825] [S->Admin] CreatureMovePacket id=74702 to=(32109,32205,7) dur=45
+[22:26:44.876] [C] H op=5 len=39
+[22:26:45.143] [C] H op=0 len=1
+[22:26:47.166] [C] H op=0 len=1
+[22:26:48.867] [S->Admin] CreatureMovePacket id=72426 to=(32105,32207,6) dur=45
+[22:26:48.869] [S->Admin] CreatureMovePacket id=74750 to=(32097,32217,7) dur=45
+[22:26:48.870] [S->Admin] CreatureMovePacket id=74702 to=(32109,32204,7) dur=45
+[22:26:48.914] [C] H op=5 len=39
+[22:26:49.322] [C] H op=0 len=1
+[22:26:51.151] [C] H op=0 len=1
+[22:26:52.992] [S->Admin] CreatureMovePacket id=72426 to=(32105,32206,6) dur=45
+[22:26:52.993] [S->Admin] CreatureMovePacket id=74750 to=(32098,32217,7) dur=45
+[22:26:52.993] [S->Admin] CreatureMovePacket id=74702 to=(32109,32205,7) dur=45
+[22:26:53.044] [C] H op=5 len=39
+[22:26:53.153] [C] H op=0 len=1
+[22:26:55.162] [C] H op=0 len=1
+[22:26:57.037] [S->Admin] CreatureMovePacket id=72426 to=(32105,32207,6) dur=45
+[22:26:57.037] [S->Admin] CreatureMovePacket id=74750 to=(32097,32217,7) dur=45
+[22:26:57.038] [S->Admin] CreatureMovePacket id=74702 to=(32109,32204,7) dur=45
+[22:26:57.086] [C] H op=5 len=39
+[22:26:57.144] [C] H op=0 len=1
+[22:26:59.067] [S->Admin] ChannelDefaultPacket 
+[22:26:59.119] [C] H op=25 len=72
+[22:26:59.160] [C] H op=0 len=1
+[22:27:01.078] [S->Admin] CreatureMovePacket id=72426 to=(32105,32208,6) dur=45
+[22:27:01.079] [S->Admin] CreatureMovePacket id=74750 to=(32098,32217,7) dur=45
+[22:27:01.079] [S->Admin] CreatureMovePacket id=74702 to=(32110,32204,7) dur=45
+[22:27:01.126] [C] H op=5 len=39
+[22:27:01.149] [C] H op=0 len=1
+[22:27:03.143] [C] H op=0 len=1
+[22:27:05.094] [S->Admin] CreatureMovePacket id=72426 to=(32105,32207,6) dur=45
+[22:27:05.094] [S->Admin] CreatureMovePacket id=74750 to=(32097,32217,7) dur=45
+[22:27:05.095] [S->Admin] CreatureMovePacket id=74702 to=(32109,32204,7) dur=45
+[22:27:05.142] [C] H op=0 len=1
+[22:27:05.155] [C] H op=5 len=39
+[22:27:07.139] [C] H op=0 len=1
+[22:27:09.129] [S->Admin] CreatureMovePacket id=72426 to=(32105,32208,6) dur=45
+[22:27:09.129] [S->Admin] CreatureMovePacket id=74750 to=(32097,32218,7) dur=45
+[22:27:09.130] [S->Admin] CreatureMovePacket id=74702 to=(32110,32204,7) dur=45
+[22:27:09.156] [C] H op=0 len=1
+[22:27:09.183] [C] H op=5 len=39
+[22:27:11.147] [C] H op=0 len=1
+[22:27:13.143] [C] H op=0 len=1
+[22:27:13.154] [S->Admin] CreatureMovePacket id=72426 to=(32105,32207,6) dur=45
+[22:27:13.155] [S->Admin] CreatureMovePacket id=74750 to=(32097,32217,7) dur=45
+[22:27:13.155] [S->Admin] CreatureMovePacket id=74702 to=(32109,32204,7) dur=45
+[22:27:13.206] [C] H op=5 len=39
+[22:27:15.142] [C] H op=0 len=1
+[22:27:17.154] [C] H op=0 len=1
+[22:27:17.217] [S->Admin] CreatureMovePacket id=72426 to=(32105,32206,6) dur=45
+[22:27:17.218] [S->Admin] CreatureMovePacket id=74750 to=(32098,32217,7) dur=45
+[22:27:17.220] [S->Admin] CreatureMovePacket id=74702 to=(32110,32204,7) dur=45
+[22:27:17.271] [C] H op=5 len=39
+[22:27:17.527] [C] SHOW
+[22:27:17.773] [C] V op=0 len=1
+[22:27:18.372] [C] V op=0 len=1
+[22:27:18.406] [C] HIDE
+[22:27:21.171] [C] H op=0 len=1
+[22:27:21.308] [S->Admin] CreatureMovePacket id=72426 to=(32105,32207,6) dur=45
+[22:27:21.309] [S->Admin] CreatureMovePacket id=74750 to=(32097,32217,7) dur=45
+[22:27:21.309] [S->Admin] CreatureMovePacket id=74702 to=(32109,32204,7) dur=45
+[22:27:21.359] [C] H op=5 len=39
+[22:27:23.237] [C] H op=0 len=1
+[22:27:24.979] [C] SHOW
+[22:27:25.040] [C] V op=0 len=1
+[22:27:25.394] [C] V op=0 len=1
+[22:27:25.449] [S->Admin] CreatureMovePacket id=72426 to=(32105,32206,6) dur=45
+[22:27:25.450] [S->Admin] CreatureMovePacket id=74750 to=(32098,32217,7) dur=45
+[22:27:25.453] [S->Admin] CreatureMovePacket id=74702 to=(32109,32205,7) dur=45
+[22:27:25.514] [C] V op=5 len=39
+[22:27:27.108] [S->Admin] EffectMagicPacket 
+[22:27:27.111] [S->Admin] PlayerLogoutPacket 
+[22:27:27.117] [S->Admin] ContainerClosePacket 
+[22:27:27.160] [S->Admin] CancelMessagePacket 
+[22:27:27.210] [S->Admin] ToggleConditionPacket 
+[22:27:27.213] [S->Admin] ToggleConditionPacket 
+[22:27:27.220] [S->Admin] CreatureForgetPacket 
+[22:27:36.721] [S->Admin] ServerStatePacket 
+[22:27:36.722] [S->Admin] ChunkPacket id=17090793 pos=(3567,4602,0)
+[22:27:36.722] [S->Admin] ChunkPacket id=17090792 pos=(3566,4602,0)
+[22:27:36.723] [S->Admin] ChunkPacket id=17087080 pos=(3567,4601,0)
+[22:27:36.723] [S->Admin] CreatureStatePacket id=72426 name="Dixi" pos=(32105,32206,6)
+[22:27:36.724] [S->Admin] ChunkPacket id=17090794 pos=(3568,4602,0)
+[22:27:36.727] [S->Admin] ChunkPacket id=17094506 pos=(3567,4603,0)
+[22:27:36.728] [S->Admin] CreatureStatePacket id=74750 name="Cipfried" pos=(32098,32217,7)
+[22:27:36.728] [S->Admin] ChunkPacket id=17087079 pos=(3566,4601,0)
+[22:27:36.729] [S->Admin] ChunkPacket id=17094505 pos=(3566,4603,0)
+[22:27:36.729] [S->Admin] ChunkPacket id=17087081 pos=(3568,4601,0)
+[22:27:36.729] [S->Admin] CreatureStatePacket id=74702 name="Obi" pos=(32109,32205,7)
+[22:27:36.730] [S->Admin] ChunkPacket id=17094507 pos=(3568,4603,0)
+[22:27:36.730] [S->Admin] ChunkPacket id=17090791 pos=(3565,4602,0)
+[22:27:36.732] [S->Admin] ChunkPacket id=17087078 pos=(3565,4601,0)
+[22:27:36.733] [S->Admin] ChunkPacket id=17094504 pos=(3565,4603,0)
+[22:27:36.734] [S->Admin] ChunkPacket id=17083367 pos=(3567,4600,0)
+[22:27:36.734] [S->Admin] CreatureStatePacket id=74670 name="Seymour" pos=(32103,32196,7)
+[22:27:36.734] [S->Admin] ChunkPacket id=17083366 pos=(3566,4600,0)
+[22:27:36.735] [S->Admin] ChunkPacket id=17083368 pos=(3568,4600,0)
+[22:27:36.736] [S->Admin] ChunkPacket id=17090795 pos=(3569,4602,0)
+[22:27:36.737] [S->Admin] ChunkPacket id=17087082 pos=(3569,4601,0)
+[22:27:36.738] [S->Admin] ChunkPacket id=17094508 pos=(3569,4603,0)
+[22:27:36.739] [S->Admin] ChunkPacket id=17098219 pos=(3567,4604,0)
+[22:27:36.739] [S->Admin] ChunkPacket id=17098218 pos=(3566,4604,0)
+[22:27:36.739] [S->Admin] ChunkPacket id=17098220 pos=(3568,4604,0)
+[22:27:36.740] [S->Admin] ChunkPacket id=17083365 pos=(3565,4600,0)
+[22:27:36.740] [S->Admin] CreatureStatePacket id=74684 name="Tom" pos=(32085,32198,7)
+[22:27:36.740] [S->Admin] ChunkPacket id=17098217 pos=(3565,4604,0)
+[22:27:36.741] [S->Admin] ChunkPacket id=17083369 pos=(3569,4600,0)
+[22:27:36.741] [S->Admin] ChunkPacket id=17098221 pos=(3569,4604,0)
+[22:27:36.741] [S->Admin] ChunkPacket id=17090790 pos=(3564,4602,0)
+[22:27:36.742] [S->Admin] CreatureStatePacket id=74719 name="Sheep" pos=(32069,32212,7)
+[22:27:36.742] [S->Admin] CreatureStatePacket id=74720 name="Sheep" pos=(32070,32212,7)
+[22:27:36.742] [S->Admin] CreatureStatePacket id=74722 name="Sheep" pos=(32069,32213,7)
+[22:27:36.743] [S->Admin] CreatureStatePacket id=74723 name="Sheep" pos=(32070,32213,7)
+[22:27:36.743] [S->Admin] ChunkPacket id=17087077 pos=(3564,4601,0)
+[22:27:36.743] [S->Admin] ChunkPacket id=17094503 pos=(3564,4603,0)
+[22:27:36.744] [S->Admin] ChunkPacket id=17083364 pos=(3564,4600,0)
+[22:27:36.744] [S->Admin] ChunkPacket id=17098216 pos=(3564,4604,0)
+[22:27:36.745] [S->Admin] ChunkPacket id=17079654 pos=(3567,4599,0)
+[22:27:36.745] [S->Admin] CreatureStatePacket id=72406 name="The Oracle" pos=(32104,32190,6)
+[22:27:36.745] [S->Admin] ChunkPacket id=17079653 pos=(3566,4599,0)
+[22:27:36.746] [S->Admin] ChunkPacket id=17079655 pos=(3568,4599,0)
+[22:27:36.746] [S->Admin] ChunkPacket id=17079652 pos=(3565,4599,0)
+[22:27:36.747] [S->Admin] ChunkPacket id=17079656 pos=(3569,4599,0)
+[22:27:36.748] [S->Admin] ChunkPacket id=17090796 pos=(3570,4602,0)
+[22:27:36.748] [S->Admin] ChunkPacket id=17087083 pos=(3570,4601,0)
+[22:27:36.749] [S->Admin] ChunkPacket id=17094509 pos=(3570,4603,0)
+[22:27:36.750] [S->Admin] ChunkPacket id=17083370 pos=(3570,4600,0)
+[22:27:36.751] [S->Admin] CreatureStatePacket id=74671 name="Deer" pos=(32131,32195,7)
+[22:27:36.751] [S->Admin] ChunkPacket id=17098222 pos=(3570,4604,0)
+[22:27:36.751] [S->Admin] CreatureStatePacket id=74785 name="Snake" pos=(32131,32222,7)
+[22:27:36.751] [S->Admin] ChunkPacket id=17101932 pos=(3567,4605,0)
+[22:27:36.752] [S->Admin] ChunkPacket id=17101931 pos=(3566,4605,0)
+[22:27:36.752] [S->Admin] CreatureStatePacket id=72438 name="Rabbit" pos=(32096,32229,6)
+[22:27:36.752] [S->Admin] CreatureStatePacket id=72437 name="Rabbit" pos=(32090,32229,6)
+[22:27:36.752] [S->Admin] ChunkPacket id=17101933 pos=(3568,4605,0)
+[22:27:36.752] [S->Admin] CreatureStatePacket id=74840 name="Rabbit" pos=(32108,32230,7)
+[22:27:36.753] [S->Admin] CreatureStatePacket id=74841 name="Rabbit" pos=(32109,32230,7)
+[22:27:36.753] [S->Admin] ChunkPacket id=17101930 pos=(3565,4605,0)
+[22:27:36.753] [S->Admin] ChunkPacket id=17101934 pos=(3569,4605,0)
+[22:27:36.753] [S->Admin] ChunkPacket id=17079651 pos=(3564,4599,0)
+[22:27:36.753] [S->Admin] ChunkPacket id=17101929 pos=(3564,4605,0)
+[22:27:36.754] [S->Admin] ChunkPacket id=17079657 pos=(3570,4599,0)
+[22:27:36.754] [S->Admin] ChunkPacket id=17101935 pos=(3570,4605,0)
+[22:27:36.754] [S->Admin] PlayerStatePacket 
+[22:27:36.755] [S->Admin] BlessingUpdatePacket 
+[22:27:36.755] [S->Admin] WorldTimePacket 
+[22:27:36.755] [S->Admin] PlayerLoginPacket 
+[22:27:36.755] [S->Admin] SpellAddPacket 
+[22:27:36.755] [S->Admin] SpellAddPacket 
+[22:27:36.756] [S->Admin] SpellAddPacket 
+[22:27:36.756] [S->Admin] SpellAddPacket 
+[22:27:36.756] [S->Admin] SpellAddPacket 
+[22:27:36.757] [S->Admin] SpellAddPacket 
+[22:27:36.757] [S->Admin] SpellAddPacket 
+[22:27:36.757] [S->Admin] SpellAddPacket 
+[22:27:36.757] [S->Admin] SpellAddPacket 
+[22:27:36.757] [S->Admin] SpellAddPacket 
+[22:27:36.758] [S->Admin] SpellAddPacket 
+[22:27:36.758] [S->Admin] SpellAddPacket 
+[22:27:36.758] [S->Admin] SpellAddPacket 
+[22:27:36.758] [S->Admin] SpellAddPacket 
+[22:27:36.758] [S->Admin] SpellAddPacket 
+[22:27:36.759] [S->Admin] SpellAddPacket 
+[22:27:36.759] [S->Admin] SpellAddPacket 
+[22:27:36.759] [S->Admin] SpellAddPacket 
+[22:27:36.759] [S->Admin] SpellAddPacket 
+[22:27:36.759] [S->Admin] SpellAddPacket 
+[22:27:36.759] [S->Admin] SpellAddPacket 
+[22:27:36.760] [S->Admin] IgnoreDataPacket 
+[22:27:36.760] [S->Admin] GlobalBoostUpdatePacket 
+[22:27:36.760] [S->Admin] CreaturePropertyPacket 
+[22:27:36.760] [S->Admin] CreaturePropertyPacket 
+[22:27:36.761] [S->Admin] CreaturePropertyPacket 
+[22:27:36.761] [S->Admin] CreaturePropertyPacket 
+[22:27:36.761] [S->Admin] CreaturePropertyPacket 
+[22:27:36.761] [S->Admin] CreaturePropertyPacket 
+[22:27:36.761] [S->Admin] TrainTimerPacket 
+[22:27:36.763] [S->Admin] CreatureMovePacket id=72426 to=(32105,32207,6) dur=45
+[22:27:36.763] [S->Admin] CreatureMovePacket id=74750 to=(32097,32217,7) dur=45
+[22:27:36.763] [S->Admin] CreatureMovePacket id=74702 to=(32109,32204,7) dur=45
+[22:27:37.167] [C] V op=19 len=39625
+[22:27:37.403] [C] V op=5 len=39
+[22:27:38.278] [S->Admin] ContainerOpenPacket 
+[22:27:38.299] [C] V op=6 len=75
+[22:27:38.477] [C] V op=0 len=1
+[22:27:38.725] [C] V op=0 len=1
+[22:27:39.466] [C] V op=0 len=1
+[22:27:40.464] [C] V op=0 len=1
+[22:27:40.719] [C] V op=0 len=1
+[22:27:40.807] [S->Admin] CreatureMovePacket id=72426 to=(32105,32208,6) dur=45
+[22:27:40.808] [S->Admin] CreatureMovePacket id=74750 to=(32097,32218,7) dur=45
+[22:27:40.808] [S->Admin] CreatureMovePacket id=74702 to=(32110,32204,7) dur=45
+[22:27:40.867] [C] V op=5 len=39
+[22:27:41.470] [C] V op=0 len=1
+[22:27:42.503] [C] V op=0 len=1
+[22:27:42.725] [C] V op=0 len=1
+[22:27:43.528] [C] V op=0 len=1
+[22:27:44.526] [C] V op=0 len=1
+[22:27:44.725] [C] V op=0 len=1
+[22:27:44.847] [S->Admin] CreatureMovePacket id=72426 to=(32105,32207,6) dur=45
+[22:27:44.848] [S->Admin] CreatureMovePacket id=74750 to=(32097,32217,7) dur=45
+[22:27:44.851] [S->Admin] CreatureMovePacket id=74702 to=(32109,32204,7) dur=45
+[22:27:44.908] [C] V op=5 len=39
+[22:27:45.527] [C] V op=0 len=1
+[22:27:46.579] [C] V op=0 len=1
+[22:27:46.723] [C] V op=0 len=1
+[22:27:47.573] [C] V op=0 len=1
+[22:27:48.030] [S->Admin] ContainerRemovePacket guid=3 idx=0
+[22:27:48.031] [S->Admin] PremiumBalanceUpdatePacket 
+[22:27:48.031] [S->Admin] BlessingUpdatePacket 
+[22:27:48.032] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:27:48.032] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:27:48.033] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:27:48.034] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:27:48.035] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:27:48.035] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:27:48.035] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:27:48.035] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:27:48.036] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:27:48.036] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:27:48.036] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:27:48.036] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:27:48.036] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:27:48.037] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:27:48.037] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:27:48.037] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:27:48.037] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:27:48.037] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:27:48.038] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:27:48.038] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:27:48.038] [S->Admin] ContainerAddPacket guid=3 idx=5
+[22:27:48.038] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:27:48.039] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:27:48.039] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:27:48.039] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:27:48.039] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:27:48.039] [S->Admin] ContainerAddPacket guid=3 idx=5
+[22:27:48.039] [S->Admin] ContainerAddPacket guid=3 idx=6
+[22:27:48.040] [S->Admin] EffectMagicPacket 
+[22:27:48.040] [S->Admin] CancelMessagePacket 
+[22:27:48.053] [C] V op=13 len=319
+[22:27:48.568] [C] V op=0 len=1
+[22:27:48.718] [C] V op=0 len=1
+[22:27:48.911] [S->Admin] CreatureMovePacket id=72426 to=(32105,32206,6) dur=45
+[22:27:48.913] [S->Admin] CreatureMovePacket id=74750 to=(32096,32217,7) dur=45
+[22:27:48.914] [S->Admin] CreatureMovePacket id=74702 to=(32109,32205,7) dur=45
+[22:27:48.951] [C] V op=5 len=39
+[22:27:49.567] [C] V op=0 len=1
+[22:27:50.226] [S->Admin] CreatureMovePacket id=90405 to=(32096,32209,7) dur=2
+[22:27:50.250] [C] V op=5 len=13
+[22:27:50.379] [S->Admin] CreatureMovePacket id=90405 to=(32096,32208,7) dur=2
+[22:27:50.390] [C] V op=5 len=13
+[22:27:50.618] [C] V op=0 len=1
+[22:27:50.724] [S->Admin] CreatureMovePacket id=90405 to=(32096,32209,7) dur=2
+[22:27:50.725] [S->Admin] CreaturePropertyPacket 
+[22:27:50.736] [C] V op=5 len=23
+[22:27:50.754] [C] V op=0 len=1
+[22:27:51.645] [C] V op=0 len=1
+[22:27:51.686] [S->Admin] ContainerRemovePacket guid=3 idx=0
+[22:27:51.687] [S->Admin] ContainerRemovePacket guid=3 idx=1
+[22:27:51.688] [S->Admin] ContainerRemovePacket guid=3 idx=2
+[22:27:51.688] [S->Admin] ContainerRemovePacket guid=3 idx=3
+[22:27:51.689] [S->Admin] ContainerRemovePacket guid=3 idx=4
+[22:27:51.690] [S->Admin] ContainerRemovePacket guid=3 idx=5
+[22:27:51.690] [S->Admin] ContainerRemovePacket guid=3 idx=6
+[22:27:51.691] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:27:51.691] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:27:51.691] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:27:51.691] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:27:51.692] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:27:51.692] [S->Admin] ContainerAddPacket guid=3 idx=5
+[22:27:51.692] [S->Admin] ItemAddPacket id=3146 pos=(32096,32209,7) idx=255
+[22:27:51.701] [C] V op=13 len=114
+[22:27:52.247] [S->Admin] CreatureMovePacket id=90405 to=(32096,32210,7) dur=2
+[22:27:52.260] [C] V op=5 len=13
+[22:27:52.353] [S->Admin] CreatureMovePacket id=90405 to=(32096,32211,7) dur=2
+[22:27:52.430] [C] V op=5 len=13
+[22:27:52.469] [S->Admin] ChunkPacket id=17090789 pos=(3563,4602,0)
+[22:27:52.470] [S->Admin] CreatureStatePacket id=74721 name="Sheep" pos=(32068,32213,7)
+[22:27:52.471] [S->Admin] ChunkPacket id=17087076 pos=(3563,4601,0)
+[22:27:52.471] [S->Admin] ChunkPacket id=17094502 pos=(3563,4603,0)
+[22:27:52.473] [S->Admin] ChunkPacket id=17083363 pos=(3563,4600,0)
+[22:27:52.474] [S->Admin] ChunkPacket id=17098215 pos=(3563,4604,0)
+[22:27:52.479] [S->Admin] CreatureStatePacket id=74800 name="Lily" pos=(32068,32225,7)
+[22:27:52.481] [S->Admin] ChunkPacket id=17079650 pos=(3563,4599,0)
+[22:27:52.482] [S->Admin] ChunkPacket id=17101928 pos=(3563,4605,0)
+[22:27:52.483] [S->Admin] CreatureMovePacket id=90405 to=(32095,32211,7) dur=2
+[22:27:52.490] [S->Admin] CreaturePropertyPacket 
+[22:27:52.540] [C] V op=2 len=3909
+[22:27:52.695] [C] V op=0 len=1
+[22:27:52.720] [C] V op=0 len=1
+[22:27:52.990] [S->Admin] CreatureMovePacket id=72426 to=(32105,32207,6) dur=45
+[22:27:52.991] [S->Admin] CreatureMovePacket id=74750 to=(32097,32217,7) dur=45
+[22:27:53.035] [S->Admin] ContainerRemovePacket guid=3 idx=0
+[22:27:53.036] [S->Admin] ContainerRemovePacket guid=3 idx=1
+[22:27:53.037] [S->Admin] ContainerRemovePacket guid=3 idx=2
+[22:27:53.037] [S->Admin] ContainerRemovePacket guid=3 idx=3
+[22:27:53.038] [S->Admin] ContainerRemovePacket guid=3 idx=4
+[22:27:53.038] [S->Admin] ContainerRemovePacket guid=3 idx=5
+[22:27:53.038] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:27:53.039] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:27:53.039] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:27:53.040] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:27:53.040] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:27:53.041] [S->Admin] ItemAddPacket id=3139 pos=(32098,32211,7) idx=255
+[22:27:53.048] [C] V op=5 len=124
+[22:27:53.692] [C] V op=0 len=1
+[22:27:54.113] [S->Admin] ContainerRemovePacket guid=3 idx=0
+[22:27:54.114] [S->Admin] ContainerRemovePacket guid=3 idx=1
+[22:27:54.114] [S->Admin] ContainerRemovePacket guid=3 idx=2
+[22:27:54.115] [S->Admin] ContainerRemovePacket guid=3 idx=3
+[22:27:54.115] [S->Admin] ContainerRemovePacket guid=3 idx=4
+[22:27:54.117] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:27:54.118] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:27:54.118] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:27:54.119] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:27:54.119] [S->Admin] ItemAddPacket id=3139 pos=(32098,32210,7) idx=255
+[22:27:54.127] [C] V op=13 len=82
+[22:27:54.692] [C] V op=0 len=1
+[22:27:54.726] [C] V op=0 len=1
+[22:27:54.981] [S->Admin] ContainerRemovePacket guid=3 idx=0
+[22:27:54.982] [S->Admin] ContainerRemovePacket guid=3 idx=1
+[22:27:54.982] [S->Admin] ContainerRemovePacket guid=3 idx=2
+[22:27:54.983] [S->Admin] ContainerRemovePacket guid=3 idx=3
+[22:27:54.984] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:27:54.985] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:27:54.985] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:27:54.985] [S->Admin] ItemAddPacket id=3139 pos=(32101,32211,7) idx=255
+[22:27:54.993] [C] V op=13 len=66
+[22:27:55.181] [S->Admin] ChunkPacket id=17090796 pos=(3570,4602,0)
+[22:27:55.182] [S->Admin] ChunkPacket id=17087083 pos=(3570,4601,0)
+[22:27:55.183] [S->Admin] ChunkPacket id=17094509 pos=(3570,4603,0)
+[22:27:55.185] [S->Admin] ChunkPacket id=17083370 pos=(3570,4600,0)
+[22:27:55.186] [S->Admin] CreatureStatePacket id=74671 name="Deer" pos=(32131,32195,7)
+[22:27:55.186] [S->Admin] ChunkPacket id=17098222 pos=(3570,4604,0)
+[22:27:55.187] [S->Admin] CreatureStatePacket id=74785 name="Snake" pos=(32131,32222,7)
+[22:27:55.188] [S->Admin] ChunkPacket id=17079657 pos=(3570,4599,0)
+[22:27:55.188] [S->Admin] ChunkPacket id=17101935 pos=(3570,4605,0)
+[22:27:55.189] [S->Admin] CreatureMovePacket id=90405 to=(32096,32211,7) dur=2
+[22:27:55.189] [S->Admin] CreaturePropertyPacket 
+[22:27:55.226] [C] V op=2 len=2712
+[22:27:55.336] [S->Admin] CreatureMovePacket id=90405 to=(32096,32210,7) dur=2
+[22:27:55.337] [S->Admin] CreaturePropertyPacket 
+[22:27:55.347] [C] V op=5 len=23
+[22:27:55.764] [S->Admin] CreatureMovePacket id=90405 to=(32097,32210,7) dur=2
+[22:27:55.765] [S->Admin] CreaturePropertyPacket 
+[22:27:55.774] [C] V op=5 len=23
+[22:27:55.787] [C] V op=0 len=1
+[22:27:56.176] [S->Admin] CreatureMovePacket id=90405 to=(32096,32210,7) dur=2
+[22:27:56.176] [S->Admin] CreaturePropertyPacket 
+[22:27:56.181] [C] V op=5 len=23
+[22:27:56.424] [S->Admin] PremiumBalanceUpdatePacket 
+[22:27:56.425] [S->Admin] PremiumBalanceUpdatePacket 
+[22:27:56.449] [C] V op=79 len=10
+[22:27:56.722] [C] V op=0 len=1
+[22:27:56.772] [C] V op=0 len=1
+[22:27:57.092] [S->Admin] CreatureMovePacket id=72426 to=(32105,32208,6) dur=45
+[22:27:57.093] [S->Admin] CreatureMovePacket id=74750 to=(32096,32217,7) dur=45
+[22:27:57.093] [S->Admin] CreatureMovePacket id=74702 to=(32109,32205,7) dur=45
+[22:27:57.148] [C] V op=5 len=39
+[22:27:57.773] [C] V op=0 len=1
+[22:27:58.791] [C] V op=0 len=1
+[22:27:58.822] [C] V op=0 len=1
+[22:27:59.606] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:27:59.606] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:27:59.607] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:27:59.607] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:27:59.608] [S->Admin] CancelMessagePacket 
+[22:27:59.608] [S->Admin] PremiumBalanceUpdatePacket 
+[22:27:59.619] [C] V op=7 len=90
+[22:27:59.801] [C] V op=0 len=1
+[22:28:00.719] [C] V op=0 len=1
+[22:28:00.797] [C] V op=0 len=1
+[22:28:01.247] [S->Admin] CreatureMovePacket id=72426 to=(32105,32207,6) dur=45
+[22:28:01.247] [S->Admin] CreatureMovePacket id=74750 to=(32097,32217,7) dur=45
+[22:28:01.248] [S->Admin] CreatureMovePacket id=74702 to=(32109,32204,7) dur=45
+[22:28:01.298] [C] V op=5 len=39
+[22:28:01.796] [C] V op=0 len=1
+[22:28:02.727] [C] V op=0 len=1
+[22:28:02.798] [C] V op=0 len=1
+[22:28:03.817] [C] V op=0 len=1
+[22:28:04.719] [C] V op=0 len=1
+[22:28:04.830] [C] V op=0 len=1
+[22:28:05.263] [S->Admin] CreatureMovePacket id=72426 to=(32105,32206,6) dur=45
+[22:28:05.265] [S->Admin] CreatureMovePacket id=74750 to=(32097,32216,7) dur=45
+[22:28:05.265] [S->Admin] CreatureMovePacket id=74702 to=(32109,32205,7) dur=45
+[22:28:05.315] [C] V op=5 len=39
+[22:28:05.843] [C] V op=0 len=1
+[22:28:06.720] [C] V op=0 len=1
+[22:28:06.835] [C] V op=0 len=1
+[22:28:07.276] [S->Admin] ChannelDefaultPacket 
+[22:28:07.351] [C] V op=25 len=69
+[22:28:07.836] [C] V op=0 len=1
+[22:28:08.734] [C] V op=0 len=1
+[22:28:08.834] [C] V op=0 len=1
+[22:28:09.293] [S->Admin] CreatureMovePacket id=72426 to=(32105,32207,6) dur=45
+[22:28:09.294] [S->Admin] CreatureMovePacket id=74750 to=(32097,32217,7) dur=45
+[22:28:09.295] [S->Admin] CreatureMovePacket id=74702 to=(32109,32204,7) dur=45
+[22:28:09.366] [C] V op=5 len=39
+[22:28:09.830] [C] V op=0 len=1
+[22:28:10.730] [C] V op=0 len=1
+[22:28:10.829] [C] V op=0 len=1
+[22:28:11.828] [C] V op=0 len=1
+[22:28:12.002] [S->Admin] PremiumBalanceUpdatePacket 
+[22:28:12.003] [S->Admin] PremiumBalanceUpdatePacket 
+[22:28:12.013] [C] V op=79 len=10
+[22:28:12.722] [C] V op=0 len=1
+[22:28:12.831] [C] V op=0 len=1
+[22:28:13.362] [S->Admin] CreatureMovePacket id=72426 to=(32105,32206,6) dur=45
+[22:28:13.368] [S->Admin] CreatureMovePacket id=74750 to=(32096,32217,7) dur=45
+[22:28:13.369] [S->Admin] CreatureMovePacket id=74702 to=(32109,32205,7) dur=45
+[22:28:13.420] [C] V op=5 len=39
+[22:28:13.829] [C] V op=0 len=1
+[22:28:14.725] [C] V op=0 len=1
+[22:28:14.822] [C] V op=0 len=1
+[22:28:15.130] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:28:15.131] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:28:15.132] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:28:15.133] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:28:15.133] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:28:15.134] [S->Admin] CancelMessagePacket 
+[22:28:15.135] [S->Admin] PremiumBalanceUpdatePacket 
+[22:28:15.143] [C] V op=7 len=99
+[22:28:15.820] [C] V op=0 len=1
+[22:28:16.719] [C] V op=0 len=1
+[22:28:16.835] [C] V op=0 len=1
+[22:28:17.441] [S->Admin] CreatureMovePacket id=72426 to=(32105,32207,6) dur=45
+[22:28:17.445] [S->Admin] CreatureMovePacket id=74750 to=(32097,32217,7) dur=45
+[22:28:17.446] [S->Admin] CreatureMovePacket id=74702 to=(32109,32204,7) dur=45
+[22:28:17.502] [C] V op=5 len=39
+[22:28:17.823] [C] V op=0 len=1
+[22:28:18.725] [C] V op=0 len=1
+[22:28:18.821] [C] V op=0 len=1
+[22:28:19.812] [C] V op=0 len=1
+[22:28:20.860] [C] V op=0 len=1
+[22:28:20.875] [C] V op=0 len=1
+[22:28:21.622] [S->Admin] CreatureMovePacket id=72426 to=(32105,32208,6) dur=45
+[22:28:21.623] [S->Admin] CreatureMovePacket id=74750 to=(32098,32217,7) dur=45
+[22:28:21.624] [S->Admin] CreatureMovePacket id=74702 to=(32109,32205,7) dur=45
+[22:28:21.675] [C] V op=5 len=39
+[22:28:21.896] [C] V op=0 len=1
+[22:28:22.646] [S->Admin] ChannelDefaultPacket 
+[22:28:22.695] [C] V op=25 len=55
+[22:28:22.727] [C] V op=0 len=1
+[22:28:22.842] [C] V op=0 len=1
+[22:28:23.840] [C] V op=0 len=1
+[22:28:24.719] [C] V op=0 len=1
+[22:28:24.859] [C] V op=0 len=1
+[22:28:25.679] [S->Admin] CreatureMovePacket id=72426 to=(32105,32207,6) dur=45
+[22:28:25.680] [S->Admin] CreatureMovePacket id=74750 to=(32097,32217,7) dur=45
+[22:28:25.681] [S->Admin] CreatureMovePacket id=74702 to=(32109,32204,7) dur=45
+[22:28:25.743] [C] V op=5 len=39
+[22:28:25.857] [C] V op=0 len=1
+[22:28:26.391] [S->Admin] ContainerRemovePacket guid=3 idx=0
+[22:28:26.391] [S->Admin] ContainerRemovePacket guid=3 idx=1
+[22:28:26.392] [S->Admin] ContainerRemovePacket guid=3 idx=2
+[22:28:26.395] [S->Admin] ContainerRemovePacket guid=3 idx=3
+[22:28:26.395] [S->Admin] ContainerRemovePacket guid=3 idx=4
+[22:28:26.396] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:28:26.396] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:28:26.396] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:28:26.397] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:28:26.397] [S->Admin] PremiumBalanceUpdatePacket 
+[22:28:26.398] [S->Admin] BlessingUpdatePacket 
+[22:28:26.398] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:28:26.398] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:28:26.399] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:28:26.399] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:28:26.400] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:28:26.400] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:28:26.400] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:28:26.401] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:28:26.401] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:28:26.402] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:28:26.402] [S->Admin] ContainerAddPacket guid=3 idx=5
+[22:28:26.403] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:28:26.403] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:28:26.405] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:28:26.405] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:28:26.406] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:28:26.406] [S->Admin] ContainerAddPacket guid=3 idx=5
+[22:28:26.406] [S->Admin] ContainerAddPacket guid=3 idx=6
+[22:28:26.406] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:28:26.407] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:28:26.407] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:28:26.407] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:28:26.407] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:28:26.408] [S->Admin] ContainerAddPacket guid=3 idx=5
+[22:28:26.410] [S->Admin] ContainerAddPacket guid=3 idx=6
+[22:28:26.411] [S->Admin] ContainerAddPacket guid=3 idx=7
+[22:28:26.411] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:28:26.412] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:28:26.415] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:28:26.416] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:28:26.417] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:28:26.417] [S->Admin] ContainerAddPacket guid=3 idx=5
+[22:28:26.418] [S->Admin] ContainerAddPacket guid=3 idx=6
+[22:28:26.418] [S->Admin] ContainerAddPacket guid=3 idx=7
+[22:28:26.419] [S->Admin] ContainerAddPacket guid=3 idx=8
+[22:28:26.420] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:28:26.420] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:28:26.421] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:28:26.421] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:28:26.421] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:28:26.421] [S->Admin] ContainerAddPacket guid=3 idx=5
+[22:28:26.421] [S->Admin] ContainerAddPacket guid=3 idx=6
+[22:28:26.422] [S->Admin] ContainerAddPacket guid=3 idx=7
+[22:28:26.422] [S->Admin] ContainerAddPacket guid=3 idx=8
+[22:28:26.422] [S->Admin] ContainerAddPacket guid=3 idx=9
+[22:28:26.422] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:28:26.423] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:28:26.423] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:28:26.423] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:28:26.423] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:28:26.424] [S->Admin] ContainerAddPacket guid=3 idx=5
+[22:28:26.425] [S->Admin] ContainerAddPacket guid=3 idx=6
+[22:28:26.428] [S->Admin] ContainerAddPacket guid=3 idx=7
+[22:28:26.428] [S->Admin] ContainerAddPacket guid=3 idx=8
+[22:28:26.428] [S->Admin] ContainerAddPacket guid=3 idx=9
+[22:28:26.429] [S->Admin] ContainerAddPacket guid=3 idx=10
+[22:28:26.429] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:28:26.430] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:28:26.430] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:28:26.431] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:28:26.431] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:28:26.431] [S->Admin] ContainerAddPacket guid=3 idx=5
+[22:28:26.432] [S->Admin] ContainerAddPacket guid=3 idx=6
+[22:28:26.432] [S->Admin] ContainerAddPacket guid=3 idx=7
+[22:28:26.433] [S->Admin] ContainerAddPacket guid=3 idx=8
+[22:28:26.433] [S->Admin] ContainerAddPacket guid=3 idx=9
+[22:28:26.434] [S->Admin] ContainerAddPacket guid=3 idx=10
+[22:28:26.435] [S->Admin] ContainerAddPacket guid=3 idx=11
+[22:28:26.436] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:28:26.436] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:28:26.437] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:28:26.438] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:28:26.438] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:28:26.439] [S->Admin] ContainerAddPacket guid=3 idx=5
+[22:28:26.439] [S->Admin] ContainerAddPacket guid=3 idx=6
+[22:28:26.439] [S->Admin] ContainerAddPacket guid=3 idx=7
+[22:28:26.440] [S->Admin] ContainerAddPacket guid=3 idx=8
+[22:28:26.440] [S->Admin] ContainerAddPacket guid=3 idx=9
+[22:28:26.440] [S->Admin] ContainerAddPacket guid=3 idx=10
+[22:28:26.440] [S->Admin] ContainerAddPacket guid=3 idx=11
+[22:28:26.441] [S->Admin] ContainerAddPacket guid=3 idx=12
+[22:28:26.441] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:28:26.443] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:28:26.443] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:28:26.445] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:28:26.445] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:28:26.446] [S->Admin] ContainerAddPacket guid=3 idx=5
+[22:28:26.446] [S->Admin] ContainerAddPacket guid=3 idx=6
+[22:28:26.446] [S->Admin] ContainerAddPacket guid=3 idx=7
+[22:28:26.447] [S->Admin] ContainerAddPacket guid=3 idx=8
+[22:28:26.447] [S->Admin] ContainerAddPacket guid=3 idx=9
+[22:28:26.448] [S->Admin] ContainerAddPacket guid=3 idx=10
+[22:28:26.448] [S->Admin] ContainerAddPacket guid=3 idx=11
+[22:28:26.448] [S->Admin] ContainerAddPacket guid=3 idx=12
+[22:28:26.449] [S->Admin] ContainerAddPacket guid=3 idx=13
+[22:28:26.450] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:28:26.450] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:28:26.450] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:28:26.451] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:28:26.451] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:28:26.451] [S->Admin] ContainerAddPacket guid=3 idx=5
+[22:28:26.452] [S->Admin] ContainerAddPacket guid=3 idx=6
+[22:28:26.452] [S->Admin] ContainerAddPacket guid=3 idx=7
+[22:28:26.452] [S->Admin] ContainerAddPacket guid=3 idx=8
+[22:28:26.453] [S->Admin] ContainerAddPacket guid=3 idx=9
+[22:28:26.453] [S->Admin] ContainerAddPacket guid=3 idx=10
+[22:28:26.455] [S->Admin] ContainerAddPacket guid=3 idx=11
+[22:28:26.455] [S->Admin] ContainerAddPacket guid=3 idx=12
+[22:28:26.456] [S->Admin] ContainerAddPacket guid=3 idx=13
+[22:28:26.457] [S->Admin] ContainerAddPacket guid=3 idx=14
+[22:28:26.457] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:28:26.458] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:28:26.459] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:28:26.460] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:28:26.461] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:28:26.461] [S->Admin] ContainerAddPacket guid=3 idx=5
+[22:28:26.462] [S->Admin] ContainerAddPacket guid=3 idx=6
+[22:28:26.462] [S->Admin] ContainerAddPacket guid=3 idx=7
+[22:28:26.463] [S->Admin] ContainerAddPacket guid=3 idx=8
+[22:28:26.463] [S->Admin] ContainerAddPacket guid=3 idx=9
+[22:28:26.463] [S->Admin] ContainerAddPacket guid=3 idx=10
+[22:28:26.464] [S->Admin] ContainerAddPacket guid=3 idx=11
+[22:28:26.464] [S->Admin] ContainerAddPacket guid=3 idx=12
+[22:28:26.465] [S->Admin] ContainerAddPacket guid=3 idx=13
+[22:28:26.465] [S->Admin] ContainerAddPacket guid=3 idx=14
+[22:28:26.465] [S->Admin] ContainerAddPacket guid=3 idx=15
+[22:28:26.466] [S->Admin] EffectMagicPacket 
+[22:28:26.466] [S->Admin] CancelMessagePacket 
+[22:28:26.493] [C] V op=13 len=1265
+[22:28:26.718] [C] V op=0 len=1
+[22:28:26.854] [C] V op=0 len=1
+[22:28:27.375] [S->Admin] CreatureMovePacket id=90405 to=(32096,32209,7) dur=2
+[22:28:27.376] [S->Admin] CreaturePropertyPacket 
+[22:28:27.385] [C] V op=5 len=23
+[22:28:27.483] [S->Admin] CreatureMovePacket id=90405 to=(32096,32208,7) dur=2
+[22:28:27.536] [C] V op=5 len=13
+[22:28:27.858] [S->Admin] CreatureMovePacket id=90405 to=(32096,32209,7) dur=2
+[22:28:27.862] [S->Admin] CreaturePropertyPacket 
+[22:28:27.872] [C] V op=5 len=23
+[22:28:28.020] [S->Admin] CreatureMovePacket id=90405 to=(32096,32210,7) dur=2
+[22:28:28.038] [C] V op=0 len=1
+[22:28:28.088] [C] V op=5 len=13
+[22:28:28.133] [S->Admin] CreatureMovePacket id=90405 to=(32096,32211,7) dur=2
+[22:28:28.192] [C] V op=5 len=13
+[22:28:28.488] [S->Admin] ContainerRemovePacket guid=3 idx=2
+[22:28:28.491] [S->Admin] ContainerRemovePacket guid=3 idx=3
+[22:28:28.492] [S->Admin] ContainerRemovePacket guid=3 idx=4
+[22:28:28.492] [S->Admin] ContainerRemovePacket guid=3 idx=5
+[22:28:28.493] [S->Admin] ContainerRemovePacket guid=3 idx=6
+[22:28:28.493] [S->Admin] ContainerRemovePacket guid=3 idx=7
+[22:28:28.493] [S->Admin] ContainerRemovePacket guid=3 idx=8
+[22:28:28.494] [S->Admin] ContainerRemovePacket guid=3 idx=9
+[22:28:28.495] [S->Admin] ContainerRemovePacket guid=3 idx=10
+[22:28:28.496] [S->Admin] ContainerRemovePacket guid=3 idx=11
+[22:28:28.497] [S->Admin] ContainerRemovePacket guid=3 idx=12
+[22:28:28.497] [S->Admin] ContainerRemovePacket guid=3 idx=13
+[22:28:28.497] [S->Admin] ContainerRemovePacket guid=3 idx=14
+[22:28:28.498] [S->Admin] ContainerRemovePacket guid=3 idx=15
+[22:28:28.498] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:28:28.499] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:28:28.499] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:28:28.499] [S->Admin] ContainerAddPacket guid=3 idx=5
+[22:28:28.500] [S->Admin] ContainerAddPacket guid=3 idx=6
+[22:28:28.500] [S->Admin] ContainerAddPacket guid=3 idx=7
+[22:28:28.501] [S->Admin] ContainerAddPacket guid=3 idx=8
+[22:28:28.501] [S->Admin] ContainerAddPacket guid=3 idx=9
+[22:28:28.501] [S->Admin] ContainerAddPacket guid=3 idx=10
+[22:28:28.502] [S->Admin] ContainerAddPacket guid=3 idx=11
+[22:28:28.503] [S->Admin] ContainerAddPacket guid=3 idx=12
+[22:28:28.507] [S->Admin] ContainerAddPacket guid=3 idx=13
+[22:28:28.508] [S->Admin] ContainerAddPacket guid=3 idx=14
+[22:28:28.509] [S->Admin] ItemAddPacket id=3142 pos=(32097,32212,7) idx=255
+[22:28:28.519] [C] V op=13 len=226
+[22:28:28.725] [C] V op=0 len=1
+[22:28:28.984] [C] V op=0 len=1
+[22:28:29.074] [S->Admin] ChunkPacket id=17090789 pos=(3563,4602,0)
+[22:28:29.075] [S->Admin] CreatureStatePacket id=74721 name="Sheep" pos=(32068,32213,7)
+[22:28:29.076] [S->Admin] CreatureStatePacket id=74720 name="Sheep" pos=(32068,32212,7)
+[22:28:29.076] [S->Admin] ChunkPacket id=17087076 pos=(3563,4601,0)
+[22:28:29.077] [S->Admin] ChunkPacket id=17094502 pos=(3563,4603,0)
+[22:28:29.077] [S->Admin] ChunkPacket id=17083363 pos=(3563,4600,0)
+[22:28:29.078] [S->Admin] ChunkPacket id=17098215 pos=(3563,4604,0)
+[22:28:29.078] [S->Admin] CreatureStatePacket id=74800 name="Lily" pos=(32068,32225,7)
+[22:28:29.079] [S->Admin] ChunkPacket id=17079650 pos=(3563,4599,0)
+[22:28:29.079] [S->Admin] ChunkPacket id=17101928 pos=(3563,4605,0)
+[22:28:29.080] [S->Admin] CreatureMovePacket id=90405 to=(32095,32211,7) dur=2
+[22:28:29.080] [S->Admin] CreaturePropertyPacket 
+[22:28:29.099] [C] V op=2 len=3950
+[22:28:29.241] [S->Admin] CreatureMovePacket id=90405 to=(32094,32211,7) dur=2
+[22:28:29.251] [C] V op=5 len=13
+[22:28:29.733] [S->Admin] ContainerRemovePacket guid=3 idx=2
+[22:28:29.733] [S->Admin] ContainerRemovePacket guid=3 idx=3
+[22:28:29.734] [S->Admin] ContainerRemovePacket guid=3 idx=4
+[22:28:29.734] [S->Admin] ContainerRemovePacket guid=3 idx=5
+[22:28:29.734] [S->Admin] ContainerRemovePacket guid=3 idx=6
+[22:28:29.734] [S->Admin] ContainerRemovePacket guid=3 idx=7
+[22:28:29.735] [S->Admin] ContainerRemovePacket guid=3 idx=8
+[22:28:29.735] [S->Admin] ContainerRemovePacket guid=3 idx=9
+[22:28:29.735] [S->Admin] ContainerRemovePacket guid=3 idx=10
+[22:28:29.737] [S->Admin] ContainerRemovePacket guid=3 idx=11
+[22:28:29.738] [S->Admin] ContainerRemovePacket guid=3 idx=12
+[22:28:29.738] [S->Admin] ContainerRemovePacket guid=3 idx=13
+[22:28:29.739] [S->Admin] ContainerRemovePacket guid=3 idx=14
+[22:28:29.739] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:28:29.740] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:28:29.740] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:28:29.740] [S->Admin] ContainerAddPacket guid=3 idx=5
+[22:28:29.740] [S->Admin] ContainerAddPacket guid=3 idx=6
+[22:28:29.741] [S->Admin] ContainerAddPacket guid=3 idx=7
+[22:28:29.741] [S->Admin] ContainerAddPacket guid=3 idx=8
+[22:28:29.742] [S->Admin] ContainerAddPacket guid=3 idx=9
+[22:28:29.742] [S->Admin] ContainerAddPacket guid=3 idx=10
+[22:28:29.742] [S->Admin] ContainerAddPacket guid=3 idx=11
+[22:28:29.743] [S->Admin] ContainerAddPacket guid=3 idx=12
+[22:28:29.743] [S->Admin] ContainerAddPacket guid=3 idx=13
+[22:28:29.748] [C] V op=13 len=199
+[22:28:29.958] [S->Admin] CreatureMovePacket id=74684 to=(32085,32200,7) dur=45
+[22:28:29.960] [S->Admin] CreatureMovePacket id=72426 to=(32105,32206,6) dur=45
+[22:28:29.960] [S->Admin] CreatureMovePacket id=74750 to=(32098,32217,7) dur=45
+[22:28:30.001] [C] V op=5 len=39
+[22:28:30.025] [C] V op=0 len=1
+[22:28:30.726] [C] V op=0 len=1
+[22:28:31.023] [C] V op=0 len=1
+[22:28:32.084] [C] HIDE
+[22:28:32.089] [C] H op=0 len=1
+[22:28:33.146] [C] H op=0 len=1
+[22:28:34.028] [S->Admin] CreatureMovePacket id=72426 to=(32105,32207,6) dur=45
+[22:28:34.029] [S->Admin] CreatureMovePacket id=74750 to=(32097,32217,7) dur=45
+[22:28:34.082] [C] H op=5 len=26
+[22:28:34.220] [C] SHOW
+[22:28:34.742] [C] V op=0 len=1
+[22:28:35.042] [S->Admin] CreatureMovePacket id=90405 to=(32095,32211,7) dur=2
+[22:28:35.043] [S->Admin] CreaturePropertyPacket 
+[22:28:35.053] [C] V op=5 len=23
+[22:28:35.248] [S->Admin] ChunkPacket id=17090796 pos=(3570,4602,0)
+[22:28:35.249] [S->Admin] ChunkPacket id=17087083 pos=(3570,4601,0)
+[22:28:35.249] [S->Admin] ChunkPacket id=17094509 pos=(3570,4603,0)
+[22:28:35.250] [S->Admin] ChunkPacket id=17083370 pos=(3570,4600,0)
+[22:28:35.253] [S->Admin] CreatureStatePacket id=74671 name="Deer" pos=(32131,32195,7)
+[22:28:35.255] [S->Admin] ChunkPacket id=17098222 pos=(3570,4604,0)
+[22:28:35.315] [S->Admin] CreatureStatePacket id=74785 name="Snake" pos=(32131,32222,7)
+[22:28:35.316] [S->Admin] ChunkPacket id=17079657 pos=(3570,4599,0)
+[22:28:35.317] [S->Admin] ChunkPacket id=17101935 pos=(3570,4605,0)
+[22:28:35.318] [S->Admin] CreatureMovePacket id=90405 to=(32096,32211,7) dur=2
+[22:28:35.340] [C] V op=2 len=2702
+[22:28:35.474] [C] V op=0 len=1
+[22:28:35.515] [S->Admin] CreatureMovePacket id=90405 to=(32096,32210,7) dur=2
+[22:28:35.516] [S->Admin] CreaturePropertyPacket 
+[22:28:35.519] [C] V op=5 len=23
+[22:28:35.992] [S->Admin] CreatureMovePacket id=90405 to=(32097,32210,7) dur=2
+[22:28:35.995] [S->Admin] CreaturePropertyPacket 
+[22:28:36.006] [C] V op=5 len=23
+[22:28:36.453] [C] V op=0 len=1
+[22:28:36.719] [C] V op=0 len=1
+[22:28:37.449] [C] V op=0 len=1
+[22:28:37.808] [C] HIDE
+[22:28:38.442] [S->Admin] CreatureMovePacket id=72426 to=(32105,32208,6) dur=45
+[22:28:38.443] [S->Admin] CreatureMovePacket id=74750 to=(32097,32216,7) dur=45
+[22:28:38.445] [S->Admin] CreatureMovePacket id=74702 to=(32110,32204,7) dur=45
+[22:28:39.322] [C] SHOW
+[22:28:39.355] [C] V op=5 len=39
+[22:28:39.359] [C] HIDE
+[22:28:39.442] [S->Admin] EffectMagicPacket 
+[22:28:39.443] [S->Admin] PlayerLogoutPacket 
+[22:28:39.443] [S->Admin] ContainerClosePacket 
+[22:28:39.444] [S->Admin] CancelMessagePacket 
+[22:28:39.449] [S->Admin] ToggleConditionPacket 
+[22:28:39.456] [S->Admin] ToggleConditionPacket 
+[22:28:39.469] [S->Admin] CreatureForgetPacket 
+[22:28:51.034] [S->Admin] ServerStatePacket 
+[22:28:51.035] [S->Admin] ChunkPacket id=17090793 pos=(3567,4602,0)
+[22:28:51.038] [S->Admin] CreatureStatePacket id=72426 name="Dixi" pos=(32105,32208,6)
+[22:28:51.041] [S->Admin] ChunkPacket id=17090792 pos=(3566,4602,0)
+[22:28:51.042] [S->Admin] ChunkPacket id=17087080 pos=(3567,4601,0)
+[22:28:51.042] [S->Admin] ChunkPacket id=17090794 pos=(3568,4602,0)
+[22:28:51.043] [S->Admin] ChunkPacket id=17094506 pos=(3567,4603,0)
+[22:28:51.044] [S->Admin] CreatureStatePacket id=74750 name="Cipfried" pos=(32097,32216,7)
+[22:28:51.044] [S->Admin] ChunkPacket id=17087079 pos=(3566,4601,0)
+[22:28:51.045] [S->Admin] ChunkPacket id=17094505 pos=(3566,4603,0)
+[22:28:51.045] [S->Admin] ChunkPacket id=17087081 pos=(3568,4601,0)
+[22:28:51.046] [S->Admin] CreatureStatePacket id=74702 name="Obi" pos=(32110,32204,7)
+[22:28:51.046] [S->Admin] ChunkPacket id=17094507 pos=(3568,4603,0)
+[22:28:51.047] [S->Admin] ChunkPacket id=17090791 pos=(3565,4602,0)
+[22:28:51.047] [S->Admin] ChunkPacket id=17087078 pos=(3565,4601,0)
+[22:28:51.048] [S->Admin] CreatureStatePacket id=74684 name="Tom" pos=(32085,32200,7)
+[22:28:51.048] [S->Admin] ChunkPacket id=17094504 pos=(3565,4603,0)
+[22:28:51.048] [S->Admin] ChunkPacket id=17083367 pos=(3567,4600,0)
+[22:28:51.049] [S->Admin] CreatureStatePacket id=74670 name="Seymour" pos=(32103,32196,7)
+[22:28:51.052] [S->Admin] ChunkPacket id=17083366 pos=(3566,4600,0)
+[22:28:51.052] [S->Admin] ChunkPacket id=17083368 pos=(3568,4600,0)
+[22:28:51.053] [S->Admin] ChunkPacket id=17090795 pos=(3569,4602,0)
+[22:28:51.053] [S->Admin] ChunkPacket id=17087082 pos=(3569,4601,0)
+[22:28:51.054] [S->Admin] ChunkPacket id=17094508 pos=(3569,4603,0)
+[22:28:51.054] [S->Admin] ChunkPacket id=17098219 pos=(3567,4604,0)
+[22:28:51.055] [S->Admin] ChunkPacket id=17098218 pos=(3566,4604,0)
+[22:28:51.056] [S->Admin] ChunkPacket id=17098220 pos=(3568,4604,0)
+[22:28:51.057] [S->Admin] ChunkPacket id=17083365 pos=(3565,4600,0)
+[22:28:51.057] [S->Admin] ChunkPacket id=17098217 pos=(3565,4604,0)
+[22:28:51.058] [S->Admin] ChunkPacket id=17083369 pos=(3569,4600,0)
+[22:28:51.058] [S->Admin] ChunkPacket id=17098221 pos=(3569,4604,0)
+[22:28:51.058] [S->Admin] ChunkPacket id=17090790 pos=(3564,4602,0)
+[22:28:51.058] [S->Admin] CreatureStatePacket id=74723 name="Sheep" pos=(32074,32210,7)
+[22:28:51.059] [S->Admin] ChunkPacket id=17087077 pos=(3564,4601,0)
+[22:28:51.059] [S->Admin] ChunkPacket id=17094503 pos=(3564,4603,0)
+[22:28:51.059] [S->Admin] CreatureStatePacket id=74722 name="Sheep" pos=(32070,32215,7)
+[22:28:51.059] [S->Admin] ChunkPacket id=17083364 pos=(3564,4600,0)
+[22:28:51.060] [S->Admin] ChunkPacket id=17098216 pos=(3564,4604,0)
+[22:28:51.060] [S->Admin] ChunkPacket id=17079654 pos=(3567,4599,0)
+[22:28:51.061] [S->Admin] CreatureStatePacket id=72406 name="The Oracle" pos=(32104,32190,6)
+[22:28:51.061] [S->Admin] ChunkPacket id=17079653 pos=(3566,4599,0)
+[22:28:51.062] [S->Admin] ChunkPacket id=17079655 pos=(3568,4599,0)
+[22:28:51.062] [S->Admin] ChunkPacket id=17079652 pos=(3565,4599,0)
+[22:28:51.062] [S->Admin] ChunkPacket id=17079656 pos=(3569,4599,0)
+[22:28:51.063] [S->Admin] ChunkPacket id=17090796 pos=(3570,4602,0)
+[22:28:51.063] [S->Admin] ChunkPacket id=17087083 pos=(3570,4601,0)
+[22:28:51.064] [S->Admin] ChunkPacket id=17094509 pos=(3570,4603,0)
+[22:28:51.064] [S->Admin] ChunkPacket id=17083370 pos=(3570,4600,0)
+[22:28:51.064] [S->Admin] CreatureStatePacket id=74671 name="Deer" pos=(32131,32195,7)
+[22:28:51.065] [S->Admin] ChunkPacket id=17098222 pos=(3570,4604,0)
+[22:28:51.065] [S->Admin] CreatureStatePacket id=74785 name="Snake" pos=(32131,32222,7)
+[22:28:51.065] [S->Admin] ChunkPacket id=17101932 pos=(3567,4605,0)
+[22:28:51.066] [S->Admin] ChunkPacket id=17101931 pos=(3566,4605,0)
+[22:28:51.067] [S->Admin] CreatureStatePacket id=72438 name="Rabbit" pos=(32096,32229,6)
+[22:28:51.067] [S->Admin] CreatureStatePacket id=72437 name="Rabbit" pos=(32090,32229,6)
+[22:28:51.068] [S->Admin] ChunkPacket id=17101933 pos=(3568,4605,0)
+[22:28:51.068] [S->Admin] CreatureStatePacket id=74840 name="Rabbit" pos=(32108,32230,7)
+[22:28:51.069] [S->Admin] CreatureStatePacket id=74841 name="Rabbit" pos=(32109,32230,7)
+[22:28:51.069] [S->Admin] ChunkPacket id=17101930 pos=(3565,4605,0)
+[22:28:51.070] [S->Admin] ChunkPacket id=17101934 pos=(3569,4605,0)
+[22:28:51.070] [S->Admin] ChunkPacket id=17079651 pos=(3564,4599,0)
+[22:28:51.070] [S->Admin] ChunkPacket id=17101929 pos=(3564,4605,0)
+[22:28:51.071] [S->Admin] ChunkPacket id=17079657 pos=(3570,4599,0)
+[22:28:51.071] [S->Admin] ChunkPacket id=17101935 pos=(3570,4605,0)
+[22:28:51.072] [S->Admin] PlayerStatePacket 
+[22:28:51.072] [S->Admin] BlessingUpdatePacket 
+[22:28:51.072] [S->Admin] WorldTimePacket 
+[22:28:51.072] [S->Admin] PlayerLoginPacket 
+[22:28:51.073] [S->Admin] SpellAddPacket 
+[22:28:51.073] [S->Admin] SpellAddPacket 
+[22:28:51.073] [S->Admin] SpellAddPacket 
+[22:28:51.073] [S->Admin] SpellAddPacket 
+[22:28:51.073] [S->Admin] SpellAddPacket 
+[22:28:51.074] [S->Admin] SpellAddPacket 
+[22:28:51.074] [S->Admin] SpellAddPacket 
+[22:28:51.074] [S->Admin] SpellAddPacket 
+[22:28:51.074] [S->Admin] SpellAddPacket 
+[22:28:51.074] [S->Admin] SpellAddPacket 
+[22:28:51.075] [S->Admin] SpellAddPacket 
+[22:28:51.075] [S->Admin] SpellAddPacket 
+[22:28:51.075] [S->Admin] SpellAddPacket 
+[22:28:51.075] [S->Admin] SpellAddPacket 
+[22:28:51.076] [S->Admin] SpellAddPacket 
+[22:28:51.076] [S->Admin] SpellAddPacket 
+[22:28:51.076] [S->Admin] SpellAddPacket 
+[22:28:51.077] [S->Admin] SpellAddPacket 
+[22:28:51.077] [S->Admin] SpellAddPacket 
+[22:28:51.077] [S->Admin] SpellAddPacket 
+[22:28:51.077] [S->Admin] SpellAddPacket 
+[22:28:51.077] [S->Admin] IgnoreDataPacket 
+[22:28:51.078] [S->Admin] GlobalBoostUpdatePacket 
+[22:28:51.078] [S->Admin] CreaturePropertyPacket 
+[22:28:51.078] [S->Admin] CreaturePropertyPacket 
+[22:28:51.079] [S->Admin] CreaturePropertyPacket 
+[22:28:51.079] [S->Admin] CreaturePropertyPacket 
+[22:28:51.079] [S->Admin] CreaturePropertyPacket 
+[22:28:51.079] [S->Admin] CreaturePropertyPacket 
+[22:28:51.080] [S->Admin] TrainTimerPacket 
+[22:28:51.082] [S->Admin] CreatureMovePacket id=72426 to=(32105,32207,6) dur=45
+[22:28:51.084] [S->Admin] CreatureMovePacket id=74750 to=(32097,32217,7) dur=45
+[22:28:51.084] [S->Admin] CreatureMovePacket id=74702 to=(32109,32204,7) dur=45
+[22:28:51.578] [C] V op=19 len=39561
+[22:28:51.950] [C] V op=5 len=39
+[22:28:52.971] [C] V op=0 len=1
+[22:28:53.031] [C] V op=0 len=1
+[22:28:53.362] [S->Admin] CreatureMovePacket id=90409 to=(32096,32210,7) dur=2
+[22:28:53.362] [S->Admin] CreaturePropertyPacket 
+[22:28:53.397] [C] V op=5 len=23
+[22:28:53.512] [S->Admin] ChunkPacket id=17090789 pos=(3563,4602,0)
+[22:28:53.513] [S->Admin] CreatureStatePacket id=74721 name="Sheep" pos=(32068,32213,7)
+[22:28:53.513] [S->Admin] CreatureStatePacket id=74720 name="Sheep" pos=(32068,32212,7)
+[22:28:53.513] [S->Admin] CreatureStatePacket id=74719 name="Sheep" pos=(32068,32210,7)
+[22:28:53.514] [S->Admin] ChunkPacket id=17087076 pos=(3563,4601,0)
+[22:28:53.514] [S->Admin] ChunkPacket id=17094502 pos=(3563,4603,0)
+[22:28:53.524] [S->Admin] ChunkPacket id=17083363 pos=(3563,4600,0)
+[22:28:53.537] [S->Admin] ChunkPacket id=17098215 pos=(3563,4604,0)
+[22:28:53.539] [S->Admin] CreatureStatePacket id=74800 name="Lily" pos=(32068,32225,7)
+[22:28:53.539] [S->Admin] ChunkPacket id=17079650 pos=(3563,4599,0)
+[22:28:53.540] [S->Admin] ChunkPacket id=17101928 pos=(3563,4605,0)
+[22:28:53.541] [S->Admin] CreatureMovePacket id=90409 to=(32095,32210,7) dur=2
+[22:28:53.556] [C] V op=2 len=3981
+[22:28:53.882] [S->Admin] PremiumBalanceUpdatePacket 
+[22:28:53.887] [S->Admin] PremiumBalanceUpdatePacket 
+[22:28:53.902] [C] V op=79 len=10
+[22:28:54.207] [C] V op=0 len=1
+[22:28:54.561] [S->Admin] ContainerOpenPacket 
+[22:28:54.586] [C] V op=6 len=75
+[22:28:55.036] [C] V op=0 len=1
+[22:28:55.242] [S->Admin] CreatureMovePacket id=72426 to=(32105,32206,6) dur=45
+[22:28:55.247] [S->Admin] CreatureMovePacket id=74750 to=(32097,32216,7) dur=45
+[22:28:55.274] [C] V op=0 len=1
+[22:28:55.302] [C] V op=5 len=26
+[22:28:56.316] [C] V op=0 len=1
+[22:28:57.037] [C] V op=0 len=1
+[22:28:57.316] [C] V op=0 len=1
+[22:28:57.745] [S->Admin] CreatureMovePacket id=90409 to=(32095,32211,7) dur=2
+[22:28:57.751] [S->Admin] CreaturePropertyPacket 
+[22:28:57.776] [C] V op=5 len=23
+[22:28:57.887] [S->Admin] CreatureMovePacket id=90409 to=(32095,32212,7) dur=2
+[22:28:57.925] [C] V op=5 len=13
+[22:28:58.038] [S->Admin] CreatureMovePacket id=90409 to=(32094,32212,7) dur=2
+[22:28:58.039] [S->Admin] CreaturePropertyPacket 
+[22:28:58.135] [C] V op=5 len=23
+[22:28:58.397] [C] V op=0 len=1
+[22:28:58.438] [S->Admin] ContainerRemovePacket guid=3 idx=1
+[22:28:58.439] [S->Admin] ContainerRemovePacket guid=3 idx=2
+[22:28:58.440] [S->Admin] ContainerRemovePacket guid=3 idx=3
+[22:28:58.441] [S->Admin] ContainerRemovePacket guid=3 idx=4
+[22:28:58.441] [S->Admin] ContainerRemovePacket guid=3 idx=5
+[22:28:58.442] [S->Admin] ContainerRemovePacket guid=3 idx=6
+[22:28:58.442] [S->Admin] ContainerRemovePacket guid=3 idx=7
+[22:28:58.443] [S->Admin] ContainerRemovePacket guid=3 idx=8
+[22:28:58.443] [S->Admin] ContainerRemovePacket guid=3 idx=9
+[22:28:58.443] [S->Admin] ContainerRemovePacket guid=3 idx=10
+[22:28:58.444] [S->Admin] ContainerRemovePacket guid=3 idx=11
+[22:28:58.444] [S->Admin] ContainerRemovePacket guid=3 idx=12
+[22:28:58.444] [S->Admin] ContainerRemovePacket guid=3 idx=13
+[22:28:58.445] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:28:58.445] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:28:58.448] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:28:58.449] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:28:58.452] [S->Admin] ContainerAddPacket guid=3 idx=5
+[22:28:58.452] [S->Admin] ContainerAddPacket guid=3 idx=6
+[22:28:58.452] [S->Admin] ContainerAddPacket guid=3 idx=7
+[22:28:58.453] [S->Admin] ContainerAddPacket guid=3 idx=8
+[22:28:58.453] [S->Admin] ContainerAddPacket guid=3 idx=9
+[22:28:58.455] [S->Admin] ContainerAddPacket guid=3 idx=10
+[22:28:58.457] [S->Admin] ContainerAddPacket guid=3 idx=11
+[22:28:58.458] [S->Admin] ContainerAddPacket guid=3 idx=12
+[22:28:58.459] [S->Admin] ItemAddPacket id=3145 pos=(32097,32211,7) idx=255
+[22:28:58.467] [C] V op=13 len=210
+[22:28:58.603] [S->Admin] CreatureMovePacket id=90409 to=(32095,32212,7) dur=2
+[22:28:58.603] [S->Admin] CreaturePropertyPacket 
+[22:28:58.619] [C] V op=5 len=23
+[22:28:58.923] [S->Admin] CreatureMovePacket id=90409 to=(32095,32211,7) dur=2
+[22:28:58.925] [S->Admin] CreaturePropertyPacket 
+[22:28:58.939] [C] V op=5 len=23
+[22:28:59.049] [C] V op=0 len=1
+[22:28:59.335] [S->Admin] ContainerRemovePacket guid=3 idx=0
+[22:28:59.337] [S->Admin] ContainerRemovePacket guid=3 idx=1
+[22:28:59.339] [S->Admin] ContainerRemovePacket guid=3 idx=2
+[22:28:59.339] [S->Admin] ContainerRemovePacket guid=3 idx=3
+[22:28:59.340] [S->Admin] ContainerRemovePacket guid=3 idx=4
+[22:28:59.340] [S->Admin] ContainerRemovePacket guid=3 idx=5
+[22:28:59.340] [S->Admin] ContainerRemovePacket guid=3 idx=6
+[22:28:59.340] [S->Admin] ContainerRemovePacket guid=3 idx=7
+[22:28:59.341] [S->Admin] ContainerRemovePacket guid=3 idx=8
+[22:28:59.341] [S->Admin] ContainerRemovePacket guid=3 idx=9
+[22:28:59.341] [S->Admin] ContainerRemovePacket guid=3 idx=10
+[22:28:59.341] [S->Admin] ContainerRemovePacket guid=3 idx=11
+[22:28:59.341] [S->Admin] ContainerRemovePacket guid=3 idx=12
+[22:28:59.342] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:28:59.342] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:28:59.342] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:28:59.343] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:28:59.343] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:28:59.345] [S->Admin] ContainerAddPacket guid=3 idx=5
+[22:28:59.345] [S->Admin] ContainerAddPacket guid=3 idx=6
+[22:28:59.347] [S->Admin] ContainerAddPacket guid=3 idx=7
+[22:28:59.348] [S->Admin] ContainerAddPacket guid=3 idx=8
+[22:28:59.348] [S->Admin] ContainerAddPacket guid=3 idx=9
+[22:28:59.348] [S->Admin] ContainerAddPacket guid=3 idx=10
+[22:28:59.349] [S->Admin] ContainerAddPacket guid=3 idx=11
+[22:28:59.349] [S->Admin] ItemAddPacket id=3146 pos=(32099,32211,7) idx=255
+[22:28:59.350] [S->Admin] CreatureMovePacket id=72426 to=(32105,32207,6) dur=45
+[22:28:59.350] [S->Admin] CreatureMovePacket id=74750 to=(32097,32217,7) dur=45
+[22:28:59.357] [C] V op=13 len=210
+[22:28:59.380] [C] V op=5 len=26
+[22:28:59.418] [C] V op=0 len=1
+[22:29:00.160] [S->Admin] ContainerRemovePacket guid=3 idx=1
+[22:29:00.162] [S->Admin] ContainerRemovePacket guid=3 idx=2
+[22:29:00.162] [S->Admin] ContainerRemovePacket guid=3 idx=3
+[22:29:00.162] [S->Admin] ContainerRemovePacket guid=3 idx=4
+[22:29:00.162] [S->Admin] ContainerRemovePacket guid=3 idx=5
+[22:29:00.163] [S->Admin] ContainerRemovePacket guid=3 idx=6
+[22:29:00.163] [S->Admin] ContainerRemovePacket guid=3 idx=7
+[22:29:00.163] [S->Admin] ContainerRemovePacket guid=3 idx=8
+[22:29:00.163] [S->Admin] ContainerRemovePacket guid=3 idx=9
+[22:29:00.164] [S->Admin] ContainerRemovePacket guid=3 idx=10
+[22:29:00.164] [S->Admin] ContainerRemovePacket guid=3 idx=11
+[22:29:00.164] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:29:00.164] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:29:00.165] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:29:00.165] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:29:00.165] [S->Admin] ContainerAddPacket guid=3 idx=5
+[22:29:00.165] [S->Admin] ContainerAddPacket guid=3 idx=6
+[22:29:00.166] [S->Admin] ContainerAddPacket guid=3 idx=7
+[22:29:00.166] [S->Admin] ContainerAddPacket guid=3 idx=8
+[22:29:00.167] [S->Admin] ContainerAddPacket guid=3 idx=9
+[22:29:00.167] [S->Admin] ContainerAddPacket guid=3 idx=10
+[22:29:00.169] [S->Admin] ItemAddPacket id=3142 pos=(32099,32211,7) idx=255
+[22:29:00.182] [C] V op=13 len=178
+[22:29:00.458] [C] V op=0 len=1
+[22:29:01.031] [C] V op=0 len=1
+[22:29:01.221] [S->Admin] ContainerRemovePacket guid=3 idx=1
+[22:29:01.222] [S->Admin] ContainerRemovePacket guid=3 idx=2
+[22:29:01.223] [S->Admin] ContainerRemovePacket guid=3 idx=3
+[22:29:01.223] [S->Admin] ContainerRemovePacket guid=3 idx=4
+[22:29:01.224] [S->Admin] ContainerRemovePacket guid=3 idx=5
+[22:29:01.224] [S->Admin] ContainerRemovePacket guid=3 idx=6
+[22:29:01.226] [S->Admin] ContainerRemovePacket guid=3 idx=7
+[22:29:01.229] [S->Admin] ContainerRemovePacket guid=3 idx=8
+[22:29:01.230] [S->Admin] ContainerRemovePacket guid=3 idx=9
+[22:29:01.230] [S->Admin] ContainerRemovePacket guid=3 idx=10
+[22:29:01.231] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:29:01.231] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:29:01.231] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:29:01.231] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:29:01.235] [S->Admin] ContainerAddPacket guid=3 idx=5
+[22:29:01.237] [S->Admin] ContainerAddPacket guid=3 idx=6
+[22:29:01.238] [S->Admin] ContainerAddPacket guid=3 idx=7
+[22:29:01.238] [S->Admin] ContainerAddPacket guid=3 idx=8
+[22:29:01.239] [S->Admin] ContainerAddPacket guid=3 idx=9
+[22:29:01.239] [S->Admin] ItemAddPacket id=3142 pos=(32100,32212,7) idx=255
+[22:29:01.253] [C] V op=13 len=162
+[22:29:01.461] [C] V op=0 len=1
+[22:29:02.012] [S->Admin] ContainerRemovePacket guid=3 idx=1
+[22:29:02.012] [S->Admin] ContainerRemovePacket guid=3 idx=2
+[22:29:02.013] [S->Admin] ContainerRemovePacket guid=3 idx=3
+[22:29:02.013] [S->Admin] ContainerRemovePacket guid=3 idx=4
+[22:29:02.013] [S->Admin] ContainerRemovePacket guid=3 idx=5
+[22:29:02.013] [S->Admin] ContainerRemovePacket guid=3 idx=6
+[22:29:02.013] [S->Admin] ContainerRemovePacket guid=3 idx=7
+[22:29:02.016] [S->Admin] ContainerRemovePacket guid=3 idx=8
+[22:29:02.017] [S->Admin] ContainerRemovePacket guid=3 idx=9
+[22:29:02.018] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:29:02.018] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:29:02.018] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:29:02.019] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:29:02.019] [S->Admin] ContainerAddPacket guid=3 idx=5
+[22:29:02.019] [S->Admin] ContainerAddPacket guid=3 idx=6
+[22:29:02.019] [S->Admin] ContainerAddPacket guid=3 idx=7
+[22:29:02.020] [S->Admin] ContainerAddPacket guid=3 idx=8
+[22:29:02.020] [S->Admin] ItemAddPacket id=3142 pos=(32098,32211,7) idx=255
+[22:29:02.035] [C] V op=13 len=146
+[22:29:02.471] [C] V op=0 len=1
+[22:29:02.830] [S->Admin] ContainerRemovePacket guid=3 idx=1
+[22:29:02.830] [S->Admin] ContainerRemovePacket guid=3 idx=2
+[22:29:02.832] [S->Admin] ContainerRemovePacket guid=3 idx=3
+[22:29:02.833] [S->Admin] ContainerRemovePacket guid=3 idx=4
+[22:29:02.834] [S->Admin] ContainerRemovePacket guid=3 idx=5
+[22:29:02.835] [S->Admin] ContainerRemovePacket guid=3 idx=6
+[22:29:02.837] [S->Admin] ContainerRemovePacket guid=3 idx=7
+[22:29:02.837] [S->Admin] ContainerRemovePacket guid=3 idx=8
+[22:29:02.838] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:29:02.839] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:29:02.839] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:29:02.839] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:29:02.840] [S->Admin] ContainerAddPacket guid=3 idx=5
+[22:29:02.840] [S->Admin] ContainerAddPacket guid=3 idx=6
+[22:29:02.841] [S->Admin] ContainerAddPacket guid=3 idx=7
+[22:29:02.841] [S->Admin] ItemAddPacket id=3142 pos=(32096,32211,7) idx=255
+[22:29:02.867] [C] V op=13 len=130
+[22:29:03.040] [C] V op=0 len=1
+[22:29:03.443] [S->Admin] CreatureMovePacket id=74684 to=(32085,32200,7) dur=45
+[22:29:03.444] [S->Admin] CreatureMovePacket id=72426 to=(32105,32206,6) dur=45
+[22:29:03.447] [S->Admin] CreatureMovePacket id=74750 to=(32097,32216,7) dur=45
+[22:29:03.485] [C] V op=0 len=1
+[22:29:03.501] [C] V op=5 len=39
+[22:29:03.854] [S->Admin] ContainerRemovePacket guid=3 idx=0
+[22:29:03.856] [S->Admin] ContainerRemovePacket guid=3 idx=1
+[22:29:03.857] [S->Admin] ContainerRemovePacket guid=3 idx=2
+[22:29:03.857] [S->Admin] ContainerRemovePacket guid=3 idx=3
+[22:29:03.857] [S->Admin] ContainerRemovePacket guid=3 idx=4
+[22:29:03.857] [S->Admin] ContainerRemovePacket guid=3 idx=5
+[22:29:03.858] [S->Admin] ContainerRemovePacket guid=3 idx=6
+[22:29:03.858] [S->Admin] ContainerRemovePacket guid=3 idx=7
+[22:29:03.858] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:29:03.858] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:29:03.858] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:29:03.859] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:29:03.859] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:29:03.859] [S->Admin] ContainerAddPacket guid=3 idx=5
+[22:29:03.859] [S->Admin] ContainerAddPacket guid=3 idx=6
+[22:29:03.859] [S->Admin] ItemAddPacket id=3142 pos=(32102,32212,7) idx=255
+[22:29:03.873] [C] V op=13 len=130
+[22:29:04.505] [C] V op=0 len=1
+[22:29:04.679] [S->Admin] ContainerRemovePacket guid=3 idx=1
+[22:29:04.679] [S->Admin] ContainerRemovePacket guid=3 idx=2
+[22:29:04.680] [S->Admin] ContainerRemovePacket guid=3 idx=3
+[22:29:04.681] [S->Admin] ContainerRemovePacket guid=3 idx=4
+[22:29:04.681] [S->Admin] ContainerRemovePacket guid=3 idx=5
+[22:29:04.682] [S->Admin] ContainerRemovePacket guid=3 idx=6
+[22:29:04.682] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:29:04.682] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:29:04.683] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:29:04.683] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:29:04.683] [S->Admin] ContainerAddPacket guid=3 idx=5
+[22:29:04.695] [C] V op=13 len=87
+[22:29:05.042] [C] V op=0 len=1
+[22:29:05.428] [S->Admin] ContainerRemovePacket guid=3 idx=0
+[22:29:05.429] [S->Admin] ContainerRemovePacket guid=3 idx=1
+[22:29:05.429] [S->Admin] ContainerRemovePacket guid=3 idx=2
+[22:29:05.430] [S->Admin] ContainerRemovePacket guid=3 idx=3
+[22:29:05.453] [S->Admin] ContainerRemovePacket guid=3 idx=4
+[22:29:05.454] [S->Admin] ContainerRemovePacket guid=3 idx=5
+[22:29:05.454] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:29:05.455] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:29:05.455] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:29:05.456] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:29:05.456] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:29:05.465] [C] V op=13 len=87
+[22:29:05.604] [C] V op=0 len=1
+[22:29:06.073] [S->Admin] ContainerRemovePacket guid=3 idx=0
+[22:29:06.073] [S->Admin] ContainerRemovePacket guid=3 idx=1
+[22:29:06.078] [S->Admin] ContainerRemovePacket guid=3 idx=2
+[22:29:06.078] [S->Admin] ContainerRemovePacket guid=3 idx=3
+[22:29:06.080] [S->Admin] ContainerRemovePacket guid=3 idx=4
+[22:29:06.081] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:29:06.082] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:29:06.083] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:29:06.083] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:29:06.092] [C] V op=13 len=71
+[22:29:06.501] [C] V op=0 len=1
+[22:29:06.788] [S->Admin] ContainerRemovePacket guid=3 idx=1
+[22:29:06.788] [S->Admin] ContainerRemovePacket guid=3 idx=2
+[22:29:06.789] [S->Admin] ContainerRemovePacket guid=3 idx=3
+[22:29:06.790] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:29:06.791] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:29:06.792] [S->Admin] ItemAddPacket id=3139 pos=(32104,32213,7) idx=255
+[22:29:06.804] [C] V op=13 len=50
+[22:29:07.031] [C] V op=0 len=1
+[22:29:07.516] [C] V op=0 len=1
+[22:29:07.622] [S->Admin] ContainerRemovePacket guid=3 idx=1
+[22:29:07.622] [S->Admin] ContainerRemovePacket guid=3 idx=2
+[22:29:07.624] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:29:07.625] [S->Admin] ItemAddPacket id=3139 pos=(32104,32212,7) idx=255
+[22:29:07.742] [C] V op=13 len=34
+[22:29:07.810] [S->Admin] CreatureMovePacket id=72426 to=(32105,32207,6) dur=45
+[22:29:07.811] [S->Admin] CreatureMovePacket id=74750 to=(32097,32217,7) dur=45
+[22:29:07.881] [C] V op=5 len=26
+[22:29:08.390] [S->Admin] ContainerRemovePacket guid=3 idx=1
+[22:29:08.390] [S->Admin] ItemAddPacket id=3138 pos=(32104,32212,7) idx=255
+[22:29:08.398] [C] V op=13 len=18
+[22:29:08.546] [C] V op=0 len=1
+[22:29:09.032] [C] V op=0 len=1
+[22:29:09.560] [C] V op=0 len=1
+[22:29:10.556] [C] V op=0 len=1
+[22:29:11.033] [C] V op=0 len=1
+[22:29:11.556] [C] V op=0 len=1
+[22:29:11.899] [S->Admin] CreatureMovePacket id=74684 to=(32085,32200,7) dur=45
+[22:29:11.900] [S->Admin] CreatureMovePacket id=72426 to=(32105,32206,6) dur=45
+[22:29:11.902] [S->Admin] CreatureMovePacket id=74750 to=(32096,32217,7) dur=45
+[22:29:11.948] [C] V op=5 len=39
+[22:29:12.553] [C] V op=0 len=1
+[22:29:13.030] [C] V op=0 len=1
+[22:29:13.568] [C] V op=0 len=1
+[22:29:14.566] [C] V op=0 len=1
+[22:29:15.033] [C] V op=0 len=1
+[22:29:15.564] [C] V op=0 len=1
+[22:29:15.937] [S->Admin] ContainerRemovePacket guid=3 idx=0
+[22:29:15.938] [S->Admin] PremiumBalanceUpdatePacket 
+[22:29:15.938] [S->Admin] BlessingUpdatePacket 
+[22:29:15.938] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:29:15.939] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:29:15.939] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:29:15.940] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:29:15.941] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:29:15.943] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:29:15.943] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:29:15.944] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:29:15.944] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:29:15.945] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:29:15.945] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:29:15.946] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:29:15.946] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:29:15.947] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:29:15.947] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:29:15.947] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:29:15.948] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:29:15.948] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:29:15.948] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:29:15.949] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:29:15.949] [S->Admin] ContainerAddPacket guid=3 idx=5
+[22:29:15.950] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:29:15.951] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:29:15.952] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:29:15.953] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:29:15.954] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:29:15.954] [S->Admin] ContainerAddPacket guid=3 idx=5
+[22:29:15.954] [S->Admin] ContainerAddPacket guid=3 idx=6
+[22:29:15.954] [S->Admin] EffectMagicPacket 
+[22:29:15.955] [S->Admin] CancelMessagePacket 
+[22:29:15.956] [S->Admin] CreatureMovePacket id=72426 to=(32105,32207,6) dur=45
+[22:29:15.957] [S->Admin] CreatureMovePacket id=74750 to=(32097,32217,7) dur=45
+[22:29:15.967] [C] V op=13 len=319
+[22:29:16.012] [C] V op=5 len=26
+[22:29:16.581] [C] V op=0 len=1
+[22:29:17.033] [C] V op=0 len=1
+[22:29:17.198] [S->Admin] ContainerRemovePacket guid=3 idx=0
+[22:29:17.199] [S->Admin] ContainerRemovePacket guid=3 idx=1
+[22:29:17.200] [S->Admin] ContainerRemovePacket guid=3 idx=2
+[22:29:17.200] [S->Admin] ContainerRemovePacket guid=3 idx=3
+[22:29:17.200] [S->Admin] ContainerRemovePacket guid=3 idx=4
+[22:29:17.201] [S->Admin] ContainerRemovePacket guid=3 idx=5
+[22:29:17.201] [S->Admin] ContainerRemovePacket guid=3 idx=6
+[22:29:17.201] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:29:17.202] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:29:17.202] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:29:17.202] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:29:17.203] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:29:17.203] [S->Admin] ContainerAddPacket guid=3 idx=5
+[22:29:17.207] [S->Admin] ItemAddPacket id=3145 pos=(32098,32211,7) idx=255
+[22:29:17.223] [C] V op=13 len=114
+[22:29:17.578] [C] V op=0 len=1
+[22:29:18.577] [C] V op=0 len=1
+[22:29:18.667] [S->Admin] ContainerRemovePacket guid=3 idx=0
+[22:29:18.669] [S->Admin] ContainerRemovePacket guid=3 idx=1
+[22:29:18.670] [S->Admin] ContainerRemovePacket guid=3 idx=2
+[22:29:18.670] [S->Admin] ContainerRemovePacket guid=3 idx=3
+[22:29:18.671] [S->Admin] ContainerRemovePacket guid=3 idx=4
+[22:29:18.671] [S->Admin] ContainerRemovePacket guid=3 idx=5
+[22:29:18.671] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:29:18.671] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:29:18.672] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:29:18.672] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:29:18.672] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:29:18.672] [S->Admin] ItemAddPacket id=3144 pos=(32104,32212,7) idx=255
+[22:29:18.677] [C] V op=13 len=98
+[22:29:19.030] [C] V op=0 len=1
+[22:29:19.529] [S->Admin] ContainerRemovePacket guid=3 idx=0
+[22:29:19.530] [S->Admin] ContainerRemovePacket guid=3 idx=1
+[22:29:19.531] [S->Admin] ContainerRemovePacket guid=3 idx=2
+[22:29:19.531] [S->Admin] ContainerRemovePacket guid=3 idx=3
+[22:29:19.532] [S->Admin] ContainerRemovePacket guid=3 idx=4
+[22:29:19.532] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:29:19.535] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:29:19.537] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:29:19.537] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:29:19.538] [S->Admin] ItemAddPacket id=3144 pos=(32102,32213,7) idx=255
+[22:29:19.545] [C] V op=13 len=82
+[22:29:19.580] [C] V op=0 len=1
+[22:29:20.042] [S->Admin] CreatureMovePacket id=74684 to=(32085,32200,7) dur=45
+[22:29:20.043] [S->Admin] CreatureMovePacket id=72426 to=(32105,32206,6) dur=45
+[22:29:20.044] [S->Admin] CreatureMovePacket id=74750 to=(32097,32218,7) dur=45
+[22:29:20.101] [C] V op=5 len=39
+[22:29:20.448] [S->Admin] ContainerRemovePacket guid=3 idx=0
+[22:29:20.449] [S->Admin] ContainerRemovePacket guid=3 idx=1
+[22:29:20.451] [S->Admin] ContainerRemovePacket guid=3 idx=2
+[22:29:20.453] [S->Admin] ContainerRemovePacket guid=3 idx=3
+[22:29:20.453] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:29:20.453] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:29:20.454] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:29:20.454] [S->Admin] ItemAddPacket id=3144 pos=(32103,32212,7) idx=255
+[22:29:20.465] [C] V op=13 len=66
+[22:29:20.575] [C] V op=0 len=1
+[22:29:21.096] [C] V op=0 len=1
+[22:29:21.315] [S->Admin] ContainerRemovePacket guid=3 idx=0
+[22:29:21.317] [S->Admin] ContainerRemovePacket guid=3 idx=1
+[22:29:21.317] [S->Admin] ContainerRemovePacket guid=3 idx=2
+[22:29:21.317] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:29:21.317] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:29:21.318] [S->Admin] ItemAddPacket id=3144 pos=(32102,32212,7) idx=255
+[22:29:21.324] [C] V op=13 len=50
+[22:29:21.593] [C] V op=0 len=1
+[22:29:22.331] [S->Admin] ContainerRemovePacket guid=3 idx=0
+[22:29:22.332] [S->Admin] ContainerRemovePacket guid=3 idx=1
+[22:29:22.332] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:29:22.332] [S->Admin] ItemAddPacket id=3139 pos=(32104,32212,7) idx=255
+[22:29:22.340] [C] V op=13 len=34
+[22:29:22.586] [C] V op=0 len=1
+[22:29:23.036] [C] V op=0 len=1
+[22:29:23.211] [S->Admin] ContainerRemovePacket guid=3 idx=0
+[22:29:23.212] [S->Admin] ItemAddPacket id=3138 pos=(32102,32213,7) idx=255
+[22:29:23.224] [C] V op=13 len=18
+[22:29:23.605] [C] V op=0 len=1
+[22:29:23.891] [S->Admin] CreatureMovePacket id=90409 to=(32095,32210,7) dur=2
+[22:29:23.905] [C] V op=5 len=13
+[22:29:24.270] [S->Admin] ContainerClosePacket 
+[22:29:24.272] [S->Admin] CreatureMovePacket id=72426 to=(32105,32207,6) dur=45
+[22:29:24.272] [S->Admin] CreatureMovePacket id=74750 to=(32097,32217,7) dur=45
+[22:29:24.274] [C] V op=11 len=5
+[22:29:24.339] [C] V op=5 len=26
+[22:29:24.592] [S->Admin] CreatureMovePacket id=74723 to=(32078,32207,7) dur=23
+[22:29:24.618] [C] V op=0 len=1
+[22:29:24.643] [C] V op=5 len=13
+[22:29:25.064] [C] V op=0 len=1
+[22:29:25.649] [S->Admin] PremiumBalanceUpdatePacket 
+[22:29:25.650] [S->Admin] PremiumBalanceUpdatePacket 
+[22:29:25.652] [C] V op=0 len=1
+[22:29:25.675] [C] V op=79 len=10
+[22:29:26.671] [C] V op=0 len=1
+[22:29:27.031] [C] V op=0 len=1
+[22:29:27.069] [S->Admin] CreatureMovePacket id=74723 to=(32078,32207,7) dur=23
+[22:29:27.121] [C] V op=5 len=13
+[22:29:27.700] [C] V op=0 len=1
+[22:29:28.237] [S->Admin] CreatureMovePacket id=74723 to=(32078,32208,7) dur=23
+[22:29:28.332] [C] V op=5 len=13
+[22:29:28.572] [S->Admin] CreatureMovePacket id=72426 to=(32105,32206,6) dur=45
+[22:29:28.574] [S->Admin] CreatureMovePacket id=74750 to=(32097,32216,7) dur=45
+[22:29:28.619] [C] V op=5 len=26
+[22:29:28.692] [C] V op=0 len=1
+[22:29:29.043] [C] V op=0 len=1
+[22:29:29.323] [S->Admin] CancelMessagePacket 
+[22:29:29.323] [S->Admin] PremiumBalanceUpdatePacket 
+[22:29:29.329] [C] V op=22 len=54
+[22:29:29.470] [S->Admin] CreatureMovePacket id=74723 to=(32078,32207,7) dur=23
+[22:29:29.544] [C] V op=5 len=13
+[22:29:29.691] [C] V op=0 len=1
+[22:29:30.691] [C] V op=0 len=1
+[22:29:31.038] [C] V op=0 len=1
+[22:29:31.467] [S->Admin] ContainerOpenPacket 
+[22:29:31.481] [C] V op=6 len=78
+[22:29:31.706] [C] V op=0 len=1
+[22:29:32.625] [S->Admin] CreatureMovePacket id=72426 to=(32105,32207,6) dur=45
+[22:29:32.625] [S->Admin] CreatureMovePacket id=74750 to=(32097,32217,7) dur=45
+[22:29:32.679] [C] V op=5 len=26
+[22:29:32.703] [C] V op=0 len=1
+[22:29:33.036] [C] V op=0 len=1
+[22:29:33.699] [C] V op=0 len=1
+[22:29:34.698] [C] V op=0 len=1
+[22:29:35.033] [C] V op=0 len=1
+[22:29:35.696] [C] V op=0 len=1
+[22:29:36.653] [S->Admin] CreatureMovePacket id=72426 to=(32105,32208,6) dur=45
+[22:29:36.655] [S->Admin] CreatureMovePacket id=74750 to=(32097,32216,7) dur=45
+[22:29:36.695] [C] V op=0 len=1
+[22:29:36.706] [C] V op=5 len=26
+[22:29:37.045] [C] V op=0 len=1
+[22:29:37.268] [S->Admin] ChunkPacket id=17090796 pos=(3570,4602,0)
+[22:29:37.269] [S->Admin] ChunkPacket id=17087083 pos=(3570,4601,0)
+[22:29:37.269] [S->Admin] ChunkPacket id=17094509 pos=(3570,4603,0)
+[22:29:37.270] [S->Admin] ChunkPacket id=17083370 pos=(3570,4600,0)
+[22:29:37.271] [S->Admin] CreatureStatePacket id=74671 name="Deer" pos=(32131,32195,7)
+[22:29:37.271] [S->Admin] ChunkPacket id=17098222 pos=(3570,4604,0)
+[22:29:37.271] [S->Admin] CreatureStatePacket id=74785 name="Snake" pos=(32131,32222,7)
+[22:29:37.272] [S->Admin] ChunkPacket id=17079657 pos=(3570,4599,0)
+[22:29:37.273] [S->Admin] ChunkPacket id=17101935 pos=(3570,4605,0)
+[22:29:37.274] [S->Admin] CreatureMovePacket id=90409 to=(32096,32210,7) dur=2
+[22:29:37.283] [S->Admin] CreaturePropertyPacket 
+[22:29:37.295] [C] V op=2 len=2712
+[22:29:37.377] [S->Admin] CreatureMovePacket id=90409 to=(32097,32210,7) dur=2
+[22:29:37.449] [C] V op=5 len=13
+[22:29:37.483] [S->Admin] CreatureMovePacket id=90409 to=(32097,32209,7) dur=2
+[22:29:37.483] [S->Admin] CreaturePropertyPacket 
+[22:29:37.548] [C] V op=5 len=23
+[22:29:37.761] [C] V op=0 len=1
+[22:29:38.759] [C] V op=0 len=1
+[22:29:39.035] [C] V op=0 len=1
+[22:29:39.758] [C] V op=0 len=1
+[22:29:39.913] [S->Admin] ContainerRemovePacket guid=0 idx=8
+[22:29:39.914] [S->Admin] CreaturePropertyPacket 
+[22:29:39.915] [S->Admin] CreaturePropertyPacket 
+[22:29:39.916] [S->Admin] CreaturePropertyPacket 
+[22:29:39.917] [S->Admin] CreaturePropertyPacket 
+[22:29:39.917] [S->Admin] CreaturePropertyPacket 
+[22:29:39.918] [S->Admin] CreaturePropertyPacket 
+[22:29:39.918] [S->Admin] TrainTimerPacket 
+[22:29:39.919] [S->Admin] ItemAddPacket id=2209 pos=(32098,32209,7) idx=255
+[22:29:39.925] [C] V op=13 len=84
+[22:29:40.479] [S->Admin] CreatureMovePacket id=90409 to=(32098,32209,7) dur=2
+[22:29:40.479] [S->Admin] CreaturePropertyPacket 
+[22:29:40.531] [C] V op=5 len=23
+[22:29:40.728] [S->Admin] CreatureMovePacket id=72426 to=(32105,32207,6) dur=45
+[22:29:40.730] [S->Admin] CreatureMovePacket id=74750 to=(32097,32217,7) dur=45
+[22:29:40.733] [S->Admin] CreatureMovePacket id=74702 to=(32109,32204,7) dur=45
+[22:29:40.789] [C] V op=5 len=39
+[22:29:40.824] [C] V op=0 len=1
+[22:29:41.029] [S->Admin] CreatureMovePacket id=90409 to=(32097,32209,7) dur=2
+[22:29:41.031] [S->Admin] CreaturePropertyPacket 
+[22:29:41.042] [C] V op=5 len=23
+[22:29:41.049] [C] V op=0 len=1
+[22:29:41.821] [C] V op=0 len=1
+[22:29:42.802] [S->Admin] ItemRemovePacket pos=(32098,32209,7) idx=255
+[22:29:42.804] [S->Admin] ContainerAddPacket guid=0 idx=8
+[22:29:42.805] [S->Admin] TrainTimerPacket 
+[22:29:42.805] [S->Admin] CreaturePropertyPacket 
+[22:29:42.805] [S->Admin] CreaturePropertyPacket 
+[22:29:42.805] [S->Admin] CreaturePropertyPacket 
+[22:29:42.806] [S->Admin] CreaturePropertyPacket 
+[22:29:42.806] [S->Admin] CreaturePropertyPacket 
+[22:29:42.807] [S->Admin] CreaturePropertyPacket 
+[22:29:42.812] [C] V op=10 len=84
+[22:29:42.827] [C] V op=0 len=1
+[22:29:43.037] [C] V op=0 len=1
+[22:29:43.813] [C] V op=0 len=1
+[22:29:44.776] [S->Admin] CreatureMovePacket id=72426 to=(32105,32206,6) dur=45
+[22:29:44.777] [S->Admin] CreatureMovePacket id=74750 to=(32096,32217,7) dur=45
+[22:29:44.778] [S->Admin] CreatureMovePacket id=74702 to=(32109,32205,7) dur=45
+[22:29:44.813] [C] V op=0 len=1
+[22:29:44.825] [C] V op=5 len=39
+[22:29:45.031] [C] V op=0 len=1
+[22:29:45.815] [C] V op=0 len=1
+[22:29:46.809] [C] V op=0 len=1
+[22:29:47.031] [C] V op=0 len=1
+[22:29:47.050] [S->Admin] ContainerOpenPacket 
+[22:29:47.070] [C] V op=6 len=75
+[22:29:47.810] [C] V op=0 len=1
+[22:29:48.805] [S->Admin] CreatureMovePacket id=72426 to=(32105,32207,6) dur=45
+[22:29:48.806] [S->Admin] CreatureMovePacket id=74750 to=(32097,32217,7) dur=45
+[22:29:48.807] [S->Admin] CreatureMovePacket id=74702 to=(32109,32204,7) dur=45
+[22:29:48.809] [C] V op=0 len=1
+[22:29:48.883] [C] V op=5 len=39
+[22:29:49.146] [C] V op=0 len=1
+[22:29:49.872] [C] V op=0 len=1
+[22:29:51.388] [C] V op=0 len=1
+[22:29:51.391] [C] V op=0 len=1
+[22:29:51.924] [C] V op=0 len=1
+[22:29:52.939] [C] V op=0 len=1
+[22:29:53.040] [C] V op=0 len=1
+[22:29:53.788] [S->Admin] CreatureMovePacket id=72426 to=(32105,32206,6) dur=45
+[22:29:53.788] [S->Admin] CreatureMovePacket id=74750 to=(32097,32218,7) dur=45
+[22:29:53.790] [S->Admin] CreatureMovePacket id=74702 to=(32110,32204,7) dur=45
+[22:29:53.866] [C] V op=5 len=39
+[22:29:53.932] [C] V op=0 len=1
+[22:29:54.931] [C] V op=0 len=1
+[22:29:55.032] [C] V op=0 len=1
+[22:29:55.951] [C] V op=0 len=1
+[22:29:56.943] [C] V op=0 len=1
+[22:29:57.045] [C] V op=0 len=1
+[22:29:57.843] [S->Admin] CreatureMovePacket id=72426 to=(32105,32207,6) dur=45
+[22:29:57.844] [S->Admin] CreatureMovePacket id=74750 to=(32097,32217,7) dur=45
+[22:29:57.844] [S->Admin] CreatureMovePacket id=74702 to=(32109,32204,7) dur=45
+[22:29:57.901] [C] V op=5 len=39
+[22:29:57.942] [C] V op=0 len=1
+[22:29:58.940] [C] V op=0 len=1
+[22:29:59.040] [C] V op=0 len=1
+[22:29:59.078] [S->Admin] ContainerRemovePacket guid=3 idx=0
+[22:29:59.083] [S->Admin] PremiumBalanceUpdatePacket 
+[22:29:59.083] [S->Admin] BlessingUpdatePacket 
+[22:29:59.084] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:29:59.084] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:29:59.085] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:29:59.085] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:29:59.086] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:29:59.086] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:29:59.087] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:29:59.087] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:29:59.087] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:29:59.088] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:29:59.088] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:29:59.088] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:29:59.089] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:29:59.089] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:29:59.089] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:29:59.090] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:29:59.090] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:29:59.090] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:29:59.091] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:29:59.091] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:29:59.093] [S->Admin] ContainerAddPacket guid=3 idx=5
+[22:29:59.093] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:29:59.094] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:29:59.094] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:29:59.095] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:29:59.098] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:29:59.100] [S->Admin] ContainerAddPacket guid=3 idx=5
+[22:29:59.100] [S->Admin] ContainerAddPacket guid=3 idx=6
+[22:29:59.101] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:29:59.101] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:29:59.102] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:29:59.102] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:29:59.102] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:29:59.102] [S->Admin] ContainerAddPacket guid=3 idx=5
+[22:29:59.103] [S->Admin] ContainerAddPacket guid=3 idx=6
+[22:29:59.103] [S->Admin] ContainerAddPacket guid=3 idx=7
+[22:29:59.103] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:29:59.104] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:29:59.104] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:29:59.104] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:29:59.105] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:29:59.105] [S->Admin] ContainerAddPacket guid=3 idx=5
+[22:29:59.107] [S->Admin] ContainerAddPacket guid=3 idx=6
+[22:29:59.108] [S->Admin] ContainerAddPacket guid=3 idx=7
+[22:29:59.109] [S->Admin] ContainerAddPacket guid=3 idx=8
+[22:29:59.110] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:29:59.110] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:29:59.110] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:29:59.110] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:29:59.111] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:29:59.111] [S->Admin] ContainerAddPacket guid=3 idx=5
+[22:29:59.111] [S->Admin] ContainerAddPacket guid=3 idx=6
+[22:29:59.111] [S->Admin] ContainerAddPacket guid=3 idx=7
+[22:29:59.112] [S->Admin] ContainerAddPacket guid=3 idx=8
+[22:29:59.112] [S->Admin] ContainerAddPacket guid=3 idx=9
+[22:29:59.113] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:29:59.113] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:29:59.113] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:29:59.115] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:29:59.118] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:29:59.118] [S->Admin] ContainerAddPacket guid=3 idx=5
+[22:29:59.119] [S->Admin] ContainerAddPacket guid=3 idx=6
+[22:29:59.119] [S->Admin] ContainerAddPacket guid=3 idx=7
+[22:29:59.119] [S->Admin] ContainerAddPacket guid=3 idx=8
+[22:29:59.120] [S->Admin] ContainerAddPacket guid=3 idx=9
+[22:29:59.120] [S->Admin] ContainerAddPacket guid=3 idx=10
+[22:29:59.120] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:29:59.121] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:29:59.121] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:29:59.121] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:29:59.121] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:29:59.122] [S->Admin] ContainerAddPacket guid=3 idx=5
+[22:29:59.122] [S->Admin] ContainerAddPacket guid=3 idx=6
+[22:29:59.122] [S->Admin] ContainerAddPacket guid=3 idx=7
+[22:29:59.123] [S->Admin] ContainerAddPacket guid=3 idx=8
+[22:29:59.123] [S->Admin] ContainerAddPacket guid=3 idx=9
+[22:29:59.123] [S->Admin] ContainerAddPacket guid=3 idx=10
+[22:29:59.124] [S->Admin] ContainerAddPacket guid=3 idx=11
+[22:29:59.124] [S->Admin] EffectMagicPacket 
+[22:29:59.124] [S->Admin] CancelMessagePacket 
+[22:29:59.147] [C] V op=13 len=769
+[22:29:59.271] [S->Admin] ItemRemovePacket pos=(32101,32202,7) idx=0
+[22:29:59.274] [S->Admin] ItemAddPacket id=2785 pos=(32101,32202,7) idx=0
+[22:29:59.276] [S->Admin] ItemRemovePacket pos=(32089,32210,7) idx=0
+[22:29:59.277] [S->Admin] ItemAddPacket id=2785 pos=(32089,32210,7) idx=0
+[22:29:59.277] [S->Admin] ItemRemovePacket pos=(32094,32209,7) idx=0
+[22:29:59.278] [S->Admin] ItemAddPacket id=2785 pos=(32094,32209,7) idx=0
+[22:29:59.278] [S->Admin] ItemRemovePacket pos=(32100,32210,7) idx=0
+[22:29:59.278] [S->Admin] ItemAddPacket id=2785 pos=(32100,32210,7) idx=0
+[22:29:59.341] [C] V op=10 len=80
+[22:29:59.939] [C] V op=0 len=1
+[22:30:00.936] [C] V op=0 len=1
+[22:30:01.009] [S->Admin] ContainerRemovePacket guid=3 idx=0
+[22:30:01.010] [S->Admin] ContainerRemovePacket guid=3 idx=1
+[22:30:01.013] [S->Admin] ContainerRemovePacket guid=3 idx=2
+[22:30:01.015] [S->Admin] ContainerRemovePacket guid=3 idx=3
+[22:30:01.016] [S->Admin] ContainerRemovePacket guid=3 idx=4
+[22:30:01.017] [S->Admin] ContainerRemovePacket guid=3 idx=5
+[22:30:01.017] [S->Admin] ContainerRemovePacket guid=3 idx=6
+[22:30:01.018] [S->Admin] ContainerRemovePacket guid=3 idx=7
+[22:30:01.019] [S->Admin] ContainerRemovePacket guid=3 idx=8
+[22:30:01.019] [S->Admin] ContainerRemovePacket guid=3 idx=9
+[22:30:01.020] [S->Admin] ContainerRemovePacket guid=3 idx=10
+[22:30:01.020] [S->Admin] ContainerRemovePacket guid=3 idx=11
+[22:30:01.020] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:30:01.023] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:30:01.024] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:30:01.024] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:30:01.025] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:30:01.025] [S->Admin] ContainerAddPacket guid=3 idx=5
+[22:30:01.025] [S->Admin] ContainerAddPacket guid=3 idx=6
+[22:30:01.029] [S->Admin] ContainerAddPacket guid=3 idx=7
+[22:30:01.030] [S->Admin] ContainerAddPacket guid=3 idx=8
+[22:30:01.031] [S->Admin] ContainerAddPacket guid=3 idx=9
+[22:30:01.032] [S->Admin] ContainerAddPacket guid=3 idx=10
+[22:30:01.033] [S->Admin] ItemAddPacket id=3145 pos=(32097,32208,7) idx=255
+[22:30:01.040] [C] V op=13 len=194
+[22:30:01.062] [C] V op=0 len=1
+[22:30:01.344] [S->Admin] CreatureMovePacket id=90409 to=(32096,32209,7) dur=2
+[22:30:01.386] [C] V op=5 len=13
+[22:30:01.452] [S->Admin] CreatureMovePacket id=90409 to=(32096,32210,7) dur=2
+[22:30:01.453] [S->Admin] CreaturePropertyPacket 
+[22:30:01.502] [C] V op=5 len=23
+[22:30:01.558] [S->Admin] CreatureMovePacket id=90409 to=(32096,32211,7) dur=2
+[22:30:01.620] [C] V op=5 len=13
+[22:30:01.654] [S->Admin] CreatureMovePacket id=90409 to=(32096,32212,7) dur=2
+[22:30:01.722] [C] V op=5 len=13
+[22:30:01.870] [S->Admin] ChunkPacket id=17090789 pos=(3563,4602,0)
+[22:30:01.871] [S->Admin] CreatureStatePacket id=74721 name="Sheep" pos=(32068,32213,7)
+[22:30:01.871] [S->Admin] CreatureStatePacket id=74720 name="Sheep" pos=(32068,32212,7)
+[22:30:01.871] [S->Admin] CreatureStatePacket id=74719 name="Sheep" pos=(32068,32210,7)
+[22:30:01.872] [S->Admin] ChunkPacket id=17087076 pos=(3563,4601,0)
+[22:30:01.872] [S->Admin] ChunkPacket id=17094502 pos=(3563,4603,0)
+[22:30:01.873] [S->Admin] ChunkPacket id=17083363 pos=(3563,4600,0)
+[22:30:01.874] [S->Admin] ChunkPacket id=17098215 pos=(3563,4604,0)
+[22:30:01.876] [S->Admin] CreatureStatePacket id=74800 name="Lily" pos=(32068,32225,7)
+[22:30:01.881] [S->Admin] ChunkPacket id=17079650 pos=(3563,4599,0)
+[22:30:01.883] [S->Admin] ChunkPacket id=17101928 pos=(3563,4605,0)
+[22:30:01.884] [S->Admin] CreatureMovePacket id=90409 to=(32095,32212,7) dur=2
+[22:30:01.886] [S->Admin] CreaturePropertyPacket 
+[22:30:01.909] [C] V op=2 len=3991
+[22:30:02.023] [S->Admin] ContainerRemovePacket guid=3 idx=1
+[22:30:02.025] [S->Admin] ContainerRemovePacket guid=3 idx=2
+[22:30:02.026] [S->Admin] ContainerRemovePacket guid=3 idx=3
+[22:30:02.027] [S->Admin] ContainerRemovePacket guid=3 idx=4
+[22:30:02.027] [S->Admin] ContainerRemovePacket guid=3 idx=5
+[22:30:02.028] [S->Admin] ContainerRemovePacket guid=3 idx=6
+[22:30:02.029] [S->Admin] ContainerRemovePacket guid=3 idx=7
+[22:30:02.031] [S->Admin] ContainerRemovePacket guid=3 idx=8
+[22:30:02.034] [S->Admin] ContainerRemovePacket guid=3 idx=9
+[22:30:02.035] [S->Admin] ContainerRemovePacket guid=3 idx=10
+[22:30:02.035] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:30:02.036] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:30:02.036] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:30:02.037] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:30:02.037] [S->Admin] ContainerAddPacket guid=3 idx=5
+[22:30:02.037] [S->Admin] ContainerAddPacket guid=3 idx=6
+[22:30:02.038] [S->Admin] ContainerAddPacket guid=3 idx=7
+[22:30:02.038] [S->Admin] ContainerAddPacket guid=3 idx=8
+[22:30:02.039] [S->Admin] ContainerAddPacket guid=3 idx=9
+[22:30:02.039] [S->Admin] ItemAddPacket id=3141 pos=(32098,32210,7) idx=255
+[22:30:02.040] [S->Admin] CreatureMovePacket id=74684 to=(32085,32200,7) dur=45
+[22:30:02.049] [S->Admin] CreatureMovePacket id=72426 to=(32105,32206,6) dur=45
+[22:30:02.050] [S->Admin] CreatureMovePacket id=74750 to=(32097,32216,7) dur=45
+[22:30:02.060] [C] V op=13 len=162
+[22:30:02.088] [C] V op=0 len=1
+[22:30:02.113] [C] V op=5 len=39
+[22:30:03.032] [C] V op=0 len=1
+[22:30:03.035] [C] V op=0 len=1
+[22:30:03.088] [S->Admin] ContainerRemovePacket guid=3 idx=1
+[22:30:03.089] [S->Admin] ContainerRemovePacket guid=3 idx=2
+[22:30:03.089] [S->Admin] ContainerRemovePacket guid=3 idx=3
+[22:30:03.091] [S->Admin] ContainerRemovePacket guid=3 idx=4
+[22:30:03.091] [S->Admin] ContainerRemovePacket guid=3 idx=5
+[22:30:03.092] [S->Admin] ContainerRemovePacket guid=3 idx=6
+[22:30:03.093] [S->Admin] ContainerRemovePacket guid=3 idx=7
+[22:30:03.093] [S->Admin] ContainerRemovePacket guid=3 idx=8
+[22:30:03.094] [S->Admin] ContainerRemovePacket guid=3 idx=9
+[22:30:03.094] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:30:03.094] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:30:03.095] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:30:03.096] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:30:03.096] [S->Admin] ContainerAddPacket guid=3 idx=5
+[22:30:03.096] [S->Admin] ContainerAddPacket guid=3 idx=6
+[22:30:03.096] [S->Admin] ContainerAddPacket guid=3 idx=7
+[22:30:03.097] [S->Admin] ContainerAddPacket guid=3 idx=8
+[22:30:03.099] [S->Admin] ItemAddPacket id=3143 pos=(32097,32210,7) idx=255
+[22:30:03.103] [C] V op=13 len=146
+[22:30:04.031] [C] V op=0 len=1
+[22:30:04.099] [S->Admin] ContainerRemovePacket guid=3 idx=1
+[22:30:04.100] [S->Admin] ContainerRemovePacket guid=3 idx=2
+[22:30:04.100] [S->Admin] ContainerRemovePacket guid=3 idx=3
+[22:30:04.100] [S->Admin] ContainerRemovePacket guid=3 idx=4
+[22:30:04.101] [S->Admin] ContainerRemovePacket guid=3 idx=5
+[22:30:04.101] [S->Admin] ContainerRemovePacket guid=3 idx=6
+[22:30:04.102] [S->Admin] ContainerRemovePacket guid=3 idx=7
+[22:30:04.102] [S->Admin] ContainerRemovePacket guid=3 idx=8
+[22:30:04.103] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:30:04.103] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:30:04.104] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:30:04.107] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:30:04.108] [S->Admin] ContainerAddPacket guid=3 idx=5
+[22:30:04.109] [S->Admin] ContainerAddPacket guid=3 idx=6
+[22:30:04.110] [S->Admin] ContainerAddPacket guid=3 idx=7
+[22:30:04.110] [S->Admin] ItemAddPacket id=3143 pos=(32096,32211,7) idx=255
+[22:30:04.123] [C] V op=13 len=130
+[22:30:05.031] [C] V op=0 len=1
+[22:30:05.036] [C] V op=0 len=1
+[22:30:05.285] [S->Admin] ContainerRemovePacket guid=3 idx=0
+[22:30:05.286] [S->Admin] ContainerRemovePacket guid=3 idx=1
+[22:30:05.288] [S->Admin] ContainerRemovePacket guid=3 idx=2
+[22:30:05.289] [S->Admin] ContainerRemovePacket guid=3 idx=3
+[22:30:05.290] [S->Admin] ContainerRemovePacket guid=3 idx=4
+[22:30:05.290] [S->Admin] ContainerRemovePacket guid=3 idx=5
+[22:30:05.291] [S->Admin] ContainerRemovePacket guid=3 idx=6
+[22:30:05.291] [S->Admin] ContainerRemovePacket guid=3 idx=7
+[22:30:05.292] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:30:05.292] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:30:05.292] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:30:05.292] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:30:05.293] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:30:05.293] [S->Admin] ContainerAddPacket guid=3 idx=5
+[22:30:05.293] [S->Admin] ContainerAddPacket guid=3 idx=6
+[22:30:05.294] [S->Admin] ItemAddPacket id=3145 pos=(32098,32210,7) idx=255
+[22:30:05.306] [C] V op=13 len=130
+[22:30:05.455] [S->Admin] CreatureMovePacket id=74723 to=(32078,32207,7) dur=23
+[22:30:05.515] [C] V op=5 len=13
+[22:30:06.030] [C] V op=0 len=1
+[22:30:06.161] [S->Admin] CreatureMovePacket id=72426 to=(32105,32207,6) dur=45
+[22:30:06.161] [S->Admin] CreatureMovePacket id=74750 to=(32097,32217,7) dur=45
+[22:30:06.200] [S->Admin] ContainerRemovePacket guid=3 idx=0
+[22:30:06.201] [S->Admin] ContainerRemovePacket guid=3 idx=1
+[22:30:06.202] [S->Admin] ContainerRemovePacket guid=3 idx=2
+[22:30:06.203] [S->Admin] ContainerRemovePacket guid=3 idx=3
+[22:30:06.204] [S->Admin] ContainerRemovePacket guid=3 idx=4
+[22:30:06.204] [S->Admin] ContainerRemovePacket guid=3 idx=5
+[22:30:06.204] [S->Admin] ContainerRemovePacket guid=3 idx=6
+[22:30:06.205] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:30:06.205] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:30:06.206] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:30:06.206] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:30:06.207] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:30:06.207] [S->Admin] ContainerAddPacket guid=3 idx=5
+[22:30:06.207] [S->Admin] ItemAddPacket id=3143 pos=(32097,32210,7) idx=255
+[22:30:06.231] [C] V op=5 len=140
+[22:30:06.624] [S->Admin] CreatureMovePacket id=74723 to=(32078,32208,7) dur=23
+[22:30:06.669] [C] V op=5 len=13
+[22:30:06.977] [S->Admin] ContainerRemovePacket guid=3 idx=1
+[22:30:06.978] [S->Admin] ContainerRemovePacket guid=3 idx=2
+[22:30:06.979] [S->Admin] ContainerRemovePacket guid=3 idx=3
+[22:30:06.979] [S->Admin] ContainerRemovePacket guid=3 idx=4
+[22:30:06.980] [S->Admin] ContainerRemovePacket guid=3 idx=5
+[22:30:06.980] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:30:06.980] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:30:06.980] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:30:06.981] [S->Admin] ContainerAddPacket guid=3 idx=4
+[22:30:06.981] [S->Admin] ItemAddPacket id=3142 pos=(32098,32210,7) idx=255
+[22:30:06.985] [C] V op=13 len=82
+[22:30:07.037] [C] V op=0 len=1
+[22:30:07.052] [C] V op=0 len=1
+[22:30:07.698] [S->Admin] ContainerRemovePacket guid=3 idx=0
+[22:30:07.701] [S->Admin] ContainerRemovePacket guid=3 idx=1
+[22:30:07.702] [S->Admin] ContainerRemovePacket guid=3 idx=2
+[22:30:07.702] [S->Admin] ContainerRemovePacket guid=3 idx=3
+[22:30:07.702] [S->Admin] ContainerRemovePacket guid=3 idx=4
+[22:30:07.702] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:30:07.703] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:30:07.703] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:30:07.703] [S->Admin] ContainerAddPacket guid=3 idx=3
+[22:30:07.704] [S->Admin] ItemAddPacket id=3142 pos=(32097,32209,7) idx=255
+[22:30:07.714] [C] V op=13 len=82
+[22:30:07.863] [S->Admin] CreatureMovePacket id=74723 to=(32078,32207,7) dur=23
+[22:30:07.933] [C] V op=5 len=13
+[22:30:08.024] [C] V op=0 len=1
+[22:30:08.615] [S->Admin] ContainerRemovePacket guid=3 idx=0
+[22:30:08.616] [S->Admin] ContainerRemovePacket guid=3 idx=1
+[22:30:08.616] [S->Admin] ContainerRemovePacket guid=3 idx=2
+[22:30:08.617] [S->Admin] ContainerRemovePacket guid=3 idx=3
+[22:30:08.617] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:30:08.617] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:30:08.618] [S->Admin] ContainerAddPacket guid=3 idx=2
+[22:30:08.618] [S->Admin] ItemAddPacket id=3144 pos=(32098,32211,7) idx=255
+[22:30:08.632] [C] V op=13 len=66
+[22:30:09.023] [C] V op=0 len=1
+[22:30:09.048] [C] V op=0 len=1
+[22:30:10.020] [C] V op=0 len=1
+[22:30:10.323] [S->Admin] CreatureMovePacket id=74684 to=(32085,32200,7) dur=45
+[22:30:10.324] [S->Admin] CreatureMovePacket id=72426 to=(32105,32208,6) dur=45
+[22:30:10.325] [S->Admin] CreatureMovePacket id=74750 to=(32096,32217,7) dur=45
+[22:30:10.415] [C] V op=5 len=39
+[22:30:10.434] [S->Admin] ContainerRemovePacket guid=3 idx=1
+[22:30:10.435] [S->Admin] ContainerRemovePacket guid=3 idx=2
+[22:30:10.436] [S->Admin] ContainerAddPacket guid=3 idx=1
+[22:30:10.436] [S->Admin] ItemAddPacket id=3144 pos=(32095,32210,7) idx=255
+[22:30:10.448] [C] V op=13 len=34
+[22:30:11.019] [C] V op=0 len=1
+[22:30:11.039] [C] V op=0 len=1
+[22:30:11.347] [S->Admin] ContainerRemovePacket guid=3 idx=0
+[22:30:11.349] [S->Admin] ContainerRemovePacket guid=3 idx=1
+[22:30:11.384] [S->Admin] ContainerAddPacket guid=3 idx=0
+[22:30:11.385] [S->Admin] ItemAddPacket id=3144 pos=(32097,32210,7) idx=255
+[22:30:11.393] [C] V op=13 len=34
+[22:30:12.056] [C] V op=0 len=1
+[22:30:12.367] [S->Admin] ContainerRemovePacket guid=3 idx=0
+[22:30:12.368] [S->Admin] ItemAddPacket id=3144 pos=(32099,32210,7) idx=255
+[22:30:12.370] [C] V op=13 len=18
+[22:30:13.034] [C] V op=0 len=1
+[22:30:13.037] [C] V op=0 len=1
+[22:30:13.468] [C] HIDE
+[22:30:14.548] [S->Admin] CreatureMovePacket id=72426 to=(32105,32207,6) dur=45
+[22:30:14.549] [S->Admin] CreatureMovePacket id=74750 to=(32097,32217,7) dur=45
+[22:30:14.607] [C] H op=5 len=26
+[22:30:15.140] [C] H op=0 len=1
+[22:30:17.152] [C] H op=0 len=1
+[22:30:18.565] [S->Admin] CreatureMovePacket id=72426 to=(32105,32206,6) dur=45
+[22:30:18.566] [S->Admin] CreatureMovePacket id=74750 to=(32097,32218,7) dur=45
+[22:30:18.617] [C] H op=5 len=26
+[22:30:19.153] [C] H op=0 len=1
+[22:30:21.150] [C] H op=0 len=1
+[22:30:22.589] [S->Admin] CreatureMovePacket id=72426 to=(32105,32207,6) dur=45
+[22:30:22.589] [S->Admin] CreatureMovePacket id=74750 to=(32097,32217,7) dur=45
+[22:30:22.640] [C] H op=5 len=26
+[22:30:23.140] [C] H op=0 len=1
+[22:30:25.140] [C] H op=0 len=1
+[22:30:26.623] [S->Admin] CreatureMovePacket id=72426 to=(32105,32206,6) dur=45
+[22:30:26.625] [S->Admin] CreatureMovePacket id=74750 to=(32096,32217,7) dur=45
+[22:30:26.674] [C] H op=5 len=26
+[22:30:27.149] [C] H op=0 len=1
+[22:30:29.146] [C] H op=0 len=1
+[22:30:30.135] [C] SHOW
+[22:30:30.722] [S->Admin] CreatureMovePacket id=72426 to=(32105,32207,6) dur=45
+[22:30:30.723] [S->Admin] CreatureMovePacket id=74750 to=(32097,32217,7) dur=45
+[22:30:30.770] [C] V op=5 len=26
+[22:30:30.818] [C] V op=0 len=1
+[22:30:31.042] [C] V op=0 len=1
+[22:30:31.380] [S->Admin] CreatureMovePacket id=90409 to=(32095,32211,7) dur=2
+[22:30:31.381] [S->Admin] CreaturePropertyPacket 
+[22:30:31.385] [C] V op=5 len=23
+[22:30:31.535] [S->Admin] CreatureMovePacket id=90409 to=(32095,32210,7) dur=2
+[22:30:31.540] [C] V op=5 len=13
+[22:30:31.680] [S->Admin] CreatureMovePacket id=90409 to=(32095,32209,7) dur=2
+[22:30:31.697] [C] V op=5 len=13
+[22:30:31.813] [C] V op=0 len=1
+[22:30:31.830] [S->Admin] CreatureMovePacket id=90409 to=(32095,32208,7) dur=2
+[22:30:31.858] [C] V op=5 len=13
+[22:30:32.040] [S->Admin] CreatureMovePacket id=90409 to=(32095,32207,7) dur=2
+[22:30:32.057] [C] V op=5 len=13
+[22:30:32.191] [S->Admin] ChunkPacket id=17075940 pos=(3566,4598,0)
+[22:30:32.209] [S->Admin] CreatureStatePacket id=72397 name="Dallheim" pos=(32093,32180,6)
+[22:30:32.225] [S->Admin] ChunkPacket id=17075939 pos=(3565,4598,0)
+[22:30:32.226] [S->Admin] ChunkPacket id=17075941 pos=(3567,4598,0)
+[22:30:32.227] [S->Admin] CreatureStatePacket id=74610 name="Norma" pos=(32098,32180,7)
+[22:30:32.231] [S->Admin] ChunkPacket id=17075938 pos=(3564,4598,0)
+[22:30:32.240] [S->Admin] ChunkPacket id=17075942 pos=(3568,4598,0)
+[22:30:32.241] [S->Admin] ChunkPacket id=17075937 pos=(3563,4598,0)
+[22:30:32.243] [S->Admin] CreatureStatePacket id=74609 name="Al Dee" pos=(32063,32180,7)
+[22:30:32.244] [S->Admin] ChunkPacket id=17075943 pos=(3569,4598,0)
+[22:30:32.244] [S->Admin] CreatureMovePacket id=90409 to=(32095,32206,7) dur=2
+[22:30:32.265] [C] V op=2 len=6165
+[22:30:32.807] [S->Admin] ChunkPacket id=17101931 pos=(3566,4605,0)
+[22:30:32.808] [S->Admin] CreatureStatePacket id=72438 name="Rabbit" pos=(32096,32229,6)
+[22:30:32.808] [S->Admin] CreatureStatePacket id=72437 name="Rabbit" pos=(32090,32229,6)
+[22:30:32.809] [S->Admin] ChunkPacket id=17101930 pos=(3565,4605,0)
+[22:30:32.810] [S->Admin] ChunkPacket id=17101932 pos=(3567,4605,0)
+[22:30:32.812] [S->Admin] ChunkPacket id=17101929 pos=(3564,4605,0)
+[22:30:32.813] [S->Admin] ChunkPacket id=17101933 pos=(3568,4605,0)
+[22:30:32.813] [S->Admin] CreatureStatePacket id=74840 name="Rabbit" pos=(32108,32230,7)
+[22:30:32.814] [S->Admin] CreatureStatePacket id=74841 name="Rabbit" pos=(32109,32230,7)
+[22:30:32.814] [S->Admin] ChunkPacket id=17101928 pos=(3563,4605,0)
+[22:30:32.815] [S->Admin] ChunkPacket id=17101934 pos=(3569,4605,0)
+[22:30:32.815] [S->Admin] CreatureMovePacket id=90409 to=(32095,32207,7) dur=2
+[22:30:32.818] [S->Admin] CreaturePropertyPacket 
+[22:30:32.843] [C] V op=2 len=4065
+[22:30:32.962] [S->Admin] CreatureMovePacket id=90409 to=(32095,32208,7) dur=2
+[22:30:32.973] [C] V op=5 len=13
+[22:30:33.031] [C] V op=0 len=1
+[22:30:33.033] [C] V op=0 len=1
+[22:30:33.123] [S->Admin] CreatureMovePacket id=90409 to=(32095,32209,7) dur=2
+[22:30:33.130] [C] V op=5 len=13
+[22:30:33.484] [C] HIDE
+[22:30:34.844] [S->Admin] CreatureMovePacket id=74684 to=(32085,32200,7) dur=45
+[22:30:34.845] [S->Admin] CreatureMovePacket id=72426 to=(32105,32206,6) dur=45
+[22:30:34.845] [S->Admin] CreatureMovePacket id=74750 to=(32098,32217,7) dur=45
+[22:30:34.897] [C] H op=5 len=39
+[22:30:35.140] [C] H op=0 len=1
+[22:30:37.150] [C] H op=0 len=1
+[22:30:38.978] [S->Admin] CreatureMovePacket id=72426 to=(32105,32207,6) dur=45
+[22:30:38.979] [S->Admin] CreatureMovePacket id=74750 to=(32097,32217,7) dur=45
+[22:30:39.031] [C] H op=5 len=26
+[22:30:39.157] [C] H op=0 len=1

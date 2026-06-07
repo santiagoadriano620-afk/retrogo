@@ -16,6 +16,22 @@ const {
   GlobalBoostUpdatePacket
 } = requireModule("network/protocol");
 
+// Debug log to output.txt
+const fs = require("fs");
+const path = require("path");
+const __debugLogFile = path.resolve(__dirname, "../../../output.txt");
+let __debugLogInit = false;
+function __debugWrite(msg) {
+  if (!__debugLogInit) {
+    try { fs.writeFileSync(__debugLogFile, "", "utf8"); } catch(e) {}
+    __debugLogInit = true;
+  }
+  try {
+    let t = new Date().toISOString().slice(11, 23);
+    fs.appendFileSync(__debugLogFile, `[${t}] ${msg}\n`, "utf8");
+  } catch(e) {}
+}
+
 const GameSocket = function (socket, account, xorKey) {
 
   /*
@@ -379,6 +395,11 @@ GameSocket.prototype.write = function (packet) {
    * Function GameSocket.write
    * Writes a message to the outgoing buffer
    */
+
+  // Debug log outgoing packets
+  let pn = packet.constructor ? packet.constructor.name : "?";
+  let pd = packet.__debugStr || "";
+  __debugWrite(`[S->${this.player ? this.player.name : "?"}] ${pn} ${pd}`);
 
   // Exceeds the maximum size: disconnect the game socket for safety
   if (packet.overflow()) {

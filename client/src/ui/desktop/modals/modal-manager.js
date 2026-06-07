@@ -42,6 +42,7 @@ const ModalManager = function () {
   this.register(IgnoreListModal, "ignore-list-modal");
   this.register(ShopModal, "shop-modal");
   this.register(PaymentModal, "payment-modal");
+  this.register(StarterBoxModal, "starter-box-modal");
   this.register(MarketModal, "market-modal");
 
   this.__addEventListeners();
