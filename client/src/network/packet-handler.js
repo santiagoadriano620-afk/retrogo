@@ -1343,6 +1343,7 @@ PacketHandler.prototype.handleEntityTeleport = function (packet) {
 
   // Remove from old tile before updating position
   let fromTile = gameClient.world.getTileFromWorldPosition(entity.getPosition());
+  let toTile = gameClient.world.getTileFromWorldPosition(packet.position);
 
   // Sync previous position before updating — renderer uses __previousPosition for defer logic
   entity.__previousPosition = entity.getPosition();
@@ -1350,15 +1351,15 @@ PacketHandler.prototype.handleEntityTeleport = function (packet) {
     fromTile.removeCreature(entity);
   }
 
+  // The tile must exist
+  if (toTile === null) {
+    return;
+  }
+
   // Set the position of the entity
   entity.__position = packet.position;
-
-  // Look up chunk/tile — may be null if chunks not yet loaded (they will arrive via ChunkPacket)
   entity.__chunk = gameClient.world.getChunkFromWorldPosition(packet.position);
-  let toTile = gameClient.world.getTileFromWorldPosition(packet.position);
-  if (toTile !== null) {
-    toTile.addCreature(entity);
-  }
+  toTile.addCreature(entity);
 
   // Cancel any movement event
   if (entity.__movementEvent) {
