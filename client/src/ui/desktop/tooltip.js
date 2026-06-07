@@ -33,37 +33,9 @@ Tooltip.prototype.show = function (item, targetElement) {
 
 Tooltip.prototype.hide = function () {
     this.element.style.display = "none";
-    this.__stopTimerInterval();
 };
 
-Tooltip.prototype.__startTimerInterval = function () {
-    this.__stopTimerInterval();
-    this.__timerInterval = setInterval(function () {
-        let timer = gameClient.interface.trainingTimer;
-        if (timer === undefined) return;
-        if (timer > 0) {
-            timer--;
-            gameClient.interface.trainingTimer = timer;
-        }
-        let hours = Math.floor(timer / 3600);
-        let minutes = Math.floor((timer % 3600) / 60);
-        let seconds = timer % 60;
-        let el = this.element.querySelector('.tooltip-stats .stat:last-child');
-        if (el) {
-            el.innerHTML = '<span class="icon">⏱</span> ' +
-                String(hours).padStart(2, '0') + ':' +
-                String(minutes).padStart(2, '0') + ':' +
-                String(seconds).padStart(2, '0');
-        }
-    }.bind(this), 1000);
-};
 
-Tooltip.prototype.__stopTimerInterval = function () {
-    if (this.__timerInterval) {
-        clearInterval(this.__timerInterval);
-        this.__timerInterval = null;
-    }
-};
 
 Tooltip.prototype.__position = function (targetElement) {
     const rect = targetElement.getBoundingClientRect();
@@ -189,20 +161,12 @@ Tooltip.prototype.__generateContent = function (item, dataObject) {
 
     let statsHtml = '<div class="tooltip-stats">';
 
-    if (armor) statsHtml += `<div class="stat"><span class="icon">🛡️</span> ${__("tooltip.armor")} ${armor}</div>`;
-    if (attack) statsHtml += `<div class="stat"><span class="icon">⚔️</span> ${__("tooltip.attack")} ${attack}</div>`;
-    if (defense) statsHtml += `<div class="stat"><span class="icon">🛡️</span> ${__("tooltip.defense")} ${defense}</div>`;
-    if (weight) statsHtml += `<div class="stat"><span class="icon">⚖️</span> ${__("tooltip.weight")} ${(weight / 100).toFixed(2)} oz</div>`;
-    if (serverProps.trainingWeapon) {
-      let timer = gameClient.interface.trainingTimer;
-      if (timer === undefined) timer = 0;
-      let hours = Math.floor(timer / 3600);
-      let minutes = Math.floor((timer % 3600) / 60);
-      let seconds = timer % 60;
-      let timeStr = String(hours).padStart(2, '0') + ':' + String(minutes).padStart(2, '0') + ':' + String(seconds).padStart(2, '0');
-      statsHtml += `<div class="stat"><span class="icon">⏱</span> ${timeStr}</div>`;
-      this.__startTimerInterval();
+    if (!serverProps.trainingWeapon) {
+      if (armor) statsHtml += `<div class="stat"><span class="icon">🛡️</span> ${__("tooltip.armor")} ${armor}</div>`;
+      if (attack) statsHtml += `<div class="stat"><span class="icon">⚔️</span> ${__("tooltip.attack")} ${attack}</div>`;
+      if (defense) statsHtml += `<div class="stat"><span class="icon">🛡️</span> ${__("tooltip.defense")} ${defense}</div>`;
     }
+    if (weight) statsHtml += `<div class="stat"><span class="icon">⚖️</span> ${__("tooltip.weight")} ${(weight / 100).toFixed(2)} oz</div>`;
 
     statsHtml += '</div>';
 

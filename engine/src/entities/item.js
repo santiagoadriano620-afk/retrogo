@@ -226,6 +226,12 @@ Item.prototype.toJSON = function () {
     "duration": this.duration
   };
 
+  // Save the actual remaining duration for decaying items (torches, rings, etc.)
+  // so they resume from where they left off on next login
+  if (this.__scheduledDecayEvent) {
+    json.duration = Math.floor(1E-3 * CONFIG.SERVER.MS_TICK_INTERVAL * this.__scheduledDecayEvent.remainingFrames());
+  }
+
   if (this.__equipTime) {
     json.equipTime = this.__equipTime;
   }

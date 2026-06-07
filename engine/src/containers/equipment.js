@@ -186,16 +186,25 @@ Equipment.prototype.removeIndex = function (index, count) {
     );
   }
 
-  // Training weapon unequipped: save remaining time so it persists across moves
+  // Duration item unequipped: save remaining time so it persists across moves
   if (thing.isTrainingWeapon && thing.isTrainingWeapon()) {
     if (thing.__equipTime) {
       let elapsed = Date.now() - thing.__equipTime;
       let expiryMs = thing.getTrainingExpiryMs();
       thing.__remainingTrainingMs = Math.max(0, expiryMs - elapsed);
     }
-    // Send current remaining so client always has latest data for this slot
-    let { TrainTimerPacket } = requireModule("network/protocol");
-    this.__player.write(new TrainTimerPacket(Number(index), thing.getRemainingEquipTime()));
+  }
+  // Send current remaining so client always has latest data for this slot
+  if (thing.getAttribute("duration") || thing.getAttribute("showduration") || (thing.isTrainingWeapon && thing.isTrainingWeapon())) {
+    try {
+      let { TrainTimerPacket } = requireModule("network/protocol");
+      let remaining = thing.isTrainingWeapon && thing.isTrainingWeapon()
+        ? thing.getRemainingEquipTime()
+        : thing.getRemainingDuration();
+      this.__player.write(new TrainTimerPacket(Number(index), remaining));
+    } catch (err) {
+      console.error("[EQUIPMENT] Failed to send TrainTimerPacket on removeIndex:", err);
+    }
   }
 
   let change = thing.getChangeOnUnequip();
@@ -442,11 +451,17 @@ Equipment.prototype.addThing = function (thing, index) {
   // The things parent is of course the player
   thing.setParent(this);
 
-  // Send training timer update after item is in slot (per-slot)
-  if (thing.isTrainingWeapon && thing.isTrainingWeapon()) {
-    let { TrainTimerPacket } = requireModule("network/protocol");
-    let remaining = thing.getRemainingEquipTime();
-    this.__player.write(new TrainTimerPacket(Number(index), remaining));
+  // Send duration timer update after item is in slot (per-slot)
+  if (thing.getAttribute("duration") || thing.getAttribute("showduration") || (thing.isTrainingWeapon && thing.isTrainingWeapon())) {
+    try {
+      let { TrainTimerPacket } = requireModule("network/protocol");
+      let remaining = thing.isTrainingWeapon && thing.isTrainingWeapon()
+        ? thing.getRemainingEquipTime()
+        : thing.getRemainingDuration();
+      this.__player.write(new TrainTimerPacket(Number(index), remaining));
+    } catch (err) {
+      console.error("[EQUIPMENT] Failed to send TrainTimerPacket:", err);
+    }
   }
 
   // Check if item has speed bonus - broadcast updated speed
@@ -991,7 +1006,7 @@ Equipment.prototype.__isRightType = function (item, slot) {
         proto.properties.weaponType === "wand"
       );
     case CONST.EQUIPMENT.BACKPACK:
-      return proto.properties.containerSize !== undefined;
+      return proto.properties.slotType === "backpack";
     case CONST.EQUIPMENT.NECKLACE:
       return proto.properties.slotType === "necklace";
     case CONST.EQUIPMENT.RING:

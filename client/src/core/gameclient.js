@@ -54,6 +54,9 @@ const GameClient = function () {
   // Per-frame phase timing accumulator (reset every 60 frames by debugger)
   this.__frameTimings = { eventQueue: 0, sound: 0, keyboard: 0, render: 0, total: 0, count: 0 };
 
+  // Frame counter for periodic tasks (equipment timer tick every 60 frames)
+  this.__loop.frameCount = 0;
+
   // Stutter detection: rolling window of frame times and stutter event log
   this.__frameTimes = [];
   this.__stutterLog = [];
@@ -66,6 +69,8 @@ const GameClient = function () {
     return response.json();
   }).then(data => {
     this.itemDefinitions = data;
+    // Re-initialize equipment timers now that definitions are available
+    this.__initEquipmentTimers();
   }).catch(err => {
     console.error("[GAME] Failed to load item definitions:", err);
   });
@@ -73,6 +78,51 @@ const GameClient = function () {
   document.getElementById("client-version").innerHTML = this.CLIENT_VERSION;
 
 }
+
+GameClient.prototype.__tickEquipmentTimers = function () {
+  if (!gameClient.interface.trainingTimers) return;
+  let needRender = false;
+  for (let key in gameClient.interface.trainingTimers) {
+    if (gameClient.interface.trainingTimers[key] > 0) {
+      gameClient.interface.trainingTimers[key]--;
+      needRender = true;
+    }
+  }
+  if (needRender && gameClient.player && gameClient.player.equipment) {
+    gameClient.player.equipment.render();
+  }
+};
+
+GameClient.prototype.__initEquipmentTimers = function () {
+  if (!this.player || !this.player.equipment) return;
+  if (!this.interface.trainingTimers) {
+    this.interface.trainingTimers = {};
+  }
+  let defs = this.itemDefinitions;
+  let changed = false;
+  for (let slot = 0; slot < 10; slot++) {
+    let slotObj = this.player.equipment.slots[slot];
+    let item = slotObj && slotObj.item;
+    if (!item) continue;
+    // Already has a timer from server TRAINING_TIMER packet
+    if (this.interface.trainingTimers[slot] !== undefined) continue;
+    let props = defs && defs[item.id] && defs[item.id].properties;
+    if (!props) continue;
+    if (props.duration || props.showduration || props.trainingWeapon) {
+      if (props.duration) {
+        this.interface.trainingTimers[slot] = props.duration;
+      } else if (props.trainingWeapon) {
+        this.interface.trainingTimers[slot] = 12 * 3600;
+      } else {
+        this.interface.trainingTimers[slot] = 0;
+      }
+      changed = true;
+    }
+  }
+  if (changed) {
+    this.player.equipment.render();
+  }
+};
 
 GameClient.prototype.setServerData = function (packet) {
 
@@ -295,7 +345,8 @@ GameClient.prototype.handleAcceptLogin = function (packet) {
     this.renderer.debugger.__showStatistics = true;
   }
 
-  // Store blessings bitmask, premium status, and update button
+  // Initialize equipment timers for any items with duration/showduration/trainingWeapon
+  this.__initEquipmentTimers();
 }
 
 GameClient.prototype.isConnected = function () {
@@ -389,6 +440,12 @@ GameClient.prototype.__loop = function () {
   // Read the keyboard input
   this.keyboard.handleInput();
   t3 = performance.now();
+
+  // Tick equipment slot timers every second to sync displayed cooldowns
+  this.__loop.frameCount++;
+  if (this.player && this.player.equipment && this.__loop.frameCount % 60 === 0) {
+    this.__tickEquipmentTimers();
+  }
 
   // Capture pre-render state for per-frame delta counters
   let batchesBefore = this.renderer.screen.__glFlushCount;

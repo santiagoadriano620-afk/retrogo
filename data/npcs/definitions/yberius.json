@@ -51,7 +51,6 @@
             "equipment": "First you should buy a machete. You will need it in the swamps. And better don't explore without a shovel and a rope.",
             "eat": "If you want to heal your wounds, buy somthething to eat or hunt some small game. If you are very weak just ask me to heal you.",
             "food": "If you want to heal your wounds, buy somthething to eat or hunt some small game. If you are very weak just ask me to heal you.",
-            "heal$": "You aren't looking that bad. Sorry, I can't help you. But if you are looking for additional protection you should go on the pilgrimage of ashes.",
             "blessing": "There are five different blessings available in five sacred places. These blessings are: the spiritual shielding, the spark of the phoenix, the embrace of tibia, the fire of the suns and the wisdom of solitude.",
             "pilgrimage": "Whenever you receive a lethal wound your lifeforce is damaged. With every single of the five blessings you have this damage will be reduced.",
             "ashes": "Whenever you receive a lethal wound your lifeforce is damaged. With every single of the five blessings you have this damage will be reduced.",
@@ -86,13 +85,7 @@
             "rate": 300,
             "chance": 0.1
         },
-        "punishments": {
-            "heal$": {
-                "damage": 40,
-                "effectSelf": null,
-                "effectTarget": 13
-            }
-        },
+        "script": "temple-healer.js",
         "greetingPatterns": [
             {
                 "keywords": [

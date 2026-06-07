@@ -76,7 +76,6 @@
             "mourn": "We mortals are all to be mourned for our prison of flesh. Only through loyal servitude to the pharaoh, praised be his existence, may we escape this prison and find our true destiny.",
             "arena": "The arena is a fitting place to test your mortal shell and to feed the power of the Rah and the Uthun.",
             "palace": "The residence of our immortal king is a temple in its own right because it is the home of a true god.",
-            "heal$": "You aren't looking that bad. Sorry, I can't help you. But if you are looking for additional protection you should go on the pilgrimage of ashes.",
             "blessing": "There are five different blessings available in five sacred places. These blessings are: the spiritual shielding, the spark of the phoenix, the embrace of tibia, the fire of the suns and the wisdom of solitude.",
             "pilgrimage": "Whenever you receive a lethal wound your lifeforce is damaged. With every single of the five blessings you have this damage will be reduced.",
             "ashes": "Whenever you receive a lethal wound your lifeforce is damaged. With every single of the five blessings you have this damage will be reduced.",
@@ -110,13 +109,6 @@
             ],
             "rate": 300,
             "chance": 0.1
-        },
-        "punishments": {
-            "heal$": {
-                "damage": 40,
-                "effectSelf": null,
-                "effectTarget": 13
-            }
         },
         "greetingPatterns": [
             {
@@ -521,7 +513,7 @@
             "summon creature": 0,
             "energy wall": 0
         },
-        "script": "rahkem.js",
+        "script": "temple-healer.js",
         "keywordTopicPrices": {
             "food": 200,
             "find person": 200,

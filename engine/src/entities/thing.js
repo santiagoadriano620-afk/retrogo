@@ -156,6 +156,12 @@ Thing.prototype.setDuration = function (duration) {
 
   this.duration = duration;
 
+  // Cancel existing decay event so the new duration takes effect
+  if (this.__scheduledDecayEvent) {
+    this.__scheduledDecayEvent.cancel();
+    delete this.__scheduledDecayEvent;
+  }
+
 }
 
 Thing.prototype.setCount = function (count) {
@@ -534,6 +540,22 @@ Thing.prototype.copyProperties = function (thing) {
   // The thing does not have a duration yet: copy it over from the transformed item
   if (!thing.duration) {
     thing.setDuration(this.getRemainingDuration());
+    // Reschedule with the remaining duration (stopduration support)
+    if (thing.isDecaying()) {
+      thing.__scheduleDecay(thing.duration);
+    }
+  } else if (thing.isDecaying()) {
+    // duration was pre-set (e.g., by createThing→scheduleDecay), but old item may have
+    // remaining time to carry forward (stopduration).
+    var rem = this.getRemainingDuration();
+    // Only override if original item has meaningful remaining time (> 1s).
+    // Don't override when rem is near 0 (decay event just fired — natural decay chain).
+    if (rem > 1 && rem < thing.duration) {
+      thing.setDuration(rem);
+      if (thing.isDecaying()) {
+        thing.__scheduleDecay(thing.duration);
+      }
+    }
   }
 
   if (this.uid) {

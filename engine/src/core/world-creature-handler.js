@@ -199,6 +199,22 @@ CreatureHandler.prototype.removeCreature = function (creature) {
     gameServer.questExecutor.handleMoveEventOnTile(tile, creature, "onStepOut");
   }
 
+  // Notify monsters in adjacent tiles to re-evaluate their target
+  let pos = creature.getPosition();
+  for (let dx = -1; dx <= 1; dx++) {
+    for (let dy = -1; dy <= 1; dy++) {
+      if (dx === 0 && dy === 0) continue;
+      let adjPos = pos.add(new Position(dx, dy, 0));
+      let adjTile = gameServer.world.getTileFromWorldPosition(adjPos);
+      if (adjTile === null) continue;
+      for (let monster of adjTile.monsters) {
+        if (typeof monster.behaviourHandler !== 'undefined') {
+          monster.behaviourHandler.actions.unlock(monster.behaviourHandler.handleActionTarget);
+        }
+      }
+    }
+  }
+
 }
 
 CreatureHandler.prototype.addCreaturePosition = function (creature, position, force) {
@@ -514,16 +530,6 @@ CreatureHandler.prototype.createNewPlayer = function (gameSocket, data) {
     return gameSocket.closeError("An unexpected error occurred.");
   }
 
-  // Send initial training timers for equipped training weapons (per-slot)
-  let { TrainTimerPacket } = requireModule("network/protocol");
-  let WEAPON_SLOTS = [CONST.EQUIPMENT.LEFT, CONST.EQUIPMENT.RIGHT];
-  for (let slot of WEAPON_SLOTS) {
-    let item = player.containerManager.equipment.peekIndex(slot);
-    if (item && item.isTrainingWeapon && item.isTrainingWeapon()) {
-      player.write(new TrainTimerPacket(slot, item.getRemainingEquipTime()));
-    }
-  }
-
   // Give first-login items if character has never logged in before
   checkFirstItems(player);
 
@@ -532,8 +538,24 @@ CreatureHandler.prototype.createNewPlayer = function (gameSocket, data) {
     gameServer.world.skullManager.__setSkull(player, CONST.SKULL.CHEATER);
   }
 
-  // Attach a controller to the player
+  // Attach a controller to the player (must be before any write updates)
   player.socketHandler.attachController(gameSocket);
+
+  // Send initial duration timers for all equipped items with duration
+  try {
+    let { TrainTimerPacket } = requireModule("network/protocol");
+    for (let slot = 0; slot < 10; slot++) {
+      let item = player.containerManager.equipment.peekIndex(slot);
+      if (item && (item.getAttribute("duration") || item.getAttribute("showduration") || (item.isTrainingWeapon && item.isTrainingWeapon()))) {
+        let remaining = item.isTrainingWeapon && item.isTrainingWeapon()
+          ? item.getRemainingEquipTime()
+          : item.getRemainingDuration();
+        player.write(new TrainTimerPacket(slot, remaining));
+      }
+    }
+  } catch (err) {
+    console.error("[LOGIN] Failed to send initial TrainTimerPackets:", err);
+  }
 
 }
 
@@ -669,42 +691,46 @@ CreatureHandler.prototype.dieCreature = function (creature) {
     creature.summonedCreatures = [];
   }
 
-  // Generate the corpse (handles XP distribution internally)
-  let corpse = creature.createCorpse();
+  // Wrap in try/catch so creature is ALWAYS removed even if an exception occurs
+  try {
+    let corpse = creature.createCorpse();
+    let position = creature.getPosition();
 
-  let position = creature.getPosition();
-
-  // Monsters with noCorpse flag: spawn death field instead of corpse
-  if (corpse === null) {
-    // Use deathEffect or default to poison
-    var deathMagic;
-    if (creature.deathEffect === 'fire') {
-      deathMagic = CONST.EFFECT.MAGIC.HITBYFIRE;
-    } else {
-      deathMagic = CONST.EFFECT.MAGIC.POISONAREA;
-      gameServer.world.addSplash(2016, position, CONST.FLUID.SLIME);
-    }
-    gameServer.world.sendMagicEffect(position, deathMagic);
-    // Spawn death field item (e.g. poison field for Slime, fire field for Fire Elemental)
-    if (creature.deathField) {
-      let field = gameServer.database.createThing(creature.deathField);
-      if (field !== null) {
-        gameServer.world.addTopThing(position, field);
+    // Monsters with noCorpse flag: spawn death field instead of corpse
+    if (corpse === null) {
+      var deathMagic;
+      if (creature.deathEffect === 'fire') {
+        deathMagic = CONST.EFFECT.MAGIC.HITBYFIRE;
+      } else {
+        deathMagic = CONST.EFFECT.MAGIC.POISONAREA;
+        gameServer.world.addSplash(2016, position, CONST.FLUID.SLIME);
       }
+      gameServer.world.sendMagicEffect(position, deathMagic);
+      if (creature.deathField) {
+        let field = gameServer.database.createThing(creature.deathField);
+        if (field !== null) {
+          gameServer.world.addTopThing(position, field);
+        }
+      }
+      this.removeCreature(creature);
+      return;
     }
-    this.removeCreature(creature);
-    return;
+
+    // Normal corpse handling
+    gameServer.world.addTopThing(position, corpse);
+
+    // Also add a splash when the creature is killed
+    if (corpse instanceof Corpse) {
+      gameServer.world.addSplash(2016, position, corpse.getFluidType());
+    }
+  } catch (err) {
+    console.error("[dieCreature] Error while killing %s: %s".format(
+      creature.getProperty(CONST.PROPERTIES.NAME) || "unknown", err.message
+    ));
+    console.error(err.stack);
   }
 
-  // Normal corpse handling
-  gameServer.world.addTopThing(position, corpse);
-
-  // Also add a splash when the creature is killed
-  if (corpse instanceof Corpse) {
-    gameServer.world.addSplash(2016, position, corpse.getFluidType());
-  }
-
-  // Remove the creature from the world
+  // Always remove the creature from the world
   this.removeCreature(creature);
 
 }

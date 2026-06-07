@@ -135,7 +135,14 @@ ActionHandler.prototype.handleActionAttack = function () {
   gameServer.world.combatHandler.handleCombat(this.__player);
 
   // Lock the action for the attack speed of the player (36 frames = 1800ms)
-  this.actions.lock(this.handleActionAttack, this.__player.getProperty(CONST.PROPERTIES.ATTACK_SPEED));
+  let atkSpeed = this.__player.getProperty(CONST.PROPERTIES.ATTACK_SPEED);
+  let weapon = this.__player.containerManager.equipment.peekIndex(CONST.EQUIPMENT.LEFT) ||
+               this.__player.containerManager.equipment.peekIndex(CONST.EQUIPMENT.RIGHT);
+  if (weapon && weapon.isTrainingWeapon && weapon.isTrainingWeapon() &&
+      ["sword","club","axe","distance"].includes(weapon.getAttribute("weaponType"))) {
+    atkSpeed = Math.max(1, Math.floor(atkSpeed * 0.8));
+  }
+  this.actions.lock(this.handleActionAttack, atkSpeed);
 
 }
 
@@ -158,10 +165,12 @@ ActionHandler.prototype.getRegenInterval = function () {
 
 ActionHandler.prototype.handleActionRegeneration = function () {
   let intervals = this.getRegenInterval();
+  let lockMs = Math.min(intervals.hp, intervals.mp) / 6 || 1000;
+  let lockFrames = Math.floor(lockMs / CONFIG.SERVER.MS_TICK_INTERVAL) || 1;
 
   // Only regenerate while food (SATED) is active
   if (!this.__player.hasCondition(Condition.prototype.SATED)) {
-    this.actions.lock(this.handleActionRegeneration, Math.min(intervals.hp, intervals.mp) / 6 || 1000);
+    this.actions.lock(this.handleActionRegeneration, lockFrames);
     return;
   }
 
@@ -183,7 +192,7 @@ ActionHandler.prototype.handleActionRegeneration = function () {
     this.__lastMpRegen = now;
   }
 
-  this.actions.lock(this.handleActionRegeneration, Math.min(intervals.hp, intervals.mp) / 6 || 1000);
+  this.actions.lock(this.handleActionRegeneration, lockFrames);
 }
 
 ActionHandler.prototype.handleActionShieldTraining = function () {

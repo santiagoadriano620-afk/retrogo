@@ -185,6 +185,15 @@ Creature.prototype.getStepDuration = function (friction) {
   return this.properties.getStepDuration(friction);
 };
 
+Creature.prototype.isMoving = function () {
+  /*
+   * Function Creature.isMoving
+   * Returns true if the creature is currently moving/being pushed
+   */
+
+  return false;
+};
+
 Creature.prototype.hasCondition = function (id) {
   /*
    * Function Creature.hasCondition

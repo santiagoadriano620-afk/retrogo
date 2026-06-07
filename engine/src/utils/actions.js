@@ -152,6 +152,24 @@ Actions.prototype.__unlock = function(action) {
 
 }
 
+Actions.prototype.unlock = function(action) {
+
+  /*
+   * Function Actions.unlock
+   * Immediately unlocks an action, making it available for execution on the next tick
+   */
+
+  if (!this.__allowedActions.has(action)) {
+    return;
+  }
+
+  let lock = this.__actionsLockMap.get(action);
+  if (lock && lock.isLocked()) {
+    lock.unlock();
+  }
+
+}
+
 Actions.prototype.cleanup = function() {
 
   /*

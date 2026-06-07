@@ -248,9 +248,15 @@ NetworkManager.prototype.readPacket = function (packet) {
       if (!gameClient.interface.trainingTimers) {
         gameClient.interface.trainingTimers = {};
       }
-      gameClient.interface.trainingTimers[slotIndex] = remainingSeconds;
-      // Also update global timer so backpack items can show it
-      gameClient.interface.trainingTimer = remainingSeconds;
+      if (remainingSeconds > 0) {
+        gameClient.interface.trainingTimers[slotIndex] = remainingSeconds;
+      } else {
+        delete gameClient.interface.trainingTimers[slotIndex];
+      }
+      // Re-render the affected equipment slot
+      if (gameClient.player && gameClient.player.equipment && gameClient.player.equipment.slots[slotIndex]) {
+        gameClient.player.equipment.slots[slotIndex].render();
+      }
       return;
     }
 

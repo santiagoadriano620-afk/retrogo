@@ -57,7 +57,6 @@
             "intense": "I'm sorry, but this spell is only for druids.",
             "ultimate": "I'm sorry, but this spell is only for druids.",
             "rune": "I'm sorry, but this spell is only for druids.",
-            "heal$": "You are looking really bad. Let me heal your wounds.",
             "blessing": "There are five different blessings available in five sacred places. These blessings are: the spiritual shielding, the spark of the phoenix, the embrace of tibia, the fire of the suns and the wisdom of solitude.",
             "pilgrimage": "Whenever you receive a lethal wound your lifeforce is damaged. With every single of the five blessings you have this damage will be reduced.",
             "ashes": "Whenever you receive a lethal wound your lifeforce is damaged. With every single of the five blessings you have this damage will be reduced.",
@@ -90,13 +89,6 @@
             ],
             "rate": 300,
             "chance": 0.1
-        },
-        "punishments": {
-            "heal$": {
-                "damage": 40,
-                "effectSelf": null,
-                "effectTarget": 13
-            }
         },
         "greetingPatterns": [
             {
@@ -205,6 +197,6 @@
             "intense": 400,
             "ultimate": 1600
         },
-        "script": "maealil.js"
+        "script": "temple-healer.js"
     }
 }

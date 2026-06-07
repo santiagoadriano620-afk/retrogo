@@ -1,4 +1,4 @@
-﻿{
+{
     "creatureStatistics":  {
                                "name":  "Lynda",
                                "health":  100,
@@ -52,7 +52,6 @@
                                           "fight":  "It is MY mission to teach, it is YOUR mission to fight!",
                                           "slay":  "It is MY mission to teach, it is YOUR mission to fight!",
                                           "help":  "You are burning, my child. I will help you.",
-                                          "heal$":  "You aren\u0027t looking that bad. Sorry, I can\u0027t help you. But if you are looking for additional protection you should go on the pilgrimage of ashes.",
                                           "blessing":  "There are five different blessings available in five sacred places. These blessings are: the spiritual shielding, the spark of the phoenix, the embrace of tibia, the fire of the suns and the wisdom of solitude.",
                                           "pilgrimage":  "Whenever you receive a lethal wound your lifeforce is damaged. With every single of the five blessings you have this damage will be reduced.",
                                           "ashes":  "Whenever you receive a lethal wound your lifeforce is damaged. With every single of the five blessings you have this damage will be reduced.",
@@ -111,18 +110,13 @@
                                          "rate":  300,
                                          "chance":  0.1
                                      },
-                         "punishments":  {
-                                             "help":  {
-                                                          "damage":  0,
-                                                          "effectSelf":  null,
-                                                          "effectTarget":  15
-                                                      },
-                                             "heal$":  {
-                                                           "damage":  40,
+                          "punishments":  {
+                                              "help":  {
+                                                           "damage":  0,
                                                            "effectSelf":  null,
-                                                           "effectTarget":  13
+                                                           "effectTarget":  15
                                                        }
-                                         },
+                                          },
                          "greetingPatterns":  [
                                                   {
                                                       "keywords":  [
@@ -574,6 +568,6 @@
                                                     "money":  15,
                                                     "donation":  15
                                                 },
-                         "script":  "lynda.js"
+                         "script": "temple-healer.js"
                      }
 }

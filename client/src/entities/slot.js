@@ -7,6 +7,7 @@ const Slot = function () {
 
   // A slot must reference an item (or empty, nullptr)
   this.item = null;
+  this.index = -1;
 
 }
 
@@ -20,6 +21,10 @@ Slot.prototype.setElement = function (element) {
   this.element = element;
   this.canvas = new Canvas(element.firstElementChild, 32, 32);
   this.__countElement = element.querySelector(".count");
+  let idx = element.getAttribute("slotIndex");
+  if (idx !== null) {
+    this.index = parseInt(idx, 10);
+  }
 
   // Add tooltip listeners
   element.addEventListener("mouseover", function () {
@@ -124,7 +129,38 @@ Slot.prototype.render = function () {
   // Draw the sprite to the slow canvas
   this.canvas.drawSprite(this.item, new Position(0, 0), 32, this.offsetX, this.offsetY);
 
-  // If the item has a quantity, display it in the bottom-right corner
+  let props = null;
+  let defs = gameClient.itemDefinitions;
+  if (defs && defs[this.item.id]) {
+    props = defs[this.item.id].properties;
+  }
+
+  // Priority 1: Show remaining duration (training weapon, ring, torch, etc.)
+  // Check trainingTimers directly first — works even when definitions.json hasn't loaded yet (async race)
+  if (this.index >= 0 && gameClient.interface.trainingTimers && gameClient.interface.trainingTimers[this.index] !== undefined) {
+    let remaining = gameClient.interface.trainingTimers[this.index];
+    if (remaining > 0) {
+      let hours = Math.floor(remaining / 3600);
+      let minutes = Math.floor((remaining % 3600) / 60);
+      let text = String(hours).padStart(2, '0') + ':' + String(minutes).padStart(2, '0');
+      this.setCountString(text);
+      return;
+    }
+  }
+
+  // Priority 1b: Also check from definitions if no timer in trainingTimers
+  if (props && (props.duration || props.showduration || props.trainingWeapon) && this.index >= 0) {
+    this.setCountString("");
+    return;
+  }
+
+  // Priority 2: Show charges (runes, charged items) - only when definition has showcharges or type=rune
+  if (props && (props.showcharges || props.type === "rune") && this.item.getCount() > 0) {
+    this.setCountString(this.item.getCount());
+    return;
+  }
+
+  // Priority 3: Show stackable count
   if (this.item.isStackable() && this.item.getCount() > 1) {
     this.setCountString(this.item.getCount());
   }
@@ -140,6 +176,7 @@ Slot.prototype.setCountString = function (count) {
 
   if (this.__countElement) {
     this.__countElement.innerHTML = count || "";
+    this.__countElement.style.fontSize = "8px";
   }
 
 }

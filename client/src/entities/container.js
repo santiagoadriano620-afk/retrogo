@@ -331,6 +331,10 @@ Container.prototype.clearSlot = function (slot) {
 
   this.__setItem(slot, null);
   this.slots[slot].element.className = "slot";
+  // Clear duration timer for this slot
+  if (gameClient.interface.trainingTimers) {
+    delete gameClient.interface.trainingTimers[slot];
+  }
   this.getSlot(slot).render();
   this.__updateContainerIndicators();
 

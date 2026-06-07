@@ -226,6 +226,12 @@ Database.prototype.createThing = function (id) {
     thing.setWeight(thing.getPrototype().properties.weight);
   }
 
+  // Initialize count from charges for charged items (garlic necklace, rings, etc.)
+  let charges = thing.getAttribute("charges");
+  if (charges) {
+    thing.setCount(charges);
+  }
+
   // Schedule the decay event
   if (thing.isDecaying()) {
     thing.scheduleDecay();

@@ -1,4 +1,4 @@
-﻿{
+{
     "creatureStatistics":  {
                                "name":  "Kasmir",
                                "health":  100,
@@ -59,7 +59,6 @@
                                           "donation":  "Do you want to make a donation?",
                                           "fight":  "Fight is unavoidable sometimes. Make sure only your body is hurt but not your soul.",
                                           "slay":  "Fight is unavoidable sometimes. Make sure only your body is hurt but not your soul.",
-                                          "heal$":  "You aren\u0027t looking that bad. Sorry, I can\u0027t help you. But if you are looking for additional protection you should go on the pilgrimage of ashes.",
                                           "pilgrimage":  "Whenever you receive a lethal wound your lifeforce is damaged. With every single of the five blessings you have this damage will be reduced.",
                                           "ashes":  "Whenever you receive a lethal wound your lifeforce is damaged. With every single of the five blessings you have this damage will be reduced.",
                                           "blessing":  "There are five different blessings available in five sacred places. These blessings are: the spiritual shielding, the spark of the phoenix, the embrace of tibia, the fire of the suns and the wisdom of solitude.",
@@ -120,11 +119,6 @@
                                          "chance":  0.1
                                      },
                          "punishments":  {
-                                             "heal$":  {
-                                                           "damage":  0,
-                                                           "effectSelf":  null,
-                                                           "effectTarget":  15
-                                                       },
                                              "help$":  {
                                                            "damage":  0,
                                                            "effectSelf":  null,
@@ -515,6 +509,6 @@
                                                     "money":  15,
                                                     "donation":  15
                                                 },
-                         "script":  "kasmir.js"
+                         "script": "temple-healer.js"
                      }
 }

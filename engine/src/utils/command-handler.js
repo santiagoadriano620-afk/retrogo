@@ -290,6 +290,25 @@ CommandHandler.prototype.handle = function (player, message) {
     return;
   }
 
+  // Debug command: /torchstatus — shows current torch state in quiver slot
+  if (message[0] === "/torchstatus") {
+    var _eq = player.containerManager.equipment;
+    var _torch = _eq.peekIndex(CONST.EQUIPMENT.QUIVER);
+    var _msg = "";
+    if (_torch) {
+      _msg = "Torch: id=" + _torch.id
+        + " duration=" + (_torch.duration || "?")
+        + " decayTo=" + (_torch.getAttribute("decayTo") || "none")
+        + " hasEvent=" + (!!_torch.__scheduledDecayEvent)
+        + " parent=" + (_torch.__parent ? _torch.__parent.constructor.name : "null")
+        + " decaying=" + _torch.isDecaying();
+    } else {
+      _msg = "No item in quiver slot.";
+    }
+    player.sendCancelMessage(_msg);
+    return;
+  }
+
   // Create item command: /i [item_id_or_name] [count]
   if (message[0] === "/i") {
     let itemArg = message[1];

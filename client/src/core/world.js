@@ -59,6 +59,25 @@ World.prototype.handleSelfTeleport = function () {
 
 }
 
+World.prototype.__refreshNeighbours = function (position) {
+  let tile = this.getTileFromWorldPosition(position);
+  if (tile === null) return;
+  let positions = [
+    position, position.west(), position.north(), position.east(), position.south(),
+    position.northwest(), position.southwest(), position.northeast(), position.southeast()
+  ];
+  positions.forEach(function (pos) {
+    let t = this.getTileFromWorldPosition(pos);
+    if (t === null) return;
+    t.neighbours = [];
+    [pos.west(), pos.north(), pos.east(), pos.south(),
+     pos.northwest(), pos.southwest(), pos.northeast(), pos.southeast()].forEach(function (np) {
+      let nt = this.getTileFromWorldPosition(np);
+      if (nt !== null) t.neighbours.push(nt);
+    }, this);
+  }, this);
+}
+
 World.prototype.handleTransformTile = function (packet) {
 
   /*
@@ -73,6 +92,9 @@ World.prototype.handleTransformTile = function (packet) {
   }
 
   tile.id = packet.id;
+
+  // Refresh neighbour references so pathfinder can discover/reach the tile
+  this.__refreshNeighbours(packet.position);
 
   // Force background cache rebuild so the tile sprite updates instantly
   gameClient.renderer.__tileCacheNeedsRebuild = true;
@@ -297,7 +319,7 @@ World.prototype.referenceTileNeighbours = function () {
       // Add the neighbouring chunks
       tiles.map(this.getTileFromWorldPosition, this).forEach(function (x) {
 
-        if (x === null || x.id === 0) {
+        if (x === null) {
           return;
         }
 

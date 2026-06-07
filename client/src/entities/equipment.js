@@ -107,6 +107,7 @@ Equipment.prototype.referenceSlotDOM = function (index, id) {
 
   // Create new slots for the items
   let slot = new Slot();
+  slot.index = index;
   slot.setElement(document.getElementById(id));
 
   return slot;

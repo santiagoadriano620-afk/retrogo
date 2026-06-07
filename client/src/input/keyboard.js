@@ -471,12 +471,10 @@ Keyboard.prototype.__keyDown = function (event) {
   // Update cursors
   if (event.keyCode === Keyboard.prototype.KEYS.SHIFT_KEY) {
     this.__activeKeys.add(event.keyCode);
-    gameClient.mouse.setCursor("zoom-in");
   }
 
   if (event.keyCode === Keyboard.prototype.KEYS.CONTROL_KEY) {
     this.__activeKeys.add(event.keyCode);
-    gameClient.mouse.setCursor("default");
   }
 
   // Escape key

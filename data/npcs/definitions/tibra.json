@@ -1,4 +1,4 @@
-﻿{
+{
     "creatureStatistics":  {
                                "name":  "Tibra",
                                "health":  100,
@@ -53,7 +53,6 @@
                                           "donation":  "Do you want to make a donation?",
                                           "fight":  "It is MY mission to teach, it is YOUR mission to fight!",
                                           "slay":  "It is MY mission to teach, it is YOUR mission to fight!",
-                                          "heal$":  "You aren\u0027t looking that bad. Sorry, I need my powers for cases more severe than yours.",
                                           "help":  "You aren\u0027t looking that bad. Sorry, I need my powers for cases more severe than yours.",
                                           "ferumbras":  "The fallen one should be mourned, not feared.",
                                           "time":  "Now, it is .",
@@ -102,11 +101,6 @@
                                          "chance":  0.1
                                      },
                          "punishments":  {
-                                             "heal$":  {
-                                                           "damage":  0,
-                                                           "effectSelf":  null,
-                                                           "effectTarget":  15
-                                                       },
                                              "help":  {
                                                           "damage":  0,
                                                           "effectSelf":  null,
@@ -564,6 +558,6 @@
                                                     "money":  15,
                                                     "donation":  15
                                                 },
-                         "script":  "tibra.js"
+                         "script": "temple-healer.js"
                      }
 }

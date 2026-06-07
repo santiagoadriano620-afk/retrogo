@@ -66,6 +66,12 @@ MonsterBehaviour.prototype.handleActionTarget = function () {
    * Handles targeting action of the monster that is done every once in a while
    */
 
+  // Safety net: if the monster somehow has zero health, force death
+  if (this.monster.isZeroHealth()) {
+    gameServer.world.creatureHandler.dieCreature(this.monster);
+    return;
+  }
+
   // Always lock
   this.actions.lock(this.handleActionTarget, Actions.prototype.GLOBAL_COOLDOWN);
 
@@ -298,6 +304,11 @@ MonsterBehaviour.prototype.setTarget = function (target) {
   // Active the combat lock when targeting a player
   this.__target = target;
 
+  // Unlock attack action immediately so monster can attack on the same frame
+  if (target !== null) {
+    this.actions.unlock(this.handleActionAttack);
+  }
+
 }
 
 MonsterBehaviour.prototype.setGotoPosition = function (pos) {
@@ -327,13 +338,13 @@ MonsterBehaviour.prototype.handleDamage = function (attacker) {
 
   // If hostile on attack change to being hostile and set the target to the attacker
   if (this.is(this.HOSTILE_ON_ATTACK)) {
-    this.setState(this.HOSTILE);
+    this.setBehaviour(this.HOSTILE);
     this.setTarget(attacker);
   }
 
   // Fleeing
   if (this.monster.health <= this.fleeHealth) {
-    this.setState(this.FLEEING);
+    this.state = this.FLEEING;
     this.setTarget(attacker);
   }
 
@@ -524,6 +535,11 @@ MonsterBehaviour.prototype.getNextMoveTile = function () {
     return this.wander();
   }
 
+  // Fleeing: always move away from target
+  if (this.is(this.FLEEING)) {
+    return this.__handleFleeMoveMonsterBehaviour();
+  }
+
   // Ranged monsters keep their distance instead of walking adjacent
   let proto = this.monster.getPrototype();
   let targetDistance = (proto && proto.flags && proto.flags.targetDistance) || 1;
@@ -545,8 +561,8 @@ MonsterBehaviour.prototype.setBehaviour = function (state) {
   this.actions.add(this.handleActionSpeak);
 
   if (this.is(this.HOSTILE)) {
-    this.actions.add(this.handleActionAttack);
     this.actions.add(this.handleActionTarget);
+    this.actions.add(this.handleActionAttack);
   } else {
     this.actions.remove(this.handleActionAttack);
     this.actions.remove(this.handleActionTarget);

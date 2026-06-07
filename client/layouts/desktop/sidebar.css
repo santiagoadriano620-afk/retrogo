@@ -67,7 +67,7 @@
 .equipment.wrapper.minimized #conditions-display { display: flex; width: 32px; height: 32px; border: 1px solid #444; background-image: url("/images/game/inventory/containerslot.png"); background-size: 32px 32px; flex-wrap: wrap; align-items: center; justify-content: center; align-content: center; gap: 1px; margin: 0; }
 .equipment.wrapper.minimized #quiver-slot { display: flex; width: 32px; height: 32px; border: 1px solid #444; background-size: 32px 32px; background-position: center; position: relative; }
 .equipment.wrapper.minimized #quiver-slot canvas { width: 32px; height: 32px; }
-.equipment.wrapper.minimized #quiver-slot .count { font-size: 10px; bottom: 2px; right: 4px; }
+.equipment.wrapper.minimized #quiver-slot .count { font-size: 8px; bottom: 1px; right: 2px; }
 .equipment.wrapper.minimized .capacity-display { display: flex; width: 32px; height: 32px; border: 1px solid #444; background: #3a3a3a; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-size: 8px; line-height: 1; color: #d3d3d3; margin: 0; }
 .equipment.wrapper.minimized .capacity-display br { display: block; }
 

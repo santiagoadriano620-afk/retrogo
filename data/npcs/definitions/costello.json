@@ -57,8 +57,7 @@
             "ferumbras": "Don't mention this servant of evil here.",
             "excalibug": "Sadly we have only little knowledge on this topic.",
             "news": "Sorry, we rarely hear anything new here.",
-            "monster": "There are really too many of them in Tibia. But who are we to question the wisdom of the gods?",
-            "heal$": "You aren't looking that bad. Sorry, I can't help you."
+            "monster": "There are really too many of them in Tibia. But who are we to question the wisdom of the gods?"
         },
         "farewells": [
             "bye",
@@ -78,13 +77,6 @@
             ],
             "rate": 300,
             "chance": 0.1
-        },
-        "punishments": {
-            "heal$": {
-                "damage": 40,
-                "effectSelf": null,
-                "effectTarget": 13
-            }
         },
         "greetingPatterns": [
             {
@@ -257,6 +249,6 @@
         "trade": {
             "items": []
         },
-        "script": "costello.js"
+        "script": "temple-healer.js"
     }
 }

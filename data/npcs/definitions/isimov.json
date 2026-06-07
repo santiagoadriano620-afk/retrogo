@@ -1,4 +1,4 @@
-﻿{
+{
     "creatureStatistics":  {
                                "name":  "Isimov",
                                "health":  100,
@@ -78,7 +78,6 @@
                                           "money":  "Greed for gold could blind your sight for the important.",
                                           "equipment":  "Go and buy some.",
                                           "fight":  "The life ot a dwarf is an eternal struggle. It hardens us and makes us the fine race we are, jawoll.",
-                                          "heal$":  "Stop the whining, kid, that are only some scratches. Dwarfenheart knows no pain.",
                                           "time":  "I think it\u0027s the fourth age of the yellow flame, isn\u0027t it?"
                                       },
                          "farewells":  [
@@ -99,13 +98,7 @@
                                          "rate":  300,
                                          "chance":  0.1
                                      },
-                         "punishments":  {
-                                             "heal$":  {
-                                                           "damage":  40,
-                                                           "effectSelf":  null,
-                                                           "effectTarget":  13
-                                                       }
-                                         },
+                         "script": "temple-healer.js",
                          "greetingPatterns":  [
                                                   {
                                                       "keywords":  [

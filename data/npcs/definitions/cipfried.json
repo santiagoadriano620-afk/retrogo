@@ -58,9 +58,9 @@
             "slay": "Take a weapon in your hand, activate your combat mode, and select a target. After a fight you should eat something to heal your wounds.",
             "eat": "If you want to heal your wounds you should eat something. Willie sells excellent meals. But if you are very weak, come to me and ask me to heal you.",
             "food": "If you want to heal your wounds you should eat something. Willie sells excellent meals. But if you are very weak, come to me and ask me to heal you.",
-            "heal$": "You aren't looking really bad. Sorry, I can't help you.",
             "time": "Now, it is , my child."
         },
+        "script": "cipfried.js",
         "farewells": [
             "bye",
             "goodbye",
@@ -78,13 +78,6 @@
             ],
             "rate": 300,
             "chance": 0.1
-        },
-        "punishments": {
-            "heal$": {
-                "damage": 65,
-                "effectSelf": null,
-                "effectTarget": 13
-            }
         },
         "greetingPatterns": [
             {

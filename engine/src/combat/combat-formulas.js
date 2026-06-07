@@ -302,12 +302,28 @@ CombatFormulas.applyEquipmentAbsorb = function (damage, target, combatType, fiel
         absorb = item.getAttribute("fieldAbsorbPercent");
       }
     }
+    let absorbValue = null;
     if (absorb && absorb[combatType] !== undefined) {
-      absDamage = Math.round(absDamage * (100 - absorb[combatType]) / 100);
-      // Consume might ring charge when it absorbs damage
-      if (slots[i] === CONST.EQUIPMENT.RING && item.id === 2164) {
-        if (target.containerManager && target.containerManager.equipment) {
-          target.containerManager.equipment.__consumeMightRingCharge();
+      absorbValue = absorb[combatType];
+    } else {
+      // Check flat attributes like "absorbPercentLifeDrain", "absorbPercentPhysical", etc.
+      let flatAttr = "absorbPercent" + combatType.charAt(0).toUpperCase() + combatType.slice(1);
+      let flatVal = item.getAttribute(flatAttr);
+      if (flatVal !== null) {
+        absorbValue = flatVal;
+      }
+    }
+    if (absorbValue !== null && absorbValue > 0) {
+      absDamage = Math.round(absDamage * (100 - absorbValue) / 100);
+      // Consume charge on charged items (garlic necklace, protection amulet, etc.)
+      if (item.getAttribute("charges") && item.count > 0) {
+        item.count--;
+        if (item.count <= 0) {
+          equipment.removeIndex(slots[i], 1);
+          target.sendCancelMessage("Your " + (item.getAttribute("name") || "item") + " crumbles.");
+        } else {
+          let { ContainerAddPacket } = requireModule("network/protocol");
+          equipment.container.__informSpectators(new ContainerAddPacket(equipment.container.guid, slots[i], item));
         }
       }
     } else if (field) {

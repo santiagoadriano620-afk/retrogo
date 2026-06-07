@@ -29,7 +29,6 @@
         "keywords": {
             "job": "I am here to provide one of the five blessings.",
             "name": "My name is Norf.",
-            "heal$": "You aren't looking that bad. Sorry, I can't help you. But if you are looking for additional protection you should go on the pilgrimage of ashes.",
             "pilgrimage": "Whenever you receive a lethal wound your lifeforce is damaged. With every single of the five blessings you have this damage will be reduced.",
             "ashes": "Whenever you receive a lethal wound your lifeforce is damaged. With every single of the five blessings you have this damage will be reduced.",
             "spiritual": "Here in the whiteflower temple you may receive the blessing of spiritual shielding. But we must ask of you to sacrifice 10.000 gold. Are you still interested?",
@@ -64,13 +63,6 @@
             ],
             "rate": 300,
             "chance": 0.1
-        },
-        "punishments": {
-            "heal$": {
-                "damage": 40,
-                "effectSelf": null,
-                "effectTarget": 13
-            }
         },
         "greetingPatterns": [
             {
@@ -203,6 +195,6 @@
             "blessing": 0,
             "blessings": 0
         },
-        "script": "norf.js"
+        "script": "temple-healer.js"
     }
 }

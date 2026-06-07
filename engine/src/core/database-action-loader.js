@@ -123,6 +123,10 @@ ActionLoader.prototype.__attachPrototypeEvents = function(filepath) {
         if (target.actionId) newThing.setActionId(target.actionId);
         if (target.duration !== undefined && target.duration > 0) {
           newThing.setDuration(target.getRemainingDuration());
+          // Reschedule with remaining duration (stopduration support)
+          if (newThing.isDecaying()) {
+            newThing.__scheduleDecay(newThing.duration);
+          }
         }
         target.replace(newThing);
         return true;

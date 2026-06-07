@@ -1,4 +1,4 @@
-﻿{
+{
     "creatureStatistics":  {
                                "name":  "Brewster",
                                "health":  100,
@@ -55,7 +55,6 @@
                                           "cough":  "The only person who might have some cough syrup is this druid Ustan. You find him in the tavern. Hmmm the tavern ... \u003chicks\u003e",
                                           "syrup":  "The only person who might have some cough syrup is this druid Ustan. You find him in the tavern. Hmmm the tavern ... \u003chicks\u003e",
                                           "help":  "You are burning my child. I will help you.",
-                                          "heal$":  "You aren\u0027t looking that bad. Sorry, I can\u0027t help you. But if you are looking for additional protection you should go on the pilgrimage of ashes.",
                                           "blessing":  "There are five different blessings available in five sacred places. These blessings are: the spiritual shielding, the spark of the phoenix, the embrace of Tibia, the fire of the suns and the wisdom of solitude.",
                                           "pilgrimage":  "Whenever you receive a lethal wound your vital force is damaged. Each one of the five blessings will reduce this damage.",
                                           "ashes":  "Whenever you receive a lethal wound your vital force is damaged. Each one of the five blessings will reduce this damage.",
@@ -89,18 +88,7 @@
                                          "rate":  300,
                                          "chance":  0.1
                                      },
-                         "punishments":  {
-                                             "help":  {
-                                                          "damage":  0,
-                                                          "effectSelf":  null,
-                                                          "effectTarget":  15
-                                                      },
-                                             "heal$":  {
-                                                           "damage":  40,
-                                                           "effectSelf":  null,
-                                                           "effectTarget":  13
-                                                       }
-                                         },
+                         "script": "temple-healer.js",
                          "greetingPatterns":  [
                                                   {
                                                       "keywords":  [
