@@ -546,10 +546,10 @@ CreatureHandler.prototype.createNewPlayer = function (gameSocket, data) {
     let { TrainTimerPacket } = requireModule("network/protocol");
     for (let slot = 0; slot < 10; slot++) {
       let item = player.containerManager.equipment.peekIndex(slot);
-      if (item && (item.getAttribute("duration") || item.getAttribute("showduration") || (item.isTrainingWeapon && item.isTrainingWeapon()))) {
+      if (item && (item.getAttribute("showduration") || (item.isTrainingWeapon && item.isTrainingWeapon()))) {
         let remaining = item.isTrainingWeapon && item.isTrainingWeapon()
           ? item.getRemainingEquipTime()
-          : item.getRemainingDuration();
+          : item.getRemainingDurationSeconds();
         player.write(new TrainTimerPacket(slot, remaining));
       }
     }

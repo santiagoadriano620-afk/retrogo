@@ -234,4 +234,11 @@
 - start.js rewritten with auto-restart (max 5), metrics monitoring, graceful shutdown
 - Unused files moved to `engine/_unused/`; Drizzle/SQLite removed; logs moved to `engine/logs/`
 
+### Timer display restricted to `showduration` + `trainingWeapon` only (this session)
+- Removed `props.duration` from all client timer display conditions (`__initEquipmentTimers`, `Slot.render`) — timer only shows for items with `showduration: true` or `trainingWeapon`
+- Removed `getAttribute("duration")` from all server `TrainTimerPacket` send conditions (`addThing`, `removeIndex`, login) — server only sends timer packets for `showduration` or `trainingWeapon` items
+- **Effect**: Torches and other decaying items with plain `duration` no longer show countdown timer. Rings (active + dormant), soft boots, magic lightwand, and training weapons continue to show timer via their `showduration: true` flag.
+- **`getRemainingDuration` unit fix**: Was mixing ticks and seconds (returned seconds for decaying items, ticks for non-decaying). Now ALWAYS returns ticks (frames). Added `getRemainingDurationSeconds()` helper for callers that need seconds (TrainTimerPacket, getDurationString).
+- **Client `__initEquipmentTimers`**: Convert `props.duration` from ticks to seconds (`Math.round(duration / 20)`) for correct initial timer value
+
 

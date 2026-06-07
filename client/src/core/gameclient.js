@@ -108,9 +108,10 @@ GameClient.prototype.__initEquipmentTimers = function () {
     if (this.interface.trainingTimers[slot] !== undefined) continue;
     let props = defs && defs[item.id] && defs[item.id].properties;
     if (!props) continue;
-    if (props.duration || props.showduration || props.trainingWeapon) {
+    if (props.showduration || props.trainingWeapon) {
       if (props.duration) {
-        this.interface.trainingTimers[slot] = props.duration;
+        // duration in definitions is stored in ticks (50ms/tick); convert to seconds
+        this.interface.trainingTimers[slot] = Math.round(props.duration / 20);
       } else if (props.trainingWeapon) {
         this.interface.trainingTimers[slot] = 12 * 3600;
       } else {

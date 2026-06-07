@@ -195,15 +195,23 @@ Equipment.prototype.removeIndex = function (index, count) {
     }
   }
   // Send current remaining so client always has latest data for this slot
-  if (thing.getAttribute("duration") || thing.getAttribute("showduration") || (thing.isTrainingWeapon && thing.isTrainingWeapon())) {
+  if (thing.getAttribute("showduration") || (thing.isTrainingWeapon && thing.isTrainingWeapon())) {
     try {
       let { TrainTimerPacket } = requireModule("network/protocol");
       let remaining = thing.isTrainingWeapon && thing.isTrainingWeapon()
         ? thing.getRemainingEquipTime()
-        : thing.getRemainingDuration();
+        : thing.getRemainingDurationSeconds();
       this.__player.write(new TrainTimerPacket(Number(index), remaining));
     } catch (err) {
       console.error("[EQUIPMENT] Failed to send TrainTimerPacket on removeIndex:", err);
+    }
+  } else {
+    // Clear timer when removing a non-timer item
+    try {
+      let { TrainTimerPacket } = requireModule("network/protocol");
+      this.__player.write(new TrainTimerPacket(Number(index), 0));
+    } catch (err) {
+      // silently ignore
     }
   }
 
@@ -452,15 +460,23 @@ Equipment.prototype.addThing = function (thing, index) {
   thing.setParent(this);
 
   // Send duration timer update after item is in slot (per-slot)
-  if (thing.getAttribute("duration") || thing.getAttribute("showduration") || (thing.isTrainingWeapon && thing.isTrainingWeapon())) {
+  if (thing.getAttribute("showduration") || (thing.isTrainingWeapon && thing.isTrainingWeapon())) {
     try {
       let { TrainTimerPacket } = requireModule("network/protocol");
       let remaining = thing.isTrainingWeapon && thing.isTrainingWeapon()
         ? thing.getRemainingEquipTime()
-        : thing.getRemainingDuration();
+        : thing.getRemainingDurationSeconds();
       this.__player.write(new TrainTimerPacket(Number(index), remaining));
     } catch (err) {
       console.error("[EQUIPMENT] Failed to send TrainTimerPacket:", err);
+    }
+  } else {
+    // Clear the timer for this slot when equipping a non-timer item
+    try {
+      let { TrainTimerPacket } = requireModule("network/protocol");
+      this.__player.write(new TrainTimerPacket(Number(index), 0));
+    } catch (err) {
+      // silently ignore
     }
   }
 

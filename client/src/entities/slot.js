@@ -149,7 +149,7 @@ Slot.prototype.render = function () {
   }
 
   // Priority 1b: Also check from definitions if no timer in trainingTimers
-  if (props && (props.duration || props.showduration || props.trainingWeapon) && this.index >= 0) {
+  if (props && (props.showduration || props.trainingWeapon) && this.index >= 0) {
     this.setCountString("");
     return;
   }

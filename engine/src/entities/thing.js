@@ -370,16 +370,27 @@ Thing.prototype.getRemainingDuration = function () {
 
   /*
    * Function Thing.getRemainingDuration
-   * Returns the remaining duration on a thing
+   * Returns the remaining duration on a thing in ticks (frames)
    */
 
-  // Not decaying: just copy over
+  // Not decaying: just copy over the raw tick count
   if (!this.isDecaying()) {
     return this.duration;
   }
 
-  // Just return the remaining number of frames until decay
-  return Math.floor(1E-3 * CONFIG.SERVER.MS_TICK_INTERVAL * this.__scheduledDecayEvent.remainingFrames());
+  // Return the remaining number of frames (ticks) until decay
+  return this.__scheduledDecayEvent.remainingFrames();
+
+}
+
+Thing.prototype.getRemainingDurationSeconds = function () {
+
+  /*
+   * Function Thing.getRemainingDurationSeconds
+   * Returns the remaining duration in seconds
+   */
+
+  return Math.floor(1E-3 * CONFIG.SERVER.MS_TICK_INTERVAL * this.getRemainingDuration());
 
 }
 
@@ -448,7 +459,7 @@ Thing.prototype.getDurationString = function () {
    */
 
   // Calculate the number of remaining seconds
-  let remainingSeconds = this.getRemainingDuration();
+  let remainingSeconds = this.getRemainingDurationSeconds();
   let minutes = Math.ceil(remainingSeconds / 60);
 
   // Seconds or minutes
