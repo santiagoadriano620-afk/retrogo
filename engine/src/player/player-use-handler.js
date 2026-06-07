@@ -156,6 +156,18 @@ UseHandler.prototype.handleItemUse = function (packet) {
     return;
   }
 
+  // Wall orientation check — block use from wrong side of directional items (wall lamps, etc.)
+  if (packet.which.constructor.name === "Tile") {
+    let hasH = typeof item.isHorizontal === "function" && item.isHorizontal();
+    let hasV = typeof item.isVertical === "function" && item.isVertical();
+    if (hasH && !hasV && this.__player.position.y < packet.which.position.y) {
+      return this.__player.sendCancelMessage("You have to move to the other side.");
+    }
+    if (hasV && !hasH && this.__player.position.x < packet.which.position.x) {
+      return this.__player.sendCancelMessage("You have to move to the other side.");
+    }
+  }
+
   // Emitter. If a callback returns false (handled), skip built-in handlers.
   if (item.emit("use", this.__player, packet.which, packet.index, item) === false) {
     return;
@@ -227,6 +239,13 @@ UseHandler.prototype.handleItemUse = function (packet) {
         house.guildhall, canBuy, reason, pricePerSqm, rentPeriodDays, buyPrice, house.countBeds()
       ));
       return;
+    }
+  }
+
+  // House ownership check — non-owners cannot use items in houses
+  if (packet.which.constructor.name === "Tile" && packet.which.isHouseTile && packet.which.isHouseTile()) {
+    if (!this.__player.ownsHouseTile(packet.which)) {
+      return this.__player.sendCancelMessage("You do not own this house.");
     }
   }
 

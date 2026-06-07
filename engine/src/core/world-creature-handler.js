@@ -974,6 +974,11 @@ CreatureHandler.prototype.teleportCreature = function (creature, position) {
 
   destination.broadcast(new CreatureTeleportPacket(creature.getId(), destination.getPosition()));
 
+  // Send teleport packet directly to the teleported player (broadcast only reaches neighbour chunks, not self)
+  if (creature.isPlayer()) {
+    creature.write(new CreatureTeleportPacket(creature.getId(), creature.getPosition()));
+  }
+
   // Clear movement buffer and unlock movement lock
   if (creature.isPlayer() && creature.movementHandler) {
     creature.movementHandler.__setMoveBuffer(null);

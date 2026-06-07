@@ -32,10 +32,10 @@ const SHOP_CATEGORIES = [
   {
     name: __("modal.shop.category_outfits"),
     items: [
-      { id: 65001, name: "Royal Nobleman Outfit", desc: "A regal attire fit for nobility.", price: 20 },
-      { id: 65002, name: "Knight Commander Outfit", desc: "Command respect on the battlefield.", price: 20 },
-      { id: 65003, name: "Jester Outfit", desc: "A playful ensemble for entertainers.", price: 20 },
-      { id: 65004, name: "Sage Outfit", desc: "Wise robes for the scholarly.", price: 20 },
+      { id: 65001, name: "Royal Nobleman", desc: "A regal attire fit for nobility.", price: 20 },
+      { id: 65002, name: "Knight Commander", desc: "Command respect on the battlefield.", price: 20 },
+      { id: 65003, name: "Jester", desc: "A playful ensemble for entertainers.", price: 20 },
+      { id: 65004, name: "Sage", desc: "Wise robes for the scholarly.", price: 20 },
       { id: 65005, name: "Warrior Female", desc: "Fierce armor for the fearless.", price: 20 },
       { id: 65006, name: "Knight Commander", desc: "Lead your allies with pride.", price: 20 },
       { id: 65007, name: "Alchemist", desc: "Gear for brewing and experimenting.", price: 20 },

@@ -1341,17 +1341,30 @@ PacketHandler.prototype.handleEntityTeleport = function (packet) {
     return;
   }
 
-  // Ensure destination tile exists in the client world
-  let toTile = gameClient.world.getTileFromWorldPosition(packet.position);
-  if (toTile === null) {
-    return;
-  }
+  // Remove from old tile before updating position
+  let fromTile = gameClient.world.getTileFromWorldPosition(entity.getPosition());
 
   // Sync previous position before updating — renderer uses __previousPosition for defer logic
   entity.__previousPosition = entity.getPosition();
+  if (fromTile !== null) {
+    fromTile.removeCreature(entity);
+  }
 
   // Set the position of the entity
-  entity.setPosition(packet.position);
+  entity.__position = packet.position;
+
+  // Look up chunk/tile — may be null if chunks not yet loaded (they will arrive via ChunkPacket)
+  entity.__chunk = gameClient.world.getChunkFromWorldPosition(packet.position);
+  let toTile = gameClient.world.getTileFromWorldPosition(packet.position);
+  if (toTile !== null) {
+    toTile.addCreature(entity);
+  }
+
+  // Cancel any movement event
+  if (entity.__movementEvent) {
+    entity.__movementEvent.cancel();
+    entity.__movementEvent = null;
+  }
 
   // Special handler if the player is the one that is teleported
   if (gameClient.isSelf(entity)) {
