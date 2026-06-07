@@ -241,7 +241,8 @@ PacketHandler.prototype.moveItem = function (player, packet) {
   let fromItem = fromWhere.peekIndex(fromIndex);
 
   // Creature push: when dragging from top of stack on a tile that has a creature
-  if (fromWhere.constructor.name === "Tile" && fromIndex === 0xFF) {
+  // Only push if there's no item to drag (corpses are items, not creatures)
+  if (fromItem === null && fromWhere.constructor.name === "Tile" && fromIndex === 0xFF) {
     let creature = fromWhere.getTopCreature();
     if (creature !== null && toWhere.constructor.name === "Tile") {
       // Player must be adjacent to push (Admin can push from anywhere)

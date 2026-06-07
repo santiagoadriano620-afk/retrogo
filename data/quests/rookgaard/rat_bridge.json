@@ -15,7 +15,7 @@
                         },
                         {
                             "type":  "createTile",
-                            "effectId":  460,
+                            "effectId": 1284,
                             "pos":  {
                                         "x":  32100,
                                         "y":  32205,
@@ -24,7 +24,7 @@
                         },
                         {
                             "type":  "createTile",
-                            "effectId":  460,
+                            "effectId": 1284,
                             "pos":  {
                                         "x":  32101,
                                         "y":  32205,
@@ -80,7 +80,7 @@
                         },
                         {
                             "type":  "createTile",
-                            "effectId":  460,
+                            "effectId": 1284,
                             "pos":  {
                                         "x":  32100,
                                         "y":  32205,
@@ -89,7 +89,7 @@
                         },
                         {
                             "type":  "createTile",
-                            "effectId":  460,
+                            "effectId": 1284,
                             "pos":  {
                                         "x":  32101,
                                         "y":  32205,

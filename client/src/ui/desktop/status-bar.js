@@ -15,7 +15,7 @@ StatusBar.prototype.STATUS.set(0, { "title": __("status.drunk"), "src": "/images
 StatusBar.prototype.STATUS.set(1, { "title": __("status.poisoned"), "src": "/images/game/states/poisoned.png" });
 StatusBar.prototype.STATUS.set(2, { "title": __("status.burning"), "src": "/images/game/states/burning.png" });
 StatusBar.prototype.STATUS.set(3, { "title": __("status.electrified"), "src": "/images/game/states/electrified.png" });
-StatusBar.prototype.STATUS.set(4, { "title": __("status.invisible"), "src": "/images/game/states/invisible.png" });
+// Removed: INVISIBLE condition (ID 4) has no icon — hidden from status bar
 StatusBar.prototype.STATUS.set(5, { "title": "You are in a protection zone.", "src": "/images/game/states/protection_zone.png" });
 // ID 6 = SUPPRESS_DRUNK (no visual), ID 7 = LIGHT (no visual)
 StatusBar.prototype.STATUS.set(11, { "title": __("status.magic_shield"), "src": "/images/game/states/magic_shield.png" });

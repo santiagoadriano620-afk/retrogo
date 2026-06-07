@@ -157,11 +157,17 @@ ActionHandler.prototype.getRegenInterval = function () {
 };
 
 ActionHandler.prototype.handleActionRegeneration = function () {
+  let intervals = this.getRegenInterval();
+
+  // Only regenerate while food (SATED) is active
+  if (!this.__player.hasCondition(Condition.prototype.SATED)) {
+    this.actions.lock(this.handleActionRegeneration, Math.min(intervals.hp, intervals.mp) / 6 || 1000);
+    return;
+  }
+
   let now = Date.now();
   if (!this.__lastHpRegen) this.__lastHpRegen = now;
   if (!this.__lastMpRegen) this.__lastMpRegen = now;
-
-  let intervals = this.getRegenInterval();
 
   if (now - this.__lastHpRegen >= intervals.hp) {
     if (!this.__player.isFull(CONST.PROPERTIES.HEALTH)) {

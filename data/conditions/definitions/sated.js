@@ -24,24 +24,7 @@ function onExpire(creature) {
 
 function onTick(creature) {
 
-  /*
-   * Function onTick
-   * Callback fired every condition tick
-   * Regenerates 1 HP per tick (always) + 1 MP per tick (only outside combat)
-   */
-
-  let hp = creature.getProperty(CONST.PROPERTIES.HEALTH);
-  let hpMax = creature.getProperty(CONST.PROPERTIES.HEALTH_MAX);
-  let mp = creature.getProperty(CONST.PROPERTIES.MANA);
-  let mpMax = creature.getProperty(CONST.PROPERTIES.MANA_MAX);
-
-  if (hp < hpMax) {
-    creature.setProperty(CONST.PROPERTIES.HEALTH, Math.min(hp + 1, hpMax));
-  }
-
-  if (!creature.isInCombat() && mp < mpMax) {
-    creature.setProperty(CONST.PROPERTIES.MANA, Math.min(mp + 1, mpMax));
-  }
+  // HP/MP regeneration is now handled by handleActionRegeneration in player-action-handler.js
 
 }
 

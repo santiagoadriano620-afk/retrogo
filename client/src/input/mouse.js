@@ -90,6 +90,13 @@ Mouse.prototype.__renderDragSprite = function (object) {
   let item = object.which && object.which.peekItem(object.index);
   if (!item) return;
 
+  // Only show drag sprite for movable, pickupable items (runes, equipment, foods, tools)
+  // Exclude fluids, splashes, and non-movable scenery
+  let itemObj = new Item(item.id, item.count || 1);
+  if (!itemObj.isMoveable() || !itemObj.isPickupable()) return;
+  if (itemObj.hasFlag(PropBitFlag.prototype.flags.DatFlagFluidContainer) ||
+      itemObj.hasFlag(PropBitFlag.prototype.flags.DatFlagSplash)) return;
+
   let canvas = document.createElement("canvas");
   canvas.width = 32;
   canvas.height = 32;
@@ -98,7 +105,6 @@ Mouse.prototype.__renderDragSprite = function (object) {
   canvas.style.zIndex = "2147483647";
   canvas.style.imageRendering = "pixelated";
 
-  let itemObj = new Item(item.id, item.count || 1);
   let frameGroup = itemObj.getFrameGroup(FrameGroup.prototype.NONE);
   if (frameGroup) {
     let frame = itemObj.getFrame();

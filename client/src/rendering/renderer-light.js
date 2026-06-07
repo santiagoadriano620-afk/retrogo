@@ -3,7 +3,7 @@ Renderer.prototype.__renderLightThing = function (position, thing, intensity) {
   let info = thing.getDataObject().properties.light;
   if (!info) return;
 
-  let size = Math.max(0.5, info.level / 2);
+  let size = Math.max(0.5, info.level * 0.75);
 
   this.lightscreen.renderLightBubble(
     position.x,
