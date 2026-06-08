@@ -732,19 +732,6 @@ NetworkManager.prototype.__handlePacket = function (event) {
     }
   }
 
-  // Debug log: rate-limited to 1 per second to avoid flooding
-  let now = Date.now();
-  if (!this.__lastDebugLogTime || now - this.__lastDebugLogTime >= 1000) {
-    this.__lastDebugLogTime = now;
-    try {
-      let url = `http://${window.location.hostname || "localhost"}:8000/__debug_log`;
-      let body = JSON.stringify({ msg: `[C] ${hidden} op=${firstOpcode} len=${packetLen}` });
-      fetch(url, { method: "POST", body, headers: { "Content-Type": "application/json" }, mode: "no-cors" }).catch(function(){});
-    } catch(e) {}
-  }
-
-
-
 }
 
 NetworkManager.prototype.__handleError = function (event) {

@@ -453,19 +453,6 @@ LoginServer.prototype.__handlePostRequest = function (request, response, pathnam
    * Handles POST/PUT/DELETE requests with parsed JSON body
    */
 
-  // POST /__debug_log — client-side debug log relay
-  if (pathname === "/__debug_log") {
-    try {
-      let ROOT = path.resolve(__dirname, "../../..");
-      let logFile = path.join(ROOT, "output.txt");
-      let t = new Date().toISOString().slice(11, 23);
-      let msg = body && body.msg ? body.msg : JSON.stringify(body);
-      fs.appendFileSync(logFile, `[${t}] ${msg}\n`, "utf8");
-    } catch (e) {}
-    response.writeHead(200, { "Content-Type": "text/plain" });
-    return response.end("ok");
-  }
-
   // POST /api/login — authenticate (credentials in body, not URL)
   if (pathname === "/api/login") {
     return this.__getAccount(body, response);

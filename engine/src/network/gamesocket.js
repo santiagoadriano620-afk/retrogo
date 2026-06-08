@@ -380,11 +380,6 @@ GameSocket.prototype.write = function (packet) {
    * Writes a message to the outgoing buffer
    */
 
-  // Debug log outgoing packets
-  let pn = packet.constructor ? packet.constructor.name : "?";
-  let pd = packet.__debugStr || "";
-  __debugWrite(`[S->${this.player ? this.player.name : "?"}] ${pn} ${pd}`);
-
   // Exceeds the maximum size: disconnect the game socket for safety
   if (packet.overflow()) {
     return this.closeError("Internal server error: game packet overflow.");
