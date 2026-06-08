@@ -149,11 +149,12 @@ Chunk.prototype.getFirstFloorFromBottomProjected = function (position) {
 
     // A tile exist above the player: stop looking except for when transparent (e.g., stairs)
     if (tile.id !== 0 && !tile.isTranslucent()) {
-      return (tilePosition.z - z) % 8;
+      let depth = Chunk.prototype.DEPTH || 8;
+      return ((tilePosition.z - z) % depth + depth) % depth;
+
     }
 
   }
-
   // Can see everything
   return -1;
 
@@ -195,7 +196,8 @@ Chunk.prototype.getFirstFloorFromBottom = function (position) {
 
       // A tile exist above the player: stop looking except for when transparent (e.g., stairs)
       if ((tile.id !== 0 && !tile.isTranslucent()) || tile.items.length > 0) {
-        return (tilePosition.z - z) % 8;
+        let depth = Chunk.prototype.DEPTH || 8;
+        return ((tilePosition.z - z) % depth + depth) % depth;
       }
 
     }
@@ -308,9 +310,13 @@ Chunk.prototype.__getTileIndex = function (worldPosition) {
    * Returns the index tile of a tile given a world position
    */
 
-  let a = (worldPosition.x % Chunk.prototype.WIDTH);
-  let b = (worldPosition.y % Chunk.prototype.HEIGHT * Chunk.prototype.WIDTH)
-  let c = (worldPosition.z % Chunk.prototype.DEPTH * Chunk.prototype.WIDTH * Chunk.prototype.HEIGHT);
+  let w = Chunk.prototype.WIDTH || 1;
+  let h = Chunk.prototype.HEIGHT || 1;
+  let d = Chunk.prototype.DEPTH || 1;
+
+  let a = ((worldPosition.x % w) + w) % w;
+  let b = (((worldPosition.y % h) + h) % h) * w;
+  let c = (((worldPosition.z % d) + d) % d) * w * h;
 
   return a + b + c;
 

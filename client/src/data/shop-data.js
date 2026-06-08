@@ -53,9 +53,9 @@ const SHOP_CATEGORIES = [
   {
     name: __("modal.shop.category_starter_box"),
     items: [
-      { id: 3135, name: "Bronze Starter Box", desc: "30 days premium, 2 training weapons, and 10 premium points.", price: 15 },
-      { id: 3136, name: "Silver Starter Box", desc: "90 days premium, 5 training weapons, a tool, an outfit, and training dummy.", price: 70 },
-      { id: 3137, name: "Golden Starter Box", desc: "180 days premium, 10 training weapons, 2 tools, 2 outfits, and 50 premium points.", price: 140 },
+      { id: 3135, name: "Bronze Starter Box", desc: "30 days premium, 3 training weapons, and 1 outfit.", price: 25 },
+      { id: 3136, name: "Silver Starter Box", desc: "90 days premium, training dummy, 5 training weapons, 1 tool, and 2 outfits.", price: 70 },
+      { id: 3137, name: "Golden Starter Box", desc: "180 days premium, training dummy, 10 training weapons, 2 tools, and 3 outfits.", price: 120 },
     ]
   }
 ];

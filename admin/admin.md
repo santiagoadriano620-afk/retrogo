@@ -1,4 +1,4 @@
-# TibiaJS Admin Panel — Technical Reference
+# RetroGO Admin Panel — Technical Reference
 
 ## Architecture
 
@@ -125,7 +125,7 @@ All under `/api/admin/`. Most require session auth (exception: `/sprites`).
 
 ## Database
 
-`D:\GitHub\tibiajs\data\database\tibia.db` (SQLite)
+`D:\GitHub\retrogo\data\database\tibia.db` (SQLite)
 
 Key tables:
 - `accounts` — `id`, `hash` (bcrypt), `name`, `group_id`, `ip` (registration IP), `last_ip` (last login IP, added via migration), `last_login` (timestamp), `premium_expiry`
@@ -198,7 +198,7 @@ Skill levels are computed from "tries" (internal XP for each skill):
 
 ## Sprite System (v740)
 
-Source files: `D:\GitHub\tibiajs\client\things/`
+Source files: `D:\GitHub\retrogo\client\things/`
 
 ### Tibia.dat (40BF619C)
 - Header: signature(4B) + itemCount(2B) + outfitCount(2B) + effectCount(2B) + distanceCount(2B)
@@ -223,7 +223,7 @@ Source files: `D:\GitHub\tibiajs\client\things/`
 
 ## Item Name Resolution
 
-1. `items.xml` (`D:\GitHub\tibiajs\data\items\items.xml`) parsed by `items.js` → `Map<id, name>`
+1. `items.xml` (`D:\GitHub\retrogo\data\items\items.xml`) parsed by `items.js` → `Map<id, name>`
 2. Backend injects names into player data via `injectItemNames()` — recursive walk of `char.data`
 3. Depot endpoint uses `flattenItems()` which resolves names server-side
 4. Frontend `ItemRow` displays `item.name || 'Unknown'`

@@ -660,11 +660,37 @@ PacketHandler.prototype.handleStarterBoxChoice = function (player, packet) {
     player.write(new PremiumBalanceUpdatePacket(player.premiumPoints));
     player.write(new BlessingUpdatePacket(player.getBlessingBitmask(), player.isPremium()));
 
-    // 2 training weapons
+    // 3 training weapons + 1 outfit
     var validWeapons = [3139, 3140, 3141, 3142, 3143, 3144];
-    for (ci = 0; ci < choiceIds.length && ci < 2; ci++) {
-      if (validWeapons.indexOf(choiceIds[ci]) !== -1) {
-        validChoices.push(choiceIds[ci]);
+    var weaponCount = 0;
+    var outfitCount = 0;
+    for (ci = 0; ci < choiceIds.length; ci++) {
+      var cid = choiceIds[ci];
+      if (weaponCount < 3 && validWeapons.indexOf(cid) !== -1) {
+        validChoices.push(cid);
+        weaponCount++;
+      } else if (outfitCount < 1 && cid >= 65001 && cid <= 65008) {
+        var outfitIdMap = { 65001:126, 65002:127, 65003:128, 65004:129, 65005:130, 65006:131, 65007:132, 65008:133 };
+        var oId = outfitIdMap[cid];
+        var sex = player.getProperty(CONST.PROPERTIES.SEX);
+        var isMale = sex === 0;
+        var isMaleOutfit = cid <= 65004;
+        if (isMale === isMaleOutfit) {
+          var available = player.getProperty(CONST.PROPERTIES.OUTFITS);
+          if (!available) {
+            available = new Set();
+            player.setProperty(CONST.PROPERTIES.OUTFITS, available);
+          } else if (Array.isArray(available)) {
+            available = new Set(available);
+            player.setProperty(CONST.PROPERTIES.OUTFITS, available);
+          }
+          if (!available.has(oId)) {
+            available.add(oId);
+            var outfitName = Outfit.prototype.getName(oId) || "Unknown Outfit";
+            player.write(new OutfitUnlockPacket(oId, outfitName));
+            outfitCount++;
+          }
+        }
       }
     }
   } else if (boxId === 3136) {
@@ -690,47 +716,46 @@ PacketHandler.prototype.handleStarterBoxChoice = function (player, packet) {
       gameServer.world.addTopThing(player.position, dummy);
     }
 
-    // Parse choices: first 5 valid weapons, then 1 tool, then 1 outfit
+    // 5 weapons + 1 tool + 2 outfits
     var validWeapons2 = [3139, 3140, 3141, 3142, 3143, 3144];
     var validTools = [3145, 3146];
-    var weaponCount = 0;
-    var toolCount = 0;
-    var outfitCount = 0;
+    var weaponCount2 = 0;
+    var toolCount2 = 0;
+    var outfitCount2 = 0;
     for (ci = 0; ci < choiceIds.length; ci++) {
       var cid = choiceIds[ci];
-      if (weaponCount < 5 && validWeapons2.indexOf(cid) !== -1) {
+      if (weaponCount2 < 5 && validWeapons2.indexOf(cid) !== -1) {
         validChoices.push(cid);
-        weaponCount++;
-      } else if (toolCount < 1 && validTools.indexOf(cid) !== -1) {
+        weaponCount2++;
+      } else if (toolCount2 < 1 && validTools.indexOf(cid) !== -1) {
         validChoices.push(cid);
-        toolCount++;
-      } else if (outfitCount < 1 && cid >= 65001 && cid <= 65008) {
-        var outfitIdMap = { 65001:126, 65002:127, 65003:128, 65004:129, 65005:130, 65006:131, 65007:132, 65008:133 };
-        var oId = outfitIdMap[cid];
-        var sex = player.getProperty(CONST.PROPERTIES.SEX);
-        var isMale = sex === 0;
-        var isMaleOutfit = cid <= 65004;
-        if (isMale === isMaleOutfit) {
-          var available = player.getProperty(CONST.PROPERTIES.OUTFITS);
-          if (!available) {
-            available = new Set();
-            player.setProperty(CONST.PROPERTIES.OUTFITS, available);
-          } else if (Array.isArray(available)) {
-            available = new Set(available);
-            player.setProperty(CONST.PROPERTIES.OUTFITS, available);
+        toolCount2++;
+      } else if (outfitCount2 < 2 && cid >= 65001 && cid <= 65008) {
+        var outfitIdMap2 = { 65001:126, 65002:127, 65003:128, 65004:129, 65005:130, 65006:131, 65007:132, 65008:133 };
+        var oId2 = outfitIdMap2[cid];
+        var sex2 = player.getProperty(CONST.PROPERTIES.SEX);
+        var isMale2 = sex2 === 0;
+        var isMaleOutfit2 = cid <= 65004;
+        if (isMale2 === isMaleOutfit2) {
+          var available2 = player.getProperty(CONST.PROPERTIES.OUTFITS);
+          if (!available2) {
+            available2 = new Set();
+            player.setProperty(CONST.PROPERTIES.OUTFITS, available2);
+          } else if (Array.isArray(available2)) {
+            available2 = new Set(available2);
+            player.setProperty(CONST.PROPERTIES.OUTFITS, available2);
           }
-          if (!available.has(oId)) {
-            available.add(oId);
-            var outfitName = Outfit.prototype.getName(oId) || "Unknown Outfit";
-            player.write(new OutfitUnlockPacket(oId, outfitName));
-            outfitCount++;
+          if (!available2.has(oId2)) {
+            available2.add(oId2);
+            var outfitName2 = Outfit.prototype.getName(oId2) || "Unknown Outfit";
+            player.write(new OutfitUnlockPacket(oId2, outfitName2));
+            outfitCount2++;
           }
         }
       }
     }
   } else if (boxId === 3137) {
-    // auto grant: 180 days premium + 50 PP
-    player.premiumPoints += 50;
+    // auto grant: 180 days premium + training dummy
     var days3 = 180;
     var now3 = Date.now();
     if (player.premiumExpiry > now3) {
@@ -747,7 +772,12 @@ PacketHandler.prototype.handleStarterBoxChoice = function (player, packet) {
     player.write(new PremiumBalanceUpdatePacket(player.premiumPoints));
     player.write(new BlessingUpdatePacket(player.getBlessingBitmask(), player.isPremium()));
 
-    // Parse: 10 weapons, 2 tools, 2 outfits
+    var dummy3 = gameServer.database.createThing(3138);
+    if (!player.containerManager.giftContainer.addThingSmart(dummy3)) {
+      gameServer.world.addTopThing(player.position, dummy3);
+    }
+
+    // 10 weapons + 2 tools + 3 outfits
     var validWeapons3 = [3139, 3140, 3141, 3142, 3143, 3144];
     var validTools3 = [3145, 3146];
     var weaponCount3 = 0;
@@ -761,7 +791,7 @@ PacketHandler.prototype.handleStarterBoxChoice = function (player, packet) {
       } else if (toolCount3 < 2 && validTools3.indexOf(cid3) !== -1) {
         validChoices.push(cid3);
         toolCount3++;
-      } else if (outfitCount3 < 2 && cid3 >= 65001 && cid3 <= 65008) {
+      } else if (outfitCount3 < 3 && cid3 >= 65001 && cid3 <= 65008) {
         var outfitIdMap3 = { 65001:126, 65002:127, 65003:128, 65004:129, 65005:130, 65006:131, 65007:132, 65008:133 };
         var oId3 = outfitIdMap3[cid3];
         var sex3 = player.getProperty(CONST.PROPERTIES.SEX);

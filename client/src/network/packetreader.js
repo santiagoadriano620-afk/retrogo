@@ -447,7 +447,8 @@ PacketReader.prototype.__readChunkTiles = function () {
 
   let tiles = new Array();
 
-  for (let i = 0; i < 8; i++) {
+  let depth = Chunk.prototype.DEPTH || 8;
+  for (let i = 0; i < depth; i++) {
 
     let ntiles = this.readUInt8();
 

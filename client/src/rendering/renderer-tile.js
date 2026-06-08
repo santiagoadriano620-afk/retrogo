@@ -8,9 +8,9 @@ Renderer.prototype.__renderTileObjects = function (tile, sx, sy, skipLight) {
   } else {
     let p = gameClient.player;
     let pp = p.getPosition();
-    let pz = pp.z % 8;
+    let pz = pp.z % (typeof Chunk !== 'undefined' && Chunk.prototype.DEPTH || 8);
     let tp = tile.getPosition();
-    let tz = tp.z % 8;
+    let tz = tp.z % (typeof Chunk !== 'undefined' && Chunk.prototype.DEPTH || 8);
     this.__scratchPos2.x = this.playerTileOffsetX + p.getMoveOffset().x + (tp.x + tz) - (pp.x + pz);
     this.__scratchPos2.y = this.playerTileOffsetY + p.getMoveOffset().y + (tp.y + tz) - (pp.y + pz);
     position = this.__scratchPos2;

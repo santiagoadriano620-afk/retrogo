@@ -74,7 +74,8 @@ Position.prototype.unprojected = function () {
    */
 
   // Bind to sector height
-  let z = this.z % 8;
+  let depth = (typeof Chunk !== 'undefined' && Chunk.prototype.DEPTH) || 8;
+  let z = this.z % depth;
 
   return new this.constructor(
     this.x - z,
@@ -92,7 +93,8 @@ Position.prototype.projected = function () {
    */
 
   // Bind to sector height
-  let z = this.z % 8;
+  let depth = (typeof Chunk !== 'undefined' && Chunk.prototype.DEPTH) || 8;
+  let z = this.z % depth;
 
   return new this.constructor(
     this.x + z,

@@ -238,7 +238,7 @@ Nenhum campo existente foi removido ou alterado. Todo o diálogo original (keywo
 
 ### Scripts
 
-SpellTeacher removido de todos os scripts. Scripts originais restaurados do backup em `D:\GitHub\tibiajs\npcs\definitions\script\`.
+SpellTeacher removido de todos os scripts. Scripts originais restaurados do backup em `D:\GitHub\retrogo\npcs\definitions\script\`.
 
 ---
 
@@ -272,4 +272,4 @@ Para keywords com vocação explícita no response (ex: "berserk" → "only for 
 - `engine/src/npc/npc-conversation-handler.js` — Toda a lógica da engine
 - `data/npcs/definitions/` — 32 NPCs JSON com dados de spell adicionados
 - `data/npcs/definitions/script/` — Scripts originais (SpellTeacher removido)
-- `D:\GitHub\tibiajs\npcs\definitions\` — Backup dos JSONs originais
+- `D:\GitHub\retrogo\npcs\definitions\` — Backup dos JSONs originais

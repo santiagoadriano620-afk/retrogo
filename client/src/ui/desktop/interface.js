@@ -1053,14 +1053,16 @@ Interface.prototype.__handleVisibiliyChange = function (event) {
       }
 
       // Step 3: Force tile cache rebuild from current (correct) world state
-      gameClient.renderer.__lastCacheX = -1;
-      gameClient.renderer.__lastCacheY = -1;
-      gameClient.renderer.__lastCacheZ = -1;
-      gameClient.renderer.updateTileCache();
-      gameClient.renderer.__tileCacheNeedsRebuild = true;
+      if (gameClient.renderer && gameClient.player) {
+        gameClient.renderer.__lastCacheX = -1;
+        gameClient.renderer.__lastCacheY = -1;
+        gameClient.renderer.__lastCacheZ = -1;
+        gameClient.renderer.updateTileCache();
+        gameClient.renderer.__tileCacheNeedsRebuild = true;
+      }
 
       // Step 4: Rebuild neighbour graph to fix invisible walls
-      if (gameClient.world) {
+      if (gameClient.world && gameClient.player) {
         gameClient.world.__refreshNeighboursLarge(
           gameClient.player.getPosition(), 15
         );
@@ -1070,13 +1072,15 @@ Interface.prototype.__handleVisibiliyChange = function (event) {
       gameClient.__pendingTabReturn = true;
     } else {
       // Brief hide: just refresh caches as before
-      gameClient.renderer.__lastCacheX = -1;
-      gameClient.renderer.__lastCacheY = -1;
-      gameClient.renderer.__lastCacheZ = -1;
-      gameClient.renderer.updateTileCache();
-      gameClient.renderer.__tileCacheNeedsRebuild = true;
+      if (gameClient.renderer && gameClient.player) {
+        gameClient.renderer.__lastCacheX = -1;
+        gameClient.renderer.__lastCacheY = -1;
+        gameClient.renderer.__lastCacheZ = -1;
+        gameClient.renderer.updateTileCache();
+        gameClient.renderer.__tileCacheNeedsRebuild = true;
+      }
 
-      if (gameClient.world) {
+      if (gameClient.world && gameClient.player) {
         gameClient.world.__refreshNeighboursLarge(
           gameClient.player.getPosition(), 15
         );

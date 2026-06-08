@@ -65,6 +65,9 @@ const GameClient = function () {
   // Flag: on tab return, force a second render pass after world state settles
   this.__pendingTabReturn = false;
 
+  // Throttle context-loss warning to once per second
+  this.__lastContextWarn = 0;
+
   // Load item definitions
   this.itemDefinitions = {};
   fetch("./items/definitions.json").then(response => {
@@ -332,9 +335,26 @@ GameClient.prototype.handleAcceptLogin = function (packet) {
   // Create a new player with a particular server identifier
   this.player = new Player(packet);
 
+  // DIAGNOSTIC: log the player position right from login
+  let pos = this.player.getPosition();
+  console.warn("[DIAG] handleAcceptLogin: player pos=(%d,%d,%d) world=(%dx%dx%d) chunkDepth=%d",
+    pos.x, pos.y, pos.z,
+    this.world ? this.world.width : -1,
+    this.world ? this.world.height : -1,
+    this.world ? this.world.depth : -1,
+    Chunk.prototype.DEPTH
+  );
+
   // Add the player to the game world
   this.world.createCreature(packet.id, this.player);
-  this.renderer.updateTileCache();
+  
+  // CRITICAL: Force complete cache rebuild on login
+  this.renderer.__lastCacheX = -1;
+  this.renderer.__lastCacheY = -1;
+  this.renderer.__lastCacheZ = -1;
+  this.renderer.__tileCacheNeedsRebuild = true;
+  this.renderer.updateTileCache(true); // Force flag
+  
   this.player.setAmbientSound();
   this.renderer.minimap.setRenderLayer(this.player.getPosition().z);
 
@@ -452,12 +472,35 @@ GameClient.prototype.__loop = function () {
   }
 
   // Capture pre-render state for per-frame delta counters
-  let batchesBefore = this.renderer.screen.__glFlushCount;
-  let uploadsBefore = this.renderer.screen.__glTexUploads;
-  let drawTimeBefore = this.renderer.totalDrawTime;
+  // Skip render work while WebGL context is lost — all GL calls are no-ops
+  let screen = this.renderer && this.renderer.screen;
+  let contextActive = (!screen || !screen.glContextLost);
+  let batchesBefore = 0;
+  let uploadsBefore = 0;
+  let drawTimeBefore = 0;
 
-  // Request to render the frame
-  this.renderer.render();
+  if (!contextActive) {
+    let now = Date.now();
+    if (!this.__lastContextWarn || now - this.__lastContextWarn > 1000) {
+      this.__lastContextWarn = now;
+      console.warn("[render] Skipping frame while WebGL context is lost");
+    }
+  } else if (this.renderer && this.renderer.screen) {
+    batchesBefore = this.renderer.screen.__glFlushCount;
+    uploadsBefore = this.renderer.screen.__glTexUploads;
+    drawTimeBefore = this.renderer.totalDrawTime;
+
+    // Request to render the frame
+    try {
+      this.renderer.render();
+    } catch (e) {
+      console.error("[render] render() threw — forcing cache rebuild:", e);
+      this.renderer.__lastCacheX = -1;
+      this.renderer.__lastCacheY = -1;
+      this.renderer.__lastCacheZ = -1;
+      this.renderer.__tileCacheNeedsRebuild = true;
+    }
+  }
   t4 = performance.now();
 
   // Accumulate frame phase timings (reset by debugger every 60 frames)
@@ -469,13 +512,15 @@ GameClient.prototype.__loop = function () {
   ft.total += t4 - t0;
   ft.count++;
 
-  // Per-frame timing and stutter detection
+  // Per-frame timing and stutter detection — skip when context is lost
   let frameTime = t4 - t0;
 
   this.__frameTimes.push(frameTime);
   if (this.__frameTimes.length > 180) this.__frameTimes.shift();
 
-  if (this.__frameTimes.length >= 10) {
+  contextActive = (!screen || !screen.glContextLost);
+
+  if (contextActive && this.__frameTimes.length >= 10) {
     let sorted = [...this.__frameTimes].sort((a, b) => a - b);
     let median = sorted[Math.floor(sorted.length / 2)];
 
@@ -486,8 +531,8 @@ GameClient.prototype.__loop = function () {
       let rTime = t4 - t3;
       let qTime = t1 - t0;
       let sTime = t2 - t1;
-      let nUploads = this.renderer.screen.__glTexUploads - uploadsBefore;
-      let nBatches = this.renderer.screen.__glFlushCount - batchesBefore;
+      let nUploads = (this.renderer.screen.__glTexUploads - (uploadsBefore || 0)) || 0;
+      let nBatches = (this.renderer.screen.__glFlushCount - (batchesBefore || 0)) || 0;
       let cause = "unknown";
       if (rTime > 14) cause = "render";
       else if (qTime > 3) cause = "queue";
@@ -533,16 +578,14 @@ GameClient.prototype.__loop = function () {
 
   // Tab return: re-invalidate caches and re-render so the frame reflects the
   // settled world state after event queue / creature resets took effect.
-  if (this.__pendingTabReturn && this.player) {
+  if (this.__pendingTabReturn && this.player && this.world && this.renderer) {
     this.__pendingTabReturn = false;
     this.renderer.__lastCacheX = -1;
     this.renderer.__lastCacheY = -1;
     this.renderer.__lastCacheZ = -1;
     this.renderer.updateTileCache();
     this.renderer.__tileCacheNeedsRebuild = true;
-    if (this.world) {
-      this.world.__refreshNeighboursLarge(this.player.getPosition(), 15);
-    }
+    this.world.__refreshNeighboursLarge(this.player.getPosition(), 15);
     this.renderer.render();
   }
 

@@ -530,6 +530,13 @@ CreatureHandler.prototype.createNewPlayer = function (gameSocket, data) {
     return gameSocket.closeError("An unexpected error occurred.");
   }
 
+  // DIAG: log tile data at player position and neighbors
+  let dp = tile.position;
+  let dpTile = gameServer.world.getTileFromWorldPosition(dp);
+  let dpClientId = dpTile ? gameServer.database.getClientId(dpTile.id) : -1;
+  console.log("[DIAG] Player placed at (%d,%d,%d) tileId=%d clientId=%d",
+    dp.x, dp.y, dp.z, dpTile ? dpTile.id : -1, dpClientId);
+
   // Give first-login items if character has never logged in before
   checkFirstItems(player);
 

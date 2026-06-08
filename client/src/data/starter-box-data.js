@@ -3,15 +3,16 @@
 const STARTER_BOX_DATA = {
   3135: {
     name: "Bronze Starter Box",
-    price: 15,
+    price: 25,
     autoGrant: [
       { type: "premiumDays", label: "30 Days Premium Account", count: 30 }
     ],
     choices: [
       {
         type: "trainingWeapon",
-        label: "Choose 2 Training Weapons",
-        max: 2,
+        label: "Choose 3 Training Weapons",
+        max: 3,
+        allowDuplicates: true,
         options: [
           { id: 3139, name: "Training Rod" },
           { id: 3140, name: "Training Spear" },
@@ -19,6 +20,22 @@ const STARTER_BOX_DATA = {
           { id: 3142, name: "Training Club" },
           { id: 3143, name: "Training Sword" },
           { id: 3144, name: "Training Axe" }
+        ]
+      },
+      {
+        type: "outfit",
+        label: "Choose 1 Outfit",
+        max: 1,
+        genderFilter: true,
+        options: [
+          { id: 65001, name: "Royal Nobleman" },
+          { id: 65002, name: "Knight Commander" },
+          { id: 65003, name: "Jester" },
+          { id: 65004, name: "Sage" },
+          { id: 65005, name: "Warrior Female" },
+          { id: 65006, name: "Knight Commander" },
+          { id: 65007, name: "Alchemist" },
+          { id: 65008, name: "Mademoiselle" }
         ]
       }
     ]
@@ -56,8 +73,8 @@ const STARTER_BOX_DATA = {
       },
       {
         type: "outfit",
-        label: "Choose 1 Outfit",
-        max: 1,
+        label: "Choose 2 Outfits",
+        max: 2,
         genderFilter: true,
         options: [
           { id: 65001, name: "Royal Nobleman" },
@@ -74,10 +91,10 @@ const STARTER_BOX_DATA = {
   },
   3137: {
     name: "Golden Starter Box",
-    price: 140,
+    price: 120,
     autoGrant: [
       { type: "premiumDays", label: "180 Days Premium Account", count: 180 },
-      { type: "premiumPoints", label: "+50 Premium Points", count: 50 }
+      { type: "item", id: 3138, label: "Training Dummy" }
     ],
     choices: [
       {
@@ -106,8 +123,8 @@ const STARTER_BOX_DATA = {
       },
       {
         type: "outfit",
-        label: "Choose 2 Outfits",
-        max: 2,
+        label: "Choose 3 Outfits",
+        max: 3,
         genderFilter: true,
         options: [
           { id: 65001, name: "Royal Nobleman" },

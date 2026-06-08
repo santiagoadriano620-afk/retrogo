@@ -2,8 +2,15 @@ const Canvas = function (id, width, height) {
 
   this.canvas = this.__reference(id);
 
+  if (!this.canvas) {
+    console.error("[canvas] Canvas constructor: __reference(%s) returned null", id);
+    return;
+  }
+
   this.canvas.width = width;
   this.canvas.height = height;
+
+  this.glContextLost = false;
 
   if (id === "screen") {
     let gl = this.canvas.getContext("webgl2", {
@@ -15,13 +22,21 @@ const Canvas = function (id, width, height) {
     if (gl) {
       this.isGL = true;
       this.gl = gl;
+      console.warn("[canvas] Using WebGL2 for screen canvas");
       this.__initGL();
+      this.__registerContextHandlers();
       return;
     }
+    console.warn("[canvas] WebGL2 unavailable, falling back to Canvas 2D");
   }
 
   this.context = this.canvas.getContext("2d");
+  if (!this.context) {
+    console.error("[canvas] Failed to get 2D context for canvas id=%s", id);
+    return;
+  }
   this.context.imageSmoothingEnabled = false;
+  console.log("[canvas] Using Canvas 2D rendering (id=%s)", id || "offscreen");
 
 }
 
@@ -120,12 +135,24 @@ Canvas.prototype.black = function () {
 Canvas.prototype.clear = function () {
 
   if (this.isGL) {
+    if (this.glContextLost) {
+      console.warn("[canvas] clear() skipped: WebGL context is lost");
+      return;
+    }
     let gl = this.gl;
+    if (!gl) {
+      console.error("[canvas] clear() called but GL context is null");
+      return;
+    }
     gl.viewport(0, 0, this.canvas.width, this.canvas.height);
     gl.clear(gl.COLOR_BUFFER_BIT);
     return;
   }
 
+  if (!this.context) {
+    console.error("[canvas] clear() called but 2D context is null");
+    return;
+  }
   this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
 }
@@ -264,7 +291,16 @@ Canvas.prototype.drawDistanceAnimation = function (animation, position) {
 
 Canvas.prototype.drawImage = function (image, a1, a2, a3, a4, a5, a6, a7, a8) {
 
+  if (!image) {
+    console.error("[canvas] drawImage called with null/undefined image");
+    return;
+  }
+
   if (this.isGL) {
+    if (this.glContextLost) {
+      console.warn("[canvas] drawImage skipped: WebGL context is lost");
+      return;
+    }
     let gl = this.gl;
     let iw = image.width || image.videoWidth || 1;
     let ih = image.height || image.videoHeight || 1;
@@ -448,6 +484,10 @@ Canvas.prototype.setImageSmoothing = function (enabled) {
 Canvas.prototype.flush = function () {
 
   if (this.isGL) {
+    if (this.glContextLost) {
+      console.warn("[canvas] flush() skipped: WebGL context is lost");
+      return;
+    }
     this.__glFlushBatch();
   }
 
@@ -738,7 +778,7 @@ Canvas.prototype.__glQuad = function (srcCanvas, srcX, srcY, srcW, srcH, dstX, d
 Canvas.prototype.__glFlushBatch = function () {
 
   let gl = this.gl;
-  if (!gl || this.__glQuadCount === 0) {
+  if (!gl || this.__glQuadCount === 0 || this.glContextLost) {
     return;
   }
 
@@ -879,6 +919,35 @@ Canvas.prototype.__initGL = function () {
   gl.pixelStorei(gl.UNPACK_COLORSPACE_CONVERSION_WEBGL, gl.NONE);
 
   this.__glActiveCanvas = null;
+
+}
+
+Canvas.prototype.__registerContextHandlers = function () {
+
+  let self = this;
+
+  this.canvas.addEventListener("webglcontextlost", function (e) {
+    e.preventDefault();
+    self.glContextLost = true;
+    console.warn("[GL] WebGL context lost — rendering paused");
+  });
+
+  this.canvas.addEventListener("webglcontextrestored", function (e) {
+    console.warn("[GL] WebGL context restored — re-initializing");
+    self.glContextLost = false;
+    if (self.gl) {
+      // Clear stale texture cache (all GL resources were destroyed)
+      self.__glCanvasTexCache = new WeakMap();
+      self.__initGL();
+      if (gameClient && gameClient.renderer) {
+        gameClient.renderer.__lastCacheX = -1;
+        gameClient.renderer.__lastCacheY = -1;
+        gameClient.renderer.__lastCacheZ = -1;
+        gameClient.renderer.__tileCacheNeedsRebuild = true;
+      }
+      console.warn("[GL] Context re-initialized successfully");
+    }
+  });
 
 }
 

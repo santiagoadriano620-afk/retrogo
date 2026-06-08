@@ -97,6 +97,11 @@ const Renderer = function () {
 
   this.__skipNextLightFrame = false;
 
+  this.__lastRebuildDrawnTiles = 0;
+  this.__lastRebuildFailedFG = 0;
+
+  this.__healthCheckCounter = 0;
+
   this.__createAnimationLayers();
 
   this.skullImages = {};
@@ -166,10 +171,10 @@ Renderer.prototype.getTileCache = function () {
 
 }
 
-Renderer.prototype.updateTileCache = function () {
+Renderer.prototype.updateTileCache = function (force) {
 
   let pos = gameClient.player.getPosition();
-  let moved = (pos.x !== this.__lastCacheX || pos.y !== this.__lastCacheY || pos.z !== this.__lastCacheZ);
+  let moved = force || (pos.x !== this.__lastCacheX || pos.y !== this.__lastCacheY || pos.z !== this.__lastCacheZ);
 
   if (!moved) return;
 
@@ -247,7 +252,7 @@ Renderer.prototype.addDistanceAnimation = function (packet) {
 
   let animation = new DistanceAnimation(animationId, packet.from, packet.to);
 
-  this.__animationLayers[packet.from.z % 8].add(animation);
+  this.__animationLayers[packet.from.z % (typeof Chunk !== 'undefined' && Chunk.prototype.DEPTH || 8)].add(animation);
 
 }
 
@@ -273,8 +278,8 @@ Renderer.prototype.getStaticScreenPosition = function (position) {
 
   let player = gameClient.player;
   let p = player.getPosition();
-  let pz = p.z % 8;
-  let tz = position.z % 8;
+  let pz = p.z % (typeof Chunk !== 'undefined' && Chunk.prototype.DEPTH || 8);
+  let tz = position.z % (typeof Chunk !== 'undefined' && Chunk.prototype.DEPTH || 8);
 
   this.__scratchPos.x = this.playerTileOffsetX + player.getMoveOffset().x + (position.x + tz) - (p.x + pz);
   this.__scratchPos.y = this.playerTileOffsetY + player.getMoveOffset().y + (position.y + tz) - (p.y + pz);
@@ -288,8 +293,8 @@ Renderer.prototype.getCreatureScreenPosition = function (creature) {
   let player = gameClient.player;
   let cp = creature.getPosition();
   let pp = player.getPosition();
-  let pz = pp.z % 8;
-  let cz = cp.z % 8;
+  let pz = pp.z % (typeof Chunk !== 'undefined' && Chunk.prototype.DEPTH || 8);
+  let cz = cp.z % (typeof Chunk !== 'undefined' && Chunk.prototype.DEPTH || 8);
   let cmo = creature.getMoveOffset();
 
   this.__scratchPos2.x = this.playerTileOffsetX + player.getMoveOffset().x + (cp.x + cz) - (pp.x + pz) - cmo.x;
@@ -313,24 +318,56 @@ Renderer.prototype.__renderOther = function () {
     return;
   }
 
-  gameClient.player.equipment.render();
-  gameClient.interface.modalManager.render();
+  try {
+    if (gameClient.player && gameClient.player.equipment) {
+      gameClient.player.equipment.render();
+    }
+  } catch (e) {
+    console.error("[render] Equipment render threw: %o", e);
+  }
 
-  this.__renderContainers();
+  try {
+    gameClient.interface.modalManager.render();
+  } catch (e) {
+    console.error("[render] Modal render threw: %o", e);
+  }
 
-  gameClient.world.clock.updateClockDOM();
+  try {
+    this.__renderContainers();
+  } catch (e) {
+    console.error("[render] Container render threw: %o", e);
+  }
 
-  gameClient.interface.screenElementManager.render();
+  try {
+    gameClient.world.clock.updateClockDOM();
+  } catch (e) {}
 
-  gameClient.interface.windowManager.getWindow("party-window").sync();
+  try {
+    gameClient.interface.screenElementManager.render();
+  } catch (e) {
+    console.error("[render] Screen element render threw: %o", e);
+  }
 
-  gameClient.interface.__updateBoostDisplay();
+  try {
+    gameClient.interface.windowManager.getWindow("party-window").sync();
+  } catch (e) {}
+
+  try {
+    gameClient.interface.__updateBoostDisplay();
+  } catch (e) {}
 
 }
 
 Renderer.prototype.__renderContainers = function () {
 
-  gameClient.player.__openedContainers.forEach(container => container.__renderAnimated());
+  if (!gameClient.player) return;
+  gameClient.player.__openedContainers.forEach(container => {
+    try {
+      container.__renderAnimated();
+    } catch (e) {
+      console.error("[render] Container animation threw: %o", e);
+    }
+  });
 
 }
 
@@ -394,7 +431,8 @@ Renderer.prototype.__createAnimationLayers = function () {
 
   this.__animationLayers = new Array();
 
-  for (let i = 0; i < 8; i++) {
+  let depth = (typeof Chunk !== 'undefined' && Chunk.prototype.DEPTH) || 8;
+  for (let i = 0; i < depth; i++) {
     this.__animationLayers.push(new Set());
   }
 

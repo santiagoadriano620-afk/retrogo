@@ -110,9 +110,19 @@ Player.prototype.getMaxFloor = function () {
    * Returns the maximum visible floor for the player: used for rendering
    */
 
-  return gameClient.world
-    .getChunkFromWorldPosition(this.getPosition())
-    .getFirstFloorFromBottom(this.getPosition());
+  let pos = this.getPosition();
+  let chunk;
+  try {
+    chunk = gameClient.world.getChunkFromWorldPosition(pos);
+  } catch (e) {}
+  if (!chunk) return -1;
+  
+  // For underground levels (z >= 8), allow rendering down to floor 0
+  if (pos.z >= 8) {
+    return -1; // Renders all floors from 0 upward
+  }
+  
+  return chunk.getFirstFloorFromBottom(pos);
 };
 
 Player.prototype.setCapacity = function (value) {
@@ -280,7 +290,8 @@ Player.prototype.isUnderground = function () {
    * Returns true if  the player is underground
    */
 
-  return this.getPosition().z > 7;
+  let depth = (typeof Chunk !== 'undefined' && Chunk.prototype.DEPTH) || 8;
+  return this.getPosition().z >= depth;
 };
 
 Player.prototype.queueMovement = function (fn) {
@@ -288,11 +299,10 @@ Player.prototype.queueMovement = function (fn) {
    * Function Player.queueMovement
    * Queues a movement callback to execute when the server confirms the current step.
    * Accepts a function to allow both keyboard key codes and D-pad directions.
+   * Only the most recent direction is kept — replaces any previously queued move.
    */
 
-  if (this.__movementQueue.length < this.__movementQueueMax) {
-    this.__movementQueue.push(fn);
-  }
+  this.__movementQueue[0] = fn;
 };
 
 Player.prototype.confirmClientWalk = function () {

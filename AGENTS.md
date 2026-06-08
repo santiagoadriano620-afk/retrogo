@@ -119,6 +119,13 @@
 - `engine/.env`, `engine/config.js`, `engine/lib/env-mapper.js`, `engine/src/auth/login-server.js`
 - `AGENTS.md` — this file
 
+### Starter box rebalance (this session)
+- **Bronze** (15→25 PP) — agora dá 30d premium + 3 armas treino + 1 outfit (antes era 2 armas só)
+- **Silver** (70 PP, manteve preço) — agora dá 90d + dummy + 5 armas + 1 tool + 2 outfits (antes era 1 outfit)
+- **Golden** (140→120 PP) — agora dá 180d + dummy + 10 armas + 2 tools + 3 outfits (removeu +50 PP, adicionou dummy + 3o outfit)
+- Preços coerentes: Bronze ~19% off, Silver ~26% off, Golden ~20% off vs valor de mercado individual
+- **Arquivos**: `client/src/data/starter-box-data.js`, `client/src/data/shop-data.js`, `engine/src/data/shop-prices.js`, `engine/src/network/packet-handler.js`
+
 ## Key Implementation Details
 - `#mobile-equipment` uses CSS rule injection (`__injectStyles`) for per-slot background images via `[slotIndex]` attribute selectors, matching desktop `Equipment.equipSlot()`/`removeItem()` inline style changes
 - Drag sprite uses `mouse.__renderDragSprite()` (desktop's existing method) — creates a `position:fixed;pointer-events:none` canvas with the item sprite, reused for equipment, containers, and ground drags
@@ -258,5 +265,24 @@
 - **`interface.js`**: On `visibilitychange → visible`, if hidden > 2s: calls `eventQueue.reset()`, `world.__resetCreatureStates()`, invalidates caches, rebuilds neighbours, sets `gameClient.__pendingTabReturn = true`
 - **Files changed**: `client/src/core/event-queue.js`, `client/src/core/world.js`, `client/src/core/gameclient.js`, `client/src/ui/desktop/interface.js`, `client/src/launcher.js`, `client/src/input/mouse.js`
 - **No game loop changes to packet processing** — WebSocket `onmessage` already processes packets immediately regardless of tab state; world state stays correct
+
+### Black screen fix on tab return (this session)
+- **Problem**: After minimizing tab + returning, game shows black screen with infinite `requestAnimationFrame` loop. Caused by unguarded array access and missing null checks during tab reset.
+- **Root causes**:
+  1. `__rebuildBackgroundCaches` accessing `this.__backgroundCaches[z]` without bounds check — if `z` out of [0-15], `.clear()` throws on undefined
+  2. `drawImage` loop in `__renderWorld` accessing `this.__backgroundCaches[z].canvas` without guard
+  3. `__getFloorTilesTiles` calling `player.canSee(tile)` without try-catch
+  4. `interface.js` calling `renderer.updateTileCache()` when `gameClient.player` might be null
+  5. `__resetCreatureStates` not checking if `activeCreatures` exists
+- **Fixes**:
+  1. **`renderer-world.js`**: Added guard `if (!cacheCanvas || z < 0 || z >= 16) continue;` in `__rebuildBackgroundCaches` and drawImage loop
+  2. **`renderer-world.js`**: Wrapped `player.canSee()` in try-catch in `__getFloorTilesTiles`
+  3. **`interface.js`**: Added `if (gameClient.renderer && gameClient.player)` checks before `updateTileCache()` in both full-reset and brief-hide branches
+  4. **`interface.js`**: Added `if (gameClient.world && gameClient.player)` checks before `__refreshNeighboursLarge()`
+  5. **`gameclient.js`**: Changed `__pendingTabReturn` guard from `&& this.player` to `&& this.player && this.world && this.renderer`
+  6. **`world.js`**: Added `if (!this.activeCreatures) return;` and `if (!creature) return;` guards in `__resetCreatureStates`
+- **Files changed**: `client/src/rendering/renderer-world.js`, `client/src/ui/desktop/interface.js`, `client/src/core/gameclient.js`, `client/src/core/world.js`
+- **Result**: Prevents crashes during tab return; gracefully skips invalid cache operations instead of throwing; console logs warnings when invalid indices detected
+
 
 

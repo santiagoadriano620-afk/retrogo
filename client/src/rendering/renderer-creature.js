@@ -27,8 +27,8 @@ Renderer.prototype.__renderCreature = function (tile, creature, deferred) {
   let player = gameClient.player;
   let cp = creature.getPosition();
   let pp = player.getPosition();
-  let pz = pp.z % 8;
-  let cz = cp.z % 8;
+  let pz = pp.z % (typeof Chunk !== 'undefined' && Chunk.prototype.DEPTH || 8);
+  let cz = cp.z % (typeof Chunk !== 'undefined' && Chunk.prototype.DEPTH || 8);
   let cmo = creature.getMoveOffset();
 
   this.__scratchPos.x = this.playerTileOffsetX + player.getMoveOffset().x + (cp.x + cz) - (pp.x + pz) - cmo.x;

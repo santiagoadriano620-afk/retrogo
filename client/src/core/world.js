@@ -95,7 +95,11 @@ World.prototype.__refreshNeighboursLarge = function (position, radius) {
 }
 
 World.prototype.__resetCreatureStates = function () {
+  if (!this.activeCreatures) return;
+  
   Object.values(this.activeCreatures).forEach(function (creature) {
+    if (!creature) return;
+    
     if (creature.__movementEvent) {
       creature.__movementEvent.cancel();
       creature.__movementEvent = null;
@@ -430,7 +434,8 @@ World.prototype.getChunkPositionFromWorldPosition = function (worldPosition) {
   let sy = (y / Chunk.prototype.HEIGHT) | 0;
 
   // The z-component is either (0) underground or (1) above ground
-  let sz = worldPosition.z < 8 ? 0 : 1;
+  let depth = Chunk.prototype.DEPTH || 8;
+  let sz = worldPosition.z < depth ? 0 : 1;
 
   // Calculate the index
   return new Position(sx, sy, sz);
@@ -458,7 +463,8 @@ World.prototype.isTopTile = function (position) {
    */
 
   // Get the top tile at a position
-  for (let z = position.z + 1; z < position.z + 8; z++) {
+  let depth = Chunk.prototype.DEPTH || 8;
+  for (let z = position.z + 1; z < position.z + depth; z++) {
     let tile = this.getTileFromWorldPosition(new Position(position.x, position.y, z));
     if (tile === null || tile.id !== 0) {
       return false;

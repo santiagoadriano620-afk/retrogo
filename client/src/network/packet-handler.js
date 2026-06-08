@@ -481,6 +481,18 @@ PacketHandler.prototype.handleCancelMessage = function (packet) {
 
   gameClient.interface.notificationManager.setCancelMessage(packet);
 
+  // If the player has a pending pre-walk (walk rejection), revert the position
+  if (gameClient.player && !gameClient.player.__serverWalkConfirmation && gameClient.player.__movementEvent !== null) {
+    let revertPos = gameClient.player.__previousPosition;
+    if (revertPos) {
+      gameClient.player.__movementEvent.cancel();
+      gameClient.player.__movementEvent = null;
+      gameClient.player.__position = revertPos;
+      gameClient.player.__serverWalkConfirmation = true;
+      gameClient.player.__chunk = gameClient.world.getChunkFromWorldPosition(revertPos);
+    }
+  }
+
 }
 
 PacketHandler.prototype.handleServerData = function (packet) {
@@ -601,7 +613,7 @@ PacketHandler.prototype.handleChunk = function (chunk) {
 
   // Update the tile cache immediately so tiles render right away
   if(gameClient.renderer && gameClient.player) {
-    gameClient.renderer.updateTileCache();
+    gameClient.renderer.updateTileCache(true);
   }
 
   // Defer neighbour references: heavy O(n) per chunk, batches via microtask
@@ -1341,6 +1353,11 @@ PacketHandler.prototype.handleEntityTeleport = function (packet) {
     return;
   }
 
+  // Validate the teleport position
+  if (!gameClient.world.isValidWorldPosition(packet.position)) {
+    return;
+  }
+
   // Remove from old tile before updating position
   let fromTile = gameClient.world.getTileFromWorldPosition(entity.getPosition());
   let toTile = gameClient.world.getTileFromWorldPosition(packet.position);
@@ -1351,8 +1368,11 @@ PacketHandler.prototype.handleEntityTeleport = function (packet) {
     fromTile.removeCreature(entity);
   }
 
-  // The tile must exist
+  // The destination tile must exist; if not, restore the entity to its original tile
   if (toTile === null) {
+    if (fromTile !== null) {
+      fromTile.addCreature(entity);
+    }
     return;
   }
 
