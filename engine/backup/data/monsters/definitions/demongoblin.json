@@ -1,0 +1,39 @@
+{
+  "creatureStatistics": {
+    "name": "Demongoblin",
+    "health": 50,
+    "maxHealth": 50,
+    "mana": 0,
+    "maxMana": 0,
+    "speed": 128,
+    "attack": 0,
+    "attackSpeed": 2000,
+    "defense": 6,
+    "outfit": {
+      "id": 35
+    },
+    "armor": 6
+  },
+  "experience": 0,
+  "corpse": 2940,
+  "fluidType": 0,
+  "behaviour": {
+    "type": 2,
+    "fleeHealth": 0,
+    "openDoors": true,
+    "senseInvisible": true
+  },
+  "attacks": [],
+  "loot": [],
+  "flags": {
+    "summonable": false,
+    "attackable": true,
+    "convinceable": false,
+    "pushable": false,
+    "canPushItems": true,
+    "canPushCreatures": true,
+    "illusionable": false,
+    "targetDistance": 1,
+    "runonhealth": 0
+  }
+}

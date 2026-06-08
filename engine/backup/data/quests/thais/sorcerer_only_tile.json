@@ -1,0 +1,45 @@
+{
+    "actionId":  3117,
+    "type":  "moveEvent",
+    "events":  [
+                   "onStepIn",
+                   "onStepOut"
+               ],
+    "vocationIds":  [
+                        1,
+                        5
+                    ],
+    "teleport":  {
+                     "to":  {
+                                "x":  32308,
+                                "y":  32267,
+                                "z":  7
+                            }
+                 },
+    "effectsStepIn":  [
+                          {
+                              "type":  "transformItem",
+                              "from":  447,
+                              "to":  446,
+                              "decay":  true
+                          },
+                          {
+                              "key":  8117,
+                              "value":  1,
+                              "type":  "storage"
+                          }
+                      ],
+    "effectsStepOut":  [
+                           {
+                               "type":  "transformItem",
+                               "from":  446,
+                               "to":  447,
+                               "decay":  true
+                           },
+                           {
+                               "key":  8117,
+                               "value":  1,
+                               "type":  "storage"
+                           }
+                       ]
+}

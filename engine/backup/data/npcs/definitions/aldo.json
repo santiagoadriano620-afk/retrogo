@@ -1,0 +1,198 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Aldo",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  111,
+                                              "details":  {
+                                                              "head":  40,
+                                                              "body":  37,
+                                                              "legs":  116,
+                                                              "feet":  76
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  2,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "name":  "I\u0027m Aldo. No one calls me \u0027lucky Aldo\u0027 though, guess why!",
+                                          "job":  "I am a salesman, I sell headgear ... uhm ... oh well, and shoes.",
+                                          "time":  "Is it time for lunch already? Hey, stop making fun of me!",
+                                          "king":  "One day I will sell the king a pair of shoes made by me and will get out of that stinky hole I live in and my family will never find me. HE, HE!",
+                                          "tibianus":  "One day I will sell the king a pair of shoes made by me and will get out of that stinky hole I live in and my family will never find me. HE, HE!",
+                                          "army":  "So many feet ... so many ... a nightmare!",
+                                          "ferumbras":  "Can\u0027t be worse than my wife.",
+                                          "wife":  "Leave me alone with her while I am working at least. My only pleasure around here!",
+                                          "excalibug":  "I have other stuff to worry about, like paying my bills.",
+                                          "bill":  "Yes, I have to pay o lot of bills, and some georges, and a john, and several steves.",
+                                          "thais":  "I will never in my life make it there.",
+                                          "tibia":  "I doubt I will ever see much of it. It\u0027s like i am cursed to haunt this site here for the rest of my life.",
+                                          "carlin":  "A city ruled by women!? Could anything be worse?",
+                                          "amazon":  "I heard that chicks wear some revealing pieces of armor!",
+                                          "news":  "Hey, I am a man. Look for some women to share gossip.",
+                                          "rumour":  "Hey, I am a man. Look for some women to share gossip.",
+                                          "rumor":  "Hey, I am a man. Look for some women to share gossip.",
+                                          "hugo":  "My boss, an evil slaver of good people like me.",
+                                          "offer":  "I am damned to sell headgear, trousers, and shoes for the rest of my life.",
+                                          "goods":  "I am damned to sell headgear, trousers, and shoes for the rest of my life.",
+                                          "do":  "I am damned to sell headgear, trousers, and shoes for the rest of my life.",
+                                          "you":  "I am damned to sell headgear, trousers, and shoes for the rest of my life.",
+                                          "sell":  "I am damned to sell headgear, trousers, and shoes for the rest of my life.",
+                                          "have":  "I am damned to sell headgear, trousers, and shoes for the rest of my life.",
+                                          "headgear":  "We have leather helmets and studded helmets.",
+                                          "shoes":  "\u003csigh\u003e We sell leather boots and sandals.",
+                                          "trouser":  "We offer leather legs and studded legs."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Just great, another ... \u0027customer\u0027. Hello, .",
+                                                       "I am a salesman, I sell headgear ... uhm ... oh well, and shoes."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Just great, another ... \u0027customer\u0027. Hello, %N.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here. I hope that\u0027s it now.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "At last, someone poorer than me.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "no"
+                                                                                   ],
+                                                                      "response":  "Good decision!",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Leather Helmet",
+                                                         "price":  12,
+                                                         "id":  2461,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Studded Helmet",
+                                                         "price":  63,
+                                                         "id":  2482,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Sandals",
+                                                         "price":  2,
+                                                         "id":  2642,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Leather Boots",
+                                                         "price":  2,
+                                                         "id":  2643,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Leather Legs",
+                                                         "price":  10,
+                                                         "id":  2649,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Studded Legs",
+                                                         "price":  60,
+                                                         "id":  2468,
+                                                         "type":  "sell"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "aldo.js"
+                     }
+}

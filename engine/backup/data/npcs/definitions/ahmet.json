@@ -1,0 +1,365 @@
+{
+    "creatureStatistics": {
+        "name": "Ahmet",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 130,
+            "details": {
+                "head": 38,
+                "body": 40,
+                "legs": 39,
+                "feet": 114
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 2,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "job": "I sell equipment of all sorts.",
+            "name": "I am the mourned Ahmet.",
+            "time": "It were foolish of me to tell you the time, because then you won't buy a watch.",
+            "temple": "The temple is a school for us mourned mortals. The teachings of the temple help us to find our way through our mortal days.",
+            "pharaoh": "Our pharaoh holds the key to our ascension. Praised be our pharaoh.",
+            "arkhothep": "Blessed be the pharaoh. He is our saviour. I hope that one day I will be chosen.",
+            "oldpharaoh": "The foolish old pharaoh withheld knowledge and power from his son, knowing that he would surpass him in every aspects. But his son granted him the chance to ascend.",
+            "ashmunrah": "The foolish old pharaoh withheld knowledge and power from his son, knowing that he would surpass him in every aspects. But his son granted him the chance to ascend.",
+            "scarab": "The eternal burrowers are the keepers of all the secrets their kind has unearthed in countless aeons.",
+            "chosen": "Only the most worthy and pious are chosen to join the armies of the pharaoh. In undeath they follow the path of ascension.",
+            "tibia": "The world is nothing but a sigil of death, a monument of decay. We have to attune to death to become one with the world.",
+            "carlin": "The vain cities of the Tibian continent think they are at the centre of the universe. Little do they know about the wisdom of the pharaoh.",
+            "thais": "The vain cities of the Tibian continent think they are at the centre of the universe. Little do they know about the wisdom of the pharaoh.",
+            "edron": "The vain cities of the Tibian continent think they are at the centre of the universe. Little do they know about the wisdom of the pharaoh.",
+            "venore": "The vain cities of the Tibian continent think they are at the centre of the universe. Little do they know about the wisdom of the pharaoh.",
+            "kazordoon": "We rarely see a traveler of the small folk here.",
+            "dwarves": "We rarely see a traveler of the small folk here.",
+            "dwarfes": "We rarely see a traveler of the small folk here.",
+            "ab'dendriel": "Elves are a rare sight in our lands.",
+            "elves": "Elves are a rare sight in our lands.",
+            "elfes": "Elves are a rare sight in our lands.",
+            "darama": "Life here is harsh, but only this way can we deny the temptations that might damage our Rah and our Uthun to our traitorous flesh.",
+            "darashia": "The foolishness of their ways will eventually spell their doom.",
+            "daraman": "He was close to the truth, but he lacked the wisdom and vision of our pharaoh.",
+            "ankrahmun": "Our city will endure the sands of the desert and the grinding teeth of time.",
+            "mortality": "Mortality is our curse. Mourned shall we be.",
+            "false": "The great traitors are trying to doom us.",
+            "gods": "The great traitors are trying to doom us.",
+            "ascension": "Godhood is at our disposal if only we throw of the shackles of mortal flesh.",
+            "Akh'rah": "The Akh'rah Uthun is what we are.",
+            "Uthun": "The Akh'rah Uthun is what we are.",
+            "Akh": "Your cursed bodys are called the Akh. As long as we are alive the Akh makes us weak and vulnerable.",
+            "undead": "Undeath is the path to ascension which the chosen may follow.",
+            "undeath": "Undeath is the path to ascension which the chosen may follow.",
+            "Rah": "The Rah could be called our soul.",
+            "uthun": "The Uthun is that what we learn and remember.",
+            "mourn": "We are mortals and thus miserable creatures that are to be mourned.",
+            "arena": "The arena is east of here.",
+            "palace": "The palace is the home of our beloved pharaoh.",
+            "equipment": "I sell shovels, picks, scythes, bags, ropes, backpacks, plates, cups, scrolls, documents, parchments, lightsources and watches. Of course, I sell fishing rods, too.",
+            "goods": "I sell shovels, picks, scythes, bags, ropes, backpacks, plates, cups, scrolls, documents, parchments, lightsources and watches. Of course, I sell fishing rods, too.",
+            "buy": "I sell shovels, picks, scythes, bags, ropes, backpacks, plates, cups, scrolls, documents, parchments, lightsources and watches. Of course, I sell fishing rods, too.",
+            "do": "I sell shovels, picks, scythes, bags, ropes, backpacks, plates, cups, scrolls, documents, parchments, lightsources and watches. Of course, I sell fishing rods, too.",
+            "you": "I sell shovels, picks, scythes, bags, ropes, backpacks, plates, cups, scrolls, documents, parchments, lightsources and watches. Of course, I sell fishing rods, too.",
+            "sell": "I sell shovels, picks, scythes, bags, ropes, backpacks, plates, cups, scrolls, documents, parchments, lightsources and watches. Of course, I sell fishing rods, too.",
+            "have": "I sell shovels, picks, scythes, bags, ropes, backpacks, plates, cups, scrolls, documents, parchments, lightsources and watches. Of course, I sell fishing rods, too.",
+            "offer": "I sell shovels, picks, scythes, bags, ropes, backpacks, plates, cups, scrolls, documents, parchments, lightsources and watches. Of course, I sell fishing rods, too.",
+            "light": "I sell torches, candlesticks, candelabra, and oil."
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "Be mourned pilgrim in flesh.",
+                "I sell equipment of all sorts."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Be mourned pilgrim in flesh.",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": "Be mourned pilgrim in flesh.",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "be",
+                    "mourned",
+                    "pilgrim",
+                    "flesh"
+                ],
+                "response": "Be mourned pilgrim in flesh.",
+                "idle": false
+            }
+        ],
+        "topics": {
+            "1": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "I hope it will serve you well, my prized customer.",
+                        "conditions": [
+                            {
+                                "type": "gold",
+                                "min": -1
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "deleteMoney",
+                                "amount": -1
+                            },
+                            {
+                                "type": "createItem",
+                                "id": -1
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "My twelve starving children don't allow me to sell it for less, o grandmaster of haggling.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "What a pity.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "3": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "I hardly can explain to my wife why I gave you that much money.",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "createMoney"
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Sorry, you own none.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Sorry, you do not have so many.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Maybe next time.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            }
+        },
+        "keywordNextTopics": {},
+        "trade": {
+            "items": [
+                {
+                    "name": "Torch",
+                    "price": 2,
+                    "id": 2050,
+                    "type": "sell"
+                },
+                {
+                    "name": "Candelabrum",
+                    "price": 8,
+                    "id": 2041,
+                    "type": "sell"
+                },
+                {
+                    "name": "Candlestick",
+                    "price": 2,
+                    "id": 2047,
+                    "type": "sell"
+                },
+                {
+                    "name": "Golden Bag",
+                    "price": 4,
+                    "id": 1997,
+                    "type": "sell"
+                },
+                {
+                    "name": "Scroll",
+                    "price": 5,
+                    "id": 1949,
+                    "type": "sell"
+                },
+                {
+                    "name": "Document",
+                    "price": 12,
+                    "id": 1968,
+                    "type": "sell"
+                },
+                {
+                    "name": "Written Parchment",
+                    "price": 8,
+                    "id": 1969,
+                    "type": "sell"
+                },
+                {
+                    "name": "Shovel",
+                    "price": 10,
+                    "id": 2554,
+                    "type": "sell"
+                },
+                {
+                    "name": "Golden Backpack",
+                    "price": 10,
+                    "id": 2004,
+                    "type": "sell"
+                },
+                {
+                    "name": "Scythe",
+                    "price": 50,
+                    "id": 2550,
+                    "type": "sell"
+                },
+                {
+                    "name": "Pick",
+                    "price": 50,
+                    "id": 2553,
+                    "type": "sell"
+                },
+                {
+                    "name": "Watch",
+                    "price": 20,
+                    "id": 2036,
+                    "type": "sell"
+                },
+                {
+                    "name": "Rope",
+                    "price": 50,
+                    "id": 2120,
+                    "type": "sell"
+                },
+                {
+                    "name": "Fishing Rod",
+                    "price": 150,
+                    "id": 2580,
+                    "type": "sell"
+                },
+                {
+                    "name": "Vial",
+                    "price": 20,
+                    "id": 2006,
+                    "type": "sell"
+                },
+                {
+                    "name": "Crowbar",
+                    "price": 260,
+                    "id": 2416,
+                    "type": "sell"
+                },
+                {
+                    "name": "Waterskin",
+                    "price": 40,
+                    "id": 2031,
+                    "type": "sell"
+                },
+                {
+                    "name": "Present",
+                    "price": 10,
+                    "id": 1990,
+                    "type": "sell"
+                },
+                {
+                    "name": "Bucket",
+                    "price": 4,
+                    "id": 2005,
+                    "type": "sell"
+                },
+                {
+                    "name": "Blue Bottle",
+                    "price": 3,
+                    "id": 2007,
+                    "type": "sell"
+                },
+                {
+                    "name": "Cup",
+                    "price": 2,
+                    "id": 2013,
+                    "type": "sell"
+                },
+                {
+                    "name": "Plate",
+                    "price": 6,
+                    "id": 2035,
+                    "type": "sell"
+                },
+                {
+                    "name": "Rope",
+                    "price": 8,
+                    "id": 2120,
+                    "type": "buy"
+                }
+            ]
+        },
+        "script": "ahmet.js"
+    }
+}

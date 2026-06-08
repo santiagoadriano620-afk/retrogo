@@ -1,0 +1,64 @@
+{
+    "actionId":  2055,
+    "type":  "lever",
+    "itemIds":  [
+                    1945,
+                    1946
+                ],
+    "conditions":  [
+
+                   ],
+    "effects":  [
+                    {
+                        "type":  "transformItem",
+                        "from":  1945,
+                        "to":  1946,
+                        "decay":  true
+                    },
+                    {
+                        "type":  "removeItem",
+                        "pos":  {
+                                    "x":  32095,
+                                    "y":  32173,
+                                    "z":  8
+                                },
+                        "itemId":  1026
+                    },
+                    {
+                        "key":  7055,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "effectsAlt":  [
+                       {
+                           "type":  "transformItem",
+                           "from":  1946,
+                           "to":  1945,
+                           "decay":  true
+                       },
+                       {
+                           "type":  "relocate",
+                           "from":  {
+                                        "x":  32095,
+                                        "y":  32173,
+                                        "z":  8
+                                    },
+                           "to":  {
+                                      "x":  32095,
+                                      "y":  32174,
+                                      "z":  8
+                                  }
+                       },
+                       {
+                           "type":  "createItem",
+                           "itemId":  1026,
+                           "count":  1,
+                           "pos":  {
+                                       "x":  32095,
+                                       "y":  32173,
+                                       "z":  8
+                                   }
+                       }
+                   ]
+}

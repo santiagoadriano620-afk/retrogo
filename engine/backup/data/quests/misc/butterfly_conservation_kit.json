@@ -1,0 +1,50 @@
+{
+  "itemId": 4865,
+  "type": "questItem",
+  "branches": [
+    {
+      "conditions": [
+        { "type": "targetItem", "itemId": 4993 },
+        { "type": "storage", "key": 304, "value": 1 }
+      ],
+      "effects": [
+        { "type": "transformItem", "from": 4865, "to": 4867 },
+        { "type": "magicEffect", "effectId": 17 },
+        { "type": "removeItem", "itemId": 4993 }
+      ]
+    },
+    {
+      "conditions": [
+        { "type": "targetItem", "itemId": 4994 },
+        { "type": "storage", "key": 304, "value": 3 }
+      ],
+      "effects": [
+        { "type": "transformItem", "from": 4865, "to": 4868 },
+        { "type": "magicEffect", "effectId": 17 },
+        { "type": "removeItem", "itemId": 4994 }
+      ]
+    },
+    {
+      "conditions": [
+        { "type": "targetItem", "itemId": 4992 },
+        { "type": "storage", "key": 304, "value": 5 }
+      ],
+      "effects": [
+        { "type": "transformItem", "from": 4865, "to": 4866 },
+        { "type": "magicEffect", "effectId": 17 },
+        { "type": "removeItem", "itemId": 4992 }
+      ]
+    },
+    {
+      "conditions": [
+        { "type": "targetItem", "itemId": 5014 },
+        { "type": "storage", "key": 304, "value": 5 }
+      ],
+      "effects": [
+        { "type": "transformItem", "from": 4865, "to": 5089 },
+        { "type": "magicEffect", "effectId": 17 },
+        { "type": "removeItem", "itemId": 5014 }
+      ]
+    }
+  ]
+}

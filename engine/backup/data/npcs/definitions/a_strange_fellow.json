@@ -1,0 +1,190 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "A Strange Fellow",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  111,
+                                              "details":  {
+                                                              "head":  76,
+                                                              "body":  43,
+                                                              "legs":  38,
+                                                              "feet":  76
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  3,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "name":  "My name is not of your concern.",
+                                          "job":  "That\u0027s only my business, not yours.",
+                                          "david":  "I never heard that name and now get lost.",
+                                          "brassacres":  "I never heard that name and now get lost.",
+                                          "bill":  "Thats not my concern, you are probably looking for someone else and now get lost!",
+                                          "hat":  "Get lost!"
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Uh? What do you want?!",
+                                                       "That\u0027s only my business, not yours."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Uh? What do you want?!",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "hat"
+                                                                                   ],
+                                                                      "response":  "Stop bugging me about that hat, do you listen?",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  false
+                                                                  }
+                                                              ]
+                                              },
+                                        "2":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "hat"
+                                                                                   ],
+                                                                      "response":  "Hey! Don\u0027t touch that hat! Leave it alone!!! Don\u0027t do this!!!!",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  3,
+                                                                      "idle":  false
+                                                                  }
+                                                              ]
+                                              },
+                                        "3":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "hat"
+                                                                                   ],
+                                                                      "response":  "Noooooo! Argh, ok, ok, I guess I can\u0027t deny it anymore, I am David Brassacres, the magnificent, so what do you want?",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "setQuest",
+                                                                                          "questId":  229,
+                                                                                          "value":  2
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  }
+                                                              ]
+                                              },
+                                        "5":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Ok, ok, I\u0027ll take it. I guess I have no other choice anyways. And now leave me alone in my misery please.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "setQuest",
+                                                                                          "questId":  229,
+                                                                                          "value":  3
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Ha Ha! You have none!! Naanaanaanaaanaaaa!",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Hoooraaaay! Uhm... I mean, thats fine...",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+
+                                               },
+                         "script":  "a_strange_fellow.js"
+                     }
+}

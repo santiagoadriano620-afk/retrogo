@@ -1,0 +1,36 @@
+{
+    "actionId":  3028,
+    "type":  "moveEvent",
+    "events":  [
+                   "onStepIn",
+                   "onAddItem"
+               ],
+    "tileItem":  true,
+    "effects":  [
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  0,
+                                    "y":  0,
+                                    "z":  0
+                                },
+                        "effectId":  15
+                    },
+                    {
+                        "key":  8028,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "effectsAlt":  [
+                       {
+                           "type":  "magicEffect",
+                           "pos":  {
+                                       "x":  0,
+                                       "y":  0,
+                                       "z":  0
+                                   },
+                           "effectId":  14
+                       }
+                   ]
+}

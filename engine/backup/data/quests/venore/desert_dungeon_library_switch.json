@@ -1,0 +1,66 @@
+{
+    "actionId":  3021,
+    "type":  "moveEvent",
+    "events":  [
+                   "onStepIn",
+                   "onStepOut"
+               ],
+    "effects":  [
+                    {
+                        "type":  "transformItem",
+                        "from":  426,
+                        "to":  425,
+                        "decay":  true
+                    },
+                    {
+                        "type":  "removeItem",
+                        "pos":  {
+                                    "x":  32692,
+                                    "y":  32102,
+                                    "z":  10
+                                },
+                        "itemId":  1036
+                    },
+                    {
+                        "key":  8021,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "effectsOnStepOut":  [
+                             {
+                                 "type":  "transformItem",
+                                 "from":  425,
+                                 "to":  426,
+                                 "decay":  true
+                             },
+                             {
+                                 "type":  "relocate",
+                                 "from":  {
+                                              "x":  32692,
+                                              "y":  32102,
+                                              "z":  10
+                                          },
+                                 "to":  {
+                                            "x":  32691,
+                                            "y":  32102,
+                                            "z":  10
+                                        }
+                             },
+                             {
+                                 "type":  "createItem",
+                                 "itemId":  1036,
+                                 "count":  1,
+                                 "pos":  {
+                                             "x":  32692,
+                                             "y":  32102,
+                                             "z":  10
+                                         }
+                             },
+                             {
+                                 "key":  8021,
+                                 "value":  1,
+                                 "type":  "storage"
+                             }
+                         ]
+}

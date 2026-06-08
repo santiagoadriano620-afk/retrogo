@@ -1,0 +1,139 @@
+{
+    "actionId":  3097,
+    "type":  "puzzle",
+    "conditions":  [
+                       {
+                           "type":  "storage",
+                           "key":  10,
+                           "value":  -1
+                       },
+                       {
+                           "type":  "itemAtPosition",
+                           "itemId":  1421,
+                           "pos":  {
+                                       "x":  32309,
+                                       "y":  31975,
+                                       "z":  13
+                                   }
+                       },
+                       {
+                           "type":  "itemAtPosition",
+                           "itemId":  1421,
+                           "pos":  {
+                                       "x":  32309,
+                                       "y":  31976,
+                                       "z":  13
+                                   }
+                       },
+                       {
+                           "type":  "itemAtPosition",
+                           "itemId":  1421,
+                           "pos":  {
+                                       "x":  32311,
+                                       "y":  31975,
+                                       "z":  13
+                                   }
+                       },
+                       {
+                           "type":  "itemAtPosition",
+                           "itemId":  1421,
+                           "pos":  {
+                                       "x":  32311,
+                                       "y":  31976,
+                                       "z":  13
+                                   }
+                       },
+                       {
+                           "type":  "itemAtPosition",
+                           "itemId":  1423,
+                           "pos":  {
+                                       "x":  32313,
+                                       "y":  31975,
+                                       "z":  13
+                                   }
+                       },
+                       {
+                           "type":  "itemAtPosition",
+                           "itemId":  1423,
+                           "pos":  {
+                                       "x":  32313,
+                                       "y":  31976,
+                                       "z":  13
+                                   }
+                       }
+                   ],
+    "effects":  [
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  32311,
+                                    "y":  31978,
+                                    "z":  13
+                                },
+                        "effectId":  7
+                    },
+                    {
+                        "type":  "storage",
+                        "key":  10,
+                        "value":  1
+                    },
+                    {
+                        "type":  "relocate",
+                        "from":  {
+                                     "x":  0,
+                                     "y":  0,
+                                     "z":  0
+                                 },
+                        "to":  {
+                                   "x":  32261,
+                                   "y":  31856,
+                                   "z":  15
+                               }
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  32261,
+                                    "y":  31856,
+                                    "z":  15
+                                },
+                        "effectId":  14
+                    },
+                    {
+                        "key":  8097,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "effectsAlt":  [
+                       {
+                           "type":  "relocate",
+                           "from":  {
+                                        "x":  0,
+                                        "y":  0,
+                                        "z":  0
+                                    },
+                           "to":  {
+                                      "x":  32311,
+                                      "y":  31977,
+                                      "z":  13
+                                  }
+                       },
+                       {
+                           "type":  "magicEffect",
+                           "pos":  {
+                                       "x":  32311,
+                                       "y":  31977,
+                                       "z":  13
+                                   },
+                           "effectId":  1
+                       },
+                       {
+                           "type":  "damage",
+                           "target":  0,
+                           "combat":  "COMBAT_FIREDAMAGE",
+                           "min":  -250,
+                           "max":  -250
+                       }
+                   ]
+}

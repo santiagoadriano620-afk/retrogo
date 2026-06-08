@@ -1,0 +1,478 @@
+{
+    "creatureStatistics": {
+        "name": "Alesar",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 80,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 1,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "name": "My name is none of your business.",
+            "alesar": "That is my name. So what!",
+            "job": "What does it look like, fool? I'm a smith! But I won't sell you anything until Malor orders me otherwise.",
+            "trade": "I won't sell you anything, human. Malor doesn't want me to trade with strangers.",
+            "permission": "I won't sell you anything, human. Malor doesn't want me to trade with strangers.",
+            "daraman": "Don't you dare mention Daraman in my presence, human. I am through with his insidious lies and through with your accursed race!",
+            "haroun": "Haroun? What? You know ... where do you know that name from? Did he send you?",
+            "human": "I used to have illusions about you humans. I thought humans were good, noble creatures. ...",
+            "djinn": "One day we will teach your race a lesson it will never forget.",
+            "efreet": "The efreet are those djinn who never fell for Daraman's insidious propaganda. I wish I would have been as smart from the start. ...",
+            "marid": "Those among my brothers and sisters who still do not see the truth call themselves the Marid. I used to be one of them, but I left them when the truth dawned upon me. ...",
+            "gabel": "Gabel is a kind-hearted, honest djinn. I would hate to see him die just because he believes in Daraman's lies. ...",
+            "king": "We need a strong king to unite us in our struggle against the humans.",
+            "malor": "Malor is overambitious and unnecessarily cruel, but he is the only djinn who could unite our race, so I follow him. ...",
+            "mal'ouquah": "I do not like this place. But then it does not really matter where I am. I have a forge and I don't see any humans. That's all I need. ...",
+            "ashta'daramai": "Ashta'daramai is Gabel's fortress which lies to the north. ...",
+            "zathroth": "Legend has it that Zathroth was trying to make us beings of unalloyed evil, but he found us to be impure, so he abandoned us and started over. ...",
+            "tibia": "One day we djinn will rid this world of evil.",
+            "darashia": "I don't care about human cities. If I had my way, they would all be burnt to down today.",
+            "edron": "I don't care about human cities. If I had my way, they would all be burnt to down today.",
+            "thais": "I don't care about human cities. If I had my way, they would all be burnt to down today.",
+            "venore": "I don't care about human cities. If I had my way, they would all be burnt to down today.",
+            "kazordoon": "I don't care about human cities. If I had my way, they would all be burnt to down today.",
+            "carlin": "I don't care about human cities. If I had my way, they would all be burnt to down today.",
+            "ab'dendriel": "I don't care about human cities. If I had my way, they would all be burnt to down today.",
+            "ankrahmun": "I don't care about human cities. If I had my way, they would all be burnt to down today.",
+            "pharaoh": "The pharaoh in Ankrahmun is a dangerous fool. Just your typical human, in other words.",
+            "palace": "So?",
+            "ascension": "What are you talking about? More human pseudo-philosophical flapdoodle?",
+            "rah": "What are you talking about? More human pseudo-philosophical flapdoodle?",
+            "uthun": "What are you talking about? More human pseudo-philosophical flapdoodle?",
+            "akh": "What are you talking about? More human pseudo-philosophical flapdoodle?",
+            "scarab": "I like them. They are peaceful, but if they are provoked they fight ferociously. And they are know to eat humans!",
+            "kha'zeel": "These mountains are our refuge from those pesky humans. Too bad there are always some who come up here anyway. You, for example.",
+            "kha'labal": "The desert Kha'labal was once a beautiful land, but it was devastated in the course of the war. Damn humans! This is all your fault!",
+            "melchior": "I remember him. He was a greedy, double-dealing hyena. As far as I know his bleached bones are now lying somewhere in the Kha'labal.",
+            "djema": "Djema? Well - I suppose she is the only human I still like. But she has been brought up by djinns. Who knows - perhaps humans can learn.",
+            "baa'leal": "So Baa'leal thinks you are up to do a mission for us? ...",
+            "bo'ques": "I miss Bo'ques' cooking, but not his pompous airs and graces.",
+            "fa'hradin": "Fa'hradin, that old cynic is way too smart to believe in Daraman's lies. He should reconsider his loyalties.",
+            "wares": "I sell and buy weapons, armors, helmets, legs, and shields.",
+            "offer": "I sell and buy weapons, armors, helmets, legs, and shields.",
+            "goods": "I sell and buy weapons, armors, helmets, legs, and shields.",
+            "smith": "I sell and buy weapons, armors, helmets, legs, and shields.",
+            "equipment": "I sell and buy weapons, armors, helmets, legs, and shields.",
+            "do": "I sell and buy weapons, armors, helmets, legs, and shields.",
+            "you": "I sell and buy weapons, armors, helmets, legs, and shields.",
+            "sell": "I sell and buy weapons, armors, helmets, legs, and shields.",
+            "have": "I sell and buy weapons, armors, helmets, legs, and shields.",
+            "weapon": "At this time I'm only selling ice rapiers and serpent swords. But I would buy scimitars, giant swords, serpent swords, poison daggers, knight axes, dragon hammers and skull staffs from you.",
+            "shield": "I am selling only ancient shields. But I buy tower shields, black shields, ancient shields and vampire shields.",
+            "armor": "I am buying and selling dark armors. But I would also buy a knight armor from you.",
+            "helmet": "I am buying and selling dark helmets. Furthermore I'm buying warrior helmets, strange helmets and mystic turbans.",
+            "trousers": "At this time I'm only buying knight legs.",
+            "legs": "At this time I'm only buying knight legs.",
+            "mission": "Don't forget to talk to Malor concerning your next mission.",
+            "gem": "Did you find the tear of Daraman?",
+            "tear": "Did you find the tear of Daraman?",
+            "work": "Don't forget to talk to Malor concerning your next mission."
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "What do you want from me, ?",
+                "What does it look like, fool? I'm a smith! But I won't sell you anything until Malor orders me otherwise."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "What do you want from me, %N?",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "greetings$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "djanni'hah$"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ],
+        "topics": {
+            "1": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Treacherous liar! You would not be here if you had really talked to him. Get out of my sight or I will test my latest sabre on you!",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true
+                    },
+                    {
+                        "keywords": [],
+                        "response": "<sighs> Of course not. How could you ... Well, at least you are honest, human. I appreciate that.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "2": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "All right then, human. Have you ever heard of the 'Tears of Daraman'? ...",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Then not.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "3": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "So you have made it? You have really managed to steal a Tear of Daraman? ...",
+                        "conditions": [
+                            {
+                                "type": "questValue",
+                                "questId": 287,
+                                "value": 2
+                            }
+                        ],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "As I expected. You haven't got the stone. Shall I explain your mission again?",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 2,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "10": {
+                "entries": [
+                    {
+                        "keywords": [],
+                        "response": "No chance, human. Malor doesn't want me to trade with strangers.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Thank you. Here you are.",
+                        "conditions": [
+                            {
+                                "type": "gold",
+                                "min": -1
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "deleteMoney",
+                                "amount": -1
+                            },
+                            {
+                                "type": "createItem",
+                                "id": -1
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You do not have enough gold.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Well, obviously not.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "11": {
+                "entries": [
+                    {
+                        "keywords": [],
+                        "response": "No chance, human. Malor doesn't want me to trade with strangers.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Ok. Here is your gold.",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "createMoney"
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You don't have one.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You don't have that many.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Well, obviously not.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            }
+        },
+        "keywordNextTopics": {
+            "haroun": 1,
+            "mission": 3,
+            "gem": 3,
+            "tear": 3
+        },
+        "trade": {
+            "items": [
+                {
+                    "name": "Ice Rapier",
+                    "price": 5000,
+                    "id": 2396,
+                    "type": "sell"
+                },
+                {
+                    "name": "Serpent Sword",
+                    "price": 6000,
+                    "id": 2409,
+                    "type": "sell"
+                },
+                {
+                    "name": "Ancient Shield",
+                    "price": 5000,
+                    "id": 2532,
+                    "type": "sell"
+                },
+                {
+                    "name": "Dark Armor",
+                    "price": 1500,
+                    "id": 2489,
+                    "type": "sell"
+                },
+                {
+                    "name": "Dark Helmet",
+                    "price": 1000,
+                    "id": 2490,
+                    "type": "sell"
+                },
+                {
+                    "name": "Serpent Sword",
+                    "price": 900,
+                    "id": 2409,
+                    "type": "buy"
+                },
+                {
+                    "name": "Dragon Hammer",
+                    "price": 2000,
+                    "id": 2434,
+                    "type": "buy"
+                },
+                {
+                    "name": "Giant Sword",
+                    "price": 17000,
+                    "id": 2393,
+                    "type": "buy"
+                },
+                {
+                    "name": "Poison Dagger",
+                    "price": 50,
+                    "id": 2411,
+                    "type": "buy"
+                },
+                {
+                    "name": "Scimitar",
+                    "price": 150,
+                    "id": 2419,
+                    "type": "buy"
+                },
+                {
+                    "name": "Skull Staff",
+                    "price": 6000,
+                    "id": 2436,
+                    "type": "buy"
+                },
+                {
+                    "name": "Knight Axe",
+                    "price": 2000,
+                    "id": 2430,
+                    "type": "buy"
+                },
+                {
+                    "name": "Tower Shield",
+                    "price": 8000,
+                    "id": 2528,
+                    "type": "buy"
+                },
+                {
+                    "name": "Black Shield",
+                    "price": 800,
+                    "id": 2529,
+                    "type": "buy"
+                },
+                {
+                    "name": "Ancient Shield",
+                    "price": 900,
+                    "id": 2532,
+                    "type": "buy"
+                },
+                {
+                    "name": "Vampire Shield",
+                    "price": 15000,
+                    "id": 2534,
+                    "type": "buy"
+                },
+                {
+                    "name": "Warrior Helmet",
+                    "price": 5000,
+                    "id": 2475,
+                    "type": "buy"
+                },
+                {
+                    "name": "Knight Armor",
+                    "price": 5000,
+                    "id": 2476,
+                    "type": "buy"
+                },
+                {
+                    "name": "Knight Legs",
+                    "price": 5000,
+                    "id": 2477,
+                    "type": "buy"
+                },
+                {
+                    "name": "Strange Helmet",
+                    "price": 500,
+                    "id": 2479,
+                    "type": "buy"
+                },
+                {
+                    "name": "Dark Armor",
+                    "price": 400,
+                    "id": 2489,
+                    "type": "buy"
+                },
+                {
+                    "name": "Dark Helmet",
+                    "price": 250,
+                    "id": 2490,
+                    "type": "buy"
+                },
+                {
+                    "name": "Mystic Turban",
+                    "price": 150,
+                    "id": 2663,
+                    "type": "buy"
+                }
+            ]
+        },
+        "script": "alesar.js"
+    }
+}

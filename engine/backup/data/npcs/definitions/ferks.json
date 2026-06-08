@@ -1,0 +1,102 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Ferks",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  111,
+                                              "details":  {
+                                                              "head":  78,
+                                                              "body":  52,
+                                                              "legs":  118,
+                                                              "feet":  115
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  0,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "bank":  true,
+                         "keywords":  {
+                                          "job":  "I am a banker, my job is to exchange coins.",
+                                          "name":  "My name is Ferks \u003cbows slightly\u003e.",
+                                          "time":  "It is exactly  right now.",
+                                          "king":  "His royal highness might visit this little but promising community one day if we develop well.",
+                                          "venore":  "Our city and society could be a role model for all Tibians.",
+                                          "thais":  "Thais is still a power that must be taken into account. Power is not everything of course.",
+                                          "carlin":  "Carlin is nothing but a nuisance.",
+                                          "edron":  "Edron has little to offer. It\u0027s overestimated. Let those silly knights have it. In the end it will be us who clean up the mess and bring order into the chaos that will be left when they finally leave.",
+                                          "jungle":  "This jungle is dangerous. The more area we can finally cultivate, the better. Only if we chop and burn enough of it down and create new farmland, we can build a new centre of commerce.",
+                                          "tibia":  "Sometimes I wonder why the gods don\u0027t put more effort into bringing us order but I am a banker, not a priest.",
+                                          "kazordoon":  "Dwarves are disciplined people, which I appreciate.",
+                                          "dwarves":  "Dwarves are disciplined people, which I appreciate.",
+                                          "dwarfs":  "Dwarves are disciplined people, which I appreciate.",
+                                          "ab\u0027dendriel":  "Those elves are erratic and unreliable. They need to be taught some manners.",
+                                          "elves":  "Those elves are erratic and unreliable. They need to be taught some manners.",
+                                          "elfs":  "Those elves are erratic and unreliable. They need to be taught some manners.",
+                                          "darama":  "This wilderness and the dry desert need to be colonised by civilised people like us. We bring the light of order and prosperity to this continent.",
+                                          "darashia":  "This town has little that we are interested in.",
+                                          "ankrahmun":  "I have to admit that I somehow admire the strong guidance of this pharao. Most fail to acknowledge that his subjects are in need of such a strict leadership.",
+                                          "ferumbras":  "A servant of chaos. I wonder why all the Thaian military power can\u0027t stop him for good.",
+                                          "excalibug":  "A fictitious weapon is of no use at all.",
+                                          "apes":  "They mindlessly attack our settlement to steal tools and everything else they get into their hairy hands.",
+                                          "lizard":  "They live so far away in the jungle that we know only little of them. Perhaps this primitive race can be used in some way.",
+                                          "dworcs":  "Evil little bastards they are."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "A good day to you.",
+                                                       "I am a banker, my job is to exchange coins."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "A good day to you.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hiho$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "script":  "ferks.js"
+                     }
+}

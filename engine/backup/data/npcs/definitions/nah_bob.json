@@ -1,0 +1,444 @@
+{
+    "creatureStatistics": {
+        "name": "Nah'bob",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 80,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 1,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "name": "Well, my name is Nah'bob, but I don't like it. Just call me Bob.",
+            "Bob": "Yep, that's me.",
+            "nah'bob": "I don't like that name. Call me Bob.",
+            "job": "I'm a trader, lady. You know... selling stuff, buying stuff... that kind of thing. Quite a hassle, actually. ...",
+            "trade": "You want to buy something? Well, be my guest, Lady. Just ask me for my offers!",
+            "permission": "I am not allowed to trade with you unless Gabel gave you the permission to trade with us.",
+            "gabel": "He's the boss around here. You know - the big djinn. He's all right.",
+            "king": "King? We do not have kings. Not anymore.",
+            "djinn": "Yes, I am a djinn. How long did it take you to notice?",
+            "efreet": "The Efreet are a bunch of freaked out loonies, believe me. Nothing but 'war!' and 'domination!' and 'world rule!' all day long. Those people shoud chill out a bit.",
+            "marid": "I guess I am one. I don't know why because I'm not really into all that Daraman stuff about ascetism, you know. ...",
+            "malor": "Now THAT djnn really means stress. Too bad that doofus of an orc king freed him from his prison in the lamp. Gabel should have gotten rid of Malor for good when had the chance to do so.",
+            "mal'ouquah": "Mal'ouquah the Efreet's fortress. I have never seen it, and I don't feel any particular desire to do so.",
+            "ashta'daramai": "Ashta'daramai is the name of this place - 'Daraman's gift'. It's actually a bit misleading, because it was not Daraman who built it. The name refer's to Daraman's teachings, you know.",
+            "human": "I have nothing against humans. ...",
+            "zathroth": "They say Zathroth created us because he wanted us to be mindless, greedy killing machines. Well, I'm not so sure about some of the Efreet, but as for me I think he's done a lousy job.",
+            "tibia": "It's a mad, mad world.",
+            "daraman": "Ah yes. Daraman. The old prophet. Well - he was all right, I guess. But I am not sure I agree with him on all matters. I mean - that thing about asceticism... I think he was a bit extreme there.",
+            "darashia": "They say Darashia is full of relaxed people. To me that sounds like a good place to be.",
+            "scarab": "Yuk! I wouldn't eat that!",
+            "edron": "You are talking about some human place, aren't you?",
+            "thais": "You are talking about some human place, aren't you?",
+            "venore": "You are talking about some human place, aren't you?",
+            "kazordoon": "You are talking about some human place, aren't you?",
+            "carlin": "You are talking about some human place, aren't you?",
+            "ab'dendriel": "You are talking about some human place, aren't you?",
+            "ankrahmun": "I know Ankrahmun - I've been there before. Lots of pyramids and stuff. Wicked.",
+            "pharaoh": "The pharaoh? I have heard about that guy. That man is as mad as a march hare.",
+            "palace": "The palace in Ankrahmun used to be a place of orgies and of all kinds of debauchery. Aah - those were the days...!",
+            "ascension": "Yeah right. I don't know what it is about you humans. I have rarely met a human who did not have his head filled with some crazy religious idea.",
+            "kha'zeel": "I like the Kha'zeel mountains. It is true they are boring as hell, but personally I don't mind boredom. I hate excitement. Whenever somebody said 'Oh-that's-gonna-be-so-exciting' some really, really bad thing happened.",
+            "kha'labal": "Did you know that desert used to be fertile land? You should have seen it. It was all lush and verdant - a veritable paradise. ...",
+            "melchior": "Of course I remember old Melchior. He used to come up here regularly. Is he dead?",
+            "alesar": "I know Alesar. Ran off to the Efreet, didn't he? Weird story. Always used to be such fanatic followers of Daraman, he and his brother. ...",
+            "brother": "Haroun is Alesar's brother. Don't talk to him about it, though. Haroun may be a zealous fool, but he's all right. He has suffered enough.",
+            "fa'hradin": "I think Fa'hradin has stopped taking things too seriously long time ago. You just got to love the old cynic.",
+            "bo'ques": "Honestly, if I did not have any other reason for hanging out here Bo'ques's cooking would make me stay.",
+            "djem": "The little girl djema is bored out of her mind here so she often comes round. We've always had a barrel of laughs together, she and me - playing chess, telling stories, playing tricks on Haroun. ...",
+            "haroun": "Ah yes - Haroun. My esteemed fellow trader. Stiff like a butler and boring like a tax collector. He is a devout follower of Daraman, but I think he seriously misunderstood his teachings. ...",
+            "baa'leal": "Baa'leal? Of course I remember old bulldog face. I wasn't surprised at all when I heard that he sided with Malor. Wasn't a great loss anyway. ...",
+            "wares": "My job around here is to buy and sell weapons, armors, helmets, legs, and shields.",
+            "offer": "My job around here is to buy and sell weapons, armors, helmets, legs, and shields.",
+            "goods": "My job around here is to buy and sell weapons, armors, helmets, legs, and shields.",
+            "equipment": "My job around here is to buy and sell weapons, armors, helmets, legs, and shields.",
+            "do": "My job around here is to buy and sell weapons, armors, helmets, legs, and shields.",
+            "you": "My job around here is to buy and sell weapons, armors, helmets, legs, and shields.",
+            "sell": "My job around here is to buy and sell weapons, armors, helmets, legs, and shields.",
+            "have": "My job around here is to buy and sell weapons, armors, helmets, legs, and shields.",
+            "weapon": "I'm selling and buying spike swords, war hammers and obsidian lances. Furthermore I would buy fire swords, ice rapiers, dragon lances, fire axes and broadswords from you, if you have any.",
+            "shield": "I'm just selling beholder shields. But I'm buying guardian shields, dragon shields, beholder shields, crown shields and phoenix shields.",
+            "armor": "I'm selling and buying noble armors. Furthermore I'm buying crown armors and blue robes.",
+            "helmet": "At this time I'm not selling any helmets. I'm only buying crown helmets, crusader helmets and royal helmets.",
+            "trousers": "At this time I'm only buying crown legs. Oh, and I'm also looking for boots of haste!",
+            "legs": "At this time I'm only buying crown legs. Oh, and I'm also looking for boots of haste!"
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "<Sighs> Another customer! I've only just sat down! What is it, ?",
+                "I'm a trader, lady. You know... selling stuff, buying stuff... that kind of thing. Quite a hassle, actually. ..."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "<Sighs> Another customer! I've only just sat down! What is it, %N?",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "greetings$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "djanni'hah$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "greetings$"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ],
+        "topics": {
+            "1": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Oh. Well, I suppose that is bad. For him, anyway.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "no"
+                        ],
+                        "response": "So the old skinflint is still alive? Amazing! I could have sworn the Efreet knocked the stuffing out of him. No human can fool a djinn for long, you know.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    }
+                ]
+            },
+            "10": {
+                "entries": [
+                    {
+                        "keywords": [],
+                        "response": "I'm sorry, pal. But you need Gabel's permission to trade with me.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Ok. Here you are!",
+                        "conditions": [
+                            {
+                                "type": "gold",
+                                "min": -1
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "deleteMoney",
+                                "amount": -1
+                            },
+                            {
+                                "type": "createItem",
+                                "id": -1
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Well, come back if you have enough gold.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Well, obviously not.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "11": {
+                "entries": [
+                    {
+                        "keywords": [],
+                        "response": "I'm sorry, pal. You don't have Gabel's permission to trade with me.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Ok. Here is your gold.",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "createMoney"
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You do not have one!",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You do not have that many!",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Well, obviously not.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            }
+        },
+        "keywordNextTopics": {
+            "melchior": 1
+        },
+        "trade": {
+            "items": [
+                {
+                    "name": "Spike Sword",
+                    "price": 8000,
+                    "id": 2383,
+                    "type": "sell"
+                },
+                {
+                    "name": "War Hammer",
+                    "price": 10000,
+                    "id": 2391,
+                    "type": "sell"
+                },
+                {
+                    "name": "Obsidian Lance",
+                    "price": 3000,
+                    "id": 2425,
+                    "type": "sell"
+                },
+                {
+                    "name": "Beholder Shield",
+                    "price": 7000,
+                    "id": 2518,
+                    "type": "sell"
+                },
+                {
+                    "name": "Noble Armor",
+                    "price": 8000,
+                    "id": 2486,
+                    "type": "sell"
+                },
+                {
+                    "name": "Spike Sword",
+                    "price": 1000,
+                    "id": 2383,
+                    "type": "buy"
+                },
+                {
+                    "name": "Fire Sword",
+                    "price": 4000,
+                    "id": 2392,
+                    "type": "buy"
+                },
+                {
+                    "name": "War Hammer",
+                    "price": 1200,
+                    "id": 2391,
+                    "type": "buy"
+                },
+                {
+                    "name": "Ice Rapier",
+                    "price": 1000,
+                    "id": 2396,
+                    "type": "buy"
+                },
+                {
+                    "name": "Broad Sword",
+                    "price": 500,
+                    "id": 2413,
+                    "type": "buy"
+                },
+                {
+                    "name": "Dragon Lance",
+                    "price": 9000,
+                    "id": 2414,
+                    "type": "buy"
+                },
+                {
+                    "name": "Obsidian Lance",
+                    "price": 500,
+                    "id": 2425,
+                    "type": "buy"
+                },
+                {
+                    "name": "Fire Axe",
+                    "price": 8000,
+                    "id": 2432,
+                    "type": "buy"
+                },
+                {
+                    "name": "Guardian Shield",
+                    "price": 2000,
+                    "id": 2515,
+                    "type": "buy"
+                },
+                {
+                    "name": "Dragon Shield",
+                    "price": 4000,
+                    "id": 2516,
+                    "type": "buy"
+                },
+                {
+                    "name": "Beholder Shield",
+                    "price": 1200,
+                    "id": 2518,
+                    "type": "buy"
+                },
+                {
+                    "name": "Crown Shield",
+                    "price": 8000,
+                    "id": 2519,
+                    "type": "buy"
+                },
+                {
+                    "name": "Phoenix Shield",
+                    "price": 16000,
+                    "id": 2539,
+                    "type": "buy"
+                },
+                {
+                    "name": "Noble Armor",
+                    "price": 900,
+                    "id": 2486,
+                    "type": "buy"
+                },
+                {
+                    "name": "Crown Armor",
+                    "price": 12000,
+                    "id": 2487,
+                    "type": "buy"
+                },
+                {
+                    "name": "Crown Legs",
+                    "price": 12000,
+                    "id": 2488,
+                    "type": "buy"
+                },
+                {
+                    "name": "Crown Helmet",
+                    "price": 2500,
+                    "id": 2491,
+                    "type": "buy"
+                },
+                {
+                    "name": "Crusader Helmet",
+                    "price": 6000,
+                    "id": 2497,
+                    "type": "buy"
+                },
+                {
+                    "name": "Royal Helmet",
+                    "price": 30000,
+                    "id": 2498,
+                    "type": "buy"
+                },
+                {
+                    "name": "Blue Robe",
+                    "price": 10000,
+                    "id": 2656,
+                    "type": "buy"
+                },
+                {
+                    "name": "Boots Of Haste",
+                    "price": 30000,
+                    "id": 2195,
+                    "type": "buy"
+                }
+            ]
+        },
+        "script": "nah_bob.js"
+    }
+}

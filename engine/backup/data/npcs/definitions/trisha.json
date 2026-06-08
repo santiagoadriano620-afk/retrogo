@@ -1,0 +1,298 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Trisha",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  121,
+                                              "details":  {
+                                                              "head":  94,
+                                                              "body":  67,
+                                                              "legs":  38,
+                                                              "feet":  95
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  3,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "I am the high knight of Carlin. I trained the the greatest heroines and even some males.",
+                                          "name":  "I am Trisha Ironfist.",
+                                          "time":  "It is time for a fight!",
+                                          "hero":  "Heroes are knights and knights are heroes, of course.",
+                                          "knight":  "Knights are the true heroes of Tibia. Fame can only be earned by hand to hand combat. Brave women can join us, and we even accept suitable males now and then.",
+                                          "vocation":  "Your vocation is your profession. There are four vocations in Tibia: Knights, paladins, sorcerers, and druids.",
+                                          "spellbook":  "In a spellbook, all your spells are listed. There you will find the pronunciation of each spell. If you want to buy one, visit the magicians shop in the south of Carlin.",
+                                          "spell":  "Sorry, I only sell spells to knights."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Welcome back, knight !",
+                                                       "Salutations, . What can I do for you?",
+                                                       "I am the high knight of Carlin. I trained the the greatest heroines and even some males."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Welcome back, knight %N!",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Salutations, %N. What can I do for you?",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "2":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "healing",
+                                                                                       "spell"
+                                                                                   ],
+                                                                      "response":  "In this category I have \u0027Light Healing\u0027 and \u0027Antidote\u0027.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "support",
+                                                                                       "spell"
+                                                                                   ],
+                                                                      "response":  "In this category I have \u0027Light\u0027, \u0027Find Person\u0027 and \u0027Great Light\u0027.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "bye"
+                                                                                   ],
+                                                                      "response":  "Be careful on your journeys.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "0$"
+                                                                                   ],
+                                                                      "response":  "For magic level 0 I have \u0027Find Person\u0027 and \u0027Light\u0027.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "1$"
+                                                                                   ],
+                                                                      "response":  "For magic level 1 I have \u0027Light Healing\u0027.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "2$"
+                                                                                   ],
+                                                                      "response":  "For magic level 2 I have \u0027Antidote\u0027.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "3$"
+                                                                                   ],
+                                                                      "response":  "For magic level 3 I have \u0027Great Light\u0027.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Sorry, I have only spells for magic level 0, 1, 2 and 3.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "3":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You already know how to cast this spell.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You have to be magic level %A to learn this spell.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Return when you have enough gold.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "max":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here you are. Look in your spellbook for the pronunciation of this spell.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Maybe next time.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+
+                                               },
+                         "script":  "trisha.js"
+                     }
+}

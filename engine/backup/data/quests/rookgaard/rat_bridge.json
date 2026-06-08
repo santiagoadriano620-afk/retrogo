@@ -1,0 +1,132 @@
+[
+    {
+        "actionId":  2053,
+        "type":  "lever",
+        "itemIds":  [
+                        1945,
+                        1946
+                    ],
+        "effects":  [
+                        {
+                            "type":  "transformItem",
+                            "from":  1945,
+                            "to":  1946,
+                            "decay":  true
+                        },
+                        {
+                            "type":  "createTile",
+                            "effectId": 1284,
+                            "pos":  {
+                                        "x":  32100,
+                                        "y":  32205,
+                                        "z":  8
+                                    }
+                        },
+                        {
+                            "type":  "createTile",
+                            "effectId": 1284,
+                            "pos":  {
+                                        "x":  32101,
+                                        "y":  32205,
+                                        "z":  8
+                                    }
+                        },
+                        {
+                            "key":  7053,
+                            "value":  1,
+                            "type":  "storage"
+                        }
+                    ],
+        "effectsAlt":  [
+                           {
+                               "type":  "transformItem",
+                               "from":  1946,
+                               "to":  1945,
+                               "decay":  true
+                           },
+                           {
+                               "type":  "createTile",
+                               "effectId":  508,
+                               "pos":  {
+                                           "x":  32100,
+                                           "y":  32205,
+                                           "z":  8
+                                       }
+                           },
+                           {
+                               "type":  "createTile",
+                               "effectId":  509,
+                               "pos":  {
+                                           "x":  32101,
+                                           "y":  32205,
+                                           "z":  8
+                                       }
+                           }
+                       ]
+    },
+    {
+        "actionId":  2054,
+        "type":  "lever",
+        "itemIds":  [
+                        1945,
+                        1946
+                    ],
+        "effects":  [
+                        {
+                            "type":  "transformItem",
+                            "from":  1945,
+                            "to":  1946,
+                            "decay":  true
+                        },
+                        {
+                            "type":  "createTile",
+                            "effectId": 1284,
+                            "pos":  {
+                                        "x":  32100,
+                                        "y":  32205,
+                                        "z":  8
+                                    }
+                        },
+                        {
+                            "type":  "createTile",
+                            "effectId": 1284,
+                            "pos":  {
+                                        "x":  32101,
+                                        "y":  32205,
+                                        "z":  8
+                                    }
+                        },
+                        {
+                            "key":  7054,
+                            "value":  1,
+                            "type":  "storage"
+                        }
+                    ],
+        "effectsAlt":  [
+                           {
+                               "type":  "transformItem",
+                               "from":  1946,
+                               "to":  1945,
+                               "decay":  true
+                           },
+                           {
+                               "type":  "createTile",
+                               "effectId":  508,
+                               "pos":  {
+                                           "x":  32100,
+                                           "y":  32205,
+                                           "z":  8
+                                       }
+                           },
+                           {
+                               "type":  "createTile",
+                               "effectId":  509,
+                               "pos":  {
+                                           "x":  32101,
+                                           "y":  32205,
+                                           "z":  8
+                                       }
+                           }
+                       ]
+    }
+]

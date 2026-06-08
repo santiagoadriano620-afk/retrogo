@@ -1,0 +1,81 @@
+{
+    "actionId":  3101,
+    "type":  "seal",
+    "conditions":  [
+                       {
+                           "type":  "storage",
+                           "key":  8,
+                           "value":  1
+                       },
+                       {
+                           "type":  "storage",
+                           "key":  9,
+                           "value":  -1
+                       }
+                   ],
+    "effects":  [
+                    {
+                        "type":  "storage",
+                        "key":  9,
+                        "value":  1
+                    },
+                    {
+                        "type":  "relocate",
+                        "from":  {
+                                     "x":  0,
+                                     "y":  0,
+                                     "z":  0
+                                 },
+                        "to":  {
+                                   "x":  32268,
+                                   "y":  31856,
+                                   "z":  15
+                               }
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  32268,
+                                    "y":  31856,
+                                    "z":  15
+                                },
+                        "effectId":  14
+                    },
+                    {
+                        "key":  8101,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "effectsAlt":  [
+                       {
+                           "type":  "relocate",
+                           "from":  {
+                                        "x":  0,
+                                        "y":  0,
+                                        "z":  0
+                                    },
+                           "to":  {
+                                      "x":  32191,
+                                      "y":  31938,
+                                      "z":  14
+                                  }
+                       },
+                       {
+                           "type":  "magicEffect",
+                           "pos":  {
+                                       "x":  32191,
+                                       "y":  31938,
+                                       "z":  14
+                                   },
+                           "effectId":  1
+                       },
+                       {
+                           "type":  "damage",
+                           "target":  0,
+                           "combat":  "COMBAT_FIREDAMAGE",
+                           "min":  -55,
+                           "max":  -55
+                       }
+                   ]
+}

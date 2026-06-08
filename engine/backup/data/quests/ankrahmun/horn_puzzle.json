@@ -1,0 +1,34 @@
+{
+    "actionId":  2072,
+    "type":  "instrument",
+    "itemIds":  [
+
+                ],
+    "effects":  [
+                    {
+                        "type":  "magicEffect",
+                        "effectId":  24
+                    },
+                    {
+                        "type":  "storage",
+                        "key":  259,
+                        "value":  5
+                    },
+                    {
+                        "key":  7072,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "effectsAlt":  [
+                       {
+                           "type":  "magicEffect",
+                           "effectId":  24
+                       },
+                       {
+                           "type":  "storage",
+                           "key":  259,
+                           "value":  0
+                       }
+                   ]
+}

@@ -1,0 +1,96 @@
+{
+    "actionId":  2065,
+    "type":  "lever",
+    "itemIds":  [
+                    1945,
+                    1946
+                ],
+    "conditions":  [
+
+                   ],
+    "effects":  [
+                    {
+                        "type":  "transformItem",
+                        "from":  1945,
+                        "to":  1946,
+                        "decay":  true
+                    },
+                    {
+                        "type":  "relocate",
+                        "from":  {
+                                     "x":  32225,
+                                     "y":  32276,
+                                     "z":  10
+                                 },
+                        "to":  {
+                                   "x":  32225,
+                                   "y":  32275,
+                                   "z":  10
+                               }
+                    },
+                    {
+                        "type":  "createItem",
+                        "itemId":  1387,
+                        "count":  1,
+                        "pos":  {
+                                    "x":  32225,
+                                    "y":  32276,
+                                    "z":  10
+                                }
+                    },
+                    {
+                        "type":  "relocate",
+                        "from":  {
+                                     "x":  32233,
+                                     "y":  32276,
+                                     "z":  9
+                                 },
+                        "to":  {
+                                   "x":  32232,
+                                   "y":  32276,
+                                   "z":  9
+                               }
+                    },
+                    {
+                        "type":  "createItem",
+                        "itemId":  1387,
+                        "count":  1,
+                        "pos":  {
+                                    "x":  32233,
+                                    "y":  32276,
+                                    "z":  9
+                                }
+                    },
+                    {
+                        "key":  7065,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "effectsAlt":  [
+                       {
+                           "type":  "transformItem",
+                           "from":  1946,
+                           "to":  1945,
+                           "decay":  true
+                       },
+                       {
+                           "type":  "removeItem",
+                           "pos":  {
+                                       "x":  32233,
+                                       "y":  32276,
+                                       "z":  9
+                                   },
+                           "itemId":  1387
+                       },
+                       {
+                           "type":  "removeItem",
+                           "pos":  {
+                                       "x":  32225,
+                                       "y":  32276,
+                                       "z":  10
+                                   },
+                           "itemId":  1387
+                       }
+                   ]
+}

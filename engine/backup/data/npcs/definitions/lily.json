@@ -1,0 +1,212 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Lily",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  120,
+                                              "details":  {
+                                                              "head":  78,
+                                                              "body":  101,
+                                                              "legs":  86,
+                                                              "feet":  115
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  2,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "how":  "Very well. Thank you.",
+                                          "are":  "Very well. Thank you.",
+                                          "you":  "Very well. Thank you.",
+                                          "offer":  "I only sell my antidote runes and I\u0027ll be happy to buy some blueberries from you.",
+                                          "job":  "I am a druid, bound to the spirit of nature. I\u0027m selling antidote runes that help against poison. Oh, and I buy blueberries, of course.",
+                                          "name":  "My name is Lily.",
+                                          "hyacinth":  "Hyacinth lives in the forest. He\u0027s never in town so I don\u0027t know him very well.",
+                                          "time":  "It is about .",
+                                          "help":  "I can sell you an antidote rune. It\u0027s against the poison of so many dangerous creatures.",
+                                          "monster":  "Many monsters are poisonous. Don\u0027t let them bite you or you will need one of my antidote runes.",
+                                          "creature":  "Many monsters are poisonous. Don\u0027t let them bite you or you will need one of my antidote runes.",
+                                          "poison":  "Many monsters are poisonous. Don\u0027t let them bite you or you will need one of my antidote runes.",
+                                          "life":  "I\u0027m sorry, but Hyacinth is the only one on Rookgaard who knows how to brew life fluids.",
+                                          "fluid":  "I\u0027m sorry, but Hyacinth is the only one on Rookgaard who knows how to brew life fluids.",
+                                          "rune":  "I\u0027m sorry, but Hyacinth is the only one on Rookgaard who knows how to brew life fluids."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Welcome, .",
+                                                       "I am a druid, bound to the spirit of nature. I\u0027m selling antidote runes that help against poison. Oh, and I buy blueberries, of course."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Welcome, %N.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here you are.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Sorry, you don\u0027t have enough gold.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "As you wish.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "2":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Fine! Here\u0027s your gold.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "createMoney"
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Oh, I\u0027m sorry. I\u0027m not buying less than 5 blueberries.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "As you wish.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Antidote Rune",
+                                                         "price":  40,
+                                                         "id":  2266,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Blueberry",
+                                                         "price":  1,
+                                                         "id":  2677,
+                                                         "type":  "buy"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "lily.js"
+                     }
+}

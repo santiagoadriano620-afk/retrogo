@@ -1,0 +1,16 @@
+{
+  "itemId": 4863,
+  "type": "questItem",
+  "branches": [
+    {
+      "conditions": [
+        { "type": "targetItem", "itemId": 2913 }
+      ],
+      "effects": [
+        { "type": "transformItem", "from": 4863, "to": 4864 },
+        { "type": "magicEffect", "effectId": 12 },
+        { "type": "magicEffect", "effectId": 13 }
+      ]
+    }
+  ]
+}

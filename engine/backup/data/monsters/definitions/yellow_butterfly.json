@@ -1,0 +1,46 @@
+{
+  "creatureStatistics": {
+    "name": "Butterfly",
+    "health": 2,
+    "maxHealth": 2,
+    "mana": 0,
+    "maxMana": 0,
+    "speed": 320,
+    "attack": 0,
+    "attackSpeed": 2000,
+    "defense": 0,
+    "outfit": {
+      "id": 10
+    }
+  },
+  "experience": 0,
+  "corpse": 2902,
+  "fluidType": 0,
+  "behaviour": {
+    "type": 0,
+    "fleeHealth": 2,
+    "openDoors": false,
+    "senseInvisible": false
+  },
+  "flags": {
+    "summonable": false,
+    "attackable": true,
+    "convinceable": false,
+    "pushable": false,
+    "canPushItems": false,
+    "canPushCreatures": false,
+    "illusionable": false,
+    "targetDistance": 6,
+    "runonhealth": 0
+  },
+  "immunities": {
+    "fire": false,
+    "energy": false,
+    "earth": false,
+    "physical": false,
+    "outfit": false,
+    "lifedrain": false,
+    "paralyze": false,
+    "invisible": false
+  }
+}

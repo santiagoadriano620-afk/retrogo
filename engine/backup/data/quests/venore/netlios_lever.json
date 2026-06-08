@@ -1,0 +1,226 @@
+{
+    "actionId":  2009,
+    "type":  "lever",
+    "itemIds":  [
+                    1945,
+                    1946
+                ],
+    "conditions":  [
+                       {
+                           "type":  "itemAtPosition",
+                           "itemId":  1284,
+                           "pos":  {
+                                       "x":  32685,
+                                       "y":  32084,
+                                       "z":  9
+                                   }
+                       }
+                   ],
+    "effects":  [
+                    {
+                        "type":  "transformItem",
+                        "from":  1945,
+                        "to":  1946,
+                        "decay":  true
+                    },
+                    {
+                        "type":  "relocate",
+                        "from":  {
+                                     "x":  32687,
+                                     "y":  32084,
+                                     "z":  9
+                                 },
+                        "to":  {
+                                   "x":  32683,
+                                   "y":  32084,
+                                   "z":  9
+                               }
+                    },
+                    {
+                        "type":  "relocate",
+                        "from":  {
+                                     "x":  32686,
+                                     "y":  32084,
+                                     "z":  9
+                                 },
+                        "to":  {
+                                   "x":  32683,
+                                   "y":  32084,
+                                   "z":  9
+                               }
+                    },
+                    {
+                        "type":  "relocate",
+                        "from":  {
+                                     "x":  32685,
+                                     "y":  32084,
+                                     "z":  9
+                                 },
+                        "to":  {
+                                   "x":  32683,
+                                   "y":  32084,
+                                   "z":  9
+                               }
+                    },
+                    {
+                        "type":  "relocate",
+                        "from":  {
+                                     "x":  32684,
+                                     "y":  32084,
+                                     "z":  9
+                                 },
+                        "to":  {
+                                   "x":  32683,
+                                   "y":  32084,
+                                   "z":  9
+                               }
+                    },
+                    {
+                        "type":  "transformItemInPosition",
+                        "pos":  {
+                                    "x":  32687,
+                                    "y":  32084,
+                                    "z":  9
+                                },
+                        "from":  1284,
+                        "to":  598
+                    },
+                    {
+                        "type":  "createItem",
+                        "itemId":  4809,
+                        "count":  1,
+                        "pos":  {
+                                    "x":  32687,
+                                    "y":  32084,
+                                    "z":  9
+                                }
+                    },
+                    {
+                        "type":  "transformItemInPosition",
+                        "pos":  {
+                                    "x":  32686,
+                                    "y":  32084,
+                                    "z":  9
+                                },
+                        "from":  1284,
+                        "to":  598
+                    },
+                    {
+                        "type":  "transformItemInPosition",
+                        "pos":  {
+                                    "x":  32685,
+                                    "y":  32084,
+                                    "z":  9
+                                },
+                        "from":  1284,
+                        "to":  598
+                    },
+                    {
+                        "type":  "transformItemInPosition",
+                        "pos":  {
+                                    "x":  32684,
+                                    "y":  32084,
+                                    "z":  9
+                                },
+                        "from":  1284,
+                        "to":  598
+                    },
+                    {
+                        "type":  "createItem",
+                        "itemId":  4811,
+                        "count":  1,
+                        "pos":  {
+                                    "x":  32684,
+                                    "y":  32084,
+                                    "z":  9
+                                }
+                    },
+                    {
+                        "key":  7009,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "effectsNoCondition":  [
+                               {
+                                   "type":  "transformItem",
+                                   "from":  1945,
+                                   "to":  1946,
+                                   "decay":  true
+                               }
+                           ],
+    "effectsAlt":  [
+                       {
+                           "type":  "transformItem",
+                           "from":  1946,
+                           "to":  1945,
+                           "decay":  true
+                       },
+                       {
+                           "type":  "removeItem",
+                           "pos":  {
+                                       "x":  32684,
+                                       "y":  32084,
+                                       "z":  9
+                                   },
+                           "itemId":  4811
+                       },
+                       {
+                           "type":  "transformItemInPosition",
+                           "pos":  {
+                                       "x":  32684,
+                                       "y":  32084,
+                                       "z":  9
+                                   },
+                           "from":  598,
+                           "to":  1284
+                       },
+                       {
+                           "type":  "transformItemInPosition",
+                           "pos":  {
+                                       "x":  32685,
+                                       "y":  32084,
+                                       "z":  9
+                                   },
+                           "from":  598,
+                           "to":  1284
+                       },
+                       {
+                           "type":  "removeItem",
+                           "pos":  {
+                                       "x":  32687,
+                                       "y":  32084,
+                                       "z":  9
+                                   },
+                           "itemId":  4809
+                       },
+                       {
+                           "type":  "transformItemInPosition",
+                           "pos":  {
+                                       "x":  32687,
+                                       "y":  32084,
+                                       "z":  9
+                                   },
+                           "from":  598,
+                           "to":  1284
+                       },
+                       {
+                           "type":  "transformItemInPosition",
+                           "pos":  {
+                                       "x":  32686,
+                                       "y":  32084,
+                                       "z":  9
+                                   },
+                           "from":  598,
+                           "to":  1284
+                       }
+                   ],
+    "effectsAltNoCondition":  [
+                                  {
+                                      "type":  "transformItem",
+                                      "from":  1946,
+                                      "to":  1945,
+                                      "decay":  true
+                                  }
+                              ]
+}

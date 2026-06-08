@@ -1,0 +1,88 @@
+[
+    {
+        "actionId":  3019,
+        "type":  "puzzle",
+        "itemIds":  [
+
+                    ],
+        "conditions":  [
+                           {
+                               "type":  "isPlayer"
+                           }
+                       ],
+        "effects":  [
+                        {
+                            "type":  "transformItem",
+                            "to":  425,
+                            "decay":  true
+                        },
+                        {
+                            "type":  "removeItem",
+                            "pos":  {
+                                        "x":  32796,
+                                        "y":  31594,
+                                        "z":  5
+                                    },
+                            "itemId":  1025
+                        },
+                        {
+                            "key":  8019,
+                            "value":  1,
+                            "type":  "storage"
+                        }
+                    ],
+        "effectsAlt":  [
+
+                       ]
+    },
+    {
+        "actionId":  3019,
+        "type":  "puzzle",
+        "itemIds":  [
+
+                    ],
+        "conditions":  [
+                           {
+                               "type":  "isPlayer"
+                           }
+                       ],
+        "effects":  [
+                        {
+                            "type":  "transformItem",
+                            "to":  426,
+                            "decay":  true
+                        },
+                        {
+                            "type":  "relocate",
+                            "from":  {
+                                         "x":  32796,
+                                         "y":  31594,
+                                         "z":  5
+                                     },
+                            "to":  {
+                                       "x":  32797,
+                                       "y":  31594,
+                                       "z":  5
+                                   }
+                        },
+                        {
+                            "type":  "createItem",
+                            "itemId":  1025,
+                            "count":  1,
+                            "pos":  {
+                                        "x":  32796,
+                                        "y":  31594,
+                                        "z":  5
+                                    }
+                        },
+                        {
+                            "key":  8019,
+                            "value":  1,
+                            "type":  "storage"
+                        }
+                    ],
+        "effectsAlt":  [
+
+                       ]
+    }
+]

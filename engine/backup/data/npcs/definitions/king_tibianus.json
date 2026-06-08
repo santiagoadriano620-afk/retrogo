@@ -1,0 +1,260 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "King Tibianus",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  113,
+                                              "details":  {
+                                                              "head":  21,
+                                                              "body":  87,
+                                                              "legs":  107,
+                                                              "feet":  95
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  1,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "I am your sovereign, King Tibianus III, and it\u0027s my duty to provide justice and guidance for my subjects.",
+                                          "justice":  "I try my best to be just and fair to our citizens. The army and the TBI are a great help for fulfilling this duty.",
+                                          "name":  "It\u0027s hard to believe that you don\u0027t know your own king!",
+                                          "news":  "The latest news are usually brought to our magnificent town by brave adventurers. They spread tales of their journeys at Frodo\u0027s tavern.",
+                                          "tibia":  "Soon the whole land will be ruled by me once again!",
+                                          "land":  "Soon the whole land will be ruled by me once again!",
+                                          "how":  "Thank you, I\u0027m fine.",
+                                          "are":  "Thank you, I\u0027m fine.",
+                                          "you":  "Thank you, I\u0027m fine.",
+                                          "castle":  "Rain Castle is my home.",
+                                          "sell":  "Sell? Sell what? My kingdom isn\u0027t for sale!",
+                                          "god":  "Honor the gods and pay your taxes.",
+                                          "zathroth":  "Please ask a priest about the gods.",
+                                          "citizen":  "The citizens of Tibia are my subjects. Ask the old monk Quentin to learn more about them.",
+                                          "sam":  "He is a skilled blacksmith and a loyal subject.",
+                                          "frodo":  "He is the owner of Frodo\u0027s Hut and a faithful tax-payer.",
+                                          "gorn":  "He was once one of Tibia\u0027s greatest fighters. Now he is selling equipment.",
+                                          "benjamin":  "He was once my greatest general. Now he is very old and senile but we entrusted him with work for the Royal Tibia Mail.",
+                                          "harkath":  "Harkath Bloodblade is the general of our glorious army.",
+                                          "bloodblade":  "Harkath Bloodblade is the general of our glorious army.",
+                                          "general":  "Harkath Bloodblade is the general of our glorious army.",
+                                          "noodles":  "The royal poodle Noodles is my greatest treasure!",
+                                          "ferumbras":  "He is a follower of the evil god Zathroth and responsible for many attacks on us. Kill him on sight!",
+                                          "bozo":  "He is my royal jester and cheers me up now and then.",
+                                          "treasure":  "The royal poodle Noodles is my greatest treasure!",
+                                          "monster":  "Go and hunt them! For king and country!",
+                                          "help":  "Visit Quentin, the monk, for help.",
+                                          "quest":  "I will call for heroes as soon as the need arises again and then reward them appropriately.",
+                                          "mission":  "I will call for heroes as soon as the need arises again and then reward them appropriately.",
+                                          "gold":  "To pay your taxes, visit the royal tax collector.",
+                                          "money":  "To pay your taxes, visit the royal tax collector.",
+                                          "tax":  "He has been lazy lately. I bet you have not payed any taxes at all.",
+                                          "sewer":  "What a disgusting topic!",
+                                          "dungeon":  "Dungeons are no places for kings.",
+                                          "equipment":  "Feel free to buy it in our town\u0027s fine shops.",
+                                          "food":  "Ask the royal cook for some food.",
+                                          "time":  "It\u0027s a time for heroes, that\u0027s for sure!",
+                                          "heroes":  "It\u0027s a time for heroes, that\u0027s for sure!",
+                                          "hero$":  "It\u0027s a time for heroes, that\u0027s for sure!",
+                                          "adventurer":  "It\u0027s a time for heroes, that\u0027s for sure!",
+                                          "collector":  "He has been lazy lately. I bet you have not payed any taxes at all.",
+                                          "king":  "I am the king, so mind your words!",
+                                          "army":  "Ask the soldiers about that topic.",
+                                          "enemy":  "Our enemies are numerous. The evil minotaurs, Ferumbras, and the renegade city of Carlin to the north are just some of them.",
+                                          "enemies":  "Our enemies are numerous. The evil minotaurs, Ferumbras, and the renegade city of Carlin to the north are just some of them.",
+                                          "city":  "Our beloved city has some fine shops, guildhouses, and a modern system of sewers.",
+                                          "north":  "They dare to reject my reign over the whole continent!",
+                                          "carlin":  "They dare to reject my reign over the whole continent!",
+                                          "thais":  "Our beloved city has some fine shops, guildhouses, and a modern system of sewers.",
+                                          "shop":  "Visit the shops of our merchants and craftsmen.",
+                                          "merchant":  "Ask around about them.",
+                                          "craftsmen":  "Ask around about them.",
+                                          "guild":  "The four major guilds are the knights, the paladins, the druids, and the sorcerers.",
+                                          "minotaur":  "Vile monsters, but I must admit they are strong and sometimes even cunning ... in their own bestial way.",
+                                          "paladin":  "The paladins are great protectors for Thais.",
+                                          "elane":  "The paladins are great protectors for Thais.",
+                                          "knight":  "The brave knights are necessary for human survival in Thais.",
+                                          "gregor":  "The brave knights are necessary for human survival in Thais.",
+                                          "sorcerer":  "The magic of the sorcerers is a powerful tool to smite our enemies.",
+                                          "muriel":  "The magic of the sorcerers is a powerful tool to smite our enemies.",
+                                          "druid":  "We need the druidic healing powers to fight evil.",
+                                          "marvik":  "We need the druidic healing powers to fight evil.",
+                                          "good":  "The forces of good are hard pressed in these dark times.",
+                                          "evil":  "We need all strength we can muster to smite evil!",
+                                          "order":  "We need order to survive!",
+                                          "chaos":  "Chaos arises from selfishness, and that\u0027s its weakness.",
+                                          "excalibug":  "It\u0027s the sword of the kings. If you could return this weapon to me I would reward you beyond your dreams.",
+                                          "reward":  "Well, if you want a reward, go on a quest to bring me Excalibug!",
+                                          "chester":  "A very competent person. A little nervous but very competent.",
+                                          "tbi$":  "This organisation is important in holding our enemies in check. Its headquarter is located in the bastion in the northwall.",
+                                          "promot":  "Do you want to be promoted in your vocation for 20000 gold?",
+                                          "eremo":  "It is said that he lives on a small island near Edron. Maybe the people there know more about him."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "I greet thee, my loyal subject.",
+                                                       "I am your sovereign, King Tibianus III, and it\u0027s my duty to provide justice and guidance for my subjects."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello",
+                                                                       "king"
+                                                                   ],
+                                                      "response":  "I greet thee, my loyal subject.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hail",
+                                                                       "king"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "salutations",
+                                                                       "king"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "4":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You are already promoted.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You need to be at least level 20 in order to be promoted.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "level",
+                                                                                             "max":  20
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You do not have enough money.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "max":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Congratulations! You are now promoted. Visit the sage Eremo for new spells.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "premium"
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You need a premium account in order to promote.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Ok, then not.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+                                                   "promot":  4
+                                               },
+                         "keywordTopicPrices":  {
+                                                    "promot":  20000
+                                                },
+                         "script":  "king_tibianus.js"
+                     }
+}

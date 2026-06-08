@@ -1,0 +1,202 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Allen",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  111,
+                                              "details":  {
+                                                              "head":  76,
+                                                              "body":  43,
+                                                              "legs":  38,
+                                                              "feet":  76
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  1,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "name":  "My name is Allen Richardson. I am the owner of this market.",
+                                          "job":  "I run this market and sell furniture.",
+                                          "time":  "It is . Too bad we run out of cuckoo clocks.",
+                                          "news":  "Sorry, no time to chat, let\u0027s trade.",
+                                          "offer":  "At this counter you can buy chairs. What do you need?",
+                                          "goods":  "At this counter you can buy chairs. What do you need?",
+                                          "do":  "At this counter you can buy chairs. What do you need?",
+                                          "you":  "At this counter you can buy chairs. What do you need?",
+                                          "sell":  "At this counter you can buy chairs. What do you need?",
+                                          "have":  "At this counter you can buy chairs. What do you need?",
+                                          "furniture":  "At this counter you can buy chairs. What do you need?",
+                                          "equipment":  "At this counter you can buy chairs. What do you need?",
+                                          "red":  "At this counter you can buy chairs. What do you need?",
+                                          "chair":  "I can offer you a red cushioned chair or a green cushioned chair.",
+                                          "green":  "At this counter you can buy chairs. What do you need?",
+                                          "cushioned":  "I can offer you a red cushioned chair or a green cushioned chair."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Welcome to the Plank and Treasurechest Market, !",
+                                                       "I run this market and sell furniture."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Welcome to the Plank and Treasurechest Market, %N!",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "81":  {
+                                                   "entries":  [
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "Here you are.",
+                                                                       "conditions":  [
+                                                                                          {
+                                                                                              "type":  "gold",
+                                                                                              "min":  -1
+                                                                                          },
+                                                                                          {
+                                                                                              "type":  "premium"
+                                                                                          }
+                                                                                      ],
+                                                                       "actions":  [
+                                                                                       {
+                                                                                           "type":  "deleteMoney",
+                                                                                           "amount":  -1
+                                                                                       },
+                                                                                       {
+                                                                                           "type":  "createItem",
+                                                                                           "id":  -1
+                                                                                       }
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "I\u0027m sorry, but you need a premium account if you want to buy furniture.",
+                                                                       "conditions":  [
+                                                                                          {
+                                                                                              "type":  "gold",
+                                                                                              "min":  -1
+                                                                                          }
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "Come back, when you have enough money.",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+
+                                                                                    ],
+                                                                       "response":  "Hmm, but I\u0027m sure, it would fit nicely into your house.",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  true,
+                                                                       "isDefault":  true
+                                                                   }
+                                                               ]
+                                               }
+                                    },
+                         "keywordNextTopics":  {
+
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Red Cushioned Chair",
+                                                         "price":  40,
+                                                         "id":  1666,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Green Cushioned Chair",
+                                                         "price":  40,
+                                                         "id":  1670,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Wooden Chair",
+                                                         "price":  15,
+                                                         "id":  1652,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Rocking Chair",
+                                                         "price":  25,
+                                                         "id":  1674,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Sofa Chair",
+                                                         "price":  55,
+                                                         "id":  1658,
+                                                         "type":  "sell"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "allen.js"
+                     }
+}

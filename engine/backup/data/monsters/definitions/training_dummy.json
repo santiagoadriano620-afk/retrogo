@@ -1,0 +1,59 @@
+{
+  "creatureStatistics": {
+    "name": "Training Dummy",
+    "health": 1,
+    "maxHealth": 1,
+    "mana": 0,
+    "maxMana": 0,
+    "speed": 0,
+    "attack": 0,
+    "attackSpeed": 0,
+    "defense": 0,
+    "outfit": {
+      "id": 125
+    },
+    "armor": 0
+  },
+  "experience": 0,
+  "corpse": 0,
+  "fluidType": 0,
+  "behaviour": {
+    "type": 1,
+    "fleeHealth": 100,
+    "canWalk": false,
+    "openDoors": false,
+    "senseInvisible": false
+  },
+  "defenseSpells": [],
+  "attacks": [],
+  "immunities": {
+    "physical": true,
+    "fire": true,
+    "energy": true,
+    "earth": true,
+    "ice": true,
+    "death": true,
+    "holy": true,
+    "drown": true,
+    "lifedrain": true,
+    "paralyze": true,
+    "invisible": true,
+    "manadrain": true
+  },
+  "elements": {},
+  "summons": [],
+  "sayings": {},
+  "loot": [],
+  "flags": {
+    "summonable": false,
+    "attackable": true,
+    "convinceable": false,
+    "pushable": false,
+    "canPushItems": false,
+    "canPushCreatures": false,
+    "illusionable": false,
+    "targetDistance": 1,
+    "runonhealth": 0,
+    "trainer": true
+  }
+}

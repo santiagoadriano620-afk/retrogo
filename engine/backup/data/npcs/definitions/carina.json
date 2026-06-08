@@ -1,0 +1,164 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Carina",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  120,
+                                              "details":  {
+                                                              "head":  97,
+                                                              "body":  70,
+                                                              "legs":  94,
+                                                              "feet":  76
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  1,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "I sell some of the most beautiful jewels of the lands.",
+                                          "name":  "I am Carina Carlson.",
+                                          "time":  "It\u0027s .",
+                                          "offer":  "I am selling jewels, just have a look.",
+                                          "goods":  "I am selling jewels, just have a look.",
+                                          "do":  "I am selling jewels, just have a look.",
+                                          "you":  "I am selling jewels, just have a look.",
+                                          "sell":  "I am selling jewels, just have a look.",
+                                          "have":  "I am selling jewels, just have a look.",
+                                          "jewel":  "We offer wedding rings, golden amulets, and ruby necklaces."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Welcome, . I am looking forward to trade with you.",
+                                                       "I sell some of the most beautiful jewels of the lands."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Welcome, %N. I am looking forward to trade with you.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here you are.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Sorry, make sure to come back, as soon as you have enough money.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Perhaps next time.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Wedding Ring",
+                                                         "price":  990,
+                                                         "id":  2121,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Golden Amulet",
+                                                         "price":  6600,
+                                                         "id":  2130,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Ruby Necklace",
+                                                         "price":  3560,
+                                                         "id":  2133,
+                                                         "type":  "sell"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "carina.js"
+                     }
+}

@@ -1,0 +1,45 @@
+{
+    "actionId":  2002,
+    "type":  "switch",
+    "effects":  [
+                    {
+                        "type":  "removeItem",
+                        "pos":  {
+                                    "x":  33211,
+                                    "y":  32698,
+                                    "z":  13
+                                },
+                        "itemId":  1061
+                    },
+                    {
+                        "key":  7002,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "effectsAlt":  [
+                       {
+                           "type":  "relocate",
+                           "from":  {
+                                        "x":  33211,
+                                        "y":  32698,
+                                        "z":  13
+                                    },
+                           "to":  {
+                                      "x":  33211,
+                                      "y":  32697,
+                                      "z":  13
+                                  }
+                       },
+                       {
+                           "type":  "createItem",
+                           "itemId":  1061,
+                           "count":  1,
+                           "pos":  {
+                                       "x":  33211,
+                                       "y":  32698,
+                                       "z":  13
+                                   }
+                       }
+                   ]
+}

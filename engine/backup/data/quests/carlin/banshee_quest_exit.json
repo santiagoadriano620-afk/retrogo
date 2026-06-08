@@ -1,0 +1,41 @@
+{
+    "actionId":  3094,
+    "type":  "exit",
+    "events":  [
+                   "onStepIn"
+               ],
+    "effects":  [
+                    {
+                        "type":  "relocate",
+                        "from":  {
+                                     "x":  0,
+                                     "y":  0,
+                                     "z":  0
+                                 },
+                        "to":  {
+                                   "x":  32201,
+                                   "y":  31845,
+                                   "z":  7
+                               }
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  32173,
+                                    "y":  31929,
+                                    "z":  7
+                                },
+                        "effectId":  11
+                    },
+                    {
+                        "type":  "storage",
+                        "key":  205,
+                        "value":  1
+                    },
+                    {
+                        "key":  8094,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ]
+}

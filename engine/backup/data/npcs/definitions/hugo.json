@@ -1,0 +1,104 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Hugo",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  113,
+                                              "details":  {
+                                                              "head":  14,
+                                                              "body":  81,
+                                                              "legs":  80,
+                                                              "feet":  93
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  1,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "name":  "Uhm, well it\u0027s Oscar Savage, but who can become famous, especially as an artist, with a name like that I ask you?",
+                                          "hugo":  "Well it\u0027s not my real name. I took it because people think it\u0027s scaring and manly. I hate people doubting my manhood for being a tailor, you know.",
+                                          "real":  "Uhm, well it\u0027s Oscar Savage, but who can become famous, especially as an artist, with a name like that I ask you?",
+                                          "job":  "I am tailor and designer extraordinaire.",
+                                          "warehouse":  "I would call it a \u0027wearhouse\u0027.",
+                                          "uniform":  "I don\u0027t get it, what uniforms you are talking about.",
+                                          "dress":  "By the gods of fashion! Didn\u0027t it do that I fed the last dress pattern to my poor dog? Will this mocking of all which is taste and fashion never stop?? Ok, ok, you will get those ugly, stinking uniforms and now get lost, fashion terrorist.",
+                                          "pattern":  "By the gods of fashion! Didn\u0027t it do that I fed the last dress pattern to my poor dog? Will this mocking of all which is taste and fashion never stop?? Ok, ok, you will get those ugly, stinking uniforms and now get lost, fashion terrorist.",
+                                          "time":  "Sorry, a watch would ruin my stylish outfit.",
+                                          "king":  "He does not care much about us, we don\u0027t care much about him. I consider that a fair deal.",
+                                          "tibianus":  "He does not care much about us, we don\u0027t care much about him. I consider that a fair deal.",
+                                          "army":  "I think they should not wear that ugly armor in town. I will see to assure that will be changed soon.",
+                                          "ferumbras":  "The ferumbras-bad-ass-fashion is incredibly outdated since years.",
+                                          "excalibug":  "I don\u0027t care for such fairytales.",
+                                          "thais":  "Thais is kind of a fashion hell. If there was an award for the most ugly citizens, it would go to Thais.",
+                                          "tibia":  "A world filled with ugly dressed people needs the skills of a fashion-hero.",
+                                          "uglyness":  "A world filled with ugly dressed people needs the skills of a fashion-hero.",
+                                          "punished":  "A world filled with ugly dressed people needs the skills of a fashion-hero.",
+                                          "fashion":  "One day Captain Catwalk will punish all crimes to fashion and bring all ugly people to justice.",
+                                          "hero":  "One day Captain Catwalk will punish all crimes to fashion and bring all ugly people to justice.",
+                                          "captain":  "He\u0027s a supermodel! No one knows his secret identity!",
+                                          "catwalk":  "He\u0027s a supermodel! No one knows his secret identity!",
+                                          "supermodel":  "A model with incredible superpowers. Do you think they call them supermodels for nothing?",
+                                          "carlin":  "Women should know better than to hide in ugly armor. Like all followers of ugliness they will be punished one day.",
+                                          "news":  "My newest models are top secret, sorry.",
+                                          "tax":  "I don\u0027t care about such mundane things like \u0027taxes\u0027.",
+                                          "privilege":  "The city was granted a few privileges by the king. I can\u0027t even tell which. They don\u0027t affect me that much.",
+                                          "gambling":  "I too love to gamble now and then in the Hard Rock tavern."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Be greeted, !",
+                                                       "I am tailor and designer extraordinaire."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Be greeted, %N!",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hail$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ]
+                     }
+}

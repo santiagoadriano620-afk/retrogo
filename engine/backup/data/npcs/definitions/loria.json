@@ -1,0 +1,613 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Loria",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  120,
+                                              "details":  {
+                                                              "head":  96,
+                                                              "body":  118,
+                                                              "legs":  82,
+                                                              "feet":  95
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  10,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "I am studying the power of magic all the time.",
+                                          "lake":  "I hope you like it. It is named like my master, Alatar, the Sage",
+                                          "name":  "I am Loria, a former apprentice of Alatar, the Sage.",
+                                          "alatar":  "I praise my master Alatar.",
+                                          "time":  "Time means nothing to me.",
+                                          "buy":  "I don\u0027t care for money, I care for magic.",
+                                          "power":  "Although your attack spells get stronger with your usage of magic, real power is gained by finding strategies to properly use your magic abilities.",
+                                          "mana":  "Mana is the source of all magic. If you use spells, it will drain mana from your energy pool. This mana regenerates slowly, if you eat, or if you drink those mana fluids you can buy at Xodet\u0027s.",
+                                          "gorn":  "He runs an equipment shop close to the north gate of the city.",
+                                          "xodet":  "He runs a magic shop in the main road.",
+                                          "praise":  "I praise my master Alatar.",
+                                          "kill":  "Killing and destruction are just foolish steaps to entrophy.",
+                                          "quest":  "I heard from a mystic bone of the lich lord below the House of Necromant. Bring it to me, and you will receive a reward.",
+                                          "crystal":  "The mystic crystal should be able to resurrect fresh corpses.",
+                                          "necromant":  "He lived in a lonely house in the south eastern part of Tibia beyond the mountains.",
+                                          "reward":  "I\u0027ll teach you a very seldom spell.",
+                                          "magic":  "Well, mages are more bookworms than sportsmen, and as such often neglect their physical fitness. In ancient tomes lies the power to use mana as an equivalent to life. So use this spell to survive.",
+                                          "spell":  "Oh, I can tell you a lot about all sorcerer spells. Feel free to ask me.",
+                                          "rune":  "All spells starting with the syllable \u0027ad\u0027 must be burned into a rune. For this buy a rune from Xodet and put it in one of your hands. Now cast the formula of the spell.",
+                                          "Muriel":  "He runs his magic shop in the southwest of the city. He sells runes and spells and helps you, if you want to become a sorcerer.",
+                                          "find":  "If you search someone, this spell will give you an idea of the direction you must head. You will be able to see, whether he is below or above you.",
+                                          "person":  "If you search someone, this spell will give you an idea of the direction you must head. You will be able to see, whether he is below or above you.",
+                                          "light":  "This spell will illuminate your whole screen and last longer than \u0027light\u0027. Use it in deep dungeons, \u0027cause behind every corner there could be your last enemy ... and you might just walk into him.",
+                                          "healing":  "This spell is able to cure almost every injury at a higher cost than the other healing spells.",
+                                          "missile":  "Remember the spell where you only got to wave your hand? Well, wave it twice and shoot a heavy magic missile at your enemy. This spell will create a rune with five charges.",
+                                          "antidote":  "This spell sucks the venom out of your veins, that some enemy might have injected.",
+                                          "intense":  "This spell will cure more wounds or greater ones at once. This is of course more \u0027mana intensive\u0027, but everybody will sooner or later get in a situation where mana is nothing - compared to life.",
+                                          "poison":  "With this one you can create a huge wall of poisonous gas. Many monsters will be too scared to pass the wall and if they do, they will choke from nausea.",
+                                          "field":  "Trapped again between fire, poison and energy fields? This spell will give you the ability to destruct the fields, so you can pass safely.",
+                                          "great":  "A lightning bolt strikes the point you look at.",
+                                          "fire":  "As the poison wall, this spell creates an even larger wall of fire, burning everyone who passes.",
+                                          "heavy":  "Remember the spell where you only got to wave your hand? Well, wave it twice and shoot a heavy magic missile at your enemy. This spell will create a rune with five charges.",
+                                          "shield":  "Well, mages are more bookworms than sportsmen, and as such often neglect their physical fitness. In ancient tomes lies the power to use mana as an equivalent to life. So use this spell to survive.",
+                                          "fireball":  "Imagine scaling the normal fireball by two and raising the fire temperature.",
+                                          "energy":  "Shoots a triangular bundle of lightning bolts in the direction you look.",
+                                          "destroy":  "Trapped again between fire, poison and energy fields? This spell will give you the ability to destruct the fields, so you can pass safely.",
+                                          "wave":  "Shoots a triangular bundle of lightning bolts in the direction you look.",
+                                          "ultimate":  "This spell is able to cure almost every injury at a higher cost than the other healing spells.",
+                                          "firebomb":  "With a snip of your finger you can cover the floor with a burning carpet that keeps on burning for a while.",
+                                          "bomb":  "With a snip of your finger you can cover the floor with a burning carpet that keeps on burning for a while.",
+                                          "energybeam":  "A ray of energy will strike everyone in your current direction",
+                                          "creature":  "This one gives you the ability to summon monsters that aid you in your battles.",
+                                          "illusion":  "A good one to scare childs. You can change your appearance to any monster. You can be as handsome as a ghoul!",
+                                          "wall":  "Attracts lightning bolts from the sky, to form a giant wall, seriously damaging everyone who passes.",
+                                          "explosion":  "A strong blast of fire wounds the opponent you point at, and the adjacent squares.",
+                                          "beam":  "A lightning bolt strikes the point you look at.",
+                                          "invisible":  "This spell drains the colors out of you body, making yourself invisible for an hour or two.",
+                                          "summon":  "This one gives you the ability to summon monsters that aid you in your battles.",
+                                          "sudden":  "The best spell for deciding a battle within seconds. The spell tries to interrupt the opponents heart beat, leading to his instant death in most cases.",
+                                          "death":  "The best spell for deciding a battle within seconds. The spell tries to interrupt the opponents heart beat, leading to his instant death in most cases.",
+                                          "formula":  "Which is the spell, you need the formula to?"
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Welcome , my friend.",
+                                                       "Welcome .",
+                                                       "I am studying the power of magic all the time."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello",
+                                                                       "loria"
+                                                                   ],
+                                                      "response":  "Welcome %N, my friend.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi",
+                                                                       "loria"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello"
+                                                                   ],
+                                                      "response":  "Welcome %N.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "find",
+                                                                                       "person"
+                                                                                   ],
+                                                                      "response":  "Say the words: exiva \u0027name\u0027",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "light"
+                                                                                   ],
+                                                                      "response":  "Say the words: utevo lux",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "light",
+                                                                                       "healing"
+                                                                                   ],
+                                                                      "response":  "Say the word: exura",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "light",
+                                                                                       "magic",
+                                                                                       "missile"
+                                                                                   ],
+                                                                      "response":  "Say the word: adori",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "antidote"
+                                                                                   ],
+                                                                      "response":  "Say the words: exana pox",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "intense",
+                                                                                       "healing"
+                                                                                   ],
+                                                                      "response":  "Say the words: exura gran",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "poison",
+                                                                                       "field"
+                                                                                   ],
+                                                                      "response":  "Say the words: adevo grav pox",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "great",
+                                                                                       "light"
+                                                                                   ],
+                                                                      "response":  "Say the words: utevo gran lux",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "fire",
+                                                                                       "field"
+                                                                                   ],
+                                                                      "response":  "Say the words: adevo grav flam",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "heavy",
+                                                                                       "magic",
+                                                                                       "missile"
+                                                                                   ],
+                                                                      "response":  "Say the words: adori gran",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "magic",
+                                                                                       "shield"
+                                                                                   ],
+                                                                      "response":  "Say the words: utamo vita",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "fireball"
+                                                                                   ],
+                                                                      "response":  "Say the words: adori flam",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "energy",
+                                                                                       "field"
+                                                                                   ],
+                                                                      "response":  "Say the words: adevo grav vis",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "destroy",
+                                                                                       "field"
+                                                                                   ],
+                                                                      "response":  "Say the words: adito grav",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "fire",
+                                                                                       "wave"
+                                                                                   ],
+                                                                      "response":  "Say the words: exevo flam hur",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "ultimate",
+                                                                                       "healing"
+                                                                                   ],
+                                                                      "response":  "Say the words: exura vita",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "great",
+                                                                                       "fireball"
+                                                                                   ],
+                                                                      "response":  "Say the words: adori gran flam",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "fire",
+                                                                                       "bomb"
+                                                                                   ],
+                                                                      "response":  "Say the words: adevo mas flam",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "firebomb"
+                                                                                   ],
+                                                                      "response":  "Say the words: adevo mas flam",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "energy",
+                                                                                       "beam"
+                                                                                   ],
+                                                                      "response":  "Say the words: exevo vis lux",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "creature",
+                                                                                       "illusion"
+                                                                                   ],
+                                                                      "response":  "Say the words: utevo res ina \u0027creature\u0027",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "poison",
+                                                                                       "wall"
+                                                                                   ],
+                                                                      "response":  "Say the words: adevo mas grav pox",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "explosion"
+                                                                                   ],
+                                                                      "response":  "Say the words: adevo mas hur",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "fire",
+                                                                                       "wall"
+                                                                                   ],
+                                                                      "response":  "Say the words: adevo mas grav flam",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "great",
+                                                                                       "energy",
+                                                                                       "beam"
+                                                                                   ],
+                                                                      "response":  "Say the words: exevo gran vis lux",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "invisible"
+                                                                                   ],
+                                                                      "response":  "Say the words: utana vid",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "summon",
+                                                                                       "creature"
+                                                                                   ],
+                                                                      "response":  "Say the words: utevo res \u0027creature\u0027",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "energy",
+                                                                                       "wall"
+                                                                                   ],
+                                                                      "response":  "Say the words: adevo mas grav vis",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "energy",
+                                                                                       "wave"
+                                                                                   ],
+                                                                      "response":  "Say the words: exevo mort hur",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "sudden",
+                                                                                       "death"
+                                                                                   ],
+                                                                      "response":  "Say the words: adori vita vis",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  }
+                                                              ]
+                                              },
+                                        "4":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "spell"
+                                                                                   ],
+                                                                      "response":  "I\u0027ll teach you \u0027exevo gran mas vis\u0027, but bring me this bone first!",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+                                                   "reward":  4,
+                                                   "formula":  1
+                                               },
+                         "script":  "loria.js"
+                     }
+}

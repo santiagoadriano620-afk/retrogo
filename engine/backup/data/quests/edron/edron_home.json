@@ -1,0 +1,11 @@
+{
+  "actionId": 3106,
+  "type": "home",
+  "events": ["onStepIn", "onAddItem"],
+  "tileItem": true,
+  "teleport": {"to": {"x": 33217, "y": 31814, "z": 8}},
+  "magicEffect": 13,
+  "town": "Edron",
+  "onAddItemTeleport": {"to": {"x": 33210, "y": 31806, "z": 8}},
+  "onAddItemEffect": 14
+}

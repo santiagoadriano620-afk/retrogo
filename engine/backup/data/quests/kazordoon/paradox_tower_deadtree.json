@@ -1,0 +1,90 @@
+{
+    "actionId":  3004,
+    "type":  "puzzle",
+    "itemIds":  [
+
+                ],
+    "conditions":  [
+
+                   ],
+    "effects":  [
+                    {
+                        "type":  "createItem",
+                        "itemId":  1490,
+                        "count":  1,
+                        "pos":  {
+                                    "x":  32497,
+                                    "y":  31889,
+                                    "z":  7
+                                }
+                    },
+                    {
+                        "type":  "createItem",
+                        "itemId":  1490,
+                        "count":  1,
+                        "pos":  {
+                                    "x":  32499,
+                                    "y":  31890,
+                                    "z":  7
+                                }
+                    },
+                    {
+                        "type":  "createItem",
+                        "itemId":  1490,
+                        "count":  1,
+                        "pos":  {
+                                    "x":  32497,
+                                    "y":  31890,
+                                    "z":  7
+                                }
+                    },
+                    {
+                        "type":  "createItem",
+                        "itemId":  1490,
+                        "count":  1,
+                        "pos":  {
+                                    "x":  32498,
+                                    "y":  31890,
+                                    "z":  7
+                                }
+                    },
+                    {
+                        "type":  "createItem",
+                        "itemId":  1490,
+                        "count":  1,
+                        "pos":  {
+                                    "x":  32496,
+                                    "y":  31890,
+                                    "z":  7
+                                }
+                    },
+                    {
+                        "type":  "createItem",
+                        "itemId":  1490,
+                        "count":  1,
+                        "pos":  {
+                                    "x":  32494,
+                                    "y":  31888,
+                                    "z":  7
+                                }
+                    },
+                    {
+                        "type":  "createItem",
+                        "itemId":  1490,
+                        "count":  1,
+                        "pos":  {
+                                    "x":  32502,
+                                    "y":  31890,
+                                    "z":  7
+                                }
+                    },
+                    {
+                        "key":  8004,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "effectsAlt":  [
+
+                   ]
+}

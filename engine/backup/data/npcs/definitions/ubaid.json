@@ -1,0 +1,271 @@
+{
+    "creatureStatistics": {
+        "name": "Ubaid",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 51,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 1,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "name": "My name is Ubaid. Why do you want to know that, human? Hmm... suspicious.",
+            "ubaid": "That is my name. I don't like it when a human pronounces it.",
+            "job": "Well, what do you think? I keep watch around here to make sure people like you don't enter.",
+            "gate": "You already pledged loyalty to king Malor!",
+            "pass": "You already pledged loyalty to king Malor!",
+            "door": "You already pledged loyalty to king Malor!",
+            "enter": "You already pledged loyalty to king Malor!",
+            "join": "You already pledged loyalty to king Malor!",
+            "follow": "You already pledged loyalty to king Malor!",
+            "king": "Well, Malor is not officially king of all djinn yet, but now our beloved leader is back that is a mere formality.",
+            "malor": "Well, Malor is not officially king of all djinn yet, but now our beloved leader is back that is a mere formality.",
+            "djinn": "We are a race of rulers and dominators! Or at least we, the Efreet, are!",
+            "efreet": "The Efreet are the true djinn! Those namby-pamby milksops who call themselves the Marid and still follow Gabel, no longer deserve the honour to call themselves djinn.",
+            "marid": "Marid? When? Where? How many? RED ALERT! ...",
+            "gabel": "I used to serve under Gabel, but he is no longer my king. If that wacky wimp should ever come here to Mal'ouquah I will personally... you know... turn him away. Yes!",
+            "mal'ouquah": "This place is our home, and as long as I'm here no meddler will trespass!",
+            "ashta'daramai": "The Marids' hideout, isn't it? I have never been there, but I am sure one day I will. That will be the day Ashta'daramai falls into our hands!",
+            "human": "You are an inferior race of feeble, scheming jerks. No offence.",
+            "zathroth": "Zathroth is our father! Of course, the son always has a right to hate his father, right?",
+            "tibia": "This world is ours by right, and we will take it!",
+            "daraman": "How dare you utter that name in my presence, human. Don't strain my patience, worm! You may know the secret word, but... who knows... it is always possible that your head is torn off in some terrible accident.",
+            "darashia": "A human settlement to the west? I have not been there yet, but when I do I'm sure I will be remembered.",
+            "scarab": "They make good pets if you know how to keep them. Did you know they just adore human flesh?",
+            "edron": "Isn't that the name of some petty human settlement?",
+            "thais": "Isn't that the name of some petty human settlement?",
+            "venore": "Isn't that the name of some petty human settlement?",
+            "kazordoon": "Isn't that the name of some petty human settlement?",
+            "carlin": "Isn't that the name of some petty human settlement?",
+            "ab'dendriel": "Isn't that the name of some petty human settlement?",
+            "ankrahmun": "I know that damn city well. A long time ago we laid siege to it. ...",
+            "pharaoh": "They say Ankrahmun is now ruled by a crazy pharaoh who wants to tell his whole people into drooling undead. That's humans. Sickos and weirdos the lot of them.",
+            "palace": "One day we will sack that place and burn it to the ground.",
+            "temple": "One day we will sack that place and burn it to the ground.",
+            "ascension": "I think I've heard that term before. Has to do with that weirdo pharaoh, right?",
+            "rah": "Are you drunk?",
+            "uthun": "Are you drunk?",
+            "akh": "Are you drunk?",
+            "kha'zeel": "This mountain range is our home. Too bad we have to share it with the Marid. That will change, though. And pretty soon, believe me.",
+            "kha'labal": "I like the desert. Just ruins and sand. And no human scum to be seen. The Kha'labal is a foretaste of what the djinn will do to the whole of Tibia!",
+            "war": "I don't know why I am stuck here! I should be at the front, killing Marid and humans. Well, perhaps I will kill you...",
+            "baa'leal": "General Baa'leal is our commander-in-chief of all his minions. He is as tough as an ancient scarab's buttocks and as sly a sand weasel.",
+            "alesar": "I am not used to the sight of blueskins here in Mal'ouquah, and it does not make me too happy to see one. I am keeping an eye on this guy, and if I should ever find that he is playing games with us I will personally break his neck!",
+            "fa'hradin": "The old wizard is dangerous, but he will get what he deserves sooner or later.",
+            "lamp": "I am not taking a nap! I am on duty!"
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "Still alive, ?",
+                "Shove off, little one! Humans are not welcome here, !",
+                "What? You know the word, ? All right then - I won't kill you. At least, not now."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Still alive, %N?",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "greetings$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "djanni'hah$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Shove off, little one! Humans are not welcome here, %N!",
+                "idle": true
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "greetings$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "greetings$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "djanni'hah$"
+                ],
+                "response": "What? You know the word, %N? All right then - I won't kill you. At least, not now.",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "djanni'hah$"
+                ],
+                "response": "Hmmm? Is this human %N trying to say something? I don't think so.",
+                "idle": true
+            }
+        ],
+        "topics": {
+            "1": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "no"
+                        ],
+                        "response": "Who do you think you are? A Marid? Shove off, moron.",
+                        "conditions": [
+                            {
+                                "type": "questValue",
+                                "questId": 278,
+                                "value": 2
+                            }
+                        ],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true
+                    },
+                    {
+                        "keywords": [
+                            "no"
+                        ],
+                        "response": "Of cour... Huh!? No!? I can't believe it! ...",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Of course. Then don't waste my time and shove off.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isCatchAll": true
+                    }
+                ]
+            },
+            "2": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "So you pledge loyalty to king Malor and you are willing to never ever set foot on Marids' territory, unless you want to kill them? Yes?",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 3,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": null,
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false,
+                        "isCatchAll": true
+                    }
+                ]
+            },
+            "3": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Well then - welcome to Mal'ouquah. ...",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": null,
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false,
+                        "isCatchAll": true
+                    }
+                ]
+            }
+        },
+        "keywordNextTopics": {},
+        "script": "ubaid.js"
+    }
+}

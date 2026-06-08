@@ -1,0 +1,312 @@
+{
+    "creatureStatistics": {
+        "name": "Adrenius",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 9,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 2,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "name": "My name is Adrenius.",
+            "job": "I'm a priest of Fafnar.",
+            "fafnar": "Fafnar is the stronger one of the two suns above our world.",
+            "thais": "Yyyyess. Yes, it's the capital city of Tibia I think.",
+            "carlin": "Carlin? Don't you mean Thais?",
+            "king": "Who needs a king? I don't.",
+            "weapon": "Who needs weapons? I never had and i never will have weapons - what for?",
+            "help": "Help? Help? Nothing more? Don't we all demand some help?",
+            "time": "Time? What is time? A word? A thing? An object?",
+            "sword": "Swords? Don't you have something else to do?",
+            "desert": "Sand, sand and again sand. Sand all over. Yes, I'd say: it's truly a desert!",
+            "excalibug": "What's that? You start annoying me.",
+            "fight": "Leave me alone. I don't want to fight.",
+            "god": "Fafnar is the greatest among the gods.",
+            "way": "Way? Which way? I forgot where most ways go to... excuse me.",
+            "door": "Who needs doors? Free your mind!",
+            "secret": "Secrets ... What do you mean?",
+            "treasure": "Treasures? What is a treasure for you?",
+            "book": "Read books, it increases your intelligence and, furthermore, it's a great source of inspiration!",
+            "gharonk": "Hmmmm... I don't know much about it.",
+            "offer": "I can offer you religion and mysticism.",
+            "library": "I heard of the library, but I never was very interested in it.",
+            "netlios": "This fool! His book is nothing but a hoax! At least I believe that. Or did you find an answer for my questions?"
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "Hello, ! What can I do for you?",
+                "I'm a priest of Fafnar."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Hello, %N! What can I do for you?",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ],
+        "topics": {
+            "1": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "By the way, I would like a donation for my temple. Are %P gold ok?",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "setPrice",
+                                "amount": 500
+                            }
+                        ],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "no"
+                        ],
+                        "response": "Oh. So once again I am proved right.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "You can't even say 'yes' or 'no'. You are not worth talking to me!",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "2": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Thank you very much. Now, name me the first person in alphabetical order, his age, his fate, and how long he was on his journeys!",
+                        "conditions": [
+                            {
+                                "type": "gold",
+                                "min": -1
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "deleteMoney",
+                                "amount": -1
+                            }
+                        ],
+                        "nextTopic": 4,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You want to fool me? May Fafnar burn your soul!",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Then I don't want to talk to you.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "4": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "anaso",
+                            "41",
+                            "mother-bear",
+                            "117"
+                        ],
+                        "response": "Hmmm, maybe. What can you tell me about the second 'adventurer'?",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 5,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "No, sorry, that doesn't sound correct to me. Maybe you should reconsider your words one more time...",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "5": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "elaeus",
+                            "39",
+                            "dragon",
+                            "100"
+                        ],
+                        "response": "Yes, that might be true. What did you find out about the third man?",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 6,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "No, no, no! Think about it, that simply can't be true!",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "6": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "gadinius",
+                            "42",
+                            "fire",
+                            "83"
+                        ],
+                        "response": "Correct again! Hmmmm... I doubt you know anything about the fourth person!",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 7,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Hmmmm... well, no. That is not true, it does not fit to the data provided by the books.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "7": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "heso",
+                            "40",
+                            "troll",
+                            "66"
+                        ],
+                        "response": "Yes! Really, how did you figure that out? I bet, you don't know anything about the last adventurer!",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 8,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "No, sorry. Incorrect...",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "8": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "hestus",
+                            "38",
+                            "poison",
+                            "134"
+                        ],
+                        "response": "That's right! Why didn't I see it? It's obvious, Netlios was right, and his stories are great! Wait, I'll give you something!",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "createItem",
+                                "id": 2088
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Well, and again it was shown: I am right and Netlios is wrong!",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            }
+        },
+        "keywordNextTopics": {
+            "netlios": 1
+        },
+        "script": "adrenius.js"
+    }
+}

@@ -1,0 +1,250 @@
+{
+    "creatureStatistics": {
+        "name": "Jezzara",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 138,
+            "details": {
+                "head": 3,
+                "body": 43,
+                "legs": 91,
+                "feet": 97
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 2,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "job": "I sell food of various kinds.",
+            "name": "I am the mourned Jezzara.",
+            "time": "You can buy watches here in the markethall.",
+            "temple": "The temple can be found in the northeast of the city.",
+            "pharaoh": "The pharaoh is our godking and the founder of our religion.",
+            "oldpharaoh": "He was entombed in undead state. It is said that this will finally teach him to to strive for ascension.",
+            "scarab": "I am not afraid of something that attacks only my physical form. But they stay away from the city anyway.",
+            "chosen": "The chosen are those who are granted undeath after a life of service to the pharaoh.",
+            "tibia": "The world can be a dangerous place for the whole of the Akh'rah Uthun.",
+            "carlin": "The cities of the Tibian continent have little contact with us.",
+            "thais": "The cities of the Tibian continent have little contact with us.",
+            "edron": "The cities of the Tibian continent have little contact with us.",
+            "venore": "The cities of the Tibian continent have little contact with us.",
+            "kazordoon": "Dwarves are not really fond of the endless sands of the desert. I must say I can't blame them for it.",
+            "dwarves": "Dwarves are not really fond of the endless sands of the desert. I must say I can't blame them for it.",
+            "dwarfes": "Dwarves are not really fond of the endless sands of the desert. I must say I can't blame them for it.",
+            "ab'dendriel": "Elves don't like this land too much so we have little contact with them.",
+            "elves": "Elves don't like this land too much so we have little contact with them.",
+            "elfes": "Elves don't like this land too much so we have little contact with them.",
+            "darama": "This continent is very diverse. There are deserts and mountains as well as a large jungle region.",
+            "darashia": "We are usually not allowed to travel that far without explicit permission, so we know this city mostly from the tales of travellers.",
+            "daraman": "I know little of his teachings. The priests say his conclusions were inconsequent.",
+            "ankrahmun": "This city is a safe haven that gives shelter from the dangers of the desert.",
+            "mortality": "The priests teach that mortality is a curse. I find it hard to understand but the priests will know best.",
+            "false": "As far as I understand the gods worshipped by other nations are nothing but imposters.",
+            "gods": "As far as I understand the gods worshipped by other nations are nothing but imposters.",
+            "ascension": "Ascension is difficult to achive. Too difficult to achieve as long as you are still alive.",
+            "Akh'rah": "Well its just the Akh, the Rah and the Unthun.",
+            "Uthun": "Well its just the Akh, the Rah and the Unthun.",
+            "Akh": "That is the body.",
+            "undead": "Those who follow the pharaoh might become undead one day.",
+            "undeath": "Those who follow the pharaoh might become undead one day.",
+            "Rah": "The Rah is the spiritual part of a being.",
+            "uthun": "The Uthun is the sentient part of all living things.",
+            "mourn": "The priests say we are to be mourned while we are still alive.",
+            "arena": "Sometimes spectacular battles are fought in the local arena.",
+            "palace": "The palace is where the mighty pharaoh resides.",
+            "buy": "I can offer you meat, ham, salmon, fish, fruits and vegetables.",
+            "do": "I can offer you meat, ham, salmon, fish, fruits and vegetables.",
+            "you": "I can offer you meat, ham, salmon, fish, fruits and vegetables.",
+            "sell": "I can offer you meat, ham, salmon, fish, fruits and vegetables.",
+            "have": "I can offer you meat, ham, salmon, fish, fruits and vegetables.",
+            "offer": "I can offer you meat, ham, salmon, fish, fruits and vegetables.",
+            "food": "I can offer you meat, ham, salmon, fish, fruits and vegetables.",
+            "fruit": "I have oranges, bananas, grapes, and melons. What do you want?",
+            "vegetable": "I have carrots and tomatoes. What do you want?"
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "Be mourned pilgrim in flesh.",
+                "I sell food of various kinds."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Be mourned pilgrim in flesh.",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": "Be mourned pilgrim in flesh.",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "be",
+                    "mourned",
+                    "pilgrim",
+                    "flesh"
+                ],
+                "response": "Be mourned pilgrim in flesh.",
+                "idle": false
+            }
+        ],
+        "topics": {
+            "1": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Here you are.",
+                        "conditions": [
+                            {
+                                "type": "gold",
+                                "min": -1
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "deleteMoney",
+                                "amount": -1
+                            },
+                            {
+                                "type": "createItem",
+                                "id": -1
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Come back, when you have enough money.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Hmm, but next time.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            }
+        },
+        "keywordNextTopics": {},
+        "trade": {
+            "items": [
+                {
+                    "name": "Dragon Ham",
+                    "price": 25,
+                    "id": 2672,
+                    "type": "sell"
+                },
+                {
+                    "name": "Meat",
+                    "price": 10,
+                    "id": 2666,
+                    "type": "sell"
+                },
+                {
+                    "name": "Ham",
+                    "price": 15,
+                    "id": 2671,
+                    "type": "sell"
+                },
+                {
+                    "name": "Salmon",
+                    "price": 7,
+                    "id": 2668,
+                    "type": "sell"
+                },
+                {
+                    "name": "Fish",
+                    "price": 6,
+                    "id": 2667,
+                    "type": "sell"
+                },
+                {
+                    "name": "Orange",
+                    "price": 9,
+                    "id": 2675,
+                    "type": "sell"
+                },
+                {
+                    "name": "Banana",
+                    "price": 5,
+                    "id": 2676,
+                    "type": "sell"
+                },
+                {
+                    "name": "Grapes",
+                    "price": 8,
+                    "id": 2681,
+                    "type": "sell"
+                },
+                {
+                    "name": "Melon",
+                    "price": 13,
+                    "id": 2682,
+                    "type": "sell"
+                },
+                {
+                    "name": "Carrot",
+                    "price": 8,
+                    "id": 2684,
+                    "type": "sell"
+                },
+                {
+                    "name": "Tomato",
+                    "price": 10,
+                    "id": 2685,
+                    "type": "sell"
+                },
+                {
+                    "name": "Pumpkin",
+                    "price": 10,
+                    "id": 2683,
+                    "type": "sell"
+                }
+            ]
+        },
+        "script": "jezzara.js"
+    }
+}

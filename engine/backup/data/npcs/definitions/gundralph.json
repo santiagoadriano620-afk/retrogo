@@ -1,0 +1,202 @@
+{
+    "creatureStatistics": {
+        "name": "Gundralph",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 9,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 3,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "job": "I am a teacher for some powerful Spells.",
+            "name": "They call me Gundralph.",
+            "time": "Let me see, it's .",
+            "king": "Unfortunately, I never met King Tibianus III in person.",
+            "tibianus": "Unfortunately, I never met King Tibianus III in person.",
+            "army": "They live in the castle to the west.",
+            "ferumbras": "How low can a sorceror sink.",
+            "excalibug": "An awesome weapon if it exists.",
+            "thais": "I see Thais as a lost course.",
+            "tibia": "The world is so big and we have only so little time to travel.",
+            "carlin": "Carlin is a fine place for druids.",
+            "edron": "Sciences are thriving on this isle.",
+            "news": "I have heard nothing of intrest lately, sorry.",
+            "rumors": "I have heard nothing of intrest lately, sorry.",
+            "spellbook": "Please ask the stationer in the west tower for that.",
+            "spell": "I have 'Ultimate Light', 'Soulfire', 'Magic Wall', 'Cancel Invisibility', and 'Undead Legion'. Are you interested?",
+            "ultimate": "I'm sorry, but this spell is only for druids and sorcerers.",
+            "light": "I'm sorry, but this spell is only for druids and sorcerers.",
+            "soulfire": "I'm sorry, but this spell is only for druids and sorcerers.",
+            "magic": "I'm sorry, but this spell is only for sorcerers.",
+            "wall": "I'm sorry, but this spell is only for sorcerers.",
+            "undead": "I'm sorry, but this spell is only for druids.",
+            "legion": "I'm sorry, but this spell is only for druids.",
+            "cancel": "I'm sorry, but this spell is only for sorcerers.",
+            "invisibility": "I'm sorry, but this spell is only for sorcerers."
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "Oh, be welcome .",
+                "I am a teacher for some powerful Spells."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Oh, be welcome %N.",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ],
+        "topics": {
+            "1": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Hmm, you already know this spell.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Hmm, you need to advance to magic level %A to learn this spell.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Hmm, you don't have enough money to pay my service.",
+                        "conditions": [
+                            {
+                                "type": "gold",
+                                "max": -1
+                            }
+                        ],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Voila, from now on you can cast this spell. Use your knowledge wisely.",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "deleteMoney",
+                                "amount": -1
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Hmm, but next time.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            }
+        },
+        "keywordNextTopics": {
+            "ultimate": 1,
+            "light": 1,
+            "soulfire": 1,
+            "magic": 1,
+            "wall": 1,
+            "undead": 1,
+            "legion": 1,
+            "cancel": 1,
+            "invisibility": 1
+        },
+        "keywordTopicPrices": {
+            "ultimate": 1600,
+            "light": 1600,
+            "soulfire": 1800,
+            "magic": 2100,
+            "wall": 2100,
+            "undead": 2000,
+            "legion": 2000,
+            "cancel": 1600,
+            "invisibility": 1600
+        },
+        "keywordTopicSpellIds": {
+            "ultimate": 33,
+            "light": 33,
+            "soulfire": 54,
+            "magic": 64,
+            "wall": 64,
+            "undead": 34,
+            "legion": 34,
+            "cancel": 28,
+            "invisibility": 28
+        },
+        "keywordTopicMagicLevels": {
+            "ultimate": 0,
+            "light": 0,
+            "soulfire": 0,
+            "magic": 0,
+            "wall": 0,
+            "undead": 0,
+            "legion": 0,
+            "cancel": 0,
+            "invisibility": 0
+        },
+        "script": "gundralph.js"
+    }
+}

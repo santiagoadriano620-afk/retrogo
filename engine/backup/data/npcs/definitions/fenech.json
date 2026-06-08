@@ -1,0 +1,187 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Fenech",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  115,
+                                              "details":  {
+                                                              "head":  76,
+                                                              "body":  40,
+                                                              "legs":  49,
+                                                              "feet":  117
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  2,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "I sell blank runes and spellbooks.",
+                                          "offer":  "I sell blank runes and spellbooks.",
+                                          "name":  "I am the mourned Fenech.",
+                                          "time":  "Buy a watch on the bazar.",
+                                          "temple":  "Ask the guards for locations.",
+                                          "arena":  "Ask the guards for locations.",
+                                          "palace":  "Ask the guards for locations.",
+                                          "arkhothep":  "Praised may he be.",
+                                          "ashmunrah":  "I don\u0027t know. Read some books.",
+                                          "scarab":  "Scarabs are dangerous. Stay away from them like I do.",
+                                          "tibia":  "I know only Ankrahmun. What else could there be?",
+                                          "carlin":  "I don\u0027t know any foreign places or races.",
+                                          "thais":  "I don\u0027t know any foreign places or races.",
+                                          "edron":  "I don\u0027t know any foreign places or races.",
+                                          "venore":  "I don\u0027t know any foreign places or races.",
+                                          "kazordoon":  "I don\u0027t know any foreign places or races.",
+                                          "dwarves":  "I don\u0027t know any foreign places or races.",
+                                          "dwarfes":  "I don\u0027t know any foreign places or races.",
+                                          "ab\u0027dendriel":  "I don\u0027t know any foreign places or races.",
+                                          "elves":  "I don\u0027t know any foreign places or races.",
+                                          "elfes":  "I don\u0027t know any foreign places or races.",
+                                          "darama":  "This is our land.",
+                                          "darashia":  "Its somewhere in the north as far as I know.",
+                                          "daraman":  "I am not a studied person. Ask someone else.",
+                                          "ankrahmun":  "Its my home and all I know.",
+                                          "ascension":  "Ask the priest in the temple.",
+                                          "Akh\u0027rah":  "Ask the priest in the temple.",
+                                          "Uthun":  "Ask the priest in the temple.",
+                                          "rune":  "I sell blank runes."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Be mourned pilgrim in flesh.",
+                                                       "I sell blank runes and spellbooks."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Be mourned pilgrim in flesh.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  "Be mourned pilgrim in flesh.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "be",
+                                                                       "mourned",
+                                                                       "pilgrim",
+                                                                       "flesh"
+                                                                   ],
+                                                      "response":  "Be mourned pilgrim in flesh.",
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here you are.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Come back, when you have enough money.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Maybe next time.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Blank Rune",
+                                                         "price":  10,
+                                                         "id":  2260,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Spellbook",
+                                                         "price":  150,
+                                                         "id":  2175,
+                                                         "type":  "sell"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "fenech.js"
+                     }
+}

@@ -1,0 +1,190 @@
+{
+    "creatureStatistics": {
+        "name": "Blind Orc",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 5,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 1,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "futchi": "Futchi!",
+            "ikem": "Ikem pashak porak, bata, dora. Ba goshak maruk?",
+            "goshak": "Ikem pashak donga. Ba goshak maruk?",
+            "porak": "Ikem pashak charcha, burka, burka bata, hakhak. Ba goshak maruk?",
+            "bata": "Ikem pashak aka bora, tulak bora, grofa. Ba goshak maruk?",
+            "dora": "Ikem pashak donga. Ba goshak maruk?"
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "Ikem Charach maruk."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "charach"
+                ],
+                "response": "Ikem Charach maruk.",
+                "idle": false
+            }
+        ],
+        "topics": {
+            "1": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "mok"
+                        ],
+                        "response": "Maruk rambo zambo!",
+                        "conditions": [
+                            {
+                                "type": "gold",
+                                "min": -1
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "deleteMoney",
+                                "amount": -1
+                            },
+                            {
+                                "type": "createItem",
+                                "id": -1
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "mok"
+                        ],
+                        "response": "Maruk nixda!",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "burp"
+                        ],
+                        "response": "Buta maruk klamuk!",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": null,
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            }
+        },
+        "keywordNextTopics": {},
+        "trade": {
+            "items": [
+                {
+                    "name": "Sabre",
+                    "price": 25,
+                    "id": 2385,
+                    "type": "sell"
+                },
+                {
+                    "name": "Short Sword",
+                    "price": 30,
+                    "id": 2406,
+                    "type": "sell"
+                },
+                {
+                    "name": "Sword",
+                    "price": 85,
+                    "id": 2376,
+                    "type": "sell"
+                },
+                {
+                    "name": "Hatchet",
+                    "price": 85,
+                    "id": 2388,
+                    "type": "sell"
+                },
+                {
+                    "name": "Leather Armor",
+                    "price": 25,
+                    "id": 2467,
+                    "type": "sell"
+                },
+                {
+                    "name": "Studded Armor",
+                    "price": 90,
+                    "id": 2484,
+                    "type": "sell"
+                },
+                {
+                    "name": "Studded Helmet",
+                    "price": 60,
+                    "id": 2482,
+                    "type": "sell"
+                },
+                {
+                    "name": "Brass Shield",
+                    "price": 65,
+                    "id": 2511,
+                    "type": "sell"
+                },
+                {
+                    "name": "Bow",
+                    "price": 400,
+                    "id": 2456,
+                    "type": "sell"
+                },
+                {
+                    "name": "Arrow",
+                    "price": 30,
+                    "id": 2544,
+                    "type": "sell"
+                }
+            ]
+        },
+        "script": "blind_orc.js"
+    }
+}

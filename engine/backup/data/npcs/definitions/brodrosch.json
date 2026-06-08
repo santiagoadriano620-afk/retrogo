@@ -1,0 +1,211 @@
+{
+    "creatureStatistics": {
+        "name": "Brodrosch",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 66,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 2,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "job": "Look at my blackened beard? I'm the steamship captain!",
+            "work": "Look at my blackened beard? I'm the steamship captain!",
+            "name": "I am Brodrosch Steamtrousers, son of the machine, of the Molten Rock.",
+            "tibia": "Tibia? Just don't ask.",
+            "ship": "This is a great ship. Ha! It works without wind but with fire, and it travels not on the ocean but beneath the earth!",
+            "steamship": "This is a great ship. Ha! It works without wind but with fire, and it travels not on the ocean but beneath the earth!",
+            "captain": "Of course, I am the captain. But I am also a technomancer.",
+            "technomancer": "Being a technomancer is a privilege few dwarfs have. We form earth and fire through powerful technology into tools. Also, we are great inventors.",
+            "inventors": "Yes. There could have been thousands of our inventions, if they wouldn't explode all the time...",
+            "inventions": "Yes. There could have been thousands of our inventions, if they wouldn't explode all the time...",
+            "sell": "This is not a shop, damn it!",
+            "buy": "This is not a shop, damn it!",
+            "thais": "This is a steamship that travels only subterreneanly. No way to get on that risky ocean. Kazordoon - Cormaya only.",
+            "ab'dendriel": "This is a steamship that travels only subterreneanly. No way to get on that risky ocean. Kazordoon - Cormaya only.",
+            "carlin": "This is a steamship that travels only subterreneanly. No way to get on that risky ocean. Kazordoon - Cormaya only.",
+            "venore": "This is a steamship that travels only subterreneanly. No way to get on that risky ocean. Kazordoon - Cormaya only.",
+            "senja": "This is a steamship that travels only subterreneanly. No way to get on that risky ocean. Kazordoon - Cormaya only.",
+            "folda": "This is a steamship that travels only subterreneanly. No way to get on that risky ocean. Kazordoon - Cormaya only.",
+            "vega": "This is a steamship that travels only subterreneanly. No way to get on that risky ocean. Kazordoon - Cormaya only.",
+            "ice": "This is a steamship that travels only subterreneanly. No way to get on that risky ocean. Kazordoon - Cormaya only.",
+            "islands": "This is a steamship that travels only subterreneanly. No way to get on that risky ocean. Kazordoon - Cormaya only.",
+            "darashia": "This is a steamship that travels only subterreneanly. No way to get on that risky ocean. Kazordoon - Cormaya only.",
+            "darama": "This is a steamship that travels only subterreneanly. No way to get on that risky ocean. Kazordoon - Cormaya only.",
+            "kazordoon": "Hey, we ARE at Kazordoon! Must be the cavemadness...",
+            "beer": "Sometimes being drunk means seeing two rivers. I survive by steering right between them.",
+            "dwarf": "Deep inside, we're all dwarfs.",
+            "gurbasch": "Ah, my brother in Cormaya. He can take you back.",
+            "cormaya": "So you want to go to Cormaya? 150 gold?",
+            "passage": "So you want to go to Cormaya? 150 gold?"
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "Welcome, ! May Earth protect you, even whilst sailing!",
+                "Look at my blackened beard? I'm the steamship captain!"
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Welcome, %N! May Earth protect you, even whilst sailing!",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hiho$"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ],
+        "topics": {
+            "1": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Full steam ahead!",
+                        "conditions": [
+                            {
+                                "type": "gold",
+                                "min": -1
+                            },
+                            {
+                                "type": "premium"
+                            },
+                            {
+                                "type": "questValue",
+                                "questId": 227,
+                                "value": 4
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "deleteMoney",
+                                "amount": -1
+                            },
+                            {
+                                "type": "teleport",
+                                "x": 33309,
+                                "y": 31989,
+                                "z": 15
+                            },
+                            {
+                                "type": "setQuest",
+                                "questId": 227,
+                                "value": 5
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": true
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Full steam ahead!",
+                        "conditions": [
+                            {
+                                "type": "gold",
+                                "min": -1
+                            },
+                            {
+                                "type": "premium"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "deleteMoney",
+                                "amount": -1
+                            },
+                            {
+                                "type": "teleport",
+                                "x": 33309,
+                                "y": 31989,
+                                "z": 15
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": true
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "I'm sorry, but you need a premium account in order to travel onboard our ships.",
+                        "conditions": [
+                            {
+                                "type": "gold",
+                                "min": -1
+                            }
+                        ],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You don't have enough money.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    }
+                ]
+            }
+        },
+        "keywordNextTopics": {
+            "cormaya": 1,
+            "passage": 1
+        },
+        "keywordTopicPrices": {
+            "cormaya": 150,
+            "passage": 150
+        },
+        "script": "brodrosch.js"
+    }
+}

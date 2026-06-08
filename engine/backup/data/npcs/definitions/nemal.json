@@ -1,0 +1,276 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Nemal",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  112,
+                                              "details":  {
+                                                              "head":  57,
+                                                              "body":  97,
+                                                              "legs":  45,
+                                                              "feet":  115
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  4,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "name":  "My name is Nemal.",
+                                          "job":  "I have no job. I\u0027m a wanderer.",
+                                          "thais":  "Yes, I used to live there a while ago. Nice town.",
+                                          "carlin":  "Aaaahh, Carlin, yes. I know this town. Strange graveyard there, isn\u0027t it?",
+                                          "king":  "King...king...yes, there is one. I still can remember the time when we had an other king. What was his name again?",
+                                          "weapon":  "I always have weapons with me. You never know what\u0027s behind the next corner.",
+                                          "help":  "Hmm.. help? How can I help you?",
+                                          "time":  "I had a watch. It was nice, but I can\u0027t see the hands anymore.",
+                                          "sword":  "I have a sword. It\u0027s very sharp. But I don\u0027t give it away, you never know.",
+                                          "desert":  "Desert? Where is one?",
+                                          "excalibug":  "I heard the name, but I don\u0027t trust rumours.",
+                                          "fight":  "Better know how to fight!",
+                                          "guild":  "Hmmm.. I wouldn\u0027t ever join a guild, but i know of the existance of some.",
+                                          "god":  "I don\u0027t believe in gods, but a lot of people do. I never saw a god, why should I trust in someone I never met?",
+                                          "way":  "There are many ways. I don\u0027t know all of them.",
+                                          "door":  "Closed doors need keys. What a pity keys are not lying around like rubbish!",
+                                          "library":  "I can\u0027t read or write. What use would I have of a library?",
+                                          "secret":  "Secrets should remain secret. No need of making them public.",
+                                          "treasure":  "You can find some treasures here - some are bigger, some are smaller, some are of true value, some are of materialistic value.",
+                                          "book":  "I can\u0027t read. I\u0027ve never learned it.",
+                                          "gharonk":  "My father knew this language.",
+                                          "offer":  "I don\u0027t sell things. If you really need something, better walk straight to one of the towns or ask another adventurer.",
+                                          "blind":  "Yes, I seem to be blind. But I am not sure - maybe the dungeons are too dark!",
+                                          "potion":  "I heard of a potion of regained vision ... but I can\u0027t remember how to make it! Maybe you can help me. Do you know something about it?",
+                                          "regain":  "I heard of a potion of regained vision ... but I can\u0027t remember how to make it! Maybe you can help me. Do you know something about it?",
+                                          "vision":  "I heard of a potion of regained vision ... but I can\u0027t remember how to make it! Maybe you can help me. Do you know something about it?"
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Hello. How are you? Maybe you can help me: Do my shoes have the same colour?",
+                                                       "I have no job. I\u0027m a wanderer."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Hello. How are you? Maybe you can help me: Do my shoes have the same colour?",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "2":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "So, did you bring the ingredients with you, stranger?",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  3,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Oh. Maybe someone else could do it, then.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "3":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You seem to have them with you. Can you tell me, how many minutes I have to cook them?",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "setAmount",
+                                                                                          "amount":  1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "deleteItem",
+                                                                                          "id":  2692
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "deleteItem",
+                                                                                          "id":  2690
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "deleteItem",
+                                                                                          "id":  2744
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "deleteItem",
+                                                                                          "id":  2693
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "deleteItem",
+                                                                                          "id":  2679
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  4,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "It doesn\u0027t seem to me as if you have the correct ingredients with you, stranger!",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Maybe you can find them!",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "4":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "31"
+                                                                                   ],
+                                                                      "response":  "Ah. It seems to work. But what are the words I have to speak?",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  5,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Oh no, I don\u0027t think this is right.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "5":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "nalus",
+                                                                                       "murtu"
+                                                                                   ],
+                                                                      "response":  "Thank you! NALUS MURTUUU! ... I can see again! To show you, how grateful I am, I\u0027ll give you a key. Be wise when using it. I can\u0027t tell you, where it matches, but ... take good care, it is useless without mental powers!",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  2088
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Oh no, I don\u0027t think these are the right words.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+                                                   "potion":  2,
+                                                   "regain":  2,
+                                                   "vision":  2
+                                               },
+                         "script":  "nemal.js"
+                     }
+}

@@ -1,0 +1,186 @@
+{
+    "creatureStatistics": {
+        "name": "Gabel",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 80,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 1,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "name": "I am known as Gabel. I have borne this name for as long as I remember, and believe me - that is quite some time.",
+            "gabel": "I have often thought about changing this name because... Ah well <sighs>. Let us talk about more cheerful things.",
+            "job": "I am the true leader of all djinn, both in worldly and in spiritual matters.<sighs> Unfortunately, there are those among my kind who disagree.",
+            "djinn": "Once we were a mighty race. I like to think that one day we will return to our former glory, but as long as this tragic war is not won that is not likely to happen.",
+            "war": "We had thought the war was over for good when Malor was finally imprisoned. And now he is free again! How could it ever come so far. ...",
+            "malor": "The accursed usurper is free! I can't believe it! To think that power-hungry cockroach is once again roaming the world! ...",
+            "king": "The power hungry fool released Malor from his prison, and now the evil is upon us once again! He should have known better than to believe Malor's sugar covered lies. ...",
+            "leader": "Some call me a king, even though I do not like the title. Daraman has taught us to think little of worldly matters such as power or station in life.",
+            "daraman": "Daraman may have been just a human, but he bore in him the spark of the divine. We have paid a heavy price for following his teachings, but I have never felt any regret for my decision.",
+            "ashta'daramai": "This place is a gift of Daraman to the djinn people. Oh, he did not build it himself, of course. It was us Marid who did it. We erected it on the place where once stood my old palace. ...",
+            "abode": "This place is a gift of Daraman to the djinn people. Oh, he did not build it himself, of course. It was us Marid who did it. We erected it on the place where once stood my old palace. ...",
+            "marid": "We, the Marid, are the true inheritors of the djinn legacy. Those errant fools who call themselves the Efreet are nothing but usurpers.",
+            "efreet": "Our fallen brethren claim they are different, but I have not given up hope yet that all djinn will be reunited one day! If only they saw the light!",
+            "mal'ouquah": "The Mal'ouquah is the Efreets' fortress. Malor built it when it was clear that the djinns had definitely split in two fractions. I will personally raze it to the ground once we have finally won this disastrous war!",
+            "kha'zeel": "These majestic mountains were chosen by the gods as a vantage point from which they watched their creation.",
+            "kha'labal": "Ah yes - that horrid desert. I still recall how beautiful it was back in the times before the struggle it began. It was a land full of song and bliss - a veritable paradise. But look at it now. <sighs> It is such a shame.",
+            "orc": "The power hungry fool released Malor from his prison, and now the evil is upon us once again! He should have known better than to believe Malor's sugar covered lies. ...",
+            "human": "For a long time we have despised and oppressed your kind. I still feel ashamed for the things we have done in those dark days. The gods be praised that they sent Daraman to open our eyes. ...",
+            "zathroth": "The name brings up painful memories. I'd rather not talk about this subject.",
+            "gods": "For a long time I found it difficult to love them. But Daraman has opened my eyes.",
+            "tibia": "The world of Tibia is like a gemstone carved by the greatest of all craftsmen. It is sad that it took a human to make me realise its perfection.",
+            "darashia": "Darashia was nothing but a forlorn pool of mud last time I passed there. I hear it has now risen to great wealth and glory. Perhaps the Caliph is more open to the true creed than that dangerous fool, the pharaoh of Ankrahmun.",
+            "scarab": "The scarabs are ancient beings, as ancient as ourselves. We djinns feel a lot of respect for them.",
+            "edron": "I have often heard of the splendid cities the humans have erected on the continent. I would like to visit them one day and send them a message of peace and friendship in the name of my people.",
+            "thais": "I have often heard of the splendid cities the humans have erected on the continent. I would like to visit them one day and send them a message of peace and friendship in the name of my people.",
+            "venore": "I have often heard of the splendid cities the humans have erected on the continent. I would like to visit them one day and send them a message of peace and friendship in the name of my people.",
+            "kazordoon": "I have often heard of the splendid cities the humans have erected on the continent. I would like to visit them one day and send them a message of peace and friendship in the name of my people.",
+            "carlin": "I have often heard of the splendid cities the humans have erected on the continent. I would like to visit them one day and send them a message of peace and friendship in the name of my people.",
+            "ab'dendriel": "I have often heard of the splendid cities the humans have erected on the continent. I would like to visit them one day and send them a message of peace and friendship in the name of my people.",
+            "ankrahmun": "I haven't seen the venerable city in a long time. I would like to visit it again, but I can't help the feeling that I would not be welcome these days.",
+            "pharaoh": "The new pharaoh seems to hold some very eccentric ideas about life and death. I have a feeling that his so-called teachings are nothing but an ignorant perversion of the true creed.",
+            "palace": "Stay clear of that place. I have heard bad things about it.",
+            "temple": "In these heretic times the temple is devoted to the teachings of that pompous pharaoh. I haven't been there for a long time.",
+            "ascension": "Apparently that is what the followers of the pharaoh are striving for. It has to do with his heretical teachings.",
+            "rah": "That's just some heretic drivel. Don't ask me about it.",
+            "uthun": "That's just some heretic drivel. Don't ask me about it.",
+            "akh": "That's just some heretic drivel. Don't ask me about it.",
+            "djema": "Poor thing. She's an orphan you know. We took her to us when she was a child, and we have never regretted it. So fresh and lively - she has really brought some life to this place. ...",
+            "bo'ques": "My good old cook. Of all worldly temptations his food is the greatest.",
+            "baa'leal": "He is Malor's lieutenant and the commander-in-chief of all his minions. He is nothing without his master. Never stirred while Malor was gone.",
+            "alesar": "Alesar... Alesar. You know, it pains me to even hear this name. When he left I lost both my best smith and a personal friend. I don't know what is worse. ...",
+            "fa'hradin": "Ah yes. This lamp was his masterpiece. It was so satisfying to see that dirty little schemer fall for a ploy himself. If only he'd never come back!",
+            "lamp": "Have you found Fa'hradin's lamp and placed it in Malor's personal chambers?",
+            "rata'mari": "So you know about him. Hm. Since nobody else knows about him Fa'Hradin must have told you. ...",
+            "permission": "You are welcome to trade with Haroun and Nah'bob whenever you want to, !",
+            "work": "Have you found Fa'hradin's lamp and placed it in Malor's personal chambers?",
+            "mission": "Have you found Fa'hradin's lamp and placed it in Malor's personal chambers?",
+            "report": "Have you found Fa'hradin's lamp and placed it in Malor's personal chambers?",
+            "spyreport": "Have you found Fa'hradin's lamp and placed it in Malor's personal chambers?"
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "Welcome, human , to our humble abode.",
+                "I am the true leader of all djinn, both in worldly and in spiritual matters.<sighs> Unfortunately, there are those among my kind who disagree."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Welcome, human %N, to our humble abode.",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "greetings$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "djanni'hah$"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ],
+        "topics": {
+            "1": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "All right. Listen! Thanks to Rata'mari's report we now know what Malor is up to: he wants to do to me what I have done to him - he wants to imprison me in Fa'hradin's lamp! ...",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "As you wish.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "2": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Daraman shall bless you and all humans! You have done us all a huge service! Soon, this awful war will be over! ...",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Don't give up! May Daraman watch over you!",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            }
+        },
+        "keywordNextTopics": {
+            "report": 2,
+            "spyreport": 2,
+            "work": 2,
+            "mission": 2,
+            "lamp": 2
+        },
+        "script": "gabel.js"
+    }
+}

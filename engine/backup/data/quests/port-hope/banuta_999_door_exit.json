@@ -1,0 +1,90 @@
+{
+    "actionId":  2006,
+    "type":  "exit",
+    "itemIds":  [
+                    1945,
+                    1946
+                ],
+    "conditions":  [
+                       {
+                           "type":  "itemInPosition",
+                           "pos":  {
+                                       "x":  32864,
+                                       "y":  32556,
+                                       "z":  11
+                                   },
+                           "itemId":  3474
+                       }
+                   ],
+    "effects":  [
+                    {
+                        "type":  "transformItem",
+                        "from":  1945,
+                        "to":  1946,
+                        "decay":  true
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  32864,
+                                    "y":  32556,
+                                    "z":  11
+                                },
+                        "effectId":  14
+                    },
+                    {
+                        "type":  "removeItem",
+                        "pos":  {
+                                    "x":  32864,
+                                    "y":  32556,
+                                    "z":  11
+                                },
+                        "itemId":  3474
+                    },
+                    {
+                        "key":  7006,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "effectsAlt":  [
+                       {
+                           "type":  "transformItem",
+                           "from":  1946,
+                           "to":  1945,
+                           "decay":  true
+                       },
+                       {
+                           "type":  "relocate",
+                           "from":  {
+                                        "x":  32864,
+                                        "y":  32556,
+                                        "z":  11
+                                    },
+                           "to":  {
+                                      "x":  32864,
+                                      "y":  32557,
+                                      "z":  11
+                                  }
+                       },
+                       {
+                           "type":  "magicEffect",
+                           "pos":  {
+                                       "x":  32864,
+                                       "y":  32556,
+                                       "z":  11
+                                   },
+                           "effectId":  14
+                       },
+                       {
+                           "type":  "createItem",
+                           "itemId":  3474,
+                           "count":  1,
+                           "pos":  {
+                                       "x":  32864,
+                                       "y":  32556,
+                                       "z":  11
+                                   }
+                       }
+                   ]
+}

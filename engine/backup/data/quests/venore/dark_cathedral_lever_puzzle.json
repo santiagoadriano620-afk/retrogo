@@ -1,0 +1,147 @@
+{
+    "actionId":  3086,
+    "type":  "moveEvent",
+    "events":  [
+                   "onStepIn",
+                   "onAddItem"
+               ],
+    "tileItem":  true,
+    "conditions":  [
+                       {
+                           "type":  "itemAtPosition",
+                           "itemId":  4384,
+                           "pos":  {
+                                       "x":  32584,
+                                       "y":  32465,
+                                       "z":  9
+                                   }
+                       },
+                       {
+                           "type":  "itemAtPosition",
+                           "itemId":  4384,
+                           "pos":  {
+                                       "x":  32583,
+                                       "y":  32482,
+                                       "z":  9
+                                   }
+                       },
+                       {
+                           "type":  "itemAtPosition",
+                           "itemId":  4384,
+                           "pos":  {
+                                       "x":  32610,
+                                       "y":  32523,
+                                       "z":  9
+                                   }
+                       },
+                       {
+                           "type":  "itemAtPosition",
+                           "itemId":  4384,
+                           "pos":  {
+                                       "x":  32619,
+                                       "y":  32523,
+                                       "z":  9
+                                   }
+                       },
+                       {
+                           "type":  "itemAtPosition",
+                           "itemId":  4384,
+                           "pos":  {
+                                       "x":  32647,
+                                       "y":  32483,
+                                       "z":  9
+                                   }
+                       },
+                       {
+                           "type":  "itemAtPosition",
+                           "itemId":  4384,
+                           "pos":  {
+                                       "x":  32645,
+                                       "y":  32465,
+                                       "z":  9
+                                   }
+                       }
+                   ],
+    "effects":  [
+                    {
+                        "type":  "relocate",
+                        "from":  {
+                                     "x":  32615,
+                                     "y":  32484,
+                                     "z":  9
+                                 },
+                        "to":  {
+                                   "x":  32615,
+                                   "y":  32485,
+                                   "z":  10
+                               }
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  32615,
+                                    "y":  32485,
+                                    "z":  10
+                                },
+                        "effectId":  11
+                    },
+                    {
+                        "key":  8086,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "effectsAlt":  [
+                       {
+                           "type":  "relocate",
+                           "from":  {
+                                        "x":  32615,
+                                        "y":  32484,
+                                        "z":  9
+                                    },
+                           "to":  {
+                                      "x":  32615,
+                                      "y":  32483,
+                                      "z":  9
+                                  }
+                       },
+                       {
+                           "type":  "magicEffect",
+                           "pos":  {
+                                       "x":  32615,
+                                       "y":  32483,
+                                       "z":  9
+                                   },
+                           "effectId":  11
+                       }
+                   ],
+    "effectsAddItem":  [
+                           {
+                               "type":  "relocate",
+                               "from":  {
+                                            "x":  32615,
+                                            "y":  32484,
+                                            "z":  9
+                                        },
+                               "to":  {
+                                          "x":  32615,
+                                          "y":  32483,
+                                          "z":  9
+                                      }
+                           },
+                           {
+                               "type":  "magicEffect",
+                               "pos":  {
+                                           "x":  32615,
+                                           "y":  32483,
+                                           "z":  9
+                                       },
+                               "effectId":  11
+                           },
+                           {
+                               "key":  8086,
+                               "value":  1,
+                               "type":  "storage"
+                           }
+                       ]
+}

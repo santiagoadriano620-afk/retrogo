@@ -1,0 +1,10 @@
+{
+  "actionId": 3111,
+  "type": "home",
+  "events": ["onStepIn", "onAddItem"],
+  "tileItem": true,
+  "teleport": {"to": {"x": 32595, "y": 32744, "z": 6}},
+  "magicEffect": 13,
+  "town": "Port Hope",
+  "onAddItemEffect": 14
+}

@@ -1,0 +1,197 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Boozer",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  111,
+                                              "details":  {
+                                                              "head":  76,
+                                                              "body":  20,
+                                                              "legs":  116,
+                                                              "feet":  76
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  1,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "I am the bartender here at the racing track.",
+                                          "tavern":  "I am the bartender here at the racing track.",
+                                          "frodo":  "I heard about his tiny tavern in Thais.",
+                                          "name":  "Just call me Boozer. Everyone does that.",
+                                          "time":  "No clue, girl.",
+                                          "king":  "The king is far away, so who cares?",
+                                          "tibianus":  "The king is far away, so who cares?",
+                                          "army":  "Good customers.",
+                                          "ferumbras":  "Guess he\u0027d be bad news for business.",
+                                          "excalibug":  "Heard about it now and then. Then again I also hear there a bogeyman somewhere in the swamps.",
+                                          "bogeyman":  "Just a tale to scare the kids.",
+                                          "thais":  "If you like that Thais that much just go there.",
+                                          "tibia":  "People from all over Tibia come here to buy, sell, gamble, and get drunk until they puke.",
+                                          "carlin":  "Heard about that women there. Must visit that wenches someday.",
+                                          "amazon":  "I guess they just have not met the right man yet.",
+                                          "news":  "The swampelves, down at Shadowthorn, are up to some trouble again.",
+                                          "rumors":  "The swampelves, down at Shadowthorn, are up to some trouble again.",
+                                          "swampelves":  "Some elves gone evil so to say. They now live in a small village to the south called Shadowthorn. No big deal. Who cares about some carrot-eating musicians at all?",
+                                          "buy":  "I can offer you food and drinks. Get anything else somewhere else and don\u0027t bother me.",
+                                          "do":  "I can offer you food and drinks. Get anything else somewhere else and don\u0027t bother me.",
+                                          "you":  "I can offer you food and drinks. Get anything else somewhere else and don\u0027t bother me.",
+                                          "sell":  "I can offer you food and drinks. Get anything else somewhere else and don\u0027t bother me.",
+                                          "have":  "I can offer you food and drinks. Get anything else somewhere else and don\u0027t bother me.",
+                                          "food":  "So you are looking for food? We have cookies, bread, cheese, ham, and meat.",
+                                          "drink":  "I can offer you beer, wine, lemonade, and water."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Welcome to the Hard Rock Racing Track, .",
+                                                       "I am the bartender here at the racing track."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Welcome to the Hard Rock Racing Track, %N.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "And here is what you ordered.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You don\u0027t have the gold. If we were gambling I\u0027d call you a cheater ... and you know what happens to cheaters, don\u0027t you?",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Then not, fine with me.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Bread",
+                                                         "price":  4,
+                                                         "id":  2689,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Cheese",
+                                                         "price":  6,
+                                                         "id":  2696,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Meat",
+                                                         "price":  5,
+                                                         "id":  2666,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Ham",
+                                                         "price":  8,
+                                                         "id":  2671,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Cookie",
+                                                         "price":  5,
+                                                         "id":  2687,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Mug",
+                                                         "price":  2,
+                                                         "id":  2012,
+                                                         "type":  "sell"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "boozer.js"
+                     }
+}

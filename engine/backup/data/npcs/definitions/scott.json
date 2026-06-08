@@ -1,0 +1,176 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Scott",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  114,
+                                              "details":  {
+                                                              "head":  75,
+                                                              "body":  38,
+                                                              "legs":  77,
+                                                              "feet":  96
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  1,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "I\u0027m the keeper of the inn. You can buy food here.",
+                                          "name":  "My name is Scott.",
+                                          "time":  "It is exactly .",
+                                          "tibia":  "Oh, I\u0027m happy to live in this world full of thrilling things.",
+                                          "thais":  "It\u0027s the capital in the southwest of Tibia.",
+                                          "carlin":  "Sometimes I travel to Carlin and visit the market.",
+                                          "queen":  "She is a strong and wise leader. We owe protection from evil monsters to her.",
+                                          "senja":  "It\u0027s a peaceful island. Cold and lonesome but I like it.",
+                                          "mage":  "It is said that there are some secrets to discover around the mage\u0027s castle.",
+                                          "castle":  "It is said that there are some secrets to discover around the mage\u0027s castle.",
+                                          "do":  "You can get bread, cheese, ham, or meat.",
+                                          "you":  "You can get bread, cheese, ham, or meat.",
+                                          "sell":  "You can get bread, cheese, ham, or meat.",
+                                          "have":  "You can get bread, cheese, ham, or meat.",
+                                          "offer":  "You can get bread, cheese, ham, or meat.",
+                                          "food":  "Are you looking for food? I have bread, cheese, ham, and meat."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Welcome to my little inn, .",
+                                                       "I\u0027m the keeper of the inn. You can buy food here."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Welcome to my little inn, %N.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here it is.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "I am sorry, but you do not have enough gold.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Maybe later.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Bread",
+                                                         "price":  4,
+                                                         "id":  2689,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Cheese",
+                                                         "price":  6,
+                                                         "id":  2696,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Meat",
+                                                         "price":  5,
+                                                         "id":  2666,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Ham",
+                                                         "price":  8,
+                                                         "id":  2671,
+                                                         "type":  "sell"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "scott.js"
+                     }
+}

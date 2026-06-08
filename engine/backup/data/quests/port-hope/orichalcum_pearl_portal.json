@@ -1,0 +1,15 @@
+{
+  "actionId": 3092,
+  "type": "teleport",
+  "events": ["onStepIn"],
+  "tileItem": false,
+  "conditions": [
+    {"type": "isPlayer"},
+    {"type": "isPremium"},
+    {"type": "storage", "key": 323, "value": 1, "operator": "=="},
+    {"type": "itemCount", "itemId": 5022, "count": 1, "operator": ">="}
+  ],
+  "teleport": {"to": {"x": 32498, "y": 31621, "z": 6}},
+  "magicEffect": 11,
+  "removeItem": {"itemId": 5022, "count": 1}
+}

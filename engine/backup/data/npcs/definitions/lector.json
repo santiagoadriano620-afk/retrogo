@@ -1,0 +1,166 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Lector",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  111,
+                                              "details":  {
+                                                              "head":  79,
+                                                              "body":  38,
+                                                              "legs":  0,
+                                                              "feet":  124
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  3,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "I am the butcher. I am selling delicious meat.",
+                                          "butcher":  "I am the butcher. I am selling delicious meat.",
+                                          "name":  "My father named me Lector.",
+                                          "father":  "My father, Hannibal, was the royal cook. He died some years ago in an attack of the evil Ferumbras.",
+                                          "time":  "It is exactly .",
+                                          "graveyard":  "I heared, the mausoleum is haunted!",
+                                          "mausoleum":  "I heared, the mausoleum is haunted!",
+                                          "dragon":  "Dragon steak was the favourite meal of Tark Trueblade.",
+                                          "steak":  "Dragon steak was the favourite meal of Tark Trueblade.",
+                                          "tark":  "Tark Trueblade was the greatest dragonslayer of all. I heared, he died in a battle with an ancient dragon lord.",
+                                          "trueblade":  "Tark Trueblade was the greatest dragonslayer of all. I heared, he died in a battle with an ancient dragon lord.",
+                                          "ghostlands":  "A bloody place with a bloody history. I wonder if it realy drove people mad or if it just attracted those already disbalanced in their minds.",
+                                          "buy":  "I can offer you ham or meat. Dragon steaks are out. \u003cgiggle\u003e",
+                                          "do":  "I can offer you ham or meat. Dragon steaks are out. \u003cgiggle\u003e",
+                                          "you":  "I can offer you ham or meat. Dragon steaks are out. \u003cgiggle\u003e",
+                                          "sell":  "I can offer you ham or meat. Dragon steaks are out. \u003cgiggle\u003e",
+                                          "have":  "I can offer you ham or meat. Dragon steaks are out. \u003cgiggle\u003e",
+                                          "food":  "Are you looking for food? I can offer you ham or meat."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Welcome to my humble shop, .",
+                                                       "I am the butcher. I am selling delicious meat."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Welcome to my humble shop, %N.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here it is.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "I am sorry, but you do not have enough gold.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Maybe later.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Meat",
+                                                         "price":  3,
+                                                         "id":  2666,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Ham",
+                                                         "price":  6,
+                                                         "id":  2671,
+                                                         "type":  "sell"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "lector.js"
+                     }
+}

@@ -1,0 +1,79 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Muzir",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  111,
+                                              "details":  {
+                                                              "head":  95,
+                                                              "body":  4,
+                                                              "legs":  11,
+                                                              "feet":  76
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  1,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "bank":  true,
+                         "keywords":  {
+                                          "job":  "I am honoured to be the grandwezir of the caliph.",
+                                          "name":  "I am Muzir.",
+                                          "time":  "It is exactly .",
+                                          "caliph":  "I am caretaker for the fortune of our beloved and wise caliph.",
+                                          "kazzan":  "I am caretaker for the fortune of our beloved and wise caliph.",
+                                          "daraman":  "I take it upon me to involve myself with worldly issues for the prosperity of our community. I hope the taint of wealth does not harm my soul too much.",
+                                          "wezir":  "I am responsible for the wealth of our beloved and wise caliph. I can also change money for you.",
+                                          "wealth":  "I am responsible for the wealth of our beloved and wise caliph. I can also change money for you."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Welcome ! Daraman\u0027s blessings.",
+                                                       "I am honoured to be the grandwezir of the caliph."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Welcome %N! Daraman\u0027s blessings.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "script":  "muzir.js"
+                     }
+}

@@ -1,0 +1,183 @@
+{
+  "creatureStatistics": {
+    "name": "Beholder",
+    "health": 260,
+    "maxHealth": 260,
+    "mana": 0,
+    "maxMana": 0,
+    "speed": 88,
+    "attack": 12,
+    "attackSpeed": 2000,
+    "defense": 20,
+    "outfit": {
+      "id": 17
+    },
+    "armor": 5
+  },
+  "experience": 170,
+  "corpse": 2908,
+  "fluidType": 0,
+  "behaviour": {
+    "type": 2,
+    "fleeHealth": 0,
+    "openDoors": true,
+    "senseInvisible": true
+  },
+  "attacks": [
+    {
+      "name": "melee",
+      "interval": 2000,
+      "chance": 1,
+      "min": 0,
+      "max": 12
+    },
+    {
+      "name": "manadrain",
+      "interval": 4000,
+      "chance": 0.1,
+      "min": 5,
+      "max": 25,
+      "range": 7
+    },
+    {
+      "name": "lifedrain",
+      "interval": 4000,
+      "chance": 0.1,
+      "min": 35,
+      "max": 45,
+      "range": 7
+    },
+    {
+      "name": "earth",
+      "interval": 4000,
+      "chance": 0.1,
+      "min": 5,
+      "max": 45,
+      "range": 7,
+      "target": false,
+      "shootEffect": "poison"
+    },
+    {
+      "name": "physical",
+      "interval": 4000,
+      "chance": 0.1,
+      "min": 30,
+      "max": 50,
+      "range": 7,
+      "target": false,
+      "shootEffect": "death",
+      "areaEffect": "mortarea"
+    },
+    {
+      "name": "fire",
+      "interval": 4000,
+      "chance": 0.1,
+      "min": 25,
+      "max": 45,
+      "range": 7,
+      "target": false,
+      "shootEffect": "fire"
+    },
+    {
+      "name": "energy",
+      "interval": 4000,
+      "chance": 0.1,
+      "min": 15,
+      "max": 45,
+      "range": 7,
+      "target": false,
+      "shootEffect": "energy"
+    }
+  ],
+  "immunities": {
+    "earth": true,
+    "lifedrain": true,
+    "invisible": true
+  },
+  "elements": {
+    "earth": 20,
+    "holy": 20,
+    "ice": -10,
+    "death": -10
+  },
+  "summons": [
+    {
+      "name": "skeleton",
+      "interval": 2000,
+      "chance": 0.1,
+      "maxSummons": 6
+    }
+  ],
+  "sayings": {
+    "texts": [
+      "Eye for eye!",
+      "Here's looking at you!",
+      "Let me take a look at you!",
+      "You've got the look!"
+    ],
+    "slowness": 5,
+    "chance": 0.1
+  },
+  "loot": [
+    {
+      "id": 2512,
+      "probability": 0.03
+    },
+    {
+      "id": 2377,
+      "probability": 0.04
+    },
+    {
+      "id": 2509,
+      "probability": 0.04
+    },
+    {
+      "id": 2175,
+      "probability": 0.05
+    },
+    {
+      "id": 2394,
+      "probability": 0.07
+    },
+    {
+      "id": 2397,
+      "probability": 0.09
+    },
+    {
+      "id": 2148,
+      "probability": 0.7,
+      "name": "gold coin",
+      "min": 1,
+      "max": 20
+    },
+    {
+      "id": 2148,
+      "probability": 0.8,
+      "name": "gold coin",
+      "min": 1,
+      "max": 16
+    },
+    {
+      "id": 2148,
+      "probability": 0.9,
+      "name": "gold coin",
+      "min": 1,
+      "max": 12
+    },
+    {
+      "id": 2518,
+      "probability": 0.001
+    }
+  ],
+  "flags": {
+    "attackable": true,
+    "summonable": false,
+    "illusionable": true,
+    "pushable": false,
+    "convinceable": false,
+    "canPushItems": true,
+    "canPushCreatures": false,
+    "targetDistance": 4,
+    "runonhealth": 0
+  }
+}

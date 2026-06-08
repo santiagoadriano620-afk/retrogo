@@ -1,0 +1,381 @@
+{
+    "creatureStatistics": {
+        "name": "Yaman",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 51,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 1,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "name": "I'm called Yaman.",
+            "Yaman": "That is my name.",
+            "job": "I am a trader. Not a popular job around here since it involves dealing with humans, but I don't mind. I rather sit here than have my brain bashed out in this childish war. ...",
+            "permission": "I am not allowed to buy anything from you unless Malor gave you the permission to trade with us.",
+            "malor": "Malor is our leader. He is driven by greed and by ambition. He is clever, though. Personally, I sided with him because Daraman's creed did not appeal to me. ...",
+            "efreet": "Curious how we have changed physically in the course of time, isn't it? But the fact that we have different skin colours cannot hide the fact that Efreet and Marid are still related by blood.",
+            "marid": "I do not hate the Marid - not more than anybody else, anyhow. I joined the Efreet because it seemed the logical thing to do.",
+            "gabel": "Even though Malor would never admit it, Gabel is a strong and charismatic leader. We cannot win this war as long as he is alive.",
+            "king": "The djinns do not have kings these days. Gabel renounced his right to the title - a clever move. Malor would love to proclaim himself king, but he does not have the authority to do it. Perhaps one day he will.",
+            "djinn": "My race is stuck in a vicious civil war. As long as this war hasn't ended the djinn are too self-absorbed to deal with other races.",
+            "war": "My race is stuck in a vicious civil war. As long as this war hasn't ended the djinn are too self-absorbed to deal with other races.",
+            "mal'ouquah": "Mal'ouquah is the name of this place. Malor built it - hence the name. It means 'Malor's rage'.",
+            "ashta'daramai": "Ashta'daramai is the name of the Marids' fortress. Gabel tore his former fortress down and erected Ashta'daramai in its place. ...",
+            "human": "Humans are selfish, greedy and unnecessarily cruel. In other words, they resemble us in many ways. ...",
+            "zathroth": "The legends say Zathroth abandoned the djinn because they were way too headstrong. I like that story - for two reasons. ...",
+            "tibia": "This world is our playground.",
+            "daraman": "Of course I know Daraman. How could I ever forget him. I was there, remember? ...",
+            "darashia": "The wealth of Darashia is proverbial. I have my own little plans with it.",
+            "scarab": "Some people find scarabs fascinating. Exactly why is simply beyond me.",
+            "edron": "That is a human city, isn't it? I'd like to see it.",
+            "thais": "That is a human city, isn't it? I'd like to see it.",
+            "venore": "That is a human city, isn't it? I'd like to see it.",
+            "kazordoon": "Isn't that a city built by dwarves?",
+            "carlin": "Isn't that a city built by dwarves?",
+            "ab'dendriel": "I understand that city was built by elves.",
+            "ankrahmun": "Ankrahmun is the oldest human settlement in Tibia. I remember how surprised we were when we found that humans were capable of building such fine cities.",
+            "pharaoh": "They say that pharaoh established his own religion. Amazing. We djinn are notoriously given to pride, but no djinn would ever have the arrogance to proclaim himself god.",
+            "palace": "They say that palace has turned into a home for the living dead under the new pharaoh's rule.",
+            "ascension": "Hm. I don't know about this, human.",
+            "kha'zeel": "Djinns have lived in these mountains, called Kha'zeel, for as long as anyone can remember. ...",
+            "kha'labal": "The Kha'labal we know today was created at the height of the djinn war. Not exactly a glorious chapter in the war's history.",
+            "melchior": "Melchior tried to double-cross us. That worm! He paid his treachery dearly. No human messes with the Efreet and lives to tell the tale.",
+            "alesar": "Ah yes - Alesar... Everybody here is really excited because of him. These fools seem to believe that winning the war will be a trifle now Malor is back and we have Alesar on our side. I am far more cautious. ...",
+            "fa'hradin": "I feel a strange kind of respect for Fa'hradin even though he is a Marid. He is more level-headed and clear-sighted than most Efreet I know. ...",
+            "bo'ques": "Bo'ques. The fat cook. Exactly how he fits into the freaky ascetiscim of the Marid is beyond me.",
+            "haroun": "Haroun. That name rings a bell. Isn't he Alesar brother? They used to be inseparable.",
+            "baa'leal": "Baa'leal is our side's commander-in-chief. No wonder I can't be asked to join the service.",
+            "lamp": "Yes - djinns sleep in lamps. How long did it take you to work that one out?",
+            "wares": "My task is to buy and sell supplies. We are dealing with magical equipment like rings, amulets and some special items.",
+            "offer": "My task is to buy and sell supplies. We are dealing with magical equipment like rings, amulets and some special items.",
+            "goods": "My task is to buy and sell supplies. We are dealing with magical equipment like rings, amulets and some special items.",
+            "equipment": "My task is to buy and sell supplies. We are dealing with magical equipment like rings, amulets and some special items.",
+            "do": "My task is to buy and sell supplies. We are dealing with magical equipment like rings, amulets and some special items.",
+            "you": "My task is to buy and sell supplies. We are dealing with magical equipment like rings, amulets and some special items.",
+            "sell": "My task is to buy and sell supplies. We are dealing with magical equipment like rings, amulets and some special items.",
+            "have": "My task is to buy and sell supplies. We are dealing with magical equipment like rings, amulets and some special items.",
+            "amulets": "I'm selling and buying strange talismans, silver amulets, protection amulets and dragon necklaces.",
+            "rings": "I'm selling and buying might rings, energy rings, life rings, time rings, dwarven rings and rings of healing.",
+            "special": "I'm currently looking for some special items. Do you have any ankhs or a mysterious fetish?"
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "Well, if it isn't a human. Greetings, !",
+                "I am a trader. Not a popular job around here since it involves dealing with humans, but I don't mind. I rather sit here than have my brain bashed out in this childish war. ..."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Well, if it isn't a human. Greetings, %N!",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "greetings$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "djanni'hah$"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ],
+        "topics": {
+            "10": {
+                "entries": [
+                    {
+                        "keywords": [],
+                        "response": "I'm sorry, but you don't have Malor's permission to trade with me.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Good. Here you are.",
+                        "conditions": [
+                            {
+                                "type": "gold",
+                                "min": -1
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "deleteMoney",
+                                "amount": -1
+                            },
+                            {
+                                "type": "createItem",
+                                "id": -1
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You do not have enough gold, human!",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "As you wish.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "11": {
+                "entries": [
+                    {
+                        "keywords": [],
+                        "response": "I'm sorry, but you don't have Malor's permission to trade with me.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Good. Here is your money.",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "createMoney"
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You do not have one, human!",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You do not have that many, human!",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "As you wish.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            }
+        },
+        "trade": {
+            "items": [
+                {
+                    "name": "Might Ring",
+                    "price": 5000,
+                    "id": 2164,
+                    "type": "sell"
+                },
+                {
+                    "name": "Energy Ring",
+                    "price": 2000,
+                    "id": 2167,
+                    "type": "sell"
+                },
+                {
+                    "name": "Life Ring",
+                    "price": 900,
+                    "id": 2168,
+                    "type": "sell"
+                },
+                {
+                    "name": "Time Ring",
+                    "price": 2000,
+                    "id": 2169,
+                    "type": "sell"
+                },
+                {
+                    "name": "Silver Amulet",
+                    "price": 100,
+                    "id": 2170,
+                    "type": "sell"
+                },
+                {
+                    "name": "Strange Talisman",
+                    "price": 100,
+                    "id": 2161,
+                    "type": "sell"
+                },
+                {
+                    "name": "Dwarven Ring",
+                    "price": 2000,
+                    "id": 2213,
+                    "type": "sell"
+                },
+                {
+                    "name": "Ring Of Healing",
+                    "price": 2000,
+                    "id": 2214,
+                    "type": "sell"
+                },
+                {
+                    "name": "Protection Amulet",
+                    "price": 700,
+                    "id": 2200,
+                    "type": "sell"
+                },
+                {
+                    "name": "Dragon Necklace",
+                    "price": 1000,
+                    "id": 2201,
+                    "type": "sell"
+                },
+                {
+                    "name": "Might Ring",
+                    "price": 250,
+                    "id": 2164,
+                    "type": "buy"
+                },
+                {
+                    "name": "Energy Ring",
+                    "price": 100,
+                    "id": 2167,
+                    "type": "buy"
+                },
+                {
+                    "name": "Life Ring",
+                    "price": 50,
+                    "id": 2168,
+                    "type": "buy"
+                },
+                {
+                    "name": "Time Ring",
+                    "price": 100,
+                    "id": 2169,
+                    "type": "buy"
+                },
+                {
+                    "name": "Silver Amulet",
+                    "price": 50,
+                    "id": 2170,
+                    "type": "buy"
+                },
+                {
+                    "name": "Strange Talisman",
+                    "price": 30,
+                    "id": 2161,
+                    "type": "buy"
+                },
+                {
+                    "name": "Dwarven Ring",
+                    "price": 100,
+                    "id": 2213,
+                    "type": "buy"
+                },
+                {
+                    "name": "Ring Of Healing",
+                    "price": 100,
+                    "id": 2214,
+                    "type": "buy"
+                },
+                {
+                    "name": "Protection Amulet",
+                    "price": 100,
+                    "id": 2200,
+                    "type": "buy"
+                },
+                {
+                    "name": "Dragon Necklace",
+                    "price": 100,
+                    "id": 2201,
+                    "type": "buy"
+                },
+                {
+                    "name": "Mysterious Fetish",
+                    "price": 50,
+                    "id": 2194,
+                    "type": "buy"
+                },
+                {
+                    "name": "Ankh",
+                    "price": 100,
+                    "id": 2193,
+                    "type": "buy"
+                }
+            ]
+        },
+        "script": "yaman.js"
+    }
+}

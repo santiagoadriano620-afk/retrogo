@@ -1,0 +1,130 @@
+[
+    {
+        "actionId":  3104,
+        "type":  "puzzle",
+        "itemIds":  [
+
+                    ],
+        "conditions":  [
+                           {
+                               "type":  "isItemInPosition",
+                               "pos":  {
+                                           "x":  32803,
+                                           "y":  31584,
+                                           "z":  1
+                                       },
+                               "itemId":  1946
+                           },
+                           {
+                               "type":  "isItemInPosition",
+                               "pos":  {
+                                           "x":  32805,
+                                           "y":  31584,
+                                           "z":  1
+                                       },
+                               "itemId":  1946
+                           },
+                           {
+                               "type":  "isItemInPosition",
+                               "pos":  {
+                                           "x":  32802,
+                                           "y":  31584,
+                                           "z":  1
+                                       },
+                               "itemId":  1945
+                           },
+                           {
+                               "type":  "isItemInPosition",
+                               "pos":  {
+                                           "x":  32804,
+                                           "y":  31584,
+                                           "z":  1
+                                       },
+                               "itemId":  1945
+                           }
+                       ],
+        "effects":  [
+                        {
+                            "type":  "relocate",
+                            "from":  null,
+                            "to":  {
+                                       "x":  32701,
+                                       "y":  31639,
+                                       "z":  6
+                                   }
+                        },
+                        {
+                            "type":  "magicEffect",
+                            "pos":  {
+                                        "x":  32701,
+                                        "y":  31639,
+                                        "z":  6
+                                    },
+                            "effectId":  11
+                        },
+                        {
+                            "key":  8104,
+                            "value":  1,
+                            "type":  "storage"
+                        }
+                    ],
+        "effectsAlt":  [
+                           {
+                               "type":  "relocate",
+                               "from":  null,
+                               "to":  {
+                                          "x":  32803,
+                                          "y":  31587,
+                                          "z":  1
+                                      }
+                           },
+                           {
+                               "type":  "magicEffect",
+                               "pos":  {
+                                           "x":  32803,
+                                           "y":  31587,
+                                           "z":  1
+                                       },
+                               "effectId":  11
+                           }
+                       ]
+    },
+    {
+        "actionId":  3104,
+        "type":  "puzzle",
+        "itemIds":  [
+
+                    ],
+        "conditions":  [
+
+                       ],
+        "effects":  [
+                        {
+                            "type":  "relocate",
+                            "from":  null,
+                            "to":  {
+                                       "x":  32803,
+                                       "y":  31587,
+                                       "z":  1
+                                   }
+                        },
+                        {
+                            "type":  "magicEffect",
+                            "pos":  {
+                                        "x":  32803,
+                                        "y":  31587,
+                                        "z":  1
+                                    },
+                            "effectId":  11
+                        },
+                        {
+                            "key":  8104,
+                            "value":  1,
+                            "type":  "storage"
+                        }
+                    ],
+        "effectsAlt":  [
+
+                       ]
+    }
+]

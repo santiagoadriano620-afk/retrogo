@@ -1,0 +1,65 @@
+{
+    "actionId":  3035,
+    "type":  "puzzle",
+    "itemIds":  [
+
+                ],
+    "conditions":  [
+                       {
+                           "type":  "itemAtPosition",
+                           "itemId":  2782,
+                           "pos":  {
+                                       "x":  32479,
+                                       "y":  31920,
+                                       "z":  7
+                                   }
+                       },
+                       {
+                           "type":  "itemAtPosition",
+                           "itemId":  2782,
+                           "pos":  {
+                                       "x":  32478,
+                                       "y":  31920,
+                                       "z":  7
+                                   }
+                       },
+                       {
+                           "type":  "itemAtPosition",
+                           "itemId":  1304,
+                           "pos":  {
+                                       "x":  32478,
+                                       "y":  31902,
+                                       "z":  7
+                                   }
+                       }
+                   ],
+    "effects":  [
+                    {
+                        "type":  "transformItemInPosition",
+                        "pos":  {
+                                    "x":  32478,
+                                    "y":  31902,
+                                    "z":  7
+                                },
+                        "from":  1304,
+                        "to":  1385
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  32478,
+                                    "y":  31902,
+                                    "z":  7
+                                },
+                        "effectId":  3
+                    },
+                    {
+                        "key":  8035,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "effectsAlt":  [
+
+                   ]
+}

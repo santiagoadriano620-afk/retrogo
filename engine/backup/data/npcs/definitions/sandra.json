@@ -1,0 +1,236 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Sandra",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  119,
+                                              "details":  {
+                                                              "head":  115,
+                                                              "body":  63,
+                                                              "legs":  95,
+                                                              "feet":  38
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  2,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "name":  "I am lady Sandra Astralian.",
+                                          "job":  "I sell potions and magic fluids.",
+                                          "time":  "Buy a watch.",
+                                          "king":  "I was guest at his castle on my visits to Thais.",
+                                          "tibianus":  "I was guest at his castle on my visits to Thais.",
+                                          "army":  "Do I look as if I\u0027d fraternize with such people?",
+                                          "ferumbras":  "A disgusting person indeed.",
+                                          "excalibug":  "I am not interested in tales only kids belive in.",
+                                          "thais":  "A city full of disgusting people with ill manners.",
+                                          "tibia":  "The world is a place of barbarianism.",
+                                          "carlin":  "I plan to visit this city one day.",
+                                          "edron":  "Isn\u0027t it a wonderful town?",
+                                          "news":  "Nothing I would talk to you about.",
+                                          "rumors":  "Nothing I would talk to you about.",
+                                          "offer":  "I\u0027m selling life and mana fluids and several potions.",
+                                          "goods":  "I\u0027m selling life and mana fluids and several potions.",
+                                          "do":  "I\u0027m selling life and mana fluids and several potions.",
+                                          "you":  "I\u0027m selling life and mana fluids and several potions.",
+                                          "sell":  "I\u0027m selling life and mana fluids and several potions.",
+                                          "have":  "I\u0027m selling life and mana fluids and several potions.",
+                                          "fluid":  "I\u0027m selling life and mana fluids and several potions.",
+                                          "potion":  "I\u0027m selling potions of slime, blood, urine, oil, and distilled water.",
+                                          "deposit":  "I will pay you 5 gold for every empty vial. Ok?",
+                                          "vial":  "I will pay you 5 gold for every empty vial. Ok?",
+                                          "flask":  "I will pay you 5 gold for every empty vial. Ok?"
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Hello .",
+                                                       "I sell potions and magic fluids."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Hello %N.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "2":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here you are. There is a deposit of 5 gold on the vial.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Come back, when you have enough money.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Hmm, but next time.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "3":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here you are ... %P gold.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteItem",
+                                                                                          "id":  2006
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createMoney"
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You don\u0027t have any empty vials.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Hmm, but please keep Tibia litter free.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+                                                   "deposit":  3,
+                                                   "vial":  3,
+                                                   "flask":  3
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Vial",
+                                                         "price":  60,
+                                                         "id":  2006,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Mana Fluid",
+                                                         "price":  55,
+                                                         "id":  2006,
+                                                         "type":  "sell",
+                                                         "count":  10
+                                                     },
+                                                     {
+                                                         "name":  "Life Fluid",
+                                                         "price":  60,
+                                                         "id":  2006,
+                                                         "type":  "sell",
+                                                         "count":  11
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "sandra.js"
+                     }
+}

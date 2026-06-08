@@ -1,0 +1,9 @@
+{
+  "actionId": 3114,
+  "type": "portal",
+  "events": ["onStepIn", "onAddItem"],
+  "tileItem": true,
+  "teleport": { "to": { "x": 32225, "y": 32275, "z": 10 } },
+  "itemCondition": { "pos": { "x": 32233, "y": 32276, "z": 9 }, "itemId": 1387 },
+  "magicEffect": 15
+}

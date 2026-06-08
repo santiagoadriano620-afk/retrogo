@@ -1,0 +1,213 @@
+{
+    "creatureStatistics": {
+        "name": "Eroth",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 63,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 4,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "job": "I am the leader of the Cenath caste.",
+            "name": "My name is Eroth Ramathi.",
+            "time": "That is a inferior concept invented by the minor races.",
+            "carlin": "Their druids seek my counsel quite often. I provide them with as many insights their little minds can keep up with and I feel appropriate.",
+            "thais": "A city of filth and dirt. Any elf should visit this city at least once to see what a society without good guidance can become.",
+            "venore": "The merchants of venore have prooven usefull and are therefore tolerated.",
+            "roderick": "A stupid human who won't comprehend our complex society.",
+            "olrik": "A human who dreams to become an elf. It would be funny if it were not that pathetic.",
+            "king": "Our people have no use for kings or queens.",
+            "tibianus": "Our people have no use for kings or queens.",
+            "elves": "Our people are the children of light and darkness, the heirs of dusk and dawn.",
+            "dwarfs": "The diggers are not welcome in our realm.",
+            "humans": "We tolerate them and allow them to be used by us.",
+            "troll": "The Kuridai have the distasteful habit to keep some trolls for inferior work.",
+            "army": "Stop this Kuridai nonsense.",
+            "cenath": "We are the shepherds of our people. The other castes need our guidance.",
+            "kuridai": "The Kuridai are aggressive and victims of their instincts. Without our help they would surely die in a foolish war.",
+            "deraisim": "They lack the understanding of unity. We are keeping them together and prevent them from being slaughtered one by one.",
+            "abdaisim": "They are fools and almost deserve the extinction that awaits them. Though we will take it upon us to rescue even them by leading them home.",
+            "teshial": "They are gone. They alone were almost equal to us Cenath among elvenkind.",
+            "dreamer": "The Teshial were masters of the so called dream magic.",
+            "dream": "The dream masters, though overestimated, wielded some impressive power without much practical use.",
+            "master": "The dream masters, though overestimated, wielded some impressive power without much practical use.",
+            "dreammaster": "The dream masters, though overestimated, wielded some impressive power without much practical use.",
+            "ferumbras": "A human born evil. Another evidence of the destructive potential of that race.",
+            "crunor": "Gods are for the weak. We will master the world on our own. We need no gods.",
+            "excalibug": "Just another human myth.",
+            "news": "I heared the new human settlement in the west became independent from the human empire.",
+            "magic": "I'm sorry, but this spell is only for druids and paladins.",
+            "druid": "Druids master spells of defence, healing, and nature.",
+            "sorcerer": "Sorcerers are not attuned to nature and therefore can't master it.",
+            "vocation": "You are narrow minded to think in such boundaries.",
+            "spellbook": "Cenath rarely use spellbooks. The minor castes rely on them though.",
+            "spell": "I can teach the spells 'Magic Shield', 'Invisible', 'Destroy Field', 'Creature Illusion', 'Chameleon', 'Convince Creature', and 'Summon Creature'.",
+            "shield": "I'm sorry, but this spell is only for druids and paladins.",
+            "destroy": "I'm sorry, but this spell is only for druids and paladins.",
+            "field": "I'm sorry, but this spell is only for druids and paladins.",
+            "chameleon": "I'm sorry, but this spell is only for druids.",
+            "creature": "I'm sorry, but this spell is only for druids.",
+            "illusion": "I'm sorry, but this spell is only for druids.",
+            "convince": "I'm sorry, but this spell is only for druids.",
+            "summon": "I'm sorry, but this spell is only for druids."
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "I greet thee, outsider.",
+                "I am the leader of the Cenath caste."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "I greet thee, outsider.",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "ashari$"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ],
+        "topics": {
+            "3": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You already know that spell.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You need to advance to magic level %A to learn this spell.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You do not have enough gold to pay my services.",
+                        "conditions": [
+                            {
+                                "type": "gold",
+                                "max": -1
+                            }
+                        ],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "From now on you can cast this spell.",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "deleteMoney",
+                                "amount": -1
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "I thought so.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            }
+        },
+        "keywordNextTopics": {},
+        "keywordTopicSpellIds": {
+            "shield": 18,
+            "destroy": 68,
+            "field": 68,
+            "chameleon": 65,
+            "creature": 67,
+            "illusion": 4,
+            "convince": 67,
+            "summon": 32
+        },
+        "keywordTopicMagicLevels": {
+            "shield": 0,
+            "destroy": 0,
+            "field": 0,
+            "chameleon": 0,
+            "creature": 0,
+            "illusion": 0,
+            "convince": 0,
+            "summon": 0
+        },
+        "keywordTopicPrices": {
+            "shield": 800,
+            "destroy": 1200,
+            "field": 1200,
+            "chameleon": 2200,
+            "creature": 2000,
+            "illusion": 2000,
+            "convince": 2000,
+            "summon": 3200
+        },
+        "script": "eroth.js"
+    }
+}

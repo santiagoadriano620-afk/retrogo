@@ -1,0 +1,162 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Kazzan",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  113,
+                                              "details":  {
+                                                              "head":  95,
+                                                              "body":  13,
+                                                              "legs":  15,
+                                                              "feet":  76
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  1,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "news":  "I don\u0027t give much attention to rumours.",
+                                          "king":  "Tibianus is the shepherd of the lost souls of the so called Thaian empire.",
+                                          "tibianus":  "Tibianus is the shepherd of the lost souls of the so called Thaian empire.",
+                                          "thais":  "Tibianus is the shepherd of the lost souls of the so called Thaian empire.",
+                                          "name":  "I am Kazzan Ibn Gadral, caliph of Darama.",
+                                          "job":  "I am the caliph of the children of Daraman.",
+                                          "caliph":  "A caliph is a leader of his people, just like a king.",
+                                          "how":  "I am fine, thank you.",
+                                          "are":  "I am fine, thank you.",
+                                          "you":  "I am fine, thank you.",
+                                          "army":  "Our people are well prepared to fight for their land and their souls.",
+                                          "guard":  "Our people are well prepared to fight for their land and their souls.",
+                                          "enemies":  "The necromancers of Drefia fell under the wrath of the djinns once. If they challenge us again they might lose more than a city.",
+                                          "enemy":  "The necromancers of Drefia fell under the wrath of the djinns once. If they challenge us again they might lose more than a city.",
+                                          "drefia":  "When the djinns destroyed the better part of the unholy town in their wrath, the brotherhood hid like worms in the sand.",
+                                          "brotherhood":  "The Brotherhood of Bones came here fleeing some war on the continent. They corrupted the settlers of the Thaian colony with ease.",
+                                          "minotaur":  "The minotaurs are another test we have to endure. They inhabit the pyramid which is taboo for our people, as Daraman taught us.",
+                                          "daraman":  "Daraman led our ancestors to the continent Darashia to live a life of simplicity and meditation.",
+                                          "taboo":  "Daraman knew our souls might get corupted by the things hidden there.",
+                                          "quest":  "I will not entrust foreigners with any quest. Live amongst us for some years and listen to Daraman\u0027s teachings and we will see.",
+                                          "mission":  "I will not entrust foreigners with any quest. Live amongst us for some years and listen to Daraman\u0027s teachings and we will see.",
+                                          "god":  "The gods are powerful but it\u0027s ultimately up to us to work on our souls\u0027 ascension.",
+                                          "excalibug":  "Once a djinn claimed to have seen it in a dream. I guess it\u0027s just that, some dream of a supernatural creature.",
+                                          "kazordoon":  "We have lost contact with the dwarf people of Kazordoon.",
+                                          "dwarf":  "We have lost contact with the dwarf people of Kazordoon.",
+                                          "carlin":  "We keep in touch with the queen but did not take sides in the conflict of Carlin and Thais ... yet.",
+                                          "fuck":  "Take this!",
+                                          "idiot":  "Take this!",
+                                          "asshole":  "Take this!",
+                                          "ass$":  "Take this!",
+                                          "fag$":  "Take this!",
+                                          "stupid":  "Take this!",
+                                          "tyrant":  "Take this!",
+                                          "shit":  "Take this!",
+                                          "lunatic":  "Take this!"
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Feel welcome in the lands of the children of the enlightened Daraman, .",
+                                                       "I am the caliph of the children of Daraman."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+                                             "fuck":  {
+                                                          "damage":  0,
+                                                          "effectSelf":  8,
+                                                          "effectTarget":  5
+                                                      },
+                                             "idiot":  {
+                                                           "damage":  0,
+                                                           "effectSelf":  8,
+                                                           "effectTarget":  5
+                                                       },
+                                             "asshole":  {
+                                                             "damage":  0,
+                                                             "effectSelf":  8,
+                                                             "effectTarget":  5
+                                                         },
+                                             "ass$":  {
+                                                          "damage":  0,
+                                                          "effectSelf":  8,
+                                                          "effectTarget":  5
+                                                      },
+                                             "fag$":  {
+                                                          "damage":  0,
+                                                          "effectSelf":  8,
+                                                          "effectTarget":  5
+                                                      },
+                                             "stupid":  {
+                                                            "damage":  0,
+                                                            "effectSelf":  8,
+                                                            "effectTarget":  5
+                                                        },
+                                             "tyrant":  {
+                                                            "damage":  0,
+                                                            "effectSelf":  8,
+                                                            "effectTarget":  5
+                                                        },
+                                             "shit":  {
+                                                          "damage":  0,
+                                                          "effectSelf":  8,
+                                                          "effectTarget":  5
+                                                      },
+                                             "lunatic":  {
+                                                             "damage":  0,
+                                                             "effectSelf":  8,
+                                                             "effectTarget":  5
+                                                         }
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Feel welcome in the lands of the children of the enlightened Daraman, %N.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hail$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "salutations$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ]
+                     }
+}

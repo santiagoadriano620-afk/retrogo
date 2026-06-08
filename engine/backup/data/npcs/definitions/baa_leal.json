@@ -1,0 +1,218 @@
+{
+    "creatureStatistics": {
+        "name": "Baa'leal",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 51,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 2,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "name": "I'm general Baa'leal. What do you want in Mal'ouquah?",
+            "general": "I'm general Baa'leal. What do you want in Mal'ouquah?",
+            "baa'leal": "That is GENERAL Baa'leal for you, human.",
+            "job": "I am commander-in-chief of the armed forces of the UDLA, all branches of service. ...",
+            "udla": "Yes. The United Djinn Liberation Army. ...",
+            "ubaid": "Ubaid told you to speak with me? Hmmm... maybe there is something you could help us with. Are you interested, human?",
+            "work": "Did you find the thief of our supplies?",
+            "operation": "Did you already talk to Alesar? He has another mission for you!",
+            "mission": "Did you already talk to Alesar? He has another mission for you!",
+            "thief": "Did you find the thief of our supplies?",
+            "mal'ouquah": "At the moment Mal'ouquah is our headquarter. However, I am already working on a cunning plan to move our base of operations deep into the enemy's territory.",
+            "ashta'daramai": "Ashta'daramai is the enemy's base of operations. I am looking forward to the moment when we raise our flag there!",
+            "gabel": "He is weak. Much too weak to be our leader.",
+            "king": "The UDLA does not serve a king because there isn't any. Of course, that is bound to change.",
+            "djinn": "We are a race of warriors! We Efreets are destined to rule and to conquer.",
+            "efreet": "We are the true djinn! We do not live in denial of our true nature like those damn liberals, the Marid.",
+            "marid": "Nothing but a bunch of mealy-mouthed, mollycoddled wimps and milksops the lot of them. They may be superior in numbers, but we will win anyway because of our superior strategic thinking.",
+            "malor": "Hail to our great leader!",
+            "human": "No offence, but your race is weak. You lack both the physical strength and the true warrior spirit. And worst of all, you have no strategic thinking.",
+            "zathroth": "I understand he created us. Must have been a great general.",
+            "tibia": "It is our mission to achieve total and decisive dominion of this world within two years. Well perhaps ... three. Always be realistic, that's what I say.",
+            "daraman": "Damn that liberal peacenik, that treacherous mealy-mouthed double-faced good-for-nothing surrender monkey! ...",
+            "darashia": "The humans living in the northern deserts used to be nomads. Even though they are just humans they used to be respectable fighters. ...",
+            "scarab": "Impressive animals. I have this idea of training them as battle steeds. Imagine this: Djinns mounted on scarabs! With a battalion of those I would crush the enemy in the blink of an eye!",
+            "edron": "They say the humans have built some big cities over there. I am looking forward to see them burn.",
+            "thais": "They say the humans have built some big cities over there. I am looking forward to see them burn.",
+            "venore": "They say the humans have built some big cities over there. I am looking forward to see them burn.",
+            "kazordoon": "They say the humans have built some big cities over there. I am looking forward to see them burn.",
+            "carlin": "They say the humans have built some big cities over there. I am looking forward to see them burn.",
+            "ab'dendriel": "They say the humans have built some big cities over there. I am looking forward to see them burn.",
+            "ankrahmun": "That old city has some impressive defensive structures. But I swear I will bring it down one day... I have a cunning plan already! ...",
+            "pharaoh": "Ankrahmun's pharaoh apparently believes himself to be some sort of god. Ah well. A solid blow with my scimitar will bring him back to earth soon enough!",
+            "palace": "I suppose the palace is where the pharaoh resides. I have a distinct feeling I shall see it burn rather soon.",
+            "ascension": "Apparently, ascension is what the followers of the pharaoh are after. No idea what exactly that is, though.",
+            "rah": "Spare me that pseudo-theological hogwash.",
+            "uthun": "Spare me that pseudo-theological hogwash.",
+            "akh": "Spare me that pseudo-theological hogwash.",
+            "kha'zeel": "It was an excellent idea to build our headquarter in the mountains of kha'zeel. Easy to defend, you know. Too bad the enemy had the same idea.",
+            "kha'labal": "Kha'labal? Yes, it was me who devastated it. Couldn't leave it to the enemy, you see? We had to destroy it in order to save it!",
+            "war": "War is the father of things, and I live and breathe it. Ok, it's a tad bit silly that we are forced to fight against our own kind, but as a good soldier I will do my duty! <salutes> ...",
+            "melchior": "Melchior! I remember that greedy little civilian. I would have court-martialled him, but I suppose it is just as well the way it is.",
+            "alesar": "Ah yes, Alesar! Excellent smith, that man!",
+            "fa'hradin": "He is Gabel's lieutenant and confidant. He is a powerful wizard, one has to admit that - and that's the only reason he is still alive. Without all his magical mumbo jumbo we would have long since won this war.",
+            "lamp": "We sleep in those lamps. I like them - they are small and functional. We do not need cozy beds and fluffy duvets like decadent humans."
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "You know the code human! Very well then... What do you want, ?",
+                "You are still alive, ? Well, what do you want?",
+                "I am commander-in-chief of the armed forces of the UDLA, all branches of service. ..."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "djanni'hah$"
+                ],
+                "response": "You know the code human! Very well then... What do you want, %N?",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "You are still alive, %N? Well, what do you want?",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "greetings$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "djanni'hah$"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ],
+        "topics": {
+            "1": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Well ... All right. You may only be a human, but you do seem to have the right spirit. ...",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "After all, you're just a human.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "2": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Finally! What is his name then?",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 3,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Then go to Carlin and search for him! Look for something that might give you a clue!",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "3": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "partos"
+                        ],
+                        "response": "You found the thief! Excellent work, soldier! You are doing well - for a human, that is. Here - take this as a reward. ...",
+                        "conditions": [
+                            {
+                                "type": "questValue",
+                                "questId": 286,
+                                "value": 2
+                            }
+                        ],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Hmmm... I don't think so. Return to Carlin and continue your search!",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false,
+                        "isCatchAll": true
+                    }
+                ]
+            }
+        },
+        "keywordNextTopics": {
+            "ubaid": 1,
+            "work": 2,
+            "operation": 2,
+            "mission": 2,
+            "thief": 2
+        },
+        "script": "baa_leal.js"
+    }
+}

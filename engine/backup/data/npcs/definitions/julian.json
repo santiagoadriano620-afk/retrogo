@@ -1,0 +1,262 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Julian",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  111,
+                                              "details":  {
+                                                              "head":  55,
+                                                              "body":  30,
+                                                              "legs":  23,
+                                                              "feet":  115
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  1,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "I make instruments and sometimes I\u0027m wandering through the lands of Tibia as a bard.",
+                                          "name":  "My name is Julian, my lady.",
+                                          "time":  "Sorry, I don\u0027t know what time it is.",
+                                          "music":  "Music is the food of love.",
+                                          "bard":  "Bards from all over the world come here to buy their instruments.",
+                                          "offer":  "Here you can buy lyres, lutes, drums, and simple fanfares. I also have a piano and a harp.",
+                                          "goods":  "Here you can buy lyres, lutes, drums, and simple fanfares. I also have a piano and a harp.",
+                                          "do":  "Here you can buy lyres, lutes, drums, and simple fanfares. I also have a piano and a harp.",
+                                          "you":  "Here you can buy lyres, lutes, drums, and simple fanfares. I also have a piano and a harp.",
+                                          "sell":  "Here you can buy lyres, lutes, drums, and simple fanfares. I also have a piano and a harp.",
+                                          "have":  "Here you can buy lyres, lutes, drums, and simple fanfares. I also have a piano and a harp.",
+                                          "instrument":  "Here you can buy lyres, lutes, drums, and simple fanfares. I also have a piano and a harp.",
+                                          "instruments":  "I can offer you a piano or a harp. What would you like?"
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Be greeted, ! May I help you?",
+                                                       "I make instruments and sometimes I\u0027m wandering through the lands of Tibia as a bard."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Be greeted, %N! May I help you?",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here you are.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You need some more money.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Oh well, next time perhaps.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "81":  {
+                                                   "entries":  [
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "Here you are.",
+                                                                       "conditions":  [
+                                                                                          {
+                                                                                              "type":  "gold",
+                                                                                              "min":  -1
+                                                                                          },
+                                                                                          {
+                                                                                              "type":  "premium"
+                                                                                          }
+                                                                                      ],
+                                                                       "actions":  [
+                                                                                       {
+                                                                                           "type":  "deleteMoney",
+                                                                                           "amount":  -1
+                                                                                       },
+                                                                                       {
+                                                                                           "type":  "createItem",
+                                                                                           "id":  -1
+                                                                                       }
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "I\u0027m sorry, but you need a premium account if you want to buy furniture.",
+                                                                       "conditions":  [
+                                                                                          {
+                                                                                              "type":  "gold",
+                                                                                              "min":  -1
+                                                                                          }
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "Come back, when you have enough money.",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+
+                                                                                    ],
+                                                                       "response":  "Hmm, but I\u0027m sure, it would fit nicely into your house.",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  true,
+                                                                       "isDefault":  true
+                                                                   }
+                                                               ]
+                                               }
+                                    },
+                         "keywordNextTopics":  {
+
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Lyre",
+                                                         "price":  120,
+                                                         "id":  2071,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Lute",
+                                                         "price":  195,
+                                                         "id":  2072,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Drum",
+                                                         "price":  140,
+                                                         "id":  2073,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Simple Fanfare",
+                                                         "price":  150,
+                                                         "id":  2075,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Piano",
+                                                         "price":  200,
+                                                         "id":  2080,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Harp",
+                                                         "price":  50,
+                                                         "id":  2084,
+                                                         "type":  "sell"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "julian.js"
+                     }
+}

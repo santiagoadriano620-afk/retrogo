@@ -1,0 +1,19 @@
+{
+    "actionId":  3123,
+    "type":  "moveEvent",
+    "events":  [
+                   "onStepIn"
+               ],
+    "effects":  [
+                    {
+                        "type":  "storage",
+                        "key":  260,
+                        "value":  1
+                    },
+                    {
+                        "key":  8123,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ]
+}

@@ -1,0 +1,174 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Edoch",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  112,
+                                              "details":  {
+                                                              "head":  95,
+                                                              "body":  0,
+                                                              "legs":  40,
+                                                              "feet":  116
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  0,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "I am nothing but a humble fletcher. I am selling bows, crossbows, and ammunition. Do you need any of these?",
+                                          "fletcher":  "I am nothing but a humble fletcher. I am selling bows, crossbows, and ammunition. Do you need any of these?",
+                                          "name":  "I am Edoch Ibn Ibrach.",
+                                          "time":  "You surely can buy a watch somewhere on this bazaar.",
+                                          "tibia":  "The world is vast and dangerous. Better prepare yourself with a bow before you travel out there.",
+                                          "thais":  "I was there once to learn about their ways. Needless to say I was horrified and returned to Darashia as soon as possible.",
+                                          "do":  "I am selling bows, crossbows, and ammunition. Do you need anything?",
+                                          "you":  "I am selling bows, crossbows, and ammunition. Do you need anything?",
+                                          "sell":  "I am selling bows, crossbows, and ammunition. Do you need anything?",
+                                          "have":  "I am selling bows, crossbows, and ammunition. Do you need anything?",
+                                          "offer":  "I am selling bows, crossbows, and ammunition. Do you need anything?",
+                                          "goods":  "I am selling bows, crossbows, and ammunition. Do you need anything?",
+                                          "ammo":  "Do you need arrows for a bow, or bolts for a crossbow?",
+                                          "ammunition":  "Do you need arrows for a bow, or bolts for a crossbow?"
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Daraman\u0027s blessings, .",
+                                                       "I am nothing but a humble fletcher. I am selling bows, crossbows, and ammunition. Do you need any of these?"
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Daraman\u0027s blessings, %N.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here you are.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Come back, when you have enough money.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Hmm, but next time.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Bow",
+                                                         "price":  400,
+                                                         "id":  2456,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Crossbow",
+                                                         "price":  500,
+                                                         "id":  2455,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Arrow",
+                                                         "price":  2,
+                                                         "id":  2544,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Bolt",
+                                                         "price":  3,
+                                                         "id":  2543,
+                                                         "type":  "sell"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "edoch.js"
+                     }
+}

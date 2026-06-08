@@ -1,0 +1,9 @@
+{
+  "actionId": 3083,
+  "type": "exit",
+  "events": ["onStepIn"],
+  "tileItem": false,
+  "teleport": {"to": {"x": 33212, "y": 31671, "z": 13}},
+  "magicEffect": 11,
+  "storage": {"key": 203, "value": 1}
+}

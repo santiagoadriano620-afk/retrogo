@@ -1,0 +1,75 @@
+{
+    "creatureStatistics": {
+        "name": "The Crone",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 78,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 3,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "name": "I don't remember my name, neither my days as a mortal.",
+            "job": "Once I was Vashresamun's favourite handmaiden. But I have fallen from her grace and now I am exiled from her tomb.",
+            "grace": "Do not ask about that, mortal. Memories bring too much grief.",
+            "fallen": "Do not ask about that, mortal. Memories bring too much grief.",
+            "exiled": "Do not ask about that, mortal. Memories bring too much grief.",
+            "vashresamun": "I mourn the dark day I was exiled from her tomb.",
+            "tomb": "Her tomb is sealed and can only be entered by a certain melody.",
+            "melody": "Vashresamun erased the memory of the tune from my mind, I only remember its name: the secret of the rose garden."
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "Be greeted, ... mortal",
+                "Once I was Vashresamun's favourite handmaiden. But I have fallen from her grace and now I am exiled from her tomb."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Be greeted, %N... mortal",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ]
+    }
+}

@@ -1,0 +1,153 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Falk",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  114,
+                                              "details":  {
+                                                              "head":  76,
+                                                              "body":  11,
+                                                              "legs":  11,
+                                                              "feet":  76
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  3,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "news":  "Sorry, that\u0027s confidential.",
+                                          "how":  "I\u0027m well prepared for my duty.",
+                                          "are":  "I\u0027m well prepared for my duty.",
+                                          "you":  "I\u0027m well prepared for my duty.",
+                                          "sell":  "Visit the shopkeepers to buy their fine wares.",
+                                          "king":  "LONG LIVE THE KING!",
+                                          "leader":  "LONG LIVE THE KING!",
+                                          "name":  "I\u0027m Lieutenant Falk.",
+                                          "job":  "I\u0027m the Edron harbour guard. I protect Edron castle and inform visitors about this building and Edron itself.",
+                                          "army":  "The local army consists only of the Knights of Banor\u0027s Blood.",
+                                          "guard":  "The local army consists only of the Knights of Banor\u0027s Blood.",
+                                          "battlegroup":  "There are the Dogs of War, the Red Guards, and the Silver Guards.",
+                                          "castle":  "The Edron castle is the home of many shops, a tavern, a bank, a depot, a post office and the temple of Banor\u0027s blood.",
+                                          "subject":  "We all live under the benevolent guidance of our king.",
+                                          "shop":  "The shops are on the eastern side of the castle. Upstairs you\u0027ll find a tailor, a blacksmith, and an equipment store.",
+                                          "tavern":  "The tavern is called the Horn of Plenty, and it\u0027s located upstairs in the southwest corner of the castle.",
+                                          "bank":  "You\u0027ll find the bank in the southwest of the castle. Look for Ebenizer, you can\u0027t miss him.",
+                                          "post":  "The post office, run by the lovely Chrystal is in the southwest corner of the castle, near the Royal Bank.",
+                                          "temple":  "The temple can be found underground, in the southeast corner of the castle. There you can become a citizen of Edron",
+                                          "citizen":  "The temple can be found underground, in the southeast corner of the castle. There you can become a citizen of Edron",
+                                          "Edron":  "The mysterious isle has many secrets and sights outside the castle. The areas of interest are in the west, the southwest, the north, and the northwest.",
+                                          "southwest":  "There are rumours of orc buildings in the southeast. They say some daring fellows found a passage to this area in an old cavern beneath the Edron flats.",
+                                          "northwest":  "Don\u0027t even think about going there. Renegade Knights of Banor\u0027s Blood went there to unearth forbidden secrets in an ancient ruin.",
+                                          "north":  "In the north, there is an ancient city of cyclopses, called the cyclopolis. They are wary of us, but trade with servants of evil from any known race.",
+                                          "west":  "There are rumours of two tribes of minor monsters who battle each other for dominance over the area. Not worth to crawl the sewers to get there.",
+                                          "city":  "In the city there is a furniture store and a jeweller. The Noodles Academy and the cemetary are outside.",
+                                          "academy":  "The Noodles Academy of the magic arts is in the east of Edron city.",
+                                          "cemetary":  "The cemetary is north of the hamlet of Stonehome, which is at the east coast, northeast of Edron city. The cemetary is rumoured to be haunted.",
+                                          "work":  "Explore the isle and destroy any enemy forces encountered. The honor shall be your reward.",
+                                          "mission":  "Explore the isle and destroy any enemy forces encountered. The honor shall be your reward.",
+                                          "quest":  "Explore the isle and destroy any enemy forces encountered. The honor shall be your reward.",
+                                          "fuck":  "Take this!",
+                                          "idiot":  "Take this!",
+                                          "asshole":  "Take this!",
+                                          "ass$":  "Take this!",
+                                          "fag$":  "Take this!",
+                                          "stupid":  "Take this!",
+                                          "tyrant":  "Take this!",
+                                          "shit":  "Take this!",
+                                          "lunatic":  "Take this!"
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "LONG LIVE KING TIBIANUS! Welcome to the isle of Edron!",
+                                                       "I\u0027m the Edron harbour guard. I protect Edron castle and inform visitors about this building and Edron itself."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+                                             "fuck":  {
+                                                          "damage":  0,
+                                                          "effectSelf":  8,
+                                                          "effectTarget":  5
+                                                      },
+                                             "idiot":  {
+                                                           "damage":  0,
+                                                           "effectSelf":  8,
+                                                           "effectTarget":  5
+                                                       },
+                                             "asshole":  {
+                                                             "damage":  0,
+                                                             "effectSelf":  8,
+                                                             "effectTarget":  5
+                                                         },
+                                             "ass$":  {
+                                                          "damage":  0,
+                                                          "effectSelf":  8,
+                                                          "effectTarget":  5
+                                                      },
+                                             "fag$":  {
+                                                          "damage":  0,
+                                                          "effectSelf":  8,
+                                                          "effectTarget":  5
+                                                      },
+                                             "stupid":  {
+                                                            "damage":  0,
+                                                            "effectSelf":  8,
+                                                            "effectTarget":  5
+                                                        },
+                                             "tyrant":  {
+                                                            "damage":  0,
+                                                            "effectSelf":  8,
+                                                            "effectTarget":  5
+                                                        },
+                                             "shit":  {
+                                                          "damage":  0,
+                                                          "effectSelf":  8,
+                                                          "effectTarget":  5
+                                                      },
+                                             "lunatic":  {
+                                                             "damage":  0,
+                                                             "effectSelf":  8,
+                                                             "effectTarget":  5
+                                                         }
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "LONG LIVE KING TIBIANUS! Welcome to the isle of Edron!",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ]
+                     }
+}

@@ -1,0 +1,61 @@
+/* Fight Mode Selector Styles */
+
+.fight-mode-column {
+  align-self: flex-start;
+  margin-top: 9px;
+}
+
+.fight-mode-selector {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1px;
+  padding: 2px;
+  margin-left: 1px;
+  background: none;
+}
+
+.fight-modes-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.chase-modes-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+/* Image-based buttons */
+.img-btn {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  padding: 0;
+  border: 1px solid #444;
+  border-radius: 3px;
+  background-color: #222;
+  cursor: default;
+  background-size: 20px 40px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  image-rendering: pixelated;
+  margin: 0;
+  outline: none;
+}
+
+.img-btn.active {
+  background-position: 0 -20px;
+}
+
+.img-btn:focus,
+.img-btn:focus-visible,
+.img-btn:active {
+  outline: none !important;
+  box-shadow: none !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+

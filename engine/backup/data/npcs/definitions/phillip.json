@@ -1,0 +1,142 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Phillip",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  111,
+                                              "details":  {
+                                                              "head":  116,
+                                                              "body":  54,
+                                                              "legs":  68,
+                                                              "feet":  76
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  4,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "how":  "I am fine, thank you very much.",
+                                          "are":  "I am fine, thank you very much.",
+                                          "you":  "You don\u0027t have to thank me, it\u0027s only my duty.",
+                                          "sell":  "My business is knowlegde and it is for free.",
+                                          "job":  "I am honored to be teacher in this school.",
+                                          "teacher":  "I run this school, there are other travelling teachers who we call Loremasters.",
+                                          "loremaster":  "If you are lucky you\u0027ll meet one in your journeys.",
+                                          "name":  "My name is Phillip.",
+                                          "time":  "It is .",
+                                          "help":  "I will provide you with all knowledge I have.",
+                                          "monster":  "Monsters come in different shape and power. It\u0027s said there is a zoo in the dwarfs\u0027 town.",
+                                          "dungeon":  "Dungeons are places of danger and puzzles. In some of them a bright mind will serve you more then a blade.",
+                                          "sewer":  "An interesting place you should consider to visit.",
+                                          "thank":  "You don\u0027t have to thank me, it\u0027s only my duty.",
+                                          "god":  "To learn about gods, visit the temples and talk to the priests.",
+                                          "king":  "The southern king is called Tibianus. He and our queen Eloise are in a constant struggle.",
+                                          "queen":  "The southern king is called Tibianus. He and our queen Eloise are in a constant struggle.",
+                                          "rumour":  "I don\u0027t like rumours.",
+                                          "gossip":  "I don\u0027t like rumours.",
+                                          "news":  "I don\u0027t like rumours.",
+                                          "weapon":  "To learn about weapons read appropriate books or talk to the smiths.",
+                                          "magic":  "To learn about magic talk to the guild leaders.",
+                                          "rebellion":  "Rebellion? What for? We are contend with our situation.",
+                                          "in":  "Tod will come and save us all. He will bring freedom and beer to the men of Carlin.",
+                                          "tod":  "Tod will come and save us all. He will bring freedom and beer to the men of Carlin.",
+                                          "we":  "Tod will come and save us all. He will bring freedom and beer to the men of Carlin.",
+                                          "trust":  "Tod will come and save us all. He will bring freedom and beer to the men of Carlin.",
+                                          "lugri":  "This servant of evil is protected by the dark gods and can\u0027t be harmed.",
+                                          "ferumbras":  "He is a follower of evil. His powers were boosted by a sinister force and he is beyond human restrictions now.",
+                                          "excalibug":  "This weapon is said to be very powerful and unique. It was hidden in ancient times and now is thought to be lost."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Hello, pupil . I hope I can help you on your quest for knowledge.",
+                                                       "Hello, seeker of knowledge . How may I assist you?",
+                                                       "Hello, mighty adventurer . Can I teach you something you don\u0027t know?"
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Hello, pupil %N. I hope I can help you on your quest for knowledge.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Hello, seeker of knowledge %N. How may I assist you?",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Hello, mighty adventurer %N. Can I teach you something you don\u0027t know?",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Hello, famous %N. It should be you teaching me!",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ]
+                     }
+}

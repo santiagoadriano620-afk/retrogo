@@ -1,0 +1,64 @@
+{
+    "actionId":  2014,
+    "type":  "lever",
+    "itemIds":  [
+                    1945,
+                    1946
+                ],
+    "conditions":  [
+
+                   ],
+    "effects":  [
+                    {
+                        "type":  "transformItem",
+                        "from":  1945,
+                        "to":  1946,
+                        "decay":  true
+                    },
+                    {
+                        "type":  "removeItem",
+                        "pos":  {
+                                    "x":  33171,
+                                    "y":  31897,
+                                    "z":  8
+                                },
+                        "itemId":  1285
+                    },
+                    {
+                        "key":  7014,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "effectsAlt":  [
+                       {
+                           "type":  "transformItem",
+                           "from":  1946,
+                           "to":  1945,
+                           "decay":  true
+                       },
+                       {
+                           "type":  "relocate",
+                           "from":  {
+                                        "x":  33171,
+                                        "y":  31897,
+                                        "z":  8
+                                    },
+                           "to":  {
+                                      "x":  33171,
+                                      "y":  31898,
+                                      "z":  8
+                                  }
+                       },
+                       {
+                           "type":  "createItem",
+                           "itemId":  1285,
+                           "count":  1,
+                           "pos":  {
+                                       "x":  33171,
+                                       "y":  31897,
+                                       "z":  8
+                                   }
+                       }
+                   ]
+}

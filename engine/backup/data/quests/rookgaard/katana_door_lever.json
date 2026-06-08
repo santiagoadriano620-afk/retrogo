@@ -1,0 +1,73 @@
+{
+    "actionId":  2051,
+    "type":  "lever",
+    "itemIds":  [
+                    1945,
+                    1946
+                ],
+    "conditions":  [
+                       {
+                           "type":  "itemInPosition",
+                           "pos":  {
+                                       "x":  32177,
+                                       "y":  32148,
+                                       "z":  11
+                                   },
+                           "itemId":  1211
+                       }
+                   ],
+    "effects":  [
+                    {
+                        "type":  "transformItem",
+                        "from":  1945,
+                        "to":  1946,
+                        "decay":  true
+                    },
+                    {
+                        "type":  "relocate",
+                        "from":  {
+                                     "x":  32177,
+                                     "y":  32148,
+                                     "z":  11
+                                 },
+                        "to":  {
+                                   "x":  32178,
+                                   "y":  32148,
+                                   "z":  11
+                               }
+                    },
+                    {
+                        "type":  "transformItemInPosition",
+                        "pos":  {
+                                    "x":  32177,
+                                    "y":  32148,
+                                    "z":  11
+                                },
+                        "from":  1211,
+                        "to":  1209
+                    },
+                    {
+                        "key":  7051,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "effectsAlt":  [
+                       {
+                           "type":  "transformItem",
+                           "from":  1946,
+                           "to":  1945,
+                           "decay":  true
+                       },
+                       {
+                           "type":  "transformItemInPosition",
+                           "pos":  {
+                                       "x":  32177,
+                                       "y":  32148,
+                                       "z":  11
+                                   },
+                           "from":  1209,
+                           "to":  1211
+                       }
+                   ]
+}

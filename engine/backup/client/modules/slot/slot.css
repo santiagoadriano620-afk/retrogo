@@ -1,0 +1,59 @@
+.slot {
+  width: 32px;
+  height: 32px;
+  background-image: url("/images/game/ui/item.png");
+  position: relative;
+  border: 1px solid transparent;
+}
+
+.slot.selected {
+  box-shadow: inset 0 0 8px white;
+}
+
+.slot.legendary {
+  box-shadow: inset 0 0 8px orange;
+}
+
+.slot.epic {
+  box-shadow: inset 0 0 8px purple;
+}
+
+.slot.rare {
+  box-shadow: inset 0 0 8px blue;
+}
+
+.slot.uncommon {
+  box-shadow: inset 0 0 8px green;
+}
+
+.slot > canvas {
+  pointer-events: none;
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  z-index: 100;
+}
+
+.slot > .count {
+  color: #d3d3d3;
+  font-size: 10px;
+  font-weight: bold;
+  position: absolute;
+  bottom: 2px;
+  right: 4px;
+  pointer-events: none;
+  z-index: 100;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.slot .container-indicator {
+  display: none;
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 7px;
+  height: 9px;
+  background-image: url("/images/game/inventory/container.png");
+  z-index: 200;
+  pointer-events: none;
+}

@@ -1,0 +1,181 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Hagor",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  112,
+                                              "details":  {
+                                                              "head":  19,
+                                                              "body":  58,
+                                                              "legs":  105,
+                                                              "feet":  94
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  4,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "name":  "My name is Hagor, the old hunter.",
+                                          "job":  "I travel through the lands of Tibia and now Jakundaf Desert since years.",
+                                          "tibia":  "The gods made this world full of fascinating secrets and I will search them till my end.",
+                                          "thais":  "Thais... It\u0027s a big city in Middle-Tibia. Lots of people live there.",
+                                          "carlin":  "Is this the city to the north? I heard rumours about it.",
+                                          "king":  "Tibianus is our king. To be honest, I didn\u0027t hear much of him till now.",
+                                          "weapon":  "Weapons? Do you have some? You better know how to use them!",
+                                          "help":  "I\u0027d really like to help you. Could you specify your request?",
+                                          "time":  "Time has no meaning to me.",
+                                          "sword":  "Do you mean any sword in particular? Or just any sword?",
+                                          "desert":  "Yes, it\u0027s big, isn\u0027t it?",
+                                          "excalibug":  "I heared rumours that there is a sword called so. I don\u0027t know if it exists.",
+                                          "fight":  "Fighting is an art. Know it and you will be strong, ignore it and you will die soon!",
+                                          "guild":  "There are many different guilds in Tibia. They come and go, come and go...",
+                                          "god":  "There are a lot of gods we believe in. Maybe you should check out different books to find out something about them.",
+                                          "way":  "Which way are you looking for in particular?",
+                                          "door":  "Which door are you talking about? If it is locked, maybe you should try to find a key for it!",
+                                          "secret":  "There are many secrets. But I fear, I can\u0027t tell you much about them. They are also secret to me...",
+                                          "treasure":  "Someone told me - I can\u0027t remember who it was - that there was a treasure hidden nearby.",
+                                          "book":  "Yes, I really can recommend reading books. It might help you find what you are looking for!",
+                                          "gharonk":  "Gharonk is a very old language, only spoken by a few people. It\u0027s not a very complex language, but that does not mean that it is easy to understand!",
+                                          "offer":  "Go ahead. I don\u0027t sell or buy anything!",
+                                          "exit":  "Yes, there is an exit for these dungeons. Just find the teleporter.",
+                                          "library":  "There is a library in here, right. I assume you are talking about this library. It\u0027s locked, as far as I know. But somewhere there has to be a key... maybe the librarian knows more?",
+                                          "roll":  "Oh, yes, I love them!",
+                                          "morrin":  "Ah, I remember that man. We made a deal, guess about what."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Greetings, adventurer . What leads you to me?",
+                                                       "I travel through the lands of Tibia and now Jakundaf Desert since years."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Greetings, adventurer %N. What leads you to me?",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "key"
+                                                                                   ],
+                                                                      "response":  "Right! We can make the same deal if you give a fresh delicious roll. Do you have any?",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  false
+                                                                  }
+                                                              ]
+                                              },
+                                        "2":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Oh, fine! Here you are.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "itemCount",
+                                                                                             "itemId":  2690,
+                                                                                             "min":  1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "setAmount",
+                                                                                          "amount":  1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "deleteItem",
+                                                                                          "id":  2690
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  2088
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Hey, you do not have one!",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Maybe next time.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+                                                   "morrin":  1
+                                               },
+                         "script":  "hagor.js"
+                     }
+}

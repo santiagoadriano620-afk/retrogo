@@ -1,0 +1,185 @@
+{
+    "creatureStatistics": {
+        "name": "Snake Eye",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 73,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 4,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "job": "Well, I'm the boss of this tavern.",
+            "name": "I'm Snake Eye.",
+            "eye": "Well, I had a dispute with a snake once. And the snake won. Bit my left eye out. Therefore, Snake Eye.",
+            "snake": "Well, I had a dispute with a snake once. And the snake won. Bit my left eye out. Therefore, Snake Eye.",
+            "boss": "Yeah. I'm the boss. So don't bother me.",
+            "tavern": "It's a great tavern. No closing time. No problems with kings or other rulers. Best place in Tibia.",
+            "tibia": "There's already too much order in Tibia. We don't need kings or whatever.",
+            "king": "We don't need one.",
+            "ruler": "We don't need one.",
+            "tibianus": "We don't need him.",
+            "time": "Go and get a watch.",
+            "god": "The Gods of Tibia! What a crap! It's all superstition!",
+            "crap": "Crap. Crap! CRAP! It's all CRAP!",
+            "superstition": "Believe me! There are no gods.",
+            "durin": "He's the worst. The so called god of the dwarfs. I don't believe it. It's all crap.",
+            "steve": "Never heard of him.",
+            "guido": "Never heard of him.",
+            "stephan": "Never heard of him.",
+            "cip": "Cip sux!",
+            "thais": "In the beginning, it was a nice encampment. Now it's an overcrowded, polluted city. I hate it!",
+            "carlin": "I've never been there. Don't know anything about it.",
+            "kazordoon": "Kazordoon is alright. Except the dwarfs. I don't like them. But the mountains are a good place. Been there once.",
+            "ab'dendriel": "I've never been there. I don't like the elves anyway.",
+            "edron": "That's a place for wealthy toffs!",
+            "wild": "There are a lot of wild warriors around. They built this camp.",
+            "warrior": "There are a lot of wild warriors around. They built this camp.",
+            "camp": "Well, the real wild warriors don't live here. They hide in the woods.",
+            "hide": "Well. I know of a small camp to the south.",
+            "south": "It's abandoned. But I bet that something is hidden there!",
+            "hidden": "Go and find out yourself. You can tell me if you find something.",
+            "copper": "Hmmm. A copper key. You should ask H.L. about it.",
+            "key": "Hmmm. A copper key. You should ask H.L. about it.",
+            "h.l.": "He is a wild warrior. Nobody knows his real name. We just call im H.L. You can find him in the small armory shop.",
+            "hl": "He is a wild warrior. Nobody knows his real name. We just call im H.L. You can find him in the small armory shop.",
+            "wood": "It's the best place to live. By the way, there's an old wild warrior building to the southwest. It might be interesting for you.",
+            "building": "Go and ask H.L. about it.",
+            "buy": "Do you want to eat or drink?",
+            "eat": "Ok, I have fish, meat, and bread. What do you want?",
+            "drink": "I can offer you beer, wine, and water. Water is for free."
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "Hi . Come in and have a drink.",
+                "Well, I'm the boss of this tavern."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Hi %N. Come in and have a drink.",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ],
+        "topics": {
+            "1": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Here.",
+                        "conditions": [
+                            {
+                                "type": "gold",
+                                "min": -1
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "deleteMoney",
+                                "amount": -1
+                            },
+                            {
+                                "type": "createItem",
+                                "id": -1
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "What? You don't have the money. You crook. Get lost.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true
+                    },
+                    {
+                        "keywords": [],
+                        "response": "OK, then not.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            }
+        },
+        "keywordNextTopics": {},
+        "trade": {
+            "items": [
+                {
+                    "name": "Fish",
+                    "price": 5,
+                    "id": 2667,
+                    "type": "sell"
+                },
+                {
+                    "name": "Meat",
+                    "price": 6,
+                    "id": 2666,
+                    "type": "sell"
+                },
+                {
+                    "name": "Brown Bread",
+                    "price": 4,
+                    "id": 2691,
+                    "type": "sell"
+                },
+                {
+                    "name": "Mug",
+                    "price": 5,
+                    "id": 2012,
+                    "type": "sell"
+                }
+            ]
+        },
+        "script": "snake_eye.js"
+    }
+}

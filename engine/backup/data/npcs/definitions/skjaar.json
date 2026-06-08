@@ -1,0 +1,353 @@
+{
+    "creatureStatistics": {
+        "name": "Skjaar",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 9,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 2,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "job": "Once I was the master of all mages, but now I only protect this crypt.",
+            "name": "I am Skjaar the Mage, master of all spells.",
+            "door": "This door seals a crypt.",
+            "crypt": "Here lies my master. Only his closest followers may enter.",
+            "help": "I'm not here to help anybody. I only protect my master's crypt.",
+            "mountain": "Hundreds of years my master's castle stood on the top of this mountain. Now there is a volcano.",
+            "volcano": "I can still feel the magical energy in the volcano.",
+            "castle": "The castle was destroyed when my master tried to summon a nameless creature. All that is left is this volcano.",
+            "time": "To those who have lived for a thousand years time holds no more terror.",
+            "master": "If you are one of his followers, you need not ask about him, for you will know. And if you aren't, you are not worthy anyway!",
+            "key": "I will give the key to the crypt only to the closest followers of my master. Would you like me to test you?",
+            "idiot": "Take this for your words!",
+            "fuck": "Take this for your words!",
+            "asshole": "Take this for your words!"
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "Hail, friend of nature! How may I help you?",
+                "Another creature who believes thinks physical strength is more important than wisdom! Why are you disturbing me?",
+                "It's good to see somebody who has chosen the path of wisdom. What do you want?"
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {
+            "idiot": {
+                "damage": 1,
+                "effectSelf": null,
+                "effectTarget": 14
+            },
+            "fuck": {
+                "damage": 1,
+                "effectSelf": null,
+                "effectTarget": 14
+            },
+            "asshole": {
+                "damage": 1,
+                "effectSelf": null,
+                "effectTarget": 14
+            }
+        },
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Hail, friend of nature! How may I help you?",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Another creature who believes thinks physical strength is more important than wisdom! Why are you disturbing me?",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "It's good to see somebody who has chosen the path of wisdom. What do you want?",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Neither strong enough to be a knight nor wise enough to be a real mage. You like it easy, don't you? Why are you disturbing me?",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ],
+        "topics": {
+            "1": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Before we start I must ask you for a small donation of 1000 gold coins. Are you willing to pay 1000 gold coins for the test?",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "setPrice",
+                                "amount": 1000
+                            }
+                        ],
+                        "nextTopic": 2,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "no"
+                        ],
+                        "response": "Then leave, unworthy worm!",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true
+                    },
+                    {
+                        "keywords": [],
+                        "response": "You're not worthy if you cannot make up your mind. Leave!",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "2": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "All right then. Here comes the first question. What was the name of Dago's favourite pet?",
+                        "conditions": [
+                            {
+                                "type": "gold",
+                                "min": -1
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "deleteMoney",
+                                "amount": -1
+                            }
+                        ],
+                        "nextTopic": 3,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You don't even have the money to make a donation? Then go!",
+                        "conditions": [
+                            {
+                                "type": "gold",
+                                "max": -1
+                            }
+                        ],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true
+                    },
+                    {
+                        "keywords": [
+                            "no"
+                        ],
+                        "response": "You're not worthy then. Now leave!",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true
+                    },
+                    {
+                        "keywords": [],
+                        "response": "You're not worthy if you cannot make up your mind. Leave!",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "3": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "redips"
+                        ],
+                        "response": "Perhaps you knew him after all. Tell me - how many fingers did he have when he died?",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 4,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "You are wrong. Get lost!",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isCatchAll": true
+                    }
+                ]
+            },
+            "4": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "7"
+                        ],
+                        "response": "Also true. But can you also tell me the colour of the deamons in which master specialized?",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 5,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "seven"
+                        ],
+                        "response": "Also true. But can you also tell me the colour of the deamons in which my master specialized?",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 5,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "You are wrong. Get lost!",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isCatchAll": true
+                    }
+                ]
+            },
+            "5": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "black"
+                        ],
+                        "response": "It seems you are worthy after all. Do you want the key to the crypt?",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": 6,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "You are wrong. Get lost!",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isCatchAll": true
+                    }
+                ]
+            },
+            "6": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Here you are.",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "setAmount",
+                                "amount": 1
+                            },
+                            {
+                                "type": "createItem",
+                                "id": 2089
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "It is always a wise decision to leave the dead alone.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            }
+        },
+        "keywordNextTopics": {
+            "key": 1
+        },
+        "script": "skjaar.js"
+    }
+}

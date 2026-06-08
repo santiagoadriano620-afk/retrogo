@@ -1,0 +1,217 @@
+{
+    "creatureStatistics": {
+        "name": "Ursula",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 54,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 3,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "job": "I teach some basic spells.",
+            "name": "I am Ursula.",
+            "time": "Sorry, I don't own a watch.",
+            "king": "The king spent a lot of money for our library.",
+            "tibianus": "The king spent a lot of money for our library.",
+            "army": "I would prefer an army of spellcasters, but they are ok.",
+            "ferumbras": "Ah, come on, he can't be that poweful and evil as all say.",
+            "excalibug": "A myth born out of some knights' inferiority complex.",
+            "thais": "Ah, yes, I remember my time there, old Muriel teaching me the basics.",
+            "tibia": "Isn't it a fine world we live in.",
+            "carlin": "They should have been more careful with this town, before they lost it.",
+            "edron": "Sciences are thriving on this isle.",
+            "news": "I heard about things you never would believe. Please come back when I have more time to chat.",
+            "rumors": "I heard about things you never would believe. Please come back when I have more time to chat.",
+            "spellbook": "I'm sorry, but I don't have one. Ask Thomas in the west tower about that.",
+            "spell": "I have 'Conjure Bolt', 'Animate Dead', 'Envenom', 'Heal Friend', 'Desintegrate', 'Poison Bomb', and 'Strong Haste'. Which one do you want to learn?",
+            "conjure": "I'm sorry, but this spell is only for paladins.",
+            "bolt": "I'm sorry, but this spell is only for paladins.",
+            "animate": "I'm sorry, but this spell is only for druids and sorcerers.",
+            "dead": "I'm sorry, but this spell is only for druids and sorcerers.",
+            "envenom": "I'm sorry, but this spell is only for druids.",
+            "heal": "I'm sorry, but this spell is only for druids.",
+            "friend": "I'm sorry, but this spell is only for druids.",
+            "desintegrate": "I'm sorry, but this spell is only for paladins, sorcerers, and druids.",
+            "strong": "I'm sorry, but this spell is only for druids and sorcerers.",
+            "haste": "I'm sorry, but this spell is only for druids and sorcerers.",
+            "poison": "I'm sorry, but this spell is only for druids.",
+            "bomb": "I'm sorry, but this spell is only for druids."
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "Howdy .",
+                "I teach some basic spells."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Howdy %N.",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ],
+        "topics": {
+            "1": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "I'm sorry, but you already know this spell.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "I'm sorry, but you need magic level %A to learn this spell.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "I'm sorry, but you don't have enough gold to pay for it.",
+                        "conditions": [
+                            {
+                                "type": "gold",
+                                "max": -1
+                            }
+                        ],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Congratulations. From now on you can cast this spell.",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "deleteMoney",
+                                "amount": -1
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "As you wish.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            }
+        },
+        "keywordNextTopics": {
+            "conjure": 1,
+            "bolt": 1,
+            "animate": 1,
+            "dead": 1,
+            "envenom": 1,
+            "heal": 1,
+            "friend": 1,
+            "desintegrate": 1,
+            "strong": 1,
+            "haste": 1,
+            "poison": 1,
+            "bomb": 1
+        },
+        "keywordTopicPrices": {
+            "conjure": 750,
+            "bolt": 750,
+            "animate": 1200,
+            "dead": 1200,
+            "envenom": 1000,
+            "heal": 800,
+            "friend": 800,
+            "desintegrate": 900,
+            "strong": 1300,
+            "haste": 1300,
+            "poison": 1000,
+            "bomb": 1000
+        },
+        "keywordTopicSpellIds": {
+            "conjure": 37,
+            "bolt": 37,
+            "animate": 52,
+            "dead": 52,
+            "envenom": 66,
+            "heal": 26,
+            "friend": 26,
+            "desintegrate": 69,
+            "strong": 17,
+            "haste": 17,
+            "poison": 61,
+            "bomb": 61
+        },
+        "keywordTopicMagicLevels": {
+            "conjure": 0,
+            "bolt": 0,
+            "animate": 0,
+            "dead": 0,
+            "envenom": 0,
+            "heal": 0,
+            "friend": 0,
+            "desintegrate": 0,
+            "strong": 0,
+            "haste": 0,
+            "poison": 0,
+            "bomb": 0
+        },
+        "script": "ursula.js"
+    }
+}

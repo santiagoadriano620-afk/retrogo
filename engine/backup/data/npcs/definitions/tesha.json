@@ -1,0 +1,329 @@
+{
+    "creatureStatistics": {
+        "name": "Tesha",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 140,
+            "details": {
+                "head": 77,
+                "body": 32,
+                "legs": 81,
+                "feet": 93
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 2,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "bank": true,
+        "keywords": {
+            "job": "I sell and buy gems and jewelry.",
+            "name": "I am the mourned Tesha.",
+            "time": "Time is yet another burden that lies heavy on our mortal bodies.",
+            "temple": "The temple can offer us guidance and solace in our mortal existence.",
+            "pharaoh": "The pharaoh has such amazing patience with us puny mortals. He is truly a caring father of this nation.",
+            "oldpharaoh": "This poor man could not comprehend his son's wisdom. Perhaps he has spelled his own eternal doom.",
+            "scarab": "The priests say they are sacred beings, although ... <whispers>I find them scary!",
+            "chosen": "I can only hope my humble work for our community and for the temple will make me worthy one day to be elevated to the rank of a chosen one. One to whom the path of ascension is opened up through undeath.",
+            "tibia": "The world is so huge, and I have seen so little. Perhaps if I am chosen one day I will travel and see it all.",
+            "carlin": "Those citites are so far away. So far that the enlightened preachings of our divine pharaoh cannot reach those poor misguided souls.",
+            "thais": "Those citites are so far away. So far that the enlightened preachings of our divine pharaoh cannot reach those poor misguided souls.",
+            "edron": "Those citites are so far away. So far that the enlightened preachings of our divine pharaoh cannot reach those poor misguided souls.",
+            "venore": "Those citites are so far away. So far that the enlightened preachings of our divine pharaoh cannot reach those poor misguided souls.",
+            "kazordoon": "Dwarves have a strong Akh. This makes them arrogant and deaf to the true creed.",
+            "dwarves": "Dwarves have a strong Akh. This makes them arrogant and deaf to the true creed.",
+            "dwarfes": "Dwarves have a strong Akh. This makes them arrogant and deaf to the true creed.",
+            "ab'dendriel": "Most elves lack the sincerity to strive for ascension. At least that's what the priests are telling us.",
+            "elves": "Most elves lack the sincerity to strive for ascension. At least that's what the priests are telling us.",
+            "elfes": "Most elves lack the sincerity to strive for ascension. At least that's what the priests are telling us.",
+            "darama": "In the desert the lines of life and death are clearly drawn. Because of this it is easier for us, its children, to focus on them. In the jungle those lines are fuzzy and blurred, and people easily fall victim to temptation.",
+            "darashia": "Those poor souls there might still be saved if only they listened.",
+            "daraman": "He was a great man. If he had left his mortal existence behind he might have become one of the greatest prophets of the true faith, second only to the pharaoh himself.",
+            "Ankrahmun": "This city is both a refuge and centre of learning for the believers of the true faith taught by his divine majesty the pharaoh.",
+            "mortality": "Mortality can be overcome. It is a sickness, but it can be cured through undeath.",
+            "false": "These greedy beings are trying to devour us all. May the pharaoh thwart their evil plans and free us from their reign of terror!",
+            "gods": "These greedy beings are trying to devour us all. May the pharaoh thwart their evil plans and free us from their reign of terror!",
+            "ascension": "Oh, I am not asking for much, you know. I mean, I really don't have to be a god or something. All I wish for is a bit of the wisdom that comes with ascension.",
+            "Akh'rah": "I don't really understand this concept, but from what I know it is the three components that make up every being.",
+            "Uthun": "I don't really understand this concept, but from what I know it is the three components that make up every being.",
+            "Akh": "Our body. The only physical part of the Akh'rah Uthun.",
+            "undead": "Undeath is the reward for a life of faith and service.",
+            "undeath": "Undeath is the reward for a life of faith and service.",
+            "Rah": "The Rah is our essence. The spiritual bond that keep the other parts of the Akh'rah Uthun together.",
+            "uthun": "The Uthun is all we learned in life.",
+            "mourn": "The dead mourn our tempted existence, and we mourn ourselves.",
+            "arena": "Look for it in the eastern part of the city.",
+            "palace": "Isn't the palace magnificent to behold? It is so impressive!",
+            "offer": "I can offer you various gems, pearls or some wonderful jewels. I also change money.",
+            "goods": "I can offer you various gems, pearls or some wonderful jewels. I also change money.",
+            "do": "I can offer you various gems, pearls or some wonderful jewels. I also change money.",
+            "you": "I can offer you various gems, pearls or some wonderful jewels. I also change money.",
+            "sell": "I can offer you various gems, pearls or some wonderful jewels. I also change money.",
+            "have": "I can offer you various gems, pearls or some wonderful jewels. I also change money.",
+            "gem": "You can buy and sell small diamonds, small sapphires, small rubies, small emeralds, and small amethysts.",
+            "pearl": "There are white and black pearls you can buy or sell.",
+            "jewel": "Currently you can purchase wedding rings, golden amulets, and ruby necklaces.",
+            "talon": "I don't trade or work with these magic gems. It's better you ask a mage about this."
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "Be mourned pilgrim in flesh.",
+                "I sell and buy gems and jewelry."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Be mourned pilgrim in flesh.",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": "Be mourned pilgrim in flesh.",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "be",
+                    "mourned",
+                    "pilgrim",
+                    "flesh"
+                ],
+                "response": "Be mourned pilgrim in flesh.",
+                "idle": false
+            }
+        ],
+        "topics": {
+            "1": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Here you are.",
+                        "conditions": [
+                            {
+                                "type": "gold",
+                                "min": -1
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "deleteMoney",
+                                "amount": -1
+                            },
+                            {
+                                "type": "createItem",
+                                "id": -1
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Come back, when you have enough money.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Hmm, but next time.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "2": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Ok. Here is your money.",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "createMoney"
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Sorry, you do not have one.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Sorry, you do not have that many.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Maybe next time.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            }
+        },
+        "keywordNextTopics": {},
+        "trade": {
+            "items": [
+                {
+                    "name": "Wedding Ring",
+                    "price": 990,
+                    "id": 2121,
+                    "type": "sell"
+                },
+                {
+                    "name": "Golden Amulet",
+                    "price": 6600,
+                    "id": 2130,
+                    "type": "sell"
+                },
+                {
+                    "name": "Ruby Necklace",
+                    "price": 3560,
+                    "id": 2133,
+                    "type": "sell"
+                },
+                {
+                    "name": "White Pearl",
+                    "price": 320,
+                    "id": 2143,
+                    "type": "sell"
+                },
+                {
+                    "name": "Black Pearl",
+                    "price": 560,
+                    "id": 2144,
+                    "type": "sell"
+                },
+                {
+                    "name": "Small Diamond",
+                    "price": 600,
+                    "id": 2145,
+                    "type": "sell"
+                },
+                {
+                    "name": "Small Sapphire",
+                    "price": 500,
+                    "id": 2146,
+                    "type": "sell"
+                },
+                {
+                    "name": "Small Ruby",
+                    "price": 500,
+                    "id": 2147,
+                    "type": "sell"
+                },
+                {
+                    "name": "Small Emerald",
+                    "price": 500,
+                    "id": 2149,
+                    "type": "sell"
+                },
+                {
+                    "name": "Small Amethyst",
+                    "price": 400,
+                    "id": 2150,
+                    "type": "sell"
+                },
+                {
+                    "name": "White Pearl",
+                    "price": 160,
+                    "id": 2143,
+                    "type": "buy"
+                },
+                {
+                    "name": "Black Pearl",
+                    "price": 280,
+                    "id": 2144,
+                    "type": "buy"
+                },
+                {
+                    "name": "Small Diamond",
+                    "price": 300,
+                    "id": 2145,
+                    "type": "buy"
+                },
+                {
+                    "name": "Small Sapphire",
+                    "price": 250,
+                    "id": 2146,
+                    "type": "buy"
+                },
+                {
+                    "name": "Small Ruby",
+                    "price": 250,
+                    "id": 2147,
+                    "type": "buy"
+                },
+                {
+                    "name": "Small Emerald",
+                    "price": 250,
+                    "id": 2149,
+                    "type": "buy"
+                },
+                {
+                    "name": "Small Amethyst",
+                    "price": 200,
+                    "id": 2150,
+                    "type": "buy"
+                }
+            ]
+        },
+        "script": "tesha.js"
+    }
+}

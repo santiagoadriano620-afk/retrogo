@@ -1,0 +1,228 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Brasith",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  62,
+                                              "details":  {
+                                                              "head":  60,
+                                                              "body":  94,
+                                                              "legs":  58,
+                                                              "feet":  76
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  1,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "name":  "I am Brasith Seedsinger.",
+                                          "job":  "You may buy all the things we grow or gather at this place.",
+                                          "time":  "Sorry, I can\u0027t help you.",
+                                          "carlin":  "The humans of Carlin at least ry to live in harmony with nature.",
+                                          "thais":  "I heared only terrible storys about that city.",
+                                          "venore":  "Their traders seem suspiciously freindly. I don\u0027t trust them.",
+                                          "roderick":  "His house is an impurity in our city in unity with nature.",
+                                          "olrik":  "This poor humans seems to think he might become one of us by spendig time with us.",
+                                          "elf":  "Our race lacks unity, which is a very sad thing. And the differences we have will grow and grow until eventually there is no race left.",
+                                          "elves":  "Our race lacks unity, which is a very sad thing. And the differences we have will grow and grow until eventually there is no race left.",
+                                          "dwarf":  "They work the earth and claim knowledge about it, but they know only about minerals, not about the life it stands for.",
+                                          "human":  "They are so many, so planless, so divided. They have choosen a path I do not want for my own race",
+                                          "troll":  "I don\u0027t claim to understand this creatures but sometimes they are more close to the roots than we are.",
+                                          "cenath":  "The Cenath forgot as many as they learned. I doubt they find the wisdom they are looking for without the things they neglected in their pursuit of knowledge.",
+                                          "kuridai":  "The Kuridai left the true path and can\u0027t see their error. Their way of living may have been suitable in the past, but if they don\u0027t come back to us, their path will lead into darkness.",
+                                          "deraisim":  "We have still much to learn but we are on the correct path at least.",
+                                          "abdaisim":  "The Abdaisim are true to the ways of our race, maybe even more close than we. But by abandoning the other elves they harm themselves more than they know.",
+                                          "teshial":  "They are lost, and if they still exist they are alone in the cold and the darkness.",
+                                          "ferumbras":  "He thinks that he is incredibly powerful, but his is only the mindless power of destruction.",
+                                          "crunor":  "We abandoned the gods a long time ago. A short time after they abandoned us.",
+                                          "plant":  "Life takes many forms. Plants are a very basic form of life. Its simplicity makes them close to the core of nature.",
+                                          "tree":  "Life takes many forms. Plants are a very basic form of life. Its simplicity makes them close to the core of nature.",
+                                          "forest":  "The beauty of a forest is something easy to be missed by the unobservant.",
+                                          "field":  "With the growth of a community comes the need to \u0027use\u0027 nature rather then to \u0027flow\u0027 with nature. This is sad but necessary.",
+                                          "offer":  "I sell corncobs, cherries, grapes, melons, pumpkins, bananas, strawberries, and carrots.",
+                                          "goods":  "I sell corncobs, cherries, grapes, melons, pumpkins, bananas, strawberries, and carrots.",
+                                          "do":  "I sell corncobs, cherries, grapes, melons, pumpkins, bananas, strawberries, and carrots.",
+                                          "you":  "I sell corncobs, cherries, grapes, melons, pumpkins, bananas, strawberries, and carrots.",
+                                          "sell":  "I sell corncobs, cherries, grapes, melons, pumpkins, bananas, strawberries, and carrots.",
+                                          "have":  "I sell corncobs, cherries, grapes, melons, pumpkins, bananas, strawberries, and carrots.",
+                                          "food":  "I sell corncobs, cherries, grapes, melons, pumpkins, bananas, strawberries, and carrots."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Ashari .",
+                                                       "You may buy all the things we grow or gather at this place."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Ashari %N.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "Ashari$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Thank you. Here it is.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Sorry, you do not have enough gold.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Maybe you will buy it another time.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Corncob",
+                                                         "price":  3,
+                                                         "id":  2686,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Cherry",
+                                                         "price":  1,
+                                                         "id":  2679,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Grapes",
+                                                         "price":  3,
+                                                         "id":  2681,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Melon",
+                                                         "price":  8,
+                                                         "id":  2682,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Banana",
+                                                         "price":  2,
+                                                         "id":  2676,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Strawberry",
+                                                         "price":  1,
+                                                         "id":  2680,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Carrot",
+                                                         "price":  3,
+                                                         "id":  2684,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Pumpkin",
+                                                         "price":  10,
+                                                         "id":  2683,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Blue Bottle",
+                                                         "price":  15,
+                                                         "id":  2007,
+                                                         "type":  "sell"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "brasith.js"
+                     }
+}

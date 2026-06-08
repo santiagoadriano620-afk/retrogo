@@ -1,0 +1,234 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Borkas",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  111,
+                                              "details":  {
+                                                              "head":  77,
+                                                              "body":  43,
+                                                              "legs":  38,
+                                                              "feet":  76
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  2,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "I\u0027m into sellin\u0027 furniture. My grandfather was in that business, then my father, and so am I.",
+                                          "shop":  "I\u0027m into sellin\u0027 furniture. My grandfather was in that business, then my father, and so am I.",
+                                          "name":  "I\u0027m Borkas Flersson, but let\u0027s not waste precious tradin\u0027 time with smalltalk.",
+                                          "time":  "Time is  now.",
+                                          "thanks":  "No prob.",
+                                          "thank":  "No prob.",
+                                          "you":  "I\u0027m selling containers here.",
+                                          "allen":  "Hes my boss but he likes to be one of us and sells some of his wares personally.",
+                                          "richardson":  "Hes my boss but he likes to be one of us and sells some of his wares personally.",
+                                          "offer":  "I\u0027m selling containers here.",
+                                          "goods":  "I\u0027m selling containers here.",
+                                          "do":  "I\u0027m selling containers here.",
+                                          "sell":  "I\u0027m selling containers here.",
+                                          "have":  "I\u0027m selling containers here.",
+                                          "furniture":  "I\u0027m selling containers here.",
+                                          "equipment":  "I\u0027m selling containers here.",
+                                          "containers":  "I offer drawers, dressers, lockers, crates, chests, boxes, barrels, trunks and troughs."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Hey , what\u0027cha want?",
+                                                       "I\u0027m into sellin\u0027 furniture. My grandfather was in that business, then my father, and so am I."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Hey %N, what\u0027cha want?",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "greetings$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "81":  {
+                                                   "entries":  [
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "Here you are.",
+                                                                       "conditions":  [
+                                                                                          {
+                                                                                              "type":  "gold",
+                                                                                              "min":  -1
+                                                                                          },
+                                                                                          {
+                                                                                              "type":  "premium"
+                                                                                          }
+                                                                                      ],
+                                                                       "actions":  [
+                                                                                       {
+                                                                                           "type":  "deleteMoney",
+                                                                                           "amount":  -1
+                                                                                       },
+                                                                                       {
+                                                                                           "type":  "createItem",
+                                                                                           "id":  -1
+                                                                                       }
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "I\u0027m sorry, but you need a premium account if you want to buy furniture.",
+                                                                       "conditions":  [
+                                                                                          {
+                                                                                              "type":  "gold",
+                                                                                              "min":  -1
+                                                                                          }
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "Come back, when you have enough money.",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+
+                                                                                    ],
+                                                                       "response":  "Hmm, but I\u0027m sure, it would fit nicely into your house.",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  true,
+                                                                       "isDefault":  true
+                                                                   }
+                                                               ]
+                                               }
+                                    },
+                         "keywordNextTopics":  {
+
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Drawers",
+                                                         "price":  18,
+                                                         "id":  1716,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Dresser",
+                                                         "price":  25,
+                                                         "id":  1724,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Locker",
+                                                         "price":  30,
+                                                         "id":  1732,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Crate",
+                                                         "price":  10,
+                                                         "id":  1739,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Chest",
+                                                         "price":  10,
+                                                         "id":  1740,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Box",
+                                                         "price":  10,
+                                                         "id":  1738,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Barrel",
+                                                         "price":  12,
+                                                         "id":  1774,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Trough",
+                                                         "price":  7,
+                                                         "id":  1775,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Large Trunk",
+                                                         "price":  10,
+                                                         "id":  1750,
+                                                         "type":  "sell"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "borkas.js"
+                     }
+}

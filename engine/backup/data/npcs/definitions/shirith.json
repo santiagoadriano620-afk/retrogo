@@ -1,0 +1,171 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Shirith",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  62,
+                                              "details":  {
+                                                              "head":  59,
+                                                              "body":  97,
+                                                              "legs":  58,
+                                                              "feet":  76
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  3,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "I am the overseer of the mines.",
+                                          "name":  "I am called Shirith Blooddancer.",
+                                          "time":  "It is .",
+                                          "carlin":  "I think those humans are trespassing elven teritory far too often.",
+                                          "thais":  "Thais is far away as all humans should be.",
+                                          "venore":  "If it comes to trade, I can respect those merchants. As long as they leave as soon as they finished buisness, that is.",
+                                          "roderick":  "We don\u0027t need him or any other ambassador here.",
+                                          "olrik":  "As a post officer he has some use ... as a troll has some use for mining.",
+                                          "elves":  "We are a superior race, indeed.",
+                                          "dwarfs":  "They could be of ... some use.",
+                                          "human":  "Humans are more annoying than our trolls.",
+                                          "troll":  "We give these useless creatures a reason to live by serving us.",
+                                          "cenath":  "They think they are better then us.",
+                                          "kuridai":  "We keep this society running. Without our tools and work our case would be a lost one.",
+                                          "deraisim":  "They could do more for us if they would try more hard.",
+                                          "abdaisim":  "Let them go, we don\u0027t need them.",
+                                          "teshial":  "Who needs dreamers in these days?",
+                                          "ferumbras":  "He should be destroyed.",
+                                          "mines":  "We hardly get the ore we need. The worthless trolls are lazy workers. I keep them locked up the whole time.",
+                                          "locked":  "I keep the keys to the mines.",
+                                          "excalibug":  "Nonsense.",
+                                          "news":  "Trolls are boring, I have no news to tell."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Ashari .",
+                                                       "I am the overseer of the mines."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Ashari %N.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "ashari$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here it is.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You do not have enough gold.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Ok, then not.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Silver Key",
+                                                         "price":  50,
+                                                         "id":  2088,
+                                                         "type":  "sell"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "shirith.js"
+                     }
+}

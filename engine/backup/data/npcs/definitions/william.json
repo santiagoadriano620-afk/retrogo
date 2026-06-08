@@ -1,0 +1,83 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "William",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  111,
+                                              "details":  {
+                                                              "head":  115,
+                                                              "body":  0,
+                                                              "legs":  67,
+                                                              "feet":  114
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  3,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "how":  "Thanks I am \u003chicks\u003e drunk \u003cgiggles\u003e.",
+                                          "are":  "Thanks I am \u003chicks\u003e drunk \u003cgiggles\u003e.",
+                                          "you":  "Thanks I am \u003chicks\u003e drunk \u003cgiggles\u003e.",
+                                          "sell":  "Hey! Thats my drink, buy your own!",
+                                          "job":  "I forgot \u003chicks\u003e what a job I have.",
+                                          "karl":  "A good guy with \u003chicks\u003e good beer.",
+                                          "name":  "My Name? Uh... Wait! \u0027Bring down the trash, William you...\u0027 William, my name is William!",
+                                          "time":  "Its precisely \u003chicks\u003e after \u003chicks\u003e.",
+                                          "help":  "I need another drink, then I\u0027ll help you. Promise.",
+                                          "carlin":  "I whish I\u0027d live in Thais, the city of alcohol.",
+                                          "thais":  "I whish I\u0027d live in Thais, the city of alcohol.",
+                                          "sewer":  "The sewers are our last refuge.",
+                                          "refuge":  "Yes, refuge from \u003chicks\u003e womanhood.",
+                                          "todd":  "In Todd we trust! TODD! TODD! TODD!"
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Oh, hello! \u003chicks\u003e",
+                                                       "I forgot \u003chicks\u003e what a job I have."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  "Oh, hello! \u003chicks\u003e",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ]
+                     }
+}

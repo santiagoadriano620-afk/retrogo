@@ -1,0 +1,18 @@
+{
+  "itemId": 4853,
+  "type": "questItem",
+  "branches": [
+    {
+      "conditions": [
+        { "type": "targetItem", "itemId": 1560 },
+        { "type": "position", "x": 32754, "y": 32559, "z": 9 },
+        { "type": "storage", "key": 315, "value": 1 }
+      ],
+      "effects": [
+        { "type": "transformItem", "from": 4853, "to": 4854 },
+        { "type": "storage", "key": 316, "value": 1 },
+        { "type": "magicEffect", "effectId": 4 }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,250 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Amber",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  119,
+                                              "details":  {
+                                                              "head":  59,
+                                                              "body":  113,
+                                                              "legs":  132,
+                                                              "feet":  76
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  4,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "how":  "I am recovering from a sea journey.",
+                                          "are":  "I am recovering from a sea journey.",
+                                          "you":  "I am recovering from a sea journey.",
+                                          "job":  "I explore and seek adventure.",
+                                          "explore":  "I have been almost everywhere in Tibia.",
+                                          "adventure":  "I fought fierce monsters, climbed the highest mountains, and crossed the sea on a raft.",
+                                          "sea":  "My trip over the sea was horrible. The weather was bad, the waves high and my raft quite simple.",
+                                          "time":  "Sorry, I lost my watch in a storm.",
+                                          "help":  "I can\u0027t help you much beyond information.",
+                                          "information":  "Just ask and I\u0027ll try to answer.",
+                                          "dungeon":  "I have not had the time to explore the dungeons of this isle, but I have seen two big caves in the east, and there is a ruined tower in the northwest.",
+                                          "sewer":  "I like sewers. I made my very first battle experience in the Thais sewers. The small sewersystem of Rookgaard has some nasty rats to fight.",
+                                          "assistant":  "I have a job of great responsibility. Mostly I keep annoying persons away from my boss.",
+                                          "monster":  "Oh, I fought orcs, cyclopses, minotaurs, and even green dragons.",
+                                          "cyclops":  "Horrible monsters they are.",
+                                          "minotaur":  "Horrible monsters they are.",
+                                          "dragon":  "Horrible monsters they are.",
+                                          "raft":  "I left my raft at the south eastern shore. I forgot my private notebook on it. If you could return it to me I would be very grateful.",
+                                          "quest":  "I left my raft at the south eastern shore. I forgot my private notebook on it. If you could return it to me I would be very grateful.",
+                                          "mission":  "I left my raft at the south eastern shore. I forgot my private notebook on it. If you could return it to me I would be very grateful.",
+                                          "seymour":  "I think this poor guy was a bad choice as the head of the academy.",
+                                          "academy":  "A fine institution, but it needs definitely more funds from the king.",
+                                          "king":  "King Tibianus is the ruler of Thais.",
+                                          "thais":  "A fine city, but the king has some problems enforcing the law.",
+                                          "cipfried":  "A gentle person. You should visit him, if you have problems.",
+                                          "dallheim":  "An extraordinary warrior. He\u0027s the first and last line of defense of Rookgaard.",
+                                          "hyacinth":  "Hyacinth is a great healer. He lives somewhere hidden on this isle.",
+                                          "willie":  "He\u0027s funny in his own, gruffy way.",
+                                          "obi":  "He\u0027s a funny little man.",
+                                          "weapon":  "The best weapons on this isle are just toothpicks, compared with the weapons warriors of the mainland wield.",
+                                          "magic":  "You can learn spells only in the guildhalls of the mainland.",
+                                          "tibia":  "I try to explore each spot of Tibia, and one day I will succeed.",
+                                          "castle":  "If you travel to Thais, you really should visit the marvelous castle.",
+                                          "notebook":  "If you travel to Thais, you really should visit the marvelous castle.",
+                                          "orcish":  "I speak some orcish words, not much though, just \u0027yes\u0027 and \u0027no\u0027 and such basic.",
+                                          "language":  "I speak some orcish words, not much though, just \u0027yes\u0027 and \u0027no\u0027 and such basic.",
+                                          "prisoner":  "I speak some orcish words, not much though, just \u0027yes\u0027 and \u0027no\u0027 and such basic.",
+                                          "orc":  "Not the nicest guys you can encounter. I had some clashes with them and was prisoner of the orcs for some months.",
+                                          "food":  "My favorite dish is salmon. Oh please, bring me some of it."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Oh hello, nice to see you .",
+                                                       "I explore and seek adventure."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Oh hello, nice to see you %N.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Excellent. Here, take this short sword, that might serve you well.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  2406
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Hm, you don\u0027t have it.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Too bad.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "2":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "It\u0027s \u0027mok\u0027 in orcish. I help you more about that if you have some food.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "no"
+                                                                                   ],
+                                                                      "response":  "In orcish that\u0027s \u0027burp\u0027. I help you more about that if you have some food.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  }
+                                                              ]
+                                              },
+                                        "3":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Thank you. Orcs call arrows \u0027pixo\u0027.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You don\u0027t have one!",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Ok, then I don\u0027t tell you more about the orcish language.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+                                                   "orcish":  2,
+                                                   "language":  2,
+                                                   "prisoner":  2
+                                               },
+                         "trade":  {
+                                       "items":  [
+
+                                                 ]
+                                   },
+                         "script":  "amber.js"
+                     }
+}

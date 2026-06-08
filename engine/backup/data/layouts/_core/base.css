@@ -1,0 +1,160 @@
+html { height: 100%; overflow: hidden; }
+
+body {
+  height: 100%;
+  margin: 0px;
+  overflow: hidden;
+  font-family: 'Verdana', 'Courier New', Courier, monospace;
+  font-weight: bold;
+  font-size: 11px;
+  color: #d3d3d3;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(24, 24, 24, 1) rgba(51, 51, 51, 1);
+  background-image: url("/images/game/ui/background.png");
+}
+
+img { image-rendering: pixelated; }
+
+input {
+  background-image: url("/images/game/ui/background.png");
+  height: 14px;
+  outline: none;
+  padding: 4px;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  font-weight: bold;
+  border: 0px;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), grey, rgba(0, 0, 0, 0));
+  margin: 8px;
+}
+
+button {
+  font-size: 10px;
+  color: #d3d3d3;
+  cursor: default;
+  font-weight: bold;
+  background-image: url("/images/game/ui/background.png");
+  border: 1px solid black;
+  margin: 2px;
+  padding: 4px;
+  border-radius: 4px;
+  outline: none;
+}
+
+button:focus, button:focus-visible, button:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+button:disabled { color: #d3d3d3; }
+
+button.symbol-button { padding: 0px; width: 18px; height: 18px; min-width: 18px; max-width: 18px; }
+button.symbol-button.small { font-size: 8px; }
+
+button.container-btn {
+  padding: 0; width: 12px; height: 12px; min-width: 12px; max-width: 12px;
+  border: none; background-color: transparent;
+  background-image: url("/images/game/ui/container_controls.png");
+  background-size: 36px 23px; background-repeat: no-repeat; border-radius: 0; margin: 2px;
+}
+button.container-btn[action="close"] { background-position: 0 0; }
+button.container-btn[action="minimize"] { background-position: -12px 0; }
+button.container-btn[action="back"] { background-position: -24px 0; display: none; }
+button.container-btn[action="back"].visible { display: inline-block; }
+
+.btn-botao {
+  background: none; background-color: #4a4a4a; border: 1px solid #333;
+  border-radius: 0; color: #d3d3d3; box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+}
+.btn-botao:active {
+  background-color: #6a6a6a; border-color: #666;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.4); color: #d3d3d3;
+}
+.btn-botao:disabled { color: #d3d3d3; border-color: #333; background-color: #3a3a3a; box-shadow: none; }
+.btn-botao.selected { background-color: #6a6a6a; border-color: #666; color: #d3d3d3; }
+
+.input-botao, .modal .input-botao {
+  background: #2a2a2a; border: 1px solid #444; color: #ddd;
+  padding: 4px 8px; font-size: 11px; outline: none; box-sizing: border-box;
+}
+.input-botao:focus { border-color: #5d87bf; }
+.hr-botao { border: none; border-top: 1px solid #444; margin: 6px 0; }
+
+.hidden { visibility: hidden; opacity: 0; }
+.visible { visibility: visible; opacity: 1; }
+.no-select {
+  -webkit-touch-callout: none; -webkit-user-select: none;
+  -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;
+}
+
+#debug-statistics {
+  z-index: 1000; margin: 8px; position: absolute; font-size: 10px; left: 0px; top: 0px;
+}
+
+#perf-hud {
+  z-index: 1001; position: absolute; right: 8px; top: 8px; font-size: 11px;
+  font-family: 'Verdana', 'Courier New', monospace; color: #ffcc00;
+  text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+  text-align: right; line-height: 1.5; pointer-events: none; user-select: none;
+}
+
+.symbol-button-long { padding: 0px; min-width: 24px; }
+.close-button { position: absolute; right: 6px; }
+.close-button-transparent { position: absolute; right: 6px; border: 0px; background: none; }
+
+.checkboxes { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px; }
+.checkboxes label { display: inline-block; padding-right: 10px; white-space: nowrap; flex: 1 1 auto; }
+.checkboxes input { vertical-align: middle; }
+.checkboxes label span { vertical-align: middle; }
+
+.settings-row { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+.settings-row label { white-space: nowrap; min-width: 60px; }
+.settings-row select, .settings-row input { flex: 1; }
+.settings-centered { justify-content: center; }
+
+.stack-wrapper { width: 100%; height: 100%; max-height: 100%; }
+.stack-top { flex: 0 0 auto; height: 256px; overflow: auto; }
+
+.zone-title { font-variant: small-caps; font-family: Arno Pro; letter-spacing: 5px; }
+.zone-sub { font-size: 24px; color: #d3d3d3; font-family: Goudy Old Style; }
+
+#zone-message {
+  left: 0; right: 0; margin-left: auto; margin-right: auto;
+  font-size: 36px; color: gold; top: 20%; text-align: center;
+  position: absolute; z-index: 10000000; padding: 4px;
+}
+#zone-message hr { color: gold; padding: 0px; margin: 0px; background: gold; }
+
+#server-message {
+  display: none; background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.5); border-radius: 8px; padding: 4px;
+  left: 0; right: 0; margin-left: auto; margin-right: auto;
+  max-width: 256px; top: 50%; text-align: center; position: absolute; padding: 4px;
+}
+
+.canvas-notification {
+  text-align: center; color: #F5F5F5; position: absolute;
+  bottom: 2px; width: 100%; z-index: 8000;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.sex-radio {
+  display: inline-flex; align-items: center; gap: 6px; cursor: pointer;
+  color: #d3d3d3; font-size: 11px; margin-right: 16px; user-select: none;
+}
+.sex-radio input[type="radio"] { display: none; }
+.sex-radio .radio-circle {
+  width: 14px; height: 14px; border-radius: 50%; border: 2px solid #666;
+  display: inline-block; position: relative; box-sizing: border-box; flex-shrink: 0;
+}
+.sex-radio input[type="radio"]:checked + .radio-circle { border-color: #5d87bf; }
+.sex-radio input[type="radio"]:checked + .radio-circle::after {
+  content: ""; display: block; width: 6px; height: 6px; border-radius: 50%;
+  background: #5d87bf; position: absolute; top: 2px; left: 2px;
+}
+.sex-radio input[type="radio"]:disabled + .radio-circle { opacity: 0.4; cursor: not-allowed; }
+

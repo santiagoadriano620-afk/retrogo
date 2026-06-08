@@ -1,0 +1,40 @@
+{
+    "actionId":  2069,
+    "type":  "puzzle",
+    "effects":  [
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  33048,
+                                    "y":  32630,
+                                    "z":  1
+                                },
+                        "effectId":  14
+                    },
+                    {
+                        "type":  "removeItem",
+                        "itemId":  2344,
+                        "count":  1
+                    },
+                    {
+                        "type":  "createItem",
+                        "itemId":  2356,
+                        "count":  1,
+                        "pos":  {
+                                    "x":  33048,
+                                    "y":  32631,
+                                    "z":  1
+                                }
+                    },
+                    {
+                        "type":  "storage",
+                        "key":  283,
+                        "value":  2
+                    },
+                    {
+                        "key":  7069,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ]
+}

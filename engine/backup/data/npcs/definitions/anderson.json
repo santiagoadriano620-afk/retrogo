@@ -1,0 +1,296 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Anderson",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  112,
+                                              "details":  {
+                                                              "head":  79,
+                                                              "body":  113,
+                                                              "legs":  68,
+                                                              "feet":  67
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  1,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "name":  "My name is Anderson from the Nordic Tibia Ferries.",
+                                          "anderson":  "The four of us are the captains of the Nordic Tibia Ferries.",
+                                          "svenson":  "The four of us are the captains of the Nordic Tibia Ferries.",
+                                          "carlson":  "The four of us are the captains of the Nordic Tibia Ferries.",
+                                          "nielson":  "The four of us are the captains of the Nordic Tibia Ferries.",
+                                          "job":  "We are ferrymen. We transport goods and passengers to the Ice Islands.",
+                                          "captain":  "We are ferrymen. We transport goods and passengers to the Ice Islands.",
+                                          "ship":  "Our ferries are strong enough to stand the high waves of the Nordic Ocean.",
+                                          "ferry":  "Our ferries are strong enough to stand the high waves of the Nordic Ocean.",
+                                          "ferries":  "Our ferries are strong enough to stand the high waves of the Nordic Ocean.",
+                                          "water":  "Our ferries are strong enough to stand the high waves of the Nordic Ocean.",
+                                          "good":  "We can transport everything you want.",
+                                          "passenger":  "We would like to welcome you on board our ferries.",
+                                          "trip":  "The fee for the trip back to Tibia is included.",
+                                          "passage":  "Where do you want to go today? We serve the routes to Senja, Folda, and Vega, and back to Tibia.",
+                                          "round":  "The fee for the trip back to Tibia is included.",
+                                          "island":  "We serve the routes to Senja, Folda, and Vega, and back to Tibia.",
+                                          "route":  "We serve the routes to Senja, Folda, and Vega, and back to Tibia.",
+                                          "senja":  "This island is Senja.",
+                                          "folda":  "Do you want a passage to Folda for 10 gold?",
+                                          "vega":  "Do you want a passage to Vega for 10 gold?",
+                                          "tibia":  "Do you want a free passage back to Tibia?"
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Ahoi, young man and welcome to the Nordic Tibia Ferries.",
+                                                       "Ahoi, young lady and welcome to the Nordic Tibia Ferries.",
+                                                       "We are ferrymen. We transport goods and passengers to the Ice Islands."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Ahoi, young man %N and welcome to the Nordic Tibia Ferries.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Ahoi, young lady %N and welcome to the Nordic Tibia Ferries.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Have a nice trip!",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "teleport",
+                                                                                          "x":  32048,
+                                                                                          "y":  31582,
+                                                                                          "z":  7
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You don\u0027t have enough money.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "You shouldn\u0027t miss the experience.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "2":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Have a nice trip!",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "teleport",
+                                                                                          "x":  32025,
+                                                                                          "y":  31692,
+                                                                                          "z":  7
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You don\u0027t have enough money.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "You shouldn\u0027t miss the experience.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "3":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Have a nice trip!",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "teleport",
+                                                                                          "x":  32236,
+                                                                                          "y":  31677,
+                                                                                          "z":  7
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You don\u0027t have enough money.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "You shouldn\u0027t miss the experience.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+                                                   "folda":  1,
+                                                   "vega":  2,
+                                                   "tibia":  3
+                                               },
+                         "keywordTopicPrices":  {
+                                                    "folda":  10,
+                                                    "vega":  10,
+                                                    "tibia":  0
+                                                },
+                         "script":  "anderson.js"
+                     }
+}

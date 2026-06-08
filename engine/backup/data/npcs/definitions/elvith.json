@@ -1,0 +1,273 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Elvith",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  62,
+                                              "details":  {
+                                                              "head":  76,
+                                                              "body":  3,
+                                                              "legs":  0,
+                                                              "feet":  76
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  1,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "name":  "I am Elvith Rollingstone.",
+                                          "job":  "I sell musical instruments of many kinds.",
+                                          "time":  "Time has its own song. Close your eyes and listen to the symphony of the seasons.",
+                                          "carlin":  "Carlin is a city that thrives for a harmony it can never achive.",
+                                          "thais":  "I heared about Thais and id did not sound like a place I\u0027d want to visit.",
+                                          "venore":  "By all what I heared this city is not only built into a swamp but its a swamp of intrigue and corruption itself.",
+                                          "roderick":  "This man trys too hard not to offend someone.",
+                                          "olrik":  "He appreciates my music and allthough he is loud and clumsy as all humans it seems not everything is lost.",
+                                          "music":  "Music is an attempt to condensate emotions in harmonies and save them for the times to come.",
+                                          "harmonies":  "Everything is a song. Life, death, history ... everything. To listen to the song of something is the first step to understand it.",
+                                          "melodies":  "Everything is a song. Life, death, history ... everything. To listen to the song of something is the first step to understand it.",
+                                          "harmony":  "Everything is a song. Life, death, history ... everything. To listen to the song of something is the first step to understand it.",
+                                          "melody":  "Everything is a song. Life, death, history ... everything. To listen to the song of something is the first step to understand it.",
+                                          "song":  "Sorry, I have no issue of this book left.",
+                                          "sing":  "Sorry, but there is a melody in my heart that wants to be born. I would loose it before by singing right now.",
+                                          "elf":  "We are the most graceful of all races. We feel the music of the universe in our hearts and souls.",
+                                          "elves":  "We are the most graceful of all races. We feel the music of the universe in our hearts and souls.",
+                                          "dwarf":  "They could at least use their picks and hammers with more rythm.",
+                                          "human":  "They are too loud and don\u0027t even understand the concept of a melody.",
+                                          "troll":  "I went down to the mines and tried to lighten up their spirit, the foolish creatures did not listen to my songs, though.",
+                                          "cenath":  "The Cenath think they know the \u0027art\u0027 but the only true art is the music.",
+                                          "kuridai":  "They could dig some halls for a big musical event, but they won\u0027t listen to me about that matter.",
+                                          "deraisim":  "The other deraisim are too much concerned with mastering the nature so they don\u0027t listen to its music anymore.",
+                                          "abdaisim":  "The wanderers have no patience. You need patience and passion to create and to enjoy music.",
+                                          "teshial":  "I bet they were great musicians.",
+                                          "ferumbras":  "Only humans made songs about him and his evil deeds.",
+                                          "crunor":  "That is some god the humans worship. Our pople are not interested in this gods anymore.",
+                                          "excalibug":  "There are too many songs about that weapon to retell them all. Most of them are human and therefore quite crude anyways.",
+                                          "spell":  "Sorry, I don\u0027t feel like teaching magic today.",
+                                          "magic":  "Sorry, I don\u0027t feel like teaching magic today.",
+                                          "elven":  "Sorry, I have no issue of this book left.",
+                                          "poetry":  "Sorry, I have no issue of this book left.",
+                                          "forest":  "Sorry, I have no issue of this book left.",
+                                          "hellsgate":  "For the worst of crimes the criminals are cast into hellgate. Its said noone can return from there. Since it is not forbidden to enter hellgate you might convince Elathriel to grant you entrance.",
+                                          "elathriel":  "He is a kuridai and the local Az\u0027irel. Something like the head of the human townsguards.",
+                                          "offer":  "I sell lyres, lutes, drums, and simple fanfares.",
+                                          "goods":  "I sell lyres, lutes, drums, and simple fanfares.",
+                                          "buy":  "I sell lyres, lutes, drums, and simple fanfares.",
+                                          "do":  "I sell lyres, lutes, drums, and simple fanfares.",
+                                          "you":  "I sell lyres, lutes, drums, and simple fanfares.",
+                                          "sell":  "I sell lyres, lutes, drums, and simple fanfares.",
+                                          "have":  "I sell lyres, lutes, drums, and simple fanfares.",
+                                          "instrument":  "I sell lyres, lutes, drums, and simple fanfares."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Ashari .",
+                                                       "I sell musical instruments of many kinds."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Ashari %N.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "Ashari$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Thank you. Here it is.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Sorry, you do not have enough gold.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Maybe you will buy it another time.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "2":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Thank you. Here it is.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Sorry, you do not have enough gold.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Maybe you will buy it another time.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Elven Poetry",
+                                                         "price":  500,
+                                                         "id":  4855,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Lyre",
+                                                         "price":  120,
+                                                         "id":  2071,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Lute",
+                                                         "price":  195,
+                                                         "id":  2072,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Drum",
+                                                         "price":  140,
+                                                         "id":  2073,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Simple Fanfare",
+                                                         "price":  150,
+                                                         "id":  2075,
+                                                         "type":  "sell"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "elvith.js"
+                     }
+}

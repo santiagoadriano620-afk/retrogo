@@ -1,0 +1,85 @@
+{
+    "actionId":  3059,
+    "type":  "scarabCoin",
+    "events":  [
+                   "onAddItem"
+               ],
+    "conditions":  [
+                       {
+                           "type":  "itemAtPosition",
+                           "itemId":  2159,
+                           "pos":  {
+                                       "x":  33098,
+                                       "y":  32816,
+                                       "z":  13
+                                   }
+                       }
+                   ],
+    "effects":  [
+                    {
+                        "type":  "relocate",
+                        "from":  {
+                                     "x":  33097,
+                                     "y":  32816,
+                                     "z":  13
+                                 },
+                        "to":  {
+                                   "x":  33093,
+                                   "y":  32824,
+                                   "z":  13
+                               }
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  33097,
+                                    "y":  32816,
+                                    "z":  13
+                                },
+                        "effectId":  11
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  33093,
+                                    "y":  32824,
+                                    "z":  13
+                                },
+                        "effectId":  11
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  33098,
+                                    "y":  32816,
+                                    "z":  13
+                                },
+                        "effectId":  16
+                    },
+                    {
+                        "type":  "removeItem",
+                        "pos":  {
+                                    "x":  33098,
+                                    "y":  32816,
+                                    "z":  13
+                                },
+                        "itemId":  2159
+                    },
+                    {
+                        "key":  8059,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "effectsAlt":  [
+                       {
+                           "type":  "magicEffect",
+                           "pos":  {
+                                       "x":  33098,
+                                       "y":  32816,
+                                       "z":  13
+                                   },
+                           "effectId":  3
+                       }
+                   ]
+}

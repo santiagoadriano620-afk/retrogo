@@ -1,0 +1,116 @@
+{
+    "actionId":  3096,
+    "type":  "puzzle",
+    "events":  [
+                   "onStepIn",
+                   "onAddItem"
+               ],
+    "tileItem":  true,
+    "conditions":  [
+                       {
+                           "type":  "itemAtPosition",
+                           "itemId":  2144,
+                           "pos":  {
+                                       "x":  32180,
+                                       "y":  31871,
+                                       "z":  15
+                                   }
+                       },
+                       {
+                           "type":  "itemAtPosition",
+                           "itemId":  2143,
+                           "pos":  {
+                                       "x":  32173,
+                                       "y":  31871,
+                                       "z":  15
+                                   }
+                       }
+                   ],
+    "effects":  [
+                    {
+                        "type":  "relocate",
+                        "from":  {
+                                     "x":  32176,
+                                     "y":  31869,
+                                     "z":  15
+                                 },
+                        "to":  {
+                                   "x":  32176,
+                                   "y":  31863,
+                                   "z":  15
+                               }
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  32176,
+                                    "y":  31863,
+                                    "z":  15
+                                },
+                        "effectId":  11
+                    },
+                    {
+                        "type":  "removeItem",
+                        "pos":  {
+                                    "x":  32173,
+                                    "y":  31871,
+                                    "z":  15
+                                },
+                        "itemId":  2143
+                    },
+                    {
+                        "type":  "removeItem",
+                        "pos":  {
+                                    "x":  32180,
+                                    "y":  31871,
+                                    "z":  15
+                                },
+                        "itemId":  2144
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  32173,
+                                    "y":  31871,
+                                    "z":  15
+                                },
+                        "effectId":  3
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  32180,
+                                    "y":  31871,
+                                    "z":  15
+                                },
+                        "effectId":  3
+                    },
+                    {
+                        "key":  8096,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "effectsAlt":  [
+                       {
+                           "type":  "relocate",
+                           "from":  {
+                                        "x":  32176,
+                                        "y":  31869,
+                                        "z":  15
+                                    },
+                           "to":  {
+                                      "x":  32176,
+                                      "y":  31870,
+                                      "z":  15
+                                  }
+                       },
+                       {
+                           "type":  "damage",
+                           "target":  0,
+                           "combat":  "COMBAT_POISONDAMAGE",
+                           "min":  -100,
+                           "max":  -100
+                       }
+                   ]
+}

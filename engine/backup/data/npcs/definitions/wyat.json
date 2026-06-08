@@ -1,0 +1,180 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Wyat",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  112,
+                                              "details":  {
+                                                              "head":  98,
+                                                              "body":  96,
+                                                              "legs":  95,
+                                                              "feet":  116
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  2,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "news":  "I have no news for the public.",
+                                          "king":  "HAIL TO KING TIBIANUS!",
+                                          "leader":  "HAIL TO KING TIBIANUS!",
+                                          "job":  "I am the sheriff of the Thaian territory.",
+                                          "how":  "I am fine, thanks.",
+                                          "are":  "I am fine, thanks.",
+                                          "you":  "I am fine, thanks.",
+                                          "sell":  "I am in the safety business.",
+                                          "army":  "I usually work with the townguards only.",
+                                          "guard":  "They are our elite forces.",
+                                          "general":  "Old Bloodblade does a fine job.",
+                                          "enemies":  "Our enemies are numerous and not all are obvious.",
+                                          "enemy":  "Our enemies are numerous and not all are obvious.",
+                                          "criminal":  "Our enemies are numerous and not all are obvious.",
+                                          "murderer":  "Our enemies are numerous and not all are obvious.",
+                                          "castle":  "The castle should be relatively safe from criminal transgressions.",
+                                          "subject":  "There are certain criminal objects in the population of our town.",
+                                          "red":  "Most of the red guards serve as cityguards, some work for the TBI though.",
+                                          "secret":  "All i can tell you is, that it\u0027s known as the TBI.",
+                                          "police":  "All i can tell you is, that it\u0027s known as the TBI.",
+                                          "tbi$":  "The Tibian Bureau of Investigation. If you want to know more, ask Chester Kahs about it, but I doubt you\u0027ll get any vital information.",
+                                          "chester":  "His bureau is at the northgate.",
+                                          "silver":  "They are our elite forces.",
+                                          "city":  "The city is not as bad as some people might claim, but we certainly have our problems here.",
+                                          "problem":  "We will handle each problem with care.",
+                                          "stutch":  "A fine warrior, indeed. He is one of the king\u0027s bodyguards.",
+                                          "harsky":  "A fine warrior, indeed. He is one of the king\u0027s bodyguards.",
+                                          "bozo":  "He\u0027s so funny, I could listen to his jokes for hours.",
+                                          "sam":  "Sam, the Thaian smith, is a man of great diligence. Whenever in need of weapons or armor, just ask him.",
+                                          "weapon":  "Sam, the Thaian smith, is a man of great diligence. Whenever in need of weapons or armor, just ask him.",
+                                          "armor":  "Sam, the Thaian smith, is a man of great diligence. Whenever in need of weapons or armor, just ask him.",
+                                          "elane":  "A woman of great skill and courage. No one deserves the title of a Grandmaster of the Paladins more then her.",
+                                          "gorn":  "He was a rowdy in his youth, but now he\u0027s a fine citizen as far as I can tell.",
+                                          "benjamin":  "The poor fool lost his mind some years ago. It\u0027s a good thing they gave him a job in the post office.",
+                                          "ferumbras":  "He attacked our town at several occasions but was repelled each time.",
+                                          "quest":  "Look up our \u0027Tibia\u0027s most wanted\u0027 lists.",
+                                          "mission":  "Look up our \u0027Tibia\u0027s most wanted\u0027 lists.",
+                                          "god":  "I am follower of Banor.",
+                                          "banor":  "He is the patron of justice and bravery.",
+                                          "zathroth":  "Don\u0027t mention this name!",
+                                          "brog":  "The more primitive races such as orcs often worship the raging one.",
+                                          "monster":  "Thais should be relatively safe from direct assaults of monsters.",
+                                          "excalibug":  "If you have any news about the whereabouts of that blade, report it to me.",
+                                          "rebellion":  "Luckily that\u0027s nothing I have to care about.",
+                                          "fuck":  "Take this!",
+                                          "idiot":  "Take this!",
+                                          "asshole":  "Take this!",
+                                          "ass$":  "Take this!",
+                                          "fag$":  "Take this!",
+                                          "stupid":  "Take this!",
+                                          "tyrant":  "Take this!",
+                                          "shit":  "Take this!",
+                                          "lunatic":  "Take this!"
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Salutations!",
+                                                       "I am the sheriff of the Thaian territory."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+                                             "fuck":  {
+                                                          "damage":  0,
+                                                          "effectSelf":  8,
+                                                          "effectTarget":  5
+                                                      },
+                                             "idiot":  {
+                                                           "damage":  0,
+                                                           "effectSelf":  8,
+                                                           "effectTarget":  5
+                                                       },
+                                             "asshole":  {
+                                                             "damage":  0,
+                                                             "effectSelf":  8,
+                                                             "effectTarget":  5
+                                                         },
+                                             "ass$":  {
+                                                          "damage":  0,
+                                                          "effectSelf":  8,
+                                                          "effectTarget":  5
+                                                      },
+                                             "fag$":  {
+                                                          "damage":  0,
+                                                          "effectSelf":  8,
+                                                          "effectTarget":  5
+                                                      },
+                                             "stupid":  {
+                                                            "damage":  0,
+                                                            "effectSelf":  8,
+                                                            "effectTarget":  5
+                                                        },
+                                             "tyrant":  {
+                                                            "damage":  0,
+                                                            "effectSelf":  8,
+                                                            "effectTarget":  5
+                                                        },
+                                             "shit":  {
+                                                          "damage":  0,
+                                                          "effectSelf":  8,
+                                                          "effectTarget":  5
+                                                      },
+                                             "lunatic":  {
+                                                             "damage":  0,
+                                                             "effectSelf":  8,
+                                                             "effectTarget":  5
+                                                         }
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hail$"
+                                                                   ],
+                                                      "response":  "Salutations!",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "salutations$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ]
+                     }
+}

@@ -1,0 +1,303 @@
+{
+    "actionId":  2015,
+    "type":  "lever",
+    "itemIds":  [
+                    1945,
+                    1946
+                ],
+    "conditions":  [
+                       {
+                           "type":  "itemInPosition",
+                           "pos":  {
+                                       "x":  33222,
+                                       "y":  31671,
+                                       "z":  13
+                                   },
+                           "itemId":  425
+                       },
+                       {
+                           "type":  "itemInPosition",
+                           "pos":  {
+                                       "x":  33223,
+                                       "y":  31671,
+                                       "z":  13
+                                   },
+                           "itemId":  425
+                       },
+                       {
+                           "type":  "itemInPosition",
+                           "pos":  {
+                                       "x":  33224,
+                                       "y":  31671,
+                                       "z":  13
+                                   },
+                           "itemId":  425
+                       },
+                       {
+                           "type":  "itemInPosition",
+                           "pos":  {
+                                       "x":  33225,
+                                       "y":  31671,
+                                       "z":  13
+                                   },
+                           "itemId":  425
+                       },
+                       {
+                           "type":  "itemInPosition",
+                           "pos":  {
+                                       "x":  33220,
+                                       "y":  31659,
+                                       "z":  13
+                                   },
+                           "itemId":  1285
+                       }
+                   ],
+    "effects":  [
+                    {
+                        "type":  "transformItem",
+                        "from":  1946,
+                        "to":  1945,
+                        "decay":  true
+                    },
+                    {
+                        "type":  "removeItem",
+                        "pos":  {
+                                    "x":  33220,
+                                    "y":  31659,
+                                    "z":  13
+                                },
+                        "itemId":  1285
+                    },
+                    {
+                        "type":  "removeItem",
+                        "pos":  {
+                                    "x":  33221,
+                                    "y":  31659,
+                                    "z":  13
+                                },
+                        "itemId":  1285
+                    },
+                    {
+                        "type":  "removeItem",
+                        "pos":  {
+                                    "x":  33222,
+                                    "y":  31659,
+                                    "z":  13
+                                },
+                        "itemId":  1285
+                    },
+                    {
+                        "type":  "removeItem",
+                        "pos":  {
+                                    "x":  33223,
+                                    "y":  31659,
+                                    "z":  13
+                                },
+                        "itemId":  1285
+                    },
+                    {
+                        "type":  "removeItem",
+                        "pos":  {
+                                    "x":  33224,
+                                    "y":  31659,
+                                    "z":  13
+                                },
+                        "itemId":  1285
+                    },
+                    {
+                        "type":  "removeItem",
+                        "pos":  {
+                                    "x":  33219,
+                                    "y":  31659,
+                                    "z":  13
+                                },
+                        "itemId":  1285
+                    },
+                    {
+                        "type":  "removeItem",
+                        "pos":  {
+                                    "x":  33219,
+                                    "y":  31657,
+                                    "z":  13
+                                },
+                        "itemId":  1285
+                    },
+                    {
+                        "type":  "removeItem",
+                        "pos":  {
+                                    "x":  33221,
+                                    "y":  31657,
+                                    "z":  13
+                                },
+                        "itemId":  1285
+                    },
+                    {
+                        "type":  "removeItem",
+                        "pos":  {
+                                    "x":  33220,
+                                    "y":  31661,
+                                    "z":  13
+                                },
+                        "itemId":  1285
+                    },
+                    {
+                        "type":  "removeItem",
+                        "pos":  {
+                                    "x":  33222,
+                                    "y":  31661,
+                                    "z":  13
+                                },
+                        "itemId":  1285
+                    },
+                    {
+                        "type":  "createMonster",
+                        "name":  "Demon",
+                        "pos":  {
+                                    "x":  33224,
+                                    "y":  31659,
+                                    "z":  13
+                                }
+                    },
+                    {
+                        "type":  "createMonster",
+                        "name":  "Demon",
+                        "pos":  {
+                                    "x":  33223,
+                                    "y":  31659,
+                                    "z":  13
+                                }
+                    },
+                    {
+                        "type":  "createMonster",
+                        "name":  "Demon",
+                        "pos":  {
+                                    "x":  33219,
+                                    "y":  31657,
+                                    "z":  13
+                                }
+                    },
+                    {
+                        "type":  "createMonster",
+                        "name":  "Demon",
+                        "pos":  {
+                                    "x":  33221,
+                                    "y":  31657,
+                                    "z":  13
+                                }
+                    },
+                    {
+                        "type":  "createMonster",
+                        "name":  "Demon",
+                        "pos":  {
+                                    "x":  33220,
+                                    "y":  31661,
+                                    "z":  13
+                                }
+                    },
+                    {
+                        "type":  "createMonster",
+                        "name":  "Demon",
+                        "pos":  {
+                                    "x":  33222,
+                                    "y":  31661,
+                                    "z":  13
+                                }
+                    },
+                    {
+                        "type":  "relocate",
+                        "from":  {
+                                     "x":  33222,
+                                     "y":  31671,
+                                     "z":  13
+                                 },
+                        "to":  {
+                                   "x":  33219,
+                                   "y":  31659,
+                                   "z":  13
+                               }
+                    },
+                    {
+                        "type":  "relocate",
+                        "from":  {
+                                     "x":  33223,
+                                     "y":  31671,
+                                     "z":  13
+                                 },
+                        "to":  {
+                                   "x":  33220,
+                                   "y":  31659,
+                                   "z":  13
+                               }
+                    },
+                    {
+                        "type":  "relocate",
+                        "from":  {
+                                     "x":  33224,
+                                     "y":  31671,
+                                     "z":  13
+                                 },
+                        "to":  {
+                                   "x":  33221,
+                                   "y":  31659,
+                                   "z":  13
+                               }
+                    },
+                    {
+                        "type":  "relocate",
+                        "from":  {
+                                     "x":  33225,
+                                     "y":  31671,
+                                     "z":  13
+                                 },
+                        "to":  {
+                                   "x":  33222,
+                                   "y":  31659,
+                                   "z":  13
+                               }
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  33219,
+                                    "y":  31659,
+                                    "z":  13
+                                },
+                        "effectId":  11
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  33220,
+                                    "y":  31659,
+                                    "z":  13
+                                },
+                        "effectId":  11
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  33221,
+                                    "y":  31659,
+                                    "z":  13
+                                },
+                        "effectId":  11
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  33222,
+                                    "y":  31659,
+                                    "z":  13
+                                },
+                        "effectId":  11
+                    },
+                    {
+                        "key":  7015,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "effectsAlt":  [
+
+                   ]
+}

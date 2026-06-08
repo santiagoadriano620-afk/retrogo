@@ -1,0 +1,114 @@
+{
+    "actionId":  3000,
+    "type":  "moveEvent",
+    "events":  [
+                   "onStepIn",
+                   "onStepOut"
+               ],
+    "tiles":  [
+                  {
+                      "pos":  {
+                                  "x":  32673,
+                                  "y":  32085,
+                                  "z":  8
+                              },
+                      "vocationIds":  [
+                                          3,
+                                          7
+                                      ],
+                      "itemCondition":  {
+                                            "pos":  {
+                                                        "x":  32673,
+                                                        "y":  32094,
+                                                        "z":  8
+                                                    },
+                                            "itemId":  2376
+                                        }
+                  },
+                  {
+                      "pos":  {
+                                  "x":  32677,
+                                  "y":  32089,
+                                  "z":  8
+                              },
+                      "vocationIds":  [
+                                          1,
+                                          5
+                                      ],
+                      "itemCondition":  {
+                                            "pos":  {
+                                                        "x":  32673,
+                                                        "y":  32083,
+                                                        "z":  8
+                                                    },
+                                            "itemId":  2455
+                                        }
+                  },
+                  {
+                      "pos":  {
+                                  "x":  32669,
+                                  "y":  32089,
+                                  "z":  8
+                              },
+                      "vocationIds":  [
+                                          2,
+                                          6
+                                      ],
+                      "itemCondition":  {
+                                            "pos":  {
+                                                        "x":  32667,
+                                                        "y":  32089,
+                                                        "z":  8
+                                                    },
+                                            "itemId":  2674
+                                        }
+                  },
+                  {
+                      "pos":  {
+                                  "x":  32673,
+                                  "y":  32093,
+                                  "z":  8
+                              },
+                      "vocationIds":  [
+                                          4,
+                                          8
+                                      ],
+                      "itemCondition":  {
+                                            "pos":  {
+                                                        "x":  32679,
+                                                        "y":  32089,
+                                                        "z":  8
+                                                    },
+                                            "itemId":  2175
+                                        }
+                  }
+              ],
+    "transformOnStep":  {
+                            "from":  426,
+                            "to":  425
+                        },
+    "effects":  [
+                    {
+                        "type":  "transformItem",
+                        "from":  426,
+                        "to":  425
+                    },
+                    {
+                        "key":  8000,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "effectsOnStepOut":  [
+                             {
+                                 "type":  "transformItem",
+                                 "from":  425,
+                                 "to":  426
+                             },
+                             {
+                                 "key":  8000,
+                                 "value":  1,
+                                 "type":  "storage"
+                             }
+                         ]
+}

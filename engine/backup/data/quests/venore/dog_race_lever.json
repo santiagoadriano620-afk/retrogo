@@ -1,0 +1,131 @@
+{
+    "actionId":  2040,
+    "type":  "lever",
+    "itemIds":  [
+                    1945,
+                    1946
+                ],
+    "conditions":  [
+                       {
+                           "type":  "itemAtPosition",
+                           "itemId":  386,
+                           "pos":  {
+                                       "x":  32915,
+                                       "y":  32076,
+                                       "z":  6
+                                   }
+                       }
+                   ],
+    "effects":  [
+                    {
+                        "type":  "removeItem",
+                        "pos":  {
+                                    "x":  32915,
+                                    "y":  32076,
+                                    "z":  6
+                                },
+                        "itemId":  386
+                    },
+                    {
+                        "type":  "removeItem",
+                        "pos":  {
+                                    "x":  32915,
+                                    "y":  32080,
+                                    "z":  6
+                                },
+                        "itemId":  386
+                    },
+                    {
+                        "type":  "transformItem",
+                        "from":  1945,
+                        "to":  1946,
+                        "decay":  true
+                    },
+                    {
+                        "key":  7040,
+                        "value":  1,
+                        "type":  "storage"
+                    },
+                    {
+                        "type":  "monsterGoto",
+                        "monsterName":  "Dog",
+                        "centerPos":  {
+                                          "x":  32915,
+                                          "y":  32078,
+                                          "z":  5
+                                      },
+                        "radius":  15,
+                        "targetActionId":  3119
+                    }
+                ],
+    "effectsNoCondition":  [
+                               {
+                                   "type":  "transformItem",
+                                   "from":  1945,
+                                   "to":  1946,
+                                   "decay":  true
+                               }
+                           ],
+    "effectsAlt":  [
+                       {
+                           "type":  "relocate",
+                           "from":  {
+                                        "x":  32915,
+                                        "y":  32076,
+                                        "z":  6
+                                    },
+                           "to":  {
+                                      "x":  32916,
+                                      "y":  32076,
+                                      "z":  6
+                                  }
+                       },
+                       {
+                           "type":  "relocate",
+                           "from":  {
+                                        "x":  32915,
+                                        "y":  32080,
+                                        "z":  6
+                                    },
+                           "to":  {
+                                      "x":  32916,
+                                      "y":  32080,
+                                      "z":  6
+                                  }
+                       },
+                       {
+                           "type":  "createItem",
+                           "itemId":  386,
+                           "count":  1,
+                           "pos":  {
+                                       "x":  32915,
+                                       "y":  32076,
+                                       "z":  6
+                                   }
+                       },
+                       {
+                           "type":  "createItem",
+                           "itemId":  386,
+                           "count":  1,
+                           "pos":  {
+                                       "x":  32915,
+                                       "y":  32080,
+                                       "z":  6
+                                   }
+                       },
+                       {
+                           "type":  "transformItem",
+                           "from":  1946,
+                           "to":  1945,
+                           "decay":  true
+                       }
+                   ],
+    "effectsAltNoCondition":  [
+                                  {
+                                      "type":  "transformItem",
+                                      "from":  1946,
+                                      "to":  1945,
+                                      "decay":  true
+                                  }
+                              ]
+}

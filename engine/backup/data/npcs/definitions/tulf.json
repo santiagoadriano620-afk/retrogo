@@ -1,0 +1,88 @@
+{
+    "creatureStatistics": {
+        "name": "Tulf",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 71,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 2,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "job": "I am the captain of the emperor's personal bodyguards.",
+            "shop": "I am the captain of the emperor's personal bodyguards.",
+            "name": "My name is Tulf Beardweaver, son of Earth, from the Dragoneaters.",
+            "time": "It's  right now.",
+            "help": "Sorry, I am on duty!",
+            "dwarfs": "If you go to a dwarfs' city, do as the dwarfs do.",
+            "monster": "I doubt anyone can make it through our lines of defense.",
+            "dungeon": "I despise the habit to challenge the prisoners of Dwarcatra or provoke the boys in the mines.",
+            "mines": "The mines aren't meant for foreigners. The miners there have enough troubles.",
+            "bodyguard": "We keep up law and order here, though the boys would rather need some practice like taking care for the trouble in the mines.",
+            "trouble": "The mines are raided again and again by the bandits of the Horned Fox.",
+            "horned": "It's a renegade minotaur who has a hidden lair somewhere near our mines.",
+            "fox": "It's a renegade minotaur who has a hidden lair somewhere near our mines.",
+            "lair": "The lair of the Horned Fox is surely well guarded and even better hidden."
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "Hiho! <mumbles>",
+                "I am the captain of the emperor's personal bodyguards."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Hiho! <mumbles>",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hiho$"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ]
+    }
+}

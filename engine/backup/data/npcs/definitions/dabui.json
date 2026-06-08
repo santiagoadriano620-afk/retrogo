@@ -1,0 +1,144 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Dabui",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  112,
+                                              "details":  {
+                                                              "head":  95,
+                                                              "body":  10,
+                                                              "legs":  26,
+                                                              "feet":  76
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  1,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "news":  "The evil of Drefia is strong in these days.",
+                                          "how":  "I am on guard and my soul is strong.",
+                                          "are":  "I am on guard and my soul is strong.",
+                                          "you":  "I am on guard and my soul is strong.",
+                                          "sell":  "Go to the bazaar in the middle of the town.",
+                                          "buy":  "Go to the bazaar in the middle of the town.",
+                                          "caliph":  "Our leader is enlightened by Daraman, thrice praised be his name!",
+                                          "leader":  "Our leader is enlightened by Daraman, thrice praised be his name!",
+                                          "job":  "I am a protector of the people of Darashia.",
+                                          "army":  "This information is confidential.",
+                                          "guard":  "This information is confidential.",
+                                          "daraman":  "The ancient prophet brought our people here from a place long forgotten.",
+                                          "pilgrim":  "Darama led his people on a pilgrimage to the holy lands of Darama to escape temptations and distractions.",
+                                          "necromancer":  "It\u0027s said they fled from the corrupted continent of the thaian empire after losing some battles.",
+                                          "city":  "This city is lovely Darashia, pearl of Darama.",
+                                          "darashia":  "This city is lovely Darashia, pearl of Darama.",
+                                          "darama":  "Darashia is the heart of Darama. In the northeast, across the Devourer, there is the dark pyramid. In the west, across the Plague Spike, are the cursed ruins of Drefia.",
+                                          "plague":  "Mountain of Poison, Scorpions Rock, it\u0027s known by many names. It\u0027s to the west of Darashia.",
+                                          "spike":  "Mountain of Poison, Scorpions Rock, it\u0027s known by many names. It\u0027s to the west of Darashia.",
+                                          "devourer":  "The great desert devoured many of the first pilgrims. We learned the ways of the devourer and thus conquered it.",
+                                          "pyramid":  "The minotaurs took shelter in the ancient pyramid, which our people avoid for the dark powers that might be present there.",
+                                          "drefia":  "The ruins of Drefia in the far west are the hideout of the vile necromancer cult that once corrupted this city.",
+                                          "fuck":  "Take this!",
+                                          "idiot":  "Take this!",
+                                          "asshole":  "Take this!",
+                                          "ass$":  "Take this!",
+                                          "fag$":  "Take this!",
+                                          "stupid":  "Take this!",
+                                          "tyrant":  "Take this!",
+                                          "shit":  "Take this!",
+                                          "lunatic":  "Take this!"
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Daraman\u0027s blessings!",
+                                                       "I am a protector of the people of Darashia."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+                                             "fuck":  {
+                                                          "damage":  0,
+                                                          "effectSelf":  8,
+                                                          "effectTarget":  5
+                                                      },
+                                             "idiot":  {
+                                                           "damage":  0,
+                                                           "effectSelf":  8,
+                                                           "effectTarget":  5
+                                                       },
+                                             "asshole":  {
+                                                             "damage":  0,
+                                                             "effectSelf":  8,
+                                                             "effectTarget":  5
+                                                         },
+                                             "ass$":  {
+                                                          "damage":  0,
+                                                          "effectSelf":  8,
+                                                          "effectTarget":  5
+                                                      },
+                                             "fag$":  {
+                                                          "damage":  0,
+                                                          "effectSelf":  8,
+                                                          "effectTarget":  5
+                                                      },
+                                             "stupid":  {
+                                                            "damage":  0,
+                                                            "effectSelf":  8,
+                                                            "effectTarget":  5
+                                                        },
+                                             "tyrant":  {
+                                                            "damage":  0,
+                                                            "effectSelf":  8,
+                                                            "effectTarget":  5
+                                                        },
+                                             "shit":  {
+                                                          "damage":  0,
+                                                          "effectSelf":  8,
+                                                          "effectTarget":  5
+                                                      },
+                                             "lunatic":  {
+                                                             "damage":  0,
+                                                             "effectSelf":  8,
+                                                             "effectTarget":  5
+                                                         }
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Daraman\u0027s blessings!",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ]
+                     }
+}

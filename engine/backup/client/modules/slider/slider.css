@@ -1,0 +1,53 @@
+select {
+  background-image: url("/images/game/ui/background.png");
+  border: 1px solid black;
+  cursor: default;
+  width: 100%;
+  font-weight: bold;
+  color: #d3d3d3;
+  caret-color: transparent;
+  scrollbar-width: thin;
+}
+
+select option {
+  background-image: url("/images/game/ui/background.png");
+  font-weight: bold;
+  color: #d3d3d3;
+}
+
+select option:nth-child(even) {
+  background-image: url("/images/game/ui/background.png");
+}
+
+.channel-select {
+  width: 100%;
+  overflow: hidden;
+  scrollbar-width: none;
+}
+
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 24px;
+  height: 12px;
+  background-image: url("/images/game/ui/background.png");
+  cursor: default; 
+  border: 1px solid black;
+}
+
+.slider::-moz-range-thumb {
+  width: 24px;
+  height: 12px;
+  background-image: url("/images/game/ui/background.png");
+  cursor: default;
+  border: 1px solid grey;
+  border-radius: 0px;
+}
+
+.slider {
+  background-image: url("/images/game/ui/background.png");
+  padding: 0px;
+  appearance: none;
+  height: 12px;
+  outline: none;
+  caret-color: transparent;
+}

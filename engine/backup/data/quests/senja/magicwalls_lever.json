@@ -1,0 +1,98 @@
+{
+    "actionId":  2039,
+    "type":  "lever",
+    "itemIds":  [
+                    1945
+                ],
+    "conditions":  [
+
+                   ],
+    "effects":  [
+                    {
+                        "type":  "removeItem",
+                        "pos":  {
+                                    "x":  32186,
+                                    "y":  31626,
+                                    "z":  8
+                                },
+                        "itemId":  1498
+                    },
+                    {
+                        "type":  "removeItem",
+                        "pos":  {
+                                    "x":  32187,
+                                    "y":  31626,
+                                    "z":  8
+                                },
+                        "itemId":  1498
+                    },
+                    {
+                        "type":  "removeItem",
+                        "pos":  {
+                                    "x":  32188,
+                                    "y":  31626,
+                                    "z":  8
+                                },
+                        "itemId":  1498
+                    },
+                    {
+                        "type":  "removeItem",
+                        "pos":  {
+                                    "x":  32189,
+                                    "y":  31626,
+                                    "z":  8
+                                },
+                        "itemId":  1498
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  32180,
+                                    "y":  31633,
+                                    "z":  8
+                                },
+                        "effectId":  3
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  32186,
+                                    "y":  31626,
+                                    "z":  8
+                                },
+                        "effectId":  3
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  32187,
+                                    "y":  31626,
+                                    "z":  8
+                                },
+                        "effectId":  3
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  32188,
+                                    "y":  31626,
+                                    "z":  8
+                                },
+                        "effectId":  3
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  32189,
+                                    "y":  31626,
+                                    "z":  8
+                                },
+                        "effectId":  3
+                    },
+                    {
+                        "key":  7039,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ]
+}

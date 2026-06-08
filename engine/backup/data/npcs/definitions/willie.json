@@ -1,0 +1,349 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Willie",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  111,
+                                              "details":  {
+                                                              "head":  58,
+                                                              "body":  63,
+                                                              "legs":  58,
+                                                              "feet":  115
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  2,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "how":  "Fine enough.",
+                                          "are":  "Fine enough.",
+                                          "you":  "Fine enough.",
+                                          "job":  "I am a farmer and a cook.",
+                                          "cook":  "I try out old and new recipes. You can sell me all food you have.",
+                                          "recipe":  "I would love to try a banana-pie. But I lack the bananas. If you get me one, I will reward you.",
+                                          "name":  "Willie.",
+                                          "time":  "Am I a clock or what?",
+                                          "help":  "Help yourself, I have not stolen my time.",
+                                          "monster":  "Are you afraid of monsters ... you baby?",
+                                          "dungeon":  "I have no time for your dungeon nonsense.",
+                                          "sewer":  "What about them? Do you live there?",
+                                          "god":  "I am a farmer, not a preacher.",
+                                          "king":  "I\u0027m glad that we don\u0027t see many officials here.",
+                                          "obi":  "This little $\u0026#@\u0026 has only #@$*# in his mind. One day I will put a #@$@ in his *@\u0026\u0026#@!",
+                                          "seymour":  "This joke of a man thinks he is sooo important.",
+                                          "dallheim":  "Uhm, fine guy I think.",
+                                          "cipfried":  "Our little monkey.",
+                                          "amber":  "Quite a babe.",
+                                          "weapon":  "I\u0027m not in the weapon business, but if you don\u0027t stop to harass me, I will put my hayfork in your \u0026$\u0026#$ and *$!\u0026\u0026*# it.",
+                                          "magic":  "I am magician in the kitchen.",
+                                          "spell":  "I know how to spell and i know how to spit, you little @!#\u0026\u0026. Wanna see?.",
+                                          "tibia":  "If I were you, I would stay here.",
+                                          "offer":  "I can offer you bread, cheese, ham, or meat.",
+                                          "food":  "Are you looking for food? I have bread, cheese, ham, and meat.",
+                                          "sell":  "I sell food of many kinds.",
+                                          "buy":  "I buy food of any kind. Since I am a great cook I need much of it."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Hiho .",
+                                                       "I am a farmer and a cook."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Hiho %N.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here it is.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "I am sorry, but you do not have enough gold.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Maybe later.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "2":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here you are.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "createMoney"
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You don\u0027t have one.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "no"
+                                                                                   ],
+                                                                      "response":  "Then not.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  }
+                                                              ]
+                                              },
+                                        "3":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "A banana! Great. Take this shield, so the \u0026#@\u0026* monsters don\u0027t beat the \u0026@*\u0026@ out of you.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  2526
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Hm, you don\u0027t have it.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Sorry, you do not have so many.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "no"
+                                                                                   ],
+                                                                      "response":  "Too bad.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Too bad.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Bread",
+                                                         "price":  3,
+                                                         "id":  2689,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Cheese",
+                                                         "price":  5,
+                                                         "id":  2696,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Meat",
+                                                         "price":  5,
+                                                         "id":  2666,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Ham",
+                                                         "price":  8,
+                                                         "id":  2671,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Bread",
+                                                         "price":  1,
+                                                         "id":  2689,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Cheese",
+                                                         "price":  2,
+                                                         "id":  2696,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Meat",
+                                                         "price":  2,
+                                                         "id":  2666,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Ham",
+                                                         "price":  4,
+                                                         "id":  2671,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Salmon",
+                                                         "price":  2,
+                                                         "id":  2668,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Cherry",
+                                                         "price":  1,
+                                                         "id":  2679,
+                                                         "type":  "buy"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "willie.js"
+                     }
+}

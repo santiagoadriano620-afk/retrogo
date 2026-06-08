@@ -1,0 +1,89 @@
+{
+    "actionId":  2042,
+    "type":  "lever",
+    "itemIds":  [
+                    1945,
+                    1946
+                ],
+    "conditions":  [
+
+                   ],
+    "effects":  [
+                    {
+                        "type":  "transformItem",
+                        "from":  1945,
+                        "to":  1946
+                    },
+                    {
+                        "type":  "removeItem",
+                        "pos":  {
+                                    "x":  32649,
+                                    "y":  32923,
+                                    "z":  8
+                                },
+                        "itemId":  1335
+                    },
+                    {
+                        "type":  "transformItemInPosition",
+                        "pos":  {
+                                    "x":  32649,
+                                    "y":  32923,
+                                    "z":  8
+                                },
+                        "from":  351,
+                        "to":  383
+                    },
+                    {
+                        "type":  "transformItemInPosition",
+                        "pos":  {
+                                    "x":  32652,
+                                    "y":  32922,
+                                    "z":  8
+                                },
+                        "from":  1945,
+                        "to":  1946
+                    },
+                    {
+                        "key":  7042,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "effectsAlt":  [
+                       {
+                           "type":  "transformItem",
+                           "from":  1946,
+                           "to":  1945
+                       },
+                       {
+                           "type":  "transformItemInPosition",
+                           "pos":  {
+                                       "x":  32649,
+                                       "y":  32923,
+                                       "z":  8
+                                   },
+                           "from":  383,
+                           "to":  351
+                       },
+                       {
+                           "type":  "createItem",
+                           "itemId":  1335,
+                           "count":  1,
+                           "pos":  {
+                                       "x":  32649,
+                                       "y":  32923,
+                                       "z":  8
+                                   }
+                       },
+                       {
+                           "type":  "transformItemInPosition",
+                           "pos":  {
+                                       "x":  32652,
+                                       "y":  32922,
+                                       "z":  8
+                                   },
+                           "from":  1946,
+                           "to":  1945
+                       }
+                   ]
+}

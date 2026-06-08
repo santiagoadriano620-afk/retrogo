@@ -1,0 +1,11 @@
+{
+  "actionId": 3109,
+  "type": "home",
+  "events": ["onStepIn", "onAddItem"],
+  "tileItem": true,
+  "town": "Kazordoon",
+  "teleport": { "to": { "x": 32649, "y": 31925, "z": 11 } },
+  "magicEffect": 13,
+  "teleportAddItem": { "to": { "x": 32647, "y": 31925, "z": 12 } },
+  "magicEffectAddItem": 14
+}

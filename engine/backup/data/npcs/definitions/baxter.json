@@ -1,0 +1,255 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Baxter",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  114,
+                                              "details":  {
+                                                              "head":  96,
+                                                              "body":  29,
+                                                              "legs":  29,
+                                                              "feet":  115
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  3,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "news":  "It is rumoured that Ferumbras is planning a new attack on town.",
+                                          "how":  "I am healthy and vigilant.",
+                                          "are":  "I am healthy and vigilant.",
+                                          "you":  "I am healthy and vigilant.",
+                                          "sell":  "Visit Tibia\u0027s shopkeepers to buy their fine wares.",
+                                          "king":  "King Tibianus III is our wise and just leader!",
+                                          "leader":  "King Tibianus III is our wise and just leader!",
+                                          "job":  "I am a proud member of the king\u0027s army. It is my duty to guard the castle.",
+                                          "army":  "Our brave army, which protects our city, consists of three battlegroups.",
+                                          "guard":  "The best sorcerers, paladins, knights, or druids of our forces are choosen to serve as silver guards. They are the bodyguards of the king.",
+                                          "battlegroup":  "There are the dogs of war, the red guards, and the silver guards.",
+                                          "castle":  "His Royal Highness ordered the castle to be open for all his subjects.",
+                                          "subject":  "We all live under the benevolent guidance of our king.",
+                                          "dogs":  "They are our main army.",
+                                          "of":  "They are our main army.",
+                                          "war":  "They are our main army.",
+                                          "red":  "They are our special forces. Some serve as cityguards, others as secret police.",
+                                          "secret":  "Ask a higher offical about that.",
+                                          "police":  "Ask a higher offical about that.",
+                                          "silver":  "The best sorcerers, paladins, knights, or druids of our forces are choosen to serve as silver guards. They are the bodyguards of the king.",
+                                          "city":  "Now that the king returned, we will clean the city from all scum.",
+                                          "scum":  "To much scum roams our streets in our days, the red guards will take care of them.",
+                                          "stutch":  "He is soldier in the silver guard.",
+                                          "harsky":  "He is soldier in the silver guard.",
+                                          "bozo":  "The royal jester. I dont think he is funny.",
+                                          "sam":  "He is a fine blacksmith. Almost all our weapons are made by him.",
+                                          "gorn":  "An old friend of mine. He was once a great warrior and adventurer, now he is running a shop.",
+                                          "benjamin":  "He was one of the king\u0027s best generals, now he is a bit ...uhm... forgetful.",
+                                          "excalibug":  "Gorn and I searched for this weapon in the darkest corners of each dungeon, but found nothing.",
+                                          "partos":  "He was wanted for a long time and got caught stealing some time ago.",
+                                          "chester":  "This man is paranoid, but I guess that is useful in his job.",
+                                          "tbi":  "There is almost nothing known about that organization.",
+                                          "work":  "We have a rat problem in the sewers. In the name of our glorious king I am paying 1 blinking piece of gold for every freshly killed rat you bring to me.",
+                                          "mission":  "We have a rat problem in the sewers. In the name of our glorious king I am paying 1 blinking piece of gold for every freshly killed rat you bring to me.",
+                                          "quest":  "We have a rat problem in the sewers. In the name of our glorious king I am paying 1 blinking piece of gold for every freshly killed rat you bring to me.",
+                                          "fuck":  "Take this!",
+                                          "idiot":  "Take this!",
+                                          "asshole":  "Take this!",
+                                          "ass$":  "Take this!",
+                                          "fag$":  "Take this!",
+                                          "stupid":  "Take this!",
+                                          "tyrant":  "Take this!",
+                                          "shit":  "Take this!",
+                                          "lunatic":  "Take this!"
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "LONG LIVE KING TIBIANUS!",
+                                                       "I am a proud member of the king\u0027s army. It is my duty to guard the castle."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+                                             "fuck":  {
+                                                          "damage":  0,
+                                                          "effectSelf":  8,
+                                                          "effectTarget":  5
+                                                      },
+                                             "idiot":  {
+                                                           "damage":  0,
+                                                           "effectSelf":  8,
+                                                           "effectTarget":  5
+                                                       },
+                                             "asshole":  {
+                                                             "damage":  0,
+                                                             "effectSelf":  8,
+                                                             "effectTarget":  5
+                                                         },
+                                             "ass$":  {
+                                                          "damage":  0,
+                                                          "effectSelf":  8,
+                                                          "effectTarget":  5
+                                                      },
+                                             "fag$":  {
+                                                          "damage":  0,
+                                                          "effectSelf":  8,
+                                                          "effectTarget":  5
+                                                      },
+                                             "stupid":  {
+                                                            "damage":  0,
+                                                            "effectSelf":  8,
+                                                            "effectTarget":  5
+                                                        },
+                                             "tyrant":  {
+                                                            "damage":  0,
+                                                            "effectSelf":  8,
+                                                            "effectTarget":  5
+                                                        },
+                                             "shit":  {
+                                                          "damage":  0,
+                                                          "effectSelf":  8,
+                                                          "effectTarget":  5
+                                                      },
+                                             "lunatic":  {
+                                                             "damage":  0,
+                                                             "effectSelf":  8,
+                                                             "effectTarget":  5
+                                                         }
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "LONG LIVE KING TIBIANUS!",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  "LONG LIVE KING TIBIANUS!",
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "fruit"
+                                                                                   ],
+                                                                      "response":  "I understand he was stealing some fruit, he is obsessed with, and got incautious.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "What has this to do with this Partos guy?",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "2":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here is your reward. You will become a great warrior some day.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "createMoney"
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Look like it wasn\u0027t as dead as you thought ... it\u0027s gone.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Come on. Don\u0027t waste my time with your jests.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+                                                   "partos":  1
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Dead Rat",
+                                                         "price":  1,
+                                                         "id":  2813,
+                                                         "type":  "sell"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "baxter.js"
+                     }
+}

@@ -1,0 +1,205 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Norbert",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  111,
+                                              "details":  {
+                                                              "head":  6,
+                                                              "body":  79,
+                                                              "legs":  93,
+                                                              "feet":  14
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  1,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "name":  "I am Norbert.",
+                                          "job":  "I am a salesperson here, but one day I might become a tailor, or a supermodel perhaps!",
+                                          "time":  "Now it\u0027s . Did you notice this is a xelor watch I am wearing?",
+                                          "xelor":  "Xelor, the dwarf of the chromancers guild, makes the most stylish watches in all the land.",
+                                          "king":  "Even the king of Thais, blessed be his name, can\u0027t buy a better wardrobe then ours.",
+                                          "tibianus":  "Even the king of Thais, blessed be his name, can\u0027t buy a better wardrobe then ours.",
+                                          "army":  "I don\u0027t think they dress that well.",
+                                          "ferumbras":  "Those evil mages dress so ugly.",
+                                          "excalibug":  "I fear such a weapon will ruin a silk shirt with one blow.",
+                                          "thais":  "Thaian wear is not that stylish anymore.",
+                                          "tibia":  "Our tailors are influenced by styles of the whole known world.",
+                                          "carlin":  "Women could do better then to wear armor. Women in leather scare my in particular.",
+                                          "hugo":  "He\u0027s our boss, a great tailor and designer.",
+                                          "chief":  "He\u0027s our boss, a great tailor and designer.",
+                                          "news":  "I heared the colour of the next season will be orange.",
+                                          "rumour":  "I heared the colour of the next season will be orange.",
+                                          "rumor":  "I heared the colour of the next season will be orange.",
+                                          "offer":  "I sell very stylish clothes indeed.",
+                                          "goods":  "I sell very stylish clothes indeed.",
+                                          "do":  "I sell very stylish clothes indeed.",
+                                          "you":  "I sell very stylish clothes indeed.",
+                                          "sell":  "I sell very stylish clothes indeed.",
+                                          "have":  "I sell very stylish clothes indeed.",
+                                          "clothes":  "I have wonderful jackets, coats, lovely doublets, even warlike leather armor, and impressive studded armor."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Wow! The great visiting our shop! LOOK PEOPLE, LOOK HERE!.",
+                                                       "Welcome, .",
+                                                       "I am a salesperson here, but one day I might become a tailor, or a supermodel perhaps!"
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Wow! The great %N visiting our shop! LOOK PEOPLE, LOOK HERE!.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Welcome, %N.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "And here you are.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Sorry, you do not have enough money.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "What a pity, perhaps next time.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Coat",
+                                                         "price":  8,
+                                                         "id":  2651,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Jacket",
+                                                         "price":  12,
+                                                         "id":  2650,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Doublet",
+                                                         "price":  16,
+                                                         "id":  2485,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Leather Armor",
+                                                         "price":  25,
+                                                         "id":  2467,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Studded Armor",
+                                                         "price":  90,
+                                                         "id":  2484,
+                                                         "type":  "sell"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "norbert.js"
+                     }
+}

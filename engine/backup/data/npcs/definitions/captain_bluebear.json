@@ -1,0 +1,568 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Captain Bluebear",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  112,
+                                              "details":  {
+                                                              "head":  19,
+                                                              "body":  69,
+                                                              "legs":  107,
+                                                              "feet":  50
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  2,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "travel":  true,
+                         "keywords":  {
+                                          "name":  "My name is Captain Bluebear from the Royal Tibia Line.",
+                                          "job":  "I am the captain of this sailing-ship.",
+                                          "captain":  "I am the captain of this sailing-ship.",
+                                          "ship":  "The Royal Tibia Line connects all seaside towns of Tibia.",
+                                          "line":  "The Royal Tibia Line connects all seaside towns of Tibia.",
+                                          "company":  "The Royal Tibia Line connects all seaside towns of Tibia.",
+                                          "route":  "The Royal Tibia Line connects all seaside towns of Tibia.",
+                                          "tibia":  "The Royal Tibia Line connects all seaside towns of Tibia.",
+                                          "good":  "We can transport everything you want.",
+                                          "passenger":  "We would like to welcome you on board.",
+                                          "trip":  "Where do you want to go? To Carlin, Ab\u0027Dendriel, Venore, Port Hope or Edron?",
+                                          "passage":  "Where do you want to go? To Carlin, Ab\u0027Dendriel, Venore, Port Hope or Edron?",
+                                          "town":  "Where do you want to go? To Carlin, Ab\u0027Dendriel, Venore, Port Hope or Edron?",
+                                          "destination":  "Where do you want to go? To Carlin, Ab\u0027Dendriel, Venore, Port Hope or Edron?",
+                                          "sail":  "Where do you want to go? To Carlin, Ab\u0027Dendriel, Venore, Port Hope or Edron?",
+                                          "go":  "Where do you want to go? To Carlin, Ab\u0027Dendriel, Venore, Port Hope or Edron?",
+                                          "ice":  "I\u0027m sorry, but we don\u0027t serve the routes to the Ice Islands.",
+                                          "senja":  "I\u0027m sorry, but we don\u0027t serve the routes to the Ice Islands.",
+                                          "folda":  "I\u0027m sorry, but we don\u0027t serve the routes to the Ice Islands.",
+                                          "vega":  "I\u0027m sorry, but we don\u0027t serve the routes to the Ice Islands.",
+                                          "darashia":  "I\u0027m not sailing there. This route is afflicted by a ghostship! However I\u0027ve heard that Captain Fearless from Venore sails there.",
+                                          "darama":  "I\u0027m not sailing there. This route is afflicted by a ghostship! However I\u0027ve heard that Captain Fearless from Venore sails there.",
+                                          "ghost":  "Many people who sailed to Darashia never returned because they were attacked by a ghostship! I\u0027ll never sail there!",
+                                          "thais":  "This is Thais. Where do you want to go?",
+                                          "carlin":  "Do you seek a passage to Carlin for 100 gold?",
+                                          "ab\u0027dendriel":  "Do you seek a passage to Ab\u0027Dendriel for 120 gold?",
+                                          "edron":  "Do you seek a passage to Edron for 150 gold?",
+                                          "venore":  "Do you seek a passage to Venore for 160 gold?",
+                                          "port":  "Do you seek a passage to Port Hope for 150 gold?",
+                                          "hope":  "Do you seek a passage to Port Hope for 150 gold?"
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Welcome on board, Sir .",
+                                                       "Welcome on board, Madam .",
+                                                       "I am the captain of this sailing-ship."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Welcome on board, Sir %N.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Welcome on board, Madam %N.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "2":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Set the sails!",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         },
+                                                                                         {
+                                                                                             "type":  "premium"
+                                                                                         },
+                                                                                         {
+                                                                                             "type":  "questValue",
+                                                                                             "questId":  227,
+                                                                                             "value":  1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "teleport",
+                                                                                          "x":  32390,
+                                                                                          "y":  31821,
+                                                                                          "z":  7
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "setQuest",
+                                                                                          "questId":  227,
+                                                                                          "value":  2
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Set the sails!",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         },
+                                                                                         {
+                                                                                             "type":  "premium"
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "teleport",
+                                                                                          "x":  32390,
+                                                                                          "y":  31821,
+                                                                                          "z":  7
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "I\u0027m sorry, but you need a premium account in order to travel onboard our ships.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You don\u0027t have enough money.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "We would like to serve you some time.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "3":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Set the sails!",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         },
+                                                                                         {
+                                                                                             "type":  "premium"
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "teleport",
+                                                                                          "x":  32733,
+                                                                                          "y":  31664,
+                                                                                          "z":  7
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "I\u0027m sorry, but you need a premium account in order to travel onboard our ships.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You don\u0027t have enough money.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "We would like to serve you some time.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "4":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Set the sails!",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         },
+                                                                                         {
+                                                                                             "type":  "premium"
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "teleport",
+                                                                                          "x":  33182,
+                                                                                          "y":  31764,
+                                                                                          "z":  7
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "I\u0027m sorry, but you need a premium account in order to travel onboard our ships.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You don\u0027t have enough money.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "We would like to serve you some time.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "5":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Set the sails!",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         },
+                                                                                         {
+                                                                                             "type":  "premium"
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "teleport",
+                                                                                          "x":  32960,
+                                                                                          "y":  32022,
+                                                                                          "z":  7
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "I\u0027m sorry, but you need a premium account in order to travel onboard our ships.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You don\u0027t have enough money.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "We would like to serve you some time.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "7":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Set the sails!",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         },
+                                                                                         {
+                                                                                             "type":  "premium"
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "teleport",
+                                                                                          "x":  32530,
+                                                                                          "y":  32784,
+                                                                                          "z":  6
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "I\u0027m sorry, but you need a premium account in order to travel onboard our ships.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You don\u0027t have enough money.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "We would like to serve you some time.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+                                                   "carlin":  2,
+                                                   "ab\u0027dendriel":  3,
+                                                   "edron":  4,
+                                                   "venore":  5,
+                                                   "port":  7,
+                                                   "hope":  7
+                                               },
+                         "keywordTopicPrices":  {
+                                                    "carlin":  100,
+                                                    "ab\u0027dendriel":  120,
+                                                    "edron":  150,
+                                                    "venore":  160,
+                                                    "port":  150,
+                                                    "hope":  150
+                                                },
+                         "script":  "captain_bluebear.js"
+                     }
+}

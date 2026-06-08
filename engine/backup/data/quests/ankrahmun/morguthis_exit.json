@@ -1,0 +1,68 @@
+{
+    "actionId":  3069,
+    "type":  "moveEvent",
+    "events":  [
+                   "onStepIn",
+                   "onAddItem"
+               ],
+    "conditions":  [
+                       {
+                           "type":  "playerItemCount",
+                           "itemId":  2350,
+                           "count":  1
+                       },
+                       {
+                           "type":  "storage",
+                           "key":  263,
+                           "value":  -1
+                       }
+                   ],
+    "effects":  [
+                    {
+                        "type":  "relocate",
+                        "to":  {
+                                   "x":  33182,
+                                   "y":  32715,
+                                   "z":  14
+                               }
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  33182,
+                                    "y":  32715,
+                                    "z":  14
+                                },
+                        "effectId":  11
+                    },
+                    {
+                        "type":  "removeItem",
+                        "itemId":  2350,
+                        "count":  1
+                    },
+                    {
+                        "key":  8069,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "effectsAlt":  [
+                       {
+                           "type":  "relocate",
+                           "to":  {
+                                      "x":  33231,
+                                      "y":  32705,
+                                      "z":  8
+                                  }
+                       },
+                       {
+                           "type":  "magicEffect",
+                           "pos":  {
+                                       "x":  33231,
+                                       "y":  32705,
+                                       "z":  8
+                                   },
+                           "effectId":  11
+                       }
+                   ]
+}

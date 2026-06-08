@@ -1,0 +1,94 @@
+{
+    "actionId":  2032,
+    "type":  "elevator",
+    "itemIds":  [
+                    1945,
+                    1946
+                ],
+    "conditions":  [
+
+                   ],
+    "effects":  [
+                    {
+                        "type":  "relocate",
+                        "from":  {
+                                     "x":  32636,
+                                     "y":  31881,
+                                     "z":  7
+                                 },
+                        "to":  {
+                                   "x":  32636,
+                                   "y":  31881,
+                                   "z":  2
+                               }
+                    },
+                    {
+                        "type":  "transformItem",
+                        "from":  1945,
+                        "to":  1946,
+                        "decay":  true
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  32636,
+                                    "y":  31881,
+                                    "z":  7
+                                },
+                        "effectId":  3
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  32636,
+                                    "y":  31881,
+                                    "z":  2
+                                },
+                        "effectId":  3
+                    },
+                    {
+                        "key":  7032,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "effectsAlt":  [
+                       {
+                           "type":  "relocate",
+                           "from":  {
+                                        "x":  32636,
+                                        "y":  31881,
+                                        "z":  2
+                                    },
+                           "to":  {
+                                      "x":  32636,
+                                      "y":  31881,
+                                      "z":  7
+                                  }
+                       },
+                       {
+                           "type":  "transformItem",
+                           "from":  1946,
+                           "to":  1945,
+                           "decay":  true
+                       },
+                       {
+                           "type":  "magicEffect",
+                           "pos":  {
+                                       "x":  32636,
+                                       "y":  31881,
+                                       "z":  7
+                                   },
+                           "effectId":  3
+                       },
+                       {
+                           "type":  "magicEffect",
+                           "pos":  {
+                                       "x":  32636,
+                                       "y":  31881,
+                                       "z":  2
+                                   },
+                           "effectId":  3
+                       }
+                   ]
+}

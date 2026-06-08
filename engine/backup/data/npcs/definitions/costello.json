@@ -1,0 +1,262 @@
+{
+    "creatureStatistics": {
+        "name": "Costello",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 57,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 3,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "job": "I am the abbot of the white raven monastery on the isle of the kings.",
+            "name": "My name is Costello.",
+            "tibia": "That is the name of our world and its major continent.",
+            "god": "They created Tibia and all life on it.",
+            "life": "On Tibia there are many forms of life. Plants, the citizens, and monsters.",
+            "plant": "Just walk around, you will see grass, trees, and bushes.",
+            "white": "The legends tell us of a white raven which lead the ship of the first monk of our order here. He discovered this isle and the caves beneath it.",
+            "raven": "The legends tell us of a white raven which lead the ship of the first monk of our order here. He discovered this isle and the caves beneath it.",
+            "caves": "Anselm, the first of our order, discovered them while looking for a suitable burial place for his king.",
+            "anselm": "He was a humble and pious man, and he was chosen by the royal family of thais to find a resting place for their dead.",
+            "isle": "We founded our monastery to guard the royal tombs and to gather wisdom and knowledge.",
+            "order": "We founded our monastery to guard the royal tombs and to gather wisdom and knowledge.",
+            "wisdom": "You are allowed to enter the library upstairs. Stay there and don't go upstairs, because that area is reserved for members of our order.",
+            "knowledge": "You are allowed to enter the library upstairs. Stay there and don't go upstairs, because that area is reserved for members of our order.",
+            "tibianus": "One day every Tibianus ends up here.",
+            "king": "The bygone leaders of the Thaian empire rest beneath this monastery in tombs and crypts.",
+            "tomb": "The tombs and crypts of the Thaian lineage are well protected deep beneath our abbey, although ... but surely this will not interest you.",
+            "crypts": "The tombs and crypts of the Thaian lineage are well protected deep beneath our abbey, although ... but surely this will not interest you.",
+            "although": "In my dreams the dead are talking to me about torment and disturbance. But I might be imagining things.",
+            "interest": "In my dreams the dead are talking to me about torment and disturbance. But I might be imagining things.",
+            "imagining": "Brother Fugio, the only one of our order who is allowed to enter the crypts, assures me everything is all right.",
+            "torment": "Brother Fugio, the only one of our order who is allowed to enter the crypts, assures me everything is all right.",
+            "disturbance": "Brother Fugio, the only one of our order who is allowed to enter the crypts, assures me everything is all right.",
+            "fugio": "To be honest, I fear the omen in my dreams may be true. Perhaps Fugio is unable to see the danger down there. Perhaps ... you are willing to investigate this matter?",
+            "alright": "To be honest, I fear the omen in my dreams may be true. Perhaps Fugio is unable to see the danger down there. Perhaps ... you are willing to investigate this matter?",
+            "diary": "Thank you again for handing me that diary.",
+            "passage": "You should not be here at all and I won't allow anyone to transport you from or to this isle.",
+            "ferumbras": "Don't mention this servant of evil here.",
+            "excalibug": "Sadly we have only little knowledge on this topic.",
+            "news": "Sorry, we rarely hear anything new here.",
+            "monster": "There are really too many of them in Tibia. But who are we to question the wisdom of the gods?",
+            "heal$": "You aren't looking that bad. Sorry, I can't help you."
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "WHAT? You have to be that trespasser my brothers told me about! Entering the restricted area is a horrible crime!",
+                "Welcome, ! Feel free to tell me what has brought you here.",
+                "I am the abbot of the white raven monastery on the isle of the kings."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {
+            "heal$": {
+                "damage": 40,
+                "effectSelf": null,
+                "effectTarget": 13
+            }
+        },
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "WHAT? You have to be that trespasser my brothers told me about! Entering the restricted area is a horrible crime!",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Welcome, %N! Feel free to tell me what has brought you here.",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ],
+        "topics": {
+            "1": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Thank you very much! From now on you may open the warded doors to the catacombs",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "setQuest",
+                                "questId": 63,
+                                "value": 1
+                            },
+                            {
+                                "type": "setQuest",
+                                "questId": 64,
+                                "value": 1
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "no"
+                        ],
+                        "response": "Please forgive an old man, I shouldn't have asked a stranger anyways.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": null,
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "2": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "By the gods! This is brother Fugio's handwriting and what I read is horrible indeed! You have done our order a great favour by giving this diary to me! Take this blessed Ankh. May it protect you in even your darkest hours.",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "createItem",
+                                "id": 2327
+                            },
+                            {
+                                "type": "setQuest",
+                                "questId": 219,
+                                "value": 2
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "no"
+                        ],
+                        "response": "Uhm, as you wish.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": null,
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "4": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Begone! You do not have enough money!",
+                        "conditions": [
+                            {
+                                "type": "gold",
+                                "max": -1
+                            }
+                        ],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "So receive your absolution! And never do such a thing again!",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "deleteMoney",
+                                "amount": -1
+                            },
+                            {
+                                "type": "setQuest",
+                                "questId": 220,
+                                "value": 0
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Then be gone!",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isCatchAll": true
+                    }
+                ]
+            }
+        },
+        "keywordNextTopics": {},
+        "trade": {
+            "items": []
+        },
+        "script": "costello.js"
+    }
+}

@@ -1,0 +1,321 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Seymour",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  111,
+                                              "details":  {
+                                                              "head":  115,
+                                                              "body":  69,
+                                                              "legs":  87,
+                                                              "feet":  116
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  1,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "how":  "Well, the king doesn\u0027t send troops anymore, the academy is dreadfully low on money, and the end of the world is pretty nigh. Apart from that I am reasonably fine, I suppose.",
+                                          "are":  "Well, the king doesn\u0027t send troops anymore, the academy is dreadfully low on money, and the end of the world is pretty nigh. Apart from that I am reasonably fine, I suppose.",
+                                          "you":  "Well, the king doesn\u0027t send troops anymore, the academy is dreadfully low on money, and the end of the world is pretty nigh. Apart from that I am reasonably fine, I suppose.",
+                                          "sell":  "I sell the Key to Adventure for 5 gold! If you are interested, tell me that you want to buy the key.",
+                                          "job":  "I am the master of this fine academy.",
+                                          "academy":  "Our academy has a library, a training center in the cellars and the oracle upstairs.",
+                                          "library":  "Go and read our books. Ignorance may mean death, so be careful.",
+                                          "train":  "You can try some basic things down there, but don\u0027t challenge the monsters in our arena if you are inexperienced.",
+                                          "center":  "You can try some basic things down there, but don\u0027t challenge the monsters in our arena if you are inexperienced.",
+                                          "cellar":  "You can try some basic things down there, but don\u0027t challenge the monsters in our arena if you are inexperienced.",
+                                          "oracle":  "You will find the oracle upstairs. Talk to the oracle as soon as you have made level 8. Choose a vocation and a new home town, and you will be sent off to the continent.",
+                                          "vocation":  "You will find the oracle upstairs. Talk to the oracle as soon as you have made level 8. Choose a vocation and a new home town, and you will be sent off to the continent.",
+                                          "rookgaard":  "Here on Rookgaard we have some people, a temple, some shops, a farm and an academy.",
+                                          "name":  "My name is Seymour, but to you I am \u0027Sir\u0027 Seymour.",
+                                          "seymour":  "My name is Seymour, but to you I am \u0027Sir\u0027 Seymour.",
+                                          "sir":  "At least you know how to address a man of my importance.",
+                                          "time":  "It is , so you are late. Hurry!",
+                                          "help":  "I can assist you with my advice.",
+                                          "hint":  "I can assist you with my advice.",
+                                          "people":  "Well, there\u0027s me, Cipfried, Willie, Obi, Amber, Dallheim, Al Dee, Norma, and Hyacinth.",
+                                          "advice":  "Read the blackboard for some hints and visit the training center in the cellar.",
+                                          "monster":  "You can learn about Tibia\u0027s monsters in our library.",
+                                          "dungeon":  "There are some dungeons on this isle. You should be strong enough to explore them now, but make sure to take a rope with you.",
+                                          "sewer":  "Our sewers are overrun with rats. If you own some equipment you could go down a sewer grate and fight the vermin.",
+                                          "god":  "You can learn much about Tibia\u0027s gods in our library.",
+                                          "gamemaster":  "If you have serious problems with the game or with other people who are harassing you, contact a counsellor or a gamemaster using CTRL+R.",
+                                          "counsellor":  "If you have serious problems with the game or with other people who are harassing you, contact a counsellor or a gamemaster using CTRL+R.",
+                                          "king":  "Hail to King Tibianus! Long live our king! Not that he cares for an old veteran who is stuck on this godforsaken island...",
+                                          "obi":  "A cousin of Thais\u0027 smith Sam. He has a shop here where you can buy most stuff an adventurer needs.",
+                                          "cipfried":  "A humble monk with healing powers, and a pupil of the great Quentin himself.",
+                                          "amber":  "A traveller from the main land. I wonder what brought her here, since no one comes here of his own free will.",
+                                          "willie":  "Willie is a fine farmer, although he has short temper.",
+                                          "hyacinth":  "A mysterious druid who lives somewhere in the wilderness. He sells precious life fluids.",
+                                          "dallheim":  "Oh good Dallheim! What a fighter he is! Without him we would be doomed.",
+                                          "al":  "He is a shop owner in the northwestern part of the village.",
+                                          "dee":  "He is a shop owner in the northwestern part of the village.",
+                                          "quentin":  "He is responsible for the temple in Thais.",
+                                          "life":  "A rare magic potion that restores health.",
+                                          "fluid":  "A rare magic potion that restores health.",
+                                          "fuck":  "For this remark I will wash your mouth with soap, young lady!",
+                                          "bug":  "Nasty little creatures, but once you have a suitable weapon and perhaps a shield they will be no match for you.",
+                                          "weapon":  "You need fine weapons to fight the tougher beasts. Unfortunately only the most basic weapons and armor are available here. You will have to fight some monsters to get a better weapon.",
+                                          "magic":  "The only magic-user on this isle is old Hyacinth.",
+                                          "tibia":  "Oh, how I miss the crowded streets of Thais. I know one day I will get promoted and get a job at the castle... I must get out of here! The faster the better! It is people like you who are driving me mad.",
+                                          "castle":  "The castle of Thais is the greatest achievement in Tibian history.",
+                                          "mission":  "Well I would like to send our king a little present, but I do not have a suitable box. If you find a nice box, please bring it to me.",
+                                          "quest":  "Well I would like to send our king a little present, but I do not have a suitable box. If you find a nice box, please bring it to me."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Hello, . What do you need?",
+                                                       "I am the master of this fine academy."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+                                             "fuck":  {
+                                                          "damage":  0,
+                                                          "effectSelf":  null,
+                                                          "effectTarget":  8
+                                                      }
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello"
+                                                                   ],
+                                                      "response":  "Hello, %N. What do you need?",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "no"
+                                                                                   ],
+                                                                      "response":  "As you wish.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here you are.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You don\u0027t have enough money.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Only nonsense on your mind, eh?",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "2":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Thank you! Here is your reward.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "createMoney"
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "HEY! You don\u0027t have one! Stop playing tricks on fooling me or I will give you some extra work!",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "HEY! You do not have so many!",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Go and find some rats to kill!",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "3":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "THANK YOU! Here is a helmet that will serve you well.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  2480
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "HEY! You don\u0027t have one! Stop playing tricks on me or I will give some extra work!",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  null,
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                  {
+                                                          "name":  "Silver Key",
+                                                          "price":  5,
+                                                          "id":  2088,
+                                                          "type":  "sell",
+                                                          "actionId":  4600
+                                                      }
+                                                 ]
+                                   },
+                         "script":  "seymour.js"
+                     }
+}

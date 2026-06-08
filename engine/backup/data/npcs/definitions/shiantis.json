@@ -1,0 +1,613 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Shiantis",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  118,
+                                              "details":  {
+                                                              "head":  0,
+                                                              "body":  36,
+                                                              "legs":  13,
+                                                              "feet":  76
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  2,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "I am selling several kinds of equipment and decoration. What is your need?",
+                                          "name":  "I am Shiantis.",
+                                          "time":  "I won\u0027t tell you for free, but maybe you want to buy a watch?",
+                                          "king":  "I would love to see the royal taxes lowered.",
+                                          "tibianus":  "I would love to see the royal taxes lowered.",
+                                          "army":  "I think it\u0027s needed for protection. We pay enough taxes for this.",
+                                          "ferumbras":  "Ferumbras dolls were not the saleshit we expected. Sold all stock to a strange guy who bought a bunch of needles, too.",
+                                          "excalibug":  "Sorry, we run out of stock. I expect another load of wodden excalibug simulacra to arrive next week.",
+                                          "news":  "I heard the merchants will petition the king to lower the taxes.",
+                                          "tax":  "I heard the merchants will petition the king to lower the taxes.",
+                                          "offer":  "As you can see, our inventory is large, just have a look.",
+                                          "goods":  "At this booth we sell containers, decoration, illumination, paperware, footballs, and watches.",
+                                          "do":  "At this booth we sell containers, decoration, illumination, paperware, footballs, and watches.",
+                                          "you":  "At this booth we sell containers, decoration, illumination, paperware, footballs, and watches.",
+                                          "sell":  "At this booth we sell containers, decoration, illumination, paperware, footballs, and watches.",
+                                          "have":  "At this booth we sell containers, decoration, illumination, paperware, footballs, and watches.",
+                                          "equipment":  "At this booth we sell containers, decoration, illumination, paperware, footballs, and watches.",
+                                          "containers":  "In that department we offer bags, backpacks, and present boxes.",
+                                          "illumination":  "In that department we offer torches, candlesticks, candelabra, oil and coal basins.",
+                                          "paperware":  "In that department we offer scrolls, documents, parchments, and books.",
+                                          "book":  "I offer different kind of books: brown, black and small books. Which book do you want?",
+                                          "magic":  "You will have to visit that spooky magic market for that stuff.",
+                                          "fluid":  "You will have to visit that spooky magic market for that stuff.",
+                                          "deposit":  "I will give you 5 gold for every empty vial. Ok?",
+                                          "vial":  "I will give you 5 gold for every empty vial. Ok?",
+                                          "flask":  "I will give you 5 gold for every empty vial. Ok?",
+                                          "decoration":  "I can offer water pipes, pendulum clock, telescopes, table lamps, rocking horses, globes and birdcages. I also sell wall hangings.",
+                                          "wall":  "I can offer mirrors, paintings and cuckoo clocks.",
+                                          "hangings":  "I can offer mirrors, paintings and cuckoo clocks.",
+                                          "painting":  "Would you like a landscape, a portrait or a still life. What is your choice?",
+                                          "mirror":  "I sell round mirrors, oval mirrors and edged mirrors. Which one might it be?"
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Welcome . What is your need today?",
+                                                       "I am selling several kinds of equipment and decoration. What is your need?"
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Welcome %N. What is your need today?",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here you are.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Come back, when you have enough money.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Hmm, but next time.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "2":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Ok, take it. There is a deposit of 5 gold on the vial.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "That\u0027s not funny!",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Then not.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "3":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here you are.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         },
+                                                                                         {
+                                                                                             "type":  "premium"
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "I\u0027m sorry, but you need a premium account if you want to buy furniture.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Come back, when you have enough money.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Hmm, but I\u0027m sure, it would fit nicely into your house.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "4":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here you are ... %P gold.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteItem",
+                                                                                          "id":  2006
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createMoney"
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You don\u0027t have any empty vials.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Hmm, but please keep our town litter free.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "81":  {
+                                                   "entries":  [
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "Here you are.",
+                                                                       "conditions":  [
+                                                                                          {
+                                                                                              "type":  "gold",
+                                                                                              "min":  -1
+                                                                                          },
+                                                                                          {
+                                                                                              "type":  "premium"
+                                                                                          }
+                                                                                      ],
+                                                                       "actions":  [
+                                                                                       {
+                                                                                           "type":  "deleteMoney",
+                                                                                           "amount":  -1
+                                                                                       },
+                                                                                       {
+                                                                                           "type":  "createItem",
+                                                                                           "id":  -1
+                                                                                       }
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "I\u0027m sorry, but you need a premium account if you want to buy furniture.",
+                                                                       "conditions":  [
+                                                                                          {
+                                                                                              "type":  "gold",
+                                                                                              "min":  -1
+                                                                                          }
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "Come back, when you have enough money.",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+
+                                                                                    ],
+                                                                       "response":  "Hmm, but I\u0027m sure, it would fit nicely into your house.",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  true,
+                                                                       "isDefault":  true
+                                                                   }
+                                                               ]
+                                               }
+                                    },
+                         "keywordNextTopics":  {
+                                                   "deposit":  4,
+                                                   "vial":  4,
+                                                   "flask":  4
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Torch",
+                                                         "price":  2,
+                                                         "id":  2050,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Candelabrum",
+                                                         "price":  8,
+                                                         "id":  2041,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Candlestick",
+                                                         "price":  2,
+                                                         "id":  2047,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Vial",
+                                                         "price":  20,
+                                                         "id":  2006,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Coal Basin",
+                                                         "price":  25,
+                                                         "id":  2604,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Red Bag",
+                                                         "price":  5,
+                                                         "id":  1993,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Red Backpack",
+                                                         "price":  20,
+                                                         "id":  2000,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Present",
+                                                         "price":  10,
+                                                         "id":  1990,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Scroll",
+                                                         "price":  5,
+                                                         "id":  1949,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Document",
+                                                         "price":  12,
+                                                         "id":  1968,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Written Parchment",
+                                                         "price":  8,
+                                                         "id":  1969,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Book",
+                                                         "price":  15,
+                                                         "id":  1971,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Book",
+                                                         "price":  15,
+                                                         "id":  1972,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Book",
+                                                         "price":  15,
+                                                         "id":  1973,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Watch",
+                                                         "price":  20,
+                                                         "id":  2036,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Football",
+                                                         "price":  111,
+                                                         "id":  2109,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Water-pipe",
+                                                         "price":  40,
+                                                         "id":  2093,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Pendulum Clock",
+                                                         "price":  75,
+                                                         "id":  1728,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Telescope",
+                                                         "price":  70,
+                                                         "id":  2582,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Table Lamp",
+                                                         "price":  35,
+                                                         "id":  2064,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Rocking Horse",
+                                                         "price":  30,
+                                                         "id":  2117,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Globe",
+                                                         "price":  50,
+                                                         "id":  2098,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Bird Cage",
+                                                         "price":  50,
+                                                         "id":  2095,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Cuckoo Clock",
+                                                         "price":  40,
+                                                         "id":  1877,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Picture",
+                                                         "price":  50,
+                                                         "id":  1854,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Picture",
+                                                         "price":  50,
+                                                         "id":  1852,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Picture",
+                                                         "price":  50,
+                                                         "id":  1853,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Wall Mirror",
+                                                         "price":  40,
+                                                         "id":  1845,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Wall Mirror",
+                                                         "price":  40,
+                                                         "id":  1851,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Wall Mirror",
+                                                         "price":  40,
+                                                         "id":  1848,
+                                                         "type":  "sell"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "shiantis.js"
+                     }
+}

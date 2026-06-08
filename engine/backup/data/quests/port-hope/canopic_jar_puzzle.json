@@ -1,0 +1,17 @@
+{
+  "actionId": 3085,
+  "type": "puzzle",
+  "events": ["onStepIn", "onAddItem"],
+  "tileItem": true,
+  "conditions": [
+    {"type": "itemInPosition", "pos": {"x": 32876, "y": 32584, "z": 10}, "itemId": 4997},
+    {"type": "itemInPosition", "pos": {"x": 32823, "y": 32525, "z": 10}, "itemId": 4997},
+    {"type": "itemInPosition", "pos": {"x": 32792, "y": 32527, "z": 10}, "itemId": 4997},
+    {"type": "itemInPosition", "pos": {"x": 32744, "y": 32586, "z": 10}, "itemId": 4997}
+  ],
+  "teleport": {"to": {"x": 32884, "y": 32632, "z": 11}},
+  "magicEffect": 21,
+  "teleportFail": {"to": {"x": 32853, "y": 32543, "z": 10}},
+  "magicEffectFail": 21,
+  "failMessage": "Spectral guardians ward you off."
+}

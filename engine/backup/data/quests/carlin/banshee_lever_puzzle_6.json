@@ -1,0 +1,66 @@
+{
+    "actionId":  2024,
+    "type":  "lever",
+    "itemIds":  [
+                    1945,
+                    1946
+                ],
+    "conditions":  [
+                       {
+                           "type":  "itemAtPosition",
+                           "itemId":  1423,
+                           "pos":  {
+                                       "x":  32309,
+                                       "y":  31975,
+                                       "z":  13
+                                   }
+                       }
+                   ],
+    "effects":  [
+                    {
+                        "type":  "transformItem",
+                        "from":  1945,
+                        "to":  1946,
+                        "decay":  true
+                    },
+                    {
+                        "type":  "transformItemInPosition",
+                        "pos":  {
+                                    "x":  32309,
+                                    "y":  31975,
+                                    "z":  13
+                                },
+                        "from":  1423,
+                        "to":  1421
+                    },
+                    {
+                        "key":  7024,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "effectsAlt":  [
+                       {
+                           "type":  "transformItem",
+                           "from":  1945,
+                           "to":  1946,
+                           "decay":  true
+                       },
+                       {
+                           "type":  "transformItem",
+                           "from":  1946,
+                           "to":  1945,
+                           "decay":  true
+                       },
+                       {
+                           "type":  "transformItemInPosition",
+                           "pos":  {
+                                       "x":  32309,
+                                       "y":  31975,
+                                       "z":  13
+                                   },
+                           "from":  1421,
+                           "to":  1423
+                       }
+                   ]
+}

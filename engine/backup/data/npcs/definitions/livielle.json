@@ -1,0 +1,223 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Livielle",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  120,
+                                              "details":  {
+                                                              "head":  114,
+                                                              "body":  94,
+                                                              "legs":  132,
+                                                              "feet":  132
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  2,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "au":  "Bon appetit, and come back soon for your daily dose of vitamins!",
+                                          "revoir":  "Bon appetit, and come back soon for your daily dose of vitamins!",
+                                          "job":  "Alors, guess what my job might be, standing \u0027ere in the middle of all these juicy exotic fruits?",
+                                          "shop":  "Alors, guess what my job might be, standing \u0027ere in the middle of all these juicy exotic fruits?",
+                                          "name":  "I\u0027m Livielle Delacroix, madame.",
+                                          "time":  "Time is  now.",
+                                          "help":  "Oh, for sure will my fruits \u0027elp you driving off all these nasty diseases and strengthen your immune system!",
+                                          "thanks":  "You\u0027re welcome, enjoy.",
+                                          "thank":  "You\u0027re welcome, enjoy.",
+                                          "you":  "What\u0027s your favorite flavour today? I offer all sorts of exotic fruits.",
+                                          "buy":  "What\u0027s your favorite flavour today? I offer all sorts of exotic fruits.",
+                                          "do":  "What\u0027s your favorite flavour today? I offer all sorts of exotic fruits.",
+                                          "sell":  "What\u0027s your favorite flavour today? I offer all sorts of exotic fruits.",
+                                          "have":  "What\u0027s your favorite flavour today? I offer all sorts of exotic fruits.",
+                                          "offer":  "What\u0027s your favorite flavour today? I offer all sorts of exotic fruits.",
+                                          "fruits":  "I offer you bananas, melons, pumpkins, white mushrooms, oranges, strawberries, and blueberries."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Ah, \u0027ello, ! I can see you\u0027re longing for my delicious fruits, cheri.",
+                                                       "Bienvenue, ! My fruits will complete the icing on your cake.",
+                                                       "Alors, guess what my job might be, standing \u0027ere in the middle of all these juicy exotic fruits?"
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Ah, \u0027ello, %N! I can see you\u0027re longing for my delicious fruits, cheri.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "salut$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Bienvenue, %N! My fruits will complete the icing on your cake.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "salut$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Merci, \u0027ere you go.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Sorry, but that\u0027s not enough money, please count again.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "You should really prefer my fruits over all this fat meat offered elsewhere. They keep you lithe and lissom.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Banana",
+                                                         "price":  5,
+                                                         "id":  2676,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "White Mushroom",
+                                                         "price":  10,
+                                                         "id":  2787,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Orange",
+                                                         "price":  10,
+                                                         "id":  2675,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Strawberry",
+                                                         "price":  2,
+                                                         "id":  2680,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Melon",
+                                                         "price":  10,
+                                                         "id":  2682,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Pumpkin",
+                                                         "price":  10,
+                                                         "id":  2683,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Blueberry",
+                                                         "price":  1,
+                                                         "id":  2677,
+                                                         "type":  "sell"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "livielle.js"
+                     }
+}

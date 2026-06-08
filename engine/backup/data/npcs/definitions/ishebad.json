@@ -1,0 +1,196 @@
+{
+    "creatureStatistics": {
+        "name": "Ishebad",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 65,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 1,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "name": "I am Ishebad the chosen.",
+            "time": "Time does not matter to the undead.",
+            "temple": "The temple will take care of your spiritual matters.",
+            "pharaoh": "The pharaoh wants not to be disturbed. I am his grand vizier and responsible for the daily affairs of the city and promotions of heroes.",
+            "ashmunrah": "The fallen pharaoh did not see it was time to step back and let his son rule. So he met the fate that he deserved.",
+            "scarab": "The scarabs are keepers of secrets. Some secrets are not ment for your mortals. Ever keep that in mind.",
+            "tibia": "This world just awaits the wisdom of our pharaoh. It needs that wisdom and will soon learn to appreciate it.",
+            "carlin": "Other cities are of no importance. Ankrahmun will become the center of the known world anyways.",
+            "thais": "Other cities are of no importance. Ankrahmun will become the center of the known world anyways.",
+            "edron": "Other cities are of no importance. Ankrahmun will become the center of the known world anyways.",
+            "venore": "Other cities are of no importance. Ankrahmun will become the center of the known world anyways.",
+            "kazordoon": "Other cities are of no importance. Ankrahmun will become the center of the known world anyways.",
+            "ab'dendriel": "Other cities are of no importance. Ankrahmun will become the center of the known world anyways.",
+            "darama": "The rule of our beloved pharaoh will soon spread this continent and one day the whole known world.",
+            "darashia": "This village is so insignificant that our wise pharaoh has choosen to ignore it.",
+            "daraman": "Some lunatic who was driven mad by the heat of the desert and dehydration.",
+            "Ankrahmun": "Our city will become the capital of a worldwide empire.",
+            "Arkhothep": "The pharaoh wants not to be disturbed. I am his grand vizier and responsible for the daily affairs of the city and promotions of heroes.",
+            "job": "The pharaoh wants not to be disturbed. I am his grand vizier and responsible for the daily affairs of the city and promotions of heroes.",
+            "mortality": "If you please our pharaoh, he will reward you and free you from your mortality.",
+            "ascension": "Consult a priest to learn how you could achieve ascension.",
+            "Akh'rah": "Consult a priest to learn how you could achieve ascension.",
+            "Uthun": "Consult a priest to learn how you could achieve ascension.",
+            "Akh": "Consult a priest to learn how you could achieve ascension.",
+            "Rah": "Consult a priest to learn how you could achieve ascension.",
+            "uthun": "Consult a priest to learn how you could achieve ascension.",
+            "undead": "Undeath is only for the choosen.",
+            "undeath": "Undeath is only for the choosen.",
+            "mourn": "You mortals are all to be mourned for your miserable existance.",
+            "promot": "Do you want to be promoted in your vocation for 20000 gold?",
+            "eremo": "It is said that he lives on a small island near Edron. Maybe the people there know more about him."
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "Be mourned, pilgrim in flesh.",
+                "The pharaoh wants not to be disturbed. I am his grand vizier and responsible for the daily affairs of the city and promotions of heroes."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello"
+                ],
+                "response": "Be mourned, pilgrim in flesh.",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "salutations"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ],
+        "topics": {
+            "4": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You are already promoted.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You need to be at least level 20 in order to be promoted.",
+                        "conditions": [
+                            {
+                                "type": "level",
+                                "max": 20
+                            }
+                        ],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You do not have enough money.",
+                        "conditions": [
+                            {
+                                "type": "gold",
+                                "max": -1
+                            }
+                        ],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Congratulations! You are now promoted. Visit the sage Eremo for new spells.",
+                        "conditions": [
+                            {
+                                "type": "premium"
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "deleteMoney",
+                                "amount": -1
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You need a premium account in order to promote.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Ok, then not.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            }
+        },
+        "keywordNextTopics": {
+            "promot": 4
+        },
+        "keywordTopicPrices": {
+            "promot": 20000
+        },
+        "script": "ishebad.js"
+    }
+}

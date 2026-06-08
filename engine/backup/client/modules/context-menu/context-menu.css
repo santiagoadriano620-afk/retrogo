@@ -1,0 +1,38 @@
+.contextmenu {
+  position: fixed;
+  min-width: 90px;
+  z-index: 99999;
+  background: #1a1a2e;
+  border: 1px solid #333;
+  border-radius: 3px;
+  padding: 2px 0;
+}
+
+/* Override modal's display:none when contextmenu is shown via JS */
+.contextmenu.modal {
+  /* display is set by JS, z-index should be highest */
+  z-index: 99999;
+}
+
+.contextmenu>.menu-header {
+  background-image: url("/images/game/ui/background.png");
+  cursor: auto;
+  text-align: center;
+  padding: 2px;
+}
+
+.contextmenu button {
+  display: block;
+  width: 100%;
+  padding: 3px 10px;
+  border: 0px;
+  border-radius: 0px;
+  margin: 0px;
+  background: transparent;
+  color: #d3d3d3;
+  text-align: left;
+  font-size: 12px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+

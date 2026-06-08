@@ -1,0 +1,18 @@
+{
+  "itemId": 4874,
+  "type": "questItem",
+  "branches": [
+    {
+      "conditions": [
+        { "type": "targetItem", "itemId": 4995 },
+        { "type": "storage", "key": 306, "value": 1 },
+        { "type": "storage", "key": 307, "value": -1 }
+      ],
+      "effects": [
+        { "type": "storage", "key": 307, "value": 1 },
+        { "type": "createItem", "itemId": 4848, "count": 1 },
+        { "type": "magicEffect", "effectId": 2 }
+      ]
+    }
+  ]
+}

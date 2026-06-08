@@ -1,0 +1,205 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Thomas",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  111,
+                                              "details":  {
+                                                              "head":  116,
+                                                              "body":  11,
+                                                              "legs":  101,
+                                                              "feet":  76
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  2,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "name":  "Thomas.",
+                                          "job":  "Selling spellbooks, notebooks, scrolls, documents, parchments, inkwells, and the like.",
+                                          "time":  "No idea.",
+                                          "king":  "Know nothing interesting about him.",
+                                          "tibianus":  "Know nothing interesting about him.",
+                                          "army":  "Ask in the castle.",
+                                          "ferumbras":  "Only heard of him.",
+                                          "excalibug":  "No idea.",
+                                          "thais":  "Never been there.",
+                                          "tibia":  "Like it here best.",
+                                          "carlin":  "Never been there.",
+                                          "edron":  "This town.",
+                                          "news":  "Nothing interesting.",
+                                          "rumors":  "Nothing interesting.",
+                                          "offer":  "Selling scrolls, documents, parchments, spellbooks, books, and inkwells.",
+                                          "goods":  "Selling scrolls, documents, parchments, spellbooks, books, and inkwells.",
+                                          "do":  "Selling scrolls, documents, parchments, spellbooks, books, and inkwells.",
+                                          "you":  "Selling scrolls, documents, parchments, spellbooks, books, and inkwells.",
+                                          "sell":  "Selling scrolls, documents, parchments, spellbooks, books, and inkwells.",
+                                          "have":  "Selling scrolls, documents, parchments, spellbooks, books, and inkwells.",
+                                          "book":  "I offer different kind of books: brown, black and small books. Which book do you want?"
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Feel welcome, .",
+                                                       "Selling spellbooks, notebooks, scrolls, documents, parchments, inkwells, and the like."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Feel welcome, %N.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here you are.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Come back, when you have enough money.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Hmm, but next time.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Scroll",
+                                                         "price":  5,
+                                                         "id":  1949,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Document",
+                                                         "price":  12,
+                                                         "id":  1968,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Written Parchment",
+                                                         "price":  8,
+                                                         "id":  1969,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Spellbook",
+                                                         "price":  150,
+                                                         "id":  2175,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Book",
+                                                         "price":  15,
+                                                         "id":  1971,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Book",
+                                                         "price":  15,
+                                                         "id":  1972,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Book",
+                                                         "price":  15,
+                                                         "id":  1973,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Inkwell",
+                                                         "price":  8,
+                                                         "id":  2600,
+                                                         "type":  "sell"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "thomas.js"
+                     }
+}

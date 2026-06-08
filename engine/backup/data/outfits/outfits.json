@@ -1,0 +1,122 @@
+{
+	"111": {
+		"type": "1",
+		"name": "Citizen",
+		"premium": false
+	},
+	"112": {
+		"type": "1",
+		"name": "Hunter",
+		"premium": false
+	},
+	"113": {
+		"type": "1",
+		"name": "Mage",
+		"premium": false
+	},
+	"114": {
+		"type": "1",
+		"name": "Knight",
+		"premium": false
+	},
+	"115": {
+		"type": "1",
+		"name": "Nobleman",
+		"premium": true
+	},
+	"116": {
+		"type": "1",
+		"name": "Summoner",
+		"premium": true
+	},
+	"117": {
+		"type": "1",
+		"name": "Warrior",
+		"premium": true
+	},
+	"118": {
+		"type": "0",
+		"name": "Citizen",
+		"premium": false
+	},
+	"119": {
+		"type": "0",
+		"name": "Hunter",
+		"premium": false
+	},
+	"120": {
+		"type": "0",
+		"name": "Mage",
+		"premium": false
+	},
+	"121": {
+		"type": "0",
+		"name": "Knight",
+		"premium": false
+	},
+	"122": {
+		"type": "0",
+		"name": "Noblewoman",
+		"premium": true
+	},
+	"123": {
+		"type": "0",
+		"name": "Summoner",
+		"premium": true
+	},
+	"124": {
+		"type": "0",
+		"name": "Warrior",
+		"premium": true
+	},
+	"126": {
+		"type": "1",
+		"name": "Royal Nobleman",
+		"premium": false
+	},
+	"127": {
+		"type": "1",
+		"name": "Knight Commander",
+		"premium": false
+	},
+	"128": {
+		"type": "1",
+		"name": "Jester",
+		"premium": false
+	},
+	"129": {
+		"type": "1",
+		"name": "Sage",
+		"premium": false
+	},
+	"130": {
+		"type": "0",
+		"name": "Warrior Female",
+		"premium": false
+	},
+	"131": {
+		"type": "0",
+		"name": "Knight Commander",
+		"premium": false
+	},
+	"132": {
+		"type": "0",
+		"name": "Alchemist",
+		"premium": false
+	},
+	"133": {
+		"type": "0",
+		"name": "Mademoiselle",
+		"premium": false
+	},
+	"62": {
+		"type": "1",
+		"name": "Elf",
+		"premium": true
+	},
+	"69": {
+		"type": "1",
+		"name": "Dwarf",
+		"premium": true
+	}
+}

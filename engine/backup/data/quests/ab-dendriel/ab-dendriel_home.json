@@ -1,0 +1,13 @@
+[
+  {
+    "actionId": 3110,
+    "type": "home",
+    "events": ["onStepIn", "onAddItem"],
+    "tileItem": true,
+    "town": "Ab'Dendriel",
+    "teleport": { "to": { "x": 32732, "y": 31634, "z": 7 } },
+    "magicEffect": 13,
+    "teleportAddItem": { "to": { "x": 32607, "y": 31681, "z": 7 } },
+    "magicEffectAddItem": 14
+  }
+]

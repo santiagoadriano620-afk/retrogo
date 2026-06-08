@@ -1,0 +1,185 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Busty Bonecrusher",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  121,
+                                              "details":  {
+                                                              "head":  96,
+                                                              "body":  19,
+                                                              "legs":  66,
+                                                              "feet":  95
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  3,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "news":  "I am busy. Please ask the citizens for news.",
+                                          "how":  "I am healthy and vigilant.",
+                                          "are":  "I am healthy and vigilant.",
+                                          "you":  "I am healthy and vigilant.",
+                                          "sell":  "Visit Carlin\u0027s shopkeepers to buy their fine wares.",
+                                          "queen":  "Queen Eloise is our beloved sovereign!",
+                                          "leader":  "Queen Eloise is our beloved sovereign!",
+                                          "job":  "It\u0027s my duty to protect our fair city.",
+                                          "army":  "Ask my sister Bunny for details.",
+                                          "guard":  "I am a guard and proud of it.",
+                                          "name":  "It\u0027s Miss Bonecrusher to you!",
+                                          "bonecrusher":  "The bonecrusher family has been serving in the army of Carlin for generations. My sister Bunny is the general of our army.",
+                                          "castle":  "The castle is in the northwest corner of the city.",
+                                          "green":  "Brave warriors, indeed.",
+                                          "ferrets":  "Brave warriors, indeed.",
+                                          "knights":  "WOOF! WOOF! Go away with theese puny king\u0027s puppys.",
+                                          "of":  "WOOF! WOOF! Go away with theese puny king\u0027s puppys.",
+                                          "noodles":  "WOOF! WOOF! Go away with theese puny king\u0027s puppys.",
+                                          "secret":  "Ask a higher offical about that.",
+                                          "police":  "Ask a higher offical about that.",
+                                          "city":  "Behave well, while in the city, or we\u0027ll get you! Do you want to know where to find a shop or a guild?",
+                                          "shop":  "There\u0027s a smith, a provisioner, a tavern, a magic shop, and the royal post office, of course.",
+                                          "guild":  "In the city you will find the guildhouses of the Knights, the Paladins, the Druids, and the Sorcerers.",
+                                          "scum":  "We will get rid of all scum.",
+                                          "barbara":  "Fine warrioress, even if not of our family.",
+                                          "fenbala":  "Fine warrioress, even if not of our family.",
+                                          "bunny":  "My sister is in charge of our mighty army.",
+                                          "busty":  "We are Bonecrushers. Mess with one of us, and we all will come for you!",
+                                          "bambi":  "We are Bonecrushers. Mess with one of us, and we all will come for you!",
+                                          "blossom":  "We are Bonecrushers. Mess with one of us, and we all will come for you!",
+                                          "banor":  "Praise Banor! May the great warrior be with us!",
+                                          "graveyard":  "Stay away from the graveyard, it\u0027s haunted!",
+                                          "crypt":  "Stay away from the graveyard, it\u0027s haunted!",
+                                          "haunted":  "Strange things happen in our graveyard, and sometimes there are .. noises.",
+                                          "noise":  "I never heared them myself, but people, one can trust, did.",
+                                          "male$":  "Bah! Who cares about males? Let them do males\u0027 work, cleaning the sewers for example.",
+                                          "sewer":  "Sewers are filthy and disgusting. We let the men take care of them.",
+                                          "rebellion":  "What a joke. The men have no guts for a rebellion.",
+                                          "resistance":  "What a joke. The men have no guts for a rebellion.",
+                                          "tod$":  "There once was an adventurer with this name in town, made some trouble, got kicked out. No big deal.",
+                                          "ghostlands":  "In theory the ghostlands are of limits. But we don\u0027t enforce that. Anyone stupid enough to go there will meet his deserved fate.",
+                                          "fletcher":  "You can find the weapon and armour shops just west of the towncenter.",
+                                          "smith":  "You can find the weapon and armour shops just west of the towncenter.",
+                                          "weapon":  "You can find the weapon and armour shops just west of the towncenter.",
+                                          "armor":  "You can find the weapon and armour shops just west of the towncenter.",
+                                          "sarina":  "Sarina is our provisioner. You can find her in the towncenter, south of the weaponshops.",
+                                          "provision":  "Sarina is our provisioner. You can find her in the towncenter, south of the weaponshops.",
+                                          "dane":  "Dane runs the local tavern and hotel. You can find it at the southwest beach of Carlin.",
+                                          "tavern":  "Dane runs the local tavern and hotel. You can find it at the southwest beach of Carlin.",
+                                          "liane":  "Liane is a kind person. She runs the post office in the town\u0027s center.",
+                                          "post":  "Liane is a kind person. She runs the post office in the town\u0027s center.",
+                                          "depot":  "We have some depots in our town. You can\u0027t miss them.",
+                                          "lea$":  "Lea is the head of the local sorcerers guild. You can find it south of the towncenter at the magic shop of Rachel.",
+                                          "sorcerer":  "Lea is the head of the local sorcerers guild. You can find it south of the towncenter at the magic shop of Rachel.",
+                                          "legola":  "Legola runs the local paladins guild, it\u0027s near the westgate.",
+                                          "paladin":  "Legola runs the local paladins guild, it\u0027s near the westgate.",
+                                          "padreia":  "Padreia is the greatest druid of the continent. You find the guild of the benevolent druids in the southwest of the city.",
+                                          "druid":  "Padreia is the greatest druid of the continent. You find the guild of the benevolent druids in the southwest of the city.",
+                                          "trisha":  "Trisha is the leader of our knights guild. It is in the north of the town, near the gate.",
+                                          "knight":  "Trisha is the leader of our knights guild. It is in the north of the town, near the gate.",
+                                          "rachel":  "Rachel sells equipment for all magic users in her shop. There is also the sorcerer guild in the second floor.",
+                                          "magic":  "Rachel sells equipment for all magic users in her shop. There is also the sorcerer guild in the second floor.",
+                                          "spell":  "Rachel sells equipment for all magic users in her shop. There is also the sorcerer guild in the second floor.",
+                                          "fuck":  "Take this!",
+                                          "idiot":  "Take this!",
+                                          "asshole":  "Take this!",
+                                          "ass$":  "Take this!",
+                                          "fag$":  "Take this!",
+                                          "stupid":  "Take this!",
+                                          "tyrant":  "Take this!",
+                                          "shit":  "Take this!",
+                                          "lunatic":  "Take this!"
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "LONG LIVE THE QUEEN!",
+                                                       "It\u0027s my duty to protect our fair city."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+                                             "fuck":  {
+                                                          "damage":  0,
+                                                          "effectSelf":  8,
+                                                          "effectTarget":  5
+                                                      },
+                                             "idiot":  {
+                                                           "damage":  0,
+                                                           "effectSelf":  8,
+                                                           "effectTarget":  5
+                                                       },
+                                             "asshole":  {
+                                                             "damage":  0,
+                                                             "effectSelf":  8,
+                                                             "effectTarget":  5
+                                                         },
+                                             "ass$":  {
+                                                          "damage":  0,
+                                                          "effectSelf":  8,
+                                                          "effectTarget":  5
+                                                      },
+                                             "fag$":  {
+                                                          "damage":  0,
+                                                          "effectSelf":  8,
+                                                          "effectTarget":  5
+                                                      },
+                                             "stupid":  {
+                                                            "damage":  0,
+                                                            "effectSelf":  8,
+                                                            "effectTarget":  5
+                                                        },
+                                             "tyrant":  {
+                                                            "damage":  0,
+                                                            "effectSelf":  8,
+                                                            "effectTarget":  5
+                                                        },
+                                             "shit":  {
+                                                          "damage":  0,
+                                                          "effectSelf":  8,
+                                                          "effectTarget":  5
+                                                      },
+                                             "lunatic":  {
+                                                             "damage":  0,
+                                                             "effectSelf":  8,
+                                                             "effectTarget":  5
+                                                         }
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "LONG LIVE THE QUEEN!",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ]
+                     }
+}

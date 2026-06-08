@@ -1,0 +1,18 @@
+{
+  "itemId": 4846,
+  "type": "questItem",
+  "branches": [
+    {
+      "conditions": [
+        { "type": "targetItem", "itemId": 4861 },
+        { "type": "storage", "key": 293, "value": 17 }
+      ],
+      "effects": [
+        { "type": "transformItem", "from": 4861, "to": 4862 },
+        { "type": "storage", "key": 299, "value": 1 },
+        { "type": "removeItem", "itemId": 4846 },
+        { "type": "magicEffect", "effectId": 7 }
+      ]
+    }
+  ]
+}

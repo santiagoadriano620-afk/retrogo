@@ -1,0 +1,251 @@
+{
+    "creatureStatistics": {
+        "name": "Wyda",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 54,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 5,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "job": "I am a witch. Didn't you notice?",
+            "name": "Nice to meet you.",
+            "my": "Nice to meet you.",
+            "is": "Nice to meet you.",
+            "time": "I think it is the fourth year after Queen Eloise's crowning, but I cannot tell you date or time.",
+            "sorcerer": "Sorcerers have forgotten about the root of all beings: nature.",
+            "druid": "Druids are mostly fine people. I'm always happy when I meet one.",
+            "knight": "A black knight? Black is the color of witches, why whould any knight carry black?",
+            "paladin": "Paladins can use bows, but not brains.",
+            "queen": "Eloise is Queen of Carlin. I don't care about royals much, as long as they don't try to tax me.",
+            "i$": "That's nice.",
+            "live": "That's nice.",
+            "carlin": "Carlin is a beautiful town, but far from here. Do you live there?",
+            "thais": "I've heard stories about that city. It's nowhere near here, that's all I can tell you about it.",
+            "stories": "Thais is an overcrowded place inhabited by brutal murderers. At least that's what I've been told.",
+            "tibia$": "Tibia is the name of our continent.",
+            "tibianus": "Haha, that's a stupid name. Who's that?",
+            "ferumbras": "Haha, that's a stupid name. Who's that?",
+            "king": "There are too many royals on this continent if you ask me...",
+            "evil": "Evilness doesn't scare me.",
+            "aureus": "Aureus is a good friend who spends much time in this area!",
+            "bridge": "There's a bridge to the west, but it's guarded by dwarfs.",
+            "plains": "Many tales exist about some so-called Plains of Havoc. It seems to be a dangerous place.",
+            "havoc": "Many tales exist about some so-called Plains of Havoc. It seems to be a dangerous place.",
+            "help": "I can only help with knowledge. What do you want me to tell you about?",
+            "hunter": "To the east, there is a little settlement of hunters. They are cruel humans who attack everything they see.",
+            "buy": "I'm currently not selling anything.",
+            "offer": "I'm currently not selling anything.",
+            "sell": "There's nothing I need right now, thanks.",
+            "key": "I keep my keys where they belong - in my pocket.",
+            "monster": "Many creatures live in, around, and beneath the swamp. Be careful!",
+            "creature": "Many creatures live in, around, and beneath the swamp. Be careful!",
+            "swamp": "Be careful of the swamp water, it's poisonous!",
+            "nature": "There are many swamp plants, mushrooms, and herbs around here.",
+            "plant": "There are many kinds of swamp plants, some can be used for potions, some not.",
+            "potion": "The recipe of the potions is one of the witches' secrets!",
+            "secret": "The recipe of the potions is one of the witches' secrets!",
+            "recipe": "The recipe of the potions is one of the witches' secrets!",
+            "sister": "Some sisters of mine are having a meeting nearby. Don't disturb them, or they will get angry and attack you.",
+            "witches": "Some sisters of mine are having a meeting nearby. Don't disturb them, or they will get angry and attack you.",
+            "mushroom": "Mushrooms taste good and are useful for potions.",
+            "heal": "I do not have any potions for healing available right now.",
+            "giant": "Yes, there is such a thing in the east, on a small island. It's very powerful.",
+            "spider": "Yes, there is such a thing in the east, on a small island. It's very powerful.",
+            "beholder": "Beholders? Strange creatures that have mysterious magical abilities.",
+            "slime": "There's lots of slime around. It is said that they live from the swamp water.",
+            "god": "I believe that nature itself is God.",
+            "magic": "The magic of the witches is one of our secrets!",
+            "spell": "The magic of the witches is one of our secrets!",
+            "weatherwax": "I think I've heard that name before...",
+            "ogg": "I think I've heard that name before...",
+            "voodoo": "I don't practice such nonsense, that's just a rumour.",
+            "coffin": "That's none of your business.",
+            "dwarf": "The little bearded fellows have a town somewhere in the northwest.",
+            "dwarves": "The little bearded fellows have a town somewhere in the northwest.",
+            "little": "The little bearded fellows have a town somewhere in the northwest.",
+            "fellows": "The little bearded fellows have a town somewhere in the northwest.",
+            "kazordoon": "Isn't that the name of the little bearded fellows' town?",
+            "gold": "Money means nothing to me.",
+            "platin": "Money means nothing to me.",
+            "cookie": "I bake cookies now and then in my spare time.",
+            "orange": "I love exotic fruits. I have oranges imported from the south sometimes, but that's very expensive.",
+            "fly": "Haha, no... where did you get that idea? I use it to sweep my platform.",
+            "broom": "What about it?",
+            "ride": "Haha, no... where did you get that idea? I use it to sweep my platform.",
+            "platform": "This platform and house were built by my mother, long ago.",
+            "mother": "Of course my mother was also a witch!",
+            "crystal": "It's a magical item that only witches can use.",
+            "ball": "It's a magical item that only witches can use.",
+            "black": "A black knight? Black is the color of witches, why whould any knight carry black?",
+            "earthquake": "The earth in this region shakes now and then. Foolish people think that this is because the Gods are angry.",
+            "become": "You're a MAN!",
+            "witch": "You're a MAN!",
+            "witch$": "Aye, I am a witch.",
+            "man$": "There are only female witches.",
+            "men$": "There are only female witches.",
+            "power": "The power of the wand can only be used by witches.",
+            "wand": "I use a wooden spellwand. Why are you asking?",
+            "use": "The power of the wand can only be used by witches.",
+            "what": "The power of the wand can only be used by witches.",
+            "do": "The power of the wand can only be used by witches.",
+            "spellwand": "I use a wooden spellwand. Why are you asking?",
+            "quest": "A quest? Well, if you're so keen on doing me a favour... Why don't you try to find a blood herb?",
+            "herbs": "The swamp is home to a wide variety of herbs, but the most famous is the blood herb.",
+            "blood": "The blood herb is very rare. This plant would be very useful for me, but I don't know any accessible places to find it.",
+            "herb$": "The blood herb is very rare. This plant would be very useful for me, but I don't know any accessible places to find it."
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "Welcome back, . Hey, nice wand you have there!",
+                "Welcome to my hut, ! It's always nice to see a druid here.",
+                "What do you want, ?"
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Welcome back, %N. Hey, nice wand you have there!",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "greet"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Welcome to my hut, %N! It's always nice to see a druid here.",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "greet"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "What do you want, %N?",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "greet"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Good day, %N.",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "greet"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "good",
+                    "day"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": "What? Talking to me, %N?",
+                "idle": true
+            }
+        ],
+        "topics": {
+            "1": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Well, do you own one or not?",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Thank you so much! Here, let me give you a reward...",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "deleteItem",
+                                "id": 2798
+                            },
+                            {
+                                "type": "createItem",
+                                "id": 2324
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    }
+                ]
+            }
+        },
+        "keywordNextTopics": {
+            "blood": 1,
+            "herb$": 1
+        },
+        "script": "wyda.js"
+    }
+}

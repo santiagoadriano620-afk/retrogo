@@ -1,0 +1,257 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Humphrey",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  116,
+                                              "details":  {
+                                                              "head":  0,
+                                                              "body":  96,
+                                                              "legs":  101,
+                                                              "feet":  76
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  4,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "I am a guardian of nature. Also I am the keeper of the embrace of tibia, one of the five blessings.",
+                                          "name":  "My name is Humphrey.",
+                                          "heal$":  "You aren\u0027t looking that bad. Sorry, I can\u0027t help you. But if you are looking for additional protection you should go on the pilgrimage of ashes.",
+                                          "pilgrimage":  "Whenever you recrive a lethal wound your lifeforce is damaged. With every single of the five blessings you have this damage will be reduced.",
+                                          "ashes":  "Whenever you recrive a lethal wound your lifeforce is damaged. With every single of the five blessings you have this damage will be reduced.",
+                                          "spiritual":  "You can ask for the blessing of spiritual shielding the whiteflower temple south of Thais.",
+                                          "shielding":  "You can ask for the blessing of spiritual shielding the whiteflower temple south of Thais.",
+                                          "sacred":  "Just ask in which of the five blessings you are interested in.",
+                                          "places":  "Just ask in which of the five blessings you are interested in.",
+                                          "spark":  "The spark of the phoenix will be given to you by the dwarfen priests of earth and fire in Kazordoon.",
+                                          "phoenix":  "The spark of the phoenix will be given to you by the dwarfen priests of earth and fire in Kazordoon.",
+                                          "embrace":  "I will give to you the embrace of tibia, but you will have to make a sacrifice. Are you prepared to pay 10.000 gold for the blessing?.",
+                                          "fire":  "You can ask for the blessing of the two suns in the suntower near Ab\u0027Dendriel .",
+                                          "suns":  "You can ask for the blessing of the two suns in the suntower near Ab\u0027Dendriel .",
+                                          "wisdom":  "Talk to the hermit Eremo on the isle of Cormaya about this blessing.",
+                                          "solitude":  "Talk to the hermit Eremo on the isle of Cormaya about this blessing.",
+                                          "time":  "Now, it is . Ask Gorn for a watch, if you need one.",
+                                          "blessing":  "I can sell you the Embrace of Tibia for %d gold. Are you interested?",
+                                          "blessings":  "I can sell you the Embrace of Tibia for %d gold. Are you interested?"
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Welcome, child of nature.",
+                                                       "I am a guardian of nature. Also I am the keeper of the embrace of tibia, one of the five blessings."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+                                             "heal$":  {
+                                                           "damage":  40,
+                                                           "effectSelf":  null,
+                                                           "effectTarget":  13
+                                                       }
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Welcome, child of nature.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "5":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You already possess this blessing.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Oh. You do not have enough money.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "max":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "So receive the embrace of tibia, pilgrim",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "setQuest",
+                                                                                          "questId":  105,
+                                                                                          "value":  1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Fine. You are free to decline my offer.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "6":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "The Embrace of Tibia is yours. May it protect you in your darkest hour.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         },
+                                                                                         {
+                                                                                             "type":  "blessing",
+                                                                                             "index":  4,
+                                                                                             "state":  false
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "buyBlessing",
+                                                                                          "blessingIndex":  4
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "I am sorry, but you do not have enough gold.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "blessing",
+                                                                                             "index":  4,
+                                                                                             "state":  false
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You already carry this blessing.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Maybe later.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+                                                   "embrace":  5,
+                                                   "blessing":  6,
+                                                   "blessings":  6
+                                               },
+                         "keywordTopicPrices":  {
+                                                    "embrace":  10000,
+                                                    "blessing":  0,
+                                                    "blessings":  0
+                                                },
+                         "script":  "humphrey.js"
+                     }
+}

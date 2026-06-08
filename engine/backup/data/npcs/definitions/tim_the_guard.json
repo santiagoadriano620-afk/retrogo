@@ -1,0 +1,175 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Tim, the guard",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  114,
+                                              "details":  {
+                                                              "head":  19,
+                                                              "body":  19,
+                                                              "legs":  19,
+                                                              "feet":  19
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  4,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "news":  "I am busy. Please ask the citizens for news.",
+                                          "how":  "I am healthy and vigilant.",
+                                          "are":  "I am healthy and vigilant.",
+                                          "you":  "I am healthy and vigilant.",
+                                          "sell":  "Visit Tibia\u0027s shopkeepers to buy their fine wares.",
+                                          "tibianus":  "Tibianus III is our beloved king!",
+                                          "king":  "Tibianus III is our beloved king!",
+                                          "leader":  "Tibianus III is our beloved king!",
+                                          "job":  "It\u0027s my duty to protect the city.",
+                                          "army":  "Of course we guards are members of the army.",
+                                          "guard":  "Only the best of the best serve as silver guards.",
+                                          "battlegroups":  "Ask higher officials about that, please.",
+                                          "castle":  "The castle is at the west of the city.",
+                                          "dogs":  "Brave warriors, indeed.",
+                                          "of":  "Every guard dreams of becoming one of them one day.",
+                                          "war":  "Brave warriors, indeed.",
+                                          "knights":  "Every guard dreams of becoming one of them one day.",
+                                          "noodles":  "Every guard dreams of becoming one of them one day.",
+                                          "red":  "We of the red guard are the special forces.",
+                                          "secret":  "Ask a higher offical about that.",
+                                          "police":  "Ask a higher offical about that.",
+                                          "silver":  "Only the best of the best serve as silver guards.",
+                                          "city":  "Behave while in the city or we get you! Do you want to know where to find a shop or a guild?",
+                                          "shop":  "There\u0027s a smith, a provisioner, and a tavern.",
+                                          "guild":  "In the city you will find the guildhouses of the knights, paladins, druids, and sorcerers.",
+                                          "scum":  "We will get rid of all scum.",
+                                          "stutch":  "He is a soldier in the silver guard.",
+                                          "harsky":  "He is a soldier in the silver guard.",
+                                          "baxter":  "He is a role model for us.",
+                                          "bozo":  "The royal jester.",
+                                          "harkath$":  "The royal general. A warrior worth Banor\u0027s blessings.",
+                                          "bloodblade$":  "The royal general. A warrior worth Banor\u0027s blessings.",
+                                          "general$":  "The royal general. A warrior worth Banor\u0027s blessings.",
+                                          "banor":  "Praise Banor! May the great warrior be with us!",
+                                          "sam":  "Sam is our blacksmith. You\u0027ll find him north of the main crossroads. His shop is to the left.",
+                                          "smith":  "Sam is our blacksmith. You\u0027ll find him north of the main crossroads. His shop is to the left.",
+                                          "weapon":  "Sam is our blacksmith. You\u0027ll find him north of the main crossroads. His shop is to the left.",
+                                          "armor":  "Sam is our blacksmith. You\u0027ll find him north of the main crossroads. His shop is to the left.",
+                                          "gorn":  "Gorn is our provisioner. You\u0027ll find him north of the main crossroads. His shop is to the right.",
+                                          "provision":  "Gorn is our provisioner. You\u0027ll find him north of the main crossroads. His shop is to the right.",
+                                          "frodo":  "Frodo runs the local tavern. You\u0027ll find it at the main crossroads to the north-west.",
+                                          "tavern":  "Frodo runs the local tavern. You\u0027ll find it at the main crossroads to the north-west.",
+                                          "benjamin":  "Benjamin was a brave fighter. He runs the post office in the west of the city.",
+                                          "post":  "Benjamin was a brave fighter. He runs the post office in the west of the city.",
+                                          "depot":  "The depot is at the post office in the west of the city.",
+                                          "muriel":  "Muriel is the head of the local sorcerers\u0027 guild. You\u0027ll find it in the south-west of the city",
+                                          "sorcerer":  "Muriel is the head of the local sorcerers\u0027 guild. You\u0027ll find it in the south-west of the city",
+                                          "elane":  "Elane is responsible for the local paladins\u0027 guild. It\u0027s in the west of the town, directly south of the post office.",
+                                          "paladin":  "Elane is responsible for the local paladins\u0027 guild. It\u0027s in the west of the town, directly south of the post office.",
+                                          "marvik":  "Marvik is the great druid of the local guild. You\u0027ll find him by climbing up the citywalls at the east.",
+                                          "druid":  "Marvik is the great druid of the local guild. You\u0027ll find him by climbing up the citywalls at the east.",
+                                          "gregor":  "The high knight of the knights\u0027 guild. It is in north-east of the town.",
+                                          "knight":  "The high knight of the knights\u0027 guild. It is in north-east of the town.",
+                                          "fuck":  "Take this!",
+                                          "idiot":  "Take this!",
+                                          "asshole":  "Take this!",
+                                          "ass$":  "Take this!",
+                                          "fag$":  "Take this!",
+                                          "stupid":  "Take this!",
+                                          "tyrant":  "Take this!",
+                                          "shit":  "Take this!",
+                                          "lunatic":  "Take this!"
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "LONG LIVE THE KING!",
+                                                       "It\u0027s my duty to protect the city."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+                                             "fuck":  {
+                                                          "damage":  0,
+                                                          "effectSelf":  8,
+                                                          "effectTarget":  5
+                                                      },
+                                             "idiot":  {
+                                                           "damage":  0,
+                                                           "effectSelf":  8,
+                                                           "effectTarget":  5
+                                                       },
+                                             "asshole":  {
+                                                             "damage":  0,
+                                                             "effectSelf":  8,
+                                                             "effectTarget":  5
+                                                         },
+                                             "ass$":  {
+                                                          "damage":  0,
+                                                          "effectSelf":  8,
+                                                          "effectTarget":  5
+                                                      },
+                                             "fag$":  {
+                                                          "damage":  0,
+                                                          "effectSelf":  8,
+                                                          "effectTarget":  5
+                                                      },
+                                             "stupid":  {
+                                                            "damage":  0,
+                                                            "effectSelf":  8,
+                                                            "effectTarget":  5
+                                                        },
+                                             "tyrant":  {
+                                                            "damage":  0,
+                                                            "effectSelf":  8,
+                                                            "effectTarget":  5
+                                                        },
+                                             "shit":  {
+                                                          "damage":  0,
+                                                          "effectSelf":  8,
+                                                          "effectTarget":  5
+                                                      },
+                                             "lunatic":  {
+                                                             "damage":  0,
+                                                             "effectSelf":  8,
+                                                             "effectTarget":  5
+                                                         }
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "LONG LIVE THE KING!",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ]
+                     }
+}

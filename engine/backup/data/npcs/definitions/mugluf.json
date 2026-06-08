@@ -1,0 +1,174 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Mugluf",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  111,
+                                              "details":  {
+                                                              "head":  95,
+                                                              "body":  0,
+                                                              "legs":  0,
+                                                              "feet":  96
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  0,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "name":  "I am known as Mugluf the younger.",
+                                          "job":  "I sell meat, ham and salmon.",
+                                          "time":  "Time is nothing but another illusion.",
+                                          "caliph":  "Caliph Kazzan is our worldly leader.",
+                                          "kazzan":  "Caliph Kazzan is our worldly leader.",
+                                          "ferumbras":  "Who might that be?",
+                                          "noodles":  "That must be an important Thaian noble. Regulary Darashian delicacies are sent for him to Thais.",
+                                          "excalibug":  "O seeker of artifacts, I have no need for other weapons then a fork, a spoon, and a knife.",
+                                          "thais":  "I think we have some kind of trade agreements with them.",
+                                          "tibia":  "The world is an illusion, don\u0027t get trapped in it.",
+                                          "carlin":  "This town must be far away, we rarely even hear about it here.",
+                                          "news":  "People say there is a dark cloud gathering in the west.",
+                                          "rumour":  "People say there is a dark cloud gathering in the west.",
+                                          "desert":  "It\u0027s a challenge to body and soul. Praised be Daraman to have brought us here to grow on this constant test.",
+                                          "offer":  "I can offer you meat, ham, and salmon.",
+                                          "do":  "I can offer you meat, ham, and salmon.",
+                                          "you":  "I can offer you meat, ham, and salmon.",
+                                          "sell":  "I can offer you meat, ham, and salmon.",
+                                          "have":  "I can offer you meat, ham, and salmon.",
+                                          "food":  "Are you looking for food? I have meat, ham, and salmon."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Greetings , seeker of delicacies.",
+                                                       "I sell meat, ham and salmon."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Greetings %N, seeker of delicacies.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here it is.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "I am sorry, but you do not have enough gold.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Maybe later.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Meat",
+                                                         "price":  7,
+                                                         "id":  2666,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Ham",
+                                                         "price":  10,
+                                                         "id":  2671,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Salmon",
+                                                         "price":  6,
+                                                         "id":  2668,
+                                                         "type":  "sell"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "mugluf.js"
+                     }
+}

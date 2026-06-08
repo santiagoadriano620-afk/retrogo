@@ -1,0 +1,11 @@
+{
+  "actionId": 3113,
+  "type": "home",
+  "events": ["onStepIn", "onAddItem"],
+  "tileItem": true,
+  "town": "Carlin",
+  "teleport": { "to": { "x": 32360, "y": 31782, "z": 7 } },
+  "magicEffect": 13,
+  "teleportAddItem": { "to": { "x": 32360, "y": 31780, "z": 8 } },
+  "magicEffectAddItem": 14
+}

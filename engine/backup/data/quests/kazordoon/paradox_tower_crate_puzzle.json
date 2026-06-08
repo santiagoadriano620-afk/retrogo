@@ -1,0 +1,58 @@
+{
+    "actionId":  3048,
+    "type":  "puzzle",
+    "itemIds":  [
+
+                ],
+    "conditions":  [
+
+                   ],
+    "effects":  [
+                    {
+                        "type":  "createItem",
+                        "itemId":  1386,
+                        "count":  1,
+                        "pos":  {
+                                    "x":  32478,
+                                    "y":  31904,
+                                    "z":  5
+                                }
+                    },
+                    {
+                        "type":  "transformItemInPosition",
+                        "pos":  {
+                                    "x":  32476,
+                                    "y":  31900,
+                                    "z":  5
+                                },
+                        "from":  426,
+                        "to":  425
+                    },
+                    {
+                        "key":  8048,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "effectsAlt":  [
+                       {
+                           "type":  "removeItem",
+                           "pos":  {
+                                       "x":  32478,
+                                       "y":  31904,
+                                       "z":  5
+                                   },
+                           "itemId":  1386
+                       },
+                       {
+                           "type":  "transformItemInPosition",
+                           "pos":  {
+                                       "x":  32476,
+                                       "y":  31900,
+                                       "z":  5
+                                   },
+                           "from":  425,
+                           "to":  426
+                       }
+                   ]
+}

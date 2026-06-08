@@ -1,0 +1,304 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Uzon",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  113,
+                                              "details":  {
+                                                              "head":  95,
+                                                              "body":  5,
+                                                              "legs":  18,
+                                                              "feet":  76
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  1,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "name":  "I am known as Uzon Ibn Kalith.",
+                                          "job":  "I am a licensed Darashian carpetpilot. I can bring you to Darashia or Edron.",
+                                          "time":  "It\u0027s  right now. The next flight is scheduled soon.",
+                                          "caliph":  "The caliph welcomes travellers to his land.",
+                                          "kazzan":  "The caliph welcomes travellers to his land.",
+                                          "daraman":  "Oh, there is so much to tell about Daraman. You better travel to Darama to learn about his teachings.",
+                                          "ferumbras":  "I would never transport this one.",
+                                          "drefia":  "So you heared about haunted Drefia? Many adventures travel there to test their skills against the undead: vampires, mummies, and ghosts.",
+                                          "excalibug":  "Some people claim it is hidden somewhere under the endless sands of the devourer desert in Darama.",
+                                          "thais":  "Thais is noisy and overcroweded. That\u0027s why I like Darashia more.",
+                                          "tibia":  "I have seen almost every place on the continent.",
+                                          "continent":  "I could retell the tales of my travels for hours. Sadly another flight is scheduled soon.",
+                                          "carlin":  "Just another Thais but with women to lead them.",
+                                          "flying":  "You can buy flying carpets only in Darashia.",
+                                          "carpet":  "You can buy flying carpets only in Darashia.",
+                                          "fly":  "I transport travellers to the continent of Darama for a small fee. So many want to see the wonders of the desert and learn the secrets of Darama.",
+                                          "news":  "I heard too many news to recall them all.",
+                                          "rumors":  "I heard too many news to recall them all.",
+                                          "passage":  "I can fly you to Darashia on Darama or Edron if you like. Where do you want to go?",
+                                          "transport":  "I can fly you to Darashia on Darama or Edron if you like. Where do you want to go?",
+                                          "ride":  "I can fly you to Darashia on Darama or Edron if you like. Where do you want to go?",
+                                          "trip":  "I can fly you to Darashia on Darama or Edron if you like. Where do you want to go?",
+                                          "darashia":  "Do you want to get a ride to Darashia on Darama for 50 gold?",
+                                          "darama":  "Do you want to get a ride to Darashia on Darama for 50 gold?",
+                                          "edron":  "Do you want to get a ride to Edron for 50 gold?"
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Daraman\u0027s blessings, traveller .",
+                                                       "I am a licensed Darashian carpetpilot. I can bring you to Darashia or Edron."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Daraman\u0027s blessings, traveller %N.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Hold on!",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         },
+                                                                                         {
+                                                                                             "type":  "premium"
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "teleport",
+                                                                                          "x":  33269,
+                                                                                          "y":  32441,
+                                                                                          "z":  6
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "I\u0027m sorry, but you need a premium account in order to enter Darama.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You don\u0027t have enough money.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "You shouldn\u0027t miss the experience.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "2":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Hold on!",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         },
+                                                                                         {
+                                                                                             "type":  "premium"
+                                                                                         },
+                                                                                         {
+                                                                                             "type":  "questValue",
+                                                                                             "questId":  227,
+                                                                                             "value":  2
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "teleport",
+                                                                                          "x":  33193,
+                                                                                          "y":  31784,
+                                                                                          "z":  3
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "setQuest",
+                                                                                          "questId":  227,
+                                                                                          "value":  3
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Hold on!",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         },
+                                                                                         {
+                                                                                             "type":  "premium"
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "teleport",
+                                                                                          "x":  33193,
+                                                                                          "y":  31784,
+                                                                                          "z":  3
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "I\u0027m sorry, but you need a premium account in order to enter Edron.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You don\u0027t have enough money.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "You shouldn\u0027t miss the experience.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+                                                   "darashia":  1,
+                                                   "darama":  1,
+                                                   "edron":  2
+                                               },
+                         "keywordTopicPrices":  {
+                                                    "darashia":  50,
+                                                    "darama":  50,
+                                                    "edron":  50
+                                                },
+                         "script":  "uzon.js"
+                     }
+}

@@ -1,0 +1,182 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Tokel",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  111,
+                                              "details":  {
+                                                              "head":  78,
+                                                              "body":  96,
+                                                              "legs":  30,
+                                                              "feet":  114
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  3,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "how":  "I am fine, thank you.",
+                                          "are":  "I am fine, thank you.",
+                                          "you":  "I am fine, thank you.",
+                                          "sell":  "I sell some food.",
+                                          "job":  "I am a farmer, and proud of it.",
+                                          "name":  "My name is Tokel.",
+                                          "time":  "Oh, now that you mention it: I have much left to do, please excuse me.",
+                                          "help":  "Sorry, I have no idea how to help you.",
+                                          "monster":  "It\u0027s relatively peaceful here.",
+                                          "dungeon":  "Here are no dungeons as far as I know.",
+                                          "god":  "I pray to Crunor to bless our harvests.",
+                                          "king":  "I wish I\u0027d be as rich as him.",
+                                          "greenshore":  "The soil is a bit dry and there are a lot of stones. It\u0027s very hard to work this soil.",
+                                          "magic":  "I know nothing but about such stuff.",
+                                          "weapon":  "I know nothing but about such stuff.",
+                                          "spell":  "I know nothing but about such stuff.",
+                                          "tibia":  "I have not seen much of it yet. I am thinking about moving to Edron soon.",
+                                          "thais":  "The city is too lousy and crowded for my taste.",
+                                          "edron":  "They say life is easy there, the soil is rich, the city save. One day I might move there.",
+                                          "offer":  "I can offer you bread, cheese, ham, or meat.",
+                                          "buy":  "I can offer you bread, cheese, ham, or meat.",
+                                          "food":  "Are you looking for food? I have bread, cheese, ham, and meat."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Hi there, .",
+                                                       "I am a farmer, and proud of it."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Hi there, %N.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here it is.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "I am sorry, but you do not have enough gold.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Maybe later.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Bread",
+                                                         "price":  3,
+                                                         "id":  2689,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Cheese",
+                                                         "price":  5,
+                                                         "id":  2696,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Meat",
+                                                         "price":  5,
+                                                         "id":  2666,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Ham",
+                                                         "price":  8,
+                                                         "id":  2671,
+                                                         "type":  "sell"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "tokel.js"
+                     }
+}

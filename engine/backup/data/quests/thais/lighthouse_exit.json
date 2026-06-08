@@ -1,0 +1,9 @@
+{
+  "actionId": 3115,
+  "type": "exit",
+  "events": ["onStepIn", "onAddItem"],
+  "tileItem": true,
+  "teleport": { "to": { "x": 32232, "y": 32276, "z": 9 } },
+  "itemCondition": { "pos": { "x": 32225, "y": 32276, "z": 10 }, "itemId": 1387 },
+  "magicEffect": 15
+}

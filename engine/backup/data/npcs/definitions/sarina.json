@@ -1,0 +1,257 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Sarina",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  118,
+                                              "details":  {
+                                                              "head":  41,
+                                                              "body":  72,
+                                                              "legs":  95,
+                                                              "feet":  96
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  1,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "I am selling equipment of all kinds. Do you need anything?",
+                                          "name":  "I am Sarina. I am selling everything the adventurer needs.",
+                                          "time":  "It is exactly . Maybe you want to buy a watch?",
+                                          "food":  "Sorry, I don\u0027t sell food.",
+                                          "ghostlands":  "Since the druids sealed that placed with their magic, rarely anyone was there. Perhaps whatever haunted that place is long gone, who knows.",
+                                          "equipment":  "I sell shovels, picks, scythes, fishing rods, bags, ropes, backpacks, plates, cups, scrolls, documents, parchments, footballs, and watches. I also sell means of illumination.",
+                                          "offer":  "I sell shovels, picks, scythes, fishing rods, bags, ropes, backpacks, plates, cups, scrolls, documents, parchments, footballs, and watches. I also sell means of illumination.",
+                                          "goods":  "I sell shovels, picks, scythes, fishing rods, bags, ropes, backpacks, plates, cups, scrolls, documents, parchments, footballs, and watches. I also sell means of illumination.",
+                                          "do":  "I sell shovels, picks, scythes, fishing rods, bags, ropes, backpacks, plates, cups, scrolls, documents, parchments, footballs, and watches. I also sell means of illumination.",
+                                          "you":  "I sell shovels, picks, scythes, fishing rods, bags, ropes, backpacks, plates, cups, scrolls, documents, parchments, footballs, and watches. I also sell means of illumination.",
+                                          "sell":  "I sell shovels, picks, scythes, fishing rods, bags, ropes, backpacks, plates, cups, scrolls, documents, parchments, footballs, and watches. I also sell means of illumination.",
+                                          "have":  "I sell shovels, picks, scythes, fishing rods, bags, ropes, backpacks, plates, cups, scrolls, documents, parchments, footballs, and watches. I also sell means of illumination.",
+                                          "illumination":  "I sell torches, candlesticks, candelabra, and oil."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Oh, please come in, . What can I do for you?",
+                                                       "I am selling equipment of all kinds. Do you need anything?"
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Oh, please come in, %N. What can I do for you?",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here you are.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Come back, when you have enough money.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Hmm, but next time.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Scroll",
+                                                         "price":  5,
+                                                         "id":  1949,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Document",
+                                                         "price":  12,
+                                                         "id":  1968,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Written Parchment",
+                                                         "price":  8,
+                                                         "id":  1969,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Purple Bag",
+                                                         "price":  5,
+                                                         "id":  1994,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Purple Backpack",
+                                                         "price":  20,
+                                                         "id":  2001,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Cup",
+                                                         "price":  3,
+                                                         "id":  2013,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Plate",
+                                                         "price":  6,
+                                                         "id":  2035,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Watch",
+                                                         "price":  20,
+                                                         "id":  2036,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Football",
+                                                         "price":  111,
+                                                         "id":  2109,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Rope",
+                                                         "price":  50,
+                                                         "id":  2120,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Scythe",
+                                                         "price":  50,
+                                                         "id":  2550,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Pick",
+                                                         "price":  50,
+                                                         "id":  2553,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Shovel",
+                                                         "price":  50,
+                                                         "id":  2554,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Fishing Rod",
+                                                         "price":  150,
+                                                         "id":  2580,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Torch",
+                                                         "price":  2,
+                                                         "id":  2050,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Candlestick",
+                                                         "price":  3,
+                                                         "id":  2047,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Candelabrum",
+                                                         "price":  8,
+                                                         "id":  2041,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Vial",
+                                                         "price":  20,
+                                                         "id":  2006,
+                                                         "type":  "sell"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "sarina.js"
+                     }
+}

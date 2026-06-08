@@ -1,0 +1,261 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Donald McRonald",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  111,
+                                              "details":  {
+                                                              "head":  41,
+                                                              "body":  94,
+                                                              "legs":  79,
+                                                              "feet":  76
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  3,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "I run a farm, what else?!",
+                                          "wife":  "Sherry is my wife.",
+                                          "donald":  "I am Donald.",
+                                          "farm":  "It is my farm, yes.",
+                                          "name":  "Donald McRonald.",
+                                          "time":  "Who cares?",
+                                          "weather":  "Weather is good enough to work on the fields.",
+                                          "crops":  "I take care of our crops",
+                                          "field":  "My fields are enchanted by the druids and the wheat grows very quickly.",
+                                          "city":  "The city is to the north.",
+                                          "mill":  "I somtimes have to bring the wheat there.",
+                                          "spooked":  "I dont know.",
+                                          "king":  "King Tibianus is our king.",
+                                          "frodo":  "Frodo? He is a friend of mine.",
+                                          "oswald":  "He ignores us and we ignore him.",
+                                          "bloodblade":  "A general in the army.",
+                                          "muriel":  "I dont trust sorcerers.",
+                                          "elane":  "Too noble to care about us.",
+                                          "gregor":  "Knights like you always feel superior to us farmers.",
+                                          "marvik":  "Druids like you are a great help for us, they know much about nature.",
+                                          "gorn":  "Hardly know him.",
+                                          "sam":  "A blacksmith, eh?",
+                                          "quentin":  "A generous person.",
+                                          "lynda":  "She has a good soul.",
+                                          "buy":  "I can offer you wheat, cheese, carrots, and corncobs.",
+                                          "do":  "I can offer you wheat, cheese, carrots, and corncobs.",
+                                          "you":  "I can offer you wheat, cheese, carrots, and corncobs.",
+                                          "sell":  "I can offer you wheat, cheese, carrots, and corncobs.",
+                                          "have":  "I can offer you wheat, cheese, carrots, and corncobs.",
+                                          "food":  "Are you looking for food? I have wheat, cheese, carrots, and corn to sell. If you want to sell bread, talk to my wife, Sherry.",
+                                          "bread":  "If you want to sell bread, talk to my wife, Sherry."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Hello, Druid !",
+                                                       "Hmmm, well, hello .",
+                                                       "I run a farm, what else?!"
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Hello, Druid %N!",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Hmmm, well, hello %N.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here it is.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "I am sorry, but you do not have enough gold.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Maybe later.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "2":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here you are.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "createMoney"
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You have no spider that died recently.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Hmpf.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Dead Spider",
+                                                         "price":  2,
+                                                         "id":  2807,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Bunch Of Wheat",
+                                                         "price":  1,
+                                                         "id":  2694,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Cheese",
+                                                         "price":  5,
+                                                         "id":  2696,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Carrot",
+                                                         "price":  3,
+                                                         "id":  2684,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Corncob",
+                                                         "price":  3,
+                                                         "id":  2686,
+                                                         "type":  "sell"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "donald_mcronald.js"
+                     }
+}

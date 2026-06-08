@@ -1,0 +1,399 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Aneus",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  112,
+                                              "details":  {
+                                                              "head":  0,
+                                                              "body":  50,
+                                                              "legs":  58,
+                                                              "feet":  116
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  1,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "name":  "My name is Aneus, the storyteller.",
+                                          "bruno":  "I don\u0027t know much about him. I only know that he is selling fish in the village.",
+                                          "marlene":  "A lovely woman. But I give you a hint: Better keep away from her. *grin*",
+                                          "graubart":  "I don\u0027t know much about him. But he sails much and has seen nearly the whole world.",
+                                          "job":  "I\u0027m a storyteller.",
+                                          "storyteller":  "Well, if you wish I can tell you the story about this place here. The story about the Fields of Glory!",
+                                          "story":  "Ok, sit down and listen. Back in the early days, one of the ancestors of our king Tibianus III wanted to build the best city in whole of Tibia.",
+                                          "fields":  "Ok, sit down and listen. Back in the early days, one of the ancestors of our king Tibianus III wanted to build the best city in whole of Tibia.",
+                                          "of":  "Ok, sit down and listen. Back in the early days, one of the ancestors of our king Tibianus III wanted to build the best city in whole of Tibia.",
+                                          "glory":  "Ok, sit down and listen. Back in the early days, one of the ancestors of our king Tibianus III wanted to build the best city in whole of Tibia."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Greetings adventurer . What leads you to me?",
+                                                       "I\u0027m a storyteller."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Greetings adventurer %N. What leads you to me?",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "2":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "ancestor"
+                                                                                   ],
+                                                                      "response":  "Please forgive me. I forgot his name. I\u0027m not that young anymore.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  2,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "city"
+                                                                                   ],
+                                                                      "response":  "The works on this new city began and the king sent his best soldiers to protect the workers from orcs and to make them work harder.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  3,
+                                                                      "idle":  false
+                                                                  }
+                                                              ]
+                                              },
+                                        "3":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "soldier"
+                                                                                   ],
+                                                                      "response":  "It was the elite of the whole army. They were called the Red Legion (also known as the Bloody Legion).",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  3,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "orc"
+                                                                                   ],
+                                                                      "response":  "The orcs attacked the workers from time to time and so they disturbed the works on the city.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  4,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "work",
+                                                                                       "harder"
+                                                                                   ],
+                                                                      "response":  "The soldiers treated them like slaves.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  4,
+                                                                      "idle":  false
+                                                                  }
+                                                              ]
+                                              },
+                                        "4":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "slave"
+                                                                                   ],
+                                                                      "response":  "You dont know what a slave is? I really hope that you will never have to make this experience.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  3,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "works"
+                                                                                   ],
+                                                                      "response":  "The development of the city was fine. Also a giant castle was build northeast of the city. ...",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  }
+                                                              ]
+                                              },
+                                        "5":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "rebel"
+                                                                                   ],
+                                                                      "response":  "All rebels were brought to the giant castle. Guarded by the Red Legion, they had to work and live in even worse conditions. ...",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  }
+                                                              ]
+                                              },
+                                        "6":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "friends"
+                                                                                   ],
+                                                                      "response":  "The king\u0027s sister was pretty upset about the situation there but her brother didn\u0027t want to do anything about this matter. ...",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  }
+                                                              ]
+                                              },
+                                        "7":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "cruelty"
+                                                                                   ],
+                                                                      "response":  "The soldiers treated the workers like slaves.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  7,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "plan"
+                                                                                   ],
+                                                                      "response":  "She ordered her loyal druids and hunters to disguise themselves as orcs from the near island and to attack the Red Legion by night over and over again.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  8,
+                                                                      "idle":  false
+                                                                  }
+                                                              ]
+                                              },
+                                        "8":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "island"
+                                                                                   ],
+                                                                      "response":  "The General of the Red Legion became very angry about these attacks and after some months he stroke back!",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  9,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "attack"
+                                                                                   ],
+                                                                      "response":  null,
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  }
+                                                              ]
+                                              },
+                                        "9":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "stroke"
+                                                                                   ],
+                                                                      "response":  "Most of the Red Legion went to the island by night. The orcs were not prepared and the Red Legion killed hundreds of orcs with nearly no loss. ...",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  }
+                                                              ]
+                                              },
+                                        "10":  {
+                                                   "entries":  [
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "back"
+                                                                                    ],
+                                                                       "response":  "It is said that the orcish shamans cursed the Red Legion. ...",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "walk"
+                                                                                    ],
+                                                                       "response":  "It is said that the orcish shamans cursed the Red Legion. ...",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   }
+                                                               ]
+                                               },
+                                        "11":  {
+                                                   "entries":  [
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "help"
+                                                                                    ],
+                                                                       "response":  "She tried to rescue the workers but it was too late. The orcs started immediately to attack her troops, too. ...",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   }
+                                                               ]
+                                               },
+                                        "12":  {
+                                                   "entries":  [
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "trick"
+                                                                                    ],
+                                                                       "response":  "They used the same trick as against the Red Legion and the orcs started to fight their non-orcish-allies. ...",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "destruction"
+                                                                                    ],
+                                                                       "response":  "They used the same trick as against the Red Legion and the orcs started to fight their non-orcish-allies. ...",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   }
+                                                               ]
+                                               }
+                                    },
+                         "keywordNextTopics":  {
+                                                   "story":  2,
+                                                   "fields":  2,
+                                                   "of":  2,
+                                                   "glory":  2
+                                               },
+                         "script":  "aneus.js"
+                     }
+}

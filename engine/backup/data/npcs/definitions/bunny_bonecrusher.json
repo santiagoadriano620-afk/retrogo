@@ -1,0 +1,244 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Bunny Bonecrusher",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  121,
+                                              "details":  {
+                                                              "head":  96,
+                                                              "body":  3,
+                                                              "legs":  79,
+                                                              "feet":  115
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  2,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "news":  "Our reports are only for internal use.",
+                                          "report":  "Our reports are only for internal use.",
+                                          "queen":  "HAIL TO QUEEN ELOISE, OUR NOBLE LEADER!",
+                                          "leader":  "Queen Eloise is a fine leader for our fair town, indeed!",
+                                          "job":  "I am the general of the queen\u0027s army and have not the time to explain this concept to you.",
+                                          "how":  "We are in constant training and in perfect health.",
+                                          "are":  "We are in constant training and in perfect health.",
+                                          "you":  "We are in constant training and in perfect health.",
+                                          "sell":  "Are you suggesting I am corruptible?",
+                                          "army":  "Sorry, we dont recruit foreigners. Perhaps you can join by doing a quest for the queen.",
+                                          "guard":  "The army protects the defenceless males of our city. Our elite forces are the Green Ferrets.",
+                                          "green":  "Our elite forces are trained by rangers and druids. In the woods they are only second to some elves.",
+                                          "ferrets":  "Our elite forces are trained by rangers and druids. In the woods they are only second to some elves.",
+                                          "castle":  "The castle is not meant for defence but as a residence for the royal family.",
+                                          "subject":  "Our citizens have the luck to live under the wise rule of our beloved queen!",
+                                          "dogs":  "They are a men\u0027s club, mainly concerned about bragging and drinking alcohol.",
+                                          "of":  "They are rumoured to be skilled fighters. Then again, in the land of the blind...",
+                                          "war":  "They are a men\u0027s club, mainly concerned about bragging and drinking alcohol.",
+                                          "knights":  "They are rumoured to be skilled fighters. Then again, in the land of the blind...",
+                                          "noodles":  "They are rumoured to be skilled fighters. Then again, in the land of the blind...",
+                                          "druid":  "They are our main magic support and play a major role in our battletactics.",
+                                          "battletactics":  "Our tactic is to kiss.",
+                                          "tactics":  "Our tactic is to kiss.",
+                                          "kiss":  "K.I.S.S.! Keep It Simple, Stupid! Complicated tactics are to easy to be crushed by a twist of fate.",
+                                          "bloodblade":  "Old man. I can\u0027t tell what\u0027s worse for the shape of Thais\u0027 army.",
+                                          "thais":  "It\u0027s just a rotten hideout for drunks and men too lazy to do some serious work.",
+                                          "city":  "Our city blends in with the nature surrounding it. Our druids take care of that.",
+                                          "bonecrusher":  "Our family serves in the Carlin army since uncounted generations!",
+                                          "sister":  "Our family serves in the Carlin army since uncounted generations!",
+                                          "bambi":  "She is one of my beloved sisters and serves Carlin as a town guard.",
+                                          "blossom":  "She is one of my beloved sisters and serves Carlin as a town guard.",
+                                          "busty":  "She is one of my beloved sisters and serves Carlin as a town guard.",
+                                          "family":  "She is one of my beloved sisters and serves Carlin as a town guard.",
+                                          "fenbala":  "She is one of our Green Ferrets and one of the queen\u0027s bodyguards.",
+                                          "barbara":  "She is one of our Green Ferrets and one of the queen\u0027s bodyguards.",
+                                          "cornelia":  "Cornelia forges the armor necessary for our troops.",
+                                          "armor":  "Cornelia forges the armor necessary for our troops.",
+                                          "rowenna":  "Rowenna is responsible for our troops\u0027 supply with weapons.",
+                                          "weapon":  "Rowenna is responsible for our troops\u0027 supply with weapons.",
+                                          "legola":  "She is a distant cousin of mine and my sisters.",
+                                          "ferumbras":  "Believe it or not. I killed him two times with my own bow, but some unholy forces rise him again and again.",
+                                          "join":  "Sorry, we dont recruit foreigners. Perhaps you can join by doing a quest for the queen.",
+                                          "quest":  "Yeah. Entrusting a male with an important quest. Get serious!",
+                                          "mission":  "Yeah. Entrusting a male with an important quest. Get serious!",
+                                          "god":  "I whorship Banor, the first warrior!",
+                                          "banor":  "He is the idol for all fighting women and a reminder of what a man could become, if he could jump over his own shadow!",
+                                          "zathroth":  "Don\u0027t mention the dark one in the city of life!",
+                                          "monster":  "We cleared the woods around Carlin from most of them. But lately more and more showed up again.",
+                                          "excalibug":  "I am sure only a woman could muster the courage and strength to wield this weapon of myth.",
+                                          "graveyard":  "Bah! Just men\u0027s tales! Who believes in such bullshit? Perhaps we should put some men there over night and see what happens. Hehehe!",
+                                          "cemetary":  "Bah! Just men\u0027s tales! Who believes in such bullshit? Perhaps we should put some men there over night and see what happens. Hehehe!",
+                                          "crypt":  "Bah! Just men\u0027s tales! Who believes in such bullshit? Perhaps we should put some men there over night and see what happens. Hehehe!",
+                                          "fuck":  "Take this!",
+                                          "idiot":  "Take this!",
+                                          "asshole":  "Take this!",
+                                          "ass$":  "Take this!",
+                                          "fag$":  "Take this!",
+                                          "stupid":  "Take this!",
+                                          "tyrant":  "Take this!",
+                                          "shit":  "Take this!",
+                                          "lunatic":  "Take this!"
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Salutations, commoner !",
+                                                       "Address me properly !",
+                                                       "Address me with my title, commoner !"
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+                                             "fuck":  {
+                                                          "damage":  0,
+                                                          "effectSelf":  5,
+                                                          "effectTarget":  15
+                                                      },
+                                             "idiot":  {
+                                                           "damage":  0,
+                                                           "effectSelf":  5,
+                                                           "effectTarget":  15
+                                                       },
+                                             "asshole":  {
+                                                             "damage":  0,
+                                                             "effectSelf":  5,
+                                                             "effectTarget":  15
+                                                         },
+                                             "ass$":  {
+                                                          "damage":  0,
+                                                          "effectSelf":  5,
+                                                          "effectTarget":  15
+                                                      },
+                                             "fag$":  {
+                                                          "damage":  0,
+                                                          "effectSelf":  5,
+                                                          "effectTarget":  15
+                                                      },
+                                             "stupid":  {
+                                                            "damage":  0,
+                                                            "effectSelf":  5,
+                                                            "effectTarget":  15
+                                                        },
+                                             "tyrant":  {
+                                                            "damage":  0,
+                                                            "effectSelf":  5,
+                                                            "effectTarget":  15
+                                                        },
+                                             "shit":  {
+                                                          "damage":  0,
+                                                          "effectSelf":  5,
+                                                          "effectTarget":  15
+                                                      },
+                                             "lunatic":  {
+                                                             "damage":  0,
+                                                             "effectSelf":  5,
+                                                             "effectTarget":  15
+                                                         }
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hail",
+                                                                       "general"
+                                                                   ],
+                                                      "response":  "Salutations, commoner %N!",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "salutations",
+                                                                       "general"
+                                                                   ],
+                                                      "response":  "Salutations, commoner %N!",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello"
+                                                                   ],
+                                                      "response":  "Address me properly %N!",
+                                                      "idle":  true
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi"
+                                                                   ],
+                                                      "response":  "Address me properly %N!",
+                                                      "idle":  true
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hail"
+                                                                   ],
+                                                      "response":  "Address me with my title, commoner %N!",
+                                                      "idle":  true
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "salutations"
+                                                                   ],
+                                                      "response":  "Address me with my title, commoner %N!",
+                                                      "idle":  true
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "2":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Take this!",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "You should be careful with your words!",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+                                                   "sell":  2
+                                               },
+                         "script":  "bunny_bonecrusher.js"
+                     }
+}

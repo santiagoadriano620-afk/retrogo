@@ -1,0 +1,184 @@
+{
+    "creatureStatistics": {
+        "name": "Markwin",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 23,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 4,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "job": "I am the king of all minotaurs. I have been the king for more than 320 years.",
+            "real": "Yes, I am the real king. Palkar is the leader of the outcasts.",
+            "name": "I am Markwin, the old and real king of this city.",
+            "time": "Don't ask me such stupid questions. My time is over right now.",
+            "tibianus": "I am the real king!",
+            "king": "I am the real king!",
+            "outcast": "Those are no minos any longer. They left the city and killed their brothers. And they stole the key to my secret lab.",
+            "mintwallin": "The former glorious city lies in the dirt. It is my home. I founded it about 180 years ago, when we found this lovely place.",
+            "city": "The former glorious city lies in the dirt. It is my home. I founded it about 180 years ago, when we found this lovely place.",
+            "chronicle": "I am one of the minotaurs that are able to write. So I wrote most of the history of my beloved city Mintwallin in some books.",
+            "books": "I am one of the minotaurs that are able to write. So I wrote most of the history of my beloved city Mintwallin in some books.",
+            "prisoner": "He is totally mad. I don't know how he could find the way through the labyrinth. I arrested him in the prison.",
+            "human": "I hate them all. Minotaurs have no own spelling, so I used the speech of the humans. Once I was a prisoner of them. Since then I hate them - and since then I can speak and write in their language.",
+            "labyrinth": "It protected us for a long time. There are lots of traps in it. And many long tunnels. There haven't been many foes that found their way through it. Only that prisoner once arrived.",
+            "kaplar": "I really don't know what it means. But ALL minos say it! Terrible!",
+            "secret": "Hehe - you will never find a way to enter it. The outcast stole the key. You are too weak to conquer it. HARHARHAR.",
+            "lab": "First of all you will need a second fellow to help you.",
+            "enter": "First of all you will need a second fellow to help you.",
+            "second": "After you entered the first area you will need the key from the outcasts.",
+            "fellow": "Yeah - he has to step on a special tile and an entrance will appear at a very poisenous place!",
+            "place": "Na! You will have to find it yourself!",
+            "minotaurs": "My fellows all are minotaurs. It is my folk. I am the king of all minos.",
+            "minos": "My fellows all are minotaurs. It is my folk. I am the king of all minos.",
+            "key": "There are many keys. The outcast stole the key to our secret lab! They should burn!",
+            "demon": "He was the beginning of our end. He is mighty and powerful. He killed many brave minos and after his arrival we weren't able to go up to the surface.",
+            "light": "I would like to see the light of the sun again, but you will probably kill me. Go away!",
+            "sun": "I would like to see the light of the sun again, but you will probably kill me. Go away!",
+            "surface": "I would like to see the light of the sun again, but you will probably kill me. Go away!",
+            "palkar": "He is the leader of the outcast. In former times he was my best warrior, but now he is my worst enemy.",
+            "riddle": "Riddle? I don't know riddles!",
+            "karl": "The man who explored this part of the map first. Strange guy. He likes to be announced as hunter. I don't like him. He is a human.",
+            "milk": "No! I won't tell you the powers of our milk!"
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "No! The hornless have reached my city! BODYGUARDS TO ME!",
+                "Oh, it's you again. What do you want, hornless messenger?",
+                "Well ... you defeated my guards! Now everything is over! I guess I will have to answer your questions now."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {
+            "bye": {
+                "damage": 0,
+                "effectSelf": null,
+                "effectTarget": 6
+            }
+        },
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "No! The hornless have reached my city! BODYGUARDS TO ME!",
+                "idle": true
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Oh, it's you again. What do you want, hornless messenger?",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Well ... you defeated my guards! Now everything is over! I guess I will have to answer your questions now.",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ],
+        "topics": {
+            "1": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Uhm, well thank you, hornless beeing.",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "setQuest",
+                                "questId": 245,
+                                "value": 2
+                            },
+                            {
+                                "type": "deleteItem",
+                                "id": 2333
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Don't mock the king of the minotaurs or you will regret that!",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Uh? What??",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            }
+        },
+        "keywordNextTopics": {},
+        "trade": {
+            "items": []
+        },
+        "script": "markwin.js"
+    }
+}

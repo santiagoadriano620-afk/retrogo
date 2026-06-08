@@ -1,0 +1,96 @@
+{
+    "actionId":  3030,
+    "type":  "tile",
+    "events":  [
+                   "onStepIn",
+                   "onAddItem"
+               ],
+    "tileItem":  true,
+    "conditions":  [
+                       {
+                           "type":  "itemAtPosition",
+                           "itemId":  2016,
+                           "pos":  {
+                                       "x":  32243,
+                                       "y":  31892,
+                                       "z":  14
+                                   }
+                       }
+                   ],
+    "effects":  [
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  32242,
+                                    "y":  31891,
+                                    "z":  14
+                                },
+                        "effectId":  1
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  32243,
+                                    "y":  31891,
+                                    "z":  14
+                                },
+                        "effectId":  1
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  32242,
+                                    "y":  31892,
+                                    "z":  14
+                                },
+                        "effectId":  1
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  32242,
+                                    "y":  31893,
+                                    "z":  14
+                                },
+                        "effectId":  1
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  32243,
+                                    "y":  31893,
+                                    "z":  14
+                                },
+                        "effectId":  1
+                    },
+                    {
+                        "key":  8030,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "effectsAlt":  [
+                       {
+                           "type":  "relocate",
+                           "from":  {
+                                        "x":  32243,
+                                        "y":  31892,
+                                        "z":  14
+                                    },
+                           "to":  {
+                                      "x":  32244,
+                                      "y":  31892,
+                                      "z":  14
+                                  }
+                       },
+                       {
+                           "type":  "magicEffect",
+                           "pos":  {
+                                       "x":  32243,
+                                       "y":  31892,
+                                       "z":  14
+                                   },
+                           "effectId":  3
+                       }
+                   ]
+}

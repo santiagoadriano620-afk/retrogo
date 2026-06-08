@@ -1,0 +1,9 @@
+{
+  "actionId": 3108,
+  "type": "home",
+  "events": ["onStepIn", "onAddItem"],
+  "tileItem": true,
+  "town": "Venore",
+  "teleport": { "to": { "x": 32957, "y": 32076, "z": 7 } },
+  "magicEffect": 13
+}

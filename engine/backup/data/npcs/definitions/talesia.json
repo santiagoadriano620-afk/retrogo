@@ -1,0 +1,86 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Talesia",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  120,
+                                              "details":  {
+                                                              "head":  114,
+                                                              "body":  78,
+                                                              "legs":  77,
+                                                              "feet":  116
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  1,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "name":  "I am Talesia De\u0027Mir, owner of Crunor\u0027s Finest Warehouse.",
+                                          "job":  "I am a the owner of Crunor\u0027s Finest Warehouse of course.",
+                                          "time":  "It\u0027s  right now.",
+                                          "king":  "We pay this man enough to live here undisturbed of major interventions.",
+                                          "tibianus":  "We pay this man enough to live here undisturbed of major interventions.",
+                                          "army":  "At least they are useful, but we pay enough taxes to supply the entire Thaian army.",
+                                          "ferumbras":  "I hope he is aware that his enemies live elsewhere.",
+                                          "excalibug":  "I am contend with my familysword meloncutter.",
+                                          "thais":  "I hope they live well from our taxes...",
+                                          "tibia":  "The world is a treasure chest for those of knowledge and skill.",
+                                          "warehouse":  "My warehouse is only one of many. We merchants hold this city together and lead it to prosperity.",
+                                          "carlin":  "They are a bit problematic as business partners, but their independence from Thais is... interesting.",
+                                          "news":  "Even bad news can be good news, if you play your cards well.",
+                                          "tax":  "Venore is the major tax payer in the whole realm. So we more than deserve the privileges the king granted us.",
+                                          "crunor":  "A god worth to worship. At least he gives something useful back to the faithful.",
+                                          "privilege":  "We are alowed to trade with anyone, Thaian subject or not, have no Thaian noble as governor, and own the exclusive gambling license.",
+                                          "gambling":  "I don\u0027t care much about it, though others profit greatly."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Salutation, !",
+                                                       "I am a the owner of Crunor\u0027s Finest Warehouse of course."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Salutation, %N!",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ]
+                     }
+}

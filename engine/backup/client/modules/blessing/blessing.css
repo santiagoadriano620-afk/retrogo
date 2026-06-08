@@ -1,0 +1,252 @@
+.blessing-btn {
+  position: absolute;
+  top: 0px;
+  left: 4px;
+  z-index: 10;
+  width: 12px;
+  height: 14px;
+  border: 1px solid #444;
+  background-color: transparent;
+  background-image: url("/images/game/inventory/button_blessings_grey.png");
+  background-size: 24px 12px;
+  background-repeat: no-repeat;
+  background-position: 0px 1px;
+  cursor: pointer;
+  image-rendering: pixelated;
+}
+
+.blessing-btn:active {
+  background-position: -12px 1px;
+}
+
+.blessing-btn.state-gold {
+  background-image: url("/images/game/inventory/button_blessings_gold.png");
+}
+
+.blessing-btn.state-green {
+  background-image: url("/images/game/inventory/button_blessings_green.png");
+}
+
+#blessing-modal {
+  width: 460px;
+}
+
+#blessing-modal .modal-body {
+  padding: 8px;
+}
+
+.blessing-slots {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 4px;
+  margin: 4px 0;
+}
+
+.blessing-summary {
+  margin: 8px 0 4px 0;
+  padding: 6px 8px;
+  background: #1e1e1e;
+  border: 1px solid #444;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.blessing-summary-header {
+  color: #c8a44e;
+  font-weight: bold;
+  font-size: 12px;
+  margin-bottom: 4px;
+  text-align: center;
+}
+
+.blessing-summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 1px 4px;
+}
+
+.blessing-summary-row:nth-child(even) {
+  background: #252525;
+}
+
+.blessing-summary-label {
+  color: #d3d3d3;
+}
+
+.blessing-summary-value {
+  color: #ddd;
+  font-weight: bold;
+}
+
+.blessing-summary-highlight {
+  color: #5d87bf;
+}
+
+.blessing-summary-divider {
+  border: none;
+  border-top: 1px solid #333;
+  margin: 4px 0;
+}
+
+.blessing-slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #2a2a2a;
+  border: 2px solid #444;
+  padding: 6px 2px;
+  gap: 3px;
+}
+
+.blessing-slot.owned {
+  border-color: #c8a44e;
+  background: #353220;
+}
+
+.blessing-slot.locked {
+  opacity: 0.5;
+}
+
+.blessing-slot .blessing-icon {
+  width: 38px;
+  height: 38px;
+}
+
+.blessing-slot .blessing-name {
+  font-size: 9px;
+  color: #ddd;
+  text-align: center;
+  line-height: 1.2;
+  word-break: break-word;
+}
+
+.blessing-slot .blessing-price {
+  font-size: 9px;
+  color: #c8a44e;
+}
+
+.blessing-currency-opt {
+  font-size: 9px;
+  color: #999;
+  cursor: pointer;
+  padding: 2px 0;
+  width: 100%;
+  text-align: center;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  transition: background 0.1s, border-color 0.1s;
+}
+
+.blessing-currency-opt:hover {
+  background: #3a3a3a;
+}
+
+.blessing-currency-opt.selected {
+  color: #f6c95e;
+  border-color: #8a7a2a;
+  background: rgba(255, 215, 0, 0.1);
+}
+
+.blessing-gold-price {
+  font-size: 9px;
+  color: #c8a44e;
+  text-align: center;
+  width: 100%;
+}
+
+.blessing-tree {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.blessing-tree-stems {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 4px;
+  width: 100%;
+  position: relative;
+}
+
+.blessing-tree-stem-col {
+  display: flex;
+  justify-content: center;
+}
+
+.blessing-tree-stem {
+  width: 1px;
+  height: 10px;
+  background: #555;
+}
+
+.blessing-tree-stems::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: #555;
+}
+
+.blessing-tree-drop {
+  width: 1px;
+  height: 12px;
+  background: #555;
+}
+
+.blessing-tree-price {
+  font-size: 11px;
+  color: #c8a44e;
+  font-weight: bold;
+  padding: 2px 10px;
+  border: 1px solid #555;
+  border-radius: 3px;
+  background: #1e1e1e;
+  line-height: normal;
+  margin-top: 2px;
+}
+
+.blessing-premium-msg {
+  font-size: 11px;
+  color: #d4a017;
+  text-align: center;
+  padding: 6px 8px;
+  margin: 4px 0;
+  background: #2a2510;
+  border: 1px solid #5a4a1a;
+  border-radius: 3px;
+}
+
+.blessing-slot .blessing-buy-btn {
+  font-size: 9px;
+  padding: 1px 6px;
+  height: 16px;
+  background: #4a4a4a;
+  border: 1px solid #333;
+  color: #d3d3d3;
+  cursor: pointer;
+}
+
+.blessing-slot .blessing-buy-btn:disabled {
+  color: #d3d3d3;
+  border-color: #333;
+  background: #3a3a3a;
+  cursor: default;
+}
+
+#blessing-modal .modal-footer {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px;
+}
+
+#blessing-modal .modal-footer button {
+  height: 20px;
+  font-size: 10px;
+  padding: 2px 12px;
+}

@@ -1,0 +1,27 @@
+{
+    "actionId":  3007,
+    "type":  "moveEvent",
+    "events":  [
+                   "onStepIn"
+               ],
+    "effects":  [
+                    {
+                        "type":  "relocate",
+                        "from":  {
+                                     "x":  0,
+                                     "y":  0,
+                                     "z":  0
+                                 },
+                        "to":  {
+                                   "x":  0,
+                                   "y":  31886,
+                                   "z":  12
+                               }
+                    },
+                    {
+                        "key":  8007,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ]
+}

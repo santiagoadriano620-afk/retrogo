@@ -1,0 +1,113 @@
+{
+    "creatureStatistics": {
+        "name": "Yberius",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 57,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 2,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "job": "I have no job. I just live for the gods of Tibia.",
+            "name": "I am Brother Yberius.",
+            "tibia": "It's the world of Tibia.",
+            "god": "They are the creators of Tibia and all life on it.",
+            "life": "There are the plants, the citizens, and the monsters.",
+            "plant": "Crunor, the god of plants and fertility, watches over all plants, small and big.",
+            "citizen": "Just walk around and meet them. Chat and learn about them.",
+            "monster": "Even they have their part in the bigger scheme. Even if it eludes us mere mortals.",
+            "king": "The king resides in the far away city of Thais.",
+            "tibianus": "The king resides in the far away city of Thais.",
+            "army": "The royal army is here to protect us.",
+            "ferumbras": "The gods only know what this spawn of darkness might be up to.",
+            "excalibug": "This blasphemous weapon has to be destroyed.",
+            "news": "I won't take part in idle gossip.",
+            "help": "Earn some gold and upgrade your equipment.",
+            "quest": "Earn some gold and upgrade your equipment.",
+            "task": "Earn some gold and upgrade your equipment.",
+            "what": "Earn some gold and upgrade your equipment.",
+            "do": "Earn some gold and upgrade your equipment.",
+            "gold": "If you need money, you have to slay monsters and take their gold. Look for swamptrolls in the swamps. But be careful. They use poisoned weapons.",
+            "money": "If you need money, you have to slay monsters and take their gold. Look for swamptrolls in the swamps. But be careful. They use poisoned weapons.",
+            "equipment": "First you should buy a machete. You will need it in the swamps. And better don't explore without a shovel and a rope.",
+            "eat": "If you want to heal your wounds, buy somthething to eat or hunt some small game. If you are very weak just ask me to heal you.",
+            "food": "If you want to heal your wounds, buy somthething to eat or hunt some small game. If you are very weak just ask me to heal you.",
+            "heal$": "You aren't looking that bad. Sorry, I can't help you. But if you are looking for additional protection you should go on the pilgrimage of ashes.",
+            "blessing": "There are five different blessings available in five sacred places. These blessings are: the spiritual shielding, the spark of the phoenix, the embrace of tibia, the fire of the suns and the wisdom of solitude.",
+            "pilgrimage": "Whenever you receive a lethal wound your lifeforce is damaged. With every single of the five blessings you have this damage will be reduced.",
+            "ashes": "Whenever you receive a lethal wound your lifeforce is damaged. With every single of the five blessings you have this damage will be reduced.",
+            "spiritual": "You can receive the spiritual shielding in the whiteflower temple south of Thais.",
+            "shielding": "You can receive the spiritual shielding in the whiteflower temple south of Thais.",
+            "sacred": "Just ask in which of the five blessings you are interested in.",
+            "places": "Just ask in which of the five blessings you are interested in.",
+            "spark": "The spark of the phoenix is given by the dwarven priests of earth and fire in Kazordoon.",
+            "phoenix": "The spark of the phoenix is given by the dwarven priests of earth and fire in Kazordoon.",
+            "embrace": "The druids north of Carlin can provide you with the embrace of tibia.",
+            "fire": "Ask for the blessing of the two suns in the suntower near Ab'Dendriel .",
+            "suns": "Ask for the blessing of the two suns in the suntower near Ab'Dendriel .",
+            "wisdom": "Talk to the hermit Eremo on the isle of Cormaya about this blessing.",
+            "solitude": "Talk to the hermit Eremo on the isle of Cormaya about this blessing.",
+            "time": "Now, it is . Ask Shiantis for a watch, if you need one."
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "Welcome, young ! If you are new in Tibia, ask me for help.",
+                "I have no job. I just live for the gods of Tibia."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {
+            "heal$": {
+                "damage": 40,
+                "effectSelf": null,
+                "effectTarget": 13
+            }
+        },
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Welcome, young %N! If you are new in Tibia, ask me for help.",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ]
+    }
+}

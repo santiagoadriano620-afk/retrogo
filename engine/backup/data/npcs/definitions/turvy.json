@@ -1,0 +1,535 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Turvy",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  121,
+                                              "details":  {
+                                                              "head":  78,
+                                                              "body":  52,
+                                                              "legs":  64,
+                                                              "feet":  115
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  2,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "how":  "I\u0027m just fine and dandy, thank you for asking.",
+                                          "are":  "I\u0027m just fine and dandy, thank you for asking.",
+                                          "you":  "My offers are weapons, armors, helmets, legs, and shields.",
+                                          "job":  "It is an absolute honour to provide weaponry and armor to the courageous adventurers of Thais, just so long as you have the gold to pay for it.",
+                                          "name":  "Some call me Turvy. Actually, everybody calls me Turvy.",
+                                          "time":  "It is nearly time for my afternoon nap, so please hurry!",
+                                          "help":  "Help to self-help - that is my motto.",
+                                          "monster":  "There is a monster here? HERE?! Time to double the prices!",
+                                          "dungeon":  "If you want to see dungeons go and insult the guards.  On second thoughts - don\u0027t do that.",
+                                          "sewer":  "It is very effective, but attracts almost as many wannabe heroes as it does rats.",
+                                          "assistant":  "I am not a mere assistant! I have a job of great responsibility! But mostly I keep annoying personages away from my boss.",
+                                          "annoying":  "Oh gosh - I could tell you some stories. But I won\u0027t.",
+                                          "thank":  "So polite . . . bless you!",
+                                          "god":  "The Gods of Tibia play games with the fate of Tibians - but they haven\u0027t bothered to read the instructions.",
+                                          "king":  "Ah, yes, yes, hail to King Tibianus! May he in his infinite wisdom reduce my taxes... and so on...",
+                                          "sam":  "A simple shopkeeper, who was last in the queue when they were handing out intelligence.",
+                                          "benjamin":  "Ah, such a shame about poor Benjamin. Lost it a bit after receiving one too many blows to the head.",
+                                          "gorn":  "He does a good line in second-rate scrolls for first-rate prices.",
+                                          "quentin":  "You can\u0027t tech an old monk new tricks. He is stubborn to the extreme and overly concerned about Thais. He should care more about his gods and less about that king.",
+                                          "bozo":  "Bozo - such a tragic story. If only I could remember it.",
+                                          "rumour":  "You know a rumour? Well then - don\u0027t keep it to yourself.",
+                                          "gossip":  "You know a rumour? Well then - don\u0027t keep it to yourself.",
+                                          "news":  "You know a rumour? Well then - don\u0027t keep it to yourself.",
+                                          "weapon":  "I have hand axes, axes, spears, maces, battle hammers, swords, rapiers, daggers, and sabres. What\u0027s your choice?",
+                                          "magic":  "Magic is a thing of the past. Why bother with a colourful bit of rock and a few fancy words when you can have a foot of razor-sharp steel in your hand?!",
+                                          "power":  "There are people who talk about a rebellion against King Tibianus.",
+                                          "rebellion":  "Well, Venore is richer than Thais, and some people want to live in a democracy free from an oppressive tyrant - I mean monarch. I\u0027m not one of them.",
+                                          "spell":  "Spells - dodgy mumbo jumbo if you ask me. A sword never backfires on its user!",
+                                          "elane":  "A true tragedy - she has lost so many husbands in such unusual circumstances.",
+                                          "venore":  "Ah... Venore - a wonderful city! Full of culture! So many friendly faces! So unlike Thais!",
+                                          "thais":  "Thais is OK - I suppose. Not as nice as Venore, but good for business.",
+                                          "carlin":  "Those women really know how to run things - look at how well the trade is going there!",
+                                          "kazordoon":  "You need to shrink before you go there - they say the dwarves aren\u0027t too keen on sharing their mountain with us Tibians.",
+                                          "dwarves":  "I don\u0027t know much about them - there are some civilised dwarves, of course, but I can never tell whether they are male or female.",
+                                          "Ab\u0027dendriel":  "Aah... a beautiful leafy city. Shame about the elves.",
+                                          "elves":  "Elves are good with a bow and arrow, or so I am told. Shame that they are no good at peace-making.",
+                                          "chester":  "I have never heard any rumours concerning him, isn\u0027t that odd?",
+                                          "ardua":  "Well - she isn\u0027t really my kind of person. Please don\u0027t mention her name again.",
+                                          "partos":  "Some thief they caught for all I know.",
+                                          "gamel":  "Some sinister guy that is. He\u0027s not allowed to enter that markethall and thats for a good reason.",
+                                          "gamon":  "Shhh! He\u0027s a spy! He watches us all the time! Just keep smiling and he\u0027ll go away!",
+                                          "quest":  "Hmmm yes. I think Topsy might have something for you.",
+                                          "offer":  "My offers are weapons, armors, helmets, legs, and shields.",
+                                          "do":  "My offers are weapons, armors, helmets, legs, and shields.",
+                                          "sell":  "My offers are weapons, armors, helmets, legs, and shields.",
+                                          "have":  "My offers are weapons, armors, helmets, legs, and shields.",
+                                          "helmet":  "I am selling leather helmets and chain helmets. What do you want?",
+                                          "armor":  "I am selling leather, chain, and brass armor. What do you need?",
+                                          "shield":  "I am selling wooden shields and steel shields. What do you want?",
+                                          "trousers":  "I am selling chain legs. Do you want to buy any?",
+                                          "legs":  "I am selling chain legs. Do you want to buy any?"
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Hello, dear . Can I be of any assistance?",
+                                                       "It is an absolute honour to provide weaponry and armor to the courageous adventurers of Thais, just so long as you have the gold to pay for it."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  "Hello, dear %N. Can I be of any assistance?",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Thank you. Here it is.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Sorry, you do not have enough gold.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Maybe you will buy it another time.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "2":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Ok. Here is your money.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "createMoney"
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Sorry, you do not have one.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Sorry, you do not have so much.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Maybe next time.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "3":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Go on! I can\u0027t wait to hear more!",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+                                                   "rumour":  3,
+                                                   "gossip":  3,
+                                                   "news":  3
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Dagger",
+                                                         "price":  5,
+                                                         "id":  2379,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Hand Axe",
+                                                         "price":  8,
+                                                         "id":  2380,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Spear",
+                                                         "price":  10,
+                                                         "id":  2389,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Rapier",
+                                                         "price":  15,
+                                                         "id":  2384,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Axe",
+                                                         "price":  20,
+                                                         "id":  2386,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Sabre",
+                                                         "price":  35,
+                                                         "id":  2385,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Sword",
+                                                         "price":  85,
+                                                         "id":  2376,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Mace",
+                                                         "price":  90,
+                                                         "id":  2398,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Battle Hammer",
+                                                         "price":  350,
+                                                         "id":  2417,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Throwing Knife",
+                                                         "price":  25,
+                                                         "id":  2410,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Chain Armor",
+                                                         "price":  200,
+                                                         "id":  2464,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Brass Armor",
+                                                         "price":  450,
+                                                         "id":  2465,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Leather Armor",
+                                                         "price":  35,
+                                                         "id":  2467,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Chain Helmet",
+                                                         "price":  52,
+                                                         "id":  2458,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Leather Helmet",
+                                                         "price":  12,
+                                                         "id":  2461,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Steel Shield",
+                                                         "price":  240,
+                                                         "id":  2509,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Wooden Shield",
+                                                         "price":  15,
+                                                         "id":  2512,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Chain Legs",
+                                                         "price":  80,
+                                                         "id":  2648,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Two Handed Sword",
+                                                         "price":  450,
+                                                         "id":  2377,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Battle Axe",
+                                                         "price":  80,
+                                                         "id":  2378,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Dagger",
+                                                         "price":  2,
+                                                         "id":  2379,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Hand Axe",
+                                                         "price":  4,
+                                                         "id":  2380,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Halberd",
+                                                         "price":  400,
+                                                         "id":  2381,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Club",
+                                                         "price":  1,
+                                                         "id":  2382,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Rapier",
+                                                         "price":  5,
+                                                         "id":  2384,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Sabre",
+                                                         "price":  12,
+                                                         "id":  2385,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Axe",
+                                                         "price":  7,
+                                                         "id":  2386,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Spear",
+                                                         "price":  3,
+                                                         "id":  2389,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Morning Star",
+                                                         "price":  90,
+                                                         "id":  2394,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Mace",
+                                                         "price":  30,
+                                                         "id":  2398,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Short Sword",
+                                                         "price":  10,
+                                                         "id":  2406,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Battle Hammer",
+                                                         "price":  120,
+                                                         "id":  2417,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Sword",
+                                                         "price":  25,
+                                                         "id":  2376,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Leather Armor",
+                                                         "price":  12,
+                                                         "id":  2467,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Chain Armor",
+                                                         "price":  70,
+                                                         "id":  2464,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Brass Armor",
+                                                         "price":  150,
+                                                         "id":  2465,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Plate Armor",
+                                                         "price":  400,
+                                                         "id":  2463,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Chain Legs",
+                                                         "price":  25,
+                                                         "id":  2648,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Leather Helmet",
+                                                         "price":  4,
+                                                         "id":  2461,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Chain Helmet",
+                                                         "price":  17,
+                                                         "id":  2458,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Steel Helmet",
+                                                         "price":  190,
+                                                         "id":  2457,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Wooden Shield",
+                                                         "price":  5,
+                                                         "id":  2512,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Battle Shield",
+                                                         "price":  95,
+                                                         "id":  2513,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Steel Shield",
+                                                         "price":  80,
+                                                         "id":  2509,
+                                                         "type":  "buy"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "turvy.js"
+                     }
+}

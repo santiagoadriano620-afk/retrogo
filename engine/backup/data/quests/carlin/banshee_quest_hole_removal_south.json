@@ -1,0 +1,35 @@
+{
+    "actionId":  3008,
+    "type":  "moveEvent",
+    "events":  [
+                   "onStepIn"
+               ],
+    "conditions":  [
+                       {
+                           "type":  "itemAtPosition",
+                           "itemId":  392,
+                           "pos":  {
+                                       "x":  32266,
+                                       "y":  31916,
+                                       "z":  12
+                                   }
+                       }
+                   ],
+    "effects":  [
+                    {
+                        "type":  "transformItemInPosition",
+                        "pos":  {
+                                    "x":  32266,
+                                    "y":  31916,
+                                    "z":  12
+                                },
+                        "from":  392,
+                        "to":  355
+                    },
+                    {
+                        "key":  8008,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ]
+}

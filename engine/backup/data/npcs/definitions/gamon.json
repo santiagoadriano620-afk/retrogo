@@ -1,0 +1,1701 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Gamon",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  111,
+                                              "details":  {
+                                                              "head":  97,
+                                                              "body":  58,
+                                                              "legs":  105,
+                                                              "feet":  120
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  1,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "I am Thais\u0027s foremost furniture salesman.",
+                                          "news":  "You mean my specials, don\u0027t you?",
+                                          "how":  "Excellent! Never felt better in my life!",
+                                          "are":  "Excellent! Never felt better in my life!",
+                                          "you":  "I sell statues, tables, chairs, flowers, pillows, pottery, instruments, decoration, tapestries and containers.",
+                                          "name":  "My friends call me Gamon. My fans call me the incredible Gammy!",
+                                          "time":  "Any time\u0027s a good time to buy some furniture.",
+                                          "Thais":  "Thais is obsessed with its past. Everybody here is so proud of their history. Bah! Thais might have a long history, but it has no idea when it comes to interior decoration.",
+                                          "Venore":  "The place where it all happens. That town really rocks! Thais could learn a lot about interior decoration from Venore!",
+                                          "power":  "There are a few rumours about a rebellion, but that is all they are.",
+                                          "rebellion":  "Well - a few paranoid souls think that Venore wants to gain independence from Thais. Nothing more than rumours.",
+                                          "quality":  "Our furniture is produced by the finest carpenters on the continent using the rare wood of the Venorean marsh willow!",
+                                          "marsh":  "You can\u0027t get any better wood in this world. And it has got a nice smell to it, too. There is nothing nicer than a marsh willow campfire.",
+                                          "willow":  "You can\u0027t get any better wood in this world. And it has got a nice smell to it, too. There is nothing nicer than a marsh willow campfire.",
+                                          "king":  "His Royal Highness will start to appreciate the superior quality of our stock soon enough!",
+                                          "sam":  "I heard rumours he has some special offers for customers who know to ask for the correct things.",
+                                          "benjamin":  "He\u0027s incredibly slow. Just your average postman, I guess.",
+                                          "gorn":  "He sells stuff of inferior quality. Nothing compared to venores high quality goods.",
+                                          "quentin":  "That old monk has probably never left that overcrowded town here.",
+                                          "quest":  "A quest?! Who needs quests when there is interior decorating!",
+                                          "bozo":  "Bozo! Damn that clown! He keeps making fake orders. It isn\u0027t funny to deliver a wardrobe to an address that doesn\u0027t even exist, you know!",
+                                          "tibia":  "Tibia is a wonderful place full of business opportunities.",
+                                          "castle":  "I\u0027ve said it a thousand times! That place needs a complete refurbishing!",
+                                          "muriel":  "The sorcerers guild could realy need someone with taste to redecorate it.",
+                                          "elane":  "She\u0027s pretty, but I am the kind of man who enjoys a long and healthy life.",
+                                          "marvik":  "Druids are obsessed with trees and the bane of any carpenter.",
+                                          "gregor":  "Those knights know how to party. And after such partys theres allways need for new furniture.",
+                                          "guild":  "Now those people really talk business. There is a new era dawning.",
+                                          "merchants":  "Now those people really talk business. There is a new era dawning.",
+                                          "Topsy":  "Ah, those twins. Strange people they are (*sigh*). Oh, they are great to work with, of course. Excellent quality, competetive prices! But well... (whispers) they give me the creeps!",
+                                          "Turvy":  "Ah, those twins. Strange people they are (*sigh*). Oh, they are great to work with, of course. Excellent quality, competetive prices! But well... (whispers) they give me the creeps!",
+                                          "twins":  "Ah, those twins. Strange people they are (*sigh*). Oh, they are great to work with, of course. Excellent quality, competetive prices! But well... (whispers) they give me the creeps!",
+                                          "creeps":  "Yes! I can never figure out which is which. And they are always watching me!",
+                                          "watching":  "Look! They are doing it again! And they are always smiling!",
+                                          "smiling":  "Yes! Smiling! How a professional sales artist such as myself is supposed to work in such an atmosphere is beyond me!",
+                                          "artist":  "Yes! Selling is a form of art! The elaborate combination of rhetoric and acting which serves to create a sublime longing for the infinite, embodied by second class furniture.",
+                                          "rug":  "Oh, silly me! Rugs are out of stock at the moment! But we expect a new shipment anytime. Just watch out for the next update!... Of our inventory I mean.",
+                                          "offer":  "I sell statues, tables, chairs, flowers, pillows, pottery, instruments, decoration, tapestries and containers.",
+                                          "goods":  "I sell statues, tables, chairs, flowers, pillows, pottery, instruments, decoration, tapestries and containers.",
+                                          "do":  "I sell statues, tables, chairs, flowers, pillows, pottery, instruments, decoration, tapestries and containers.",
+                                          "sell":  "I sell statues, tables, chairs, flowers, pillows, pottery, instruments, decoration, tapestries and containers.",
+                                          "have":  "I sell statues, tables, chairs, flowers, pillows, pottery, instruments, decoration, tapestries and containers.",
+                                          "furniture":  "I sell statues, tables, chairs, flowers, pillows, pottery, instruments, decoration, tapestries and containers.",
+                                          "equipment":  "I sell statues, tables, chairs, flowers, pillows, pottery, instruments, decoration, tapestries and containers.",
+                                          "special":  "My offers are permanently extraordinarily cheap.",
+                                          "statue":  "What statue would you like? A knights statue, a minotaur statue or a goblin statue?",
+                                          "table":  "Do you want to buy a small table, a round table, a square table or a big table?",
+                                          "red":  "Do you want to buy a small table, a round table, a square table or a big table?",
+                                          "chair":  "I can offer you a red cushioned chair or a green cushioned chair.",
+                                          "green":  "Do you want to buy a small table, a round table, a square table or a big table?",
+                                          "cushioned":  "I can offer you a red cushioned chair or a green cushioned chair.",
+                                          "flower":  "I offer indoor plants, flower bowls, god flowers, honey flowers and potted flowers. What do you need?",
+                                          "plant":  "I offer indoor plants, flower bowls, god flowers, honey flowers and potted flowers. What do you need?",
+                                          "pillow":  "What color would you prefer? Red, green, blue or yellow?",
+                                          "small":  "What color would you prefer? Purple, green, red, blue, orange, turquoise or white?",
+                                          "round":  "What color would you prefer? Purple, red, blue or turquoise?",
+                                          "square":  "What color would you prefer? Red, green, blue or yellow?",
+                                          "pottery":  "I offer vases, coal basins, amphora and large amphora. What do you need?",
+                                          "instruments":  "I can offer you a piano or a harp. What would you like?",
+                                          "decoration":  "I can offer water pipes, pendulum clock, telescopes, table lamps, rocking horses, globes and birdcages. I also sell wall hangings.",
+                                          "wall":  "I can offer mirrors, paintings and cuckoo clocks.",
+                                          "hangings":  "I can offer mirrors, paintings and cuckoo clocks.",
+                                          "painting":  "Would you like a landscape, a portrait or a still life. What is your choice?",
+                                          "mirror":  "I sell round mirrors, oval mirrors and edged mirrors. Which one might it be?",
+                                          "curtain":  "Well, actually it\u0027s better to call them tapestries.",
+                                          "tapestr":  "Please tell me what color you would prefer: purple, green, yellow, orange, red, blue or white?",
+                                          "containers":  "I offer drawers, dressers, lockers, crates, chests, boxes, barrels, trunks and troughs."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Well, hello there, Lady, welcome to Gamon\u0027s humble furniture shop!",
+                                                       "Nice to meet you, Mister ! Looking for furniture? You\u0027ve come to the right place!",
+                                                       "I am Thais\u0027s foremost furniture salesman."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Well, hello there, Lady, %N welcome to Gamon\u0027s humble furniture shop!",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Nice to meet you, Mister %N! Looking for furniture? You\u0027ve come to the right place!",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "81":  {
+                                                   "entries":  [
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "Here you are.",
+                                                                       "conditions":  [
+                                                                                          {
+                                                                                              "type":  "gold",
+                                                                                              "min":  -1
+                                                                                          },
+                                                                                          {
+                                                                                              "type":  "premium"
+                                                                                          }
+                                                                                      ],
+                                                                       "actions":  [
+                                                                                       {
+                                                                                           "type":  "deleteMoney",
+                                                                                           "amount":  -1
+                                                                                       },
+                                                                                       {
+                                                                                           "type":  "createItem",
+                                                                                           "id":  -1
+                                                                                       }
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "I\u0027m sorry, but you need a premium account if you want to buy furniture.",
+                                                                       "conditions":  [
+                                                                                          {
+                                                                                              "type":  "gold",
+                                                                                              "min":  -1
+                                                                                          }
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "Come back, when you have enough money.",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+
+                                                                                    ],
+                                                                       "response":  "Hmm, but I\u0027m sure, it would fit nicely into your house.",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  true,
+                                                                       "isDefault":  true
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "Here you are.",
+                                                                       "conditions":  [
+                                                                                          {
+                                                                                              "type":  "gold",
+                                                                                              "min":  -1
+                                                                                          },
+                                                                                          {
+                                                                                              "type":  "premium"
+                                                                                          }
+                                                                                      ],
+                                                                       "actions":  [
+                                                                                       {
+                                                                                           "type":  "deleteMoney",
+                                                                                           "amount":  -1
+                                                                                       },
+                                                                                       {
+                                                                                           "type":  "createItem",
+                                                                                           "id":  -1
+                                                                                       }
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "I\u0027m sorry, but you need a premium account if you want to buy furniture.",
+                                                                       "conditions":  [
+                                                                                          {
+                                                                                              "type":  "gold",
+                                                                                              "min":  -1
+                                                                                          }
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "Come back, when you have enough money.",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+
+                                                                                    ],
+                                                                       "response":  "Hmm, but I\u0027m sure, it would fit nicely into your house.",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  true,
+                                                                       "isDefault":  true
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "Here you are.",
+                                                                       "conditions":  [
+                                                                                          {
+                                                                                              "type":  "gold",
+                                                                                              "min":  -1
+                                                                                          },
+                                                                                          {
+                                                                                              "type":  "premium"
+                                                                                          }
+                                                                                      ],
+                                                                       "actions":  [
+                                                                                       {
+                                                                                           "type":  "deleteMoney",
+                                                                                           "amount":  -1
+                                                                                       },
+                                                                                       {
+                                                                                           "type":  "createItem",
+                                                                                           "id":  -1
+                                                                                       }
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "I\u0027m sorry, but you need a premium account if you want to buy furniture.",
+                                                                       "conditions":  [
+                                                                                          {
+                                                                                              "type":  "gold",
+                                                                                              "min":  -1
+                                                                                          }
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "Come back, when you have enough money.",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+
+                                                                                    ],
+                                                                       "response":  "Hmm, but I\u0027m sure, it would fit nicely into your house.",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  true,
+                                                                       "isDefault":  true
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "Here you are.",
+                                                                       "conditions":  [
+                                                                                          {
+                                                                                              "type":  "gold",
+                                                                                              "min":  -1
+                                                                                          },
+                                                                                          {
+                                                                                              "type":  "premium"
+                                                                                          }
+                                                                                      ],
+                                                                       "actions":  [
+                                                                                       {
+                                                                                           "type":  "deleteMoney",
+                                                                                           "amount":  -1
+                                                                                       },
+                                                                                       {
+                                                                                           "type":  "createItem",
+                                                                                           "id":  -1
+                                                                                       }
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "I\u0027m sorry, but you need a premium account if you want to buy furniture.",
+                                                                       "conditions":  [
+                                                                                          {
+                                                                                              "type":  "gold",
+                                                                                              "min":  -1
+                                                                                          }
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "Come back, when you have enough money.",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+
+                                                                                    ],
+                                                                       "response":  "Hmm, but I\u0027m sure, it would fit nicely into your house.",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  true,
+                                                                       "isDefault":  true
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "Here you are.",
+                                                                       "conditions":  [
+                                                                                          {
+                                                                                              "type":  "gold",
+                                                                                              "min":  -1
+                                                                                          },
+                                                                                          {
+                                                                                              "type":  "premium"
+                                                                                          }
+                                                                                      ],
+                                                                       "actions":  [
+                                                                                       {
+                                                                                           "type":  "deleteMoney",
+                                                                                           "amount":  -1
+                                                                                       },
+                                                                                       {
+                                                                                           "type":  "createItem",
+                                                                                           "id":  -1
+                                                                                       }
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "I\u0027m sorry, but you need a premium account if you want to buy furniture.",
+                                                                       "conditions":  [
+                                                                                          {
+                                                                                              "type":  "gold",
+                                                                                              "min":  -1
+                                                                                          }
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "Come back, when you have enough money.",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+
+                                                                                    ],
+                                                                       "response":  "Hmm, but I\u0027m sure, it would fit nicely into your house.",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  true,
+                                                                       "isDefault":  true
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "Here you are.",
+                                                                       "conditions":  [
+                                                                                          {
+                                                                                              "type":  "gold",
+                                                                                              "min":  -1
+                                                                                          },
+                                                                                          {
+                                                                                              "type":  "premium"
+                                                                                          }
+                                                                                      ],
+                                                                       "actions":  [
+                                                                                       {
+                                                                                           "type":  "deleteMoney",
+                                                                                           "amount":  -1
+                                                                                       },
+                                                                                       {
+                                                                                           "type":  "createItem",
+                                                                                           "id":  -1
+                                                                                       }
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "I\u0027m sorry, but you need a premium account if you want to buy furniture.",
+                                                                       "conditions":  [
+                                                                                          {
+                                                                                              "type":  "gold",
+                                                                                              "min":  -1
+                                                                                          }
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "Come back, when you have enough money.",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+
+                                                                                    ],
+                                                                       "response":  "Hmm, but I\u0027m sure, it would fit nicely into your house.",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  true,
+                                                                       "isDefault":  true
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "Here you are.",
+                                                                       "conditions":  [
+                                                                                          {
+                                                                                              "type":  "gold",
+                                                                                              "min":  -1
+                                                                                          },
+                                                                                          {
+                                                                                              "type":  "premium"
+                                                                                          }
+                                                                                      ],
+                                                                       "actions":  [
+                                                                                       {
+                                                                                           "type":  "deleteMoney",
+                                                                                           "amount":  -1
+                                                                                       },
+                                                                                       {
+                                                                                           "type":  "createItem",
+                                                                                           "id":  -1
+                                                                                       }
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "I\u0027m sorry, but you need a premium account if you want to buy furniture.",
+                                                                       "conditions":  [
+                                                                                          {
+                                                                                              "type":  "gold",
+                                                                                              "min":  -1
+                                                                                          }
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "Come back, when you have enough money.",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+
+                                                                                    ],
+                                                                       "response":  "Hmm, but I\u0027m sure, it would fit nicely into your house.",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  true,
+                                                                       "isDefault":  true
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "Here you are.",
+                                                                       "conditions":  [
+                                                                                          {
+                                                                                              "type":  "gold",
+                                                                                              "min":  -1
+                                                                                          },
+                                                                                          {
+                                                                                              "type":  "premium"
+                                                                                          }
+                                                                                      ],
+                                                                       "actions":  [
+                                                                                       {
+                                                                                           "type":  "deleteMoney",
+                                                                                           "amount":  -1
+                                                                                       },
+                                                                                       {
+                                                                                           "type":  "createItem",
+                                                                                           "id":  -1
+                                                                                       }
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "I\u0027m sorry, but you need a premium account if you want to buy furniture.",
+                                                                       "conditions":  [
+                                                                                          {
+                                                                                              "type":  "gold",
+                                                                                              "min":  -1
+                                                                                          }
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "Come back, when you have enough money.",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+
+                                                                                    ],
+                                                                       "response":  "Hmm, but I\u0027m sure, it would fit nicely into your house.",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  true,
+                                                                       "isDefault":  true
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "Here you are.",
+                                                                       "conditions":  [
+                                                                                          {
+                                                                                              "type":  "gold",
+                                                                                              "min":  -1
+                                                                                          },
+                                                                                          {
+                                                                                              "type":  "premium"
+                                                                                          }
+                                                                                      ],
+                                                                       "actions":  [
+                                                                                       {
+                                                                                           "type":  "deleteMoney",
+                                                                                           "amount":  -1
+                                                                                       },
+                                                                                       {
+                                                                                           "type":  "createItem",
+                                                                                           "id":  -1
+                                                                                       }
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "I\u0027m sorry, but you need a premium account if you want to buy furniture.",
+                                                                       "conditions":  [
+                                                                                          {
+                                                                                              "type":  "gold",
+                                                                                              "min":  -1
+                                                                                          }
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "Come back, when you have enough money.",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+
+                                                                                    ],
+                                                                       "response":  "Hmm, but I\u0027m sure, it would fit nicely into your house.",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  true,
+                                                                       "isDefault":  true
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "Here you are.",
+                                                                       "conditions":  [
+                                                                                          {
+                                                                                              "type":  "gold",
+                                                                                              "min":  -1
+                                                                                          },
+                                                                                          {
+                                                                                              "type":  "premium"
+                                                                                          }
+                                                                                      ],
+                                                                       "actions":  [
+                                                                                       {
+                                                                                           "type":  "deleteMoney",
+                                                                                           "amount":  -1
+                                                                                       },
+                                                                                       {
+                                                                                           "type":  "createItem",
+                                                                                           "id":  -1
+                                                                                       }
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "I\u0027m sorry, but you need a premium account if you want to buy furniture.",
+                                                                       "conditions":  [
+                                                                                          {
+                                                                                              "type":  "gold",
+                                                                                              "min":  -1
+                                                                                          }
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "Come back, when you have enough money.",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+
+                                                                                    ],
+                                                                       "response":  "Hmm, but I\u0027m sure, it would fit nicely into your house.",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  true,
+                                                                       "isDefault":  true
+                                                                   }
+                                                               ]
+                                               },
+                                        "82":  {
+                                                   "entries":  [
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "purple"
+                                                                                    ],
+                                                                       "response":  "You want to buy a small, purple pillow for %P gold?",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+                                                                                       {
+                                                                                           "type":  "setPrice",
+                                                                                           "amount":  20
+                                                                                       },
+                                                                                       {
+                                                                                           "type":  "setAmount",
+                                                                                           "amount":  1
+                                                                                       }
+                                                                                   ],
+                                                                       "nextTopic":  81,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "green"
+                                                                                    ],
+                                                                       "response":  "You want to buy a small, green pillow for %P gold?",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+                                                                                       {
+                                                                                           "type":  "setPrice",
+                                                                                           "amount":  20
+                                                                                       },
+                                                                                       {
+                                                                                           "type":  "setAmount",
+                                                                                           "amount":  1
+                                                                                       }
+                                                                                   ],
+                                                                       "nextTopic":  81,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "red"
+                                                                                    ],
+                                                                       "response":  "You want to buy a small, red pillow for %P gold?",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+                                                                                       {
+                                                                                           "type":  "setPrice",
+                                                                                           "amount":  20
+                                                                                       },
+                                                                                       {
+                                                                                           "type":  "setAmount",
+                                                                                           "amount":  1
+                                                                                       }
+                                                                                   ],
+                                                                       "nextTopic":  81,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "blue"
+                                                                                    ],
+                                                                       "response":  "You want to buy a small, blue pillow for %P gold?",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+                                                                                       {
+                                                                                           "type":  "setPrice",
+                                                                                           "amount":  20
+                                                                                       },
+                                                                                       {
+                                                                                           "type":  "setAmount",
+                                                                                           "amount":  1
+                                                                                       }
+                                                                                   ],
+                                                                       "nextTopic":  81,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "orange"
+                                                                                    ],
+                                                                       "response":  "You want to buy a small, orange pillow for %P gold?",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+                                                                                       {
+                                                                                           "type":  "setPrice",
+                                                                                           "amount":  20
+                                                                                       },
+                                                                                       {
+                                                                                           "type":  "setAmount",
+                                                                                           "amount":  1
+                                                                                       }
+                                                                                   ],
+                                                                       "nextTopic":  81,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "turquoise"
+                                                                                    ],
+                                                                       "response":  "You want to buy a small, turquoise pillow for %P gold?",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+                                                                                       {
+                                                                                           "type":  "setPrice",
+                                                                                           "amount":  20
+                                                                                       },
+                                                                                       {
+                                                                                           "type":  "setAmount",
+                                                                                           "amount":  1
+                                                                                       }
+                                                                                   ],
+                                                                       "nextTopic":  81,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "white"
+                                                                                    ],
+                                                                       "response":  "You want to buy a small, white pillow for %P gold?",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+                                                                                       {
+                                                                                           "type":  "setPrice",
+                                                                                           "amount":  20
+                                                                                       },
+                                                                                       {
+                                                                                           "type":  "setAmount",
+                                                                                           "amount":  1
+                                                                                       }
+                                                                                   ],
+                                                                       "nextTopic":  81,
+                                                                       "idle":  false
+                                                                   }
+                                                               ]
+                                               },
+                                        "83":  {
+                                                   "entries":  [
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "blue"
+                                                                                    ],
+                                                                       "response":  "You want to buy a blue, round pillow for %P gold?",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+                                                                                       {
+                                                                                           "type":  "setPrice",
+                                                                                           "amount":  25
+                                                                                       },
+                                                                                       {
+                                                                                           "type":  "setAmount",
+                                                                                           "amount":  1
+                                                                                       }
+                                                                                   ],
+                                                                       "nextTopic":  81,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "purple"
+                                                                                    ],
+                                                                       "response":  "You want to buy a purple, round pillow for %P gold?",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+                                                                                       {
+                                                                                           "type":  "setPrice",
+                                                                                           "amount":  25
+                                                                                       },
+                                                                                       {
+                                                                                           "type":  "setAmount",
+                                                                                           "amount":  1
+                                                                                       }
+                                                                                   ],
+                                                                       "nextTopic":  81,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "red"
+                                                                                    ],
+                                                                       "response":  "You want to buy a red, round pillow for %P gold?",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+                                                                                       {
+                                                                                           "type":  "setPrice",
+                                                                                           "amount":  25
+                                                                                       },
+                                                                                       {
+                                                                                           "type":  "setAmount",
+                                                                                           "amount":  1
+                                                                                       }
+                                                                                   ],
+                                                                       "nextTopic":  81,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "turquoise"
+                                                                                    ],
+                                                                       "response":  "You want to buy a turquoise, round pillow for %P gold?",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+                                                                                       {
+                                                                                           "type":  "setPrice",
+                                                                                           "amount":  25
+                                                                                       },
+                                                                                       {
+                                                                                           "type":  "setAmount",
+                                                                                           "amount":  1
+                                                                                       }
+                                                                                   ],
+                                                                       "nextTopic":  81,
+                                                                       "idle":  false
+                                                                   }
+                                                               ]
+                                               },
+                                        "84":  {
+                                                   "entries":  [
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "blue"
+                                                                                    ],
+                                                                       "response":  "You want to buy a blue, square pillow for %P gold?",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+                                                                                       {
+                                                                                           "type":  "setPrice",
+                                                                                           "amount":  25
+                                                                                       },
+                                                                                       {
+                                                                                           "type":  "setAmount",
+                                                                                           "amount":  1
+                                                                                       }
+                                                                                   ],
+                                                                       "nextTopic":  81,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "red"
+                                                                                    ],
+                                                                       "response":  "You want to buy a red, square pillow for %P gold?",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+                                                                                       {
+                                                                                           "type":  "setPrice",
+                                                                                           "amount":  25
+                                                                                       },
+                                                                                       {
+                                                                                           "type":  "setAmount",
+                                                                                           "amount":  1
+                                                                                       }
+                                                                                   ],
+                                                                       "nextTopic":  81,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "green"
+                                                                                    ],
+                                                                       "response":  "You want to buy a green, square pillow for %P gold?",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+                                                                                       {
+                                                                                           "type":  "setPrice",
+                                                                                           "amount":  25
+                                                                                       },
+                                                                                       {
+                                                                                           "type":  "setAmount",
+                                                                                           "amount":  1
+                                                                                       }
+                                                                                   ],
+                                                                       "nextTopic":  81,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yellow"
+                                                                                    ],
+                                                                       "response":  "You want to buy a yellow, square pillow for %P gold?",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+                                                                                       {
+                                                                                           "type":  "setPrice",
+                                                                                           "amount":  25
+                                                                                       },
+                                                                                       {
+                                                                                           "type":  "setAmount",
+                                                                                           "amount":  1
+                                                                                       }
+                                                                                   ],
+                                                                       "nextTopic":  81,
+                                                                       "idle":  false
+                                                                   }
+                                                               ]
+                                               },
+                                        "85":  {
+                                                   "entries":  [
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "purple"
+                                                                                    ],
+                                                                       "response":  "You want to buy a purple tapestry for %P gold?",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+                                                                                       {
+                                                                                           "type":  "setPrice",
+                                                                                           "amount":  25
+                                                                                       },
+                                                                                       {
+                                                                                           "type":  "setAmount",
+                                                                                           "amount":  1
+                                                                                       }
+                                                                                   ],
+                                                                       "nextTopic":  81,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "green"
+                                                                                    ],
+                                                                       "response":  "You want to buy a green tapestry for %P gold?",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+                                                                                       {
+                                                                                           "type":  "setPrice",
+                                                                                           "amount":  25
+                                                                                       },
+                                                                                       {
+                                                                                           "type":  "setAmount",
+                                                                                           "amount":  1
+                                                                                       }
+                                                                                   ],
+                                                                       "nextTopic":  81,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yellow"
+                                                                                    ],
+                                                                       "response":  "You want to buy a yellow tapestry for %P gold?",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+                                                                                       {
+                                                                                           "type":  "setPrice",
+                                                                                           "amount":  25
+                                                                                       },
+                                                                                       {
+                                                                                           "type":  "setAmount",
+                                                                                           "amount":  1
+                                                                                       }
+                                                                                   ],
+                                                                       "nextTopic":  81,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "orange"
+                                                                                    ],
+                                                                       "response":  "You want to buy a orange tapestry for %P gold?",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+                                                                                       {
+                                                                                           "type":  "setPrice",
+                                                                                           "amount":  25
+                                                                                       },
+                                                                                       {
+                                                                                           "type":  "setAmount",
+                                                                                           "amount":  1
+                                                                                       }
+                                                                                   ],
+                                                                       "nextTopic":  81,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "red"
+                                                                                    ],
+                                                                       "response":  "You want to buy a red tapestry for %P gold?",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+                                                                                       {
+                                                                                           "type":  "setPrice",
+                                                                                           "amount":  25
+                                                                                       },
+                                                                                       {
+                                                                                           "type":  "setAmount",
+                                                                                           "amount":  1
+                                                                                       }
+                                                                                   ],
+                                                                       "nextTopic":  81,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "orange"
+                                                                                    ],
+                                                                       "response":  "You want to buy a orange tapestry for %P gold?",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+                                                                                       {
+                                                                                           "type":  "setPrice",
+                                                                                           "amount":  25
+                                                                                       },
+                                                                                       {
+                                                                                           "type":  "setAmount",
+                                                                                           "amount":  1
+                                                                                       }
+                                                                                   ],
+                                                                       "nextTopic":  81,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "red"
+                                                                                    ],
+                                                                       "response":  "You want to buy a red tapestry for %P gold?",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+                                                                                       {
+                                                                                           "type":  "setPrice",
+                                                                                           "amount":  25
+                                                                                       },
+                                                                                       {
+                                                                                           "type":  "setAmount",
+                                                                                           "amount":  1
+                                                                                       }
+                                                                                   ],
+                                                                       "nextTopic":  81,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "blue"
+                                                                                    ],
+                                                                       "response":  "You want to buy a blue tapestry for %P gold?",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+                                                                                       {
+                                                                                           "type":  "setPrice",
+                                                                                           "amount":  25
+                                                                                       },
+                                                                                       {
+                                                                                           "type":  "setAmount",
+                                                                                           "amount":  1
+                                                                                       }
+                                                                                   ],
+                                                                       "nextTopic":  81,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "white"
+                                                                                    ],
+                                                                       "response":  "You want to buy a white tapestry for %P gold?",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+                                                                                       {
+                                                                                           "type":  "setPrice",
+                                                                                           "amount":  25
+                                                                                       },
+                                                                                       {
+                                                                                           "type":  "setAmount",
+                                                                                           "amount":  1
+                                                                                       }
+                                                                                   ],
+                                                                       "nextTopic":  81,
+                                                                       "idle":  false
+                                                                   }
+                                                               ]
+                                               }
+                                    },
+                         "keywordNextTopics":  {
+                                                   "small":  82,
+                                                   "pillow":  84,
+                                                   "round":  83,
+                                                   "square":  84,
+                                                   "tapestr":  85
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Statue",
+                                                         "price":  50,
+                                                         "id":  1442,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Minotaur Statue",
+                                                         "price":  50,
+                                                         "id":  1446,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Goblin Statue",
+                                                         "price":  50,
+                                                         "id":  1447,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Small Table",
+                                                         "price":  20,
+                                                         "id":  1619,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Small Round Table",
+                                                         "price":  25,
+                                                         "id":  1616,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Square Table",
+                                                         "price":  25,
+                                                         "id":  1615,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Big Table",
+                                                         "price":  30,
+                                                         "id":  1614,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Red Cushioned Chair",
+                                                         "price":  40,
+                                                         "id":  1666,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Green Cushioned Chair",
+                                                         "price":  40,
+                                                         "id":  1670,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Wooden Chair",
+                                                         "price":  15,
+                                                         "id":  1652,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Rocking Chair",
+                                                         "price":  25,
+                                                         "id":  1674,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Sofa Chair",
+                                                         "price":  55,
+                                                         "id":  1658,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "God Flowers",
+                                                         "price":  5,
+                                                         "id":  2100,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Indoor Plant",
+                                                         "price":  8,
+                                                         "id":  2101,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Flower Bowl",
+                                                         "price":  6,
+                                                         "id":  2102,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Honey Flower",
+                                                         "price":  5,
+                                                         "id":  2103,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Potted Flower",
+                                                         "price":  5,
+                                                         "id":  2104,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Heart Pillow",
+                                                         "price":  30,
+                                                         "id":  1685,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Vase",
+                                                         "price":  3,
+                                                         "id":  2008,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Large Amphora",
+                                                         "price":  50,
+                                                         "id":  2034,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Amphora",
+                                                         "price":  4,
+                                                         "id":  2023,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Coal Basin",
+                                                         "price":  25,
+                                                         "id":  2604,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Piano",
+                                                         "price":  200,
+                                                         "id":  2080,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Harp",
+                                                         "price":  50,
+                                                         "id":  2084,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Water-pipe",
+                                                         "price":  40,
+                                                         "id":  2093,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Pendulum Clock",
+                                                         "price":  75,
+                                                         "id":  1728,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Telescope",
+                                                         "price":  70,
+                                                         "id":  2582,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Table Lamp",
+                                                         "price":  35,
+                                                         "id":  2064,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Rocking Horse",
+                                                         "price":  30,
+                                                         "id":  2117,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Globe",
+                                                         "price":  50,
+                                                         "id":  2098,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Bird Cage",
+                                                         "price":  50,
+                                                         "id":  2095,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Cuckoo Clock",
+                                                         "price":  40,
+                                                         "id":  1877,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Picture",
+                                                         "price":  50,
+                                                         "id":  1854,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Picture",
+                                                         "price":  50,
+                                                         "id":  1852,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Picture",
+                                                         "price":  50,
+                                                         "id":  1853,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Wall Mirror",
+                                                         "price":  40,
+                                                         "id":  1845,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Wall Mirror",
+                                                         "price":  40,
+                                                         "id":  1851,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Wall Mirror",
+                                                         "price":  40,
+                                                         "id":  1848,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Drawers",
+                                                         "price":  18,
+                                                         "id":  1716,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Dresser",
+                                                         "price":  25,
+                                                         "id":  1724,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Locker",
+                                                         "price":  30,
+                                                         "id":  1732,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Crate",
+                                                         "price":  10,
+                                                         "id":  1739,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Chest",
+                                                         "price":  10,
+                                                         "id":  1740,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Box",
+                                                         "price":  10,
+                                                         "id":  1738,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Barrel",
+                                                         "price":  12,
+                                                         "id":  1774,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Trough",
+                                                         "price":  7,
+                                                         "id":  1775,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Large Trunk",
+                                                         "price":  10,
+                                                         "id":  1750,
+                                                         "type":  "sell"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "gamon.js"
+                     }
+}

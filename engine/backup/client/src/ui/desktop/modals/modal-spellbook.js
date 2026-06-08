@@ -1,0 +1,82 @@
+const SpellbookModal = function (element) {
+
+  /*
+   * Class SpellbookModal
+   * Wrapper for the modal that can open chat windows
+   */
+
+  // Inherit from modal
+  Modal.call(this, element);
+
+  this.__wrapper = document.getElementById("spellbook-list");
+  this.__index = 0;
+
+}
+
+SpellbookModal.prototype = Object.create(Modal.prototype);
+SpellbookModal.constructor = SpellbookModal;
+
+SpellbookModal.prototype.__handleClick = function (sid) {
+
+  this.__buttonClick({ "target": this.element.querySelector("button[action='cancel']") });
+
+}
+
+SpellbookModal.prototype.createSpellList = function (spells) {
+
+  /*
+   * Function SpellbookModal.createSpellList
+   * Creates the spell list with the available player spells
+   */
+
+  let nodes = Array.from(spells).map(this.__createSpellNode, this);
+
+  // Replace all the children
+  document.getElementById("spellbook-list").replaceChildren(...nodes);
+
+}
+
+
+SpellbookModal.prototype.__createSpellNode = function (id) {
+
+  /*
+   * Function SpellbookModal.__createSpellNode
+   * Creates a single spell node for the modal spellbook
+   */
+
+  // Get the spell from the interface
+  let spell = gameClient.interface.getSpell(id);
+
+  let DOMElement = document.getElementById("spellbook-wrapper-prototype").cloneNode(true);
+  let DOMElementCanvas = DOMElement.firstElementChild;
+  let canvas = new Canvas(DOMElementCanvas, 32, 32);
+
+  // Format vocations for display (capitalize first letter)
+  let vocationsText = "";
+  if (spell.vocations && spell.vocations.length > 0) {
+    let formattedVocations = spell.vocations.map(function (v) {
+      return v.charAt(0).toUpperCase() + v.slice(1);
+    });
+    vocationsText = "<br><span style='color: #00CCFF; font-size: 10px;'>" + formattedVocations.join(", ") + "</span>";
+  }
+
+  // Set some more information with vocations
+  DOMElement.lastElementChild.innerHTML = "%s<br><small>%s</small>%s".format(spell.name, spell.description, vocationsText);
+  DOMElement.addEventListener("click", this.__handleClick.bind(this, id));
+  DOMElement.title = spell.description;
+  DOMElement.style.display = "flex";
+
+  return DOMElement;
+
+}
+
+SpellbookModal.prototype.handleOpen = function (index) {
+
+  /*
+   * Function SpellbookModal.handleOpen
+   * Callback fired when the spellbook modal is opened
+   */
+
+  this.__index = index;
+
+}

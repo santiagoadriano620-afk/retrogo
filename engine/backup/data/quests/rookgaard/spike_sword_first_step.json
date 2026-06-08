@@ -1,0 +1,39 @@
+{
+    "actionId":  3013,
+    "type":  "moveEvent",
+    "events":  [
+                   "onStepIn"
+               ],
+    "tileItem":  false,
+    "conditions":  [
+                       {
+                           "type":  "isPlayer"
+                       },
+                       {
+                           "type":  "itemInPosition",
+                           "pos":  {
+                                       "x":  32104,
+                                       "y":  32082,
+                                       "z":  7
+                                   },
+                           "itemId":  4608
+                       }
+                   ],
+    "effects":  [
+                    {
+                        "type":  "transformItemInPosition",
+                        "pos":  {
+                                    "x":  32104,
+                                    "y":  32082,
+                                    "z":  7
+                                },
+                        "from":  4608,
+                        "to":  4612
+                    },
+                    {
+                        "key":  8013,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ]
+}

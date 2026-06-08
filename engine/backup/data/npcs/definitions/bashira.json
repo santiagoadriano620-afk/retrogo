@@ -1,0 +1,463 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Bashira",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  62,
+                                              "details":  {
+                                                              "head":  78,
+                                                              "body":  62,
+                                                              "legs":  97,
+                                                              "feet":  76
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  1,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "I sell various equipment and buy some stuff.",
+                                          "equipment":  "I sell shovels, picks, scythes, bags, ropes, backpacks, plates, cups, scrolls, parchments, documents, watches, various sources of light and fishing rods.",
+                                          "goods":  "I sell shovels, picks, scythes, bags, ropes, backpacks, plates, cups, scrolls, parchments, documents, watches, various sources of light and fishing rods.",
+                                          "light":  "I sell torches, candelabra, and oil.",
+                                          "name":  "I am Bashira Darkmark.",
+                                          "carlin":  "Carlin has some capable fighters, allthough they lack the grace of an elf.",
+                                          "thais":  "The people of thais boast about their mighty kingdom, but eventually their short lives will doom everything they buld.",
+                                          "venore":  "Their merchants have no patience and all to fast they loose their masks of friedlyness.",
+                                          "roderick":  "His presence here is a waste of space and talking to or even about him a waste of time.",
+                                          "olrik":  "He is quite amusing for a human.",
+                                          "elves":  "That\u0027s our race.",
+                                          "dwarfs":  "They have some talent in mining and smithing.",
+                                          "humans":  "They have nothing to give us.",
+                                          "troll":  "They are lazy and clumsy. We should use dwarfs instead.",
+                                          "cenath":  "Their magic is almost as impressive as their egos.",
+                                          "kuridai":  "Without us and our tools nothing would work in this town.",
+                                          "deraisim":  "Useless leafeaters.",
+                                          "abdaisim":  "They left; perhaps we should do that, too.",
+                                          "teshial":  "A stupid Cenath-myth.",
+                                          "ferumbras":  "He may scare the treedwellers or the big-mouthes above, but not the Kuridai.",
+                                          "crunor":  "One god of many. They are all alike and of no use.",
+                                          "time":  "Buy a watch.",
+                                          "food":  "I am not dealing with food.",
+                                          "deposit":  "I will pay you 5 gold for every empty vial. Ok?",
+                                          "vial":  "I will pay you 5 gold for every empty vial. Ok?",
+                                          "flask":  "I will pay you 5 gold for every empty vial. Ok?",
+                                          "buy":  "I have shovels, picks, scythes, bags, ropes, backpacks, plates, scrolls, watches, some lightsources, and other stuff.",
+                                          "do":  "I have shovels, picks, scythes, bags, ropes, backpacks, plates, scrolls, watches, some lightsources, and other stuff.",
+                                          "you":  "I have shovels, picks, scythes, bags, ropes, backpacks, plates, scrolls, watches, some lightsources, and other stuff.",
+                                          "sell":  "I have shovels, picks, scythes, bags, ropes, backpacks, plates, scrolls, watches, some lightsources, and other stuff.",
+                                          "have":  "I have shovels, picks, scythes, bags, ropes, backpacks, plates, scrolls, watches, some lightsources, and other stuff.",
+                                          "offer":  "I have shovels, picks, scythes, bags, ropes, backpacks, plates, scrolls, watches, some lightsources, and other stuff.",
+                                          "stuff":  "Water hoses, pitchforks, presents, buckets, bottles, and the like."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Ashari .",
+                                                       "I sell various equipment and buy some stuff."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Ashari %N.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "ashari$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here it is.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You don\u0027t have so much money.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Then not.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "2":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here it is. There is a deposit of 5 gold on the vial.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You don\u0027t have so much money.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Then not.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "3":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Ok. Here\u0027s your money.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "createMoney"
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Sorry, you don\u0027t have one.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Maybe next time.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "4":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Here you are ... %P gold.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteItem",
+                                                                                          "id":  2006
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createMoney"
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "You don\u0027t have any empty vials.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Hmm, but please keep Tibia litter free.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+                                                   "deposit":  4,
+                                                   "vial":  4,
+                                                   "flask":  4
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Torch",
+                                                         "price":  2,
+                                                         "id":  2050,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Candelabrum",
+                                                         "price":  8,
+                                                         "id":  2041,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Green Bag",
+                                                         "price":  4,
+                                                         "id":  1991,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Scroll",
+                                                         "price":  5,
+                                                         "id":  1949,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Document",
+                                                         "price":  12,
+                                                         "id":  1968,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Written Parchment",
+                                                         "price":  8,
+                                                         "id":  1969,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Shovel",
+                                                         "price":  50,
+                                                         "id":  2554,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Green Backpack",
+                                                         "price":  20,
+                                                         "id":  1998,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Scythe",
+                                                         "price":  50,
+                                                         "id":  2550,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Pick",
+                                                         "price":  50,
+                                                         "id":  2553,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Watch",
+                                                         "price":  20,
+                                                         "id":  2036,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Rope",
+                                                         "price":  50,
+                                                         "id":  2120,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Fishing Rod",
+                                                         "price":  150,
+                                                         "id":  2580,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Present",
+                                                         "price":  10,
+                                                         "id":  1990,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Vial",
+                                                         "price":  20,
+                                                         "id":  2006,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Waterskin",
+                                                         "price":  10,
+                                                         "id":  2031,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Cup",
+                                                         "price":  2,
+                                                         "id":  2013,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Plate",
+                                                         "price":  6,
+                                                         "id":  2035,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Bucket",
+                                                         "price":  4,
+                                                         "id":  2005,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Blue Bottle",
+                                                         "price":  3,
+                                                         "id":  2007,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Rope",
+                                                         "price":  8,
+                                                         "id":  2120,
+                                                         "type":  "buy"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "bashira.js"
+                     }
+}

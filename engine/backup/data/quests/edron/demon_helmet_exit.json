@@ -1,0 +1,10 @@
+{
+  "actionId": 3091,
+  "type": "exit",
+  "events": ["onStepIn", "onAddItem"],
+  "tileItem": true,
+  "conditions": [
+    {"type": "itemInPosition", "pos": {"x": 33316, "y": 31591, "z": 15}, "itemId": 1387}
+  ],
+  "teleport": {"to": {"x": 33328, "y": 31592, "z": 14}}
+}

@@ -1,0 +1,14 @@
+*.swp
+.DS_Store
+node_modules
+*.log
+*.db
+packets.wal
+/data/cams
+.env
+/data/accounts
+/client/dist/
+/data/database/crashes
+/data/database
+/data/database
+/otclient

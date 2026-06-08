@@ -1,0 +1,200 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Rudolph",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  111,
+                                              "details":  {
+                                                              "head":  41,
+                                                              "body":  29,
+                                                              "legs":  78,
+                                                              "feet":  76
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  1,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "name":  "I\u0027m Rudolph, you know.",
+                                          "job":  "Oh, I am a tailor, can\u0027t you see?",
+                                          "time":  "Oh, now it\u0027s .",
+                                          "king":  "Oh, the king. What a well dressed man he is.",
+                                          "tibianus":  "Oh, the king. What a well dressed man he is.",
+                                          "army":  "Oh, such handsome guys and such ugly uniforms.",
+                                          "ferumbras":  "Oh, dear.",
+                                          "excalibug":  "Oh, that thing must be dangerous. One could hurt himself quite badly with it I guess.",
+                                          "thais":  "Oh, what a lovely city it was once.",
+                                          "tibia":  "Oh, there is not much sense for fashion in this world.",
+                                          "carlin":  "Oh, these women ... oh, go away.",
+                                          "edron":  "Oh, what a lovely city it is.",
+                                          "news":  "Oh, we tailors learn much, but don\u0027t talk about it. It\u0027s the tailors\u0027 code of honor, you know.",
+                                          "rumors":  "Oh, we tailors learn much, but don\u0027t talk about it. It\u0027s the tailors\u0027 code of honor, you know.",
+                                          "offer":  "Oh, I have wonderful clothes and shoes.",
+                                          "goods":  "Oh, I have wonderful clothes and shoes.",
+                                          "do":  "Oh, I have wonderful clothes and shoes.",
+                                          "you":  "Oh, I have wonderful clothes and shoes.",
+                                          "sell":  "Oh, I have wonderful clothes and shoes.",
+                                          "have":  "Oh, I have wonderful clothes and shoes.",
+                                          "clothes":  "Oh, I have wonderful jackets, capes, tunics, leather legs, and scarfs.",
+                                          "shoes":  "Oh, I have wonderful leather boots and sandals."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Oh, a customer. Hello .",
+                                                       "Oh, I am a tailor, can\u0027t you see?"
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Oh, a customer. Hello %N.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Oh, here you are.",
+                                                                      "conditions":  [
+                                                                                         {
+                                                                                             "type":  "gold",
+                                                                                             "min":  -1
+                                                                                         }
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "deleteMoney",
+                                                                                          "amount":  -1
+                                                                                      },
+                                                                                      {
+                                                                                          "type":  "createItem",
+                                                                                          "id":  -1
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Oh, you do not have enough money.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Oh, but next time.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Jacket",
+                                                         "price":  12,
+                                                         "id":  2650,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Green Tunic",
+                                                         "price":  10,
+                                                         "id":  2652,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Cape",
+                                                         "price":  9,
+                                                         "id":  2654,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Leather Legs",
+                                                         "price":  10,
+                                                         "id":  2649,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Scarf",
+                                                         "price":  15,
+                                                         "id":  2661,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Sandals",
+                                                         "price":  2,
+                                                         "id":  2642,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Leather Boots",
+                                                         "price":  2,
+                                                         "id":  2643,
+                                                         "type":  "sell"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "rudolph.js"
+                     }
+}

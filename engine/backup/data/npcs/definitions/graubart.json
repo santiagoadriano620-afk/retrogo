@@ -1,0 +1,100 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Graubart",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  111,
+                                              "details":  {
+                                                              "head":  98,
+                                                              "body":  87,
+                                                              "legs":  12,
+                                                              "feet":  114
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  2,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "work":  "I\u0027m sorry, but it is too dangerous nowadays. Too many storms out there. Come back in some months and we will see.",
+                                          "name":  "My name is Graubart, captain of the great Seahawk!",
+                                          "job":  "I\u0027m a merchant. I sail all over the world with my ship and trade with many different races!",
+                                          "races":  "You know; elves, dwarfs, lizardmen, minotaurs and many others.",
+                                          "ship":  "Ah, my whole proud: My ship named Seahawk. We rode out so many stormy nights together. I think I couldn\u0027t live without it.",
+                                          "seahawk":  "Ah, my whole proud: My ship named Seahawk. We rode out so many stormy nights together. I think I couldn\u0027t live without it.",
+                                          "trade":  "I trade nearly everything, for example weapons, food, water, and even magic runes.",
+                                          "merchant":  "A merchant is someone who trades goods with other people and tries to make a little profit. *laughs*",
+                                          "weapons":  "Sorry, sold out.",
+                                          "food":  "Sorry, sold out. Ask Bruno.",
+                                          "water":  "Sorry, sold out.",
+                                          "magic":  "Sorry, sold out.",
+                                          "runes":  "Sorry, sold out.",
+                                          "bruno":  "Bruno is one of the best sailors I know. He is nearly as good as me. *laughs loudly*",
+                                          "aneus":  "Hmm, I don\u0027t know him very well. But he has a very nice story to tell.",
+                                          "marlene":  "Pssst. Marlene is not near right now...? You know... she is a lovely woman, but she talks too much! So I always try to keep distance from her because she can\u0027t stop talking."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Ahoi, young man . Looking for work on my ship?",
+                                                       "Ahoi, young lady . Looking for work on my ship?",
+                                                       "I\u0027m a merchant. I sail all over the world with my ship and trade with many different races!"
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Ahoi, young man %N. Looking for work on my ship?",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Ahoi, young lady %N. Looking for work on my ship?",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ]
+                     }
+}

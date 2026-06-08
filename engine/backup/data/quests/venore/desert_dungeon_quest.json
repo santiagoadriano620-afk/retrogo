@@ -1,0 +1,189 @@
+{
+    "actionId":  2010,
+    "type":  "puzzle",
+    "itemIds":  [
+                    1945,
+                    1946
+                ],
+    "conditions":  [
+                       {
+                           "type":  "itemAtPosition",
+                           "itemId":  425,
+                           "pos":  {
+                                       "x":  32673,
+                                       "y":  32085,
+                                       "z":  8
+                                   }
+                       },
+                       {
+                           "type":  "itemAtPosition",
+                           "itemId":  425,
+                           "pos":  {
+                                       "x":  32669,
+                                       "y":  32089,
+                                       "z":  8
+                                   }
+                       },
+                       {
+                           "type":  "itemAtPosition",
+                           "itemId":  425,
+                           "pos":  {
+                                       "x":  32673,
+                                       "y":  32093,
+                                       "z":  8
+                                   }
+                       },
+                       {
+                           "type":  "itemAtPosition",
+                           "itemId":  425,
+                           "pos":  {
+                                       "x":  32677,
+                                       "y":  32089,
+                                       "z":  8
+                                   }
+                       },
+                       {
+                           "type":  "itemAtPosition",
+                           "itemId":  2455,
+                           "pos":  {
+                                       "x":  32673,
+                                       "y":  32083,
+                                       "z":  8
+                                   }
+                       },
+                       {
+                           "type":  "itemAtPosition",
+                           "itemId":  2674,
+                           "pos":  {
+                                       "x":  32667,
+                                       "y":  32089,
+                                       "z":  8
+                                   }
+                       },
+                       {
+                           "type":  "itemAtPosition",
+                           "itemId":  2376,
+                           "pos":  {
+                                       "x":  32673,
+                                       "y":  32094,
+                                       "z":  8
+                                   }
+                       },
+                       {
+                           "type":  "itemAtPosition",
+                           "itemId":  2175,
+                           "pos":  {
+                                       "x":  32679,
+                                       "y":  32089,
+                                       "z":  8
+                                   }
+                       }
+                   ],
+    "effects":  [
+                    {
+                        "type":  "transformItem",
+                        "from":  1945,
+                        "to":  1946,
+                        "decay":  true
+                    },
+                    {
+                        "type":  "removeItem",
+                        "pos":  {
+                                    "x":  32673,
+                                    "y":  32083,
+                                    "z":  8
+                                },
+                        "itemId":  2455
+                    },
+                    {
+                        "type":  "removeItem",
+                        "pos":  {
+                                    "x":  32667,
+                                    "y":  32089,
+                                    "z":  8
+                                },
+                        "itemId":  2674
+                    },
+                    {
+                        "type":  "removeItem",
+                        "pos":  {
+                                    "x":  32673,
+                                    "y":  32094,
+                                    "z":  8
+                                },
+                        "itemId":  2376
+                    },
+                    {
+                        "type":  "removeItem",
+                        "pos":  {
+                                    "x":  32679,
+                                    "y":  32089,
+                                    "z":  8
+                                },
+                        "itemId":  2175
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  32673,
+                                    "y":  32083,
+                                    "z":  8
+                                },
+                        "effectId":  11
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  32667,
+                                    "y":  32089,
+                                    "z":  8
+                                },
+                        "effectId":  11
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  32673,
+                                    "y":  32094,
+                                    "z":  8
+                                },
+                        "effectId":  11
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  32679,
+                                    "y":  32089,
+                                    "z":  8
+                                },
+                        "effectId":  11
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  32673,
+                                    "y":  32089,
+                                    "z":  8
+                                },
+                        "effectId":  34
+                    },
+                    {
+                        "type":  "setFlag",
+                        "key":  "desert_dungeon_3070",
+                        "duration":  30000
+                    },
+                    {
+                        "key":  7010,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "effectsAlt":  [
+                       {
+                           "type":  "transformItem",
+                           "from":  1946,
+                           "to":  1945,
+                           "decay":  true
+                       }
+                   ]
+}

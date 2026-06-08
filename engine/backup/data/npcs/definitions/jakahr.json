@@ -1,0 +1,235 @@
+{
+    "creatureStatistics": {
+        "name": "Jakahr",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 133,
+            "details": {
+                "head": 95,
+                "body": 37,
+                "legs": 32,
+                "feet": 40
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 1,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "kevin": "Even in our lands the name of the guildmaster is held in great respect.",
+            "postner": "Even in our lands the name of the guildmaster is held in great respect.",
+            "postmasters": "The guild plays a vital role in the economy of the known world.",
+            "guild": "The guild plays a vital role in the economy of the known world.",
+            "join": "Please travel to our headquarters if you wish to join our guild.",
+            "headquarters": "You can find them to the south of the dwarven city of Kazordoon.",
+            "job": "I am a member of the Postmasters Guild. If you have questions about the Royal Tibia Mail System or the depots, ask me.",
+            "office": "I am always here in my office. You are welcome to visit me anytime.",
+            "name": "My name is Jakahr.",
+            "time": "The time is , pilgrim.",
+            "depot": "The depots are very easy to use. Just step in front of them and you will find your items in them. They are free for all tibian citizens.",
+            "excalibug": "A weapon of legend. We rarely hear stories about it around here, however.",
+            "news": "It does not befit a member of my position to spread rumours and stories, pilgrim.",
+            "thais": "Thais is the capital of a kingdom on a far-off continent.",
+            "carlin": "Carlin is a city far, far away from here. They say it is run by women and druids.",
+            "mail": "Our mail system is unique! And everyone can use it. Do you want to know more about it?",
+            "offer": "I'm selling letters and parcels.",
+            "letter": "Do you want to buy a letter for 8 gold?",
+            "parcel": "Do you want to buy a parcel for 15 gold?",
+            "darama": "On this continent, the only place of real importance is our city.",
+            "darashia": "A minor settlement to the north.",
+            "daraman": "As far as I can tell he was some philosopher.",
+            "ankrahmun": "This city is a safe haven that protects its citizens from the dangers of the desert.",
+            "city": "This city is a safe haven that protects its citizens from the dangers of the desert.",
+            "pharaoh": "The pharaoh keeps this city safe. He is both our political and our spiritual leader.",
+            "arkhothep": "The pharaoh keeps this city safe. He is both our political and our spiritual leader.",
+            "ascension": "Sorry, but you should discuss religous issues like these in the temple. I am not a priest, and there is little I can tell you about it.",
+            "Akh'rah": "Sorry, but you should discuss religous issues like these in the temple. I am not a priest, and there is little I can tell you about it.",
+            "Uthun": "Sorry, but you should discuss religous issues like these in the temple. I am not a priest, and there is little I can tell you about it.",
+            "Akh": "Sorry, but you should discuss religous issues like these in the temple. I am not a priest, and there is little I can tell you about it.",
+            "Rah": "Sorry, but you should discuss religous issues like these in the temple. I am not a priest, and there is little I can tell you about it.",
+            "uthun": "Sorry, but you should discuss religous issues like these in the temple. I am not a priest, and there is little I can tell you about it.",
+            "arena": "Fights are frequently staged in the arena to entertain the people.",
+            "palace": "You can't miss the palace. It is probably the biggest pyramid in the whole world.",
+            "temple": "The temple is to the east of the city."
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "Hello, mourned pilgrim. How may I help you ?",
+                "I am a member of the Postmasters Guild. If you have questions about the Royal Tibia Mail System or the depots, ask me."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Hello, mourned pilgrim. How may I help you %N?",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ],
+        "topics": {
+            "35": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "The Tibia Mail System enables you to send and receive letters and parcels. You can buy them here if you want.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Is there anything else I can do for you?",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "36": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Here it is. Don't forget to write the name of the receiver in the first line and the address in the second one before you put the letter in a mailbox.",
+                        "conditions": [
+                            {
+                                "type": "gold",
+                                "min": -1
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "deleteMoney",
+                                "amount": -1
+                            },
+                            {
+                                "type": "createItem",
+                                "id": 2597
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Oh, you have not enough gold to buy a letter.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Ok.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "37": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Here you are. Don't forget to write the name and the address of the receiver on the label. The label has to be in the parcel before you put the parcel in a mailbox.",
+                        "conditions": [
+                            {
+                                "type": "gold",
+                                "min": -1
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "deleteMoney",
+                                "amount": -1
+                            },
+                            {
+                                "type": "createItem",
+                                "id": 2595
+                            },
+                            {
+                                "type": "createItem",
+                                "id": 2599
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "I am sorry, you have not enough gold to buy a parcel.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Ok.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            }
+        },
+        "keywordNextTopics": {
+            "mail": 35,
+            "letter": 36,
+            "parcel": 37
+        },
+        "keywordTopicPrices": {
+            "letter": 8,
+            "parcel": 15
+        },
+        "script": "jakahr.js"
+    }
+}

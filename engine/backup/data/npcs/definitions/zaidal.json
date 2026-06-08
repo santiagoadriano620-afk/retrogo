@@ -1,0 +1,316 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Zaidal",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  111,
+                                              "details":  {
+                                                              "head":  76,
+                                                              "body":  43,
+                                                              "legs":  77,
+                                                              "feet":  76
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  0,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "I am selling furniture, especially bamboo made furniture. I also buy elephant tusks to create my famous tusk tables and ivory chairs.",
+                                          "name":  "I am known as Zaidal.",
+                                          "time":  "Sorry, I have no idea.",
+                                          "king":  "Perhaps one day even the king will use our furniture.",
+                                          "venore":  "Well, Venore is the centre of commerce.",
+                                          "thais":  "One day I might visit Thais.",
+                                          "carlin":  "Carlin is very far to the north. I have never been there.",
+                                          "edron":  "An isle with interesting forests. With the right organisation the furniture and shipbuilding business could prosper enormously.",
+                                          "jungle":  "You call it a jungle, I call it furniture in the making.",
+                                          "offer":  "I sell tables, chairs and drawers, all handmade with the material that the jungle has to offer.",
+                                          "goods":  "I sell tables, chairs and drawers, all handmade with the material that the jungle has to offer.",
+                                          "do":  "I sell tables, chairs and drawers, all handmade with the material that the jungle has to offer.",
+                                          "you":  "I sell tables, chairs and drawers, all handmade with the material that the jungle has to offer.",
+                                          "sell":  "I sell tables, chairs and drawers, all handmade with the material that the jungle has to offer.",
+                                          "have":  "I sell tables, chairs and drawers, all handmade with the material that the jungle has to offer.",
+                                          "furniture":  "I sell tables, chairs and drawers, all handmade with the material that the jungle has to offer.",
+                                          "equipment":  "I sell tables, chairs and drawers, all handmade with the material that the jungle has to offer.",
+                                          "special":  "My offers are permanently extraordinarily cheap.",
+                                          "tibia":  "The world is a big treasure chest for those who know to turn resources into profit.",
+                                          "kazordoon":  "The dwarves of Kazordoon are experts in mining resources like gems and ore.",
+                                          "dwarvs":  "The dwarves of Kazordoon are experts in mining resources like gems and ore.",
+                                          "dwarfes":  "The dwarves of Kazordoon are experts in mining resources like gems and ore.",
+                                          "ab\u0027dendriel":  "Those elves are a bit complicated when it comes to trees and environmental matters. They must learn that you have to crush an egg to bake a cake.",
+                                          "elves":  "Those elves are a bit complicated when it comes to trees and environmental matters. They must learn that you have to crush an egg to bake a cake.",
+                                          "elfs":  "Those elves are a bit complicated when it comes to trees and environmental matters. They must learn that you have to crush an egg to bake a cake.",
+                                          "darama":  "The jungle is rich in resources and who knows what profit lies hidden in the desert? Of course not for a carpenter, but there are other resources.",
+                                          "darashia":  "People there seem to know little about the world of economy. Perhaps someone might teach them a lesson one day.",
+                                          "ankrahmun":  "I was there only once, but I left it with the certainty that I never want to return there ever again.",
+                                          "ferumbras":  "If we could guide his attention in useful directions, he wouldn\u0027t be the problem he poses nowadays.",
+                                          "excalibug":  "Even if it would exist, which I doubt, it would be only an extremely expensive weapon and nothing more.",
+                                          "apes":  "They live in the depth of the jungle, and their only visits here are annoying raids to steal and plunder.",
+                                          "lizard":  "I did not see much of the lizzards yet.",
+                                          "dworcs":  "If we could get rid of them, a whole new area which is rich in bamboo would be ours.",
+                                          "chair":  "I can offer you tusk chairs, ivory chairs and trunk chairs.",
+                                          "table":  "I can offer you stone tables, tusk tables, bamboo tables and trunk tables.",
+                                          "drawer":  "I can offer you bamboo drawers."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Hello.",
+                                                       "I am selling furniture, especially bamboo made furniture. I also buy elephant tusks to create my famous tusk tables and ivory chairs."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Hello.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hiho$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "2":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Ok. Here is your money.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "createMoney"
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Sorry, you do not have one.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Sorry, you do not have so many.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Maybe next time.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "81":  {
+                                                   "entries":  [
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "Here you are.",
+                                                                       "conditions":  [
+                                                                                          {
+                                                                                              "type":  "gold",
+                                                                                              "min":  -1
+                                                                                          },
+                                                                                          {
+                                                                                              "type":  "premium"
+                                                                                          }
+                                                                                      ],
+                                                                       "actions":  [
+                                                                                       {
+                                                                                           "type":  "deleteMoney",
+                                                                                           "amount":  -1
+                                                                                       },
+                                                                                       {
+                                                                                           "type":  "createItem",
+                                                                                           "id":  -1
+                                                                                       }
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "I\u0027m sorry, but you need a premium account if you want to buy furniture.",
+                                                                       "conditions":  [
+                                                                                          {
+                                                                                              "type":  "gold",
+                                                                                              "min":  -1
+                                                                                          }
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "Come back, when you have enough money.",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+
+                                                                                    ],
+                                                                       "response":  "Hmm, but I\u0027m sure, it would fit nicely into your house.",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  true,
+                                                                       "isDefault":  true
+                                                                   }
+                                                               ]
+                                               }
+                                    },
+                         "keywordNextTopics":  {
+
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Tusk",
+                                                         "price":  100,
+                                                         "id":  3956,
+                                                         "type":  "buy"
+                                                     },
+                                                     {
+                                                         "name":  "Tusk Chair",
+                                                         "price":  25,
+                                                         "id":  3813,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Ivory Chair",
+                                                         "price":  25,
+                                                         "id":  3817,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Trunk Chair",
+                                                         "price":  20,
+                                                         "id":  3821,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Stone Table",
+                                                         "price":  30,
+                                                         "id":  3806,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Tusk Table",
+                                                         "price":  25,
+                                                         "id":  3807,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Bamboo Table",
+                                                         "price":  25,
+                                                         "id":  3809,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Trunk Table",
+                                                         "price":  20,
+                                                         "id":  3811,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Bamboo Drawer",
+                                                         "price":  20,
+                                                         "id":  3832,
+                                                         "type":  "sell"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "zaidal.js"
+                     }
+}

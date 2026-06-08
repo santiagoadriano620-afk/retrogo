@@ -16,22 +16,6 @@ const {
   GlobalBoostUpdatePacket
 } = requireModule("network/protocol");
 
-// Debug log to output.txt
-const fs = require("fs");
-const path = require("path");
-const __debugLogFile = path.resolve(__dirname, "../../../output.txt");
-let __debugLogInit = false;
-function __debugWrite(msg) {
-  if (!__debugLogInit) {
-    try { fs.writeFileSync(__debugLogFile, "", "utf8"); } catch(e) {}
-    __debugLogInit = true;
-  }
-  try {
-    let t = new Date().toISOString().slice(11, 23);
-    fs.appendFileSync(__debugLogFile, `[${t}] ${msg}\n`, "utf8");
-  } catch(e) {}
-}
-
 const GameSocket = function (socket, account, xorKey) {
 
   /*

@@ -1,0 +1,260 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Chrystal",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  118,
+                                              "details":  {
+                                                              "head":  116,
+                                                              "body":  79,
+                                                              "legs":  117,
+                                                              "feet":  76
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  2,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "name":  "My name is Chrystal.",
+                                          "job":  "I am responsible for this post office.",
+                                          "kevin":  "Mr. Postner is the leader of our guild and the most prominent postofficer in the whole land.",
+                                          "postner":  "Mr. Postner is the leader of our guild and the most prominent postofficer in the whole land.",
+                                          "postmasters":  "Yes, our guild is the lifeblood of the tibia cominity so to say.",
+                                          "guild":  "Yes, our guild is the lifeblood of the tibia cominity so to say.",
+                                          "join":  "You can apply to join only at our headquarter.",
+                                          "headquarter":  "You can find it on the road from Thais to Kazordoon.",
+                                          "measurements":  "If its necessary ... \u003ctells you her measurements\u003e",
+                                          "time":  "It is  right now.",
+                                          "king":  "Hail to the king!",
+                                          "tibianus":  "Hail to the king!",
+                                          "army":  "The army ensures the safety of the traderoutes and of our mail system.",
+                                          "ferumbras":  "I bet he never gets any letters.",
+                                          "excalibug":  "Better ask knights about that.",
+                                          "tibia":  "Our post system spans the entire known world.",
+                                          "thais":  "We deliver letters and parcels even there.",
+                                          "carlin":  "We deliver letters and parcels even there.",
+                                          "kazordoon":  "We deliver letters and parcels even there.",
+                                          "ab\u0027dendriel":  "We deliver letters and parcels even there.",
+                                          "edron":  "Our post system even delivers letters and parcels to and from this isle.",
+                                          "news":  "Sorry, that\u0027s postal secret.",
+                                          "rumors":  "Sorry, that\u0027s postal secret.",
+                                          "mail":  "Our mail system is unique! And everyone can use it. Do you want to know more about it?",
+                                          "depot":  "The depots are very easy to use. Just step in front of them and you will find your items in them. They are free for all tibian citizens.",
+                                          "offer":  "I\u0027m selling letters and parcels.",
+                                          "letter":  "Do you want to buy a letter for 8 gold?",
+                                          "parcel":  "Do you want to buy a parcel for 15 gold?"
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "At your service .",
+                                                       "I am responsible for this post office."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "At your service %N.",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "35":  {
+                                                   "entries":  [
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "The Tibia Mail System enables you to send and receive letters and parcels. You can buy them here if you want.",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+
+                                                                                    ],
+                                                                       "response":  "Is there anything else I can do for you?",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  true,
+                                                                       "isDefault":  true
+                                                                   }
+                                                               ]
+                                               },
+                                        "36":  {
+                                                   "entries":  [
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "Here it is. Don\u0027t forget to write the name of the receiver in the first line and the address in the second one before you put the letter in a mailbox.",
+                                                                       "conditions":  [
+                                                                                          {
+                                                                                              "type":  "gold",
+                                                                                              "min":  -1
+                                                                                          }
+                                                                                      ],
+                                                                       "actions":  [
+                                                                                       {
+                                                                                           "type":  "deleteMoney",
+                                                                                           "amount":  -1
+                                                                                       },
+                                                                                       {
+                                                                                           "type":  "createItem",
+                                                                                           "id":  2597
+                                                                                       }
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "Oh, you have not enough gold to buy a letter.",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+
+                                                                                    ],
+                                                                       "response":  "Ok.",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  true,
+                                                                       "isDefault":  true
+                                                                   }
+                                                               ]
+                                               },
+                                        "37":  {
+                                                   "entries":  [
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "Here you are. Don\u0027t forget to write the name and the address of the receiver on the label. The label has to be in the parcel before you put the parcel in a mailbox.",
+                                                                       "conditions":  [
+                                                                                          {
+                                                                                              "type":  "gold",
+                                                                                              "min":  -1
+                                                                                          }
+                                                                                      ],
+                                                                       "actions":  [
+                                                                                       {
+                                                                                           "type":  "deleteMoney",
+                                                                                           "amount":  -1
+                                                                                       },
+                                                                                       {
+                                                                                           "type":  "createItem",
+                                                                                           "id":  2595
+                                                                                       },
+                                                                                       {
+                                                                                           "type":  "createItem",
+                                                                                           "id":  2599
+                                                                                       }
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+                                                                                        "yes"
+                                                                                    ],
+                                                                       "response":  "I am sorry, you have not enough gold to buy a parcel.",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  false
+                                                                   },
+                                                                   {
+                                                                       "keywords":  [
+
+                                                                                    ],
+                                                                       "response":  "Ok.",
+                                                                       "conditions":  [
+
+                                                                                      ],
+                                                                       "actions":  [
+
+                                                                                   ],
+                                                                       "nextTopic":  null,
+                                                                       "idle":  true,
+                                                                       "isDefault":  true
+                                                                   }
+                                                               ]
+                                               }
+                                    },
+                         "keywordNextTopics":  {
+                                                   "mail":  35,
+                                                   "letter":  36,
+                                                   "parcel":  37
+                                               },
+                         "keywordTopicPrices":  {
+                                                    "letter":  8,
+                                                    "parcel":  15
+                                                },
+                         "script":  "chrystal.js"
+                     }
+}

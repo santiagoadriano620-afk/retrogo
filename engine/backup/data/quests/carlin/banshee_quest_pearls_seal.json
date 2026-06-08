@@ -1,0 +1,173 @@
+{
+    "actionId":  3102,
+    "type":  "seal",
+    "conditions":  [
+                       {
+                           "type":  "storage",
+                           "key":  6,
+                           "value":  -1
+                       }
+                   ],
+    "effects":  [
+                    {
+                        "type":  "createItem",
+                        "itemId":  1490,
+                        "count":  1,
+                        "pos":  {
+                                    "x":  32171,
+                                    "y":  31854,
+                                    "z":  15
+                                }
+                    },
+                    {
+                        "type":  "createItem",
+                        "itemId":  1490,
+                        "count":  1,
+                        "pos":  {
+                                    "x":  32170,
+                                    "y":  31854,
+                                    "z":  15
+                                }
+                    },
+                    {
+                        "type":  "storage",
+                        "key":  6,
+                        "value":  1
+                    },
+                    {
+                        "type":  "relocate",
+                        "from":  {
+                                     "x":  0,
+                                     "y":  0,
+                                     "z":  0
+                                 },
+                        "to":  {
+                                   "x":  32272,
+                                   "y":  31849,
+                                   "z":  15
+                               }
+                    },
+                    {
+                        "type":  "magicEffect",
+                        "pos":  {
+                                    "x":  32272,
+                                    "y":  31849,
+                                    "z":  15
+                                },
+                        "effectId":  14
+                    },
+                    {
+                        "type":  "createItem",
+                        "itemId":  1490,
+                        "count":  1,
+                        "pos":  {
+                                    "x":  32172,
+                                    "y":  31854,
+                                    "z":  15
+                                }
+                    },
+                    {
+                        "type":  "createItem",
+                        "itemId":  1490,
+                        "count":  1,
+                        "pos":  {
+                                    "x":  32170,
+                                    "y":  31855,
+                                    "z":  15
+                                }
+                    },
+                    {
+                        "type":  "createItem",
+                        "itemId":  1490,
+                        "count":  1,
+                        "pos":  {
+                                    "x":  32171,
+                                    "y":  31855,
+                                    "z":  15
+                                }
+                    },
+                    {
+                        "type":  "createItem",
+                        "itemId":  1490,
+                        "count":  1,
+                        "pos":  {
+                                    "x":  32172,
+                                    "y":  31855,
+                                    "z":  15
+                                }
+                    },
+                    {
+                        "type":  "createItem",
+                        "itemId":  1490,
+                        "count":  1,
+                        "pos":  {
+                                    "x":  32170,
+                                    "y":  31856,
+                                    "z":  15
+                                }
+                    },
+                    {
+                        "type":  "createItem",
+                        "itemId":  1490,
+                        "count":  1,
+                        "pos":  {
+                                    "x":  32171,
+                                    "y":  31856,
+                                    "z":  15
+                                }
+                    },
+                    {
+                        "type":  "createItem",
+                        "itemId":  1490,
+                        "count":  1,
+                        "pos":  {
+                                    "x":  32172,
+                                    "y":  31856,
+                                    "z":  15
+                                }
+                    },
+                    {
+                        "type":  "damage",
+                        "target":  0,
+                        "combat":  "COMBAT_EARTHDAMAGE",
+                        "min":  -33,
+                        "max":  -33
+                    },
+                    {
+                        "key":  8102,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "effectsAlt":  [
+                       {
+                           "type":  "relocate",
+                           "from":  {
+                                        "x":  0,
+                                        "y":  0,
+                                        "z":  0
+                                    },
+                           "to":  {
+                                      "x":  32171,
+                                      "y":  31854,
+                                      "z":  15
+                                  }
+                       },
+                       {
+                           "type":  "magicEffect",
+                           "pos":  {
+                                       "x":  32171,
+                                       "y":  31854,
+                                       "z":  15
+                                   },
+                           "effectId":  1
+                       },
+                       {
+                           "type":  "damage",
+                           "target":  0,
+                           "combat":  "COMBAT_EARTHDAMAGE",
+                           "min":  -155,
+                           "max":  -155
+                       }
+                   ]
+}

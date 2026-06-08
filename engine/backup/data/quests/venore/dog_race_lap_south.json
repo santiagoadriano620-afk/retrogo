@@ -1,0 +1,58 @@
+{
+    "actionId":  3120,
+    "type":  "moveEvent",
+    "events":  [
+                   "onStepIn",
+                   "onStepOut"
+               ],
+    "transformOnStep":  {
+                            "from":  426,
+                            "to":  425
+                        },
+    "effects":  [
+                    {
+                        "type":  "transformItem",
+                        "from":  426,
+                        "to":  425,
+                        "decay":  true
+                    },
+                    {
+                        "type":  "transformItemInPosition",
+                        "pos":  {
+                                    "x":  32915,
+                                    "y":  32079,
+                                    "z":  5
+                                },
+                        "from":  1485,
+                        "to":  1484
+                    },
+                    {
+                        "key":  8120,
+                        "value":  1,
+                        "type":  "storage"
+                    }
+                ],
+    "effectsOnStepOut":  [
+                             {
+                                 "type":  "transformItem",
+                                 "from":  425,
+                                 "to":  426,
+                                 "decay":  true
+                             },
+                             {
+                                 "type":  "transformItemInPosition",
+                                 "pos":  {
+                                             "x":  32915,
+                                             "y":  32079,
+                                             "z":  5
+                                         },
+                                 "from":  1484,
+                                 "to":  1485
+                             },
+                             {
+                                 "key":  8120,
+                                 "value":  1,
+                                 "type":  "storage"
+                             }
+                         ]
+}

@@ -1,0 +1,126 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Isimov",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  69,
+                                              "details":  {
+                                                              "head":  115,
+                                                              "body":  0,
+                                                              "legs":  19,
+                                                              "feet":  95
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  2,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "job":  "I am the master of the hall of the ancients.",
+                                          "name":  "My name is Isimov Dustbearer, Son of Fire and Earth, from the Molten Rock.",
+                                          "hall":  "The burial chamber of our ancestors. All of the firstborn of our race are there .. all but Durin.",
+                                          "ancients":  "The burial chamber of our ancestors. All of the firstborn of our race are there .. all but Durin.",
+                                          "tibia":  "A world of dangers, a world of wonders.",
+                                          "kazordoon":  "The last haven for dwarfenkind. Our last hope for our survival.",
+                                          "big":  "This mountain is as old as the world. The first dwarfs were born here.",
+                                          "old":  "This mountain is as old as the world. The first dwarfs were born here.",
+                                          "elves":  "Bah, squirrels, hedgehogs, rabbits, elves ... who cares.",
+                                          "humans":  "A young and greedy race, though more noble. They remind me of orcs sometimes.",
+                                          "orcs":  "The greenskins are after all of us. Beware! Beware!",
+                                          "minotaurs":  "They leave us alone, we leave them alone, that\u0027s the way of our people.",
+                                          "pyromancer":  "They whorship the elemental forces of fire.",
+                                          "geomancer":  "They whorship the elemental forces of earth.",
+                                          "technomancer":  "Strange, are they still around? Well, give them one or two hundred years and they are gone again, jawoll.",
+                                          "god":  "The gods abandoned us, we abandoned the gods. That\u0027s it, no big deal I tell ya, jawoll.",
+                                          "keeper":  "The gods abandoned us, we abandoned the gods. That\u0027s it, no big deal I tell ya, jawoll.",
+                                          "shepherd":  "The gods abandoned us, we abandoned the gods. That\u0027s it, no big deal I tell ya, jawoll.",
+                                          "fire":  "It\u0027s warm, it\u0027s useful, we use it. We decide when or how, jawoll.",
+                                          "earth":  "Gives us food and shelter, quite useful isn\u0027t it?",
+                                          "durin":  "Ah yes, the first born. He became a higher entity to protect us. His mortal remains were buried at a remote spot where only pilgrims disturb their peace now and then.",
+                                          "life":  "Life is easy to understand, you have birth, you have death. Simple stuff, even elves could grasp the concept.",
+                                          "plant":  "Don\u0027t know much about this stuff. Find them in a soup sometimes.",
+                                          "citizen":  "You can become citizen of Kazordoon by the power of our ancestors.",
+                                          "kroox":  "What a hasty fellow. Can\u0027t be healthy to live in such a hurry, jawoll.",
+                                          "jimbin":  "Isn\u0027t that the kid that took over the Jolly Axeman tavern? Far too young for such a job, but did anyone ask me? No!",
+                                          "maryza":  "How could she marry this Jimbin? I mean, they are kids! Know nothing about life and stuff. Couldn\u0027t they wait at least hundred years or so?",
+                                          "bezil":  "Bezil and Nezil are typical profiteers. Fine new breed of dwarfs we raised, pah.",
+                                          "nezil":  "Bezil and Nezil are typical profiteers. Fine new breed of dwarfs we raised, pah.",
+                                          "uzgod":  "Has hardly a beard and already forgotten the traditions of his ancestors. Modern techniques ... almost like one of these technomancers.",
+                                          "etzel":  "Etzel, good old Etzel. I was his tutor long ago. Now he\u0027s running a guild ... they grow so fast ... so fast, jawoll.",
+                                          "gregor":  "Never heared that word. What\u0027s a gregor?",
+                                          "duria":  "Could become a great warrior one day. Still needs to learn so much.",
+                                          "emperor":  "The emperor resides far above us in the upper caves. Sometimes I wonder if it\u0027s good that the emperor is that much away from the temples.",
+                                          "kruzak":  "The emperor resides far above us in the upper caves. Sometimes I wonder if it\u0027s good that the emperor is that much away from the temples.",
+                                          "motos":  "Must admit there were worse generals in the years before, jawoll.",
+                                          "general":  "Must admit there were worse generals in the years before, jawoll.",
+                                          "army":  "\u003csigh\u003e A bunch of kids playing war. May the elements help us.",
+                                          "ferumbras":  "I have seen many of his type coming and going. He will fall and anotherone will take his place.",
+                                          "excalibug":  "Ahhh! Whan I was a little dwarf I was on a quest to find it. I was almost literally digging up the ghostlands for it and now only one thing is sure: It must be elsewere, jawoll.",
+                                          "news":  "News? I heard there\u0027s a new human settlement in the south, called Thai...something.",
+                                          "monster":  "Only another nuisance.",
+                                          "help":  "Can\u0027t you kids do anything on your own?",
+                                          "quest":  "You are too young for quests, jawoll.",
+                                          "task":  "You are too young for quests, jawoll.",
+                                          "what":  "You are too young for quests, jawoll.",
+                                          "do":  "You are too young for quests, jawoll.",
+                                          "gold":  "Greed for gold could blind your sight for the important.",
+                                          "money":  "Greed for gold could blind your sight for the important.",
+                                          "equipment":  "Go and buy some.",
+                                          "fight":  "The life ot a dwarf is an eternal struggle. It hardens us and makes us the fine race we are, jawoll.",
+                                          "heal$":  "Stop the whining, kid, that are only some scratches. Dwarfenheart knows no pain.",
+                                          "time":  "I think it\u0027s the fourth age of the yellow flame, isn\u0027t it?"
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "Hiho and greetings my child!",
+                                                       "I am the master of the hall of the ancients."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+                                             "heal$":  {
+                                                           "damage":  40,
+                                                           "effectSelf":  null,
+                                                           "effectTarget":  13
+                                                       }
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "Hiho %N and greetings my child!",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ]
+                     }
+}

@@ -1,0 +1,241 @@
+﻿{
+    "creatureStatistics":  {
+                               "name":  "Tom",
+                               "health":  100,
+                               "maxHealth":  100,
+                               "mana":  0,
+                               "maxMana":  0,
+                               "attack":  1,
+                               "attackSlowness":  40,
+                               "defense":  5,
+                               "speed":  30,
+                               "outfit":  {
+                                              "id":  112,
+                                              "details":  {
+                                                              "head":  113,
+                                                              "body":  115,
+                                                              "legs":  58,
+                                                              "feet":  115
+                                                          }
+                                          }
+                           },
+    "behaviour":  {
+                      "wanderRange":  1,
+                      "openDoors":  true,
+                      "ignoreCharacters":  true
+                  },
+    "conversation":  {
+                         "hearingRange":  5,
+                         "keywords":  {
+                                          "how":  "Much to do, these days.",
+                                          "are":  "Much to do, these days.",
+                                          "you":  "Much to do, these days.",
+                                          "job":  "I\u0027m the local tanner. I buy fresh animal corpses, tan them, and convert them into fine leather clothes ...",
+                                          "name":  "My name is Tom the tanner.",
+                                          "tanner":  "That\u0027s my job. I buy fresh animal corpses, tan them, and convert them into fine leather clothes.",
+                                          "corpse":  "I\u0027m buying fresh corpses of rats, rabbits and wolves. What do you want to sell?",
+                                          "animal":  "I\u0027m buying fresh corpses of rats, rabbits and wolves. What do you want to sell?",
+                                          "monster":  "I\u0027m buying fresh corpses of rats, rabbits and wolves. What do you want to sell?",
+                                          "wares":  "I\u0027m buying fresh corpses of rats, rabbits and wolves. What do you want to sell?",
+                                          "major":  "Yes. Obi, Norma and good old Al. Go ask them for leather clothes.",
+                                          "customer":  "Yes. Obi, Norma and good old Al. Go ask them for leather clothes.",
+                                          "time":  "Sorry, I haven\u0027t been outside for a while, so I don\u0027t know.",
+                                          "help":  "Help? I will give you a few gold coins if you have some dead animals for me.",
+                                          "troll":  "Troll leather stinks. Can\u0027t use it.",
+                                          "orc":  "I don\u0027t buy Orcs. Their skin is too scratchy.",
+                                          "human":  "Are you crazy?!",
+                                          "sell":  "Sorry. I\u0027m only selling to major customers. But I\u0027m buying fresh corpses of rats, rabbits and wolves from you."
+                                      },
+                         "farewells":  [
+                                           "bye",
+                                           "goodbye",
+                                           "farewell"
+                                       ],
+                         "greetings":  [
+                                           "hello",
+                                           "hi",
+                                           "greetings"
+                                       ],
+                         "sayings":  {
+                                         "texts":  [
+                                                       "I\u0027m Tom the Tanner. How can I help you ?",
+                                                       "I\u0027m the local tanner. I buy fresh animal corpses, tan them, and convert them into fine leather clothes ..."
+                                                   ],
+                                         "rate":  300,
+                                         "chance":  0.1
+                                     },
+                         "punishments":  {
+
+                                         },
+                         "greetingPatterns":  [
+                                                  {
+                                                      "keywords":  [
+                                                                       "hello$"
+                                                                   ],
+                                                      "response":  "I\u0027m Tom the Tanner. How can I help you %N?",
+                                                      "idle":  false
+                                                  },
+                                                  {
+                                                      "keywords":  [
+                                                                       "hi$"
+                                                                   ],
+                                                      "response":  null,
+                                                      "idle":  false
+                                                  }
+                                              ],
+                         "topics":  {
+                                        "1":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Ok. Corpse for me, gold for you.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "createMoney"
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Sorry, you do not have a fresh one.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Sorry, you do not have so many.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Maybe another time.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              },
+                                        "2":  {
+                                                  "entries":  [
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Deal. By the way: If you\u0027d like to hunt something bigger, check the cellar of the stables to the north. Some adventurer used to store his loot under a loose board beneath a barrel. He might have forgotten something when he left the isle.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+                                                                                      {
+                                                                                          "type":  "createMoney"
+                                                                                      }
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Sorry, you do not have a fresh one.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+                                                                                       "yes"
+                                                                                   ],
+                                                                      "response":  "Sorry, you do not have so many.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  false
+                                                                  },
+                                                                  {
+                                                                      "keywords":  [
+
+                                                                                   ],
+                                                                      "response":  "Maybe another time.",
+                                                                      "conditions":  [
+
+                                                                                     ],
+                                                                      "actions":  [
+
+                                                                                  ],
+                                                                      "nextTopic":  null,
+                                                                      "idle":  true,
+                                                                      "isDefault":  true
+                                                                  }
+                                                              ]
+                                              }
+                                    },
+                         "keywordNextTopics":  {
+
+                                               },
+                         "trade":  {
+                                       "items":  [
+                                                     {
+                                                         "name":  "Dead Rat",
+                                                         "price":  2,
+                                                         "id":  2813,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Dead Rabbit",
+                                                         "price":  2,
+                                                         "id":  2992,
+                                                         "type":  "sell"
+                                                     },
+                                                     {
+                                                         "name":  "Dead Wolf",
+                                                         "price":  5,
+                                                         "id":  2826,
+                                                         "type":  "sell"
+                                                     }
+                                                 ]
+                                   },
+                         "script":  "tom.js"
+                     }
+}

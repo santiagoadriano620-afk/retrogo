@@ -1,0 +1,273 @@
+{
+    "creatureStatistics": {
+        "name": "Elathriel",
+        "health": 100,
+        "maxHealth": 100,
+        "mana": 0,
+        "maxMana": 0,
+        "attack": 1,
+        "attackSlowness": 40,
+        "defense": 5,
+        "speed": 30,
+        "outfit": {
+            "id": 64,
+            "details": {
+                "head": 0,
+                "body": 0,
+                "legs": 0,
+                "feet": 0
+            }
+        }
+    },
+    "behaviour": {
+        "wanderRange": 4,
+        "openDoors": true,
+        "ignoreCharacters": true
+    },
+    "conversation": {
+        "hearingRange": 5,
+        "keywords": {
+            "name": "Not that I like to talk to you, but I am Elathriel Shadowslayer.",
+            "job": "I am the leader of the Kuridai and the Az'irel of Ab'dendriel. Humans would call it sheriff, executioner, or avenger.",
+            "sheriff": "Sometimes people get imprisoned for some time. True criminals will be cast out and for comitting the worst crimes offenders are thrown into the hellgate.",
+            "executioner": "Sometimes people get imprisoned for some time. True criminals will be cast out and for comitting the worst crimes offenders are thrown into the hellgate.",
+            "avenger": "Sometimes people get imprisoned for some time. True criminals will be cast out and for comitting the worst crimes offenders are thrown into the hellgate.",
+            "hellgate": "It was here among other structures, like the depot tower, before our people came here. It's secured by a sealed door.",
+            "door": "For safety we keep the door to the hellgate locked all times. I have the keys to open it when needed.",
+            "sealed": "For safety we keep the door to the hellgate locked all times. I have the keys to open it when needed.",
+            "time": "I couldn't care less.",
+            "carlin": "We watch this city and the actions of its inhabitants closely.",
+            "thais": "The thain kingdom and we share some enemys, so its only logical to cooperate in a few areas.",
+            "venore": "The merchants of venore provide us with some usefull goods. Still I an convinced that they get more out of our bargain then we do.",
+            "roderick": "He is tolerated here as the spokesman of the thaian king.",
+            "olrik": "This human is too unimportant to be even mentioned.",
+            "king": "It's hard for some of my people to grasp the true concept of a strong leader.",
+            "tibianus": "A human weakling, not much more.",
+            "eloise": "A human weakling, not much more.",
+            "elves": "My people are divided in castes in these times, until they comprehend that only the way of the Kuridai can save us all.",
+            "dwarfs": "We might use the shelter earth and hills provide us, but their obsession for metal is a waste of time.",
+            "humans": "They are useful ... and better stay useful.",
+            "troll": "Like all inferior races they can be at least used for something good. The other castes are just jealous about our use of them.",
+            "army": "It's one of the more useful concepts we can learn from the other races.",
+            "cenath": "Arrogant bastards, but they wield quite powerful magics.",
+            "kuridai": "We are the heart of the elven society. We forge, we build, and we don't allow our people to be pushed around.",
+            "deraisim": "Confused cowards. With all their skill they still tend to hide and run. What a waste.",
+            "abdaisim": "Even more undecided then the deraisim.",
+            "teshial": "Dreamers are of no practical use. I don't mourn their demise.",
+            "ferumbras": "Even if he'd walk through the town above the other castes won't see the necessity to follow OUR way.",
+            "crunor": "I have no use for the treething. I worship Mortiur, the ravager, of course.",
+            "mortiur": "The celestial paladin of revenge. He was one of the greatest elven wariors of all times.",
+            "excalibug": "I still doubt it exists.",
+            "news": "News are confidential and not your business.",
+            "magic": "I mastered some spells of battle.",
+            "druid": "Druids' magic is too peaceful for my taste.",
+            "sorcerer": "I have seen human sorcerers doing some impressive things ... before they died.",
+            "spellbook": "I don't sell such stuff.",
+            "spell": "I teach the spells 'Light Magic Missile', 'Heavy Magic Missile', 'Fireball', 'Great Fireball', 'Fire Bomb', and 'Explosion'.",
+            "light": "I'm sorry, but this spell is only for druids and paladins.",
+            "missile": "I'm sorry, but this spell is only for druids and paladins.",
+            "heavy": "I'm sorry, but this spell is only for druids and paladins.",
+            "fireball": "I'm sorry, but this spell is only for druids.",
+            "great": "I'm sorry, but this spell is only for druids.",
+            "fire": "I'm sorry, but this spell is only for druids.",
+            "bomb": "I'm sorry, but this spell is only for druids.",
+            "explosion": "I'm sorry, but this spell is only for druids."
+        },
+        "farewells": [
+            "bye",
+            "goodbye",
+            "farewell"
+        ],
+        "greetings": [
+            "hello",
+            "hi",
+            "greetings"
+        ],
+        "sayings": {
+            "texts": [
+                "Be greeted .",
+                "I am the leader of the Kuridai and the Az'irel of Ab'dendriel. Humans would call it sheriff, executioner, or avenger."
+            ],
+            "rate": 300,
+            "chance": 0.1
+        },
+        "punishments": {},
+        "greetingPatterns": [
+            {
+                "keywords": [
+                    "hello$"
+                ],
+                "response": "Be greeted %N.",
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "hi$"
+                ],
+                "response": null,
+                "idle": false
+            },
+            {
+                "keywords": [
+                    "ashari$"
+                ],
+                "response": null,
+                "idle": false
+            }
+        ],
+        "topics": {
+            "1": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Here you are.",
+                        "conditions": [
+                            {
+                                "type": "gold",
+                                "min": -1
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "type": "deleteMoney",
+                                "amount": -1
+                            },
+                            {
+                                "type": "createItem",
+                                "id": -1
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "Come back when you have enough money.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "Believe me, it's better for you that way.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            },
+            "3": {
+                "entries": [
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You already know that spell.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You need to advance to magic level %A to learn this spell.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "You do not have enough gold to pay my services.",
+                        "conditions": [
+                            {
+                                "type": "gold",
+                                "max": -1
+                            }
+                        ],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [
+                            "yes"
+                        ],
+                        "response": "From now on you can cast this spell.",
+                        "conditions": [],
+                        "actions": [
+                            {
+                                "type": "deleteMoney",
+                                "amount": -1
+                            }
+                        ],
+                        "nextTopic": null,
+                        "idle": false
+                    },
+                    {
+                        "keywords": [],
+                        "response": "I thought so.",
+                        "conditions": [],
+                        "actions": [],
+                        "nextTopic": null,
+                        "idle": true,
+                        "isDefault": true
+                    }
+                ]
+            }
+        },
+        "keywordNextTopics": {},
+        "keywordTopicSpellIds": {
+            "light": 43,
+            "missile": 43,
+            "heavy": 46,
+            "fireball": 44,
+            "great": 45,
+            "fire": 58,
+            "bomb": 58,
+            "explosion": 1
+        },
+        "keywordTopicMagicLevels": {
+            "light": 0,
+            "missile": 0,
+            "heavy": 0,
+            "fireball": 0,
+            "great": 0,
+            "fire": 0,
+            "bomb": 0,
+            "explosion": 0
+        },
+        "keywordTopicPrices": {
+            "light": 200,
+            "missile": 200,
+            "heavy": 600,
+            "fireball": 1000,
+            "great": 1800,
+            "fire": 1800,
+            "bomb": 1800,
+            "explosion": 5000
+        },
+        "trade": {
+            "items": [
+                {
+                    "name": "Copper Key",
+                    "price": 5000,
+                    "id": 2089,
+                    "type": "sell"
+                }
+            ]
+        },
+        "script": "elathriel.js"
+    }
+}
